@@ -1,0 +1,2 @@
+date,last_price,change,change_pct,volume,ma20,ma60,rsi,trend,alert
+2026-02-26 21:46:06,6307.27,223.41,3.67,1409623,5461.95,4720.92,81.58,BULLISH,RSI 과매수 (80+)

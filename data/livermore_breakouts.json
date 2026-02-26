@@ -1,0 +1,24 @@
+{
+  "scan_date": "2026-02-26 21:49:48",
+  "total_scanned": 20,
+  "breakout_count": 1,
+  "stocks": [
+    {
+      "symbol": "000660.KS",
+      "name": "SK하이닉스",
+      "price": 1099000.0,
+      "change_pct": 8.16,
+      "high_52w": 1099000.0,
+      "breakout_pct": 0.0,
+      "volume_ratio": 0.91,
+      "score": 60,
+      "signals": [
+        "52W_HIGH_BREAKOUT",
+        "BREAKOUT_EXPANSION",
+        "BULLISH_TREND"
+      ],
+      "trend": "BULLISH",
+      "timestamp": "2026-02-26 21:49:46"
+    }
+  ]
+}

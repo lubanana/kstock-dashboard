@@ -1,0 +1,61 @@
+name: Deploy Dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # 매일 한국 시간 오전 7:30 (UTC 22:30)
+    - cron: '30 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install yfinance pandas numpy
+      
+      - name: Run scanners
+        run: |
+          python3 update_data.py
+          python3 livermore_scanner.py
+          python3 oneil_scanner.py
+          python3 minervini_scanner.py
+          python3 kosdaq_scanner.py
+        working-directory: ./
+        continue-on-error: true
+      
+      - name: Generate dashboard
+        run: |
+          python3 generate_dashboard.py
+        working-directory: ./
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

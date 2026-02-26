@@ -1,0 +1,91 @@
+{
+  "scan_date": "2026-02-26 21:53:04",
+  "scanner": "William O'Neil Volume Spike Pattern",
+  "criteria": {
+    "volume_spike": "50일 평균 2배 이상",
+    "price_gain": "양봉 (가격 상승)",
+    "breakout": "20일/50일 최고가 돌파",
+    "accumulation": "기관 매수 흔적"
+  },
+  "total_scanned": 20,
+  "breakout_count": 3,
+  "stocks": [
+    {
+      "symbol": "035720.KS",
+      "name": "카카오",
+      "price": 61400.0,
+      "price_change": 6.97,
+      "volume": 9617787,
+      "volume_ratio_50d": 3.47,
+      "volume_ratio_20d": 3.01,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "accumulation": false,
+      "accumulation_ratio": 1.14,
+      "strong_rs": false,
+      "rs_ratio": 0,
+      "above_ma20": true,
+      "above_ma50": true,
+      "golden_cross": false,
+      "score": 65,
+      "signals": [
+        "VOLUME_SPIKE_3X",
+        "PRICE_SURGE_5PCT"
+      ],
+      "pattern": "VOLUME_EXPLOSION",
+      "timestamp": "2026-02-26 21:53:03"
+    },
+    {
+      "symbol": "028260.KS",
+      "name": "삼성물산",
+      "price": 360000.0,
+      "price_change": 3.75,
+      "volume": 626910,
+      "volume_ratio_50d": 1.57,
+      "volume_ratio_20d": 1.32,
+      "breakout_20d": true,
+      "breakout_50d": true,
+      "accumulation": true,
+      "accumulation_ratio": 1.26,
+      "strong_rs": false,
+      "rs_ratio": 0,
+      "above_ma20": true,
+      "above_ma50": true,
+      "golden_cross": true,
+      "score": 65,
+      "signals": [
+        "VOLUME_SPIKE_1.5X",
+        "PRICE_GAIN_3PCT",
+        "BREAKOUT_50DAY",
+        "INSTITUTIONAL_ACCUM"
+      ],
+      "pattern": "VOLUME_INCREASE",
+      "timestamp": "2026-02-26 21:53:03"
+    },
+    {
+      "symbol": "161890.KS",
+      "name": "한국콜마",
+      "price": 75000.0,
+      "price_change": 4.75,
+      "volume": 723753,
+      "volume_ratio_50d": 3.63,
+      "volume_ratio_20d": 2.82,
+      "breakout_20d": false,
+      "breakout_50d": false,
+      "accumulation": false,
+      "accumulation_ratio": 1.13,
+      "strong_rs": false,
+      "rs_ratio": 0,
+      "above_ma20": true,
+      "above_ma50": true,
+      "golden_cross": true,
+      "score": 55,
+      "signals": [
+        "VOLUME_SPIKE_3X",
+        "PRICE_GAIN_3PCT"
+      ],
+      "pattern": "VOLUME_INCREASE",
+      "timestamp": "2026-02-26 21:53:04"
+    }
+  ]
+}

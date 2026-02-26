@@ -1,0 +1,2 @@
+﻿symbol,name,price,change_pct,high_52w,breakout_pct,volume_ratio,score,signals,trend,timestamp
+000660.KS,SK하이닉스,1099000.0,8.16,1099000.0,0.0,0.91,60,"['52W_HIGH_BREAKOUT', 'BREAKOUT_EXPANSION', 'BULLISH_TREND']",BULLISH,2026-02-26 21:49:46

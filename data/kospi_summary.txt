@@ -1,0 +1,24 @@
+# KOSPI Analysis Summary
+# Generated: 2026-02-26 21:42:00
+
+## Current Status
+- Price: 6307.27
+- Change: +223.41 (+3.67%)
+- Volume: 1409623
+- Trend: BULLISH
+
+## Technical Indicators
+- RSI(14): 81.58 [ALERT: Overbought]
+- MA20: 5461.95
+- MA60: 4720.92
+- Price vs MA20: +15.5%
+- Price vs MA60: +33.6%
+
+## Signals
+- Trend: Strong Uptrend
+- Momentum: Overbought
+- Recommendation: Caution / Take Profits
+
+## Key Levels
+- Resistance: 6500 (psychological)
+- Support: 6000, 5460 (MA20)

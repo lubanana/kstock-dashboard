@@ -1,0 +1,50 @@
+{
+  "last_updated": "2026-02-26T21:46:06+08:00",
+  "data_version": "1.0",
+  "sources": [
+    "yfinance"
+  ],
+  "indices": {
+    "kospi": {
+      "symbol": "^KS11",
+      "name": "KOSPI",
+      "currency": "KRW",
+      "last_price": 6307.27,
+      "change_percent": 3.67,
+      "trend": "BULLISH",
+      "rsi": 81.58,
+      "ma20": 5461.95,
+      "ma60": 4720.92,
+      "alert": "RSI \uacfc\ub9e4\uc218 (80+)"
+    },
+    "kosdaq": {
+      "symbol": "^KQ11",
+      "name": "KOSDAQ",
+      "currency": "KRW",
+      "data_file": "data/kosdaq_history.csv",
+      "last_price": null,
+      "trend": null
+    }
+  },
+  "stocks": {
+    "samsung": {
+      "symbol": "005930.KS",
+      "name": "\uc0bc\uc131\uc804\uc790",
+      "data_file": "data/samsung.csv",
+      "sector": "\ubc18\ub3c4\uccb4"
+    },
+    "skhynix": {
+      "symbol": "000660.KS",
+      "name": "SK\ud558\uc774\ub2c9\uc2a4",
+      "data_file": "data/skhynix.csv",
+      "sector": "\ubc18\ub3c4\uccb4"
+    }
+  },
+  "metadata": {
+    "total_records": 244,
+    "date_range": {
+      "start": "2025-02-26",
+      "end": "2026-02-26"
+    }
+  }
+}
