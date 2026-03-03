@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Level 2 Interactive Report Generator
-Level 2 분석 결과 인터랙티브 리포트 생성기
+Level 2 Interactive Report Generator - Fixed
+Level 2 분석 결과 인터랙티브 리포트 생성기 (수정版)
 """
 
 import json
@@ -57,6 +57,26 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
     neutral = sector_data.get('recommendations', {}).get('neutral', [])
     underweight = sector_data.get('recommendations', {}).get('underweight', [])
     
+    # JSON 데이터 준비
+    sectors_json = []
+    for name, data in sorted_sectors:
+        adj = adjustments.get(name, {'adjustment_pct': 0, 'reason': ''})
+        sectors_json.append({
+            'name': name,
+            'average_score': data['average_score'],
+            'stock_count': data['stock_count'],
+            'strength': data['strength'],
+            'rotation_signal': data['rotation_signal'],
+            'relative_strength_pct': data['relative_strength_pct'],
+            'adjustment_pct': adj['adjustment_pct'],
+            'reason': adj['reason'],
+            'top_performer': data['top_performer'],
+            'bottom_performer': data['bottom_performer'],
+            'all_stocks': data['all_stocks']
+        })
+    
+    sectors_js = json.dumps(sectors_json, ensure_ascii=False)
+    
     html = f"""
 <!DOCTYPE html>
 <html lang="ko">
@@ -78,7 +98,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
         .section {{ background: rgba(255,255,255,0.95); padding: 30px; border-radius: 20px; }}
         .section h2 {{ color: #2c3e50; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #3498db; }}
         
-        /* 매크로 카드 */
         .macro-grid {{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }}
         .macro-card {{ padding: 20px; border-radius: 15px; text-align: center; transition: transform 0.3s; }}
         .macro-card:hover {{ transform: translateY(-5px); }}
@@ -91,7 +110,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
         .card-vix {{ background: linear-gradient(135deg, #00d2d3, #01a3a4); color: white; }}
         .card-kospi {{ background: linear-gradient(135deg, #5f27cd, #341f97); color: white; }}
         
-        /* 섹터 테이블 */
         .sector-table {{ width: 100%; border-collapse: collapse; font-size: 0.9em; }}
         .sector-table th {{ background: #34495e; color: white; padding: 12px; text-align: left; position: sticky; top: 0; }}
         .sector-table td {{ padding: 12px; border-bottom: 1px solid #ecf0f1; cursor: pointer; transition: background 0.2s; }}
@@ -107,7 +125,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
         .adj-negative {{ color: #e74c3c; font-weight: bold; }}
         .adj-neutral {{ color: #7f8c8d; }}
         
-        /* 조정 패널 */
         .adjustment-panel {{ background: rgba(255,255,255,0.95); padding: 30px; border-radius: 20px; margin-bottom: 25px; }}
         .adj-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }}
         .adj-value {{ font-size: 3em; font-weight: bold; }}
@@ -123,7 +140,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
         .rec-title {{ font-weight: bold; margin-bottom: 10px; }}
         .rec-count {{ font-size: 2em; }}
         
-        /* 상세 패널 */
         .detail-panel {{ position: sticky; top: 20px; }}
         .detail-card {{ background: rgba(255,255,255,0.95); padding: 25px; border-radius: 20px; }}
         .detail-header {{ margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #ecf0f1; }}
@@ -148,7 +164,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
             <div class="date">{date[:10]} | Sector & Macro Analysis</div>
         </div>
         
-        <!-- 매크로 지표 -->
         <div class="section" style="margin-bottom: 25px;">
             <h2>📊 Macro Indicators</h2>
             <div class="macro-grid">
@@ -175,7 +190,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
             </div>
         </div>
         
-        <!-- 조정 요약 -->
         <div class="adjustment-panel">
             <h2>🎯 Adjustment Summary</h2>
             <div class="adj-header">
@@ -210,7 +224,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
         </div>
         
         <div class="main-content">
-            <!-- 섹터 테이블 -->
             <div class="left-panel">
                 <div class="section">
                     <h2>📋 Sector Rankings (Click for Details)</h2>
@@ -232,7 +245,6 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
                 </div>
             </div>
             
-            <!-- 상세 패널 -->
             <div class="detail-panel">
                 <div id="detailContent">
                     <div class="detail-card empty-state">
@@ -251,9 +263,7 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
     </div>
     
     <script>
-        const sectorData = {json.dumps([{'name': k, **v} for k, v in sorted_sectors], ensure_ascii=False)};
-        const adjustments = {json.dumps(adjustments, ensure_ascii=False)};
-        
+        const sectorData = {sectors_js};
         let selectedSector = null;
         
         function renderTable() {{
@@ -265,19 +275,14 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
                 row.className = selectedSector === sector.name ? 'active' : '';
                 row.onclick = () => showDetail(sector);
                 
-                const adj = adjustments[sector.name] || {{adjustment_pct: 0}};
-                const adjClass = adj.adjustment_pct > 0 ? 'adj-positive' : adj.adjustment_pct < 0 ? 'adj-negative' : 'adj-neutral';
+                const adjClass = sector.adjustment_pct > 0 ? 'adj-positive' : sector.adjustment_pct < 0 ? 'adj-negative' : 'adj-neutral';
+                const badgeClass = sector.strength === 'STRONG' ? 'badge-strong' : sector.strength === 'WEAK' ? 'badge-weak' : 'badge-moderate';
                 
-                const badgeClass = sector.strength === 'STRONG' ? 'badge-strong' : 
-                                  sector.strength === 'WEAK' ? 'badge-weak' : 'badge-moderate';
-                
-                row.innerHTML = `
-                    <td>${{index + 1}}</td>
-                    <td><strong>${{sector.name}}</strong> (${{sector.stock_count}})</td>
-                    <td>${{sector.average_score}}</td>
-                    <td><span class="badge ${{badgeClass}}">${{sector.strength}}</span></td>
-                    <td class="${{adjClass}}">${{adj.adjustment_pct > 0 ? '+' : ''}}${{adj.adjustment_pct}}%</td>
-                `;
+                row.innerHTML = '<td>' + (index + 1) + '</td>' +
+                    '<td><strong>' + sector.name + '</strong> (' + sector.stock_count + ')</td>' +
+                    '<td>' + sector.average_score + '</td>' +
+                    '<td><span class="badge ' + badgeClass + '">' + sector.strength + '</span></td>' +
+                    '<td class="' + adjClass + '">' + (sector.adjustment_pct > 0 ? '+' : '') + sector.adjustment_pct + '%</td>';
                 tbody.appendChild(row);
             }});
         }}
@@ -286,70 +291,54 @@ def generate_html(sector_data: Dict, macro_data: Dict) -> str:
             selectedSector = sector.name;
             renderTable();
             
-            const adj = adjustments[sector.name] || {{adjustment_pct: 0, reason: ''}};
-            
             let stocksHtml = '';
             sector.all_stocks.forEach((stock, idx) => {{
                 const badgeClass = stock.consensus === 'BUY' ? 'badge-strong' : stock.consensus === 'SELL' ? 'badge-weak' : 'badge-moderate';
-                stocksHtml += `
-                    <div class="stock-item">
-                        <div>
-                            <strong>${{idx + 1}}. ${{stock.name}}</strong>
-                            <span class="badge ${{badgeClass}}" style="margin-left: 10px;">${{stock.consensus}}</span>
-                        </div>
-                        <div style="font-weight: bold; color: ${{stock.score >= 70 ? '#27ae60' : stock.score >= 50 ? '#f39c12' : '#e74c3c'}};">${{stock.score}} pts</div>
-                    </div>
-                `;
+                const scoreColor = stock.score >= 70 ? '#27ae60' : stock.score >= 50 ? '#f39c12' : '#e74c3c';
+                stocksHtml += '<div class="stock-item">' +
+                    '<div><strong>' + (idx + 1) + '. ' + stock.name + '</strong> ' +
+                    '<span class="badge ' + badgeClass + '" style="margin-left: 10px;">' + stock.consensus + '</span></div>' +
+                    '<div style="font-weight: bold; color: ' + scoreColor + ';">' + stock.score + ' pts</div>' +
+                    '</div>';
             }});
             
-            const detailHtml = `
-                <div class="detail-card">
-                    <div class="detail-header">
-                        <div>
-                            <div class="detail-title">${{sector.name}}</div>
-                            <div style="color: #7f8c8d;">${{sector.stock_count}} stocks | Avg: ${{sector.average_score}} pts</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div style="font-size: 2em; font-weight: bold; color: ${{adj.adjustment_pct > 0 ? '#27ae60' : adj.adjustment_pct < 0 ? '#e74c3c' : '#f39c12'}};">${{adj.adjustment_pct > 0 ? '+' : ''}}${{adj.adjustment_pct}}%</div>
-                            <div style="font-size: 0.8em; color: #666;">Adjustment</div>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <span>Relative Strength:</span>
-                            <span style="font-weight: bold; color: ${{sector.relative_strength_pct > 0 ? '#27ae60' : '#e74c3c'}};">${{sector.relative_strength_pct > 0 ? '+' : ''}}${{sector.relative_strength_pct}}%</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                            <span>Rotation Signal:</span>
-                            <span class="badge ${{sector.rotation_signal === 'Overweight' ? 'badge-strong' : sector.rotation_signal === 'Underweight' ? 'badge-weak' : 'badge-moderate'}}">${{sector.rotation_signal}}</span>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.9em; color: #666;">
-                            ${{adj.reason}}
-                        </div>
-                    </div>
-                    
-                    <h3 style="margin-bottom: 15px; color: #2c3e50;">🏆 Top Performer</h3>
-                    <div class="stock-item" style="background: #d4edda; border: 1px solid #28a745;">
-                        <div>
-                            <strong>${{sector.top_performer.name}}</strong>
-                            <span class="badge badge-strong" style="margin-left: 10px;">${{sector.top_performer.consensus}}</span>
-                        </div>
-                        <div style="font-weight: bold; color: #27ae60;">${{sector.top_performer.score}} pts</div>
-                    </div>
-                    
-                    <h3 style="margin: 20px 0 15px; color: #2c3e50;">📊 All Stocks</h3>
-                    <div class="stock-list">
-                        ${{stocksHtml}}
-                    </div>
-                </div>
-            `;
+            const adjColor = sector.adjustment_pct > 0 ? '#27ae60' : sector.adjustment_pct < 0 ? '#e74c3c' : '#f39c12';
+            const relColor = sector.relative_strength_pct > 0 ? '#27ae60' : '#e74c3c';
+            const rotClass = sector.rotation_signal === 'Overweight' ? 'badge-strong' : sector.rotation_signal === 'Underweight' ? 'badge-weak' : 'badge-moderate';
+            
+            const detailHtml = '<div class="detail-card">' +
+                '<div class="detail-header">' +
+                    '<div><div class="detail-title">' + sector.name + '</div>' +
+                    '<div style="color: #7f8c8d;">' + sector.stock_count + ' stocks | Avg: ' + sector.average_score + ' pts</div></div>' +
+                    '<div style="text-align: right;">' +
+                        '<div style="font-size: 2em; font-weight: bold; color: ' + adjColor + ';">' + (sector.adjustment_pct > 0 ? '+' : '') + sector.adjustment_pct + '%</div>' +
+                        '<div style="font-size: 0.8em; color: #666;">Adjustment</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="margin-bottom: 20px;">' +
+                    '<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">' +
+                        '<span>Relative Strength:</span>' +
+                        '<span style="font-weight: bold; color: ' + relColor + ';">' + (sector.relative_strength_pct > 0 ? '+' : '') + sector.relative_strength_pct + '%</span>' +
+                    '</div>' +
+                    '<div style="display: flex; justify-content: space-between; margin-bottom: 10px;">' +
+                        '<span>Rotation Signal:</span>' +
+                        '<span class="badge ' + rotClass + '">' + sector.rotation_signal + '</span>' +
+                    '</div>' +
+                    '<div style="background: #f8f9fa; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 0.9em; color: #666;">' + sector.reason + '</div>' +
+                '</div>' +
+                '<h3 style="margin-bottom: 15px; color: #2c3e50;">🏆 Top Performer</h3>' +
+                '<div class="stock-item" style="background: #d4edda; border: 1px solid #28a745;">' +
+                    '<div><strong>' + sector.top_performer.name + '</strong> ' +
+                    '<span class="badge badge-strong" style="margin-left: 10px;">' + sector.top_performer.consensus + '</span></div>' +
+                    '<div style="font-weight: bold; color: #27ae60;">' + sector.top_performer.score + ' pts</div>' +
+                '</div>' +
+                '<h3 style="margin: 20px 0 15px; color: #2c3e50;">📊 All Stocks</h3>' +
+                '<div class="stock-list">' + stocksHtml + '</div>' +
+            '</div>';
             
             document.getElementById('detailContent').innerHTML = detailHtml;
         }}
         
-        // 초기 렌더링
         renderTable();
     </script>
 </body>
