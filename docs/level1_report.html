@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KStock Level 1 Analysis Report - 2026-03-03</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            color: white;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .date { font-size: 1.1em; opacity: 0.9; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.95);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .stat-value { font-size: 2.2em; font-weight: bold; color: #2c3e50; }
+        .stat-label { color: #7f8c8d; font-size: 0.9em; margin-top: 5px; }
+        
+        .section {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            font-size: 1.5em;
+        }
+        
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+        .stock-table th {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .stock-table td { padding: 12px; border-bottom: 1px solid #ecf0f1; }
+        .stock-table tr:hover { background: #f8f9fa; }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .badge-buy { background: #d4edda; color: #155724; }
+        .badge-hold { background: #fff3cd; color: #856404; }
+        .badge-sell { background: #f8d7da; color: #721c24; }
+        
+        .score-high { color: #27ae60; font-weight: bold; }
+        .score-mid { color: #f39c12; font-weight: bold; }
+        .score-low { color: #e74c3c; font-weight: bold; }
+        
+        .sector-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .sector-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .sector-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 KStock Level 1 Analysis Report</h1>
+            <div class="date">2026-03-03 | 59 Stocks Analyzed</div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">59</div>
+                <div class="stat-label">Total Stocks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">59</div>
+                <div class="stat-label">Success</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">BUY Signals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">48.5</div>
+                <div class="stat-label">Avg Score</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 20 Rankings</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Market</th>
+                        <th>Sector</th>
+                        <th>Score</th>
+                        <th>Consensus</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td><strong>한화에어로스페이스</strong></td>
+                        <td>KOSPI</td>
+                        <td>방산</td>
+                        <td class="score-high">69.2</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>삼성전자</strong></td>
+                        <td>KOSPI</td>
+                        <td>반도체</td>
+                        <td class="score-high">66.2</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>HMM</strong></td>
+                        <td>KOSPI</td>
+                        <td>해운</td>
+                        <td class="score-high">66.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>삼성생명</strong></td>
+                        <td>KOSPI</td>
+                        <td>보험</td>
+                        <td class="score-high">65.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><strong>기아</strong></td>
+                        <td>KOSPI</td>
+                        <td>자동차</td>
+                        <td class="score-high">64.8</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td><strong>SK하이닉스</strong></td>
+                        <td>KOSPI</td>
+                        <td>반도체</td>
+                        <td class="score-high">63.8</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td><strong>LG</strong></td>
+                        <td>KOSPI</td>
+                        <td>지주사</td>
+                        <td class="score-high">62.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td><strong>카카오</strong></td>
+                        <td>KOSPI</td>
+                        <td>플랫폼</td>
+                        <td class="score-high">62.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td><strong>한국조선해양</strong></td>
+                        <td>KOSPI</td>
+                        <td>조선</td>
+                        <td class="score-high">61.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td><strong>LG이노텍</strong></td>
+                        <td>KOSPI</td>
+                        <td>전자부품</td>
+                        <td class="score-high">61.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td><strong>크래프톤</strong></td>
+                        <td>KOSDAQ</td>
+                        <td>게임</td>
+                        <td class="score-high">60.8</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td><strong>KT&G</strong></td>
+                        <td>KOSPI</td>
+                        <td>담/유통</td>
+                        <td class="score-high">60.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td><strong>현대제철</strong></td>
+                        <td>KOSPI</td>
+                        <td>철강</td>
+                        <td class="score-high">60.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td><strong>셀트리온</strong></td>
+                        <td>KOSPI</td>
+                        <td>바이오</td>
+                        <td class="score-mid">59.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>15</td>
+                        <td><strong>삼성전기</strong></td>
+                        <td>KOSPI</td>
+                        <td>전자부품</td>
+                        <td class="score-mid">59.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>16</td>
+                        <td><strong>LG화학</strong></td>
+                        <td>KOSPI</td>
+                        <td>화학</td>
+                        <td class="score-mid">57.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>17</td>
+                        <td><strong>삼성물산</strong></td>
+                        <td>KOSPI</td>
+                        <td>무역</td>
+                        <td class="score-mid">56.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>18</td>
+                        <td><strong>LG전자</strong></td>
+                        <td>KOSPI</td>
+                        <td>전자</td>
+                        <td class="score-mid">56.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>19</td>
+                        <td><strong>S-Oil</strong></td>
+                        <td>KOSPI</td>
+                        <td>정유</td>
+                        <td class="score-mid">56.5</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>20</td>
+                        <td><strong>삼성바이오로직스</strong></td>
+                        <td>KOSDAQ</td>
+                        <td>바이오</td>
+                        <td class="score-mid">56.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📈 Sector Performance</h2>
+            <div class="sector-grid">
+
+                <div class="sector-item">
+                    <span>방산</span>
+                    <span><strong>69.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>해운</span>
+                    <span><strong>66.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>담/유통</span>
+                    <span><strong>60.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>전자부품</span>
+                    <span><strong>60.1 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>자동차</span>
+                    <span><strong>59.4 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>보험</span>
+                    <span><strong>58.6 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>지주사</span>
+                    <span><strong>57.6 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>화학</span>
+                    <span><strong>57.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>무역</span>
+                    <span><strong>56.8 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>조선</span>
+                    <span><strong>56.6 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>전자</span>
+                    <span><strong>56.5 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>정유</span>
+                    <span><strong>56.5 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>IT서비스</span>
+                    <span><strong>56.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>비철금속</span>
+                    <span><strong>56.2 pts</strong></span>
+                </div>
+
+                <div class="sector-item">
+                    <span>철강</span>
+                    <span><strong>54.1 pts</strong></span>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>KStock Level 1 Analysis | Generated by AI Agents</p>
+            <p>TECH + QUANT + QUAL + NEWS Agents</p>
+        </div>
+    </div>
+</body>
+</html>
