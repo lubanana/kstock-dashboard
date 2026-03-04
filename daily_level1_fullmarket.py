@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-KStock Full Market Level 1 Analysis
-KOSPI/KOSDAQ 전체 종목 Level 1 분석 (Extended Stock List)
+KStock Full Market Level 1 Analysis with FinanceDataReader
+KOSPI/KOSDAQ 전체 종목 Level 1 분석 (FinanceDataReader 활용)
 """
 
 import json
@@ -21,75 +21,130 @@ from news_agent import NewsSentimentAgent
 BASE_PATH = '/home/programs/kstock_analyzer'
 OUTPUT_PATH = f'{BASE_PATH}/data/level1_daily'
 
-# KOSPI 200 + KOSDAQ 150 종목 리스트 (KOSPI/KOSDAQ 전체 대표)
-EXTENDED_STOCK_LIST = {
-    'kospi': [
-        # 대형주 (시가총액 상위)
-        {'symbol': '005930.KS', 'name': '삼성전자', 'sector': '반도체'},
-        {'symbol': '000660.KS', 'name': 'SK하이닉스', 'sector': '반도체'},
-        {'symbol': '035420.KS', 'name': 'NAVER', 'sector': '플랫폼'},
-        {'symbol': '005380.KS', 'name': '현대차', 'sector': '자동차'},
-        {'symbol': '051910.KS', 'name': 'LG화학', 'sector': '화학'},
-        {'symbol': '035720.KS', 'name': '카카오', 'sector': '플랫폼'},
-        {'symbol': '006400.KS', 'name': '삼성SDI', 'sector': '배터리'},
-        {'symbol': '068270.KS', 'name': '셀트리온', 'sector': '바이오'},
-        {'symbol': '005490.KS', 'name': 'POSCO홀딩스', 'sector': '철강'},
-        {'symbol': '028260.KS', 'name': '삼성물산', 'sector': '무역'},
-        {'symbol': '012450.KS', 'name': '한화에어로스페이스', 'sector': '방산'},
-        {'symbol': '055550.KS', 'name': '신한지주', 'sector': '금융'},
-        {'symbol': '105560.KS', 'name': 'KB금융', 'sector': '금융'},
-        {'symbol': '138040.KS', 'name': '메리츠금융', 'sector': '금융'},
-        {'symbol': '032830.KS', 'name': '삼성생명', 'sector': '보험'},
-        {'symbol': '015760.KS', 'name': '한국전력', 'sector': '전력'},
-        {'symbol': '003670.KS', 'name': '포스코퓨처엠', 'sector': '배터리'},
-        {'symbol': '009150.KS', 'name': '삼성전기', 'sector': '전자부품'},
-        {'symbol': '018260.KS', 'name': '삼성에스디에스', 'sector': 'IT서비스'},
-        {'symbol': '033780.KS', 'name': 'KT&G', 'sector': '담/유통'},
-        # 중형주 추가
-        {'symbol': '011200.KS', 'name': 'HMM', 'sector': '해운'},
-        {'symbol': '086790.KS', 'name': '하나금융지주', 'sector': '금융'},
-        {'symbol': '010130.KS', 'name': '고려아연', 'sector': '비철금속'},
-        {'symbol': '009540.KS', 'name': '한국조선해양', 'sector': '조선'},
-        {'symbol': '017670.KS', 'name': 'SK텔레콤', 'sector': '통신'},
-        {'symbol': '030200.KS', 'name': 'KT', 'sector': '통신'},
-        {'symbol': '096770.KS', 'name': 'SK이노베이션', 'sector': '에너지'},
-        {'symbol': '034730.KS', 'name': 'SK', 'sector': '지주사'},
-        {'symbol': '000270.KS', 'name': '기아', 'sector': '자동차'},
-        {'symbol': '066570.KS', 'name': 'LG전자', 'sector': '전자'},
-        {'symbol': '051900.KS', 'name': 'LG생활건강', 'sector': '생활용품'},
-        {'symbol': '003550.KS', 'name': 'LG', 'sector': '지주사'},
-        {'symbol': '004020.KS', 'name': '현대제철', 'sector': '철강'},
-        {'symbol': '000810.KS', 'name': '삼성화재', 'sector': '보험'},
-        {'symbol': '024110.KS', 'name': '기업은행', 'sector': '금융'},
-        {'symbol': '032640.KS', 'name': 'LG유플러스', 'sector': '통신'},
-        {'symbol': '010950.KS', 'name': 'S-Oil', 'sector': '정유'},
-        {'symbol': '011070.KS', 'name': 'LG이노텍', 'sector': '전자부품'},
-        {'symbol': '042660.KS', 'name': '한화오션', 'sector': '조선'},
-    ],
-    'kosdaq': [
-        # KOSDAQ 대형주
-        {'symbol': '247540.KS', 'name': '에코프로비엠', 'sector': '2차전지'},
-        {'symbol': '086520.KS', 'name': '에코프로', 'sector': '2차전지'},
-        {'symbol': '196170.KS', 'name': '알테오젠', 'sector': '바이오'},
-        {'symbol': '352820.KS', 'name': '하이브', 'sector': '엔터'},
-        {'symbol': '259960.KS', 'name': '크래프톤', 'sector': '게임'},
-        {'symbol': '207940.KS', 'name': '삼성바이오로직스', 'sector': '바이오'},
-        {'symbol': '028300.KS', 'name': 'HLB', 'sector': '바이오'},
-        {'symbol': '145020.KS', 'name': '휴젤', 'sector': '바이오'},
-        {'symbol': '214150.KS', 'name': '클리오', 'sector': '화장품'},
-        {'symbol': '095660.KS', 'name': '네오위즈', 'sector': '게임'},
-        {'symbol': '041140.KS', 'name': '넥슨게임즈', 'sector': '게임'},
-        {'symbol': '263750.KS', 'name': '펄어비스', 'sector': '게임'},
-        {'symbol': '293490.KS', 'name': '카카오게임즈', 'sector': '게임'},
-        {'symbol': '357780.KS', 'name': '솔브레인', 'sector': '반도체'},
-        {'symbol': '222800.KS', 'name': '심텍', 'sector': '반도체'},
-        {'symbol': '240810.KS', 'name': '원익IPS', 'sector': '반도체'},
-        {'symbol': '036830.KS', 'name': '셀트리온제약', 'sector': '바이오'},
-        {'symbol': '068760.KS', 'name': '셀트리온제약', 'sector': '바이오'},
-        {'symbol': '122900.KS', 'name': '아이마켓코리아', 'sector': '플랫폼'},
-        {'symbol': '278280.KS', 'name': '천보', 'sector': '2차전지'},
-    ]
-}
+# FinanceDataReader 임포트
+try:
+    import FinanceDataReader as fdr
+    FDR_AVAILABLE = True
+    print("✅ FinanceDataReader loaded successfully")
+except ImportError:
+    print("⚠️  FinanceDataReader not available, using fallback list")
+    FDR_AVAILABLE = False
+
+
+class StockDataReader:
+    """FinanceDataReader 기반 종목 데이터 리더"""
+    
+    def __init__(self):
+        self.fdr_available = FDR_AVAILABLE
+        self.sector_mapping = self._load_sector_mapping()
+    
+    def _load_sector_mapping(self) -> Dict:
+        """섹터 매핑 로드 (캐시 또는 기본값)"""
+        # 기본 섹터 매핑 (주요 종목)
+        return {
+            '005930': '반도체', '000660': '반도체', '035420': '플랫폼',
+            '005380': '자동차', '051910': '화학', '035720': '플랫폼',
+            '006400': '배터리', '068270': '바이오', '005490': '철강',
+            '028260': '무역', '012450': '방산', '055550': '금융',
+            '105560': '금융', '138040': '금융', '032830': '보험',
+            '015760': '전력', '003670': '배터리', '009150': '전자부품',
+            '018260': 'IT서비스', '033780': '담/유통', '011200': '해운',
+            '086790': '금융', '010130': '비철금속', '009540': '조선',
+            '017670': '통신', '030200': '통신', '096770': '에너지',
+            '034730': '지주사', '000270': '자동차', '066570': '전자',
+            '051900': '생활용품', '003550': '지주사', '004020': '철강',
+            '000810': '보험', '024110': '금융', '032640': '통신',
+            '010950': '정유', '011070': '전자부품', '042660': '조선',
+            '247540': '2차전지', '086520': '2차전지', '196170': '바이오',
+            '352820': '엔터', '259960': '게임', '207940': '바이오',
+            '028300': '바이오', '145020': '바이오', '214150': '화장품',
+            '095660': '게임', '041140': '게임', '263750': '게임',
+            '293490': '게임', '357780': '반도체', '222800': '반도체',
+            '240810': '반도체', '036830': '바이오', '068760': '바이오',
+            '122900': '플랫폼', '278280': '2차전지',
+        }
+    
+    def get_kospi_stocks(self, limit: int = 100) -> List[Dict]:
+        """KOSPI 종목 동적 조회"""
+        if not self.fdr_available:
+            return self._get_fallback_kospi(limit)
+        
+        try:
+            print("📊 Fetching KOSPI stock list from FinanceDataReader...")
+            kospi = fdr.StockListing('KOSPI')
+            
+            stocks = []
+            for _, row in kospi.head(limit).iterrows():
+                code = str(row.get('Code', '')).zfill(6)
+                name = row.get('Name', '')
+                if code and name:
+                    stocks.append({
+                        'symbol': f"{code}.KS",
+                        'name': name,
+                        'market': 'KOSPI',
+                        'sector': self.sector_mapping.get(code, '기타')
+                    })
+            
+            print(f"   ✅ Loaded {len(stocks)} KOSPI stocks")
+            return stocks
+            
+        except Exception as e:
+            print(f"   ❌ Error fetching KOSPI: {e}")
+            return self._get_fallback_kospi(limit)
+    
+    def get_kosdaq_stocks(self, limit: int = 100) -> List[Dict]:
+        """KOSDAQ 종목 동적 조회"""
+        if not self.fdr_available:
+            return self._get_fallback_kosdaq(limit)
+        
+        try:
+            print("📊 Fetching KOSDAQ stock list from FinanceDataReader...")
+            kosdaq = fdr.StockListing('KOSDAQ')
+            
+            stocks = []
+            for _, row in kosdaq.head(limit).iterrows():
+                code = str(row.get('Code', '')).zfill(6)
+                name = row.get('Name', '')
+                if code and name:
+                    stocks.append({
+                        'symbol': f"{code}.KS",
+                        'name': name,
+                        'market': 'KOSDAQ',
+                        'sector': self.sector_mapping.get(code, '기타')
+                    })
+            
+            print(f"   ✅ Loaded {len(stocks)} KOSDAQ stocks")
+            return stocks
+            
+        except Exception as e:
+            print(f"   ❌ Error fetching KOSDAQ: {e}")
+            return self._get_fallback_kosdaq(limit)
+    
+    def get_all_stocks(self, kospi_limit: int = 100, kosdaq_limit: int = 50) -> List[Dict]:
+        """전체 종목 조회"""
+        kospi = self.get_kospi_stocks(kospi_limit)
+        kosdaq = self.get_kosdaq_stocks(kosdaq_limit)
+        return kospi + kosdaq
+    
+    def _get_fallback_kospi(self, limit: int) -> List[Dict]:
+        """KOSPI 폴리백 리스트"""
+        fallback = [
+            {'symbol': '005930.KS', 'name': '삼성전자', 'market': 'KOSPI', 'sector': '반도체'},
+            {'symbol': '000660.KS', 'name': 'SK하이닉스', 'market': 'KOSPI', 'sector': '반도체'},
+            {'symbol': '035420.KS', 'name': 'NAVER', 'market': 'KOSPI', 'sector': '플랫폼'},
+            {'symbol': '005380.KS', 'name': '현대차', 'market': 'KOSPI', 'sector': '자동차'},
+            {'symbol': '051910.KS', 'name': 'LG화학', 'market': 'KOSPI', 'sector': '화학'},
+        ]
+        return fallback[:limit]
+    
+    def _get_fallback_kosdaq(self, limit: int) -> List[Dict]:
+        """KOSDAQ 폴리백 리스트"""
+        fallback = [
+            {'symbol': '247540.KS', 'name': '에코프로비엠', 'market': 'KOSDAQ', 'sector': '2차전지'},
+            {'symbol': '086520.KS', 'name': '에코프로', 'market': 'KOSDAQ', 'sector': '2차전지'},
+            {'symbol': '196170.KS', 'name': '알테오젠', 'market': 'KOSDAQ', 'sector': '바이오'},
+        ]
+        return fallback[:limit]
 
 
 def analyze_stock(stock: Dict) -> Dict:
@@ -159,23 +214,25 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
     """전체 분석 실행"""
     os.makedirs(OUTPUT_PATH, exist_ok=True)
     
-    # 종목 선택
-    kospi_stocks = EXTENDED_STOCK_LIST['kospi'][:kospi_count] if kospi_count else EXTENDED_STOCK_LIST['kospi']
-    kosdaq_stocks = EXTENDED_STOCK_LIST['kosdaq'][:kosdaq_count] if kosdaq_count else EXTENDED_STOCK_LIST['kosdaq']
-    
-    # market 태그 추가
-    for s in kospi_stocks:
-        s['market'] = 'KOSPI'
-    for s in kosdaq_stocks:
-        s['market'] = 'KOSDAQ'
-    
-    stocks = kospi_stocks + kosdaq_stocks
+    # FinanceDataReader로 종목 조회
+    reader = StockDataReader()
     
     print("=" * 70)
     print("🚀 KStock Full Market Level 1 Analysis")
+    print(f"   Data Source: {'FinanceDataReader' if FDR_AVAILABLE else 'Fallback List'}")
     print(f"   Time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"   KOSPI: {len(kospi_stocks)} | KOSDAQ: {len(kosdaq_stocks)} | Total: {len(stocks)}")
     print("=" * 70)
+    
+    # 종목 선택
+    kospi_stocks = reader.get_kospi_stocks(kospi_count or 100)
+    kosdaq_stocks = reader.get_kosdaq_stocks(kosdaq_count or 50)
+    
+    stocks = kospi_stocks + kosdaq_stocks
+    
+    print(f"\n📋 Total stocks to analyze: {len(stocks)}")
+    print(f"   - KOSPI: {len(kospi_stocks)}")
+    print(f"   - KOSDAQ: {len(kosdaq_stocks)}")
+    print("-" * 70)
     
     # 분석 실행
     results = []
@@ -189,14 +246,11 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
     date_str = datetime.now().strftime('%Y%m%d_%H%M')
     output_file = f"{OUTPUT_PATH}/level1_fullmarket_{date_str}.json"
     
-    # 성공/실패 통계
-    success_results = [r for r in results if r.get('status') == 'success']
-    
     final = {
         'date': datetime.now().isoformat(),
+        'data_source': 'FinanceDataReader' if FDR_AVAILABLE else 'Fallback',
         'total': len(stocks),
-        'success': len(success_results),
-        'failed': len(stocks) - len(success_results),
+        'success': len([r for r in results if r.get('status') == 'success']),
         'kospi_count': len(kospi_stocks),
         'kosdaq_count': len(kosdaq_stocks),
         'results': results
@@ -209,12 +263,13 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
     print("\n" + "=" * 70)
     print("📊 ANALYSIS COMPLETE")
     print("=" * 70)
-    print(f"   Total: {len(stocks)} | Success: {len(success_results)} | Failed: {final['failed']}")
+    print(f"   Total: {len(stocks)} | Success: {final['success']}")
+    print(f"   KOSPI: {final['kospi_count']} | KOSDAQ: {final['kosdaq_count']}")
     print(f"   Output: {output_file}")
     
     # TOP 15
     sorted_results = sorted(
-        success_results,
+        [r for r in results if r.get('status') == 'success'],
         key=lambda x: x.get('avg_score', 0),
         reverse=True
     )[:15]
@@ -225,14 +280,14 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
     
     # 섹터별 평균
     sector_scores = {}
-    for r in success_results:
+    for r in [r for r in results if r.get('status') == 'success']:
         sector = r.get('sector', 'Unknown')
         if sector not in sector_scores:
             sector_scores[sector] = []
         sector_scores[sector].append(r['avg_score'])
     
     print("\n   📊 Sector Average:")
-    for sector, scores in sorted(sector_scores.items(), key=lambda x: sum(x[1])/len(x[1]), reverse=True):
+    for sector, scores in sorted(sector_scores.items(), key=lambda x: sum(x[1])/len(x[1]), reverse=True)[:10]:
         avg = sum(scores) / len(scores)
         print(f"      {sector:<12}: {avg:.1f} pts ({len(scores)} stocks)")
     
@@ -243,9 +298,9 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
 def main():
     import argparse
     
-    parser = argparse.ArgumentParser(description='Full Market Level 1 Analysis')
-    parser.add_argument('--kospi', type=int, help='Number of KOSPI stocks (default: all)')
-    parser.add_argument('--kosdaq', type=int, help='Number of KOSDAQ stocks (default: all)')
+    parser = argparse.ArgumentParser(description='Full Market Level 1 Analysis with FinanceDataReader')
+    parser.add_argument('--kospi', type=int, default=100, help='Number of KOSPI stocks (default: 100)')
+    parser.add_argument('--kosdaq', type=int, default=50, help='Number of KOSDAQ stocks (default: 50)')
     
     args = parser.parse_args()
     
