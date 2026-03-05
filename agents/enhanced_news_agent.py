@@ -36,7 +36,8 @@ class EnhancedNewsAgent:
             'yfinance': [],
             'naver': [],
             'google': [],
-            'trends24': []
+            'trends24': [],
+            'naver_stock': []
         }
         self.price_data = None
 
@@ -190,6 +191,41 @@ class EnhancedNewsAgent:
             print(f"   ⚠️  trends24.in error: {e}")
             return []
 
+    def fetch_naver_stock_news(self) -> List[Dict]:
+        """
+        네이버 주식 메인 뉴스 수집
+        https://m.stock.naver.com/investment/news/mainnews
+        """
+        try:
+            import subprocess
+            import sys
+            
+            # 별도의 Python 스크립트 실행
+            script_path = '/home/programs/kstock_analyzer/naver_news_scraper.py'
+            result = subprocess.run(
+                [sys.executable, script_path],
+                capture_output=True, text=True, timeout=60
+            )
+            
+            # 결과 파일 읽기
+            import glob
+            import os
+            
+            news_files = glob.glob('/home/programs/kstock_analyzer/data/naver_news_*.json')
+            if news_files:
+                latest_file = max(news_files, key=os.path.getctime)
+                with open(latest_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    main_news = data.get('main_news', {})
+                    if main_news.get('status') == 'success':
+                        return main_news.get('news', [])
+            
+            return []
+            
+        except Exception as e:
+            print(f"   ⚠️  Naver stock news error: {e}")
+            return []
+
     def analyze_sentiment(self, text: str) -> Tuple[float, str]:
         """
         텍스트 감성 분석
@@ -224,7 +260,8 @@ class EnhancedNewsAgent:
         all_news = (
             self.news_data['yfinance'] +
             self.news_data['naver'] +
-            self.news_data['google']
+            self.news_data['google'] +
+            self.news_data['naver_stock']
         )
 
         if not all_news:
@@ -349,7 +386,8 @@ class EnhancedNewsAgent:
             self.news_data['yfinance'] +
             self.news_data['naver'] +
             self.news_data['google'] +
-            self.news_data['trends24']
+            self.news_data['trends24'] +
+            self.news_data['naver_stock']
         )
 
         event_keywords = {
@@ -513,12 +551,18 @@ class EnhancedNewsAgent:
         self.news_data['trends24'] = self.fetch_trends24_news()
         print(f"      ✓ {len(self.news_data['trends24'])} articles")
 
+        # 4. 네이버 주식 뉴스
+        print(f"\n   📡 Fetching Naver Stock news...")
+        self.news_data['naver_stock'] = self.fetch_naver_stock_news()
+        print(f"      ✓ {len(self.news_data['naver_stock'])} articles")
+
         # 총 뉴스 수
         total_news = sum(len(v) for v in self.news_data.values())
         print(f"\n   📊 Total news collected: {total_news}")
         print(f"      - yfinance: {len(self.news_data['yfinance'])}")
         print(f"      - Google News: {len(self.news_data['google'])}")
         print(f"      - trends24.in: {len(self.news_data['trends24'])}")
+        print(f"      - Naver Stock: {len(self.news_data['naver_stock'])}")
 
         # 각 영역 분석
         print(f"\n   Analyzing...")
@@ -571,6 +615,7 @@ class EnhancedNewsAgent:
                 'yfinance': len(self.news_data['yfinance']),
                 'google_news': len(self.news_data['google']),
                 'trends24': len(self.news_data['trends24']),
+                'naver_stock': len(self.news_data['naver_stock']),
                 'total': total_news
             },
             'sentiment_trend': sentiment_trend,
