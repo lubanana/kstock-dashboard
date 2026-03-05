@@ -1,0 +1,86 @@
+[
+  {
+    "ticker": "005930.KS",
+    "timestamp": "2026-03-04T12:54:47.208682",
+    "fundamental": {
+      "error": "\"None of [Index(['BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'], dtype='object')] are in the [columns]\"",
+      "ticker": "005930.KS"
+    },
+    "technical": {
+      "rsi": 58.99705014749262,
+      "rsi_signal": "중립",
+      "bb_upper": 219591.91452346582,
+      "bb_lower": 141238.08547653418,
+      "bb_width": 43.429775266431086,
+      "bb_position": 0.45513939723488667,
+      "bb_signal": "밴드내",
+      "macd": 13304.305183138233,
+      "macd_signal": 13737.031019774677,
+      "macd_hist": -432.725836636444,
+      "macd_trend": "데드크로스",
+      "ma5": 202000.0,
+      "ma20": 180415.0,
+      "ma60": 145126.66666666666,
+      "ma_trend": "정배열",
+      "volume_ratio": 2.0598203368127788,
+      "current_price": 176900.0
+    },
+    "status": "success"
+  },
+  {
+    "ticker": "000660.KS",
+    "timestamp": "2026-03-04T12:54:47.901507",
+    "fundamental": {
+      "error": "\"None of [Index(['BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'], dtype='object')] are in the [columns]\"",
+      "ticker": "000660.KS"
+    },
+    "technical": {
+      "rsi": 53.153153153153156,
+      "rsi_signal": "중립",
+      "bb_upper": 1068643.6117377519,
+      "bb_lower": 772156.388262248,
+      "bb_width": 32.21286652276226,
+      "bb_position": 0.343500844805093,
+      "bb_signal": "밴드내",
+      "macd": 53334.5946072418,
+      "macd_signal": 58652.895660109214,
+      "macd_hist": -5318.301052867413,
+      "macd_trend": "데드크로스",
+      "ma5": 998200.0,
+      "ma20": 920400.0,
+      "ma60": 748800.0,
+      "ma_trend": "정배열",
+      "volume_ratio": 1.4573385965966585,
+      "current_price": 874000.0
+    },
+    "status": "success"
+  },
+  {
+    "ticker": "035720.KS",
+    "timestamp": "2026-03-04T12:54:48.468315",
+    "fundamental": {
+      "error": "\"None of [Index(['BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'], dtype='object')] are in the [columns]\"",
+      "ticker": "035720.KS"
+    },
+    "technical": {
+      "rsi": 34.76439790575917,
+      "rsi_signal": "중립",
+      "bb_upper": 63357.82118641303,
+      "bb_lower": 52694.67881358697,
+      "bb_width": 18.376411318715334,
+      "bb_position": -0.35352419406812186,
+      "bb_signal": "하단이탈",
+      "macd": -883.3067371967845,
+      "macd_signal": -352.35900728870763,
+      "macd_hist": -530.9477299080769,
+      "macd_trend": "데드크로스",
+      "ma5": 57245.0,
+      "ma20": 58026.25,
+      "ma60": 59100.416666666664,
+      "ma_trend": "역배열",
+      "volume_ratio": 1.3726741071676027,
+      "current_price": 48925.0
+    },
+    "status": "success"
+  }
+]

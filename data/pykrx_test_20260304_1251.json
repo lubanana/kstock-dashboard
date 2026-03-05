@@ -1,0 +1,26 @@
+[
+  {
+    "ticker": "005930.KS",
+    "timestamp": "2026-03-04T12:51:39.656020",
+    "fundamental": {
+      "error": "\"None of [Index(['BPS', 'PER', 'PBR', 'EPS', 'DIV', 'DPS'], dtype='object')] are in the [columns]\"",
+      "ticker": "005930.KS"
+    },
+    "technical": {
+      "rsi": 59.32,
+      "rsi_signal": "중립",
+      "bb_upper": 219609.8,
+      "bb_lower": 141275.2,
+      "bb_width": 43.41,
+      "bb_position": 0.46,
+      "bb_signal": "밴드내",
+      "macd": 13347.9261,
+      "macd_signal": 13745.7552,
+      "macd_hist": -397.8291,
+      "macd_trend": "데드크로스",
+      "ma5": 202110.0,
+      "ma20": 180442.5,
+      "ma60": 145135.83,
+      "ma_trend": "정배열",
+      "volume_ratio": 2.05,
+      "current_price": 

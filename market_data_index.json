@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26T21:46:06+08:00",
+  "last_updated": "2026-03-03T06:00:07+08:00",
   "data_version": "1.0",
   "sources": [
     "yfinance"
@@ -9,13 +9,13 @@
       "symbol": "^KS11",
       "name": "KOSPI",
       "currency": "KRW",
-      "last_price": 6307.27,
-      "change_percent": 3.67,
+      "last_price": 6244.13,
+      "change_percent": -1.0,
       "trend": "BULLISH",
-      "rsi": 81.58,
-      "ma20": 5461.95,
-      "ma60": 4720.92,
-      "alert": "RSI \uacfc\ub9e4\uc218 (80+)"
+      "rsi": 77.39,
+      "ma20": 5519.91,
+      "ma60": 4758.54,
+      "alert": "RSI \uacfc\ub9e4\uc218 (70+)"
     },
     "kosdaq": {
       "symbol": "^KQ11",

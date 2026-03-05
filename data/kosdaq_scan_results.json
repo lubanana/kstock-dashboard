@@ -1,34 +1,21 @@
 {
-  "scan_date": "2026-02-26 22:00:41",
+  "scan_date": "2026-03-03 06:01:41",
   "market": "KOSDAQ",
   "total_scanned": 20,
   "results": {
     "livermore": [],
     "oneil": [
       {
-        "symbol": "161890.KS",
-        "name": "한국콜마",
+        "symbol": "122870.KS",
+        "name": "와이지엔터",
         "strategy": "O'Neil",
-        "price": 75000.0,
-        "price_change": 4.75,
-        "volume_ratio": 3.63,
+        "price": 74000.0,
+        "price_change": 3.79,
+        "volume_ratio": 3.11,
         "score": 55,
         "signals": [
           "VOLUME_SPIKE_3X",
           "PRICE_GAIN_3PCT"
-        ]
-      },
-      {
-        "symbol": "225190.KS",
-        "name": "삼양옵틱스",
-        "strategy": "O'Neil",
-        "price": 2475.0,
-        "price_change": 7.84,
-        "volume_ratio": 1.71,
-        "score": 50,
-        "signals": [
-          "VOLUME_SPIKE_1.5X",
-          "PRICE_SURGE_5PCT"
         ]
       }
     ],
