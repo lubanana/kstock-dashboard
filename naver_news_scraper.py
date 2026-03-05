@@ -48,6 +48,100 @@ class NaverNewsScraper:
                 await browser.close()
                 raise e
     
+    async def get_flash_news(self) -> Dict:
+        """
+        네이버 주식 속보 수집
+        https://m.stock.naver.com/investment/news/flashnews
+        """
+        url = f"{self.BASE_URL}/investment/news/flashnews"
+        
+        try:
+            html = await self.fetch_page(url, wait_selector='[class*="news"], [class*="list"]')
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            news_list = []
+            
+            # 속보 아이템 선택자들
+            news_selectors = [
+                'a[href*="/news/article/"]',
+                '[class*="news_item"]',
+                '[class*="NewsItem"]',
+                'li a[href*="news"]',
+                '.list_item',
+                '[class*="flash"]'
+            ]
+            
+            for selector in news_selectors:
+                items = soup.select(selector)
+                if items:
+                    for item in items[:20]:  # 최근 20개
+                        try:
+                            # 제목
+                            title = None
+                            title_selectors = ['.title', '[class*="title"]', 'strong', 'h3', 'span', '.text']
+                            for ts in title_selectors:
+                                title_elem = item.select_one(ts)
+                                if title_elem and title_elem.text.strip():
+                                    title = title_elem.text.strip()
+                                    break
+                            
+                            if not title:
+                                title = item.get_text(strip=True)[:100]
+                            
+                            # 언론사
+                            source = None
+                            source_selectors = ['.source', '[class*="source"]', '[class*="press"]', '.info', '.provider']
+                            for ss in source_selectors:
+                                source_elem = item.select_one(ss)
+                                if source_elem:
+                                    source = source_elem.text.strip()
+                                    break
+                            
+                            # 시간 (속보는 시간 정보가 중요)
+                            time_str = None
+                            time_selectors = ['.time', '[class*="time"]', '[class*="date"]', '.info', '.timestamp']
+                            for tms in time_selectors:
+                                time_elem = item.select_one(tms)
+                                if time_elem:
+                                    time_str = time_elem.text.strip()
+                                    break
+                            
+                            # URL
+                            news_url = item.get('href')
+                            if news_url and not news_url.startswith('http'):
+                                news_url = self.BASE_URL + news_url
+                            
+                            if title and title not in [n['title'] for n in news_list]:
+                                news_list.append({
+                                    'title': title,
+                                    'source': source or '네이버증권',
+                                    'time': time_str,
+                                    'url': news_url or url,
+                                    'type': 'flash',  # 속보 표시
+                                    'scraped_at': datetime.now().isoformat()
+                                })
+                        except:
+                            continue
+                    break  # 선택자가 작동하면 중단
+            
+            return {
+                'source': 'naver_stock_flash_news',
+                'url': url,
+                'scraped_at': datetime.now().isoformat(),
+                'status': 'success',
+                'count': len(news_list),
+                'news': news_list
+            }
+            
+        except Exception as e:
+            return {
+                'source': 'naver_stock_flash_news',
+                'url': url,
+                'status': 'error',
+                'error': str(e),
+                'scraped_at': datetime.now().isoformat()
+            }
+
     async def get_main_news(self) -> Dict:
         """
         네이버 주식 메인 뉴스 수집
@@ -262,11 +356,11 @@ async def main():
         
         # 감성 분석
         sentiment = scraper.analyze_sentiment(main_news.get('news', []))
-        print(f"\n   📊 Sentiment Analysis:")
+        print(f"\n   📊 Main News Sentiment:")
         print(f"      Score: {sentiment['sentiment_score']:.1f}/100 ({sentiment['sentiment_label']})")
         print(f"      Positive: {sentiment['positive']}, Negative: {sentiment['negative']}, Neutral: {sentiment['neutral']}")
         
-        print(f"\n   📰 Top 5 News:")
+        print(f"\n   📰 Top 5 Main News:")
         for i, news in enumerate(main_news.get('news', [])[:5], 1):
             emoji = "🟢" if news.get('sentiment') == 'positive' else "🔴" if news.get('sentiment') == 'negative' else "⚪"
             print(f"      {emoji} {i}. {news['title'][:50]}...")
@@ -274,7 +368,29 @@ async def main():
     else:
         print(f"   Error: {main_news.get('error')}")
     
-    # 2. 삼성전자 뉴스
+    # 2. 속보 (Flash News)
+    print("\n⚡ Fetching flash news...")
+    flash_news = await scraper.get_flash_news()
+    print(f"   Status: {flash_news.get('status')}")
+    
+    if flash_news.get('status') == 'success':
+        print(f"   Count: {flash_news.get('count')} articles")
+        
+        # 감성 분석
+        flash_sentiment = scraper.analyze_sentiment(flash_news.get('news', []))
+        print(f"\n   📊 Flash News Sentiment:")
+        print(f"      Score: {flash_sentiment['sentiment_score']:.1f}/100 ({flash_sentiment['sentiment_label']})")
+        print(f"      Positive: {flash_sentiment['positive']}, Negative: {flash_sentiment['negative']}, Neutral: {flash_sentiment['neutral']}")
+        
+        print(f"\n   ⚡ Top 5 Flash News:")
+        for i, news in enumerate(flash_news.get('news', [])[:5], 1):
+            emoji = "🟢" if news.get('sentiment') == 'positive' else "🔴" if news.get('sentiment') == 'negative' else "⚪"
+            print(f"      {emoji} {i}. {news['title'][:50]}...")
+            print(f"         [{news.get('source', 'N/A')}] {news.get('time', '')}")
+    else:
+        print(f"   Error: {flash_news.get('error')}")
+    
+    # 3. 삼성전자 뉴스
     print("\n📰 Fetching Samsung Electronics news...")
     stock_news = await scraper.get_stock_news('005930')
     if stock_news.get('status') == 'success':
@@ -288,6 +404,7 @@ async def main():
     output = {
         'scraped_at': datetime.now().isoformat(),
         'main_news': main_news,
+        'flash_news': flash_news,
         'stock_news': stock_news
     }
     
