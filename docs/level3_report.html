@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KStock Enhanced Analysis Report - 2026-03-04</title>
+    <title>KStock Enhanced Analysis Report - 2026-03-05</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <style>
@@ -96,7 +96,7 @@
         <div class="header">
             <h1>🎯 KStock Enhanced Analysis</h1>
             <div class="subtitle">Level 1-2-3 통합 분석 리포트</div>
-            <div class="date">2026-03-04 13:25</div>
+            <div class="date">2026-03-05 11:59</div>
         </div>
         
         <!-- 신호등 시스템 -->
@@ -108,8 +108,8 @@
             </div>
             <div class="traffic-light">
                 <div class="label">시장 환경</div>
-                <div class="light red"></div>
-                <div class="status">악화</div>
+                <div class="light yellow"></div>
+                <div class="status">중립</div>
             </div>
             <div class="traffic-light">
                 <div class="label">섹터 동력</div>
@@ -138,7 +138,7 @@
             <div class="risk-dashboard">
                 <div class="risk-card" onclick="showRiskDetail('v_kospi')">
                     <div class="icon">📊</div>
-                    <div class="value">56.49%</div>
+                    <div class="value">63.2%</div>
                     <div class="label">V-KOSPI (변동성)</div>
                     <div class="signal danger">HIGH</div>
                 </div>
@@ -200,7 +200,7 @@
                     <tr onclick="showSectorDetail('반도체')">
                         <td>1</td>
                         <td><strong>반도체</strong></td>
-                        <td><span class="score high">66.2</span></td>
+                        <td><span class="score high">67.6</span></td>
                         <td>16.7%</td>
                         <td>STRONG</td>
                         <td>+15%</td>
@@ -209,25 +209,25 @@
                     <tr onclick="showSectorDetail('화학')">
                         <td>2</td>
                         <td><strong>화학</strong></td>
-                        <td><span class="score medium">54.2</span></td>
-                        <td>16.7%</td>
-                        <td>MODERATE</td>
-                        <td>+5%</td>
-                        <td>Neutral</td>
-                    </tr>
-                    <tr onclick="showSectorDetail('자동차')">
-                        <td>3</td>
-                        <td><strong>자동차</strong></td>
-                        <td><span class="score medium">51.2</span></td>
+                        <td><span class="score medium">50.2</span></td>
                         <td>16.7%</td>
                         <td>MODERATE</td>
                         <td>+5%</td>
                         <td>Neutral</td>
                     </tr>
                     <tr onclick="showSectorDetail('플랫폼')">
-                        <td>4</td>
+                        <td>3</td>
                         <td><strong>플랫폼</strong></td>
-                        <td><span class="score medium">48.8</span></td>
+                        <td><span class="score medium">49.5</span></td>
+                        <td>16.7%</td>
+                        <td>WEAK</td>
+                        <td>-10%</td>
+                        <td>Underweight</td>
+                    </tr>
+                    <tr onclick="showSectorDetail('자동차')">
+                        <td>4</td>
+                        <td><strong>자동차</strong></td>
+                        <td><span class="score medium">49.5</span></td>
                         <td>16.7%</td>
                         <td>WEAK</td>
                         <td>-10%</td>
@@ -236,7 +236,7 @@
                     <tr onclick="showSectorDetail('2차전지')">
                         <td>5</td>
                         <td><strong>2차전지</strong></td>
-                        <td><span class="score low">27.3</span></td>
+                        <td><span class="score low">26.8</span></td>
                         <td>16.7%</td>
                         <td>WEAK</td>
                         <td>-10%</td>
@@ -245,7 +245,7 @@
                     <tr onclick="showSectorDetail('바이오')">
                         <td>6</td>
                         <td><strong>바이오</strong></td>
-                        <td><span class="score low">25.0</span></td>
+                        <td><span class="score low">26.8</span></td>
                         <td>16.7%</td>
                         <td>WEAK</td>
                         <td>-10%</td>
@@ -263,32 +263,33 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <h4>📈 Long Positions (0)</h4>
-                    <div class="position-item">
-                        <span class="name">현재 Long 포지션 없음</span>
+                    <h4>📈 Long Positions (1)</h4>
+                    <div class="position-item" onclick="showStockDetail('005930.KS')">
+                        <span class="name">삼성전자</span>
+                        <span class="score high">70.9</span>
                     </div>
                 </div>
                 <div class="portfolio-card">
-                    <h4>📉 Short Positions (5)</h4>
-                    <div class="position-item" onclick="showStockDetail('196170.KS')">
-                        <span class="name">알테오젠</span>
-                        <span class="score low">22.9</span>
-                    </div>
+                    <h4>📉 Short Positions (6)</h4>
                     <div class="position-item" onclick="showStockDetail('247540.KS')">
                         <span class="name">에코프로비엠</span>
-                        <span class="score low">24.5</span>
+                        <span class="score low">25.1</span>
                     </div>
                     <div class="position-item" onclick="showStockDetail('086520.KS')">
                         <span class="name">에코프로</span>
-                        <span class="score low">25.4</span>
+                        <span class="score low">25.1</span>
+                    </div>
+                    <div class="position-item" onclick="showStockDetail('196170.KS')">
+                        <span class="name">알테오젠</span>
+                        <span class="score low">25.1</span>
                     </div>
                     <div class="position-item" onclick="showStockDetail('035420.KS')">
                         <span class="name">NAVER</span>
-                        <span class="score low">45.4</span>
+                        <span class="score low">47.0</span>
                     </div>
                     <div class="position-item" onclick="showStockDetail('005380.KS')">
                         <span class="name">현대차</span>
-                        <span class="score low">49.9</span>
+                        <span class="score low">47.0</span>
                     </div>
                 </div>
                 <div class="portfolio-card">
@@ -332,72 +333,72 @@
                         <td>1</td>
                         <td><strong>삼성전자</strong><br><small>005930.KS</small></td>
                         <td>KOSPI</td>
-                        <td>68.2</td>
+                        <td>69.2</td>
                         <td>+0.0</td>
-                        <td><span class="score medium">68.5</span></td>
+                        <td><span class="score high">70.9</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('000660.KS')">
                         <td>2</td>
                         <td><strong>SK하이닉스</strong><br><small>000660.KS</small></td>
                         <td>KOSPI</td>
-                        <td>64.2</td>
+                        <td>66.0</td>
                         <td>+0.0</td>
-                        <td><span class="score medium">64.5</span></td>
+                        <td><span class="score medium">67.6</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('051910.KS')">
                         <td>3</td>
                         <td><strong>LG화학</strong><br><small>051910.KS</small></td>
                         <td>KOSPI</td>
-                        <td>54.2</td>
-                        <td>+0.0</td>
-                        <td><span class="score medium">52.8</span></td>
-                        <td>HOLD</td>
-                    </tr>
-                    <tr onclick="showStockDetail('005380.KS')">
-                        <td>4</td>
-                        <td><strong>현대차</strong><br><small>005380.KS</small></td>
-                        <td>KOSPI</td>
-                        <td>51.2</td>
+                        <td>50.2</td>
                         <td>+0.0</td>
                         <td><span class="score low">49.9</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('035420.KS')">
-                        <td>5</td>
+                        <td>4</td>
                         <td><strong>NAVER</strong><br><small>035420.KS</small></td>
                         <td>KOSPI</td>
-                        <td>48.8</td>
+                        <td>49.5</td>
                         <td>+0.0</td>
-                        <td><span class="score low">45.4</span></td>
+                        <td><span class="score low">47.0</span></td>
                         <td>HOLD</td>
                     </tr>
-                    <tr onclick="showStockDetail('086520.KS')">
-                        <td>6</td>
-                        <td><strong>에코프로</strong><br><small>086520.KS</small></td>
-                        <td>KOSDAQ</td>
-                        <td>27.8</td>
+                    <tr onclick="showStockDetail('005380.KS')">
+                        <td>5</td>
+                        <td><strong>현대차</strong><br><small>005380.KS</small></td>
+                        <td>KOSPI</td>
+                        <td>49.5</td>
                         <td>+0.0</td>
-                        <td><span class="score low">25.4</span></td>
+                        <td><span class="score low">47.0</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('247540.KS')">
-                        <td>7</td>
+                        <td>6</td>
                         <td><strong>에코프로비엠</strong><br><small>247540.KS</small></td>
                         <td>KOSDAQ</td>
                         <td>26.8</td>
                         <td>+0.0</td>
-                        <td><span class="score low">24.5</span></td>
+                        <td><span class="score low">25.1</span></td>
+                        <td>HOLD</td>
+                    </tr>
+                    <tr onclick="showStockDetail('086520.KS')">
+                        <td>7</td>
+                        <td><strong>에코프로</strong><br><small>086520.KS</small></td>
+                        <td>KOSDAQ</td>
+                        <td>26.8</td>
+                        <td>+0.0</td>
+                        <td><span class="score low">25.1</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('196170.KS')">
                         <td>8</td>
                         <td><strong>알테오젠</strong><br><small>196170.KS</small></td>
                         <td>KOSDAQ</td>
-                        <td>25.0</td>
+                        <td>26.8</td>
                         <td>+0.0</td>
-                        <td><span class="score low">22.9</span></td>
+                        <td><span class="score low">25.1</span></td>
                         <td>HOLD</td>
                     </tr>
                 </tbody>
@@ -413,32 +414,32 @@
             <div class="risk-dashboard">
                 <div class="risk-card">
                     <div class="icon">🇺🇸</div>
-                    <div class="value">4.06%</div>
+                    <div class="value">4.08%</div>
                     <div class="label">미국 10년물</div>
-                    <div class="change positive">+0.01</div>
+                    <div class="change positive">+0.02</div>
                 </div>
                 <div class="risk-card">
                     <div class="icon">💱</div>
-                    <div class="value">1481.61</div>
+                    <div class="value">1466.63</div>
                     <div class="label">원/달러</div>
-                    <div class="change negative">+2.02%</div>
+                    <div class="change negative">-1.11%</div>
                 </div>
                 <div class="risk-card">
                     <div class="icon">📊</div>
-                    <div class="value">23.57</div>
+                    <div class="value">21.15</div>
                     <div class="label">VIX</div>
                     <div class="signal danger">Elevated</div>
                 </div>
                 <div class="risk-card">
                     <div class="icon">🇰🇷</div>
-                    <div class="value">5,213</div>
+                    <div class="value">5,550</div>
                     <div class="label">KOSPI</div>
-                    <div class="signal danger">Downtrend</div>
+                    <div class="signal safe">Sideways</div>
                 </div>
             </div>
             <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
-                <h4>매크로 조정: -20%</h4>
-                <p>고환율 (원화 약세); KOSPI 하락추세; KOSPI 고변동성</p>
+                <h4>매크로 조정: -10%</h4>
+                <p>고환율 (원화 약세); KOSPI 고변동성</p>
                 <p>시장 상황: <strong>BEARISH</strong></p>
             </div>
         </div>
@@ -454,11 +455,11 @@
 
     <script>
         // 데이터
-        const sectorData = [{"name": "반도체", "score": 66.2, "weight": 16.7}, {"name": "화학", "score": 54.2, "weight": 16.7}, {"name": "자동차", "score": 51.2, "weight": 16.7}, {"name": "플랫폼", "score": 48.8, "weight": 16.7}, {"name": "2차전지", "score": 27.3, "weight": 16.7}, {"name": "바이오", "score": 25.0, "weight": 16.7}];
-        const stockData = [{"symbol": "005930.KS", "name": "삼성전자", "score": 68.5, "l1": 68.2, "market": "KOSPI"}, {"symbol": "000660.KS", "name": "SK하이닉스", "score": 64.5, "l1": 64.2, "market": "KOSPI"}, {"symbol": "051910.KS", "name": "LG화학", "score": 52.8, "l1": 54.2, "market": "KOSPI"}, {"symbol": "005380.KS", "name": "현대차", "score": 49.9, "l1": 51.2, "market": "KOSPI"}, {"symbol": "035420.KS", "name": "NAVER", "score": 45.4, "l1": 48.8, "market": "KOSPI"}, {"symbol": "086520.KS", "name": "에코프로", "score": 25.4, "l1": 27.8, "market": "KOSDAQ"}, {"symbol": "247540.KS", "name": "에코프로비엠", "score": 24.5, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "196170.KS", "name": "알테오젠", "score": 22.9, "l1": 25.0, "market": "KOSDAQ"}];
+        const sectorData = [{"name": "반도체", "score": 67.6, "weight": 16.7}, {"name": "화학", "score": 50.2, "weight": 16.7}, {"name": "플랫폼", "score": 49.5, "weight": 16.7}, {"name": "자동차", "score": 49.5, "weight": 16.7}, {"name": "2차전지", "score": 26.8, "weight": 16.7}, {"name": "바이오", "score": 26.8, "weight": 16.7}];
+        const stockData = [{"symbol": "005930.KS", "name": "삼성전자", "score": 70.9, "l1": 69.2, "market": "KOSPI"}, {"symbol": "000660.KS", "name": "SK하이닉스", "score": 67.6, "l1": 66.0, "market": "KOSPI"}, {"symbol": "051910.KS", "name": "LG화학", "score": 49.9, "l1": 50.2, "market": "KOSPI"}, {"symbol": "035420.KS", "name": "NAVER", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "005380.KS", "name": "현대차", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "247540.KS", "name": "에코프로비엠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "086520.KS", "name": "에코프로", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "196170.KS", "name": "알테오젠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}];
         const portfolioData = {
-            long: 0,
-            short: 5,
+            long: 1,
+            short: 6,
             cash: 100
         };
         
@@ -595,7 +596,7 @@
         }
         
         function showRiskDetail(type) {
-            const riskInfo = {"v_kospi": {"value": 56.49, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
+            const riskInfo = {"v_kospi": {"value": 63.2, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
             const info = riskInfo[type];
             if (info) {
                 let changeHtml = '';
