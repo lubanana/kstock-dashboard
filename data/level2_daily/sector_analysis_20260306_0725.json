@@ -1,0 +1,255 @@
+{
+  "agent_id": "SECTOR_001",
+  "agent_name": "Sector Analyst",
+  "analysis_date": "2026-03-06T07:25:00.458780",
+  "total_stocks_analyzed": 8,
+  "sector_count": 6,
+  "sectors": {
+    "반도체": {
+      "average_score": 68.1,
+      "stock_count": 2,
+      "strength": "STRONG",
+      "rotation_signal": "Overweight",
+      "relative_strength_pct": 46.4,
+      "top_performer": {
+        "symbol": "005930.KS",
+        "name": "삼성전자",
+        "score": 69.2,
+        "consensus": "BUY",
+        "market": "KOSPI"
+      },
+      "bottom_performer": {
+        "symbol": "000660.KS",
+        "name": "SK하이닉스",
+        "score": 67.0,
+        "consensus": "BUY",
+        "market": "KOSPI"
+      },
+      "all_stocks": [
+        {
+          "symbol": "005930.KS",
+          "name": "삼성전자",
+          "score": 69.2,
+          "consensus": "BUY",
+          "market": "KOSPI"
+        },
+        {
+          "symbol": "000660.KS",
+          "name": "SK하이닉스",
+          "score": 67.0,
+          "consensus": "BUY",
+          "market": "KOSPI"
+        }
+      ]
+    },
+    "플랫폼": {
+      "average_score": 50.2,
+      "stock_count": 1,
+      "strength": "MODERATE",
+      "rotation_signal": "Neutral",
+      "relative_strength_pct": 7.9,
+      "top_performer": {
+        "symbol": "035420.KS",
+        "name": "NAVER",
+        "score": 50.2,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "bottom_performer": {
+        "symbol": "035420.KS",
+        "name": "NAVER",
+        "score": 50.2,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "all_stocks": [
+        {
+          "symbol": "035420.KS",
+          "name": "NAVER",
+          "score": 50.2,
+          "consensus": "HOLD",
+          "market": "KOSPI"
+        }
+      ]
+    },
+    "자동차": {
+      "average_score": 50.2,
+      "stock_count": 1,
+      "strength": "MODERATE",
+      "rotation_signal": "Neutral",
+      "relative_strength_pct": 7.9,
+      "top_performer": {
+        "symbol": "005380.KS",
+        "name": "현대차",
+        "score": 50.2,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "bottom_performer": {
+        "symbol": "005380.KS",
+        "name": "현대차",
+        "score": 50.2,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "all_stocks": [
+        {
+          "symbol": "005380.KS",
+          "name": "현대차",
+          "score": 50.2,
+          "consensus": "HOLD",
+          "market": "KOSPI"
+        }
+      ]
+    },
+    "화학": {
+      "average_score": 54.0,
+      "stock_count": 1,
+      "strength": "MODERATE",
+      "rotation_signal": "Neutral",
+      "relative_strength_pct": 16.1,
+      "top_performer": {
+        "symbol": "051910.KS",
+        "name": "LG화학",
+        "score": 54.0,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "bottom_performer": {
+        "symbol": "051910.KS",
+        "name": "LG화학",
+        "score": 54.0,
+        "consensus": "HOLD",
+        "market": "KOSPI"
+      },
+      "all_stocks": [
+        {
+          "symbol": "051910.KS",
+          "name": "LG화학",
+          "score": 54.0,
+          "consensus": "HOLD",
+          "market": "KOSPI"
+        }
+      ]
+    },
+    "2차전지": {
+      "average_score": 27.2,
+      "stock_count": 2,
+      "strength": "WEAK",
+      "rotation_signal": "Underweight",
+      "relative_strength_pct": -41.5,
+      "top_performer": {
+        "symbol": "247540.KS",
+        "name": "에코프로비엠",
+        "score": 27.2,
+        "consensus": "HOLD",
+        "market": "KOSDAQ"
+      },
+      "bottom_performer": {
+        "symbol": "247540.KS",
+        "name": "에코프로비엠",
+        "score": 27.2,
+        "consensus": "HOLD",
+        "market": "KOSDAQ"
+      },
+      "all_stocks": [
+        {
+          "symbol": "247540.KS",
+          "name": "에코프로비엠",
+          "score": 27.2,
+          "consensus": "HOLD",
+          "market": "KOSDAQ"
+        },
+        {
+          "symbol": "086520.KS",
+          "name": "에코프로",
+          "score": 27.2,
+          "consensus": "HOLD",
+          "market": "KOSDAQ"
+        }
+      ]
+    },
+    "바이오": {
+      "average_score": 27.2,
+      "stock_count": 1,
+      "strength": "WEAK",
+      "rotation_signal": "Underweight",
+      "relative_strength_pct": -41.5,
+      "top_performer": {
+        "symbol": "196170.KS",
+        "name": "알테오젠",
+        "score": 27.2,
+        "consensus": "HOLD",
+        "market": "KOSDAQ"
+      },
+      "bottom_performer": {
+        "symbol": "196170.KS",
+        "name": "알테오젠",
+        "score": 27.2,
+        "consensus": "HOLD",
+        "market": "KOSDAQ"
+      },
+      "all_stocks": [
+        {
+          "symbol": "196170.KS",
+          "name": "알테오젠",
+          "score": 27.2,
+          "consensus": "HOLD",
+          "market": "KOSDAQ"
+        }
+      ]
+    }
+  },
+  "adjustments": {
+    "반도체": {
+      "adjustment_pct": 15,
+      "reason": "강세 섹터 + 상대강도 우수",
+      "original_avg": 68.1,
+      "adjusted_avg": 78.3
+    },
+    "플랫폼": {
+      "adjustment_pct": 5,
+      "reason": "중립-상 섹터",
+      "original_avg": 50.2,
+      "adjusted_avg": 52.7
+    },
+    "자동차": {
+      "adjustment_pct": 5,
+      "reason": "중립-상 섹터",
+      "original_avg": 50.2,
+      "adjusted_avg": 52.7
+    },
+    "화학": {
+      "adjustment_pct": 5,
+      "reason": "중립-상 섹터",
+      "original_avg": 54.0,
+      "adjusted_avg": 56.7
+    },
+    "2차전지": {
+      "adjustment_pct": -15,
+      "reason": "약세 섹터 + 상대약도",
+      "original_avg": 27.2,
+      "adjusted_avg": 23.1
+    },
+    "바이오": {
+      "adjustment_pct": -15,
+      "reason": "약세 섹터 + 상대약도",
+      "original_avg": 27.2,
+      "adjusted_avg": 23.1
+    }
+  },
+  "recommendations": {
+    "overweight": [
+      "반도체"
+    ],
+    "neutral": [
+      "플랫폼",
+      "자동차",
+      "화학"
+    ],
+    "underweight": [
+      "2차전지",
+      "바이오"
+    ]
+  }
+}
