@@ -96,7 +96,7 @@
         <div class="header">
             <h1>🎯 KStock Enhanced Analysis</h1>
             <div class="subtitle">Level 1-2-3 통합 분석 리포트</div>
-            <div class="date">2026-03-05 11:59</div>
+            <div class="date">2026-03-05 12:34</div>
         </div>
         
         <!-- 신호등 시스템 -->
@@ -138,7 +138,7 @@
             <div class="risk-dashboard">
                 <div class="risk-card" onclick="showRiskDetail('v_kospi')">
                     <div class="icon">📊</div>
-                    <div class="value">63.2%</div>
+                    <div class="value">62.98%</div>
                     <div class="label">V-KOSPI (변동성)</div>
                     <div class="signal danger">HIGH</div>
                 </div>
@@ -209,7 +209,7 @@
                     <tr onclick="showSectorDetail('화학')">
                         <td>2</td>
                         <td><strong>화학</strong></td>
-                        <td><span class="score medium">50.2</span></td>
+                        <td><span class="score medium">51.2</span></td>
                         <td>16.7%</td>
                         <td>MODERATE</td>
                         <td>+5%</td>
@@ -270,7 +270,7 @@
                     </div>
                 </div>
                 <div class="portfolio-card">
-                    <h4>📉 Short Positions (6)</h4>
+                    <h4>📉 Short Positions (5)</h4>
                     <div class="position-item" onclick="showStockDetail('247540.KS')">
                         <span class="name">에코프로비엠</span>
                         <span class="score low">25.1</span>
@@ -351,9 +351,9 @@
                         <td>3</td>
                         <td><strong>LG화학</strong><br><small>051910.KS</small></td>
                         <td>KOSPI</td>
-                        <td>50.2</td>
+                        <td>51.2</td>
                         <td>+0.0</td>
-                        <td><span class="score low">49.9</span></td>
+                        <td><span class="score medium">50.9</span></td>
                         <td>HOLD</td>
                     </tr>
                     <tr onclick="showStockDetail('035420.KS')">
@@ -420,9 +420,9 @@
                 </div>
                 <div class="risk-card">
                     <div class="icon">💱</div>
-                    <div class="value">1466.63</div>
+                    <div class="value">1468.68</div>
                     <div class="label">원/달러</div>
-                    <div class="change negative">-1.11%</div>
+                    <div class="change negative">-0.97%</div>
                 </div>
                 <div class="risk-card">
                     <div class="icon">📊</div>
@@ -432,7 +432,7 @@
                 </div>
                 <div class="risk-card">
                     <div class="icon">🇰🇷</div>
-                    <div class="value">5,550</div>
+                    <div class="value">5,538</div>
                     <div class="label">KOSPI</div>
                     <div class="signal safe">Sideways</div>
                 </div>
@@ -455,11 +455,11 @@
 
     <script>
         // 데이터
-        const sectorData = [{"name": "반도체", "score": 67.6, "weight": 16.7}, {"name": "화학", "score": 50.2, "weight": 16.7}, {"name": "플랫폼", "score": 49.5, "weight": 16.7}, {"name": "자동차", "score": 49.5, "weight": 16.7}, {"name": "2차전지", "score": 26.8, "weight": 16.7}, {"name": "바이오", "score": 26.8, "weight": 16.7}];
-        const stockData = [{"symbol": "005930.KS", "name": "삼성전자", "score": 70.9, "l1": 69.2, "market": "KOSPI"}, {"symbol": "000660.KS", "name": "SK하이닉스", "score": 67.6, "l1": 66.0, "market": "KOSPI"}, {"symbol": "051910.KS", "name": "LG화학", "score": 49.9, "l1": 50.2, "market": "KOSPI"}, {"symbol": "035420.KS", "name": "NAVER", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "005380.KS", "name": "현대차", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "247540.KS", "name": "에코프로비엠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "086520.KS", "name": "에코프로", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "196170.KS", "name": "알테오젠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}];
+        const sectorData = [{"name": "반도체", "score": 67.6, "weight": 16.7}, {"name": "화학", "score": 51.2, "weight": 16.7}, {"name": "플랫폼", "score": 49.5, "weight": 16.7}, {"name": "자동차", "score": 49.5, "weight": 16.7}, {"name": "2차전지", "score": 26.8, "weight": 16.7}, {"name": "바이오", "score": 26.8, "weight": 16.7}];
+        const stockData = [{"symbol": "005930.KS", "name": "삼성전자", "score": 70.9, "l1": 69.2, "market": "KOSPI"}, {"symbol": "000660.KS", "name": "SK하이닉스", "score": 67.6, "l1": 66.0, "market": "KOSPI"}, {"symbol": "051910.KS", "name": "LG화학", "score": 50.9, "l1": 51.2, "market": "KOSPI"}, {"symbol": "035420.KS", "name": "NAVER", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "005380.KS", "name": "현대차", "score": 47.0, "l1": 49.5, "market": "KOSPI"}, {"symbol": "247540.KS", "name": "에코프로비엠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "086520.KS", "name": "에코프로", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}, {"symbol": "196170.KS", "name": "알테오젠", "score": 25.1, "l1": 26.8, "market": "KOSDAQ"}];
         const portfolioData = {
             long: 1,
-            short: 6,
+            short: 5,
             cash: 100
         };
         
@@ -596,7 +596,7 @@
         }
         
         function showRiskDetail(type) {
-            const riskInfo = {"v_kospi": {"value": 63.2, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
+            const riskInfo = {"v_kospi": {"value": 62.98, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
             const info = riskInfo[type];
             if (info) {
                 let changeHtml = '';
