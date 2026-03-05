@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Stock Analysis Report - 2026-03-05</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', -apple-system, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header .subtitle { opacity: 0.9; font-size: 1.2em; }
+        
+        .summary { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 20px; margin-bottom: 25px; }
+        .summary h2 { color: #2c3e50; margin-bottom: 20px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .summary-card { background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center; }
+        .summary-card .rank { font-size: 2em; font-weight: bold; color: #667eea; }
+        .summary-card .name { font-size: 1.3em; font-weight: bold; margin: 10px 0; }
+        .summary-card .score { font-size: 1.5em; font-weight: bold; }
+        .summary-card .recommendation { display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-top: 10px; }
+        .rec-buy { background: #d4edda; color: #155724; }
+        .rec-hold { background: #fff3cd; color: #856404; }
+        .rec-sell { background: #f8d7da; color: #721c24; }
+        
+        .stock-section { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 20px; margin-bottom: 25px; }
+        .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 3px solid #3498db; }
+        .stock-header h2 { color: #2c3e50; }
+        .stock-score { font-size: 2em; font-weight: bold; color: #667eea; }
+        
+        .agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .agent-card { background: #f8f9fa; padding: 20px; border-radius: 15px; }
+        .agent-card h4 { color: #2c3e50; margin-bottom: 10px; }
+        .agent-card .score { font-size: 1.5em; font-weight: bold; color: #667eea; margin-bottom: 10px; }
+        .agent-card .signals { font-size: 0.9em; color: #27ae60; }
+        .agent-card .risks { font-size: 0.9em; color: #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Custom Stock Analysis</h1>
+            <div class="subtitle">현대제철 · 로보티즈 · SK텔레콤 · SK오션플랜트</div>
+            <div style="margin-top: 10px; opacity: 0.8;">2026-03-05 13:24</div>
+        </div>
+        
+        <div class="summary">
+            <h2>🏆 종합 순위</h2>
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <div class="rank">#1</div>
+                    <div class="name">현대제철</div>
+                    <div class="score">50.5pts</div>
+                    <div class="recommendation rec-hold">HOLD</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="rank">#2</div>
+                    <div class="name">SK텔레콤</div>
+                    <div class="score">44.5pts</div>
+                    <div class="recommendation rec-sell">SELL</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="rank">#3</div>
+                    <div class="name">SK오션플랜트</div>
+                    <div class="score">42.0pts</div>
+                    <div class="recommendation rec-sell">SELL</div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="rank">#4</div>
+                    <div class="name">로보티즈</div>
+                    <div class="score">29.5pts</div>
+                    <div class="recommendation rec-sell">SELL</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="stock-section">
+            <div class="stock-header">
+                <div>
+                    <h2>현대제철 (004020.KS)</h2>
+                    <div style="color: #7f8c8d;">KOSPI</div>
+                </div>
+                <div class="stock-score">50.5pts</div>
+            </div>
+            
+            <div class="agents-grid">
+
+                <div class="agent-card">
+                    <h4>🔧 기술적 분석</h4>
+                    <div class="score">65/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>HOLD</strong></div>
+
+                    <div class="signals">✅ 데이터 부족, RSI 양호 (56.5)</div>
+
+                </div>
+
+                <div class="agent-card">
+                    <h4>📊 재무 분석</h4>
+                    <div class="score">36/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>SELL</strong></div>
+
+                    <div class="signals">✅ 부채비율 양호 (51.4%), 유동비율 양호 (1.59)</div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="stock-section">
+            <div class="stock-header">
+                <div>
+                    <h2>SK텔레콤 (017670.KS)</h2>
+                    <div style="color: #7f8c8d;">KOSPI</div>
+                </div>
+                <div class="stock-score">44.5pts</div>
+            </div>
+            
+            <div class="agents-grid">
+
+                <div class="agent-card">
+                    <h4>🔧 기술적 분석</h4>
+                    <div class="score">55/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>HOLD</strong></div>
+
+                    <div class="signals">✅ 데이터 부족, RSI 양호 (55.0)</div>
+
+                </div>
+
+                <div class="agent-card">
+                    <h4>📊 재무 분석</h4>
+                    <div class="score">34/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>SELL</strong></div>
+
+                    <div class="signals">✅ ROE 낮음 (3.0%), 부채비율 양호 (100.0%)</div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="stock-section">
+            <div class="stock-header">
+                <div>
+                    <h2>SK오션플랜트 (100090.KS)</h2>
+                    <div style="color: #7f8c8d;">KOSPI</div>
+                </div>
+                <div class="stock-score">42.0pts</div>
+            </div>
+            
+            <div class="agents-grid">
+
+                <div class="agent-card">
+                    <h4>🔧 기술적 분석</h4>
+                    <div class="score">32/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>SELL</strong></div>
+
+                    <div class="signals">✅ 데이터 부족, RSI 회복중 (49.1)</div>
+
+                </div>
+
+                <div class="agent-card">
+                    <h4>📊 재무 분석</h4>
+                    <div class="score">52/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>HOLD</strong></div>
+
+                    <div class="signals">✅ ROE 낮음 (3.2%), 영업이익률 보통 (6.0%)</div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="stock-section">
+            <div class="stock-header">
+                <div>
+                    <h2>로보티즈 (454910.KS)</h2>
+                    <div style="color: #7f8c8d;">KOSPI</div>
+                </div>
+                <div class="stock-score">29.5pts</div>
+            </div>
+            
+            <div class="agents-grid">
+
+                <div class="agent-card">
+                    <h4>🔧 기술적 분석</h4>
+                    <div class="score">24/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>SELL</strong></div>
+
+                    <div class="signals">✅ 데이터 부족, RSI 회복중 (39.5)</div>
+
+                </div>
+
+                <div class="agent-card">
+                    <h4>📊 재무 분석</h4>
+                    <div class="score">35/100</div>
+                    <div style="margin-bottom: 10px;">추천: <strong>SELL</strong></div>
+
+                    <div class="signals">✅ 부채비율 우수 (2.6%), 유동비율 우수 (14.54)</div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
