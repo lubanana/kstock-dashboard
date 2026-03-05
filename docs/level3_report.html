@@ -125,11 +125,62 @@
         
         <!-- 네비게이션 -->
         <div class="nav">
+            <a href="#strategy" class="nav-btn">🎯 투자의견</a>
             <a href="#portfolio" class="nav-btn">📊 포트폴리오</a>
             <a href="#risk" class="nav-btn">⚠️ 위험지표</a>
             <a href="#sectors" class="nav-btn">🏭 섹터분석</a>
             <a href="#stocks" class="nav-btn">📈 종목분석</a>
             <a href="#macro" class="nav-btn">🌍 거시경제</a>
+        </div>
+        
+        <!-- 투자의견 및 전략 -->
+        <div class="section" id="strategy" style="border-left: 5px solid #ffd600;">
+            <h2>🎯 투자의견 및 전략</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">투자의견</div>
+                    <div style="font-size: 2em; font-weight: bold; color: #ffd600;">중립</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">시장전망</div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">부정적</div>
+                    <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 5px;">매크로 악재로 인한 방어적 대응 필요</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">투자전략</div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">방어적</div>
+                    <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 5px;">고현금 비중으로 시장 변동성 대비</div>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; margin-top: 20px;">
+                <h3 style="margin-bottom: 15px; color: #2c3e50;">📋 상세 전략</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>🎯 종목 전략:</strong> 삼성전자 (70.9pts) 중심 선별 매수
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>🏭 섹터 전략:</strong><br>
+                    • 추천: 반도체 (평균 67.6pts)<br>
+                    • 회피: 바이오 (평균 26.8pts)
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>💰 자산 배분:</strong><br>
+                    • Long: 0.0%<br>
+                    • Short: 0.0%<br>
+                    • Cash: 100.0%
+                </div>
+                
+                <div>
+                    <strong>⚠️ 주요 리스크:</strong>
+                    <ul style="margin-top: 5px; padding-left: 20px;">
+                        <li>매크로 악화로 인한 추가 하락 가능성</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         
         <!-- 위험지표 대시보드 -->
@@ -138,7 +189,7 @@
             <div class="risk-dashboard">
                 <div class="risk-card" onclick="showRiskDetail('v_kospi')">
                     <div class="icon">📊</div>
-                    <div class="value">62.98%</div>
+                    <div class="value">65.32%</div>
                     <div class="label">V-KOSPI (변동성)</div>
                     <div class="signal danger">HIGH</div>
                 </div>
@@ -596,7 +647,7 @@
         }
         
         function showRiskDetail(type) {
-            const riskInfo = {"v_kospi": {"value": 62.98, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
+            const riskInfo = {"v_kospi": {"value": 65.32, "signal": "HIGH", "description": "KOSPI 연간 변동성"}, "margin_debt": {"value": "45.2조", "change": "+2.1%", "signal": "CAUTION", "description": "신용융자 잔고 (추정)"}, "short_ratio": {"value": "0.8%", "change": "+0.2%", "signal": "NORMAL", "description": "KOSPI 공매도 비중"}, "foreign_flow": {"value": "-2,150억", "change": "연속 3일", "signal": "NEGATIVE", "description": "외국인 순매수"}, "sentiment": {"value": 42, "change": "-5", "signal": "FEAR", "description": "투자자 심리지수 (0-100)"}};
             const info = riskInfo[type];
             if (info) {
                 let changeHtml = '';

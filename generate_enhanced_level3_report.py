@@ -77,6 +77,101 @@ def fetch_additional_risk_indicators():
     return indicators
 
 
+def generate_investment_strategy(l1_data, l2_sector, l2_macro, l3_data) -> Dict:
+    """투자의견 및 전략 생성"""
+    
+    # Level 3 데이터
+    portfolio = l3_data.get('portfolio', {})
+    long_positions = portfolio.get('long', [])
+    short_positions = portfolio.get('short', [])
+    l3_summary = l3_data.get('portfolio_summary', {})
+    
+    # Level 2 데이터
+    macro_adj = l2_macro.get('adjustment', {})
+    macro_condition = macro_adj.get('market_condition', 'NEUTRAL')
+    sectors = l2_sector.get('sectors', {})
+    
+    # Level 1 데이터
+    l1_results = [r for r in l1_data.get('results', []) if r.get('status') == 'success']
+    avg_score = sum(r.get('avg_score', 0) for r in l1_results) / len(l1_results) if l1_results else 50
+    
+    # 1. 시장 전망
+    if macro_condition == 'BULLISH':
+        market_outlook = "긍정적"
+        outlook_detail = "매크로 환경 개선으로 상승 모멘텀 예상"
+    elif macro_condition == 'BEARISH':
+        market_outlook = "부정적"
+        outlook_detail = "매크로 악재로 인한 방어적 대응 필요"
+    else:
+        market_outlook = "중립"
+        outlook_detail = "방향성 불확실로 관망 우선"
+    
+    # 2. 투자 전략
+    cash_pct = l3_summary.get('cash_pct', 100)
+    long_pct = l3_summary.get('long_pct', 0)
+    
+    if cash_pct >= 90:
+        strategy = "방어적"
+        strategy_detail = "고현금 비중으로 시장 변동성 대비"
+    elif cash_pct >= 50:
+        strategy = "중립적"
+        strategy_detail = "선별적 매수와 현금 보유 병행"
+    else:
+        strategy = "공격적"
+        strategy_detail = "적극적 매수로 수익 극대화"
+    
+    # 3. 섹터 전략
+    sorted_sectors = sorted(sectors.items(), key=lambda x: x[1].get('average_score', 0), reverse=True)
+    top_sector = sorted_sectors[0] if sorted_sectors else ('N/A', {})
+    bottom_sector = sorted_sectors[-1] if sorted_sectors else ('N/A', {})
+    
+    # 4. 종목 전략
+    if long_positions:
+        top_pick = long_positions[0]
+        stock_strategy = f"{top_pick.get('name', '')} ({top_pick.get('final_score', 0):.1f}pts) 중심 선별 매수"
+    else:
+        stock_strategy = "적합한 매수 대상 부재, 관망 유지"
+    
+    # 5. 리스크 관리
+    risks = []
+    if macro_condition == 'BEARISH':
+        risks.append("매크로 악화로 인한 추가 하락 가능성")
+    if l3_summary.get('short_pct', 0) > 0:
+        risks.append("공매도 포지션으로 변동성 확대")
+    if not risks:
+        risks.append("시장 변동성 지속")
+    
+    # 6. 투자의견
+    if long_pct >= 20 and macro_condition != 'BEARISH':
+        opinion = "매수"
+        opinion_color = "green"
+    elif long_pct >= 5:
+        opinion = "중립-매수"
+        opinion_color = "yellow-green"
+    elif cash_pct >= 90:
+        opinion = "중립"
+        opinion_color = "yellow"
+    else:
+        opinion = "중립-매도"
+        opinion_color = "orange"
+    
+    return {
+        'market_outlook': market_outlook,
+        'outlook_detail': outlook_detail,
+        'strategy': strategy,
+        'strategy_detail': strategy_detail,
+        'opinion': opinion,
+        'opinion_color': opinion_color,
+        'top_sector': {'name': top_sector[0], 'score': top_sector[1].get('average_score', 0)},
+        'bottom_sector': {'name': bottom_sector[0], 'score': bottom_sector[1].get('average_score', 0)},
+        'stock_strategy': stock_strategy,
+        'risks': risks,
+        'cash_ratio': cash_pct,
+        'long_ratio': long_pct,
+        'short_ratio': l3_summary.get('short_pct', 0)
+    }
+
+
 def calculate_sector_weights(sectors_data, all_stocks):
     """섹터별 시가총액 비중 계산"""
     sector_weights = {}
@@ -213,6 +308,13 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     
     # 신호등 시스템
     traffic_signals = get_traffic_light_signal(l3_data, l2_macro)
+    
+    # 투자의견 및 전략
+    strategy = generate_investment_strategy(l1_data, l2_sector, l2_macro, l3_data)
+    
+    # 색상 설정
+    strategy_color = '#00e676' if strategy['opinion_color'] == 'green' else '#ffd600' if strategy['opinion_color'] == 'yellow' else '#ff9800' if strategy['opinion_color'] == 'orange' else '#ff1744'
+    opinion_color = strategy_color
     
     # Level 데이터
     l3_summary = l3_data.get('portfolio_summary', {})
@@ -355,11 +457,62 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
         
         <!-- 네비게이션 -->
         <div class="nav">
+            <a href="#strategy" class="nav-btn">🎯 투자의견</a>
             <a href="#portfolio" class="nav-btn">📊 포트폴리오</a>
             <a href="#risk" class="nav-btn">⚠️ 위험지표</a>
             <a href="#sectors" class="nav-btn">🏭 섹터분석</a>
             <a href="#stocks" class="nav-btn">📈 종목분석</a>
             <a href="#macro" class="nav-btn">🌍 거시경제</a>
+        </div>
+        
+        <!-- 투자의견 및 전략 -->
+        <div class="section" id="strategy" style="border-left: 5px solid {strategy_color};">
+            <h2>🎯 투자의견 및 전략</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">투자의견</div>
+                    <div style="font-size: 2em; font-weight: bold; color: {opinion_color};">{strategy['opinion']}</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">시장전망</div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">{strategy['market_outlook']}</div>
+                    <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 5px;">{strategy['outlook_detail']}</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%); padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 10px;">투자전략</div>
+                    <div style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">{strategy['strategy']}</div>
+                    <div style="font-size: 0.85em; color: #7f8c8d; margin-top: 5px;">{strategy['strategy_detail']}</div>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; margin-top: 20px;">
+                <h3 style="margin-bottom: 15px; color: #2c3e50;">📋 상세 전략</h3>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>🎯 종목 전략:</strong> {strategy['stock_strategy']}
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>🏭 섹터 전략:</strong><br>
+                    • 추천: {strategy['top_sector']['name']} (평균 {strategy['top_sector']['score']:.1f}pts)<br>
+                    • 회피: {strategy['bottom_sector']['name']} (평균 {strategy['bottom_sector']['score']:.1f}pts)
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <strong>💰 자산 배분:</strong><br>
+                    • Long: {strategy['long_ratio']:.1f}%<br>
+                    • Short: {strategy['short_ratio']:.1f}%<br>
+                    • Cash: {strategy['cash_ratio']:.1f}%
+                </div>
+                
+                <div>
+                    <strong>⚠️ 주요 리스크:</strong>
+                    <ul style="margin-top: 5px; padding-left: 20px;">
+                        {''.join([f"<li>{risk}</li>" for risk in strategy['risks']])}
+                    </ul>
+                </div>
+            </div>
         </div>
         
         <!-- 위험지표 대시보드 -->
