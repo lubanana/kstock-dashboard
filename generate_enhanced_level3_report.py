@@ -988,9 +988,6 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
                 <p>시장 상황: <strong>{macro_adj.get('market_condition', 'NEUTRAL')}</strong></p>
             </div>
         </div>
-        
-        <!-- Daily Pick Log 참고자료 -->
-        {generate_daily_pick_section()}
     </div>
     
     <!-- 팝업 -->
