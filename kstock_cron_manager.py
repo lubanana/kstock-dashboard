@@ -31,6 +31,7 @@ class KStockCronManager:
         'morning_analysis': {
             'name': '오전 분석',
             'time': '08:00',
+            'cron': '0 8 * * 1-5',  # 평일(월~금) 08:00
             'timezone': 'Asia/Seoul',
             'tasks': ['level1', 'level2', 'level3', 'report'],
             'dependencies': [],
@@ -42,6 +43,7 @@ class KStockCronManager:
         'afternoon_analysis': {
             'name': '오후 분석',
             'time': '14:00',
+            'cron': '0 14 * * 1-5',  # 평일(월~금) 14:00
             'timezone': 'Asia/Seoul',
             'tasks': ['level1', 'level2', 'level3', 'report'],
             'dependencies': [],
@@ -53,6 +55,7 @@ class KStockCronManager:
         'evening_analysis': {
             'name': '저녁 분석',
             'time': '19:00',
+            'cron': '0 19 * * 1-5',  # 평일(월~금) 19:00
             'timezone': 'Asia/Seoul',
             'tasks': ['level1', 'level2', 'level3', 'report'],
             'dependencies': [],
@@ -64,9 +67,10 @@ class KStockCronManager:
         'daily_check': {
             'name': '일일 점검',
             'time': '22:00',
+            'cron': '0 22 * * 0-4',  # 일~목 22:00 (다음 날 장 대비)
             'timezone': 'Asia/Seoul',
             'tasks': ['system_check', 'strategy_research'],
-            'dependencies': ['morning_analysis', 'afternoon_analysis', 'evening_analysis'],
+            'dependencies': [],
             'retry': 2,
             'retry_delay': 600,
             'timeout': 900,
@@ -108,8 +112,8 @@ class KStockCronManager:
             if not config.get('enabled', False):
                 continue
             
-            time_parts = config['time'].split(':')
-            cron_expr = f"{time_parts[1]} {time_parts[0]} * * *"
+            # 평일(월~금) 스케줄 사용
+            cron_expr = config.get('cron', '0 8 * * 1-5')
             
             subprocess.run([
                 'openclaw', 'cron', 'add',
@@ -122,11 +126,10 @@ class KStockCronManager:
                 '--message', f"📊 {config['name']} 시작\n\npython3 /home/programs/kstock_analyzer/kstock_cron_manager.py --run {job_id}"
             ], capture_output=True)
             
-            print(f"✅ Installed: {job_id} ({config['time']})")
+            print(f"✅ Installed: {job_id} ({cron_expr})")
         
-        print("\n🎉 All cron jobs installed!
-
-IMPORTANT: Set TELEGRAM_CHAT_ID in .env file before running!")
+        print("\n🎉 All cron jobs installed!")
+        print("\nIMPORTANT: Set TELEGRAM_CHAT_ID in .env file before running!")
 
 
 def main():
