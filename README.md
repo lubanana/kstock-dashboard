@@ -52,6 +52,3 @@ python3 -m http.server 8080 --directory docs
 
 이 프로젝트는 교육 목적으로 제작되었습니다. 투자 결정은 본인의 책임이며, 이 정보에 의존한 투자 결과에 대해 책임지지 않습니다.
 
-## 📜 라이선스
-
-MIT License
