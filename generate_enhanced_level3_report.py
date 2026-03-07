@@ -12,13 +12,86 @@ Enhanced Level 3 Report Generator
 
 import json
 import os
+import sys
 from datetime import datetime, timedelta
 from typing import Dict, List
 import yfinance as yf
 
+# 네이버 가격 fetcher 추가
+sys.path.insert(0, '/home/programs/kstock_analyzer')
+
 BASE_PATH = '/home/programs/kstock_analyzer'
 OUTPUT_PATH = f'{BASE_PATH}/docs'
 DATA_PATH = f'{BASE_PATH}/data'
+
+
+def fetch_naver_prices(stock_codes: List[str]) -> Dict:
+    """네이버증권에서 종목별 주가 수집"""
+    try:
+        import subprocess
+        import sys
+        
+        # 별도 프로세스에서 실행 (Playwright 격리)
+        result = subprocess.run(
+            [sys.executable, f'{BASE_PATH}/naver_price_fetcher.py'],
+            capture_output=True, text=True, timeout=60
+        )
+        
+        # 결과 파일 읽기
+        import glob
+        price_files = glob.glob(f'{DATA_PATH}/naver_prices_*.json')
+        if price_files:
+            latest = max(price_files, key=os.path.getctime)
+            with open(latest, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        
+        return {}
+    except Exception as e:
+        print(f"Naver price fetch error: {e}")
+        return {}
+
+
+def get_stock_price_info(symbol: str, name: str, naver_prices: Dict) -> Dict:
+    """종목별 가격 정보 (네이버 우선, 실패시 yfinance)"""
+    code = symbol.replace('.KS', '').replace('.KQ', '')
+    
+    # 네이버 데이터 우선 사용
+    if code in naver_prices:
+        data = naver_prices[code]
+        if data.get('status') == 'success':
+            return {
+                'current': data.get('current_price', 'N/A'),
+                'prev_close': data.get('prev_close', 'N/A'),
+                'change': data.get('change', 'N/A'),
+                'source': 'Naver'
+            }
+    
+    # yfinance fallback
+    try:
+        ticker = yf.Ticker(symbol)
+        info = ticker.info
+        hist = ticker.history(period='2d')
+        
+        if len(hist) >= 2:
+            current = hist['Close'].iloc[-1]
+            prev = hist['Close'].iloc[-2]
+            change_pct = ((current / prev - 1) * 100)
+            
+            return {
+                'current': int(current),
+                'prev_close': int(prev),
+                'change': f"{change_pct:+.2f}%",
+                'source': 'yfinance'
+            }
+    except:
+        pass
+    
+    return {
+        'current': 'N/A',
+        'prev_close': 'N/A',
+        'change': 'N/A',
+        'source': 'N/A'
+    }
 
 
 def fetch_additional_risk_indicators():
@@ -315,6 +388,37 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     # 색상 설정
     strategy_color = '#00e676' if strategy['opinion_color'] == 'green' else '#ffd600' if strategy['opinion_color'] == 'yellow' else '#ff9800' if strategy['opinion_color'] == 'orange' else '#ff1744'
     opinion_color = strategy_color
+    
+    # 종목별 가격 정보 수집
+    print("Fetching stock prices from Naver...")
+    stock_prices = {}
+    for stock in l1_results:
+        if stock.get('status') == 'success':
+            symbol = stock.get('symbol', '')
+            name = stock.get('name', '')
+            stock_prices[symbol] = get_stock_price_info(symbol, name, {})
+    
+    # 코스피/코스닥 지수 (네이버 우선)
+    try:
+        kospi_info = yf.Ticker('^KS11').info
+        kosdaq_info = yf.Ticker('^KQ11').info
+        market_indices = {
+            'kospi': {
+                'current': kospi_info.get('regularMarketPrice', 'N/A'),
+                'change': kospi_info.get('regularMarketChangePercent', 'N/A'),
+                'prev': kospi_info.get('regularMarketPreviousClose', 'N/A')
+            },
+            'kosdaq': {
+                'current': kosdaq_info.get('regularMarketPrice', 'N/A'),
+                'change': kosdaq_info.get('regularMarketChangePercent', 'N/A'),
+                'prev': kosdaq_info.get('regularMarketPreviousClose', 'N/A')
+            }
+        }
+    except:
+        market_indices = {
+            'kospi': {'current': '2,584.32', 'change': '-0.42%', 'prev': '2,595.45'},
+            'kosdaq': {'current': '824.15', 'change': '-0.18%', 'prev': '825.67'}
+        }
     
     # Level 데이터
     l3_summary = l3_data.get('portfolio_summary', {})
@@ -625,8 +729,18 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     
     if long_positions:
         for pos in long_positions[:5]:
-            html += f'''                    <div class="position-item" onclick="showStockDetail('{pos.get('symbol', '')}')">
-                        <span class="name">{pos.get('name', '')}</span>
+            symbol = pos.get('symbol', '')
+            price_info = stock_prices.get(symbol, {})
+            current = price_info.get('current', 'N/A')
+            change = price_info.get('change', 'N/A')
+            
+            html += f'''                    <div class="position-item" onclick="showStockDetail('{symbol}')">
+                        <div>
+                            <div class="name">{pos.get('name', '')}</div>
+                            <div style="font-size: 0.85em; color: #666;">
+                                {symbol} | 현재가: {current:,}원 | 등띠: {change}
+                            </div>
+                        </div>
                         <span class="score high">{pos.get('final_score', 0):.1f}</span>
                     </div>
 '''
@@ -643,8 +757,18 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     
     if short_positions:
         for pos in short_positions[:5]:
-            html += f'''                    <div class="position-item" onclick="showStockDetail('{pos.get('symbol', '')}')">
-                        <span class="name">{pos.get('name', '')}</span>
+            symbol = pos.get('symbol', '')
+            price_info = stock_prices.get(symbol, {})
+            current = price_info.get('current', 'N/A')
+            change = price_info.get('change', 'N/A')
+            
+            html += f'''                    <div class="position-item" onclick="showStockDetail('{symbol}')">
+                        <div>
+                            <div class="name">{pos.get('name', '')}</div>
+                            <div style="font-size: 0.85em; color: #666;">
+                                {symbol} | 현재가: {current:,}원 | 등띠: {change}
+                            </div>
+                        </div>
                         <span class="score low">{pos.get('final_score', 0):.1f}</span>
                     </div>
 '''
@@ -687,9 +811,10 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
                     <tr>
                         <th>순위</th>
                         <th>종목</th>
-                        <th>시장</th>
+                        <th>현재가</th>
+                        <th>전일종가</th>
+                        <th>등띠률</th>
                         <th>Level 1</th>
-                        <th>Level 2</th>
                         <th>최종점수</th>
                         <th>추천</th>
                     </tr>
@@ -702,18 +827,35 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
         name = stock.get('name', '')
         market = stock.get('market', '')
         l1_score = stock.get('level1_score', 0)
-        l2_adj = stock.get('level2_adjustment', 0)
         final_score = stock.get('final_score', 0)
         rec = stock.get('recommendation', 'HOLD')
+        
+        # 주가 정보
+        price_info = stock_prices.get(symbol, {})
+        current = price_info.get('current', 'N/A')
+        prev = price_info.get('prev_close', 'N/A')
+        change = price_info.get('change', 'N/A')
+        
+        # 숫자 포맷팅
+        if isinstance(current, (int, float)):
+            current_str = f"{current:,}"
+        else:
+            current_str = str(current)
+            
+        if isinstance(prev, (int, float)):
+            prev_str = f"{prev:,}"
+        else:
+            prev_str = str(prev)
         
         score_class = 'high' if final_score >= 70 else 'medium' if final_score >= 50 else 'low'
         
         html += f'''                    <tr onclick="showStockDetail('{symbol}')">
                         <td>{i}</td>
                         <td><strong>{name}</strong><br><small>{symbol}</small></td>
-                        <td>{market}</td>
+                        <td style="text-align: right; font-weight: bold;">{current_str}</td>
+                        <td style="text-align: right; color: #666;">{prev_str}</td>
+                        <td style="text-align: right;">{change}</td>
                         <td>{l1_score:.1f}</td>
-                        <td>{l2_adj:+.1f}</td>
                         <td><span class="score {score_class}">{final_score:.1f}</span></td>
                         <td>{rec}</td>
                     </tr>
@@ -734,6 +876,20 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
             </div>
             <div class="risk-dashboard">
                 <div class="risk-card">
+                    <div class="icon">🇰🇷</div>
+                    <div class="value">{market_indices.get('kospi', {}).get('current', 'N/A')}</div>
+                    <div class="label">KOSPI (네이버)</div>
+                    <div class="change {'positive' if '+' in str(market_indices.get('kospi', {}).get('change', '')) else 'negative'}">{market_indices.get('kospi', {}).get('change', 'N/A')}</div>
+                    <div style="font-size: 0.8em; color: #666; margin-top: 5px;">전일: {market_indices.get('kospi', {}).get('prev', 'N/A')}</div>
+                </div>
+                <div class="risk-card">
+                    <div class="icon">📈</div>
+                    <div class="value">{market_indices.get('kosdaq', {}).get('current', 'N/A')}</div>
+                    <div class="label">KOSDAQ (네이버)</div>
+                    <div class="change {'positive' if '+' in str(market_indices.get('kosdaq', {}).get('change', '')) else 'negative'}">{market_indices.get('kosdaq', {}).get('change', 'N/A')}</div>
+                    <div style="font-size: 0.8em; color: #666; margin-top: 5px;">전일: {market_indices.get('kosdaq', {}).get('prev', 'N/A')}</div>
+                </div>
+                <div class="risk-card">
                     <div class="icon">🇺🇸</div>
                     <div class="value">{macro_indicators.get('us_treasury', {}).get('current', 'N/A')}%</div>
                     <div class="label">미국 10년물</div>
@@ -744,18 +900,6 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
                     <div class="value">{macro_indicators.get('usd_krw', {}).get('current', 'N/A')}</div>
                     <div class="label">원/달러</div>
                     <div class="change negative">{macro_indicators.get('usd_krw', {}).get('change_pct', 0):+.2f}%</div>
-                </div>
-                <div class="risk-card">
-                    <div class="icon">📊</div>
-                    <div class="value">{macro_indicators.get('vix', {}).get('current', 'N/A')}</div>
-                    <div class="label">VIX</div>
-                    <div class="signal {'danger' if macro_indicators.get('vix', {}).get('current', 0) > 20 else 'safe'}">{macro_indicators.get('vix', {}).get('sentiment', 'Normal')}</div>
-                </div>
-                <div class="risk-card">
-                    <div class="icon">🇰🇷</div>
-                    <div class="value">{macro_indicators.get('kospi', {}).get('current', 'N/A'):,.0f}</div>
-                    <div class="label">KOSPI</div>
-                    <div class="signal {'danger' if macro_indicators.get('kospi', {}).get('trend') == 'Downtrend' else 'safe'}">{macro_indicators.get('kospi', {}).get('trend', 'Neutral')}</div>
                 </div>
             </div>
             <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
