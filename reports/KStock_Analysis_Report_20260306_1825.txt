@@ -1,0 +1,138 @@
+================================================================================
+KStock Level 3 Analysis Report
+Generated: 2026-03-06 18:25 (KST)
+================================================================================
+
+═══════════════════════════════════════════════════════════════════════════════
+📊 MARKET OUTLOOK
+═══════════════════════════════════════════════════════════════════════════════
+
+Macro Condition:        BEARISH
+Macro Adjustment:       -10%
+Equity Exposure:        Underweight
+Risk Mode:              Risk-Off
+Defensive Sectors:      Yes
+
+Key Factors:
+• 고환율 (원화 약세)
+• KOSPI 고변동성
+
+═══════════════════════════════════════════════════════════════════════════════
+💰 PORTFOLIO SUMMARY
+═══════════════════════════════════════════════════════════════════════════════
+
+Total Stocks Analyzed:  8
+Long Positions:         1 (7.0%)
+Short Positions:        4 (0.0%)
+Neutral Positions:      3
+Cash:                   93.0%
+
+═══════════════════════════════════════════════════════════════════════════════
+📈 LONG POSITIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+Rank 1: 삼성전자 (005930.KS) - 반도체 - KOSPI
+─────────────────────────────────────────────────────────────────────────────
+Final Score:            70.5 pts
+Rating:                 BUY
+Position Size:          7.0%
+
+Score Breakdown:
+• Level 1 Score:        68.8 (weight: 50%)
+• Sector Adjustment:    +15 (weight: 30%)
+• Macro Adjustment:     -10 (weight: 20%)
+
+Reasoning:
+• Level 1: Strong fundamental and technical scores
+• Sector: 반도체 is a strong sector with excellent relative strength
+• Macro: Negative adjustment due to high KRW/USD and KOSPI volatility
+
+═══════════════════════════════════════════════════════════════════════════════
+📉 SHORT POSITIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. 에코프로비엠 (247540.KS) - 2차전지 - KOSDAQ
+   Final Score: 25.4 | Rating: STRONG_SELL | Position: 0.0%
+   Level 1: 27.2 | Sector Adj: -15 | Macro Adj: -10
+   Reason: 약세 섹터 + 상대약도 | 고환율 (원화 약세); KOSPI 고변동성
+
+2. 에코프로 (086520.KS) - 2차전지 - KOSDAQ
+   Final Score: 25.4 | Rating: STRONG_SELL | Position: 0.0%
+   Level 1: 27.2 | Sector Adj: -15 | Macro Adj: -10
+   Reason: 약세 섹터 + 상대약도 | 고환율 (원화 약세); KOSPI 고변동성
+
+3. 알테오젠 (196170.KS) - 바이오 - KOSDAQ
+   Final Score: 25.4 | Rating: STRONG_SELL | Position: 0.0%
+   Level 1: 27.2 | Sector Adj: -15 | Macro Adj: -10
+   Reason: 약세 섹터 + 상대약도 | 고환율 (원화 약세); KOSPI 고변동성
+
+4. 현대차 (005380.KS) - 자동차 - KOSPI
+   Final Score: 46.4 | Rating: SELL | Position: 0.0%
+   Level 1: 48.8 | Sector Adj: -10 | Macro Adj: -10
+   Reason: 약세 섹터 | 고환율 (원화 약세); KOSPI 고변동성
+
+═══════════════════════════════════════════════════════════════════════════════
+⚖️  NEUTRAL POSITIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. SK하이닉스 (000660.KS) - 반도체 - KOSPI
+   Final Score: 66.8 | Rating: HOLD | Position: 3.0%
+   Level 1: 65.2 | Sector Adj: +15 | Macro Adj: -10
+
+2. LG화학 (051910.KS) - 화학 - KOSPI
+   Final Score: 52.5 | Rating: HOLD | Position: 3.0%
+   Level 1: 52.8 | Sector Adj: +5 | Macro Adj: -10
+
+3. NAVER (035420.KS) - 플랫폼 - KOSPI
+   Final Score: 50.2 | Rating: HOLD | Position: 3.0%
+   Level 1: 50.5 | Sector Adj: +5 | Macro Adj: -10
+
+═══════════════════════════════════════════════════════════════════════════════
+📊 ALL RANKINGS
+═══════════════════════════════════════════════════════════════════════════════
+
+Rank  Name              Sector      Market   Score   Rating
+──────────────────────────────────────────────────────────────────────────────
+ 1    삼성전자          반도체      KOSPI    70.5    BUY
+ 2    SK하이닉스        반도체      KOSPI    66.8    HOLD
+ 3    LG화학           화학        KOSPI    52.5    HOLD
+ 4    NAVER            플랫폼      KOSPI    50.2    HOLD
+ 5    현대차           자동차      KOSPI    46.4    SELL
+ 6    에코프로비엠      2차전지     KOSDAQ   25.4    STRONG_SELL
+ 7    에코프로          2차전지     KOSDAQ   25.4    STRONG_SELL
+ 8    알테오젠          바이오      KOSDAQ   25.4    STRONG_SELL
+
+═══════════════════════════════════════════════════════════════════════════════
+⚙️ METHODOLOGY
+═══════════════════════════════════════════════════════════════════════════════
+
+Score Weights:
+• Level 1 Score:        50%
+• Level 2 Sector:       30%
+• Level 2 Macro:        20%
+
+Thresholds:
+• STRONG_BUY:           ≥75
+• BUY:                  ≥70
+• HOLD:                 ≥50
+• SELL:                 ≥40
+• STRONG_SELL:          <35
+
+Position Sizing:
+• STRONG_BUY:           10%
+• BUY:                  7%
+• HOLD:                 3%
+• SELL/STRONG_SELL:     0%
+
+═══════════════════════════════════════════════════════════════════════════════
+🔗 REFERENCES
+═══════════════════════════════════════════════════════════════════════════════
+
+Report URL: https://lubanana.github.io/kstock-dashboard/level3_report.html
+Data File: /data/level3_daily/portfolio_report_20260306_1825.json
+Agent ID: PM_001
+Agent Name: Portfolio Manager
+
+═══════════════════════════════════════════════════════════════════════════════
+End of Report
+═══════════════════════════════════════════════════════════════════════════════
