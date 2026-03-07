@@ -150,6 +150,84 @@ def fetch_additional_risk_indicators():
     return indicators
 
 
+def generate_daily_pick_section() -> str:
+    """Daily Pick Log 참고자료 섹션 생성"""
+    try:
+        import glob
+        pick_files = glob.glob('/home/programs/kstock_analyzer/data/daily_pick/pick_*.json')
+        
+        if not pick_files:
+            return "<!-- Daily Pick Log 없음 -->"
+        
+        # 가장 최근 파일
+        latest_file = max(pick_files, key=os.path.getctime)
+        
+        with open(latest_file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        date = data.get('date', datetime.now().strftime('%Y-%m-%d'))
+        picks = data.get('picks', [])
+        
+        if not picks:
+            return "<!-- Daily Pick Log 없음 -->"
+        
+        html = f"""
+        <!-- Daily Pick Log Reference Section -->
+        <div class="section" id="daily-pick-reference" style="border-left: 5px solid #9c27b0; margin-top: 40px;">
+            <h2>📋 외부 참고자료: Mission Control Daily Pick</h2>
+            <div style="background: #f3e5f5; padding: 20px; border-radius: 15px;">
+                <p style="color: #7b1fa2; font-weight: bold; margin-bottom: 15px;">
+                    📅 날짜: {date} | 총 {len(picks)}개 종목
+                </p>
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">
+                    * 본 섹션은 Mission Control GitHub의 daily_pick_log를 참조한 외부 자료입니다.<br>
+                    * KStock Level 3 분석과 독립적으로 생성된 정보입니다.
+                </p>
+"""
+        
+        for pick in picks[:5]:  # 상위 5개만
+            confidence = pick.get('confidence', 0)
+            color = '#4caf50' if confidence >= 80 else '#ff9800' if confidence >= 60 else '#f44336'
+            
+            html += f"""
+                <div style="background: white; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid {color};">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong style="font-size: 1.1em;">{pick.get('name', '')} ({pick.get('symbol', '')})</strong>
+                            <div style="font-size: 0.85em; color: #666; margin-top: 5px;">
+                                섹터: {pick.get('sector', '')} | 테마: {pick.get('theme', '')}
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="color: {color}; font-weight: bold; font-size: 1.2em;">
+                                신뢰도: {confidence}%
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; padding: 10px; background: #fafafa; border-radius: 5px;">
+                        <strong>선정 사유:</strong> {pick.get('reason', '')[:100]}...
+                    </div>
+                </div>
+"""
+        
+        html += """
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #fff3e0; border-radius: 10px; font-size: 0.85em; color: #e65100;">
+                <strong>⚠️ 면책 조항:</strong><br>
+                본 참고자료는 외부 소스(Mission Control)에서 제공된 정보로, 
+                KStock 분석 시스템의 독립적인 판단과 무관합니다. 
+                투자 결정은 개인의 판단과 책임 하에 신중하게 이루어져야 합니다.
+            </div>
+        </div>
+"""
+        
+        return html
+        
+    except Exception as e:
+        print(f"Daily Pick section generation error: {e}")
+        return "<!-- Daily Pick Log 오류 -->"
+
+
 def generate_investment_strategy(l1_data, l2_sector, l2_macro, l3_data) -> Dict:
     """투자의견 및 전략 생성"""
     
@@ -910,6 +988,9 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
                 <p>시장 상황: <strong>{macro_adj.get('market_condition', 'NEUTRAL')}</strong></p>
             </div>
         </div>
+        
+        <!-- Daily Pick Log 참고자료 -->
+        {generate_daily_pick_section()}
     </div>
     
     <!-- 팝업 -->
