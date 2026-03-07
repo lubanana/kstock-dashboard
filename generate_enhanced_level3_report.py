@@ -389,14 +389,16 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     strategy_color = '#00e676' if strategy['opinion_color'] == 'green' else '#ffd600' if strategy['opinion_color'] == 'yellow' else '#ff9800' if strategy['opinion_color'] == 'orange' else '#ff1744'
     opinion_color = strategy_color
     
+    # Level 1 결과 추출
+    l1_results = [r for r in l1_data.get('results', []) if r.get('status') == 'success']
+    
     # 종목별 가격 정보 수집
     print("Fetching stock prices from Naver...")
     stock_prices = {}
     for stock in l1_results:
-        if stock.get('status') == 'success':
-            symbol = stock.get('symbol', '')
-            name = stock.get('name', '')
-            stock_prices[symbol] = get_stock_price_info(symbol, name, {})
+        symbol = stock.get('symbol', '')
+        name = stock.get('name', '')
+        stock_prices[symbol] = get_stock_price_info(symbol, name, {})
     
     # 코스피/코스닥 지수 (네이버 우선)
     try:
