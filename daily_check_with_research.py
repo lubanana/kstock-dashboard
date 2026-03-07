@@ -2,6 +2,9 @@
 """
 KStock Daily Check with Strategy Research
 매일 오후 10시 실행: 시스템 점검 + 전략 연구
+
+Environment Variables:
+    GITHUB_TOKEN: GitHub Personal Access Token (optional, for private repos)
 """
 
 import os
@@ -35,7 +38,25 @@ def check_system():
         subprocess.run(['git', 'add', '.'], cwd='/home/programs/kstock_analyzer')
         subprocess.run(['git', 'commit', '-m', f'Auto sync {timestamp}'], 
                       cwd='/home/programs/kstock_analyzer', capture_output=True)
+        
+        # GitHub 토큰이 있으면 사용
+        github_token = os.getenv('GITHUB_TOKEN', '')
+        if github_token:
+            # remote URL에 토큰 포함 (임시)
+            subprocess.run([
+                'git', 'remote', 'set-url', 'origin',
+                f'https://{github_token}@github.com/lubanana/kstock-dashboard.git'
+            ], cwd='/home/programs/kstock_analyzer', capture_output=True)
+        
         subprocess.run(['git', 'push'], cwd='/home/programs/kstock_analyzer', capture_output=True)
+        
+        # 토큰 제거 (보안)
+        if github_token:
+            subprocess.run([
+                'git', 'remote', 'set-url', 'origin',
+                'https://github.com/lubanana/kstock-dashboard.git'
+            ], cwd='/home/programs/kstock_analyzer', capture_output=True)
+        
         print("   ✅ 자동 푸시 완료")
     else:
         print("   ✅ 최신 상태")
