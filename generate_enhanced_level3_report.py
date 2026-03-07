@@ -602,8 +602,144 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
         .position-item .name {{ font-weight: 500; }}
         .position-item .score {{ font-size: 0.9em; }}
         
-        /* 반응형 */
-        @media (max-width: 768px) {{ .chart-grid {{ grid-template-columns: 1fr; }} .traffic-light-container {{ flex-direction: column; align-items: center; }} }}
+        /* 반응형 - 모바일 최적화 */
+        @media (max-width: 768px) {{
+            .container {{ padding: 10px; }}
+            
+            /* 헤더 */
+            .header {{ padding: 25px 15px; }}
+            .header h1 {{ font-size: 1.6em; }}
+            .header .subtitle {{ font-size: 1em; }}
+            
+            /* 신호등 */
+            .traffic-light-container {{ 
+                flex-direction: row; 
+                flex-wrap: wrap; 
+                gap: 10px;
+                justify-content: center;
+            }}
+            .traffic-light {{ 
+                min-width: calc(50% - 10px); 
+                padding: 15px 10px;
+            }}
+            .traffic-light .light {{ 
+                width: 45px; 
+                height: 45px; 
+            }}
+            .traffic-light .label {{ font-size: 0.8em; }}
+            .traffic-light .status {{ font-size: 0.95em; }}
+            
+            /* 네비게이션 */
+            .nav {{ 
+                gap: 8px; 
+                padding: 0 5px;
+            }}
+            .nav-btn {{ 
+                padding: 10px 16px; 
+                font-size: 0.9em;
+                border-radius: 20px;
+            }}
+            
+            /* 섹션 */
+            .section {{ 
+                padding: 20px 15px; 
+                margin-bottom: 15px;
+            }}
+            .section h2 {{ 
+                font-size: 1.3em; 
+                margin-bottom: 15px;
+            }}
+            
+            /* 위험지표 */
+            .risk-dashboard {{ 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px;
+            }}
+            .risk-card {{ 
+                padding: 15px 10px; 
+            }}
+            .risk-card .icon {{ font-size: 1.5em; }}
+            .risk-card .value {{ font-size: 1.3em; }}
+            .risk-card .label {{ font-size: 0.75em; }}
+            
+            /* 차트 */
+            .chart-container {{ height: 280px; }}
+            .chart-grid {{ 
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }}
+            
+            /* 테이블 - 가로 스크롤 */
+            .table-wrapper {{ 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch;
+                margin: 0 -15px;
+                padding: 0 15px;
+            }}
+            table {{ 
+                font-size: 0.8em; 
+                min-width: 600px;
+            }}
+            th, td {{ 
+                padding: 8px 6px; 
+                white-space: nowrap;
+            }}
+            
+            /* 포트폴리오 */
+            .portfolio-grid {{ 
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }}
+            .portfolio-card {{ padding: 15px; }}
+            
+            /* 전략 카드 */
+            .strategy-grid {{ 
+                grid-template-columns: 1fr !important; 
+                gap: 10px;
+            }}
+            
+            /* 팝업 */
+            .popup {{ 
+                padding: 20px; 
+                width: 95%;
+                border-radius: 15px;
+            }}
+            .popup h3 {{ font-size: 1.2em; }}
+            .detail-row {{ 
+                flex-direction: column; 
+                gap: 5px;
+                padding: 8px 0;
+            }}
+            
+            /* 텍스트 */
+            .section p, .section li {{ 
+                font-size: 0.95em; 
+                line-height: 1.6;
+            }}
+        }}
+        
+        /* 작은 모바일 */
+        @media (max-width: 480px) {{
+            .header h1 {{ font-size: 1.3em; }}
+            .traffic-light {{ min-width: calc(50% - 5px); }}
+            .risk-dashboard {{ grid-template-columns: 1fr; }}
+            .nav-btn {{ padding: 8px 12px; font-size: 0.85em; }}
+            .chart-container {{ height: 220px; }}
+        }}
+        
+        /* 터치 최적화 */
+        @media (hover: none) and (pointer: coarse) {{
+            .risk-card:active {{ 
+                transform: scale(0.98); 
+                opacity: 0.9;
+            }}
+            .nav-btn:active {{
+                transform: scale(0.95);
+            }}
+            tr:active {{
+                background: #e3f2fd;
+            }}
+        }}
     </style>
 </head>
 <body>
@@ -754,19 +890,20 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
                     <canvas id="sectorScoreChart"></canvas>
                 </div>
             </div>
-            <table id="sectorTable">
-                <thead>
-                    <tr>
-                        <th>순위</th>
-                        <th>섹터</th>
-                        <th>평균점수</th>
-                        <th>시총비중</th>
-                        <th>강도</th>
-                        <th>조정</th>
-                        <th>포지션</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="table-wrapper">
+                <table id="sectorTable">
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>섹터</th>
+                            <th>평균점수</th>
+                            <th>시총비중</th>
+                            <th>강도</th>
+                            <th>조정</th>
+                            <th>포지션</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 '''
     
     for i, (sector_name, sector_info) in enumerate(sorted_sectors, 1):
@@ -790,8 +927,10 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
 '''
     
     html += '''                </tbody>
+                </tbody>
             </table>
         </div>
+    </div>
 '''
     
     # 포트폴리오 섹션
@@ -886,20 +1025,21 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
             <div class="chart-container">
                 <canvas id="stockScoreChart"></canvas>
             </div>
-            <table id="stockTable">
-                <thead>
-                    <tr>
-                        <th>순위</th>
-                        <th>종목</th>
-                        <th>현재가</th>
-                        <th>전일종가</th>
-                        <th>등띠률</th>
-                        <th>Level 1</th>
-                        <th>최종점수</th>
-                        <th>추천</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="table-wrapper">
+                <table id="stockTable">
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>종목</th>
+                            <th>현재가</th>
+                            <th>전일종가</th>
+                            <th>등띠률</th>
+                            <th>Level 1</th>
+                            <th>최종점수</th>
+                            <th>추천</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 '''
     
     for i, stock in enumerate(rankings[:15], 1):
@@ -944,6 +1084,7 @@ def generate_enhanced_html(l1_data, l2_sector, l2_macro, l3_data) -> str:
     html += '''                </tbody>
             </table>
         </div>
+    </div>
 '''
     
     # 거시경제 섹션
