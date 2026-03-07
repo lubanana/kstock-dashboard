@@ -1,0 +1,370 @@
+{
+  "scraped_at": "2026-03-07T22:12:25.164036",
+  "main_news": {
+    "source": "naver_stock_main_news",
+    "url": "https://m.stock.naver.com/investment/news/mainnews",
+    "scraped_at": "2026-03-07T22:11:42.073131",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "정부 경고에도 기름값 또 올랐다…싼 주유소 북새통",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/057/0001938702",
+        "scraped_at": "2026-03-07T22:11:42.065545",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "전쟁 우려에도 힘 못 쓰는 ‘안전자산’…대체 왜? [투자360]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002609913",
+        "scraped_at": "2026-03-07T22:11:42.065963",
+        "sentiment": "negative"
+      },
+      {
+        "title": "“주가 박살났다고? 그럼 담아야지”…월가도 베팅한 ‘나이키 킬러’ [오찬종의 매일뉴욕]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646620",
+        "scraped_at": "2026-03-07T22:11:42.066369",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘공포장’에도 빚투 폭증…신용융자 33조 사상 최대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094104",
+        "scraped_at": "2026-03-07T22:11:42.066753",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "6%↑ 전쟁통에도 굳건…비트코인, 이틀간 1조원 자금 유입",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094097",
+        "scraped_at": "2026-03-07T22:11:42.067161",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "액스비스 상장·아이엠바이오로직스 공모[증시캘린더]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230110",
+        "scraped_at": "2026-03-07T22:11:42.067551",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "결혼식 줄어도 웨딩홀은 뜬다? 사모펀드가 다시 산 이유[위클리IB]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230106",
+        "scraped_at": "2026-03-07T22:11:42.067942",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "주가 두달만에 180% 뛰자 일어난 일…삼성생명·신한지주 시총 넘보는 미래에셋증권",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646587",
+        "scraped_at": "2026-03-07T22:11:42.068334",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "'개인정보유출' 쿠팡, 실적 최악 구간 지났지만…\"소비심리·유가 변수 여전\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230101",
+        "scraped_at": "2026-03-07T22:11:42.068710",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘국내 최초’ 코스닥 액티브 ETF 첫 출격",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/119/0003066359",
+        "scraped_at": "2026-03-07T22:11:42.069106",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“IP 재활용이 답?”…게임업계 방치형 키우기 게임 잇따라 출시",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002609850",
+        "scraped_at": "2026-03-07T22:11:42.069510",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "6200→5500 코스피 후퇴, 외국인 돌아오나…추가 변수는",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094090",
+        "scraped_at": "2026-03-07T22:11:42.069898",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한기평, 롯데손보 신용등급 하향…\"경영개선요구조치 반영\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730735",
+        "scraped_at": "2026-03-07T22:11:42.070370",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"내 계좌 터지나\" 개미들 밤잠 설치더니…폭락장서 19% 껑충 [종목+]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259350",
+        "scraped_at": "2026-03-07T22:11:42.070760",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "증시 폭락에도 버틴 코인시장 왜?",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000045037",
+        "scraped_at": "2026-03-07T22:11:42.071168",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘빅쇼트’ 버리 “기관이 코스피 데이트레이딩…종말 징후”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094087",
+        "scraped_at": "2026-03-07T22:11:42.071581",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "역사적 롤러코스터 장세에 레버리지·곱버스 ‘만선’…투자손실 우려도",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/138/0002219828",
+        "scraped_at": "2026-03-07T22:11:42.071972",
+        "sentiment": "negative"
+      },
+      {
+        "title": "뉴욕증시, 중동 전쟁·美 고용 충격에 3대 지수 일제히 하락",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478924",
+        "scraped_at": "2026-03-07T22:11:42.072364",
+        "sentiment": "negative"
+      },
+      {
+        "title": "화약 냄새 가득한 자산시장…\"크레딧 리스크 주의\"[주末머니]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730718",
+        "scraped_at": "2026-03-07T22:11:42.072738",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "이란 사태 뒤 7% 급등…물가대란의 숨은 뇌관 될 수 있다는 '이것'[주末머니]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730717",
+        "scraped_at": "2026-03-07T22:11:42.073128",
+        "sentiment": "positive"
+      }
+    ]
+  },
+  "flash_news": {
+    "source": "naver_stock_flash_news",
+    "url": "https://m.stock.naver.com/investment/news/flashnews",
+    "scraped_at": "2026-03-07T22:11:48.623003",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "김용범 정책실장 “증시 버블? 韓 핵심 병목 쥔 독보적 나라”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/021/0002775454",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.613357",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "정부 경고에도 기름값 또 올랐다…싼 주유소 북새통",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/057/0001938702",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.614130",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "전쟁 우려에도 힘 못 쓰는 ‘안전자산’…대체 왜? [투자360]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002609913",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.614613",
+        "sentiment": "negative"
+      },
+      {
+        "title": "롤러코스터 장세 속 빚투 최대…\"변동성 주의\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/422/0000841492",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.615377",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“주가 박살났다고? 그럼 담아야지”…월가도 베팅한 ‘나이키 킬러’ [오찬종의 매일뉴욕]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646620",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.615849",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘공포장’에도 빚투 폭증…신용융자 33조 사상 최대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094104",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.616310",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "2월 완성차 판매 일제히 후진…설 연휴 여파",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000045040",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.616786",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "6%↑ 전쟁통에도 굳건…비트코인, 이틀간 1조원 자금 유입",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094097",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.617249",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "액스비스 상장·아이엠바이오로직스 공모[증시캘린더]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230110",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.617740",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"5년 내 대박…팔았는데 또 샀다\" 사모펀드들이 다시 꽂힌 사업은[PE는 지금]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730764",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.618228",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[위클리IB]결혼식 줄어도 웨딩홀은 뜬다? 사모펀드가 다시 산 이유",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230106",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.618725",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "주가 두달만에 180% 뛰자 일어난 일…삼성생명·신한지주 시총 넘보는 미래에셋증권",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646587",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.619191",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "'개인정보유출' 쿠팡, 실적 최악 구간 지났지만…\"소비심리·유가 변수 여전\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230101",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.619660",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"10년을 기다렸다\"…'첫 흑자' 컬리, 다음은 상장?",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000045039",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.620113",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘국내 최초’ 코스닥 액티브 ETF 첫 출격",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/119/0003066359",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.620575",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“IP 재활용이 답?”…게임업계 방치형 키우기 게임 잇따라 출시",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002609850",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.621051",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "6200→5500 코스피 후퇴, 외국인 돌아오나…추가 변수는",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094090",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.621510",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한기평, 롯데손보 신용등급 하향…\"경영개선요구조치 반영\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730735",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.621997",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "중동에서 빨리 보내달라고 난리…미-이란 전쟁에 뜨는 한국 대공무기[주末머니]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005730732",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.622529",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"내 계좌 터지나\" 개미들 밤잠 설치더니…폭락장서 19% 껑충 [종목+]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259350",
+        "type": "flash",
+        "scraped_at": "2026-03-07T22:11:48.623000",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "stock_news": {
+    "stock_code": "005930",
+    "source": "naver_stock_news",
+    "url": "https://m.stock.naver.com/domestic/stock/005930/news",
+    "scraped_at": "2026-03-07T22:12:25.164013",
+    "status": "success",
+    "count": 0,
+    "news": []
+  }
+}
