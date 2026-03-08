@@ -1,0 +1,68 @@
+{
+  "morning_analysis": {
+    "name": "\uc624\uc804 \ubd84\uc11d",
+    "time": "08:00",
+    "cron": "0 8 * * 1-5",
+    "timezone": "Asia/Seoul",
+    "tasks": [
+      "level1",
+      "level2",
+      "level3",
+      "report"
+    ],
+    "dependencies": [],
+    "retry": 3,
+    "retry_delay": 300,
+    "timeout": 600,
+    "enabled": true
+  },
+  "afternoon_analysis": {
+    "name": "\uc624\ud6c4 \ubd84\uc11d",
+    "time": "14:00",
+    "cron": "0 14 * * 1-5",
+    "timezone": "Asia/Seoul",
+    "tasks": [
+      "level1",
+      "level2",
+      "level3",
+      "report"
+    ],
+    "dependencies": [],
+    "retry": 3,
+    "retry_delay": 300,
+    "timeout": 600,
+    "enabled": true
+  },
+  "evening_analysis": {
+    "name": "\uc800\ub141 \ubd84\uc11d",
+    "time": "19:00",
+    "cron": "0 19 * * 1-5",
+    "timezone": "Asia/Seoul",
+    "tasks": [
+      "level1",
+      "level2",
+      "level3",
+      "report"
+    ],
+    "dependencies": [],
+    "retry": 3,
+    "retry_delay": 300,
+    "timeout": 600,
+    "enabled": true
+  },
+  "daily_check": {
+    "name": "\uc77c\uc77c \uc810\uac80",
+    "time": "22:00",
+    "cron": "0 22 * * 0-4",
+    "timezone": "Asia/Seoul",
+    "tasks": [
+      "system_check",
+      "strategy_research"
+    ],
+    "dependencies": [],
+    "retry": 2,
+    "retry_delay": 600,
+    "timeout": 900,
+    "enabled": true
+  }
+}
