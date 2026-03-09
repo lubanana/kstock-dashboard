@@ -196,7 +196,7 @@ class JobQueueDB:
         """남은 작업 수"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        cursor.execute('SELECT COUNT(*) FROM jobs WHERE status = 'pending'')
+        cursor.execute("SELECT COUNT(*) FROM jobs WHERE status = 'pending'")
         count = cursor.fetchone()[0]
         conn.close()
         return count
@@ -392,7 +392,7 @@ def main():
     # DB에서 결과 추출
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
-    cursor.execute('SELECT result_json FROM jobs WHERE status = 'completed'')
+    cursor.execute("SELECT result_json FROM jobs WHERE status = 'completed'")
     results = [json.loads(row[0]) for row in cursor.fetchall() if row[0]]
     conn.close()
     
