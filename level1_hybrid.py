@@ -205,7 +205,7 @@ class JobQueueDB:
         import sqlite3
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        cursor.execute('UPDATE jobs SET status = 'processing' WHERE id = ?', (job_id,))
+        cursor.execute("UPDATE jobs SET status = 'processing' WHERE id = ?", (job_id,))
         conn.commit()
         conn.close()
     

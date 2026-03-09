@@ -1,0 +1,4210 @@
+{
+  "date": "2026-03-09T23:12:57.157876",
+  "data_source": "FinanceDataReader",
+  "total": 150,
+  "success": 150,
+  "kospi_count": 100,
+  "kosdaq_count": 50,
+  "results": [
+    {
+      "symbol": "000020.KS",
+      "name": "동화약품",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:47.616774",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000040.KS",
+      "name": "모터스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:49.043180",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 34.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000050.KS",
+      "name": "경방",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:50.527352",
+      "agents": {
+        "TECH": {
+          "score": 24,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000070.KS",
+      "name": "삼양홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:51.748524",
+      "agents": {
+        "TECH": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 56.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000080.KS",
+      "name": "하이트진로",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:52.946131",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000087.KS",
+      "name": "하이트진로2우B",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:54.201992",
+      "agents": {
+        "TECH": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000100.KS",
+      "name": "유한양행",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:55.407133",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 70,
+          "rec": "BUY"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000105.KS",
+      "name": "유한양행우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:56.604971",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000120.KS",
+      "name": "대한통운",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:57.893824",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 46.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000140.KS",
+      "name": "하이트진로홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:09:59.076440",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 41.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000145.KS",
+      "name": "하이트진로홀딩스우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:00.362371",
+      "agents": {
+        "TECH": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 42.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000150.KS",
+      "name": "두산",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:01.738093",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 47,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 45.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000155.KS",
+      "name": "두산우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:03.053443",
+      "agents": {
+        "TECH": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000157.KS",
+      "name": "두산2우B",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:04.432520",
+      "agents": {
+        "TECH": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 47,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 44.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000180.KS",
+      "name": "성창기업지주",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:05.756927",
+      "agents": {
+        "TECH": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 38.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000220.KS",
+      "name": "유유제약",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:07.040097",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 69,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 52.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000225.KS",
+      "name": "유유제약1우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:08.327959",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 47.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000227.KS",
+      "name": "유유제약2우B",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:09.582122",
+      "agents": {
+        "TECH": {
+          "score": 23,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 46.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000230.KS",
+      "name": "일동홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:10.915568",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 42.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000240.KS",
+      "name": "한국앤컴퍼니",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:12.195533",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 55.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000270.KS",
+      "name": "기아",
+      "market": "KOSPI",
+      "sector": "자동차",
+      "date": "2026-03-09T23:10:13.474063",
+      "agents": {
+        "TECH": {
+          "score": 45,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 80,
+          "rec": "BUY"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 56.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000300.KS",
+      "name": "오토넥스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:14.727620",
+      "agents": {
+        "TECH": {
+          "score": 0,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 30.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000320.KS",
+      "name": "노루홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:15.911173",
+      "agents": {
+        "TECH": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 41,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000325.KS",
+      "name": "노루홀딩스우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:17.146396",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000370.KS",
+      "name": "한화손해보험",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:18.576255",
+      "agents": {
+        "TECH": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 46.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000390.KS",
+      "name": "삼화페인트",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:19.853559",
+      "agents": {
+        "TECH": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 80,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 57.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000400.KS",
+      "name": "롯데손해보험",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:21.120828",
+      "agents": {
+        "TECH": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000430.KS",
+      "name": "대원강업",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:22.277929",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000480.KS",
+      "name": "홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:23.736706",
+      "agents": {
+        "TECH": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 65,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000490.KS",
+      "name": "대동",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:24.983169",
+      "agents": {
+        "TECH": {
+          "score": 19,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 41.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000500.KS",
+      "name": "가온전선",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:26.380384",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 51.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000520.KS",
+      "name": "삼일제약",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:27.706252",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 19,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 35.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000540.KS",
+      "name": "흥국화재",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:28.842554",
+      "agents": {
+        "TECH": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 54.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000545.KS",
+      "name": "흥국화재우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:30.064072",
+      "agents": {
+        "TECH": {
+          "score": 28,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000590.KS",
+      "name": "홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:31.250004",
+      "agents": {
+        "TECH": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 68,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000640.KS",
+      "name": "동아쏘시오홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:32.461356",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 51.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000650.KS",
+      "name": "천일고속",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:33.696576",
+      "agents": {
+        "TECH": {
+          "score": 21,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 21,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 31.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000660.KS",
+      "name": "하이닉스",
+      "market": "KOSPI",
+      "sector": "반도체",
+      "date": "2026-03-09T23:10:34.890046",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 70,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 84,
+          "rec": "BUY"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 63.2,
+      "consensus": "BUY",
+      "status": "success"
+    },
+    {
+      "symbol": "000670.KS",
+      "name": "영풍",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:36.222187",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000680.KS",
+      "name": "네트웍스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:37.492983",
+      "agents": {
+        "TECH": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 36.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000700.KS",
+      "name": "유수홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:38.641912",
+      "agents": {
+        "TECH": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 61,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 54.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000720.KS",
+      "name": "현대건설",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:39.880058",
+      "agents": {
+        "TECH": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 50.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000725.KS",
+      "name": "현대건설우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:41.088432",
+      "agents": {
+        "TECH": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000760.KS",
+      "name": "이화산업",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:42.516110",
+      "agents": {
+        "TECH": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000810.KS",
+      "name": "삼성화재",
+      "market": "KOSPI",
+      "sector": "보험",
+      "date": "2026-03-09T23:10:43.652878",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 45,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 46.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000815.KS",
+      "name": "삼성화재우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:44.972383",
+      "agents": {
+        "TECH": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 50,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000850.KS",
+      "name": "화천기공",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:46.193471",
+      "agents": {
+        "TECH": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000860.KS",
+      "name": "강남제비스코",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:47.476546",
+      "agents": {
+        "TECH": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 42.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000880.KS",
+      "name": "한화",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:48.723569",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000890.KS",
+      "name": "보해양조",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:50.014504",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000910.KS",
+      "name": "유니온",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:51.259000",
+      "agents": {
+        "TECH": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 19,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 41.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000950.KS",
+      "name": "전방",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:52.462500",
+      "agents": {
+        "TECH": {
+          "score": 24,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000970.KS",
+      "name": "한국주철관",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:53.644654",
+      "agents": {
+        "TECH": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 63,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 54.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000990.KS",
+      "name": "하이텍",
+      "market": "KOSPI",
+      "sector": "반도체",
+      "date": "2026-03-09T23:10:54.992023",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 83,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 79,
+          "rec": "BUY"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 61.5,
+      "consensus": "BUY",
+      "status": "success"
+    },
+    {
+      "symbol": "001020.KS",
+      "name": "페이퍼코리아",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:56.165076",
+      "agents": {
+        "TECH": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 20,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 69,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001060.KS",
+      "name": "중외제약",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:57.405251",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 72,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 55.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001065.KS",
+      "name": "중외제약우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:58.595649",
+      "agents": {
+        "TECH": {
+          "score": 24,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 73,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001067.KS",
+      "name": "중외제약2우B",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:10:59.782172",
+      "agents": {
+        "TECH": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 70,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 69,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 48,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 55.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001070.KS",
+      "name": "대한방직",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:01.017885",
+      "agents": {
+        "TECH": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001080.KS",
+      "name": "만호제강",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:02.272254",
+      "agents": {
+        "TECH": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 41,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 47.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001120.KS",
+      "name": "인터내셔널",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:03.535968",
+      "agents": {
+        "TECH": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 64,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 55.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001130.KS",
+      "name": "대한제분",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:04.806474",
+      "agents": {
+        "TECH": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 56.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001200.KS",
+      "name": "유진투자증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:06.075036",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 47.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001210.KS",
+      "name": "금호전기",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:07.326839",
+      "agents": {
+        "TECH": {
+          "score": 25,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 45,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 37.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001230.KS",
+      "name": "동국홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:08.571750",
+      "agents": {
+        "TECH": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 66,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001250.KS",
+      "name": "글로벌",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:09.832821",
+      "agents": {
+        "TECH": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 68,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 55.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001260.KS",
+      "name": "남광토건",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:11.114607",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001270.KS",
+      "name": "부국증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:12.378259",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 52.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001275.KS",
+      "name": "부국증권우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:13.642070",
+      "agents": {
+        "TECH": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 57.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001290.KS",
+      "name": "상상인증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:14.924090",
+      "agents": {
+        "TECH": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 47.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001360.KS",
+      "name": "삼성제약",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:16.127990",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 41,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001380.KS",
+      "name": "글로벌",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:17.372529",
+      "agents": {
+        "TECH": {
+          "score": 20,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001390.KS",
+      "name": "케미칼",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:18.617768",
+      "agents": {
+        "TECH": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 55.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001420.KS",
+      "name": "태원물산",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:19.884172",
+      "agents": {
+        "TECH": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 55,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001430.KS",
+      "name": "세아베스틸지주",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:21.148458",
+      "agents": {
+        "TECH": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 47.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001440.KS",
+      "name": "대한전선",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:22.363239",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001450.KS",
+      "name": "현대해상",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:23.567106",
+      "agents": {
+        "TECH": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 70,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 45,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 50.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001470.KS",
+      "name": "삼부토건",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:24.910176",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001500.KS",
+      "name": "현대차증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:26.095000",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 49,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001510.KS",
+      "name": "증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:27.338352",
+      "agents": {
+        "TECH": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 64,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 56.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001515.KS",
+      "name": "증권우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:28.546494",
+      "agents": {
+        "TECH": {
+          "score": 45,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 51.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001520.KS",
+      "name": "동양",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:29.753115",
+      "agents": {
+        "TECH": {
+          "score": 23,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 17,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 32.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001525.KS",
+      "name": "동양우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:30.995940",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 17,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 35.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001527.KS",
+      "name": "동양2우B",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:32.219346",
+      "agents": {
+        "TECH": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 17,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 68,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 42.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001530.KS",
+      "name": "동일",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:33.411940",
+      "agents": {
+        "TECH": {
+          "score": 32,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 20,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001550.KS",
+      "name": "조비",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:34.618278",
+      "agents": {
+        "TECH": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 17,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 80,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 46.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001560.KS",
+      "name": "제일연마",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:35.788397",
+      "agents": {
+        "TECH": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 70,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 65.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001570.KS",
+      "name": "금양",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:37.309768",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 40.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001620.KS",
+      "name": "케이비아이동국실업",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:38.514845",
+      "agents": {
+        "TECH": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001630.KS",
+      "name": "종근당홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:39.784383",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 50.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001680.KS",
+      "name": "대상",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:41.034632",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 55,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001685.KS",
+      "name": "대상우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:42.370503",
+      "agents": {
+        "TECH": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 55,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 46.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001720.KS",
+      "name": "신영증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:43.576476",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001740.KS",
+      "name": "네트웍스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:44.895534",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 52,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 40.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001750.KS",
+      "name": "한양증권",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:46.106988",
+      "agents": {
+        "TECH": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 45,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 50.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001755.KS",
+      "name": "한양증권우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:47.314311",
+      "agents": {
+        "TECH": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 45,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 51.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001780.KS",
+      "name": "알루코",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:48.603314",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 38.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001790.KS",
+      "name": "대한제당",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:49.801412",
+      "agents": {
+        "TECH": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 50.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001795.KS",
+      "name": "대한제당우",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:51.064288",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 54,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001800.KS",
+      "name": "오리온홀딩스",
+      "market": "KOSPI",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:52.278486",
+      "agents": {
+        "TECH": {
+          "score": 52,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 50,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 58.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000250.KQ",
+      "name": "삼천당제약",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:53.549915",
+      "agents": {
+        "TECH": {
+          "score": 62,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 64,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "000440.KQ",
+      "name": "중앙에너비스",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:54.812756",
+      "agents": {
+        "TECH": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 87,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 54.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001000.KQ",
+      "name": "신라섬유",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:56.311265",
+      "agents": {
+        "TECH": {
+          "score": 19,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 38.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001540.KQ",
+      "name": "안국약품",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:57.455792",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 68,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 52.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001810.KQ",
+      "name": "무림SP",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:11:58.813118",
+      "agents": {
+        "TECH": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "001840.KQ",
+      "name": "이화공영",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:00.108387",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 28,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "002230.KQ",
+      "name": "피에스텍",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:01.570695",
+      "agents": {
+        "TECH": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 49,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "002290.KQ",
+      "name": "삼일기업공사",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:02.887956",
+      "agents": {
+        "TECH": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 64,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 46.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "002680.KQ",
+      "name": "한탑",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:04.126467",
+      "agents": {
+        "TECH": {
+          "score": 71,
+          "rec": "BUY"
+        },
+        "QUANT": {
+          "score": 19,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 87,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 53.2,
+      "consensus": "BUY",
+      "status": "success"
+    },
+    {
+      "symbol": "002800.KQ",
+      "name": "신신제약",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:05.431826",
+      "agents": {
+        "TECH": {
+          "score": 24,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 64,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "003100.KQ",
+      "name": "선광",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:06.627281",
+      "agents": {
+        "TECH": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "003310.KQ",
+      "name": "대주산업",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:07.895055",
+      "agents": {
+        "TECH": {
+          "score": 41,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 51.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "003380.KQ",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:09.226746",
+      "agents": {
+        "TECH": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "003800.KQ",
+      "name": "에이스침대",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:10.601442",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 63,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 44,
+          "rec": "SELL"
+        }
+      },
+      "avg_score": 49.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "004590.KQ",
+      "name": "한국가구",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:11.945585",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 47.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "004650.KQ",
+      "name": "창해에탄올",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:13.244443",
+      "agents": {
+        "TECH": {
+          "score": 34,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "004780.KQ",
+      "name": "대륙제관",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:14.402783",
+      "agents": {
+        "TECH": {
+          "score": 36,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 51,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 47.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "005160.KQ",
+      "name": "동국산업",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:15.709436",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 52,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 42.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "005290.KQ",
+      "name": "동진쎄미켐",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:16.982817",
+      "agents": {
+        "TECH": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 65,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "005670.KQ",
+      "name": "푸드웰",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:18.361128",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 41,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "005710.KQ",
+      "name": "대원산업",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:19.594399",
+      "agents": {
+        "TECH": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 80,
+          "rec": "BUY"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 60.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "005860.KQ",
+      "name": "한일사료",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:20.830179",
+      "agents": {
+        "TECH": {
+          "score": 71,
+          "rec": "BUY"
+        },
+        "QUANT": {
+          "score": 48,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 87,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 65.8,
+      "consensus": "BUY",
+      "status": "success"
+    },
+    {
+      "symbol": "005990.KQ",
+      "name": "매일홀딩스",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:22.153368",
+      "agents": {
+        "TECH": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 50,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 52.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006050.KQ",
+      "name": "국영지앤엠",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:23.385896",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 62,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 38.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006140.KQ",
+      "name": "피제이전자",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:24.598121",
+      "agents": {
+        "TECH": {
+          "score": 25,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 67,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 66,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 53.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006620.KQ",
+      "name": "동구바이오제약",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:25.891176",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 36.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006730.KQ",
+      "name": "서부T",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:27.038180",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006910.KQ",
+      "name": "보성파워텍",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:28.253089",
+      "agents": {
+        "TECH": {
+          "score": 47,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 41.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "006920.KQ",
+      "name": "모헨즈",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:29.452172",
+      "agents": {
+        "TECH": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 43,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 73,
+          "rec": "BUY"
+        }
+      },
+      "avg_score": 51.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007330.KQ",
+      "name": "푸른저축은행",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:30.754729",
+      "agents": {
+        "TECH": {
+          "score": 44,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 53,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007370.KQ",
+      "name": "진양제약",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:31.986174",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 64,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 58,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007390.KQ",
+      "name": "네이처셀",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:33.425170",
+      "agents": {
+        "TECH": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007530.KQ",
+      "name": "와이엠",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:34.606918",
+      "agents": {
+        "TECH": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 63,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 40.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007680.KQ",
+      "name": "대원",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:35.991796",
+      "agents": {
+        "TECH": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 55,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 48.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007720.KQ",
+      "name": "소노스퀘어",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:37.245479",
+      "agents": {
+        "TECH": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 65,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 44.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007770.KQ",
+      "name": "한일화학",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:38.410082",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "007820.KQ",
+      "name": "에스엠코어",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:39.635918",
+      "agents": {
+        "TECH": {
+          "score": 33,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 37.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "008290.KQ",
+      "name": "원풍물산",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:40.810482",
+      "agents": {
+        "TECH": {
+          "score": 37,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 52,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 37.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "008370.KQ",
+      "name": "원풍",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:42.006148",
+      "agents": {
+        "TECH": {
+          "score": 58,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 56,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 57.5,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "008470.KQ",
+      "name": "부스타",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:43.293409",
+      "agents": {
+        "TECH": {
+          "score": 46,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 59,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 59,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 56.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "008830.KQ",
+      "name": "대동기어",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:44.555806",
+      "agents": {
+        "TECH": {
+          "score": 27,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 51,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "009300.KQ",
+      "name": "삼아제약",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:45.826600",
+      "agents": {
+        "TECH": {
+          "score": 26,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 36.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "009520.KQ",
+      "name": "포스코엠텍",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:47.111296",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 37.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "009620.KQ",
+      "name": "삼보산업",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:48.376042",
+      "agents": {
+        "TECH": {
+          "score": 24,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 16,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 30,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 54,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 31.0,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "009730.KQ",
+      "name": "이렘",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:49.499792",
+      "agents": {
+        "TECH": {
+          "score": 61,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 60,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 45.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "009780.KQ",
+      "name": "엠에스씨",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:50.861043",
+      "agents": {
+        "TECH": {
+          "score": 29,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 36.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "010170.KQ",
+      "name": "대한광통신",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:52.210775",
+      "agents": {
+        "TECH": {
+          "score": 55,
+          "rec": "HOLD"
+        },
+        "QUANT": {
+          "score": 17,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 39,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 64,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 43.8,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "010240.KQ",
+      "name": "흥국",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:53.414333",
+      "agents": {
+        "TECH": {
+          "score": 38,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 22,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 40,
+          "rec": "SELL"
+        },
+        "NEWS": {
+          "score": 57,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 39.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "010280.KQ",
+      "name": "아이티센엔텍",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:54.726077",
+      "agents": {
+        "TECH": {
+          "score": 35,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 57,
+          "rec": "HOLD"
+        },
+        "QUAL": {
+          "score": 53,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 56,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 50.2,
+      "consensus": "HOLD",
+      "status": "success"
+    },
+    {
+      "symbol": "010470.KQ",
+      "name": "오리콤",
+      "market": "KOSDAQ",
+      "sector": "기타",
+      "date": "2026-03-09T23:12:55.903169",
+      "agents": {
+        "TECH": {
+          "score": 31,
+          "rec": "SELL"
+        },
+        "QUANT": {
+          "score": 42,
+          "rec": "SELL"
+        },
+        "QUAL": {
+          "score": 60,
+          "rec": "HOLD"
+        },
+        "NEWS": {
+          "score": 63,
+          "rec": "HOLD"
+        }
+      },
+      "avg_score": 49.0,
+      "consensus": "HOLD",
+      "status": "success"
+    }
+  ]
+}

@@ -301,6 +301,10 @@ class JobManager:
             if not self.running:
                 break
             
+            # 이미 완료된 종목 건과
+            if i < self.state.completed:
+                continue
+            
             stock = self.stock_list[i]
             self._log(f"   [{i+1}/{self.state.total_stocks}] {stock['name']} ({stock['code']})")
             
