@@ -154,7 +154,7 @@ def update_db_status(job_ids):
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
     for job_id in job_ids:
-        cursor.execute('UPDATE jobs SET status = 'completed' WHERE id = ?', (job_id,))
+        cursor.execute("UPDATE jobs SET status = 'completed' WHERE id = ?", (job_id,))
     conn.commit()
     conn.close()
 
