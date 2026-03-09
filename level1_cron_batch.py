@@ -98,7 +98,18 @@ def get_batch():
 
 
 def analyze_stock(code, name, market):
-    """PyKRX로 분석"""
+    """PyKRX로 분석 (강화된 예외 처리)"""
+    result = {
+        'code': code,
+        'name': name,
+        'market': market,
+        'avg_score': 50,
+        'consensus': 'HOLD',
+        'price': 0,
+        'change_pct': 0,
+        'error': None
+    }
+    
     try:
         end_date = datetime.now().strftime('%Y%m%d')
         start_date = (datetime.now() - timedelta(days=30)).strftime('%Y%m%d')
@@ -106,7 +117,8 @@ def analyze_stock(code, name, market):
         df = stock.get_market_ohlcv(start_date, end_date, code)
         
         if df is None or len(df) < 5:
-            return None
+            result['error'] = 'Insufficient data'
+            return result
         
         latest = df.iloc[-1]
         change = latest['등락률']
@@ -118,18 +130,26 @@ def analyze_stock(code, name, market):
         else:
             score, rec = 50, 'HOLD'
         
-        return {
-            'code': code,
-            'name': name,
-            'market': market,
-            'avg_score': score,
-            'consensus': rec,
-            'price': latest['종가'],
-            'change_pct': change
-        }
+        result['avg_score'] = score
+        result['consensus'] = rec
+        result['price'] = int(latest['종가'])
+        result['change_pct'] = float(change)
+        result['error'] = None
+        
+        return result
+        
+    except KeyError as e:
+        log(f"   ⚠️ KeyError: {str(e)[:30]}")
+        result['error'] = f'KeyError: {str(e)[:30]}'
+        return result
+    except IndexError as e:
+        log(f"   ⚠️ IndexError: {str(e)[:30]}")
+        result['error'] = f'IndexError: {str(e)[:30]}'
+        return result
     except Exception as e:
-        log(f"   Error: {str(e)[:30]}")
-        return None
+        log(f"   ⚠️ Error: {str(e)[:30]}")
+        result['error'] = f'Error: {str(e)[:30]}'
+        return result
 
 
 def save_batch_results(results):
@@ -206,18 +226,30 @@ def main():
     completed_ids = []
     
     for i, job in enumerate(batch, 1):
-        log(f"  [{i}/{len(batch)}] {job['name']}")
-        
-        result = analyze_stock(job['code'], job['name'], job['market'])
-        
-        if result:
-            results.append(result)
+        try:
+            log(f"  [{i}/{len(batch)}] {job['name']}")
+            
+            result = analyze_stock(job['code'], job['name'], job['market'])
+            
+            if result and result['error'] is None:
+                results.append(result)
+                completed_ids.append(job['id'])
+                log(f"     ✅ {result['avg_score']}pts")
+            else:
+                # 오류가 있어도 completed로 표시하고 계속 진행
+                if result:
+                    results.append(result)
+                completed_ids.append(job['id'])
+                error_msg = result['error'] if result else 'Unknown error'
+                log(f"     ⚠️  Error but continue: {error_msg[:30]}")
+            
+            time.sleep(0.5)  # 서버 부하 방지
+            
+        except Exception as e:
+            log(f"     ❌ Critical error: {str(e)[:40]}")
+            # 오류가 나도 completed로 처리하고 계속
             completed_ids.append(job['id'])
-            log(f"     ✅ {result['avg_score']}pts")
-        else:
-            log(f"     ❌ Failed")
-        
-        time.sleep(1)  # 서버 부하 방지
+            continue
     
     # 결과 저장
     if results:
