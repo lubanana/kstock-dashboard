@@ -81,57 +81,51 @@ class StockDataReader:
             '214150': '화장품',
         }
     
-    def get_kospi_stocks(self, limit: int = 100) -> List[Dict]:
-        """KOSPI 종목 동적 조회"""
-        if not self.fdr_available:
-            return self._get_fallback_kospi(limit)
+    def get_kospi_stocks(self, limit: int = None) -> List[Dict]:
+        """KOSPI 종목 JSON 파일에서 로드"""
+        json_file = '/home/programs/kstock_analyzer/data/kospi_stocks.json'
         
         try:
-            print("📊 Fetching KOSPI stock list from FinanceDataReader...")
-            kospi = fdr.StockListing('KOSPI')
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                stocks = data.get('stocks', [])
+                
+            # 섹터 매핑 추가
+            for stock in stocks:
+                stock['sector'] = self.sector_mapping.get(stock['code'], '기타')
             
-            stocks = []
-            for _, row in kospi.head(limit).iterrows():
-                code = str(row.get('Code', '')).zfill(6)
-                name = row.get('Name', '')
-                if code and name:
-                    stocks.append({
-                        'symbol': f"{code}.KS",
-                        'name': name,
-                        'market': 'KOSPI',
-                        'sector': self.sector_mapping.get(code, '기타')
-                    })
+            if limit:
+                stocks = stocks[:limit]
             
-            print(f"   ✅ Loaded {len(stocks)} KOSPI stocks")
+            print(f"📊 Loaded {len(stocks)} KOSPI stocks from {json_file}")
             return stocks
             
         except Exception as e:
-            print(f"   ❌ Error fetching KOSPI: {e}")
-            return self._get_fallback_kospi(limit)
+            print(f"   ❌ Error loading KOSPI: {e}")
+            return self._get_fallback_kospi(limit or 40)
     
-    def get_kosdaq_stocks(self, limit: int = 100) -> List[Dict]:
-        """KOSDAQ 종목 동적 조회"""
-        if not self.fdr_available:
-            return self._get_fallback_kosdaq(limit)
+    def get_kosdaq_stocks(self, limit: int = None) -> List[Dict]:
+        """KOSDAQ 종목 JSON 파일에서 로드"""
+        json_file = '/home/programs/kstock_analyzer/data/kosdaq_stocks.json'
         
         try:
-            print("📊 Fetching KOSDAQ stock list from FinanceDataReader...")
-            kosdaq = fdr.StockListing('KOSDAQ')
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                stocks = data.get('stocks', [])
+                
+            # 섹터 매핑 추가
+            for stock in stocks:
+                stock['sector'] = self.sector_mapping.get(stock['code'], '기타')
             
-            stocks = []
-            for _, row in kosdaq.head(limit).iterrows():
-                code = str(row.get('Code', '')).zfill(6)
-                name = row.get('Name', '')
-                if code and name:
-                    stocks.append({
-                        'symbol': f"{code}.KS",
-                        'name': name,
-                        'market': 'KOSDAQ',
-                        'sector': self.sector_mapping.get(code, '기타')
-                    })
+            if limit:
+                stocks = stocks[:limit]
             
-            print(f"   ✅ Loaded {len(stocks)} KOSDAQ stocks")
+            print(f"📊 Loaded {len(stocks)} KOSDAQ stocks from {json_file}")
             return stocks
+            
+        except Exception as e:
+            print(f"   ❌ Error loading KOSDAQ: {e}")
+            return self._get_fallback_kosdaq(limit or 20)
             
         except Exception as e:
             print(f"   ❌ Error fetching KOSDAQ: {e}")
@@ -305,13 +299,13 @@ def run_full_analysis(kospi_count: int = None, kosdaq_count: int = None):
     
     print("=" * 70)
     print("🚀 KStock Full Market Level 1 Analysis")
-    print(f"   Data Source: {'FinanceDataReader' if FDR_AVAILABLE else 'Fallback List'}")
+    print(f"   Data Source: KOSPI/KOSDAQ Master Files")
     print(f"   Time: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 70)
     
-    # 종목 선택 (기본값: KOSPI 40개, KOSDAQ 20개)
-    kospi_stocks = reader.get_kospi_stocks(kospi_count or 40)
-    kosdaq_stocks = reader.get_kosdaq_stocks(kosdaq_count or 20)
+    # 종목 선택 (기본값: KOSPI 50개, KOSDAQ 30개)
+    kospi_stocks = reader.get_kospi_stocks(kospi_count)
+    kosdaq_stocks = reader.get_kosdaq_stocks(kosdaq_count)
     
     stocks = kospi_stocks + kosdaq_stocks
     
