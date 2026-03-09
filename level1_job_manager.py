@@ -341,6 +341,8 @@ class JobManager:
             # 상태 복구 또는 초기화
             if self._load_state():
                 self._send_telegram(f"📂 작업 복구됨: {self.state.completed}/{self.state.total_stocks} 완료")
+                # 종목 리스트는 항상 로드 필요
+                self.load_stock_lists()
             else:
                 self.load_stock_lists()
                 self.state.start_time = datetime.now().isoformat()
