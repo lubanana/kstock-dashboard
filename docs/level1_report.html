@@ -3,298 +3,1035 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Level 1 Analysis Report - 2026-03-04</title>
+    <title>KStock Level 1 Report - 2026-03-10</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', -apple-system, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #333; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
-        
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-bottom: 30px; }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .header .date { opacity: 0.9; }
-        
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
-        .stat-card { background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; text-align: center; }
-        .stat-value { font-size: 2.5em; font-weight: bold; color: #2c3e50; }
-        .stat-label { color: #7f8c8d; margin-top: 5px; }
-        
-        .main-content { display: grid; grid-template-columns: 1fr 450px; gap: 25px; }
-        
-        .section { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 20px; margin-bottom: 25px; }
-        .section h2 { color: #2c3e50; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #3498db; }
-        
-        .stock-table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
-        .stock-table th { background: #34495e; color: white; padding: 12px; text-align: left; position: sticky; top: 0; }
-        .stock-table td { padding: 12px; border-bottom: 1px solid #ecf0f1; cursor: pointer; transition: background 0.2s; }
-        .stock-table tr:hover { background: #e3f2fd; }
-        .stock-table tr.active { background: #bbdefb; }
-        
-        .badge { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500; }
-        .badge-strong-buy { background: #27ae60; color: white; }
-        .badge-buy { background: #2ecc71; color: white; }
-        .badge-hold { background: #f39c12; color: white; }
-        .badge-sell { background: #e74c3c; color: white; }
-        
-        .score-high { color: #27ae60; font-weight: bold; }
-        .score-mid { color: #f39c12; font-weight: bold; }
-        .score-low { color: #e74c3c; font-weight: bold; }
-        
-        /* 상세 패널 */
-        .detail-panel { position: sticky; top: 20px; }
-        .detail-card { background: rgba(255,255,255,0.95); padding: 25px; border-radius: 20px; margin-bottom: 20px; }
-        .detail-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #ecf0f1; }
-        .detail-title { font-size: 1.5em; color: #2c3e50; }
-        .detail-subtitle { color: #7f8c8d; font-size: 0.9em; }
-        
-        .agent-detail { margin-bottom: 20px; padding: 15px; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #3498db; }
-        .agent-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .agent-name { font-weight: bold; color: #2c3e50; }
-        .agent-score { font-size: 1.3em; font-weight: bold; }
-        .agent-score-high { color: #27ae60; }
-        .agent-score-mid { color: #f39c12; }
-        .agent-score-low { color: #e74c3c; }
-        .agent-rec { display: inline-block; padding: 3px 10px; border-radius: 15px; font-size: 0.8em; margin-left: 10px; }
-        
-        .breakdown-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px; }
-        .breakdown-item { display: flex; justify-content: space-between; padding: 8px 12px; background: white; border-radius: 8px; font-size: 0.9em; }
-        
-        .empty-state { text-align: center; padding: 60px 20px; color: #7f8c8d; }
-        .empty-state-icon { font-size: 4em; margin-bottom: 20px; }
-        
-        .filter-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .filter-tab { padding: 10px 20px; background: #ecf0f1; border: none; border-radius: 25px; cursor: pointer; transition: all 0.3s; }
-        .filter-tab:hover { background: #d5dbdb; }
-        .filter-tab.active { background: #3498db; color: white; }
-        
-        .sector-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .sector-item { display: flex; justify-content: space-between; padding: 10px; background: #f8f9fa; border-radius: 8px; }
-        
-        @media (max-width: 1024px) {
-            .main-content { grid-template-columns: 1fr; }
-            .detail-panel { position: static; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 { color: #667eea; font-size: 2em; margin-bottom: 5px; }
+        .stat-card p { color: #666; }
+        .section { padding: 30px; }
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover { background: #f5f5f5; }
+        .score-high { color: #4CAF50; font-weight: bold; }
+        .score-mid { color: #FF9800; font-weight: bold; }
+        .score-low { color: #F44336; font-weight: bold; }
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .badge-buy { background: #4CAF50; color: white; }
+        .badge-hold { background: #FF9800; color: white; }
+        .badge-sell { background: #F44336; color: white; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 Level 1 Analysis Report</h1>
-            <div class="date">2026-03-04 | 59 Stocks Analyzed</div>
+            <h1>📊 KStock Level 1 Analysis Report</h1>
+            <p>종목별 기술/재무 분석 | 2026년 03월 10일</p>
         </div>
         
-        <div class="stats-grid">
+        <div class="stats">
             <div class="stat-card">
-                <div class="stat-value">59</div>
-                <div class="stat-label">Stocks Analyzed</div>
+                <h3>150</h3>
+                <p>분석 종목</p>
             </div>
             <div class="stat-card">
-                <div class="stat-value">49.3</div>
-                <div class="stat-label">Average Score</div>
+                <h3>4</h3>
+                <p>BUY 추천</p>
             </div>
             <div class="stat-card">
-                <div class="stat-value">7</div>
-                <div class="stat-label">BUY Signals</div>
+                <h3>146</h3>
+                <p>HOLD 추천</p>
             </div>
             <div class="stat-card">
-                <div class="stat-value">73.5</div>
-                <div class="stat-label">Top Score</div>
+                <h3>0</h3>
+                <p>SELL 추천</p>
             </div>
         </div>
         
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="section">
-                    <h2>🔍 Filter</h2>
-                    <div class="filter-tabs">
-                        <button class="filter-tab active" onclick="filterStocks('all')">All</button>
-                        <button class="filter-tab" onclick="filterStocks('kospi')">KOSPI</button>
-                        <button class="filter-tab" onclick="filterStocks('kosdaq')">KOSDAQ</button>
-                        <button class="filter-tab" onclick="filterStocks('buy')">BUY</button>
-                        <button class="filter-tab" onclick="filterStocks('hold')">HOLD</button>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2>📋 Stock List (Click for Details)</h2>
-                    <div style="max-height: 600px; overflow-y: auto;">
-                        <table class="stock-table">
-                            <thead>
-                                <tr>
-                                    <th>Rank</th>
-                                    <th>Name</th>
-                                    <th>Market</th>
-                                    <th>Score</th>
-                                    <th>Consensus</th>
-                                </tr>
-                            </thead>
-                            <tbody id="stockTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="detail-panel">
-                <div id="detailContent">
-                    <div class="detail-card empty-state">
-                        <div class="empty-state-icon">📈</div>
-                        <h3>Select a Stock</h3>
-                        <p>Click on any stock from the list to view detailed analysis from all 4 agents.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="section">
+            <h2>🏆 상위 100종목</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목명</th>
+                        <th>코드</th>
+                        <th>시장</th>
+                        <th>점수</th>
+                        <th>추천</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>한일사료</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-high">65.8</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>제일연마</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-high">65.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>하이닉스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-high">63.2</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>하이텍</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-high">61.5</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>대원산업</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-high">60.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>오리온홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">58.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>원풍</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">57.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>삼화페인트</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">57.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>부국증권우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">57.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>삼양홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">56.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td>대한제분</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">56.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>기아</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">56.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td>증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">56.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td>부스타</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">56.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>15</td>
+                        <td>글로벌</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>16</td>
+                        <td>케미칼</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>17</td>
+                        <td>인터내셔널</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>18</td>
+                        <td>한국앤컴퍼니</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>19</td>
+                        <td>중외제약</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>20</td>
+                        <td>중외제약2우B</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">55.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>21</td>
+                        <td>흥국화재</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">54.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>22</td>
+                        <td>유수홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">54.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>23</td>
+                        <td>한국주철관</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">54.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>24</td>
+                        <td>중앙에너비스</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">54.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>25</td>
+                        <td>홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">53.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>26</td>
+                        <td>동진쎄미켐</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">53.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>27</td>
+                        <td>동국홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">53.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>28</td>
+                        <td>한탑</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">53.2</td>
+                        <td><span class="badge badge-buy">BUY</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>29</td>
+                        <td>한화</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">53.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>30</td>
+                        <td>중외제약우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">53.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>31</td>
+                        <td>피제이전자</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">53.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>32</td>
+                        <td>유유제약</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">52.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>33</td>
+                        <td>안국약품</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">52.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>34</td>
+                        <td>부국증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">52.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>35</td>
+                        <td>매일홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">52.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>36</td>
+                        <td>가온전선</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">51.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>37</td>
+                        <td>한양증권우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">51.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>38</td>
+                        <td>동아쏘시오홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">51.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>39</td>
+                        <td>모헨즈</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">51.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>40</td>
+                        <td>증권우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">51.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>41</td>
+                        <td>대주산업</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">51.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>42</td>
+                        <td>한양증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">50.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>43</td>
+                        <td>현대해상</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">50.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>44</td>
+                        <td>종근당홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">50.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>45</td>
+                        <td>아이티센엔텍</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">50.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>46</td>
+                        <td>현대건설</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">50.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>47</td>
+                        <td>대한제당</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">50.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>48</td>
+                        <td>신영증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>49</td>
+                        <td>피에스텍</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">49.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>50</td>
+                        <td>에이스침대</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">49.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>51</td>
+                        <td>동화약품</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>52</td>
+                        <td>삼성화재우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>53</td>
+                        <td>홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>54</td>
+                        <td>보해양조</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>55</td>
+                        <td>케이비아이동국실업</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">49.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>56</td>
+                        <td>오리콤</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">49.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>57</td>
+                        <td>유한양행</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>58</td>
+                        <td>두산우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>59</td>
+                        <td>흥국화재우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>60</td>
+                        <td>대한제당우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>61</td>
+                        <td>유한양행우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>62</td>
+                        <td>롯데손해보험</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>63</td>
+                        <td>페이퍼코리아</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>64</td>
+                        <td>현대차증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>65</td>
+                        <td>신신제약</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>66</td>
+                        <td>하림지주</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">48.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>67</td>
+                        <td>경방</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">48.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>68</td>
+                        <td>창해에탄올</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">48.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>69</td>
+                        <td>대원</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">48.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>70</td>
+                        <td>삼천당제약</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">48.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>71</td>
+                        <td>유유제약1우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">47.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>72</td>
+                        <td>만호제강</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">47.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>73</td>
+                        <td>유진투자증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">47.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>74</td>
+                        <td>세아베스틸지주</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">47.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>75</td>
+                        <td>한국가구</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">47.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>76</td>
+                        <td>대륙제관</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">47.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>77</td>
+                        <td>상상인증권</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">47.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>78</td>
+                        <td>조비</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>79</td>
+                        <td>대상우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>80</td>
+                        <td>유유제약2우B</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>81</td>
+                        <td>삼성화재</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>82</td>
+                        <td>한화손해보험</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>83</td>
+                        <td>삼일기업공사</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">46.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>84</td>
+                        <td>대한통운</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">46.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>85</td>
+                        <td>대원강업</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">45.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>86</td>
+                        <td>푸드웰</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">45.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>87</td>
+                        <td>이렘</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">45.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>88</td>
+                        <td>하이트진로2우B</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">45.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>89</td>
+                        <td>두산</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">45.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>90</td>
+                        <td>화천기공</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">45.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>91</td>
+                        <td>서부T</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">45.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>92</td>
+                        <td>하이트진로</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">45.0</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>93</td>
+                        <td>노루홀딩스</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">44.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>94</td>
+                        <td>현대건설우</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">44.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>95</td>
+                        <td>선광</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">44.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>96</td>
+                        <td>진양제약</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">44.8</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>97</td>
+                        <td>전방</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">44.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>98</td>
+                        <td>대상</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">44.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>99</td>
+                        <td>소노스퀘어</td>
+                        <td>N/A</td>
+                        <td>KOSDAQ</td>
+                        <td class="score-mid">44.5</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>100</td>
+                        <td>두산2우B</td>
+                        <td>N/A</td>
+                        <td>KOSPI</td>
+                        <td class="score-mid">44.2</td>
+                        <td><span class="badge badge-hold">HOLD</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section" style="text-align: center; padding: 20px; color: #666;">
+            <p>© 2026 KStock Analyzer | Data Source: PyKRX</p>
         </div>
     </div>
-    
-    <script>
-        const stockData = [{"symbol": "005930.KS", "name": "삼성전자", "market": "KOSPI", "sector": "반도체", "date": "2026-03-04T05:00:08.359314", "agents": {"TECH": {"score": 58, "rec": "HOLD"}, "QUANT": {"score": 77, "rec": "BUY"}, "QUAL": {"score": 83, "rec": "BUY"}, "NEWS": {"score": 59, "rec": "HOLD"}}, "avg_score": 69.2, "consensus": "BUY", "status": "success"}, {"symbol": "000660.KS", "name": "SK하이닉스", "market": "KOSPI", "sector": "반도체", "date": "2026-03-04T05:00:09.843994", "agents": {"TECH": {"score": 62, "rec": "HOLD"}, "QUANT": {"score": 70, "rec": "BUY"}, "QUAL": {"score": 84, "rec": "BUY"}, "NEWS": {"score": 53, "rec": "HOLD"}}, "avg_score": 67.2, "consensus": "BUY", "status": "success"}, {"symbol": "035420.KS", "name": "NAVER", "market": "KOSPI", "sector": "플랫폼", "date": "2026-03-04T05:00:11.104024", "agents": {"TECH": {"score": 30, "rec": "SELL"}, "QUANT": {"score": 40, "rec": "SELL"}, "QUAL": {"score": 81, "rec": "BUY"}, "NEWS": {"score": 42, "rec": "SELL"}}, "avg_score": 48.2, "consensus": "HOLD", "status": "success"}, {"symbol": "005380.KS", "name": "현대차", "market": "KOSPI", "sector": "자동차", "date": "2026-03-04T05:00:12.450809", "agents": {"TECH": {"score": 70, "rec": "BUY"}, "QUANT": {"score": 23, "rec": "SELL"}, "QUAL": {"score": 67, "rec": "HOLD"}, "NEWS": {"score": 69, "rec": "HOLD"}}, "avg_score": 57.2, "consensus": "HOLD", "status": "success"}, {"symbol": "051910.KS", "name": "LG화학", "market": "KOSPI", "sector": "화학", "date": "2026-03-04T05:00:13.740856", "agents": {"TECH": {"score": 72, "rec": "BUY"}, "QUANT": {"score": 35, "rec": "SELL"}, "QUAL": {"score": 63, "rec": "HOLD"}, "NEWS": {"score": 66, "rec": "HOLD"}}, "avg_score": 59.0, "consensus": "HOLD", "status": "success"}, {"symbol": "035720.KS", "name": "카카오", "market": "KOSPI", "sector": "플랫폼", "date": "2026-03-04T05:00:14.951084", "agents": {"TECH": {"score": 53, "rec": "HOLD"}, "QUANT": {"score": 52, "rec": "HOLD"}, "QUAL": {"score": 80, "rec": "BUY"}, "NEWS": {"score": 57, "rec": "HOLD"}}, "avg_score": 60.5, "consensus": "HOLD", "status": "success"}, {"symbol": "006400.KS", "name": "삼성SDI", "market": "KOSPI", "sector": "배터리", "date": "2026-03-04T05:00:16.278840", "agents": {"TECH": {"score": 69, "rec": "HOLD"}, "QUANT": {"score": 24, "rec": "SELL"}, "QUAL": {"score": 63, "rec": "HOLD"}, "NEWS": {"score": 55, "rec": "HOLD"}}, "avg_score": 52.8, "consensus": "HOLD", "status": "success"}, {"symbol": "068270.KS", "name": "셀트리온", "market": "KOSPI", "sector": "바이오", "date": "2026-03-04T05:00:17.532439", "agents": {"TECH": {"score": 48, "rec": "SELL"}, "QUANT": {"score": 68, "rec": "HOLD"}, "QUAL": {"score": 80, "rec": "BUY"}, "NEWS": {"score": 44, "rec": "SELL"}}, "avg_score": 60.0, "consensus": "HOLD", "status": "success"}, {"symbol": "005490.KS", "name": "POSCO홀딩스", "market": "KOSPI", "sector": "철강", "date": "2026-03-04T05:00:18.755142", "agents": {"TECH": {"score": 52, "rec": "HOLD"}, "QUANT": {"score": 37, "rec": "SELL"}, "QUAL": {"score": 52, "rec": "HOLD"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 46.8, "consensus": "HOLD", "status": "success"}, {"symbol": "028260.KS", "name": "삼성물산", "market": "KOSPI", "sector": "무역", "date": "2026-03-04T05:00:19.995184", "agents": {"TECH": {"score": 54, "rec": "HOLD"}, "QUANT": {"score": 53, "rec": "HOLD"}, "QUAL": {"score": 66, "rec": "HOLD"}, "NEWS": {"score": 53, "rec": "HOLD"}}, "avg_score": 56.5, "consensus": "HOLD", "status": "success"}, {"symbol": "012450.KS", "name": "한화에어로스페이스", "market": "KOSPI", "sector": "방산", "date": "2026-03-04T05:00:21.261314", "agents": {"TECH": {"score": 78, "rec": "BUY"}, "QUANT": {"score": 69, "rec": "HOLD"}, "QUAL": {"score": 74, "rec": "BUY"}, "NEWS": {"score": 73, "rec": "BUY"}}, "avg_score": 73.5, "consensus": "STRONG BUY", "status": "success"}, {"symbol": "055550.KS", "name": "신한지주", "market": "KOSPI", "sector": "금융", "date": "2026-03-04T05:00:22.572096", "agents": {"TECH": {"score": 55, "rec": "HOLD"}, "QUANT": {"score": 56, "rec": "HOLD"}, "QUAL": {"score": 71, "rec": "BUY"}, "NEWS": {"score": 52, "rec": "HOLD"}}, "avg_score": 58.5, "consensus": "HOLD", "status": "success"}, {"symbol": "105560.KS", "name": "KB금융", "market": "KOSPI", "sector": "금융", "date": "2026-03-04T05:00:23.771809", "agents": {"TECH": {"score": 51, "rec": "HOLD"}, "QUANT": {"score": 45, "rec": "SELL"}, "QUAL": {"score": 73, "rec": "BUY"}, "NEWS": {"score": 50, "rec": "HOLD"}}, "avg_score": 54.8, "consensus": "HOLD", "status": "success"}, {"symbol": "138040.KS", "name": "메리츠금융", "market": "KOSPI", "sector": "금융", "date": "2026-03-04T05:00:25.045161", "agents": {"TECH": {"score": 42, "rec": "SELL"}, "QUANT": {"score": 54, "rec": "HOLD"}, "QUAL": {"score": 64, "rec": "HOLD"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 51.5, "consensus": "HOLD", "status": "success"}, {"symbol": "032830.KS", "name": "삼성생명", "market": "KOSPI", "sector": "보험", "date": "2026-03-04T05:00:26.189783", "agents": {"TECH": {"score": 63, "rec": "HOLD"}, "QUANT": {"score": 68, "rec": "HOLD"}, "QUAL": {"score": 71, "rec": "BUY"}, "NEWS": {"score": 70, "rec": "BUY"}}, "avg_score": 68.0, "consensus": "BUY", "status": "success"}, {"symbol": "015760.KS", "name": "한국전력", "market": "KOSPI", "sector": "전력", "date": "2026-03-04T05:00:27.366203", "agents": {"TECH": {"score": 41, "rec": "SELL"}, "QUANT": {"score": 37, "rec": "SELL"}, "QUAL": {"score": 69, "rec": "HOLD"}, "NEWS": {"score": 49, "rec": "SELL"}}, "avg_score": 49.0, "consensus": "HOLD", "status": "success"}, {"symbol": "003670.KS", "name": "포스코퓨처엠", "market": "KOSPI", "sector": "배터리", "date": "2026-03-04T05:00:28.610573", "agents": {"TECH": {"score": 62, "rec": "HOLD"}, "QUANT": {"score": 40, "rec": "SELL"}, "QUAL": {"score": 50, "rec": "HOLD"}, "NEWS": {"score": 53, "rec": "HOLD"}}, "avg_score": 51.2, "consensus": "HOLD", "status": "success"}, {"symbol": "009150.KS", "name": "삼성전기", "market": "KOSPI", "sector": "전자부품", "date": "2026-03-04T05:00:29.768328", "agents": {"TECH": {"score": 56, "rec": "HOLD"}, "QUANT": {"score": 54, "rec": "HOLD"}, "QUAL": {"score": 77, "rec": "BUY"}, "NEWS": {"score": 57, "rec": "HOLD"}}, "avg_score": 61.0, "consensus": "HOLD", "status": "success"}, {"symbol": "018260.KS", "name": "삼성에스디에스", "market": "KOSPI", "sector": "IT서비스", "date": "2026-03-04T05:00:31.170993", "agents": {"TECH": {"score": 70, "rec": "BUY"}, "QUANT": {"score": 37, "rec": "SELL"}, "QUAL": {"score": 66, "rec": "HOLD"}, "NEWS": {"score": 66, "rec": "HOLD"}}, "avg_score": 59.8, "consensus": "HOLD", "status": "success"}, {"symbol": "033780.KS", "name": "KT&G", "market": "KOSPI", "sector": "담/유통", "date": "2026-03-04T05:00:32.398281", "agents": {"TECH": {"score": 50, "rec": "HOLD"}, "QUANT": {"score": 72, "rec": "BUY"}, "QUAL": {"score": 68, "rec": "HOLD"}, "NEWS": {"score": 52, "rec": "HOLD"}}, "avg_score": 60.5, "consensus": "HOLD", "status": "success"}, {"symbol": "011200.KS", "name": "HMM", "market": "KOSPI", "sector": "해운", "date": "2026-03-04T05:00:33.652922", "agents": {"TECH": {"score": 71, "rec": "BUY"}, "QUANT": {"score": 53, "rec": "HOLD"}, "QUAL": {"score": 68, "rec": "HOLD"}, "NEWS": {"score": 84, "rec": "BUY"}}, "avg_score": 69.0, "consensus": "BUY", "status": "success"}, {"symbol": "086790.KS", "name": "하나금융지주", "market": "KOSPI", "sector": "금융", "date": "2026-03-04T05:00:34.855491", "agents": {"TECH": {"score": 52, "rec": "HOLD"}, "QUANT": {"score": 52, "rec": "HOLD"}, "QUAL": {"score": 71, "rec": "BUY"}, "NEWS": {"score": 52, "rec": "HOLD"}}, "avg_score": 56.8, "consensus": "HOLD", "status": "success"}, {"symbol": "010130.KS", "name": "고려아연", "market": "KOSPI", "sector": "비철금속", "date": "2026-03-04T05:00:36.114468", "agents": {"TECH": {"score": 61, "rec": "HOLD"}, "QUANT": {"score": 47, "rec": "SELL"}, "QUAL": {"score": 60, "rec": "HOLD"}, "NEWS": {"score": 61, "rec": "HOLD"}}, "avg_score": 57.2, "consensus": "HOLD", "status": "success"}, {"symbol": "009540.KS", "name": "한국조선해양", "market": "KOSPI", "sector": "조선", "date": "2026-03-04T05:00:37.455998", "agents": {"TECH": {"score": 58, "rec": "HOLD"}, "QUANT": {"score": 72, "rec": "BUY"}, "QUAL": {"score": 69, "rec": "HOLD"}, "NEWS": {"score": 50, "rec": "HOLD"}}, "avg_score": 62.2, "consensus": "HOLD", "status": "success"}, {"symbol": "017670.KS", "name": "SK텔레콤", "market": "KOSPI", "sector": "통신", "date": "2026-03-04T05:00:38.721229", "agents": {"TECH": {"score": 48, "rec": "SELL"}, "QUANT": {"score": 34, "rec": "SELL"}, "QUAL": {"score": 70, "rec": "BUY"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 49.5, "consensus": "HOLD", "status": "success"}, {"symbol": "030200.KS", "name": "KT", "market": "KOSPI", "sector": "통신", "date": "2026-03-04T05:00:39.990609", "agents": {"TECH": {"score": 43, "rec": "SELL"}, "QUANT": {"score": 33, "rec": "SELL"}, "QUAL": {"score": 78, "rec": "BUY"}, "NEWS": {"score": 47, "rec": "SELL"}}, "avg_score": 50.2, "consensus": "HOLD", "status": "success"}, {"symbol": "096770.KS", "name": "SK이노베이션", "market": "KOSPI", "sector": "에너지", "date": "2026-03-04T05:00:41.402744", "agents": {"TECH": {"score": 69, "rec": "HOLD"}, "QUANT": {"score": 28, "rec": "SELL"}, "QUAL": {"score": 48, "rec": "SELL"}, "NEWS": {"score": 61, "rec": "HOLD"}}, "avg_score": 51.5, "consensus": "HOLD", "status": "success"}, {"symbol": "034730.KS", "name": "SK", "market": "KOSPI", "sector": "지주사", "date": "2026-03-04T05:00:42.815123", "agents": {"TECH": {"score": 65, "rec": "HOLD"}, "QUANT": {"score": 41, "rec": "SELL"}, "QUAL": {"score": 63, "rec": "HOLD"}, "NEWS": {"score": 54, "rec": "HOLD"}}, "avg_score": 55.8, "consensus": "HOLD", "status": "success"}, {"symbol": "000270.KS", "name": "기아", "market": "KOSPI", "sector": "자동차", "date": "2026-03-04T05:00:44.016748", "agents": {"TECH": {"score": 68, "rec": "HOLD"}, "QUANT": {"score": 49, "rec": "SELL"}, "QUAL": {"score": 80, "rec": "BUY"}, "NEWS": {"score": 64, "rec": "HOLD"}}, "avg_score": 65.2, "consensus": "HOLD", "status": "success"}, {"symbol": "066570.KS", "name": "LG전자", "market": "KOSPI", "sector": "전자", "date": "2026-03-04T05:00:45.265573", "agents": {"TECH": {"score": 58, "rec": "HOLD"}, "QUANT": {"score": 39, "rec": "SELL"}, "QUAL": {"score": 78, "rec": "BUY"}, "NEWS": {"score": 55, "rec": "HOLD"}}, "avg_score": 57.5, "consensus": "HOLD", "status": "success"}, {"symbol": "051900.KS", "name": "LG생활건강", "market": "KOSPI", "sector": "생활용품", "date": "2026-03-04T05:00:46.589736", "agents": {"TECH": {"score": 35, "rec": "SELL"}, "QUANT": {"score": 35, "rec": "SELL"}, "QUAL": {"score": 67, "rec": "HOLD"}, "NEWS": {"score": 62, "rec": "HOLD"}}, "avg_score": 49.8, "consensus": "HOLD", "status": "success"}, {"symbol": "003550.KS", "name": "LG", "market": "KOSPI", "sector": "지주사", "date": "2026-03-04T05:00:47.865660", "agents": {"TECH": {"score": 67, "rec": "HOLD"}, "QUANT": {"score": 50, "rec": "HOLD"}, "QUAL": {"score": 77, "rec": "BUY"}, "NEWS": {"score": 65, "rec": "HOLD"}}, "avg_score": 64.8, "consensus": "HOLD", "status": "success"}, {"symbol": "004020.KS", "name": "현대제철", "market": "KOSPI", "sector": "철강", "date": "2026-03-04T05:00:49.161672", "agents": {"TECH": {"score": 67, "rec": "HOLD"}, "QUANT": {"score": 36, "rec": "SELL"}, "QUAL": {"score": 61, "rec": "HOLD"}, "NEWS": {"score": 78, "rec": "BUY"}}, "avg_score": 60.5, "consensus": "HOLD", "status": "success"}, {"symbol": "000810.KS", "name": "삼성화재", "market": "KOSPI", "sector": "보험", "date": "2026-03-04T05:00:50.469458", "agents": {"TECH": {"score": 49, "rec": "SELL"}, "QUANT": {"score": 49, "rec": "SELL"}, "QUAL": {"score": 65, "rec": "HOLD"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 52.2, "consensus": "HOLD", "status": "success"}, {"symbol": "024110.KS", "name": "기업은행", "market": "KOSPI", "sector": "금융", "date": "2026-03-04T05:00:51.731477", "agents": {"TECH": {"score": 50, "rec": "HOLD"}, "QUANT": {"score": 39, "rec": "SELL"}, "QUAL": {"score": 66, "rec": "HOLD"}, "NEWS": {"score": 50, "rec": "HOLD"}}, "avg_score": 51.2, "consensus": "HOLD", "status": "success"}, {"symbol": "032640.KS", "name": "LG유플러스", "market": "KOSPI", "sector": "통신", "date": "2026-03-04T05:00:52.925631", "agents": {"TECH": {"score": 54, "rec": "HOLD"}, "QUANT": {"score": 42, "rec": "SELL"}, "QUAL": {"score": 74, "rec": "BUY"}, "NEWS": {"score": 55, "rec": "HOLD"}}, "avg_score": 56.2, "consensus": "HOLD", "status": "success"}, {"symbol": "010950.KS", "name": "S-Oil", "market": "KOSPI", "sector": "정유", "date": "2026-03-04T05:00:54.155424", "agents": {"TECH": {"score": 71, "rec": "BUY"}, "QUANT": {"score": 24, "rec": "SELL"}, "QUAL": {"score": 60, "rec": "HOLD"}, "NEWS": {"score": 78, "rec": "BUY"}}, "avg_score": 58.2, "consensus": "BUY", "status": "success"}, {"symbol": "011070.KS", "name": "LG이노텍", "market": "KOSPI", "sector": "전자부품", "date": "2026-03-04T05:00:55.397469", "agents": {"TECH": {"score": 67, "rec": "HOLD"}, "QUANT": {"score": 49, "rec": "SELL"}, "QUAL": {"score": 64, "rec": "HOLD"}, "NEWS": {"score": 68, "rec": "HOLD"}}, "avg_score": 62.0, "consensus": "HOLD", "status": "success"}, {"symbol": "042660.KS", "name": "한화오션", "market": "KOSPI", "sector": "조선", "date": "2026-03-04T05:00:56.657149", "agents": {"TECH": {"score": 47, "rec": "SELL"}, "QUANT": {"score": 42, "rec": "SELL"}, "QUAL": {"score": 49, "rec": "SELL"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 46.0, "consensus": "HOLD", "status": "success"}, {"symbol": "247540.KS", "name": "에코프로비엠", "market": "KOSDAQ", "sector": "2차전지", "date": "2026-03-04T05:00:57.862978", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 45, "rec": "SELL"}}, "avg_score": 26.8, "consensus": "HOLD", "status": "success"}, {"symbol": "086520.KS", "name": "에코프로", "market": "KOSDAQ", "sector": "2차전지", "date": "2026-03-04T05:00:59.063156", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 49, "rec": "SELL"}}, "avg_score": 27.8, "consensus": "HOLD", "status": "success"}, {"symbol": "196170.KS", "name": "알테오젠", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:00.275173", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 38, "rec": "SELL"}}, "avg_score": 25.0, "consensus": "HOLD", "status": "success"}, {"symbol": "352820.KS", "name": "하이브", "market": "KOSDAQ", "sector": "엔터", "date": "2026-03-04T05:01:01.540609", "agents": {"TECH": {"score": 33, "rec": "SELL"}, "QUANT": {"score": 41, "rec": "SELL"}, "QUAL": {"score": 71, "rec": "BUY"}, "NEWS": {"score": 40, "rec": "SELL"}}, "avg_score": 46.2, "consensus": "HOLD", "status": "success"}, {"symbol": "259960.KS", "name": "크래프톤", "market": "KOSDAQ", "sector": "게임", "date": "2026-03-04T05:01:02.778676", "agents": {"TECH": {"score": 35, "rec": "SELL"}, "QUANT": {"score": 86, "rec": "BUY"}, "QUAL": {"score": 73, "rec": "BUY"}, "NEWS": {"score": 46, "rec": "SELL"}}, "avg_score": 60.0, "consensus": "BUY", "status": "success"}, {"symbol": "207940.KS", "name": "삼성바이오로직스", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:03.901082", "agents": {"TECH": {"score": 49, "rec": "SELL"}, "QUANT": {"score": 54, "rec": "HOLD"}, "QUAL": {"score": 64, "rec": "HOLD"}, "NEWS": {"score": 48, "rec": "SELL"}}, "avg_score": 53.8, "consensus": "HOLD", "status": "success"}, {"symbol": "028300.KS", "name": "HLB", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:05.036212", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 62, "rec": "HOLD"}}, "avg_score": 31.0, "consensus": "HOLD", "status": "success"}, {"symbol": "145020.KS", "name": "휴젤", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:06.186657", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 42, "rec": "SELL"}}, "avg_score": 26.0, "consensus": "HOLD", "status": "success"}, {"symbol": "214150.KS", "name": "클리오", "market": "KOSDAQ", "sector": "화장품", "date": "2026-03-04T05:01:07.379791", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 62, "rec": "HOLD"}}, "avg_score": 31.0, "consensus": "HOLD", "status": "success"}, {"symbol": "095660.KS", "name": "네오위즈", "market": "KOSDAQ", "sector": "게임", "date": "2026-03-04T05:01:08.652004", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 54, "rec": "HOLD"}}, "avg_score": 29.0, "consensus": "HOLD", "status": "success"}, {"symbol": "041140.KS", "name": "넥슨게임즈", "market": "KOSDAQ", "sector": "게임", "date": "2026-03-04T05:01:09.755728", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 61, "rec": "HOLD"}}, "avg_score": 30.8, "consensus": "HOLD", "status": "success"}, {"symbol": "263750.KS", "name": "펄어비스", "market": "KOSDAQ", "sector": "게임", "date": "2026-03-04T05:01:12.071182", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 67, "rec": "HOLD"}}, "avg_score": 32.2, "consensus": "HOLD", "status": "success"}, {"symbol": "293490.KS", "name": "카카오게임즈", "market": "KOSDAQ", "sector": "게임", "date": "2026-03-04T05:01:13.185819", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 40, "rec": "SELL"}}, "avg_score": 25.5, "consensus": "HOLD", "status": "success"}, {"symbol": "357780.KS", "name": "솔브레인", "market": "KOSDAQ", "sector": "반도체", "date": "2026-03-04T05:01:14.321911", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 63, "rec": "HOLD"}}, "avg_score": 31.2, "consensus": "HOLD", "status": "success"}, {"symbol": "222800.KS", "name": "심텍", "market": "KOSDAQ", "sector": "반도체", "date": "2026-03-04T05:01:15.544501", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 55, "rec": "HOLD"}}, "avg_score": 29.2, "consensus": "HOLD", "status": "success"}, {"symbol": "240810.KS", "name": "원익IPS", "market": "KOSDAQ", "sector": "반도체", "date": "2026-03-04T05:01:16.725547", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 69, "rec": "HOLD"}}, "avg_score": 32.8, "consensus": "HOLD", "status": "success"}, {"symbol": "036830.KS", "name": "셀트리온제약", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:17.831632", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 59, "rec": "HOLD"}}, "avg_score": 30.2, "consensus": "HOLD", "status": "success"}, {"symbol": "068760.KS", "name": "셀트리온제약", "market": "KOSDAQ", "sector": "바이오", "date": "2026-03-04T05:01:19.026367", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 49, "rec": "SELL"}}, "avg_score": 27.8, "consensus": "HOLD", "status": "success"}, {"symbol": "122900.KS", "name": "아이마켓코리아", "market": "KOSDAQ", "sector": "플랫폼", "date": "2026-03-04T05:01:20.181668", "agents": {"TECH": {"score": 36, "rec": "SELL"}, "QUANT": {"score": 35, "rec": "SELL"}, "QUAL": {"score": 54, "rec": "HOLD"}, "NEWS": {"score": 52, "rec": "HOLD"}}, "avg_score": 44.2, "consensus": "HOLD", "status": "success"}, {"symbol": "278280.KS", "name": "천보", "market": "KOSDAQ", "sector": "2차전지", "date": "2026-03-04T05:01:21.341974", "agents": {"TECH": {"score": 0, "rec": "HOLD"}, "QUANT": {"score": 22, "rec": "SELL"}, "QUAL": {"score": 40, "rec": "SELL"}, "NEWS": {"score": 49, "rec": "SELL"}}, "avg_score": 27.8, "consensus": "HOLD", "status": "success"}];
-        let currentFilter = 'all';
-        let selectedStock = null;
-        
-        function renderTable() {
-            const tbody = document.getElementById('stockTableBody');
-            tbody.innerHTML = '';
-            
-            let filtered = stockData;
-            if (currentFilter === 'kospi') {
-                filtered = stockData.filter(s => s.market === 'KOSPI');
-            } else if (currentFilter === 'kosdaq') {
-                filtered = stockData.filter(s => s.market === 'KOSDAQ');
-            } else if (currentFilter === 'buy') {
-                filtered = stockData.filter(s => s.consensus === 'BUY' || s.consensus === 'STRONG BUY');
-            } else if (currentFilter === 'hold') {
-                filtered = stockData.filter(s => s.consensus === 'HOLD');
-            }
-            
-            filtered.sort((a, b) => b.avg_score - a.avg_score);
-            
-            filtered.forEach((stock, index) => {
-                const row = document.createElement('tr');
-                row.className = selectedStock === stock.symbol ? 'active' : '';
-                row.onclick = () => showDetail(stock);
-                
-                const scoreClass = stock.avg_score >= 70 ? 'score-high' : stock.avg_score >= 50 ? 'score-mid' : 'score-low';
-                const badgeClass = stock.consensus === 'STRONG BUY' ? 'badge-strong-buy' : 
-                                  stock.consensus === 'BUY' ? 'badge-buy' : 
-                                  stock.consensus === 'SELL' ? 'badge-sell' : 'badge-hold';
-                
-                row.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td><strong>${stock.name}</strong><br><small>${stock.symbol}</small></td>
-                    <td>${stock.market}</td>
-                    <td class="${scoreClass}">${stock.avg_score}</td>
-                    <td><span class="badge ${badgeClass}">${stock.consensus}</span></td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-        
-        function showDetail(stock) {
-            selectedStock = stock.symbol;
-            renderTable();
-            
-            const agents = stock.agents;
-            const detailHtml = `
-                <div class="detail-card">
-                    <div class="detail-header">
-                        <div>
-                            <div class="detail-title">${stock.name}</div>
-                            <div class="detail-subtitle">${stock.symbol} | ${stock.sector} | ${stock.market}</div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div style="font-size: 2em; font-weight: bold; color: ${stock.avg_score >= 70 ? '#27ae60' : stock.avg_score >= 50 ? '#f39c12' : '#e74c3c'}">${stock.avg_score}</div>
-                            <div><span class="badge ${stock.consensus === 'STRONG BUY' ? 'badge-strong-buy' : stock.consensus === 'BUY' ? 'badge-buy' : stock.consensus === 'SELL' ? 'badge-sell' : 'badge-hold'}">${stock.consensus}</span></div>
-                        </div>
-                    </div>
-                    
-                    <div class="agent-detail" style="border-left-color: #e74c3c;">
-                        <div class="agent-header">
-                            <span class="agent-name">🔧 Technical Analyst</span>
-                            <span>
-                                <span class="agent-score agent-score-${agents.TECH.score >= 70 ? 'high' : agents.TECH.score >= 50 ? 'mid' : 'low'}">${agents.TECH.score}/100</span>
-                                <span class="agent-rec badge-${agents.TECH.rec === 'BUY' ? 'buy' : agents.TECH.rec === 'SELL' ? 'sell' : 'hold'}">${agents.TECH.rec}</span>
-                            </span>
-                        </div>
-                        <div style="font-size: 0.9em; color: #666;">
-                            Price Trend, Momentum, Bollinger Bands, Volume Analysis
-                        </div>
-                    </div>
-                    
-                    <div class="agent-detail" style="border-left-color: #3498db;">
-                        <div class="agent-header">
-                            <span class="agent-name">📊 Quant Analyst</span>
-                            <span>
-                                <span class="agent-score agent-score-${agents.QUANT.score >= 70 ? 'high' : agents.QUANT.score >= 50 ? 'mid' : 'low'}">${agents.QUANT.score}/100</span>
-                                <span class="agent-rec badge-${agents.QUANT.rec === 'BUY' ? 'buy' : agents.QUANT.rec === 'SELL' ? 'sell' : 'hold'}">${agents.QUANT.rec}</span>
-                            </span>
-                        </div>
-                        <div style="font-size: 0.9em; color: #666;">
-                            Profitability, Growth, Stability, Valuation
-                        </div>
-                    </div>
-                    
-                    <div class="agent-detail" style="border-left-color: #9b59b6;">
-                        <div class="agent-header">
-                            <span class="agent-name">🏢 Qualitative Analyst</span>
-                            <span>
-                                <span class="agent-score agent-score-${agents.QUAL.score >= 70 ? 'high' : agents.QUAL.score >= 50 ? 'mid' : 'low'}">${agents.QUAL.score}/100</span>
-                                <span class="agent-rec badge-${agents.QUAL.rec === 'BUY' ? 'buy' : agents.QUAL.rec === 'SELL' ? 'sell' : 'hold'}">${agents.QUAL.rec}</span>
-                            </span>
-                        </div>
-                        <div style="font-size: 0.9em; color: #666;">
-                            Business Model, Management, Industry Outlook, Risk Factors
-                        </div>
-                    </div>
-                    
-                    <div class="agent-detail" style="border-left-color: #f39c12;">
-                        <div class="agent-header">
-                            <span class="agent-name">📰 News Sentiment Analyst</span>
-                            <span>
-                                <span class="agent-score agent-score-${agents.NEWS.score >= 70 ? 'high' : agents.NEWS.score >= 50 ? 'mid' : 'low'}">${agents.NEWS.score}/100</span>
-                                <span class="agent-rec badge-${agents.NEWS.rec === 'BUY' ? 'buy' : agents.NEWS.rec === 'SELL' ? 'sell' : 'hold'}">${agents.NEWS.rec}</span>
-                            </span>
-                        </div>
-                        <div style="font-size: 0.9em; color: #666;">
-                            News Sentiment, Social Media, Event Risk, Momentum Signals
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="detail-card">
-                    <h3 style="margin-bottom: 15px; color: #2c3e50;">📊 Score Breakdown</h3>
-                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                        <div style="flex: 1; text-align: center; padding: 15px; background: #ffebee; border-radius: 10px;">
-                            <div style="font-size: 1.5em; font-weight: bold; color: #c62828;">${agents.TECH.score}</div>
-                            <div style="font-size: 0.8em; color: #666;">TECH</div>
-                        </div>
-                        <div style="flex: 1; text-align: center; padding: 15px; background: #e3f2fd; border-radius: 10px;">
-                            <div style="font-size: 1.5em; font-weight: bold; color: #1565c0;">${agents.QUANT.score}</div>
-                            <div style="font-size: 0.8em; color: #666;">QUANT</div>
-                        </div>
-                        <div style="flex: 1; text-align: center; padding: 15px; background: #f3e5f5; border-radius: 10px;">
-                            <div style="font-size: 1.5em; font-weight: bold; color: #7b1fa2;">${agents.QUAL.score}</div>
-                            <div style="font-size: 0.8em; color: #666;">QUAL</div>
-                        </div>
-                        <div style="flex: 1; text-align: center; padding: 15px; background: #fff3e0; border-radius: 10px;">
-                            <div style="font-size: 1.5em; font-weight: bold; color: #ef6c00;">${agents.NEWS.score}</div>
-                            <div style="font-size: 0.8em; color: #666;">NEWS</div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('detailContent').innerHTML = detailHtml;
-        }
-        
-        function filterStocks(filter) {
-            currentFilter = filter;
-            document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
-            renderTable();
-        }
-        
-        // 초기 렌더링
-        renderTable();
-    </script>
 </body>
 </html>
