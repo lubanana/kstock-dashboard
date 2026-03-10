@@ -2,45 +2,243 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>KStock Level 1 Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KStock Level 1 Analysis Report</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 10px; padding: 30px; }
-        .header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 20px; }
-        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
-        .stat-card { background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; }
-        .stat-card h3 { color: #667eea; font-size: 2em; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th { background: #667eea; color: white; padding: 12px; text-align: left; }
-        td { padding: 10px; border-bottom: 1px solid #eee; }
-        .score-high { color: #4CAF50; font-weight: bold; }
-        .badge { padding: 5px 10px; border-radius: 15px; font-size: 0.85em; }
-        .badge-buy { background: #4CAF50; color: white; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-card h3 { 
+            color: #667eea; 
+            font-size: 2.5em; 
+            margin-bottom: 5px;
+        }
+        .stat-card p { color: #666; font-size: 1em; }
+        .section { padding: 30px; }
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .score-distribution {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .score-box {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .score-box.strong { background: linear-gradient(135deg, #4CAF50, #45a049); }
+        .score-box.buy { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .score-box.hold { background: linear-gradient(135deg, #FF9800, #F57C00); }
+        .score-box h4 { font-size: 2em; margin-bottom: 5px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover { background: #f5f5f5; }
+        tr:nth-child(even) { background: #fafafa; }
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .badge-strong { background: #4CAF50; color: white; }
+        .badge-buy { background: #2196F3; color: white; }
         .badge-hold { background: #FF9800; color: white; }
-        .badge-sell { background: #F44336; color: white; }
+        .score-high { color: #4CAF50; font-weight: bold; }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        .methodology {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .methodology h3 { color: #667eea; margin-bottom: 10px; }
+        .methodology ul { margin-left: 20px; }
+        .methodology li { margin: 5px 0; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>📊 KStock Level 1 Analysis Report</h1>
-            <p>3,286종목 분석 | 2026년 03월 10일</p>
+            <p>기술적 · 정량적 · 재무적 종합 분석 | 2026-03-10</p>
         </div>
-        <div class="stats">
-            <div class="stat-card"><h3>3286</h3><p>분석 종목</p></div>
-            <div class="stat-card"><h3>147</h3><p>BUY 추천</p></div>
-            <div class="stat-card"><h3>807</h3><p>HOLD 추천</p></div>
-            <div class="stat-card"><h3>2332</h3><p>SELL 추천</p></div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>3,284</h3>
+                <p>전체 분석 종목</p>
+            </div>
+            <div class="stat-card">
+                <h3>1,958</h3>
+                <p>선정 종목 (≥70점)</p>
+            </div>
+            <div class="stat-card">
+                <h3>566</h3>
+                <p>STRONG_BUY</p>
+            </div>
+            <div class="stat-card">
+                <h3>59.6%</h3>
+                <p>선정 비율</p>
+            </div>
         </div>
-        <h2>🏆 상위 100종목</h2>
-        <table>
-            <thead>
-                <tr><th>순위</th><th>종목명</th><th>코드</th><th>시장</th><th>점수</th><th>추천</th></tr>
-            </thead>
-            <tbody>
-<tr><td>1</td><td>인터내셔널</td><td>001120</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>2</td><td>케미칼</td><td>001390</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>3</td><td>조비</td><td>001550</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>4</td><td>경농</td><td>002100</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>5</td><td>고려산업</td><td>002140</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>6</td><td>에너지화학</td><td>002360</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>7</td><td>진흥기업2우B</td><td>002787</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>8</td><td>신풍</td><td>002870</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>9</td><td>세아제강지주</td><td>003030</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>10</td><td>롯데정밀화학</td><td>004000</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>11</td><td>휴스틸</td><td>005010</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>12</td><td>에너지</td><td>005090</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>13</td><td>오토모티브</td><td>007340</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>14</td><td>사조동아원</td><td>008040</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>15</td><td>남선알미늄</td><td>008350</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>16</td><td>삼성중공업</td><td>010140</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>17</td><td>극동유화</td><td>014530</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>18</td><td>유니드</td><td>014830</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>19</td><td>에이엔피</td><td>015260</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>20</td><td>서울가스</td><td>017390</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>21</td><td>단석</td><td>017860</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>22</td><td>한국카본</td><td>017960</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>23</td><td>가스</td><td>018670</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>24</td><td>남해화학</td><td>025860</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>25</td><td>포스코인터내셔널</td><td>047050</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>26</td><td>엔진</td><td>077970</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>27</td><td>동양생명</td><td>082640</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>28</td><td>에너지</td><td>100840</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>29</td><td>인버스</td><td>114800</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>30</td><td>대성에너지</td><td>117580</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>31</td><td>인버스</td><td>123310</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>32</td><td>원유선물Enhanced</td><td>130680</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>33</td><td>농산물선물Enhanced</td><td>137610</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>34</td><td>콩선물</td><td>138920</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>35</td><td>인버스</td><td>145670</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>36</td><td>일본TOPIX인버스</td><td>205720</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>37</td><td>미국S</td><td>225030</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>38</td><td>미국달러선물레버리지</td><td>225800</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>39</td><td>코스닥150선물인버스</td><td>250780</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>40</td><td>넷마블</td><td>251270</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>41</td><td>코스닥150선물인버스</td><td>251340</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>42</td><td>선물인버스</td><td>252410</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>43</td><td>선물인버스2X</td><td>252420</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>44</td><td>선물인버스2X</td><td>252670</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>45</td><td>선물인버스2X</td><td>252710</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>46</td><td>선물인버스2X</td><td>253160</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>47</td><td>선물인버스2X</td><td>253230</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>48</td><td>선물인버스</td><td>253240</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>49</td><td>미국달러선물레버리지</td><td>261110</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>50</td><td>원유선물</td><td>261220</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>51</td><td>미국달러선물레버리지</td><td>261250</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>52</td><td>대농산물선물</td><td>271060</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>53</td><td>한화시스템</td><td>272210</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>54</td><td>코스닥150선물인버스</td><td>275750</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>55</td><td>코스닥150선물인버스</td><td>291620</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>56</td><td>세아제강</td><td>306200</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>57</td><td>선물인버스</td><td>306520</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>58</td><td>현대중공업</td><td>329180</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>59</td><td>차이나클린에너지SOLACTIVE</td><td>396510</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>60</td><td>미국나스닥100선물인버스</td><td>409810</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>61</td><td>차이나태양광CSI</td><td>413220</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>62</td><td>차이나2차전지MSCI</td><td>419430</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>63</td><td>대한조선</td><td>439260</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>64</td><td>차이나전기차레버리지</td><td>456680</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>65</td><td>차전지TOP10인버스</td><td>465350</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>66</td><td>미국빅테크TOP7</td><td>465620</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>67</td><td>미국원유에너지기업</td><td>474800</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>68</td><td>이터닉스</td><td>475150</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>69</td><td>미국반도체인버스</td><td>491630</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>70</td><td>미국방산TOP10</td><td>494840</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>71</td><td>글로벌방산</td><td>496770</td><td>KOSPI</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>72</td><td>중앙에너비스</td><td>000440</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>73</td><td>한일사료</td><td>005860</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>74</td><td>한일화학</td><td>007770</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>75</td><td>이렘</td><td>009730</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>76</td><td>삼미금속</td><td>012210</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>77</td><td>성광벤드</td><td>014620</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>78</td><td>글로본</td><td>019660</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>79</td><td>태광</td><td>023160</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>80</td><td>한일단조</td><td>024740</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>81</td><td>서울전자통신</td><td>027040</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>82</td><td>팜스토리</td><td>027710</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>83</td><td>디에이치엑스컴퍼니</td><td>031860</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>84</td><td>동성화인텍</td><td>033500</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>85</td><td>에이치엠넥스</td><td>036170</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>86</td><td>위즈코프</td><td>038620</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>87</td><td>세중</td><td>039310</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>88</td><td>성호전자</td><td>043260</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>89</td><td>태웅</td><td>044490</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>90</td><td>삼화네트웍스</td><td>046390</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>91</td><td>파인디앤씨</td><td>049120</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>92</td><td>코메론</td><td>049430</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>93</td><td>비케이홀딩스</td><td>050090</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>94</td><td>지에스이</td><td>053050</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>95</td><td>능률</td><td>053290</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>96</td><td>농우바이오</td><td>054050</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>97</td><td>대한뉴팜</td><td>054670</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>98</td><td>신성델타테크</td><td>065350</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>99</td><td>듀오백</td><td>073190</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr><tr><td>100</td><td>컴투스</td><td>078340</td><td>KOSDAQ</td><td class="score-high">65.0</td><td><span class="badge badge-buy">BUY</span></td></tr>
-            </tbody>
-        </table>
+        
+        <div class="section">
+            <h2>📈 점수 분포</h2>
+            <div class="score-distribution">
+                <div class="score-box strong">
+                    <h4>566</h4>
+                    <p>STRONG_BUY<br>90-100점</p>
+                </div>
+                <div class="score-box buy">
+                    <h4>781</h4>
+                    <p>BUY<br>80-89점</p>
+                </div>
+                <div class="score-box hold">
+                    <h4>611</h4>
+                    <p>HOLD<br>70-79점</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔬 분석 방법론</h2>
+            <div class="methodology">
+                <h3>Level 1 에이전트 구조</h3>
+                <ul>
+                    <li><strong>L1-1 Technical Analysis:</strong> 가격 데이터 기반 이동평균(MA5/20/60), RSI, MACD 분석</li>
+                    <li><strong>L1-2 Quantitative Analysis:</strong> 거래량, 변동성 등 정량적 지표 분석</li>
+                    <li><strong>L1-3 Financial Analysis:</strong> DART 기반 2021-2024년 재무제표 분석 (매출액, 영업이익, ROE)</li>
+                    <li><strong>Scoring:</strong> 기술적(60%) + 재무(40%) 가중 합산</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 100 종목</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목코드</th>
+                        <th>종목명</th>
+                        <th>시장</th>
+                        <th>기술점수</th>
+                        <th>재무점수</th>
+                        <th>총점</th>
+                        <th>추천</th>
+                    </tr>
+                </thead>
+                <tbody id="top100-body">
+                    <!-- JavaScript로 데이터 로드 -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 KStock Analyzer | Data Source: FDR, DART OpenAPI</p>
+            <p>Generated: 2026-03-10 18:20:00 KST</p>
+        </div>
     </div>
+    
+    <script>
+        // JSON 데이터 로드 (실제 파일에서는 fetch 사용)
+        const topStocks = [
+            {rank: 1, code: '010690', name: '화신', market: 'KOSPI', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 2, code: '021050', name: '서원', market: 'KOSPI', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 3, code: '103590', name: '일진전기', market: 'KOSPI', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 4, code: '112610', name: '씨에스윈드', market: 'KOSPI', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 5, code: '272210', name: '한화시스템', market: 'KOSPI', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 6, code: '123040', name: '엠에스오토텍', market: 'KOSDAQ', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 7, code: '124500', name: '아이티센글로벌', market: 'KOSDAQ', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 8, code: '178320', name: '서진시스템', market: 'KOSDAQ', price: 120, financial: 100, total: 112, rec: 'STRONG_BUY'},
+            {rank: 9, code: '001820', name: '삼화콘덴서', market: 'KOSPI', price: 120, financial: 95, total: 110, rec: 'STRONG_BUY'},
+            {rank: 10, code: '002960', name: '한국쉘석유', market: 'KOSPI', price: 120, financial: 95, total: 110, rec: 'STRONG_BUY'},
+        ];
+        
+        const tbody = document.getElementById('top100-body');
+        topStocks.forEach(stock => {
+            const badgeClass = stock.rec === 'STRONG_BUY' ? 'badge-strong' : 
+                              stock.rec === 'BUY' ? 'badge-buy' : 'badge-hold';
+            const row = `
+                <tr>
+                    <td>${stock.rank}</td>
+                    <td>${stock.code}</td>
+                    <td><strong>${stock.name}</strong></td>
+                    <td>${stock.market}</td>
+                    <td>${stock.price.toFixed(1)}</td>
+                    <td>${stock.financial.toFixed(1)}</td>
+                    <td class="score-high">${stock.total.toFixed(1)}</td>
+                    <td><span class="badge ${badgeClass}">${stock.rec}</span></td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        });
+    </script>
 </body>
 </html>
