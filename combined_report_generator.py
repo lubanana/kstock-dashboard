@@ -27,29 +27,49 @@ class CombinedStrategyReport:
         self.combined_data = None
     
     def load_oneil_data(self) -> pd.DataFrame:
-        """오닐 데이터 로드"""
+        """오닐 데이터 로드 (병렬 결과 우선)"""
         try:
-            with open('data/oneil_scan_results.json', 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                stocks = data.get('stocks', [])
-                df = pd.DataFrame(stocks)
-                df['strategy'] = 'ONeil'
-                print(f"✅ 오닐 데이터: {len(df)}개 종목")
-                return df
+            # 병렬 결과 먼저 시도
+            try:
+                with open('data/oneil_parallel_results.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    stocks = data.get('stocks', [])
+                    df = pd.DataFrame(stocks)
+                    df['strategy'] = 'ONeil'
+                    print(f"✅ 오닐 데이터 (병렬): {len(df)}개 종목")
+                    return df
+            except:
+                with open('data/oneil_scan_results.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    stocks = data.get('stocks', [])
+                    df = pd.DataFrame(stocks)
+                    df['strategy'] = 'ONeil'
+                    print(f"✅ 오닐 데이터: {len(df)}개 종목")
+                    return df
         except Exception as e:
             print(f"❌ 오닐 데이터 로드 실패: {e}")
             return pd.DataFrame()
     
     def load_minervini_data(self) -> pd.DataFrame:
-        """미니버니 데이터 로드"""
+        """미니버니 데이터 로드 (병렬 결과 우선)"""
         try:
-            with open('data/minervini_scan_results.json', 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                stocks = data.get('stocks', [])
-                df = pd.DataFrame(stocks)
-                df['strategy'] = 'Minervini'
-                print(f"✅ 미니버니 데이터: {len(df)}개 종목")
-                return df
+            # 병렬 결과 먼저 시도
+            try:
+                with open('data/minervini_parallel_results.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    stocks = data.get('stocks', [])
+                    df = pd.DataFrame(stocks)
+                    df['strategy'] = 'Minervini'
+                    print(f"✅ 미니버니 데이터 (병렬): {len(df)}개 종목")
+                    return df
+            except:
+                with open('data/minervini_scan_results.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    stocks = data.get('stocks', [])
+                    df = pd.DataFrame(stocks)
+                    df['strategy'] = 'Minervini'
+                    print(f"✅ 미니버니 데이터: {len(df)}개 종목")
+                    return df
         except Exception as e:
             print(f"❌ 미니버니 데이터 로드 실패: {e}")
             return pd.DataFrame()
