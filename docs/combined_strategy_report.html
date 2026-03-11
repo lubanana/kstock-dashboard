@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'Neil + Minervini Combined Strategy Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 { color: #667eea; font-size: 2.5em; margin-bottom: 5px; }
+        .stat-card p { color: #666; }
+        .highlight {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        .highlight h3 { color: white; }
+        .section { padding: 30px; }
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        .combo-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td { padding: 12px 10px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f5f5f5; }
+        tr.combo { background: #fff3f3; }
+        .score-high { color: #e74c3c; font-weight: bold; }
+        .score-medium { color: #f39c12; font-weight: bold; }
+        .strategy-oneil { color: #3498db; }
+        .strategy-minervini { color: #9b59b6; }
+        .strategy-combo { color: #e74c3c; font-weight: bold; }
+        .methodology {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .methodology h3 { color: #667eea; margin-bottom: 15px; }
+        .methodology ul { margin-left: 20px; line-height: 1.8; }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Combined Strategy Report</h1>
+            <p>O'Neil CANSLIM + Minervini SEPA Integration</p>
+            <p>Generated: 2026-03-11 11:59</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>97</h3>
+                <p>총 신호 종목</p>
+            </div>
+            <div class="stat-card highlight">
+                <h3>1</h3>
+                <p>🔥 복합 전략 (중복)</p>
+            </div>
+            <div class="stat-card">
+                <h3>47</h3>
+                <p>오닐 전용</p>
+            </div>
+            <div class="stat-card">
+                <h3>49</h3>
+                <p>미니버니 전용</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 전략 비교</h2>
+            <div class="methodology">
+                <h3>O'Neil CANSLIM</h3>
+                <ul>
+                    <li>52주 신고가 근접 + 거래량 급증</li>
+                    <li>이동평균선 정렬 확인</li>
+                    <li>강력한 추세 확인</li>
+                    <li>감지 신호: 48개</li>
+                </ul>
+            </div>
+            
+            <div class="methodology">
+                <h3>Minervini SEPA</h3>
+                <ul>
+                    <li>Trend Template 통과 (150>200일선)</li>
+                    <li>VCP (변동성 수축 패턴)</li>
+                    <li>박스권 수축 후 돌파</li>
+                    <li>감지 신호: 50개</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 50 Combined Signals</h2>
+            <div style="margin-bottom: 15px;">
+                <span style="color: #e74c3c; font-weight: bold;">★ 복합 전략 (양쪽 모두 감지)</span>
+                <span style="margin-left: 20px; color: #3498db;">오닐 전용</span>
+                <span style="margin-left: 20px; color: #9b59b6;">미니버니 전용</span>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목코드</th>
+                        <th>종목명</th>
+                        <th>전략</th>
+                        <th>기본점수</th>
+                        <th>최종점수</th>
+                        <th>신호</th>
+                        <th>진입가</th>
+                        <th>목표가</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="">
+                        <td>1</td>
+                        <td>230360</td>
+                        <td><strong>에코마케팅</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>92.0</td>
+                        <td class="score-high">92.0</td>
+                        <td>BREAKOUT</td>
+                        <td>-</td>
+                        <td>18,239</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>2</td>
+                        <td>160580</td>
+                        <td><strong>구리실물</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>83.1</td>
+                        <td class="score-high">83.1</td>
+                        <td>BREAKOUT</td>
+                        <td>-</td>
+                        <td>18,158</td>
+                    </tr>
+
+                    <tr class="combo">
+                        <td>3</td>
+                        <td>449690</td>
+                        <td><strong>한중반도체</strong><span class="combo-badge">COMBO</span></td>
+                        <td class="strategy-combo">Minervini, ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-high">82.5</td>
+                        <td>BUY, TREND</td>
+                        <td>37,195</td>
+                        <td>44,634</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>4</td>
+                        <td>032960</td>
+                        <td><strong>동일기연</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>81.1</td>
+                        <td class="score-high">81.1</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>18,331</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>5</td>
+                        <td>463300</td>
+                        <td><strong>중국본토CSI300</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>79.8</td>
+                        <td class="score-medium">79.8</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>15,996</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>6</td>
+                        <td>138910</td>
+                        <td><strong>구리선물</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>79.4</td>
+                        <td class="score-medium">79.4</td>
+                        <td>BREAKOUT</td>
+                        <td>-</td>
+                        <td>10,678</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>7</td>
+                        <td>220130</td>
+                        <td><strong>차이나강소기업CSI500</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>77.1</td>
+                        <td class="score-medium">77.1</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>8,130</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>8</td>
+                        <td>012200</td>
+                        <td><strong>계양전기</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>76.8</td>
+                        <td class="score-medium">76.8</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>9,142</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>9</td>
+                        <td>415340</td>
+                        <td><strong>차이나과창판STAR50</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>76.8</td>
+                        <td class="score-medium">76.8</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>14,570</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>10</td>
+                        <td>497510</td>
+                        <td><strong>글로벌빅파마</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>76.6</td>
+                        <td class="score-medium">76.6</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>14,904</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>11</td>
+                        <td>283580</td>
+                        <td><strong>차이나CSI300</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>76.4</td>
+                        <td class="score-medium">76.4</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>18,618</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>12</td>
+                        <td>067000</td>
+                        <td><strong>조이시티</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>3,160</td>
+                        <td>3,792</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>13</td>
+                        <td>072950</td>
+                        <td><strong>빛샘전자</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>7,400</td>
+                        <td>8,880</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>14</td>
+                        <td>073490</td>
+                        <td><strong>이노와이어리스</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>46,900</td>
+                        <td>56,280</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>15</td>
+                        <td>035460</td>
+                        <td><strong>기산텔레콤</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>2,440</td>
+                        <td>2,928</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>16</td>
+                        <td>051370</td>
+                        <td><strong>인터플렉스</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>13,690</td>
+                        <td>16,428</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>17</td>
+                        <td>051500</td>
+                        <td><strong>프레시웨이</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>35,450</td>
+                        <td>42,540</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>18</td>
+                        <td>385710</td>
+                        <td><strong>이노베이션액티브</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>13,475</td>
+                        <td>16,170</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>19</td>
+                        <td>388790</td>
+                        <td><strong>라이콤</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>4,210</td>
+                        <td>5,052</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>20</td>
+                        <td>295310</td>
+                        <td><strong>에이치브이엠</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>112,300</td>
+                        <td>134,760</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>21</td>
+                        <td>031440</td>
+                        <td><strong>신세계푸드</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>50,500</td>
+                        <td>60,600</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>22</td>
+                        <td>027360</td>
+                        <td><strong>아주IB투자</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>6,040</td>
+                        <td>7,248</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>23</td>
+                        <td>452280</td>
+                        <td><strong>한선엔지니어링</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>11,110</td>
+                        <td>13,332</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>24</td>
+                        <td>032500</td>
+                        <td><strong>케이엠더블유</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>23,900</td>
+                        <td>28,680</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>25</td>
+                        <td>050890</td>
+                        <td><strong>쏠리드</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>11,680</td>
+                        <td>14,016</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>26</td>
+                        <td>033160</td>
+                        <td><strong>엠케이전자</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>12,660</td>
+                        <td>15,192</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>27</td>
+                        <td>015750</td>
+                        <td><strong>성우하이텍</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>11,650</td>
+                        <td>13,980</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>28</td>
+                        <td>010170</td>
+                        <td><strong>대한광통신</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>7,160</td>
+                        <td>8,592</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>29</td>
+                        <td>264450</td>
+                        <td><strong>유비쿼스</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>15,210</td>
+                        <td>18,252</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>30</td>
+                        <td>000390</td>
+                        <td><strong>삼화페인트</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>10,660</td>
+                        <td>12,792</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>31</td>
+                        <td>321370</td>
+                        <td><strong>센서뷰</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>3,420</td>
+                        <td>4,104</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>32</td>
+                        <td>138080</td>
+                        <td><strong>오이솔루션</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>29,300</td>
+                        <td>35,160</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>33</td>
+                        <td>115180</td>
+                        <td><strong>큐리언트</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>52,100</td>
+                        <td>62,520</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>34</td>
+                        <td>091440</td>
+                        <td><strong>한울소재과학</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>3,510</td>
+                        <td>4,212</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>35</td>
+                        <td>306620</td>
+                        <td><strong>지아이에스</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>2,900</td>
+                        <td>3,480</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>36</td>
+                        <td>215380</td>
+                        <td><strong>우정바이오</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>3,980</td>
+                        <td>4,776</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>37</td>
+                        <td>261220</td>
+                        <td><strong>원유선물</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>19,885</td>
+                        <td>23,862</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>38</td>
+                        <td>253590</td>
+                        <td><strong>네오셈</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>20,400</td>
+                        <td>24,480</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>39</td>
+                        <td>100590</td>
+                        <td><strong>머큐리</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>3,970</td>
+                        <td>4,764</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>40</td>
+                        <td>327260</td>
+                        <td><strong>머트리얼즈</strong></td>
+                        <td class="strategy-oneil">ONeil</td>
+                        <td>75.0</td>
+                        <td class="score-medium">75.0</td>
+                        <td>BUY</td>
+                        <td>66,000</td>
+                        <td>79,200</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>41</td>
+                        <td>012205</td>
+                        <td><strong>계양전기우</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>74.3</td>
+                        <td class="score-medium">74.3</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>7,130</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>42</td>
+                        <td>099320</td>
+                        <td><strong>쎄트렉아이</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>74.3</td>
+                        <td class="score-medium">74.3</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>221,260</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>43</td>
+                        <td>014910</td>
+                        <td><strong>성문전자</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.9</td>
+                        <td class="score-medium">73.9</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>1,983</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>44</td>
+                        <td>023810</td>
+                        <td><strong>인팩</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.8</td>
+                        <td class="score-medium">73.8</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>9,062</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>45</td>
+                        <td>080220</td>
+                        <td><strong>제주반도체</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.3</td>
+                        <td class="score-medium">73.3</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>51,577</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>46</td>
+                        <td>174360</td>
+                        <td><strong>중국본토대형주CSI100</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.2</td>
+                        <td class="score-medium">73.2</td>
+                        <td>TREND</td>
+                        <td>-</td>
+                        <td>28,687</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>47</td>
+                        <td>071670</td>
+                        <td><strong>에이테크솔루션</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.2</td>
+                        <td class="score-medium">73.2</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>10,660</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>48</td>
+                        <td>306040</td>
+                        <td><strong>에스제이그룹</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.0</td>
+                        <td class="score-medium">73.0</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>11,879</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>49</td>
+                        <td>168580</td>
+                        <td><strong>중국본토CSI300</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>73.0</td>
+                        <td class="score-medium">73.0</td>
+                        <td>WATCHLIST</td>
+                        <td>-</td>
+                        <td>41,756</td>
+                    </tr>
+
+                    <tr class="">
+                        <td>50</td>
+                        <td>459790</td>
+                        <td><strong>미국성장기업30액티브</strong></td>
+                        <td class="strategy-minervini">Minervini</td>
+                        <td>72.8</td>
+                        <td class="score-medium">72.8</td>
+                        <td>TREND</td>
+                        <td>-</td>
+                        <td>21,741</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 KStock Analyzer | O'Neil CANSLIM + Minervini SEPA Integration</p>
+            <p>⚠️ 본 리포트는 투자 참고용이며, 실제 투자는 본인의 판단과 책임하에 진행하시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+</html>
