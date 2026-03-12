@@ -17,13 +17,14 @@ Dependencies:
 
 import pandas as pd
 import numpy as np
-import FinanceDataReader as fdr
 import pandas_ta as ta
 from datetime import datetime, timedelta
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Tuple
 import warnings
 warnings.filterwarnings('ignore')
+
+from fdr_wrapper import FDRWrapper
 
 
 @dataclass
@@ -111,7 +112,7 @@ class PivotPointStrategy:
         
     def fetch_data(self) -> pd.DataFrame:
         """
-        FinanceDataReader로 주가 데이터 수집
+        FDRWrapper로 주가 데이터 수집 (캐시 우선)
         """
         print(f"📊 {self.symbol} 데이터 수집 중...")
         
@@ -119,12 +120,14 @@ class PivotPointStrategy:
         fetch_start = (datetime.strptime(self.start_date, '%Y-%m-%d') - 
                       timedelta(days=self.pivot_period * 2)).strftime('%Y-%m-%d')
         
-        df = fdr.DataReader(self.symbol, fetch_start, self.end_date)
+        # FDRWrapper 사용 (캐싱 지원)
+        with FDRWrapper() as fdr:
+            df = fdr.get_price(self.symbol, fetch_start, self.end_date)
         
         if df.empty:
             raise ValueError(f"데이터를 가져올 수 없습니다: {self.symbol}")
         
-        # 컬럼명 표준화
+        # 컬럼명 표준화 (소문자로)
         df.columns = [col.lower() for col in df.columns]
         
         # 필요한 컬럼 확인
