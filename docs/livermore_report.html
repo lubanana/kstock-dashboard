@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jesse Livermore Pivot Point Strategy Report</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html { font-size: 16px; }
+        @media (max-width: 480px) { html { font-size: 14px; } }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1400px;
+                border-radius: 20px;
+                margin: 20px auto;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+        .header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .header p { font-size: 1rem; opacity: 0.9; margin-bottom: 0.3rem; }
+        .header .subtitle { font-size: 0.85rem; opacity: 0.8; }
+        @media (min-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .header p { font-size: 1.2rem; }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            padding: 1.2rem;
+            background: #f8f9fa;
+        }
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.2rem;
+                padding: 1.5rem;
+            }
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .stat-card h3 { 
+            color: #2a5298; 
+            font-size: 2rem; 
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+        .stat-card p { color: #666; font-size: 0.85rem; }
+        .stat-card.strong { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; }
+        .stat-card.strong h3 { color: white; }
+        .stat-card.strong p { color: rgba(255,255,255,0.9); }
+        
+        .section { padding: 1.5rem; }
+        @media (min-width: 768px) { .section { padding: 2rem; } }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2a5298;
+            font-size: 1.3rem;
+        }
+        
+        .strategy-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            border-left: 4px solid #2a5298;
+        }
+        .strategy-box h3 { color: #2a5298; margin-bottom: 1rem; font-size: 1.1rem; }
+        .strategy-box ul { margin-left: 1.2rem; }
+        .strategy-box li { margin: 0.6rem 0; font-size: 0.95rem; color: #555; }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-strong { background: #ff6b6b; color: white; }
+        .badge-buy { background: #2ed573; color: white; }
+        .badge-watch { background: #ffa502; color: white; }
+        
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            min-width: 800px;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            background: white;
+        }
+        @media (min-width: 768px) { table { font-size: 0.9rem; } }
+        
+        th {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0.5rem;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+        }
+        td { padding: 0.8rem 0.5rem; border-bottom: 1px solid #eee; white-space: nowrap; }
+        tr:hover { background: #f8f9fa; }
+        
+        .price { text-align: right; font-family: 'Courier New', monospace; }
+        .score-high { color: #ff6b6b; font-weight: bold; }
+        .score-medium { color: #2ed573; font-weight: bold; }
+        .score-low { color: #ffa502; font-weight: bold; }
+        
+        .pyramid-info {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .pyramid-step {
+            background: #e3f2fd;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #1976d2;
+        }
+        
+        .scroll-hint {
+            text-align: center;
+            padding: 0.5rem;
+            color: #999;
+            font-size: 0.8rem;
+            display: block;
+        }
+        @media (min-width: 768px) { .scroll-hint { display: none; } }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 Livermore Strategy Report</h1>
+            <p>Jesse Livermore Pivot Point Analysis</p>
+            <p class="subtitle">Scan Date: 2026-03-12 11:51</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>36</h3>
+                <p>총 신호</p>
+            </div>
+            <div class="stat-card strong">
+                <h3>19</h3>
+                <p>강력매수</p>
+            </div>
+            <div class="stat-card">
+                <h3>9</h3>
+                <p>KOSPI</p>
+            </div>
+            <div class="stat-card">
+                <h3>27</h3>
+                <p>KOSDAQ</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 전략 설명</h2>
+            
+            <div class="strategy-box">
+                <h3>📊 진입 조건 (Pivot Point Breakout)</h3>
+                <ul>
+                    <li><strong>전환점 돌파:</strong> 20일 또는 60일 신고가 돌파</li>
+                    <li><strong>거래량 확인:</strong> 당일 거래량 > 20일 평균의 150%</li>
+                    <li><strong>가격 돌파 강도:</strong> 신고가 대비 돌파 폭 측정</li>
+                    <li><strong>추세 확인:</strong> 20일 이동평균선 상회</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-box">
+                <h3>🏗️ 피라미딩 (Pyramiding) 전략</h3>
+                <ul>
+                    <li><strong>1차 진입:</strong> 신호 발생 시 30% 매수</li>
+                    <li><strong>2차 진입:</strong> 1차 진입가 대비 +5% 상승 시 30% 추가</li>
+                    <li><strong>3차 진입:</strong> 2차 진입가 대비 +5% 상승 시 40% 추가</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-box">
+                <h3>🛡️ 리스크 관리 (Exit Strategy)</h3>
+                <ul>
+                    <li><strong>손절 (Stop Loss):</strong> 평균단가 대비 -10% 하띂 시 전량 매도</li>
+                    <li><strong>익절 (Trailing Stop):</strong> 최고점 대비 -15% 하락 시 수익 실현</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 50 Signals</h2>
+            
+            <div class="disclaimer">
+                ⚠️ <strong>투자 유의사항:</strong> 본 리포트는 기술적 분석 기반 참고자료이며, 
+                실제 투자는 본인의 판단과 책임하에 진행하시기 바랍니다. 과거 수익률이 미래 수익률을 보장하지 않습니다.
+            </div>
+            
+            <p class="scroll-hint">← 좌우로 스와이프하여 더 보기 →</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>종목</th>
+                            <th>등급</th>
+                            <th>점수</th>
+                            <th>현재가</th>
+                            <th>거래량</th>
+                            <th>1차진입</th>
+                            <th>손절가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td><strong>부국증권우</strong><br><small>001275</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">41,400</td>
+                            <td>4.3x</td>
+                            <td class="price">41,400</td>
+                            <td class="price" style="color:#ff6b6b">37,260</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td><strong>미래아이앤지</strong><br><small>007120</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">1,822</td>
+                            <td>9.5x</td>
+                            <td class="price">1,822</td>
+                            <td class="price" style="color:#ff6b6b">1,640</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td><strong>이루온</strong><br><small>065440</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">2,195</td>
+                            <td>11.9x</td>
+                            <td class="price">2,195</td>
+                            <td class="price" style="color:#ff6b6b">1,976</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td><strong>에프알텍</strong><br><small>073540</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">2,715</td>
+                            <td>11.1x</td>
+                            <td class="price">2,715</td>
+                            <td class="price" style="color:#ff6b6b">2,444</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td><strong>에치에프알</strong><br><small>230240</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">27,600</td>
+                            <td>5.9x</td>
+                            <td class="price">27,600</td>
+                            <td class="price" style="color:#ff6b6b">24,840</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td><strong>아모센스</strong><br><small>357580</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">22,800</td>
+                            <td>2.5x</td>
+                            <td class="price">22,800</td>
+                            <td class="price" style="color:#ff6b6b">20,520</td>
+                        </tr>
+
+                        <tr>
+                            <td>7</td>
+                            <td><strong>코셈</strong><br><small>360350</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">13,220</td>
+                            <td>4.2x</td>
+                            <td class="price">13,220</td>
+                            <td class="price" style="color:#ff6b6b">11,898</td>
+                        </tr>
+
+                        <tr>
+                            <td>8</td>
+                            <td><strong>한선엔지니어링</strong><br><small>452280</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">100.0</td>
+                            <td class="price">14,230</td>
+                            <td>6.0x</td>
+                            <td class="price">14,230</td>
+                            <td class="price" style="color:#ff6b6b">12,807</td>
+                        </tr>
+
+                        <tr>
+                            <td>9</td>
+                            <td><strong>유비쿼스홀딩스</strong><br><small>078070</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">97.6</td>
+                            <td class="price">14,440</td>
+                            <td>9.9x</td>
+                            <td class="price">14,440</td>
+                            <td class="price" style="color:#ff6b6b">12,996</td>
+                        </tr>
+
+                        <tr>
+                            <td>10</td>
+                            <td><strong>대성하이텍</strong><br><small>129920</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">97.1</td>
+                            <td class="price">9,560</td>
+                            <td>2.4x</td>
+                            <td class="price">9,560</td>
+                            <td class="price" style="color:#ff6b6b">8,604</td>
+                        </tr>
+
+                        <tr>
+                            <td>11</td>
+                            <td><strong>코메론</strong><br><small>049430</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">96.8</td>
+                            <td class="price">18,850</td>
+                            <td>4.4x</td>
+                            <td class="price">18,850</td>
+                            <td class="price" style="color:#ff6b6b">16,965</td>
+                        </tr>
+
+                        <tr>
+                            <td>12</td>
+                            <td><strong>차백신연구소</strong><br><small>261780</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">89.6</td>
+                            <td class="price">3,190</td>
+                            <td>5.0x</td>
+                            <td class="price">3,190</td>
+                            <td class="price" style="color:#ff6b6b">2,871</td>
+                        </tr>
+
+                        <tr>
+                            <td>13</td>
+                            <td><strong>두산퓨얼셀</strong><br><small>336260</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">87.3</td>
+                            <td class="price">47,000</td>
+                            <td>3.0x</td>
+                            <td class="price">47,000</td>
+                            <td class="price" style="color:#ff6b6b">42,300</td>
+                        </tr>
+
+                        <tr>
+                            <td>14</td>
+                            <td><strong>애드바이오텍</strong><br><small>179530</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">85.5</td>
+                            <td class="price">1,920</td>
+                            <td>9.2x</td>
+                            <td class="price">1,920</td>
+                            <td class="price" style="color:#ff6b6b">1,728</td>
+                        </tr>
+
+                        <tr>
+                            <td>15</td>
+                            <td><strong>대한광통신</strong><br><small>010170</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">84.6</td>
+                            <td class="price">7,600</td>
+                            <td>3.2x</td>
+                            <td class="price">7,600</td>
+                            <td class="price" style="color:#ff6b6b">6,840</td>
+                        </tr>
+
+                        <tr>
+                            <td>16</td>
+                            <td><strong>이노베이션</strong><br><small>024850</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">81.8</td>
+                            <td class="price">3,480</td>
+                            <td>2.7x</td>
+                            <td class="price">3,480</td>
+                            <td class="price" style="color:#ff6b6b">3,132</td>
+                        </tr>
+
+                        <tr>
+                            <td>17</td>
+                            <td><strong>유엔젤</strong><br><small>072130</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">80.7</td>
+                            <td class="price">5,190</td>
+                            <td>10.1x</td>
+                            <td class="price">5,190</td>
+                            <td class="price" style="color:#ff6b6b">4,671</td>
+                        </tr>
+
+                        <tr>
+                            <td>18</td>
+                            <td><strong>일지테크</strong><br><small>019540</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">80.1</td>
+                            <td class="price">6,340</td>
+                            <td>1.5x</td>
+                            <td class="price">6,340</td>
+                            <td class="price" style="color:#ff6b6b">5,706</td>
+                        </tr>
+
+                        <tr>
+                            <td>19</td>
+                            <td><strong>휴스틸</strong><br><small>005010</small></td>
+                            <td><span class="badge badge-strong">강력매수</span></td>
+                            <td class="score-high">80.0</td>
+                            <td class="price">5,040</td>
+                            <td>4.2x</td>
+                            <td class="price">5,040</td>
+                            <td class="price" style="color:#ff6b6b">4,536</td>
+                        </tr>
+
+                        <tr>
+                            <td>20</td>
+                            <td><strong>대원미디어</strong><br><small>048910</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">79.5</td>
+                            <td class="price">9,270</td>
+                            <td>4.1x</td>
+                            <td class="price">9,270</td>
+                            <td class="price" style="color:#ff6b6b">8,343</td>
+                        </tr>
+
+                        <tr>
+                            <td>21</td>
+                            <td><strong>쏠리드</strong><br><small>050890</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">79.1</td>
+                            <td class="price">12,270</td>
+                            <td>6.5x</td>
+                            <td class="price">12,270</td>
+                            <td class="price" style="color:#ff6b6b">11,043</td>
+                        </tr>
+
+                        <tr>
+                            <td>22</td>
+                            <td><strong>현대에너지솔루션</strong><br><small>322000</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">73.8</td>
+                            <td class="price">131,500</td>
+                            <td>3.0x</td>
+                            <td class="price">131,500</td>
+                            <td class="price" style="color:#ff6b6b">118,350</td>
+                        </tr>
+
+                        <tr>
+                            <td>23</td>
+                            <td><strong>케이엠더블유</strong><br><small>032500</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">73.8</td>
+                            <td class="price">25,550</td>
+                            <td>4.1x</td>
+                            <td class="price">25,550</td>
+                            <td class="price" style="color:#ff6b6b">22,995</td>
+                        </tr>
+
+                        <tr>
+                            <td>24</td>
+                            <td><strong>오르비텍</strong><br><small>046120</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">68.9</td>
+                            <td class="price">7,770</td>
+                            <td>3.4x</td>
+                            <td class="price">7,770</td>
+                            <td class="price" style="color:#ff6b6b">6,993</td>
+                        </tr>
+
+                        <tr>
+                            <td>25</td>
+                            <td><strong>주성코퍼레이션</strong><br><small>109070</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">68.8</td>
+                            <td class="price">878</td>
+                            <td>4.6x</td>
+                            <td class="price">878</td>
+                            <td class="price" style="color:#ff6b6b">790</td>
+                        </tr>
+
+                        <tr>
+                            <td>26</td>
+                            <td><strong>세중</strong><br><small>039310</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">67.2</td>
+                            <td class="price">1,572</td>
+                            <td>2.0x</td>
+                            <td class="price">1,572</td>
+                            <td class="price" style="color:#ff6b6b">1,415</td>
+                        </tr>
+
+                        <tr>
+                            <td>27</td>
+                            <td><strong>빛과전자</strong><br><small>069540</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">66.9</td>
+                            <td class="price">1,409</td>
+                            <td>6.6x</td>
+                            <td class="price">1,409</td>
+                            <td class="price" style="color:#ff6b6b">1,268</td>
+                        </tr>
+
+                        <tr>
+                            <td>28</td>
+                            <td><strong>머큐리</strong><br><small>100590</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">66.5</td>
+                            <td class="price">4,725</td>
+                            <td>8.7x</td>
+                            <td class="price">4,725</td>
+                            <td class="price" style="color:#ff6b6b">4,252</td>
+                        </tr>
+
+                        <tr>
+                            <td>29</td>
+                            <td><strong>노타</strong><br><small>486990</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">65.3</td>
+                            <td class="price">41,700</td>
+                            <td>4.2x</td>
+                            <td class="price">41,700</td>
+                            <td class="price" style="color:#ff6b6b">37,530</td>
+                        </tr>
+
+                        <tr>
+                            <td>30</td>
+                            <td><strong>태광</strong><br><small>023160</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">65.1</td>
+                            <td class="price">32,000</td>
+                            <td>3.3x</td>
+                            <td class="price">32,000</td>
+                            <td class="price" style="color:#ff6b6b">28,800</td>
+                        </tr>
+
+                        <tr>
+                            <td>31</td>
+                            <td><strong>이노인스트루먼트</strong><br><small>215790</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">63.7</td>
+                            <td class="price">542</td>
+                            <td>5.3x</td>
+                            <td class="price">542</td>
+                            <td class="price" style="color:#ff6b6b">488</td>
+                        </tr>
+
+                        <tr>
+                            <td>32</td>
+                            <td><strong>엠케이전자</strong><br><small>033160</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">63.6</td>
+                            <td class="price">13,450</td>
+                            <td>2.7x</td>
+                            <td class="price">13,450</td>
+                            <td class="price" style="color:#ff6b6b">12,105</td>
+                        </tr>
+
+                        <tr>
+                            <td>33</td>
+                            <td><strong>에이스테크</strong><br><small>088800</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">63.5</td>
+                            <td class="price">3,425</td>
+                            <td>6.8x</td>
+                            <td class="price">3,425</td>
+                            <td class="price" style="color:#ff6b6b">3,082</td>
+                        </tr>
+
+                        <tr>
+                            <td>34</td>
+                            <td><strong>유니온머티리얼</strong><br><small>047400</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">63.5</td>
+                            <td class="price">1,625</td>
+                            <td>11.7x</td>
+                            <td class="price">1,625</td>
+                            <td class="price" style="color:#ff6b6b">1,462</td>
+                        </tr>
+
+                        <tr>
+                            <td>35</td>
+                            <td><strong>코위버</strong><br><small>056360</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">61.9</td>
+                            <td class="price">6,350</td>
+                            <td>5.1x</td>
+                            <td class="price">6,350</td>
+                            <td class="price" style="color:#ff6b6b">5,715</td>
+                        </tr>
+
+                        <tr>
+                            <td>36</td>
+                            <td><strong>삼성중공업</strong><br><small>010140</small></td>
+                            <td><span class="badge badge-buy">매수</span></td>
+                            <td class="score-medium">60.4</td>
+                            <td class="price">30,700</td>
+                            <td>2.0x</td>
+                            <td class="price">30,700</td>
+                            <td class="price" style="color:#ff6b6b">27,630</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 KStock Analyzer | Jesse Livermore Strategy</p>
+            <p>⚠️ 본 리포트는 투자 참고용이며, 실제 투자는 본인의 판단과 책임하에 진행하시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+</html>
