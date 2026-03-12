@@ -22,6 +22,8 @@ from tqdm import tqdm
 import warnings
 warnings.filterwarnings('ignore')
 
+from fdr_wrapper import FDRWrapper
+
 
 class MultiStockScanner:
     """
@@ -82,7 +84,7 @@ class MultiStockScanner:
     
     def scan_stock(self, symbol: str, name: str = '', market: str = '') -> Optional[Dict]:
         """
-        개별 종목 스캔
+        개별 종목 스캔 (FDRWrapper 사용 - 캐시 지원)
         
         Returns:
         --------
@@ -93,10 +95,12 @@ class MultiStockScanner:
             end_date = datetime.now()
             start_date = end_date - timedelta(days=self.pivot_period * 3)
             
-            df = fdr.DataReader(symbol, start_date.strftime('%Y-%m-%d'), 
-                               end_date.strftime('%Y-%m-%d'))
+            # FDRWrapper 사용 (캐싱 지원)
+            with FDRWrapper() as fdr:
+                df = fdr.get_price(symbol, start_date.strftime('%Y-%m-%d'), 
+                                   end_date.strftime('%Y-%m-%d'))
             
-            if len(df) < self.pivot_period + 5:
+            if df.empty or len(df) < self.pivot_period + 5:
                 return None
             
             # 컬럼명 소문자로
