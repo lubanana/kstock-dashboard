@@ -1,0 +1,18 @@
+# Pivot Point Strategy Requirements
+
+# Data
+finance-datareader>=0.9.90
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Technical Analysis
+pandas-ta>=0.3.14b
+
+# Visualization
+matplotlib>=3.5.0
+plotly>=5.10.0
+
+# Utilities
+tqdm>=4.64.0
+openpyxl>=3.0.0
+xlrd>=2.0.0
