@@ -1,0 +1,76 @@
+{
+  "date": "2026-01-13",
+  "signals_found": 5,
+  "signals": [
+    {
+      "date": "2026-01-13",
+      "code": "035420",
+      "name": "NAVER",
+      "market": "KOSPI",
+      "current_price": 463838,
+      "score": 79.7,
+      "volume_ratio": 2.21,
+      "break_strength": 6.55,
+      "entry_1": 463838,
+      "entry_2": 487030.0,
+      "entry_3": 511381.0,
+      "stop_loss": 417454.0
+    },
+    {
+      "date": "2026-01-13",
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "current_price": 452150,
+      "score": 75.2,
+      "volume_ratio": 1.79,
+      "break_strength": 3.73,
+      "entry_1": 452150,
+      "entry_2": 474758.0,
+      "entry_3": 498495.0,
+      "stop_loss": 406935.0
+    },
+    {
+      "date": "2026-01-13",
+      "code": "086520",
+      "name": "에코프로",
+      "market": "KOSDAQ",
+      "current_price": 448344,
+      "score": 70.8,
+      "volume_ratio": 2.7,
+      "break_strength": 2.61,
+      "entry_1": 448344,
+      "entry_2": 470761.0,
+      "entry_3": 494299.0,
+      "stop_loss": 403510.0
+    },
+    {
+      "date": "2026-01-13",
+      "code": "051910",
+      "name": "LG화학",
+      "market": "KOSPI",
+      "current_price": 148945,
+      "score": 66.6,
+      "volume_ratio": 2.42,
+      "break_strength": 2.19,
+      "entry_1": 148945,
+      "entry_2": 156392.0,
+      "entry_3": 164212.0,
+      "stop_loss": 134050.0
+    },
+    {
+      "date": "2026-01-13",
+      "code": "035720",
+      "name": "카카오",
+      "market": "KOSPI",
+      "current_price": 447677,
+      "score": 60.2,
+      "volume_ratio": 3.23,
+      "break_strength": 3.32,
+      "entry_1": 447677,
+      "entry_2": 470061.0,
+      "entry_3": 493564.0,
+      "stop_loss": 402909.0
+    }
+  ]
+}

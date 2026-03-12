@@ -1,0 +1,76 @@
+{
+  "date": "2026-01-29",
+  "signals_found": 5,
+  "signals": [
+    {
+      "date": "2026-01-29",
+      "code": "012330",
+      "name": "현대모비스",
+      "market": "KOSPI",
+      "current_price": 379290,
+      "score": 90.3,
+      "volume_ratio": 2.18,
+      "break_strength": 3.04,
+      "entry_1": 379290,
+      "entry_2": 398254.0,
+      "entry_3": 418167.0,
+      "stop_loss": 341361.0
+    },
+    {
+      "date": "2026-01-29",
+      "code": "051910",
+      "name": "LG화학",
+      "market": "KOSPI",
+      "current_price": 280139,
+      "score": 89.7,
+      "volume_ratio": 2.95,
+      "break_strength": 3.41,
+      "entry_1": 280139,
+      "entry_2": 294146.0,
+      "entry_3": 308853.0,
+      "stop_loss": 252125.0
+    },
+    {
+      "date": "2026-01-29",
+      "code": "377300",
+      "name": "카카오페이",
+      "market": "KOSPI",
+      "current_price": 410854,
+      "score": 67.5,
+      "volume_ratio": 2.1,
+      "break_strength": 4.51,
+      "entry_1": 410854,
+      "entry_2": 431397.0,
+      "entry_3": 452967.0,
+      "stop_loss": 369769.0
+    },
+    {
+      "date": "2026-01-29",
+      "code": "196170",
+      "name": "알테오젠",
+      "market": "KOSDAQ",
+      "current_price": 61641,
+      "score": 66.3,
+      "volume_ratio": 3.3,
+      "break_strength": 9.61,
+      "entry_1": 61641,
+      "entry_2": 64723.0,
+      "entry_3": 67959.0,
+      "stop_loss": 55477.0
+    },
+    {
+      "date": "2026-01-29",
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "current_price": 207996,
+      "score": 64.6,
+      "volume_ratio": 1.53,
+      "break_strength": 7.9,
+      "entry_1": 207996,
+      "entry_2": 218396.0,
+      "entry_3": 229316.0,
+      "stop_loss": 187196.0
+    }
+  ]
+}

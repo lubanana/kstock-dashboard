@@ -1,0 +1,34 @@
+{
+  "date": "2026-01-12",
+  "signals_found": 2,
+  "signals": [
+    {
+      "date": "2026-01-12",
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "current_price": 366672,
+      "score": 93.1,
+      "volume_ratio": 2.09,
+      "break_strength": 7.25,
+      "entry_1": 366672,
+      "entry_2": 385006.0,
+      "entry_3": 404256.0,
+      "stop_loss": 330005.0
+    },
+    {
+      "date": "2026-01-12",
+      "code": "377300",
+      "name": "카카오페이",
+      "market": "KOSPI",
+      "current_price": 189213,
+      "score": 64.3,
+      "volume_ratio": 1.93,
+      "break_strength": 8.46,
+      "entry_1": 189213,
+      "entry_2": 198674.0,
+      "entry_3": 208607.0,
+      "stop_loss": 170292.0
+    }
+  ]
+}

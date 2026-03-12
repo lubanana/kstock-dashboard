@@ -1,0 +1,20 @@
+{
+  "date": "2026-02-13",
+  "signals_found": 1,
+  "signals": [
+    {
+      "date": "2026-02-13",
+      "code": "086520",
+      "name": "에코프로",
+      "market": "KOSDAQ",
+      "current_price": 275067,
+      "score": 75.6,
+      "volume_ratio": 2.91,
+      "break_strength": 6.54,
+      "entry_1": 275067,
+      "entry_2": 288820.0,
+      "entry_3": 303261.0,
+      "stop_loss": 247560.0
+    }
+  ]
+}

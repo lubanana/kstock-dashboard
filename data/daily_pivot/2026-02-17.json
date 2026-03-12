@@ -1,0 +1,48 @@
+{
+  "date": "2026-02-17",
+  "signals_found": 3,
+  "signals": [
+    {
+      "date": "2026-02-17",
+      "code": "323410",
+      "name": "카카오뱅크",
+      "market": "KOSPI",
+      "current_price": 418313,
+      "score": 87.4,
+      "volume_ratio": 2.46,
+      "break_strength": 8.35,
+      "entry_1": 418313,
+      "entry_2": 439229.0,
+      "entry_3": 461190.0,
+      "stop_loss": 376482.0
+    },
+    {
+      "date": "2026-02-17",
+      "code": "000660",
+      "name": "SK하이닉스",
+      "market": "KOSPI",
+      "current_price": 177784,
+      "score": 81.9,
+      "volume_ratio": 2.74,
+      "break_strength": 8.74,
+      "entry_1": 177784,
+      "entry_2": 186673.0,
+      "entry_3": 196007.0,
+      "stop_loss": 160006.0
+    },
+    {
+      "date": "2026-02-17",
+      "code": "207940",
+      "name": "삼성바이오",
+      "market": "KOSPI",
+      "current_price": 383813,
+      "score": 62.3,
+      "volume_ratio": 2.63,
+      "break_strength": 4.92,
+      "entry_1": 383813,
+      "entry_2": 403004.0,
+      "entry_3": 423154.0,
+      "stop_loss": 345432.0
+    }
+  ]
+}
