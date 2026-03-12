@@ -1,0 +1,20 @@
+{
+  "date": "2026-02-06",
+  "signals_found": 1,
+  "signals": [
+    {
+      "date": "2026-02-06",
+      "code": "000660",
+      "name": "SK하이닉스",
+      "market": "KOSPI",
+      "current_price": 312126,
+      "score": 77.1,
+      "volume_ratio": 3.43,
+      "break_strength": 9.43,
+      "entry_1": 312126,
+      "entry_2": 327732.0,
+      "entry_3": 344119.0,
+      "stop_loss": 280913.0
+    }
+  ]
+}
