@@ -36,16 +36,16 @@ class FDRWrapper:
         self.db_path = db_path
         self._cache_stats = {'hit': 0, 'miss': 0, 'api_calls': 0}
     
-    def _get_db_data(self, symbol: str, start_date: str, end_date: str) -> pd.DataFrame:
-        """DB에서 데이터 조회"""
+    def _get_db_all_data(self, symbol: str) -> pd.DataFrame:
+        """DB에서 해당 종목의 전체 데이터 조회"""
         try:
             conn = sqlite3.connect(self.db_path)
             query = """
                 SELECT * FROM stock_prices 
-                WHERE symbol = ? AND date >= ? AND date <= ?
+                WHERE symbol = ?
                 ORDER BY date
             """
-            df = pd.read_sql_query(query, conn, params=(symbol, start_date, end_date))
+            df = pd.read_sql_query(query, conn, params=(symbol,))
             conn.close()
             return df
         except Exception as e:
@@ -145,7 +145,7 @@ class FDRWrapper:
         
         Flow:
         1. DB에 해당 종목 데이터 있는지 확인 (전체 개수)
-        2. DB에 충분한 데이터 있으면 → DB 데이터 리턴 (API 호출 안 함)
+        2. DB에 충분한 데이터 있으면 → 전체 DB 데이터 리턴 (API 호출 안 함)
         3. DB에 없거나 부족하면 → API 호출 → DB 저장 → 리턴
         
         Parameters:
@@ -173,11 +173,11 @@ class FDRWrapper:
         db_total_count = self._get_db_total_count(symbol)
         
         if db_total_count >= min_days:
-            # DB에 충분한 데이터가 있으면 API 호출 없이 DB 데이터 리턴
-            df = self._get_db_data(symbol, start_date, end_date)
+            # DB에 충분한 데이터가 있으면 전체 데이터 리턴 (API 호출 없이)
+            df = self._get_db_all_data(symbol)
             if not df.empty:
                 self._cache_stats['hit'] += 1
-                print(f"💾 DB 캐시 사용: {symbol} (전체: {db_total_count}일, 반환: {len(df)}일)")
+                print(f"💾 DB 캐시 사용: {symbol} (전체: {len(df)}일)")
                 return df
         
         # 2. DB에 데이터가 없거나 부족하면 API 호출
@@ -191,7 +191,7 @@ class FDRWrapper:
             if df.empty:
                 print(f"⚠️ API 데이터 없음: {symbol}")
                 # API 실패 시 DB에 있는 데이터라도 반환
-                df = self._get_db_data(symbol, start_date, end_date)
+                df = self._get_db_all_data(symbol)
                 if not df.empty:
                     print(f"💾 DB 폼백: {symbol} ({len(df)}일)")
                 return df
@@ -205,7 +205,7 @@ class FDRWrapper:
         except Exception as e:
             print(f"❌ API 오류 ({symbol}): {e}")
             # API 실패 시 DB에 있는 데이터 반환
-            df = self._get_db_data(symbol, start_date, end_date)
+            df = self._get_db_all_data(symbol)
             if not df.empty:
                 print(f"💾 DB 폼백: {symbol} ({len(df)}일)")
             return df

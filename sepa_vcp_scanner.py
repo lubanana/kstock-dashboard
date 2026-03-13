@@ -64,12 +64,13 @@ class SEPAVCPScanner:
             return df
         return None
     
-    def scan_symbol(self, symbol: str, market: str = 'KOSPI', days: int = 300) -> Optional[SEPASignal]:
+    def scan_symbol(self, symbol: str, name: str = '', market: str = 'KOSPI', days: int = 300) -> Optional[SEPASignal]:
         """
         단일 종목 스캔
         
         Args:
             symbol: 종목코드
+            name: 종목명
             market: 시장 구분
             days: 분석 기간
         
@@ -84,7 +85,15 @@ class SEPAVCPScanner:
             
             # 주가 데이터 로드
             df = self.fdr.get_price(symbol, start_date=start_date, end_date=end_date)
-            if df is None or df.empty or len(df) < 252:
+            
+            # 데이터가 없거나 부족하면 스킵
+            if df is None or df.empty:
+                print(f"  ⏭️  {symbol} ({name}): 데이터 없음 - 스킵")
+                return None
+            
+            # SEPA 전략은 최소 200일 데이터 필요 (1년 영업일 기준 약 250일)
+            if len(df) < 200:
+                print(f"  ⏭️  {symbol} ({name}): 데이터 부족 ({len(df)}일 < 200일) - 상장 1년 미만으로 추정, 스킵")
                 return None
             
             # 컬럼명 통일
@@ -98,6 +107,17 @@ class SEPAVCPScanner:
             market_df = self.get_market_data(market, days)
             
             # 분석 실행
+            signal = self.strategy.analyze_symbol(symbol, df, market_df)
+            
+            # 시장 정보 추가
+            if signal:
+                signal.market = market
+            
+            return signal
+            
+        except Exception as e:
+            print(f"  ❌ {symbol} ({name}): 오류 발생 - {str(e)[:50]}")
+            return None
             signal = self.strategy.analyze_symbol(symbol, df, market_df)
             
             # 시장 정보 추가
@@ -142,7 +162,7 @@ class SEPAVCPScanner:
         # 순차 실행 (SQLite 스레드 문제 회피)
         for idx, row in stocks.iterrows():
             try:
-                signal = self.scan_symbol(row['symbol'], row['market'])
+                signal = self.scan_symbol(row['symbol'], row.get('name', ''), row['market'])
                 if signal and signal.score >= min_score:
                     results.append({
                         'symbol': signal.symbol,
