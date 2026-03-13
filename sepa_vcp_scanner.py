@@ -14,13 +14,12 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Optional
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 import json
 
 from sepa_vcp_strategy import SEPA_VCP_Strategy, SEPASignal
 from sepa_vcp_visualizer import SEPA_VCP_Visualizer
-from local_db import LocalDatabase
+from local_db import LocalDB
 from fdr_wrapper import FDRWrapper
 
 
@@ -32,7 +31,7 @@ class SEPAVCPScanner:
                  output_dir: str = './reports/sepa',
                  max_workers: int = 4):
         
-        self.db = LocalDatabase(db_path)
+        self.db = LocalDB(db_path)
         self.fdr = FDRWrapper(db_path)
         self.strategy = SEPA_VCP_Strategy()
         self.visualizer = SEPA_VCP_Visualizer()
@@ -49,11 +48,16 @@ class SEPAVCPScanner:
         if cache_key in self.market_data_cache:
             return self.market_data_cache[cache_key]
         
+        # 날짜 계산
+        from datetime import datetime, timedelta
+        end_date = datetime.now().strftime('%Y-%m-%d')
+        start_date = (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
+        
         # KOSPI/KOSDAQ 지수 데이터
         if market == 'KOSPI':
-            df = self.fdr.get_price('^KS11', days=days)
+            df = self.fdr.get_price('^KS11', start_date=start_date, end_date=end_date)
         else:  # KOSDAQ
-            df = self.fdr.get_price('^KQ11', days=days)
+            df = self.fdr.get_price('^KQ11', start_date=start_date, end_date=end_date)
         
         if df is not None and not df.empty:
             self.market_data_cache[cache_key] = df
@@ -73,8 +77,13 @@ class SEPAVCPScanner:
             SEPASignal 또는 None
         """
         try:
+            # 날짜 계산
+            from datetime import datetime, timedelta
+            end_date = datetime.now().strftime('%Y-%m-%d')
+            start_date = (datetime.now() - timedelta(days=days)).strftime('%Y-%m-%d')
+            
             # 주가 데이터 로드
-            df = self.fdr.get_price(symbol, days=days)
+            df = self.fdr.get_price(symbol, start_date=start_date, end_date=end_date)
             if df is None or df.empty or len(df) < 252:
                 return None
             
@@ -104,7 +113,7 @@ class SEPAVCPScanner:
     def scan_all(self, market: str = 'ALL', limit: Optional[int] = None,
                  min_score: int = 50) -> pd.DataFrame:
         """
-        전 종목 스캔
+        전 종목 스캔 (순차 실행)
         
         Args:
             market: 'KOSPI', 'KOSDAQ', 또는 'ALL'
@@ -115,10 +124,12 @@ class SEPAVCPScanner:
             결과 DataFrame
         """
         # 종목 리스트 로드
-        if market == 'ALL':
-            stocks = self.db.get_all_stocks()
-        else:
-            stocks = self.db.get_stocks_by_market(market)
+        with open('./data/stock_list.json', 'r') as f:
+            stocks_data = json.load(f)
+        stocks = pd.DataFrame(stocks_data['stocks'])
+        
+        if market != 'ALL':
+            stocks = stocks[stocks['market'] == market]
         
         if limit:
             stocks = stocks.head(limit)
@@ -128,42 +139,37 @@ class SEPAVCPScanner:
         results = []
         valid_signals = []
         
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            future_to_symbol = {
-                executor.submit(self.scan_symbol, row['symbol'], row['market']): row 
-                for _, row in stocks.iterrows()
-            }
-            
-            for future in as_completed(future_to_symbol):
-                row = future_to_symbol[future]
-                try:
-                    signal = future.result()
-                    if signal and signal.score >= min_score:
-                        results.append({
-                            'symbol': signal.symbol,
-                            'market': row['market'],
-                            'name': row['name'],
-                            'date': signal.date,
-                            'close': signal.current_price,
-                            'score': signal.score,
-                            'trend_template': signal.trend_template_passed,
-                            'vcp_passed': signal.vcp_passed,
-                            'contraction_count': signal.contraction_count,
-                            'depth_narrowing': signal.depth_narrowing,
-                            'duration_shortening': signal.duration_shortening,
-                            'volume_dry_up': signal.volume_dry_up,
-                            'volume_surge': signal.volume_surge,
-                            'volume_ratio': signal.volume_ratio,
-                            'pivot_line': signal.pivot_line,
-                            'pivot_breakout': signal.pivot_breakout,
-                            'relative_strength': signal.relative_strength,
-                            'rs_top25': signal.rs_top25,
-                            'is_valid': signal.is_valid
-                        })
-                        valid_signals.append(signal)
-                        print(f"✅ {signal.symbol}: Score {signal.score}")
-                except Exception as e:
-                    print(f"❌ Error processing {row['symbol']}: {e}")
+        # 순차 실행 (SQLite 스레드 문제 회피)
+        for idx, row in stocks.iterrows():
+            try:
+                signal = self.scan_symbol(row['symbol'], row['market'])
+                if signal and signal.score >= min_score:
+                    results.append({
+                        'symbol': signal.symbol,
+                        'market': row['market'],
+                        'name': row['name'],
+                        'date': signal.date,
+                        'close': signal.current_price,
+                        'score': signal.score,
+                        'trend_template': signal.trend_template_passed,
+                        'vcp_passed': signal.vcp_passed,
+                        'contraction_count': signal.contraction_count,
+                        'depth_narrowing': signal.depth_narrowing,
+                        'duration_shortening': signal.duration_shortening,
+                        'volume_dry_up': signal.volume_dry_up,
+                        'volume_surge': signal.volume_surge,
+                        'volume_ratio': signal.volume_ratio,
+                        'pivot_line': signal.pivot_line,
+                        'pivot_breakout': signal.pivot_breakout,
+                        'relative_strength': signal.relative_strength,
+                        'rs_top25': signal.rs_top25,
+                        'is_valid': signal.is_valid
+                    })
+                    valid_signals.append(signal)
+                    print(f"✅ {signal.symbol}: Score {signal.score}")
+            except Exception as e:
+                print(f"❌ Error processing {row['symbol']}: {e}")
+                continue
         
         # 결과 정렬
         if results:
@@ -202,42 +208,8 @@ class SEPAVCPScanner:
         
         return csv_path, excel_path
     
-    def generate_charts(self, valid_signals: List[SEPASignal], top_n: int = 10):
-        """상위 종목 차트 생성"""
-        print(f"\n📈 Generating charts for top {top_n} stocks...")
-        
-        chart_paths = []
-        for signal in valid_signals[:top_n]:
-            try:
-                # 데이터 로드
-                df = self.fdr.get_price(signal.symbol, days=300)
-                if df is not None and not df.empty:
-                    df.columns = [c.lower() for c in df.columns]
-                    if 'date' not in df.columns:
-                        df.reset_index(inplace=True)
-                        if 'index' in df.columns:
-                            df.rename(columns={'index': 'date'}, inplace=True)
-                    
-                    # 차트 생성
-                    chart_path = self.output_dir / f"{signal.symbol}_sepa_{signal.date.strftime('%Y%m%d')}.png"
-                    self.visualizer.plot_matplotlib(df, signal, str(chart_path))
-                    chart_paths.append(chart_path)
-                    
-                    # 인터랙티브 차트
-                    html_path = self.output_dir / f"{signal.symbol}_sepa_{signal.date.strftime('%Y%m%d')}.html"
-                    self.visualizer.plot_plotly(df, signal, str(html_path))
-                    chart_paths.append(html_path)
-                    
-            except Exception as e:
-                print(f"❌ Error generating chart for {signal.symbol}: {e}")
-        
-        print(f"✅ Generated {len(chart_paths)} charts")
-        return chart_paths
-    
     def generate_report(self, df: pd.DataFrame, valid_signals: List[SEPASignal]):
         """HTML 리포트 생성"""
-        from sepa_vcp_visualizer import SEPA_VCP_Visualizer
-        
         timestamp = datetime.now().strftime('%Y%m%d')
         report_path = self.output_dir / f"sepa_report_{timestamp}.html"
         
@@ -360,9 +332,6 @@ if __name__ == "__main__":
     if not results.empty:
         # 결과 저장
         scanner.save_results(results)
-        
-        # 상위 10개 차트 생성
-        scanner.generate_charts(valid_signals, top_n=10)
         
         # HTML 리포트 생성
         scanner.generate_report(results, valid_signals)
