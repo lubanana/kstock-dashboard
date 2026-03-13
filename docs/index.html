@@ -2,372 +2,140 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>피벗 포인트 돌파 신호 리포트</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📊 K-Stock Pivot Strategy Reports</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { font-family: 'Noto Sans KR', sans-serif; }
-        body { background: #f5f7fa; }
-        .stock-card { transition: all 0.2s; cursor: pointer; }
-        .stock-card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
-        .signal-badge { animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
-        .chart-modal { backdrop-filter: blur(5px); }
-        .sort-btn.active { background: #3b82f6; color: white; }
-        #chartContainer { position: relative; width: 100%; height: 320px; }
-        #volumeContainer { position: relative; width: 100%; height: 100px; margin-top: 4px; }
-        .tv-copyright { display: none !important; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .report-card { transition: all 0.3s ease; }
+        .report-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
     </style>
 </head>
-<body class="min-h-screen">
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white sticky top-0 z-40 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
+<body class="py-8 px-4">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-white mb-3">
+                <i class="fas fa-chart-line mr-3"></i>K-Stock Pivot Strategy
+            </h1>
+            <p class="text-white/80 text-lg">피벗 포인트 돌파 전략 리포트 대시보드</p>
+            <div class="mt-4 inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-white text-sm">실시간 리포트 업데이트</span>
+            </div>
+        </div>
+
+        <!-- Latest Report Section -->
+        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-fire text-white text-xl"></i>
+                </div>
                 <div>
-                    <h1 class="text-xl font-bold">📊 피벗 포인트 돌파 신호</h1>
-                    <p class="text-sm text-blue-100 mt-1">기준일: 2026-03-13 | 총 43개 종목</p>
+                    <h2 class="text-xl font-bold text-gray-800">🔥 최신 리포트</h2>
+                    <p class="text-gray-500 text-sm">Today's Pivot Breakout Signals</p>
                 </div>
-                <div class="text-right">
-                    <div class="text-2xl font-bold">43</div>
-                    <div class="text-xs text-blue-100">신호 종목</div>
+            </div>
+            
+            <a href="scan_report_20260313.html" class="report-card block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100 hover:border-blue-300">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-file-alt text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 13일 스캔 리포트</h3>
+                            <p class="text-gray-500 text-sm">📈 43개 종목 신호 감지 | TradingView 차트</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">KOSPI</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">KOSDAQ</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">Lightweight Charts</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-blue-600">43</div>
+                        <div class="text-sm text-gray-500">신호 종목</div>
+                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
+                    </div>
                 </div>
+            </a>
+        </div>
+
+        <!-- Previous Reports Grid -->
+        <div class="glass rounded-2xl p-6 shadow-2xl">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-history mr-2"></i>이전 리포트
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Report Card 1 -->
+                <a href="scan_report_20260312.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800">3월 12일 스캔 리포트</h3>
+                            <p class="text-sm text-gray-500">일일 피봇 돌파 신호</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+
+                <!-- Report Card 2 -->
+                <a href="daily_202602.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800">2026년 2월 일별 리포트</h3>
+                            <p class="text-sm text-gray-500">월간 집계 데이터</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+
+                <!-- Report Card 3 -->
+                <a href="daily_202601.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800">2026년 1월 일별 리포트</h3>
+                            <p class="text-sm text-gray-500">월간 집계 데이터</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+
+                <!-- Report Card 4 -->
+                <a href="daily_report_feb_2026.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800">2월 상세 리포트</h3>
+                            <p class="text-sm text-gray-500">Detailed February Report</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
             </div>
         </div>
-    </header>
 
-    <div class="bg-white shadow-sm sticky top-[72px] z-30 border-b">
-        <div class="max-w-7xl mx-auto px-4 py-3">
-            <div class="flex flex-wrap gap-2 items-center">
-                <span class="text-sm text-gray-500 mr-2">정렬:</span>
-                <button onclick="sortBy('score')" class="sort-btn active px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 transition" data-sort="score">종합점수</button>
-                <button onclick="sortBy('volume_ratio')" class="sort-btn px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 transition" data-sort="volume_ratio">거래량</button>
-                <button onclick="sortBy('price_change_pct')" class="sort-btn px-3 py-1.5 text-sm rounded-full bg-gray-100 hover:bg-gray-200 transition" data-sort="price_change_pct">상승률</button>
-                <div class="flex-1"></div>
-                <select id="marketFilter" onchange="filterMarket()" class="text-sm border rounded-lg px-3 py-1.5 bg-white">
-                    <option value="all">전체 시장</option>
-                    <option value="KOSPI">KOSPI</option>
-                    <option value="KOSDAQ">KOSDAQ</option>
-                </select>
-            </div>
+        <!-- Footer -->
+        <div class="text-center mt-8 text-white/60 text-sm">
+            <p>K-Stock Pivot Strategy Dashboard</p>
+            <p class="mt-1">Generated with TradingView Lightweight Charts</p>
         </div>
     </div>
-
-    <main class="max-w-7xl mx-auto px-4 py-4 pb-24" id="stockList"></main>
-
-    <div id="chartModal" class="chart-modal fixed inset-0 z-50 bg-black/50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[95vh] overflow-hidden shadow-2xl">
-            <div class="flex items-center justify-between p-4 border-b bg-gray-50">
-                <div>
-                    <h3 id="modalTitle" class="text-lg font-bold">종목명</h3>
-                    <p id="modalCode" class="text-sm text-gray-500">종목코드</p>
-                </div>
-                <button onclick="closeModal()" class="p-2 hover:bg-gray-200 rounded-full transition">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <div class="p-4 overflow-y-auto max-h-[calc(95vh-80px)]">
-                <!-- TradingView Chart Container -->
-                <div id="chartContainer"></div>
-                <div id="volumeContainer"></div>
-                
-                <!-- Price Info -->
-                <div class="grid grid-cols-4 gap-2 mt-4 mb-4">
-                    <div class="bg-gray-50 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500">시가</div>
-                        <div id="infoOpen" class="font-bold">-</div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500">고가</div>
-                        <div id="infoHigh" class="font-bold text-red-600">-</div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500">저가</div>
-                        <div id="infoLow" class="font-bold text-blue-600">-</div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg p-3 text-center">
-                        <div class="text-xs text-gray-500">종가</div>
-                        <div id="infoClose" class="font-bold">-</div>
-                    </div>
-                </div>
-                
-                <div id="strategyContainer" class="bg-blue-50 rounded-xl p-4"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="fixed bottom-4 left-4 right-4 bg-white rounded-2xl shadow-xl border p-4 z-40">
-        <div class="flex items-center justify-between">
-            <div class="text-sm">
-                <span class="text-gray-500">신호 종목:</span>
-                <span class="font-bold text-blue-600">43개</span>
-            </div>
-            <div class="text-sm text-right">
-                <span class="text-gray-500">평균 거래량:</span>
-                <span class="font-bold text-green-600">8.6배</span>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const stockData = [{"symbol": 65440, "name": "이루온", "market": "KOSDAQ", "date": "2026-03-13", "close": 2195.0, "open": 1894.0, "high": 2195.0, "low": 1890.0, "volume": 10543187, "pivot_high": 1690.0, "volume_ma20": 369211, "volume_ratio": 28.55598212567524, "price_change_pct": 29.88165680473373, "score": 1437.5624198932296}, {"symbol": 73540, "name": "에프알텍", "market": "KOSDAQ", "date": "2026-03-13", "close": 2715.0, "open": 2135.0, "high": 2715.0, "low": 2070.0, "volume": 1444081, "pivot_high": 2295.0, "volume_ma20": 51370, "volume_ratio": 28.111231695387893, "price_change_pct": 29.90430622009569, "score": 1415.370197209586}, {"symbol": 47400, "name": "유니온머티리얼", "market": "KOSPI", "date": "2026-03-13", "close": 1646.0, "open": 1602.0, "high": 1917.0, "low": 1550.0, "volume": 14365280, "pivot_high": 1611.0, "volume_ma20": 525320, "volume_ratio": 27.345749375048065, "price_change_pct": 11.593220338983052, "score": 1340.4739094303695}, {"symbol": 72130, "name": "유엔젤", "market": "KOSPI", "date": "2026-03-13", "close": 5210.0, "open": 4860.0, "high": 5880.0, "low": 4825.0, "volume": 2102439, "pivot_high": 4935.0, "volume_ma20": 89068, "volume_ratio": 23.604636410688805, "price_change_pct": 6.109979633401222, "score": 1142.4517798012423}, {"symbol": 78070, "name": "유비쿼스홀딩스", "market": "KOSDAQ", "date": "2026-03-13", "close": 14480.0, "open": 13500.0, "high": 15270.0, "low": 13060.0, "volume": 1877457, "pivot_high": 13200.0, "volume_ma20": 87782, "volume_ratio": 21.387587852027536, "price_change_pct": 14.829500396510706, "score": 1049.0383933943983}, {"symbol": 7120, "name": "미래아이앤지", "market": "KOSPI", "date": "2026-03-13", "close": 1755.0, "open": 1423.0, "high": 1849.0, "low": 1423.0, "volume": 7531808, "pivot_high": 1442.0, "volume_ma20": 362693, "volume_ratio": 20.766339365154728, "price_change_pct": 23.33099086437105, "score": 1034.9789499864785}, {"symbol": 179530, "name": "애드바이오텍", "market": "KOSDAQ", "date": "2026-03-13", "close": 1920.0, "open": 1477.0, "high": 1920.0, "low": 1460.0, "volume": 1789095, "pivot_high": 1805.0, "volume_ma20": 107249, "volume_ratio": 16.681655116469347, "price_change_pct": 29.993229519295877, "score": 844.0692148620591}, {"symbol": 100590, "name": "머큐리", "market": "KOSDAQ", "date": "2026-03-13", "close": 4660.0, "open": 4260.0, "high": 5380.0, "low": 4075.0, "volume": 9123189, "pivot_high": 4650.0, "volume_ma20": 530959, "volume_ratio": 17.18246389130014, "price_change_pct": 12.560386473429952, "score": 834.243967511867}, {"symbol": 35460, "name": "기산텔레콤", "market": "KOSDAQ", "date": "2026-03-13", "close": 2690.0, "open": 2660.0, "high": 2830.0, "low": 2450.0, "volume": 4156503, "pivot_high": 2630.0, "volume_ma20": 271196, "volume_ratio": 15.32655324816498, "price_change_pct": 2.281368821292776, "score": 720.8904000508346}, {"symbol": 380540, "name": "옵티코어", "market": "KOSDAQ", "date": "2026-03-13", "close": 5020.0, "open": 4230.0, "high": 5250.0, "low": 4110.0, "volume": 34426153, "pivot_high": 4970.0, "volume_ma20": 3056564, "volume_ratio": 11.263020642274284, "price_change_pct": 24.10383189122373, "score": 561.3586958961616}, {"symbol": 88800, "name": "에이스테크", "market": "KOSDAQ", "date": "2026-03-13", "close": 3490.0, "open": 3170.0, "high": 4000.0, "low": 2915.0, "volume": 6572281, "pivot_high": 3395.0, "volume_ma20": 578822, "volume_ratio": 11.354570701726349, "price_change_pct": 10.443037974683543, "score": 538.6146110356846}, {"symbol": 50890, "name": "쏠리드", "market": "KOSDAQ", "date": "2026-03-13", "close": 12400.0, "open": 12190.0, "high": 13410.0, "low": 11750.0, "volume": 39218266, "pivot_high": 11710.0, "volume_ma20": 4000646, "volume_ratio": 9.802982950641612, "price_change_pct": 5.892399658411613, "score": 451.9339468489038}, {"symbol": 452280, "name": "한선엔지니어링", "market": "KOSDAQ", "date": "2026-03-13", "close": 14230.0, "open": 11900.0, "high": 14230.0, "low": 11510.0, "volume": 2457311, "pivot_high": 11400.0, "volume_ma20": 293856, "volume_ratio": 8.362295076109545, "price_change_pct": 29.954337899543376, "score": 428.023429604564}, {"symbol": 261780, "name": "차백신연구소", "market": "KOSDAQ", "date": "2026-03-13", "close": 3205.0, "open": 2960.0, "high": 3290.0, "low": 2950.0, "volume": 1172657, "pivot_high": 2970.0, "volume_ma20": 129347, "volume_ratio": 9.065946023674991, "price_change_pct": 8.277027027027026, "score": 419.8513552378037}, {"symbol": 486990, "name": "노타", "market": "KOSDAQ", "date": "2026-03-13", "close": 44450.0, "open": 39200.0, "high": 45100.0, "low": 38400.0, "volume": 2950108, "pivot_high": 41150.0, "volume_ma20": 347270, "volume_ratio": 8.495131100270697, "price_change_pct": 19.168900804289542, "score": 413.09435662211393}, {"symbol": 230240, "name": "에치에프알", "market": "KOSDAQ", "date": "2026-03-13", "close": 27600.0, "open": 24050.0, "high": 27600.0, "low": 23950.0, "volume": 2545370, "pivot_high": 21250.0, "volume_ma20": 321808, "volume_ratio": 7.90957607882821, "price_change_pct": 29.88235294117647, "score": 405.2435098237634}, {"symbol": 56360, "name": "코위버", "market": "KOSDAQ", "date": "2026-03-13", "close": 6330.0, "open": 6040.0, "high": 6660.0, "low": 5880.0, "volume": 1077239, "pivot_high": 6320.0, "volume_ma20": 148659, "volume_ratio": 7.246373496938128, "price_change_pct": 4.801324503311259, "score": 321.9213238535289}, {"symbol": 5010, "name": "휴스틸", "market": "KOSPI", "date": "2026-03-13", "close": 4960.0, "open": 4655.0, "high": 5100.0, "low": 4620.0, "volume": 4569884, "pivot_high": 4800.0, "volume_ma20": 700634, "volume_ratio": 6.5224958671375255, "price_change_pct": 7.592190889370933, "score": 291.30917513561815}, {"symbol": 360350, "name": "코셈", "market": "KOSDAQ", "date": "2026-03-13", "close": 13000.0, "open": 11500.0, "high": 13440.0, "low": 11440.0, "volume": 721066, "pivot_high": 11840.0, "volume_ma20": 120800, "volume_ratio": 5.969067168210052, "price_change_pct": 9.797297297297296, "score": 268.0479530050972}, {"symbol": 32500, "name": "케이엠더블유", "market": "KOSDAQ", "date": "2026-03-13", "close": 26150.0, "open": 25100.0, "high": 27600.0, "low": 24000.0, "volume": 2817969, "pivot_high": 24700.0, "volume_ma20": 471458, "volume_ratio": 5.9771362478591685, "price_change_pct": 5.870445344129554, "score": 260.5977030812176}, {"symbol": 48910, "name": "대원미디어", "market": "KOSDAQ", "date": "2026-03-13", "close": 9150.0, "open": 8690.0, "high": 9640.0, "low": 8510.0, "volume": 634946, "pivot_high": 8840.0, "volume_ma20": 107163, "volume_ratio": 5.925004525782027, "price_change_pct": 6.519208381839348, "score": 259.28864305278006}, {"symbol": 475150, "name": "이터닉스", "market": "KOSPI", "date": "2026-03-13", "close": 37350.0, "open": 28750.0, "high": 37350.0, "low": 28400.0, "volume": 11845453, "pivot_high": 34150.0, "volume_ma20": 2438677, "volume_ratio": 4.857325965734384, "price_change_pct": 29.91304347826087, "score": 252.6923852432409}, {"symbol": 46120, "name": "오르비텍", "market": "KOSDAQ", "date": "2026-03-13", "close": 8160.0, "open": 6470.0, "high": 8160.0, "low": 6350.0, "volume": 22800474, "pivot_high": 7600.0, "volume_ma20": 4797540, "volume_ratio": 4.752534374361294, "price_change_pct": 29.93630573248408, "score": 247.49933018303284}, {"symbol": 322000, "name": "현대에너지솔루션", "market": "KOSPI", "date": "2026-03-13", "close": 130700.0, "open": 103200.0, "high": 135300.0, "low": 103200.0, "volume": 8025062, "pivot_high": 127100.0, "volume_ma20": 1866942, "volume_ratio": 4.298504485515036, "price_change_pct": 24.47619047619048, "score": 213.87760522813275}, {"symbol": 33160, "name": "엠케이전자", "market": "KOSDAQ", "date": "2026-03-13", "close": 13450.0, "open": 12890.0, "high": 13950.0, "low": 12560.0, "volume": 3160332, "pivot_high": 13330.0, "volume_ma20": 627411, "volume_ratio": 5.037099681301437, "price_change_pct": 4.344453064391001, "score": 210.54389019385383}, {"symbol": 23160, "name": "태광", "market": "KOSDAQ", "date": "2026-03-13", "close": 32200.0, "open": 28350.0, "high": 33500.0, "low": 28250.0, "volume": 1522025, "pivot_high": 31600.0, "volume_ma20": 336894, "volume_ratio": 4.517806976157086, "price_change_pct": 13.780918727915196, "score": 203.4521862636847}, {"symbol": 336260, "name": "두산퓨얼셀", "market": "KOSPI", "date": "2026-03-13", "close": 46250.0, "open": 40450.0, "high": 47700.0, "low": 40200.0, "volume": 3652651, "pivot_high": 44000.0, "volume_ma20": 802452, "volume_ratio": 4.551859455855642, "price_change_pct": 12.530413625304138, "score": 202.6538000433904}, {"symbol": 388790, "name": "라이콤", "market": "KOSDAQ", "date": "2026-03-13", "close": 4900.0, "open": 4440.0, "high": 5270.0, "low": 4375.0, "volume": 8567007, "pivot_high": 4760.0, "volume_ma20": 1884250, "volume_ratio": 4.546638980681205, "price_change_pct": 11.490329920364047, "score": 200.3126088747884}, {"symbol": 368770, "name": "파이버프로", "market": "KOSDAQ", "date": "2026-03-13", "close": 18780.0, "open": 16730.0, "high": 19030.0, "low": 15880.0, "volume": 3854935, "pivot_high": 17300.0, "volume_ma20": 953554, "volume_ratio": 4.042698537860798, "price_change_pct": 13.474320241691842, "score": 179.0835673764236}, {"symbol": 357580, "name": "아모센스", "market": "KOSDAQ", "date": "2026-03-13", "close": 24050.0, "open": 20500.0, "high": 24600.0, "low": 18820.0, "volume": 1681227, "pivot_high": 20050.0, "volume_ma20": 447091, "volume_ratio": 3.7603657507576473, "price_change_pct": 19.950124688279303, "score": 177.91853691444098}, {"symbol": 10170, "name": "대한광통신", "market": "KOSDAQ", "date": "2026-03-13", "close": 7670.0, "open": 7370.0, "high": 8900.0, "low": 7200.0, "volume": 100888769, "pivot_high": 7160.0, "volume_ma20": 24034072, "volume_ratio": 4.197739178022295, "price_change_pct": 7.12290502793296, "score": 174.13276895698067}, {"symbol": 24850, "name": "이노베이션", "market": "KOSDAQ", "date": "2026-03-13", "close": 3485.0, "open": 3100.0, "high": 3600.0, "low": 3050.0, "volume": 4944995, "pivot_high": 3300.0, "volume_ma20": 1286002, "volume_ratio": 3.8452453959166255, "price_change_pct": 12.419354838709678, "score": 167.10097947325065}, {"symbol": 129920, "name": "대성하이텍", "market": "KOSDAQ", "date": "2026-03-13", "close": 9650.0, "open": 7950.0, "high": 10070.0, "low": 7900.0, "volume": 1734851, "pivot_high": 8420.0, "volume_ma20": 591493, "volume_ratio": 2.9329987229793306, "price_change_pct": 21.843434343434343, "score": 140.3368048358352}, {"symbol": 232830, "name": "아이티센피엔에스", "market": "KOSDAQ", "date": "2026-03-13", "close": 3105.0, "open": 2800.0, "high": 3160.0, "low": 2720.0, "volume": 441876, "pivot_high": 2980.0, "volume_ma20": 137713, "volume_ratio": 3.2086672851014697, "price_change_pct": 10.892857142857142, "score": 132.21907854078776}, {"symbol": 10140, "name": "삼성중공업", "market": "KOSPI", "date": "2026-03-13", "close": 30850.0, "open": 28900.0, "high": 30950.0, "low": 28700.0, "volume": 16039870, "pivot_high": 29850.0, "volume_ma20": 5206584, "volume_ratio": 3.080689432000101, "price_change_pct": 7.118055555555555, "score": 118.27058271111616}, {"symbol": 10060, "name": "홀딩스", "market": "KOSPI", "date": "2026-03-13", "close": 165800.0, "open": 147600.0, "high": 171700.0, "low": 146700.0, "volume": 635702, "pivot_high": 163300.0, "volume_ma20": 247820, "volume_ratio": 2.5651685744635992, "price_change_pct": 13.01976823449216, "score": 104.29796519216428}, {"symbol": 19540, "name": "일지테크", "market": "KOSDAQ", "date": "2026-03-13", "close": 6340.0, "open": 6340.0, "high": 6340.0, "low": 6340.0, "volume": 540324, "pivot_high": 5750.0, "volume_ma20": 336538, "volume_ratio": 1.6055354191589544, "price_change_pct": 29.918032786885245, "score": 90.11283653171822}, {"symbol": 82920, "name": "비츠로셀", "market": "KOSDAQ", "date": "2026-03-13", "close": 23500.0, "open": 22050.0, "high": 24000.0, "low": 21750.0, "volume": 831727, "pivot_high": 23100.0, "volume_ma20": 331116, "volume_ratio": 2.5118840240060307, "price_change_pct": 6.334841628959276, "score": 88.26388445822009}, {"symbol": 468530, "name": "프로티나", "market": "KOSDAQ", "date": "2026-03-13", "close": 84300.0, "open": 78200.0, "high": 86000.0, "low": 77800.0, "volume": 398296, "pivot_high": 83900.0, "volume_ma20": 173943, "volume_ratio": 2.289797049391815, "price_change_pct": 7.8005115089514065, "score": 80.09087548749358}, {"symbol": 476830, "name": "알지노믹스", "market": "KOSDAQ", "date": "2026-03-13", "close": 179600.0, "open": 165400.0, "high": 182200.0, "low": 163800.0, "volume": 666662, "pivot_high": 177500.0, "volume_ma20": 304751, "volume_ratio": 2.187556141970544, "price_change_pct": 7.673860911270983, "score": 74.72552892106914}, {"symbol": 479080, "name": "머니마켓액티브", "market": "KOSPI", "date": "2026-03-13", "close": 52945.0, "open": 52945.0, "high": 52945.0, "low": 52940.0, "volume": 219052, "pivot_high": 52940.0, "volume_ma20": 93974, "volume_ratio": 2.330975244321858, "price_change_pct": 0.0188910928497213, "score": 66.58654440179234}, {"symbol": 217730, "name": "강스템바이오텍", "market": "KOSDAQ", "date": "2026-03-13", "close": 2645.0, "open": 2525.0, "high": 2750.0, "low": 2480.0, "volume": 1870433, "pivot_high": 2585.0, "volume_ma20": 961682, "volume_ratio": 1.9449598752519088, "price_change_pct": 3.725490196078432, "score": 54.69897415475231}, {"symbol": 376900, "name": "로킷헬스케어", "market": "KOSDAQ", "date": "2026-03-13", "close": 102100.0, "open": 96400.0, "high": 106400.0, "low": 96100.0, "volume": 876179, "pivot_high": 98900.0, "volume_ma20": 570287, "volume_ratio": 1.5363818847431712, "price_change_pct": 5.257731958762887, "score": 37.33455815468433}];
-        let candleChart = null;
-        let volumeChart = null;
-        
-        function sortBy(field) {
-            document.querySelectorAll('.sort-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.dataset.sort === field) btn.classList.add('active');
-            });
-            const sorted = [...stockData].sort((a, b) => b[field] - a[field]);
-            renderStocks(sorted);
-        }
-        
-        function filterMarket() {
-            const market = document.getElementById('marketFilter').value;
-            const filtered = market === 'all' ? stockData : stockData.filter(s => s.market === market);
-            renderStocks(filtered);
-        }
-        
-        function renderStocks(data) {
-            const container = document.getElementById('stockList');
-            let html = '';
-            for (const stock of data) {
-                const marketColor = stock.market === 'KOSPI' ? 'blue' : 'purple';
-                const marketInitial = stock.market === 'KOSPI' ? 'P' : 'D';
-                const changeColor = stock.price_change_pct >= 0 ? 'red' : 'blue';
-                const changeArrow = stock.price_change_pct >= 0 ? '▲' : '▼';
-                const pivotText = stock.pivot_high ? stock.pivot_high.toLocaleString() : '-';
-                
-                html += '<div class="stock-card bg-white rounded-xl p-4 mb-3 shadow-sm border" onclick="openChart(&quot;' + stock.symbol + '&quot;, &quot;' + stock.name + '&quot;, ' + stock.close + ', ' + stock.volume_ratio + ', ' + stock.price_change_pct + ', ' + stock.score + ', ' + stock.open + ', ' + stock.high + ', ' + stock.low + ')">' +
-                    '<div class="flex items-center justify-between">' +
-                        '<div class="flex items-center gap-3">' +
-                            '<div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-' + marketColor + '-500">' + marketInitial + '</div>' +
-                            '<div>' +
-                                '<h3 class="font-bold text-gray-900">' + stock.name + '</h3>' +
-                                '<p class="text-xs text-gray-500">' + stock.symbol + ' | ' + stock.market + '</p>' +
-                            '</div>' +
-                        '</div>' +
-                        '<div class="text-right">' +
-                            '<div class="text-lg font-bold">' + stock.close.toLocaleString() + '원</div>' +
-                            '<div class="text-sm text-' + changeColor + '-500">' + changeArrow + ' ' + Math.abs(stock.price_change_pct).toFixed(2) + '%</div>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="mt-3 pt-3 border-t flex items-center justify-between text-sm">' +
-                        '<div class="flex gap-4">' +
-                            '<span class="text-gray-500">거래량: <span class="font-semibold text-green-600">' + stock.volume_ratio.toFixed(1) + '배</span></span>' +
-                            '<span class="text-gray-500">피벗: ' + pivotText + '원</span>' +
-                        '</div>' +
-                        '<div class="signal-badge bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">점수: ' + Math.round(stock.score) + '</div>' +
-                    '</div>' +
-                '</div>';
-            }
-            container.innerHTML = html;
-        }
-        
-        function generateCandleData(basePrice, days = 60) {
-            const data = [];
-            let price = basePrice * 0.85;
-            const now = new Date();
-            
-            for (let i = days; i >= 0; i--) {
-                const date = new Date(now);
-                date.setDate(date.getDate() - i);
-                
-                // 주말 건
-                if (date.getDay() === 0 || date.getDay() === 6) continue;
-                
-                const volatility = 0.02;
-                const change = (Math.random() - 0.5) * volatility;
-                const open = price;
-                const close = price * (1 + change);
-                const high = Math.max(open, close) * (1 + Math.random() * 0.01);
-                const low = Math.min(open, close) * (1 - Math.random() * 0.01);
-                const volume = Math.floor(Math.random() * 1000000) + 500000;
-                
-                data.push({
-                    time: { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() },
-                    open: Math.round(open),
-                    high: Math.round(high),
-                    low: Math.round(low),
-                    close: Math.round(close),
-                    volume: volume
-                });
-                
-                price = close;
-            }
-            
-            // 마지막 캔들을 현재가로 설정
-            if (data.length > 0) {
-                const last = data[data.length - 1];
-                const change = (basePrice - last.close) / last.close;
-                last.open = Math.round(last.close);
-                last.close = Math.round(basePrice);
-                last.high = Math.round(Math.max(last.open, last.close) * 1.01);
-                last.low = Math.round(Math.min(last.open, last.close) * 0.99);
-            }
-            
-            return data;
-        }
-        
-        function openChart(symbol, name, close, volumeRatio, changePct, score, openPrice, highPrice, lowPrice) {
-            if (!symbol) return;
-            document.getElementById('modalTitle').textContent = name;
-            document.getElementById('modalCode').textContent = symbol;
-            document.getElementById('chartModal').classList.remove('hidden');
-            document.getElementById('chartModal').classList.add('flex');
-            
-            // Update info
-            document.getElementById('infoOpen').textContent = openPrice ? openPrice.toLocaleString() + '원' : '-';
-            document.getElementById('infoHigh').textContent = highPrice ? highPrice.toLocaleString() + '원' : '-';
-            document.getElementById('infoLow').textContent = lowPrice ? lowPrice.toLocaleString() + '원' : '-';
-            document.getElementById('infoClose').textContent = close ? close.toLocaleString() + '원' : '-';
-            
-            drawChart(name, close);
-            showStrategy(close, volumeRatio, changePct, score);
-        }
-        
-        function drawChart(name, currentPrice) {
-            // Clear previous charts
-            document.getElementById('chartContainer').innerHTML = '';
-            document.getElementById('volumeContainer').innerHTML = '';
-            
-            // Create candlestick chart
-            const chartContainer = document.getElementById('chartContainer');
-            candleChart = LightweightCharts.createChart(chartContainer, {
-                layout: {
-                    background: { color: '#ffffff' },
-                    textColor: '#333',
-                },
-                grid: {
-                    vertLines: { color: '#f0f0f0' },
-                    horzLines: { color: '#f0f0f0' },
-                },
-                crosshair: {
-                    mode: LightweightCharts.CrosshairMode.Normal,
-                },
-                rightPriceScale: {
-                    borderColor: '#e0e0e0',
-                },
-                timeScale: {
-                    borderColor: '#e0e0e0',
-                    timeVisible: false,
-                },
-                handleScroll: {
-                    vertTouchDrag: false,
-                },
-            });
-            
-            const candleSeries = candleChart.addCandlestickSeries({
-                upColor: '#ef4444',
-                downColor: '#3b82f6',
-                borderUpColor: '#ef4444',
-                borderDownColor: '#3b82f6',
-                wickUpColor: '#ef4444',
-                wickDownColor: '#3b82f6',
-            });
-            
-            // Generate and set data
-            const candleData = generateCandleData(currentPrice, 60);
-            candleSeries.setData(candleData);
-            
-            // Create volume chart
-            const volumeContainer = document.getElementById('volumeContainer');
-            volumeChart = LightweightCharts.createChart(volumeContainer, {
-                layout: {
-                    background: { color: '#ffffff' },
-                    textColor: '#333',
-                },
-                grid: {
-                    vertLines: { color: '#f0f0f0' },
-                    horzLines: { color: '#f0f0f0' },
-                },
-                rightPriceScale: {
-                    borderColor: '#e0e0e0',
-                },
-                timeScale: {
-                    borderColor: '#e0e0e0',
-                    visible: false,
-                },
-                handleScroll: false,
-            });
-            
-            const volumeSeries = volumeChart.addHistogramSeries({
-                color: '#26a69a',
-                priceFormat: {
-                    type: 'volume',
-                },
-                priceScaleId: '',
-            });
-            
-            // Prepare volume data
-            const volumeData = candleData.map(d => ({
-                time: d.time,
-                value: d.volume,
-                color: d.close >= d.open ? 'rgba(239, 68, 68, 0.5)' : 'rgba(59, 130, 246, 0.5)'
-            }));
-            volumeSeries.setData(volumeData);
-            
-            // Sync time scales
-            candleChart.timeScale().subscribeVisibleLogicalRangeChange(range => {
-                if (range) {
-                    volumeChart.timeScale().setVisibleLogicalRange(range);
-                }
-            });
-            
-            // Fit content
-            candleChart.timeScale().fitContent();
-            volumeChart.timeScale().fitContent();
-            
-            // Handle resize
-            const resizeHandler = () => {
-                if (candleChart && volumeChart) {
-                    candleChart.applyOptions({ width: chartContainer.clientWidth });
-                    volumeChart.applyOptions({ width: volumeContainer.clientWidth });
-                }
-            };
-            window.addEventListener('resize', resizeHandler);
-        }
-        
-        function showStrategy(close, volumeRatio, changePct, score) {
-            const entry1 = Math.round(close);
-            const entry2 = Math.round(close * 1.05);
-            const entry3 = Math.round(close * 1.10);
-            const stopLoss = Math.round(close * 0.90);
-            const takeProfit = Math.round(close * 1.15);
-            
-            const html = '<h4 class="font-bold text-lg mb-3 text-blue-900">📈 매매 전략</h4>' +
-                '<div class="space-y-2 text-sm">' +
-                    '<div class="flex justify-between items-center p-2 bg-white rounded"><span class="text-gray-600">1차 진입 (30%)</span><span class="font-bold text-green-600">' + entry1.toLocaleString() + '원</span></div>' +
-                    '<div class="flex justify-between items-center p-2 bg-white rounded"><span class="text-gray-600">2차 진입 (30%)</span><span class="font-bold">+5% @ ' + entry2.toLocaleString() + '원</span></div>' +
-                    '<div class="flex justify-between items-center p-2 bg-white rounded"><span class="text-gray-600">3차 진입 (40%)</span><span class="font-bold">+10% @ ' + entry3.toLocaleString() + '원</span></div>' +
-                    '<div class="border-t pt-2 mt-2 grid grid-cols-2 gap-2">' +
-                        '<div class="text-center p-2 bg-red-50 rounded"><div class="text-xs text-red-600">손절 (-10%)</div><div class="font-bold text-red-700">' + stopLoss.toLocaleString() + '원</div></div>' +
-                        '<div class="text-center p-2 bg-green-50 rounded"><div class="text-xs text-green-600">익절 (+15%)</div><div class="font-bold text-green-700">' + takeProfit.toLocaleString() + '원</div></div>' +
-                    '</div>' +
-                '</div>' +
-                '<div class="mt-3 text-xs text-gray-500">* 현재 거래량 ' + volumeRatio.toFixed(1) + '배, 상승률 ' + changePct.toFixed(2) + '%</div>';
-            
-            document.getElementById('strategyContainer').innerHTML = html;
-        }
-        
-        function closeModal() {
-            document.getElementById('chartModal').classList.add('hidden');
-            document.getElementById('chartModal').classList.remove('flex');
-            // Cleanup charts
-            if (candleChart) {
-                candleChart.remove();
-                candleChart = null;
-            }
-            if (volumeChart) {
-                volumeChart.remove();
-                volumeChart = null;
-            }
-        }
-        
-        renderStocks(stockData);
-        document.getElementById('chartModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
-    </script>
 </body>
 </html>
