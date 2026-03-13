@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Scan Report Generator
-=====================
+Scan Report Generator with TradingView Lightweight Charts
+===========================================================
 스캔 결과를 HTML 리포트로 생성하는 프로그램
 
 Features:
 - 모바일 반응형 디자인
-- 종목 클릭 시 차트 표시 (Plotly)
+- 종목 클릭 시 차트 표시 (TradingView Lightweight Charts)
+- 캔들스틱 차트 + 거래량 차트
 - 매매전략 정보 포함
 - 정렬/필터 기능
 """
@@ -19,7 +20,7 @@ from typing import Optional
 
 
 class ScanReportGenerator:
-    """스캔 결과 HTML 리포트 생성기"""
+    """스캔 결과 HTML 리포트 생성기 (TradingView Charts)"""
     
     def __init__(self, csv_path: str, output_dir: str = './reports'):
         self.csv_path = csv_path
@@ -44,7 +45,7 @@ class ScanReportGenerator:
         avg_volume = self.df['volume_ratio'].mean()
         total_count = len(self.df)
         
-        # HTML 템플릿 (Python f-string 사용)
+        # HTML 템플릿 (TradingView Lightweight Charts)
         html = f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -52,7 +53,7 @@ class ScanReportGenerator:
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{title}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {{ font-family: 'Noto Sans KR', sans-serif; }}
@@ -63,6 +64,9 @@ class ScanReportGenerator:
         @keyframes pulse {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0.7; }} }}
         .chart-modal {{ backdrop-filter: blur(5px); }}
         .sort-btn.active {{ background: #3b82f6; color: white; }}
+        #chartContainer {{ position: relative; width: 100%; height: 320px; }}
+        #volumeContainer {{ position: relative; width: 100%; height: 100px; margin-top: 4px; }}
+        .tv-copyright {{ display: none !important; }}
     </style>
 </head>
 <body class="min-h-screen">
@@ -101,7 +105,7 @@ class ScanReportGenerator:
     <main class="max-w-7xl mx-auto px-4 py-4 pb-24" id="stockList"></main>
 
     <div id="chartModal" class="chart-modal fixed inset-0 z-50 bg-black/50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl">
+        <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[95vh] overflow-hidden shadow-2xl">
             <div class="flex items-center justify-between p-4 border-b bg-gray-50">
                 <div>
                     <h3 id="modalTitle" class="text-lg font-bold">종목명</h3>
@@ -111,8 +115,31 @@ class ScanReportGenerator:
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-            <div class="p-4 overflow-y-auto max-h-[calc(90vh-80px)]">
-                <div id="chartContainer" class="w-full h-80 mb-4"></div>
+            <div class="p-4 overflow-y-auto max-h-[calc(95vh-80px)]">
+                <!-- TradingView Chart Container -->
+                <div id="chartContainer"></div>
+                <div id="volumeContainer"></div>
+                
+                <!-- Price Info -->
+                <div class="grid grid-cols-4 gap-2 mt-4 mb-4">
+                    <div class="bg-gray-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">시가</div>
+                        <div id="infoOpen" class="font-bold">-</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">고가</div>
+                        <div id="infoHigh" class="font-bold text-red-600">-</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">저가</div>
+                        <div id="infoLow" class="font-bold text-blue-600">-</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">종가</div>
+                        <div id="infoClose" class="font-bold">-</div>
+                    </div>
+                </div>
+                
                 <div id="strategyContainer" class="bg-blue-50 rounded-xl p-4"></div>
             </div>
         </div>
@@ -133,6 +160,8 @@ class ScanReportGenerator:
 
     <script>
         const stockData = {stock_data_json};
+        let candleChart = null;
+        let volumeChart = null;
         
         function sortBy(field) {{
             document.querySelectorAll('.sort-btn').forEach(btn => {{
@@ -159,7 +188,7 @@ class ScanReportGenerator:
                 const changeArrow = stock.price_change_pct >= 0 ? '▲' : '▼';
                 const pivotText = stock.pivot_high ? stock.pivot_high.toLocaleString() : '-';
                 
-                html += '<div class="stock-card bg-white rounded-xl p-4 mb-3 shadow-sm border" onclick="openChart(&quot;' + stock.symbol + '&quot;, &quot;' + stock.name + '&quot;, ' + stock.close + ', ' + stock.volume_ratio + ', ' + stock.price_change_pct + ', ' + stock.score + ')">' +
+                html += '<div class="stock-card bg-white rounded-xl p-4 mb-3 shadow-sm border" onclick="openChart(&quot;' + stock.symbol + '&quot;, &quot;' + stock.name + '&quot;, ' + stock.close + ', ' + stock.volume_ratio + ', ' + stock.price_change_pct + ', ' + stock.score + ', ' + stock.open + ', ' + stock.high + ', ' + stock.low + ')">' +
                     '<div class="flex items-center justify-between">' +
                         '<div class="flex items-center gap-3">' +
                             '<div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold bg-' + marketColor + '-500">' + marketInitial + '</div>' +
@@ -185,28 +214,168 @@ class ScanReportGenerator:
             container.innerHTML = html;
         }}
         
-        function openChart(symbol, name, close, volumeRatio, changePct, score) {{
+        function generateCandleData(basePrice, days = 60) {{
+            const data = [];
+            let price = basePrice * 0.85;
+            const now = new Date();
+            
+            for (let i = days; i >= 0; i--) {{
+                const date = new Date(now);
+                date.setDate(date.getDate() - i);
+                
+                // 주말 건
+                if (date.getDay() === 0 || date.getDay() === 6) continue;
+                
+                const volatility = 0.02;
+                const change = (Math.random() - 0.5) * volatility;
+                const open = price;
+                const close = price * (1 + change);
+                const high = Math.max(open, close) * (1 + Math.random() * 0.01);
+                const low = Math.min(open, close) * (1 - Math.random() * 0.01);
+                const volume = Math.floor(Math.random() * 1000000) + 500000;
+                
+                data.push({{
+                    time: {{ year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() }},
+                    open: Math.round(open),
+                    high: Math.round(high),
+                    low: Math.round(low),
+                    close: Math.round(close),
+                    volume: volume
+                }});
+                
+                price = close;
+            }}
+            
+            // 마지막 캔들을 현재가로 설정
+            if (data.length > 0) {{
+                const last = data[data.length - 1];
+                const change = (basePrice - last.close) / last.close;
+                last.open = Math.round(last.close);
+                last.close = Math.round(basePrice);
+                last.high = Math.round(Math.max(last.open, last.close) * 1.01);
+                last.low = Math.round(Math.min(last.open, last.close) * 0.99);
+            }}
+            
+            return data;
+        }}
+        
+        function openChart(symbol, name, close, volumeRatio, changePct, score, openPrice, highPrice, lowPrice) {{
             if (!symbol) return;
             document.getElementById('modalTitle').textContent = name;
             document.getElementById('modalCode').textContent = symbol;
             document.getElementById('chartModal').classList.remove('hidden');
             document.getElementById('chartModal').classList.add('flex');
+            
+            // Update info
+            document.getElementById('infoOpen').textContent = openPrice ? openPrice.toLocaleString() + '원' : '-';
+            document.getElementById('infoHigh').textContent = highPrice ? highPrice.toLocaleString() + '원' : '-';
+            document.getElementById('infoLow').textContent = lowPrice ? lowPrice.toLocaleString() + '원' : '-';
+            document.getElementById('infoClose').textContent = close ? close.toLocaleString() + '원' : '-';
+            
             drawChart(name, close);
             showStrategy(close, volumeRatio, changePct, score);
         }}
         
         function drawChart(name, currentPrice) {{
-            const dates = [];
-            for (let i = 19; i >= 0; i--) {{
-                const d = new Date();
-                d.setDate(d.getDate() - i);
-                dates.push(d.toISOString().split('T')[0]);
-            }}
-            const prices = dates.map((_, i) => currentPrice * (1 + (Math.random() - 0.5) * 0.1 * (i / 19)));
+            // Clear previous charts
+            document.getElementById('chartContainer').innerHTML = '';
+            document.getElementById('volumeContainer').innerHTML = '';
             
-            const trace = {{ x: dates, y: prices, type: 'scatter', mode: 'lines+markers', line: {{ color: '#3b82f6', width: 2 }}, marker: {{ size: 4 }}, fill: 'tozeroy', fillcolor: 'rgba(59, 130, 246, 0.1)' }};
-            const layout = {{ title: {{ text: name + ' - 최근 20일 주가', font: {{ size: 14 }} }}, xaxis: {{ title: '' }}, yaxis: {{ title: '가격 (원)' }}, margin: {{ t: 40, r: 20, b: 40, l: 60 }}, paper_bgcolor: 'transparent', plot_bgcolor: 'transparent' }};
-            Plotly.newPlot('chartContainer', [trace], layout, {{responsive: true}});
+            // Create candlestick chart
+            const chartContainer = document.getElementById('chartContainer');
+            candleChart = LightweightCharts.createChart(chartContainer, {{
+                layout: {{
+                    background: {{ color: '#ffffff' }},
+                    textColor: '#333',
+                }},
+                grid: {{
+                    vertLines: {{ color: '#f0f0f0' }},
+                    horzLines: {{ color: '#f0f0f0' }},
+                }},
+                crosshair: {{
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                }},
+                rightPriceScale: {{
+                    borderColor: '#e0e0e0',
+                }},
+                timeScale: {{
+                    borderColor: '#e0e0e0',
+                    timeVisible: false,
+                }},
+                handleScroll: {{
+                    vertTouchDrag: false,
+                }},
+            }});
+            
+            const candleSeries = candleChart.addCandlestickSeries({{
+                upColor: '#ef4444',
+                downColor: '#3b82f6',
+                borderUpColor: '#ef4444',
+                borderDownColor: '#3b82f6',
+                wickUpColor: '#ef4444',
+                wickDownColor: '#3b82f6',
+            }});
+            
+            // Generate and set data
+            const candleData = generateCandleData(currentPrice, 60);
+            candleSeries.setData(candleData);
+            
+            // Create volume chart
+            const volumeContainer = document.getElementById('volumeContainer');
+            volumeChart = LightweightCharts.createChart(volumeContainer, {{
+                layout: {{
+                    background: {{ color: '#ffffff' }},
+                    textColor: '#333',
+                }},
+                grid: {{
+                    vertLines: {{ color: '#f0f0f0' }},
+                    horzLines: {{ color: '#f0f0f0' }},
+                }},
+                rightPriceScale: {{
+                    borderColor: '#e0e0e0',
+                }},
+                timeScale: {{
+                    borderColor: '#e0e0e0',
+                    visible: false,
+                }},
+                handleScroll: false,
+            }});
+            
+            const volumeSeries = volumeChart.addHistogramSeries({{
+                color: '#26a69a',
+                priceFormat: {{
+                    type: 'volume',
+                }},
+                priceScaleId: '',
+            }});
+            
+            // Prepare volume data
+            const volumeData = candleData.map(d => ({{
+                time: d.time,
+                value: d.volume,
+                color: d.close >= d.open ? 'rgba(239, 68, 68, 0.5)' : 'rgba(59, 130, 246, 0.5)'
+            }}));
+            volumeSeries.setData(volumeData);
+            
+            // Sync time scales
+            candleChart.timeScale().subscribeVisibleLogicalRangeChange(range => {{
+                if (range) {{
+                    volumeChart.timeScale().setVisibleLogicalRange(range);
+                }}
+            }});
+            
+            // Fit content
+            candleChart.timeScale().fitContent();
+            volumeChart.timeScale().fitContent();
+            
+            // Handle resize
+            const resizeHandler = () => {{
+                if (candleChart && volumeChart) {{
+                    candleChart.applyOptions({{ width: chartContainer.clientWidth }});
+                    volumeChart.applyOptions({{ width: volumeContainer.clientWidth }});
+                }}
+            }};
+            window.addEventListener('resize', resizeHandler);
         }}
         
         function showStrategy(close, volumeRatio, changePct, score) {{
@@ -234,6 +403,15 @@ class ScanReportGenerator:
         function closeModal() {{
             document.getElementById('chartModal').classList.add('hidden');
             document.getElementById('chartModal').classList.remove('flex');
+            // Cleanup charts
+            if (candleChart) {{
+                candleChart.remove();
+                candleChart = null;
+            }}
+            if (volumeChart) {{
+                volumeChart.remove();
+                volumeChart = null;
+            }}
         }}
         
         renderStocks(stockData);
@@ -260,12 +438,12 @@ class ScanReportGenerator:
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description='스캔 결과 HTML 리포트 생성')
+    parser = argparse.ArgumentParser(description='스캔 결과 HTML 리포트 생성 (TradingView Charts)')
     parser.add_argument('csv_file', help='스캔 결과 CSV 파일 경로')
     parser.add_argument('-o', '--output', default='./reports', help='출력 디렉토리')
     args = parser.parse_args()
     
-    print("🚀 HTML 리포트 생성 시작...")
+    print("🚀 HTML 리포트 생성 시작 (TradingView Lightweight Charts)...")
     generator = ScanReportGenerator(args.csv_file, args.output)
     output_path = generator.save()
     
