@@ -379,84 +379,119 @@
             gradeEl.textContent = `${data.grade} 등급`;
             gradeEl.className = `inline-block px-6 py-2 rounded-full text-white font-bold text-lg ${data.grade === 'A' ? 'grade-a' : data.grade === 'B' ? 'grade-b' : 'grade-c'}`;
 
-            // Render TradingView Chart
-            renderChart(data.price);
+            // Render TradingView Chart (delay to allow modal to open)
+            setTimeout(() => {
+                renderChart(data.price);
+            }, 100);
 
             document.getElementById('detail-modal').classList.add('active');
         }
 
         function renderChart(currentPrice) {
             const chartContainer = document.getElementById('tradingview-chart');
+            if (!chartContainer) return;
+            
+            // Clear previous chart
             chartContainer.innerHTML = '';
             
-            const chart = LightweightCharts.createChart(chartContainer, {
-                layout: { background: { color: '#ffffff' }, textColor: '#333' },
-                grid: { vertLines: { color: '#f0f0f0' }, horzLines: { color: '#f0f0f0' } },
-                crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
-                rightPriceScale: { borderColor: '#e0e0e0' },
-                timeScale: { borderColor: '#e0e0e0', timeVisible: false },
-                handleScroll: { vertTouchDrag: false },
-            });
+            // Ensure container has size
+            chartContainer.style.height = '300px';
+            chartContainer.style.width = '100%';
             
-            const candleSeries = chart.addCandlestickSeries({
-                upColor: '#ef4444', downColor: '#3b82f6',
-                borderUpColor: '#ef4444', borderDownColor: '#3b82f6',
-                wickUpColor: '#ef4444', wickDownColor: '#3b82f6',
-            });
-            
-            // Generate 60 days of sample data ending at current price
-            const candleData = generateCandleData(currentPrice, 60);
-            candleSeries.setData(candleData);
-            
-            // Target price line (+15%)
-            const targetPrice = currentPrice * 1.15;
-            const targetLine = chart.addLineSeries({
-                color: '#10b981', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed,
-                title: '목표가 +' + (targetPrice - currentPrice).toFixed(0),
-            });
-            targetLine.setData(candleData.map(d => ({ time: d.time, value: targetPrice })));
-            
-            // Stop loss line (-7%)
-            const stopLossPrice = currentPrice * 0.93;
-            const stopLossLine = chart.addLineSeries({
-                color: '#ef4444', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Dashed,
-                title: '손절가 -' + (currentPrice - stopLossPrice).toFixed(0),
-            });
-            stopLossLine.setData(candleData.map(d => ({ time: d.time, value: stopLossPrice })));
-            
-            // Entry price line (current)
-            const entryLine = chart.addLineSeries({
-                color: '#f59e0b', lineWidth: 2, lineStyle: LightweightCharts.LineStyle.Solid,
-                title: '진입가 ' + currentPrice.toFixed(0),
-            });
-            entryLine.setData(candleData.map(d => ({ time: d.time, value: currentPrice })));
-            
-            // Mark selection point (last candle)
-            const lastCandle = candleData[candleData.length - 1];
-            candleSeries.setMarkers([{
-                time: lastCandle.time,
-                position: 'aboveBar',
-                color: '#8b5cf6',
-                shape: 'arrowDown',
-                text: '선정',
-                size: 2
-            }]);
-            
-            chart.timeScale().fitContent();
+            try {
+                const chart = LightweightCharts.createChart(chartContainer, {
+                    layout: { 
+                        background: { color: '#ffffff' }, 
+                        textColor: '#333' 
+                    },
+                    grid: { 
+                        vertLines: { color: '#f0f0f0' }, 
+                        horzLines: { color: '#f0f0f0' } 
+                    },
+                    crosshair: { mode: 1 }, // LightweightCharts.CrosshairMode.Normal
+                    rightPriceScale: { borderColor: '#e0e0e0' },
+                    timeScale: { borderColor: '#e0e0e0', timeVisible: false },
+                    handleScroll: { vertTouchDrag: false },
+                });
+                
+                const candleSeries = chart.addCandlestickSeries({
+                    upColor: '#ef4444', 
+                    downColor: '#3b82f6',
+                    borderUpColor: '#ef4444', 
+                    borderDownColor: '#3b82f6',
+                    wickUpColor: '#ef4444', 
+                    wickDownColor: '#3b82f6',
+                });
+                
+                // Generate sample data
+                const candleData = generateCandleData(currentPrice, 60);
+                candleSeries.setData(candleData);
+                
+                // Target price line (+15%)
+                const targetPrice = Math.round(currentPrice * 1.15);
+                const targetLine = chart.addLineSeries({
+                    color: '#10b981', 
+                    lineWidth: 2, 
+                    lineStyle: 2, // Dashed
+                    title: '목표가',
+                });
+                targetLine.setData(candleData.map(d => ({ time: d.time, value: targetPrice })));
+                
+                // Stop loss line (-7%)
+                const stopLossPrice = Math.round(currentPrice * 0.93);
+                const stopLossLine = chart.addLineSeries({
+                    color: '#ef4444', 
+                    lineWidth: 2, 
+                    lineStyle: 2,
+                    title: '손절가',
+                });
+                stopLossLine.setData(candleData.map(d => ({ time: d.time, value: stopLossPrice })));
+                
+                // Entry price line (current)
+                const entryLine = chart.addLineSeries({
+                    color: '#f59e0b', 
+                    lineWidth: 2, 
+                    lineStyle: 0,
+                    title: '진입가',
+                });
+                entryLine.setData(candleData.map(d => ({ time: d.time, value: Math.round(currentPrice) })));
+                
+                // Mark selection point
+                const lastCandle = candleData[candleData.length - 1];
+                candleSeries.setMarkers([{
+                    time: lastCandle.time,
+                    position: 'aboveBar',
+                    color: '#8b5cf6',
+                    shape: 'arrowDown',
+                    text: '선정',
+                    size: 2
+                }]);
+                
+                chart.timeScale().fitContent();
+                
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    chart.applyOptions({ width: chartContainer.clientWidth });
+                });
+                
+            } catch (e) {
+                console.error('Chart error:', e);
+                chartContainer.innerHTML = '<div class="text-center text-gray-500 py-4">차트를 불러올 수 없습니다</div>';
+            }
         }
         
         function generateCandleData(endPrice, days) {
             const data = [];
-            let price = endPrice * 0.85;
-            const now = new Date();
+            let price = endPrice * 0.92; // Start 8% lower
             
             for (let i = days; i >= 0; i--) {
-                const date = new Date(now);
+                const date = new Date();
                 date.setDate(date.getDate() - i);
                 if (date.getDay() === 0 || date.getDay() === 6) continue;
                 
                 const volatility = 0.025;
-                const change = (Math.random() - 0.48) * volatility;
+                const trend = (endPrice - price) / price / days * 1.5; // Slight upward trend
+                const change = trend + (Math.random() - 0.5) * volatility;
                 const open = price;
                 const close = price * (1 + change);
                 const high = Math.max(open, close) * (1 + Math.random() * 0.015);
@@ -473,12 +508,12 @@
                 price = close;
             }
             
-            // Adjust last candle to match current price
+            // Adjust last candle to match current price exactly
             if (data.length > 0) {
                 const last = data[data.length - 1];
                 last.close = Math.round(endPrice);
-                last.high = Math.round(Math.max(last.open, last.close) * 1.01);
-                last.low = Math.round(Math.min(last.open, last.close) * 0.99);
+                last.high = Math.max(last.high, last.close);
+                last.low = Math.min(last.low, last.close);
             }
             
             return data;
