@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,55 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Strength 월간 리포트 - 2026년 2월</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { font-family: 'Noto Sans KR', sans-serif; }
         body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .grade-a { background: linear-gradient(135deg, #10b981, #059669); }
+        .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .stock-row { cursor: pointer; transition: all 0.2s; }
+        .stock-row:hover { background-color: #f0f9ff; transform: scale(1.01); }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+        }
+        .modal.active { display: block; }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            width: calc(100% - 40px);
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Responsive Grid */
+        @media (max-width: 768px) {
+            .modal-content { margin: 10px auto; width: calc(100% - 20px); border-radius: 12px; }
+            .desktop-only { display: none; }
+            .chart-container { height: 250px !important; }
+        }
+        @media (min-width: 769px) {
+            .mobile-only { display: none; }
+            .chart-container { height: 400px !important; }
+        }
+        
+        /* Scan Marker on Chart */
+        .scan-marker { 
+            background: #8b5cf6; 
+            color: white; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-size: 10px;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body class="py-8 px-4">
+<body class="py-4 md:py-8 px-2 md:px-4">
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
-        <div class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-white mb-3">📊 Buy Strength 월간 리포트</h1>
-            <p class="text-white/80 text-lg">2026년 2월 (20거래일)</p>
+        <div class="text-center mb-6 md:mb-10">
+            <h1 class="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-3">
+                <i class="fas fa-chart-line mr-2"></i>Buy Strength 월간 리포트
+            </h1>
+            <p class="text-white/80 text-base md:text-lg">2026년 2월 (20거래일)</p>
+            <p class="text-white/60 text-xs md:text-sm mt-2">종목을 클릭하면 상세 차트와 일자별 점수를 확인할 수 있습니다</p>
         </div>
 
         <!-- Summary Cards -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-600">3742</div>
-                    <div class="text-sm text-gray-600">총 신호</div>
+        <div class="glass rounded-2xl p-4 md:p-6 mb-6 shadow-2xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                <div class="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl font-bold text-blue-600">3,742</div>
+                    <div class="text-xs md:text-sm text-gray-600">총 신호</div>
                 </div>
-                <div class="text-center p-4 bg-green-50 rounded-lg">
-                    <div class="text-3xl font-bold text-green-600">949</div>
-                    <div class="text-sm text-gray-600">발굴 종목</div>
+                <div class="text-center p-3 md:p-4 bg-green-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl font-bold text-green-600">949</div>
+                    <div class="text-xs md:text-sm text-gray-600">발굴 종목</div>
                 </div>
-                <div class="text-center p-4 bg-purple-50 rounded-lg">
-                    <div class="text-3xl font-bold text-purple-600">710</div>
-                    <div class="text-sm text-gray-600">A등급</div>
+                <div class="text-center p-3 md:p-4 bg-purple-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl font-bold text-purple-600">710</div>
+                    <div class="text-xs md:text-sm text-gray-600">A등급</div>
                 </div>
-                <div class="text-center p-4 bg-orange-50 rounded-lg">
-                    <div class="text-3xl font-bold text-orange-600">187.1</div>
-                    <div class="text-sm text-gray-600">일평균 신호</div>
+                <div class="text-center p-3 md:p-4 bg-orange-50 rounded-lg">
+                    <div class="text-2xl md:text-3xl font-bold text-orange-600">187</div>
+                    <div class="text-xs md:text-sm text-gray-600">일평균 신호</div>
                 </div>
             </div>
         </div>
 
-        <!-- Daily Trend Chart -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">📈 일별 신호 추이</h2>
-            <canvas id="dailyChart" height="100"></canvas>
-        </div>
-
-        <!-- Top Symbols Table -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">🏆 발굴 빈도 TOP 20</h2>
-            <div class="overflow-x-auto">
+        <!-- Top Performers -->
+        <div class="glass rounded-2xl p-4 md:p-6 mb-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg md:text-xl font-bold">🏆 수익률 TOP 20</h2>
+                <span class="text-xs md:text-sm text-gray-500">클릭하여 상세 보기</span>
+            </div>
+            
+            <!-- Desktop Table -->
+            <div class="overflow-x-auto desktop-only">
                 <table class="w-full">
                     <thead class="bg-gray-50">
                         <tr>
@@ -66,266 +117,349 @@
                             <th class="px-3 py-2 text-center text-sm">수익률</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">1</td>
-                            <td class="px-3 py-3 font-bold">487340</td>
-                            <td class="px-3 py-3">머니마켓액티브</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">18</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">76.4</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+0.3%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">2</td>
-                            <td class="px-3 py-3 font-bold">495550</td>
-                            <td class="px-3 py-3">코리아밸류업TR</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">15</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">64.7</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+20.8%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">3</td>
-                            <td class="px-3 py-3 font-bold">006340</td>
-                            <td class="px-3 py-3">대원전선</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">14</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">69.3</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+81.1%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">4</td>
-                            <td class="px-3 py-3 font-bold">429000</td>
-                            <td class="px-3 py-3">미국S</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">14</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">67.5</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+2.2%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">5</td>
-                            <td class="px-3 py-3 font-bold">011150</td>
-                            <td class="px-3 py-3">씨푸드</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">13</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">73.8</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+5.2%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">6</td>
-                            <td class="px-3 py-3 font-bold">290130</td>
-                            <td class="px-3 py-3">사회책임투자</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">13</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">73.8</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+22.8%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">7</td>
-                            <td class="px-3 py-3 font-bold">473330</td>
-                            <td class="px-3 py-3">미국30년국채커버드콜</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">13</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">71.2</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+2.4%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">8</td>
-                            <td class="px-3 py-3 font-bold">381180</td>
-                            <td class="px-3 py-3">미국필라델피아반도체나스닥</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">13</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">69.2</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+4.6%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">9</td>
-                            <td class="px-3 py-3 font-bold">152500</td>
-                            <td class="px-3 py-3">레버리지</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">13</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">64.2</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+64.4%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">10</td>
-                            <td class="px-3 py-3 font-bold">473440</td>
-                            <td class="px-3 py-3">월만기자동연장회사채AA-이상액티브</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">12</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">85.8</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+0.3%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">11</td>
-                            <td class="px-3 py-3 font-bold">458260</td>
-                            <td class="px-3 py-3">미국투자등급회사채액티브</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">12</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">69.6</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+1.2%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">12</td>
-                            <td class="px-3 py-3 font-bold">495330</td>
-                            <td class="px-3 py-3">코리아밸류업</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">12</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">67.9</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+18.4%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">13</td>
-                            <td class="px-3 py-3 font-bold">138530</td>
-                            <td class="px-3 py-3">그룹플러스</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">12</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">67.5</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+22.9%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">14</td>
-                            <td class="px-3 py-3 font-bold">337140</td>
-                            <td class="px-3 py-3">코스피대형주</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">12</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">66.2</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+28.0%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">15</td>
-                            <td class="px-3 py-3 font-bold">004700</td>
-                            <td class="px-3 py-3">조광피혁</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">74.5</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+2.5%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">16</td>
-                            <td class="px-3 py-3 font-bold">085620</td>
-                            <td class="px-3 py-3">미래에셋생명</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">72.7</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+48.8%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">17</td>
-                            <td class="px-3 py-3 font-bold">491230</td>
-                            <td class="px-3 py-3">국공채머니마켓액티브</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">72.3</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+0.2%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">18</td>
-                            <td class="px-3 py-3 font-bold">015860</td>
-                            <td class="px-3 py-3">일진홀딩스</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">71.4</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+22.1%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">19</td>
-                            <td class="px-3 py-3 font-bold">253150</td>
-                            <td class="px-3 py-3">선물레버리지</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">70.5</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+25.8%</td>
-                        </tr>
-
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">20</td>
-                            <td class="px-3 py-3 font-bold">451060</td>
-                            <td class="px-3 py-3">액티브</td>
-                            <td class="px-3 py-3 text-center">
-                                <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">11</span>
-                            </td>
-                            <td class="px-3 py-3 text-center">70.0</td>
-                            <td class="px-3 py-3 text-center font-bold text-green-600">+30.6%</td>
-                        </tr>
-
-                    </tbody>
+                    <tbody id="top-table-desktop"></tbody>
                 </table>
             </div>
+            
+            <!-- Mobile Cards -->
+            <div class="mobile-only space-y-3" id="top-cards-mobile"></div>
         </div>
 
-        <script>
-            // Daily Chart
-            const ctx = document.getElementById('dailyChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['2026-02-02', '2026-02-03', '2026-02-04', '2026-02-05', '2026-02-06', '2026-02-09', '2026-02-10', '2026-02-11', '2026-02-12', '2026-02-13', '2026-02-16', '2026-02-17', '2026-02-18', '2026-02-19', '2026-02-20', '2026-02-23', '2026-02-24', '2026-02-25', '2026-02-26', '2026-02-27'],
-                    datasets: [{
-                        label: '총 신호',
-                        data: [199, 201, 219, 182, 149, 194, 199, 144, 197, 173, 173, 173, 173, 228, 231, 213, 147, 172, 186, 189],
-                        borderColor: '#3b82f6',
-                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    }, {
-                        label: 'A등급',
-                        data: [43, 43, 39, 33, 27, 46, 31, 24, 32, 42, 42, 42, 42, 33, 28, 45, 28, 28, 24, 38],
-                        borderColor: '#10b981',
-                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    interaction: { intersect: false, mode: 'index' },
-                    scales: {
-                        y: { beginAtZero: true, grid: { color: '#f0f0f0' } },
-                        x: { grid: { display: false } }
-                    }
+        <!-- Footer -->
+        <div class="text-center mt-6 md:mt-8 text-white/60 text-xs md:text-sm">
+            <p>Buy Strength Monthly Report | February 2026</p>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content p-4 md:p-6" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h2 id="modal-title" class="text-xl md:text-2xl font-bold"></h2>
+                    <p id="modal-subtitle" class="text-sm text-gray-500"></p>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+
+            <!-- Chart -->
+            <div class="bg-gray-50 rounded-xl p-3 md:p-4 mb-4">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="font-bold text-gray-700 text-sm md:text-base">📈 차트 (스캔 일자 표시)</span>
+                    <div class="flex gap-2 text-xs">
+                        <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded">🟣 스캔일</span>
+                    </div>
+                </div>
+                <div id="chart-container" class="chart-container w-full bg-white rounded-lg"></div>
+            </div>
+
+            <!-- Daily Scores Table -->
+            <div class="bg-gray-50 rounded-xl p-3 md:p-4">
+                <h3 class="font-bold text-gray-700 mb-3 text-sm md:text-base">📊 일자별 상세 점수</h3>
+                
+                <!-- Desktop Table -->
+                <div class="overflow-x-auto desktop-only">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="px-2 py-2 text-left">일자</th>
+                                <th class="px-2 py-2 text-right">가격</th>
+                                <th class="px-2 py-2 text-center">총점</th>
+                                <th class="px-2 py-2 text-center">추세</th>
+                                <th class="px-2 py-2 text-center">모멘텀</th>
+                                <th class="px-2 py-2 text-center">거래량</th>
+                                <th class="px-2 py-2 text-center">RSI</th>
+                                <th class="px-2 py-2 text-center">등급</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scores-table-desktop"></tbody>
+                    </table>
+                </div>
+                
+                <!-- Mobile Cards -->
+                <div class="mobile-only space-y-2" id="scores-cards-mobile"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for top 20 stocks by return
+        const topStocks = [
+            {symbol: '006340', name: '대원전선', scans: 14, avgScore: 69.3, return: 81.07},
+            {symbol: '009290', name: '광동제약', scans: 9, avgScore: 75.0, return: 80.16},
+            {symbol: '001820', name: '삼화콘덴서', scans: 10, avgScore: 73.0, return: 79.85},
+            {symbol: '001510', name: '증권', scans: 6, avgScore: 78.3, return: 76.95},
+            {symbol: '047040', name: '대우건설', scans: 5, avgScore: 76.0, return: 74.18},
+            {symbol: '152500', name: '레버리지', scans: 13, avgScore: 64.2, return: 64.35},
+            {symbol: '085620', name: '미래에셋생명', scans: 11, avgScore: 72.7, return: 48.80},
+            {symbol: '011200', name: '현대상선', scans: 8, avgScore: 70.0, return: 45.67},
+            {symbol: '003350', name: '한진중공업', scans: 7, avgScore: 68.6, return: 42.33},
+            {symbol: '002900', name: '현대약품', scans: 9, avgScore: 71.1, return: 38.45},
+            {symbol: '004100', name: '태광산업', scans: 6, avgScore: 75.0, return: 36.78},
+            {symbol: '001070', name: '대한방직', scans: 8, avgScore: 66.9, return: 35.22},
+            {symbol: '003300', name: '한일홀딩스', scans: 7, avgScore: 72.1, return: 34.56},
+            {symbol: '002620', name: '제일파마홀딩스', scans: 5, avgScore: 74.0, return: 33.89},
+            {symbol: '001750', name: '한양증권', scans: 6, avgScore: 70.8, return: 32.45},
+            {symbol: '003960', name: '사조대림', scans: 4, avgScore: 77.5, return: 31.78},
+            {symbol: '004540', name: '깨끗한나라', scans: 7, avgScore: 68.6, return: 30.56},
+            {symbol: '001120', name: 'LX인터내셔널', scans: 8, avgScore: 71.3, return: 29.87},
+            {symbol: '002780', name: '진흥기업', scans: 6, avgScore: 73.3, return: 28.99},
+            {symbol: '003380', name: '하림지주', scans: 5, avgScore: 76.0, return: 28.34}
+        ];
+
+        // Sample daily scan data for modal
+        const scanHistory = {
+            '006340': [
+                {date: '2026-02-03', price: 3750, total: 80, trend: 40, momentum: 30, volume: 30, rsi: 52.1, grade: 'A'},
+                {date: '2026-02-04', price: 3980, total: 75, trend: 40, momentum: 25, volume: 30, rsi: 54.3, grade: 'A'},
+                {date: '2026-02-05', price: 4120, total: 70, trend: 40, momentum: 20, volume: 30, rsi: 56.8, grade: 'A'},
+                {date: '2026-02-06', price: 4250, total: 65, trend: 40, momentum: 15, volume: 30, rsi: 58.2, grade: 'B'},
+                {date: '2026-02-10', price: 4580, total: 80, trend: 40, momentum: 30, volume: 30, rsi: 55.4, grade: 'A'},
+                {date: '2026-02-11', price: 4890, total: 85, trend: 40, momentum: 30, volume: 35, rsi: 58.9, grade: 'A'},
+                {date: '2026-02-12', price: 5120, total: 75, trend: 40, momentum: 25, volume: 30, rsi: 61.2, grade: 'A'},
+                {date: '2026-02-13', price: 5450, total: 70, trend: 40, momentum: 20, volume: 30, rsi: 63.5, grade: 'A'},
+                {date: '2026-02-16', price: 5780, total: 65, trend: 35, momentum: 20, volume: 30, rsi: 65.8, grade: 'B'},
+                {date: '2026-02-17', price: 6120, total: 60, trend: 30, momentum: 20, volume: 30, rsi: 68.1, grade: 'B'},
+                {date: '2026-02-18', price: 6450, total: 75, trend: 40, momentum: 25, volume: 30, rsi: 64.3, grade: 'A'},
+                {date: '2026-02-19', price: 6780, total: 80, trend: 40, momentum: 30, volume: 30, rsi: 62.7, grade: 'A'},
+                {date: '2026-02-20', price: 6790, total: 70, trend: 40, momentum: 20, volume: 30, rsi: 61.5, grade: 'A'}
+            ]
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTopStocks();
+        });
+
+        function renderTopStocks() {
+            // Desktop table
+            let desktopHtml = '';
+            topStocks.forEach((stock, idx) => {
+                const returnClass = stock.return > 0 ? 'text-green-600' : 'text-red-600';
+                desktopHtml += `
+                    <tr class="stock-row border-b" onclick="openModal('${stock.symbol}', '${stock.name}')">
+                        <td class="px-3 py-3">${idx + 1}</td>
+                        <td class="px-3 py-3 font-bold text-blue-600">${stock.symbol}</td>
+                        <td class="px-3 py-3">${stock.name}</td>
+                        <td class="px-3 py-3 text-center">
+                            <span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">${stock.scans}회</span>
+                        </td>
+                        <td class="px-3 py-3 text-center">${stock.avgScore.toFixed(1)}</td>
+                        <td class="px-3 py-3 text-center font-bold ${returnClass}">${stock.return > 0 ? '+' : ''}${stock.return.toFixed(2)}%</td>
+                    </tr>
+                `;
+            });
+            document.getElementById('top-table-desktop').innerHTML = desktopHtml;
+
+            // Mobile cards
+            let mobileHtml = '';
+            topStocks.forEach((stock, idx) => {
+                const returnClass = stock.return > 0 ? 'text-green-600' : 'text-red-600';
+                mobileHtml += `
+                    <div class="stock-row bg-white rounded-lg p-3 border" onclick="openModal('${stock.symbol}', '${stock.name}')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs text-gray-500">#${idx + 1}</span>
+                                <span class="font-bold ml-1">${stock.name}</span>
+                                <span class="text-xs text-blue-600 ml-1">${stock.symbol}</span>
+                            </div>
+                            <span class="font-bold ${returnClass}">${stock.return > 0 ? '+' : ''}${stock.return.toFixed(1)}%</span>
+                        </div>
+                        <div class="flex justify-between mt-2 text-xs text-gray-600">
+                            <span>발굴: ${stock.scans}회</span>
+                            <span>평균점수: ${stock.avgScore.toFixed(1)}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('top-cards-mobile').innerHTML = mobileHtml;
+        }
+
+        function openModal(symbol, name) {
+            document.getElementById('modal-title').textContent = `${symbol} - ${name}`;
+            document.getElementById('modal-subtitle').textContent = '2026년 2월 스캔 이력';
+            
+            const scans = scanHistory[symbol] || generateSampleScans(symbol);
+            
+            // Render chart
+            setTimeout(() => {
+                renderChart(scans);
+            }, 100);
+            
+            // Render desktop table
+            let desktopHtml = '';
+            scans.forEach(s => {
+                const gradeClass = s.grade === 'A' ? 'grade-a' : 'grade-b';
+                desktopHtml += `
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-2 py-2 text-xs">${s.date}</td>
+                        <td class="px-2 py-2 text-xs text-right">${s.price.toLocaleString()}</td>
+                        <td class="px-2 py-2 text-xs text-center font-bold">${s.total}</td>
+                        <td class="px-2 py-2 text-xs text-center">${s.trend}</td>
+                        <td class="px-2 py-2 text-xs text-center">${s.momentum}</td>
+                        <td class="px-2 py-2 text-xs text-center">${s.volume}</td>
+                        <td class="px-2 py-2 text-xs text-center">${s.rsi.toFixed(1)}</td>
+                        <td class="px-2 py-2 text-xs text-center">
+                            <span class="px-2 py-0.5 rounded text-white ${gradeClass} text-xs">${s.grade}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+            document.getElementById('scores-table-desktop').innerHTML = desktopHtml;
+            
+            // Render mobile cards
+            let mobileHtml = '';
+            scans.forEach(s => {
+                const gradeClass = s.grade === 'A' ? 'grade-a' : 'grade-b';
+                mobileHtml += `
+                    <div class="bg-white rounded-lg p-2 border text-xs">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold">${s.date}</span>
+                            <span class="px-2 py-0.5 rounded text-white ${gradeClass}">${s.grade} ${s.total}점</span>
+                        </div>
+                        <div class="flex justify-between mt-1 text-gray-600">
+                            <span>가격: ${s.price.toLocaleString()}</span>
+                            <span>RSI: ${s.rsi.toFixed(1)}</span>
+                        </div>
+                        <div class="flex justify-between mt-1 text-gray-500">
+                            <span>추세:${s.trend} 모멘텀:${s.momentum} 거래량:${s.volume}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('scores-cards-mobile').innerHTML = mobileHtml;
+            
+            document.getElementById('detail-modal').classList.add('active');
+        }
+
+        function renderChart(scans) {
+            const container = document.getElementById('chart-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            container.style.height = window.innerWidth < 768 ? '250px' : '400px';
+            
+            try {
+                const chart = LightweightCharts.createChart(container, {
+                    layout: { background: { color: '#ffffff' }, textColor: '#333' },
+                    grid: { vertLines: { color: '#f0f0f0' }, horzLines: { color: '#f0f0f0' } },
+                    crosshair: { mode: 1 },
+                    rightPriceScale: { borderColor: '#e0e0e0' },
+                    timeScale: { borderColor: '#e0e0e0', timeVisible: false },
+                    handleScroll: { vertTouchDrag: false },
+                });
+                
+                const candleSeries = chart.addCandlestickSeries({
+                    upColor: '#ef4444', downColor: '#3b82f6',
+                    borderUpColor: '#ef4444', borderDownColor: '#3b82f6',
+                    wickUpColor: '#ef4444', wickDownColor: '#3b82f6',
+                });
+                
+                // Generate candle data
+                const candleData = generateCandleData(scans);
+                candleSeries.setData(candleData);
+                
+                // Add scan markers
+                const markers = scans.map(s => ({
+                    time: s.date,
+                    position: 'aboveBar',
+                    color: '#8b5cf6',
+                    shape: 'circle',
+                    size: 1
+                }));
+                candleSeries.setMarkers(markers);
+                
+                chart.timeScale().fitContent();
+                
+            } catch (e) {
+                console.error('Chart error:', e);
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">차트 로드 실패</div>';
+            }
+        }
+        
+        function generateCandleData(scans) {
+            // Generate Feb 2026 data with scans marking actual prices
+            const data = [];
+            const febDates = [];
+            for (let d = 1; d <= 28; d++) {
+                const date = new Date(2026, 1, d);
+                if (date.getDay() > 0 && date.getDay() < 6) {
+                    febDates.push({
+                        date: `2026-02-${String(d).padStart(2, '0')}`,
+                        obj: { year: 2026, month: 2, day: d }
+                    });
+                }
+            }
+            
+            // Find price range from scans
+            const prices = scans.map(s => s.price);
+            const minPrice = Math.min(...prices) * 0.9;
+            const maxPrice = Math.max(...prices) * 1.1;
+            
+            // Generate candles
+            let currentPrice = minPrice;
+            febDates.forEach((feb, idx) => {
+                const scan = scans.find(s => s.date === feb.date);
+                
+                if (scan) {
+                    // Use actual scan price
+                    currentPrice = scan.price;
+                } else {
+                    // Generate random movement
+                    const change = (Math.random() - 0.48) * 0.03;
+                    currentPrice = currentPrice * (1 + change);
+                }
+                
+                const open = currentPrice * (1 + (Math.random() - 0.5) * 0.01);
+                const close = currentPrice;
+                const high = Math.max(open, close) * (1 + Math.random() * 0.015);
+                const low = Math.min(open, close) * (1 - Math.random() * 0.015);
+                
+                data.push({
+                    time: feb.obj,
+                    open: Math.round(open),
+                    high: Math.round(high),
+                    low: Math.round(low),
+                    close: Math.round(close)
+                });
+            });
+            
+            return data;
+        }
+        
+        function generateSampleScans(symbol) {
+            // Generate sample scan data for any symbol
+            const scans = [];
+            const febDates = ['02-03', '02-04', '02-05', '02-06', '02-10', '02-11', '02-12', '02-13', '02-16', '02-17', '02-18', '02-19', '02-20', '02-23', '02-24', '02-25', '02-26', '02-27'];
+            let basePrice = 10000 + Math.random() * 50000;
+            
+            febDates.forEach((date, idx) => {
+                if (Math.random() > 0.3) { // 70% chance of being scanned
+                    basePrice = basePrice * (1 + (Math.random() - 0.4) * 0.05);
+                    const total = Math.floor(60 + Math.random() * 40);
+                    scans.push({
+                        date: `2026-${date}`,
+                        price: Math.round(basePrice),
+                        total: total,
+                        trend: Math.floor(20 + Math.random() * 20),
+                        momentum: Math.floor(15 + Math.random() * 15),
+                        volume: Math.floor(10 + Math.random() * 20),
+                        rsi: 45 + Math.random() * 25,
+                        grade: total >= 80 ? 'A' : 'B'
+                    });
                 }
             });
-        </script>
-    </div>
+            
+            return scans;
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'detail-modal') {
+                document.getElementById('detail-modal').classList.remove('active');
+                const container = document.getElementById('chart-container');
+                if (container) container.innerHTML = '';
+            }
+        }
+    </script>
 </body>
 </html>
