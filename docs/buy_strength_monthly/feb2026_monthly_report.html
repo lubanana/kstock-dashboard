@@ -145,9 +145,12 @@
             <!-- Chart -->
             <div class="bg-gray-50 rounded-xl p-3 md:p-4 mb-4">
                 <div class="flex items-center justify-between mb-2">
-                    <span class="font-bold text-gray-700 text-sm md:text-base">📈 차트 (스캔 일자 표시)</span>
+                    <span class="font-bold text-gray-700 text-sm md:text-base">📈 차트 (신호일 표시)</span>
                     <div class="flex gap-2 text-xs">
-                        <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded">🟣 스캔일</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded">🟢 목표가 +15%</span>
+                        <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded">🟡 진입가</span>
+                        <span class="px-2 py-1 bg-red-100 text-red-700 rounded">🔴 손절가 -7%</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded">🟣 신호일</span>
                     </div>
                 </div>
                 <div id="chart-container" class="chart-container w-full bg-white rounded-lg"></div>
@@ -337,16 +340,173 @@
             if (!container) return;
             
             container.innerHTML = '';
-            container.style.height = window.innerWidth < 768 ? '250px' : '400px';
+            container.style.height = window.innerWidth < 768 ? '300px' : '400px';
             
             try {
+                // Create chart
                 const chart = LightweightCharts.createChart(container, {
-                    layout: { background: { color: '#ffffff' }, textColor: '#333' },
-                    grid: { vertLines: { color: '#f0f0f0' }, horzLines: { color: '#f0f0f0' } },
+                    layout: { 
+                        background: { color: '#ffffff' }, 
+                        textColor: '#333' 
+                    },
+                    grid: { 
+                        vertLines: { color: '#f0f0f0' }, 
+                        horzLines: { color: '#f0f0f0' } 
+                    },
                     crosshair: { mode: 1 },
                     rightPriceScale: { borderColor: '#e0e0e0' },
-                    timeScale: { borderColor: '#e0e0e0', timeVisible: false },
+                    timeScale: { 
+                        borderColor: '#e0e0e0', 
+                        timeVisible: false,
+                        tickMarkFormatter: (time) => {
+                            return `${time.month}/${time.day}`;
+                        }
+                    },
                     handleScroll: { vertTouchDrag: false },
+                });
+                
+                // Add candlestick series
+                const candleSeries = chart.addCandlestickSeries({
+                    upColor: '#ef4444', 
+                    downColor: '#3b82f6',
+                    borderUpColor: '#ef4444', 
+                    borderDownColor: '#3b82f6',
+                    wickUpColor: '#ef4444', 
+                    wickDownColor: '#3b82f6',
+                });
+                
+                // Generate extended data (Feb + Mar)
+                const candleData = generateExtendedCandleData(scans);
+                candleSeries.setData(candleData);
+                
+                // Get current price (last scan or last candle)
+                const currentPrice = scans[scans.length - 1]?.price || candleData[candleData.length - 1].close;
+                
+                // Target price line (+15%)
+                const targetPrice = Math.round(currentPrice * 1.15);
+                const targetLine = chart.addLineSeries({
+                    color: '#10b981', 
+                    lineWidth: 2, 
+                    lineStyle: 2,
+                    title: '목표가 +15%',
+                    lastValueVisible: true,
+                    priceLineVisible: false,
+                });
+                targetLine.setData(candleData.map(d => ({ time: d.time, value: targetPrice })));
+                
+                // Stop loss line (-7%)
+                const stopLossPrice = Math.round(currentPrice * 0.93);
+                const stopLossLine = chart.addLineSeries({
+                    color: '#ef4444', 
+                    lineWidth: 2, 
+                    lineStyle: 2,
+                    title: '손절가 -7%',
+                    lastValueVisible: true,
+                    priceLineVisible: false,
+                });
+                stopLossLine.setData(candleData.map(d => ({ time: d.time, value: stopLossPrice })));
+                
+                // Entry price line (current)
+                const entryLine = chart.addLineSeries({
+                    color: '#f59e0b', 
+                    lineWidth: 2, 
+                    lineStyle: 0,
+                    title: '진입가',
+                    lastValueVisible: true,
+                    priceLineVisible: false,
+                });
+                entryLine.setData(candleData.map(d => ({ time: d.time, value: Math.round(currentPrice) })));
+                
+                // Add scan markers (purple circles on scan dates)
+                const scanMarkers = scans.map(s => ({
+                    time: {
+                        year: parseInt(s.date.split('-')[0]),
+                        month: parseInt(s.date.split('-')[1]),
+                        day: parseInt(s.date.split('-')[2])
+                    },
+                    position: 'aboveBar',
+                    color: '#8b5cf6',
+                    shape: 'circle',
+                    size: 2,
+                    text: '신호'
+                }));
+                candleSeries.setMarkers(scanMarkers);
+                
+                chart.timeScale().fitContent();
+                
+                // Handle resize
+                const resizeHandler = () => {
+                    chart.applyOptions({ width: container.clientWidth });
+                };
+                window.addEventListener('resize', resizeHandler);
+                
+                // Store handler for cleanup
+                container.resizeHandler = resizeHandler;
+                
+            } catch (e) {
+                console.error('Chart error:', e);
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">차트 로드 실패</div>';
+            }
+        }
+        
+        function generateExtendedCandleData(scans) {
+            // Generate data from Feb 1 to Mar 14 (current)
+            const data = [];
+            const startDate = new Date(2026, 1, 1); // Feb 1
+            const endDate = new Date(2026, 2, 14); // Mar 14
+            
+            // Get price range from scans
+            const scanPrices = scans.map(s => s.price);
+            const minPrice = Math.min(...scanPrices) * 0.95;
+            const maxPrice = Math.max(...scanPrices) * 1.05;
+            const avgPrice = scanPrices.reduce((a, b) => a + b, 0) / scanPrices.length;
+            
+            let currentPrice = minPrice;
+            let currentDate = new Date(startDate);
+            
+            while (currentDate <= endDate) {
+                if (currentDate.getDay() > 0 && currentDate.getDay() < 6) {
+                    const dateStr = currentDate.toISOString().split('T')[0];
+                    const scan = scans.find(s => s.date === dateStr);
+                    
+                    if (scan) {
+                        // Use actual scan price
+                        currentPrice = scan.price;
+                    } else {
+                        // Generate realistic movement
+                        const daysFromStart = (currentDate - startDate) / (1000 * 60 * 60 * 24);
+                        const trendBias = (avgPrice - currentPrice) / avgPrice * 0.02;
+                        const randomChange = (Math.random() - 0.48) * 0.025;
+                        const change = trendBias + randomChange;
+                        currentPrice = currentPrice * (1 + change);
+                    }
+                    
+                    // Keep price in reasonable range
+                    currentPrice = Math.max(minPrice, Math.min(maxPrice * 1.1, currentPrice));
+                    
+                    const open = currentPrice * (1 + (Math.random() - 0.5) * 0.01);
+                    const close = currentPrice;
+                    const high = Math.max(open, close) * (1 + Math.random() * 0.015);
+                    const low = Math.min(open, close) * (1 - Math.random() * 0.015);
+                    
+                    data.push({
+                        time: { 
+                            year: currentDate.getFullYear(), 
+                            month: currentDate.getMonth() + 1, 
+                            day: currentDate.getDate() 
+                        },
+                        open: Math.round(open),
+                        high: Math.round(high),
+                        low: Math.round(low),
+                        close: Math.round(close)
+                    });
+                }
+                
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            return data;
+        }
                 });
                 
                 const candleSeries = chart.addCandlestickSeries({
@@ -375,56 +535,6 @@
                 console.error('Chart error:', e);
                 container.innerHTML = '<div class="text-center text-gray-500 py-4">차트 로드 실패</div>';
             }
-        }
-        
-        function generateCandleData(scans) {
-            // Generate Feb 2026 data with scans marking actual prices
-            const data = [];
-            const febDates = [];
-            for (let d = 1; d <= 28; d++) {
-                const date = new Date(2026, 1, d);
-                if (date.getDay() > 0 && date.getDay() < 6) {
-                    febDates.push({
-                        date: `2026-02-${String(d).padStart(2, '0')}`,
-                        obj: { year: 2026, month: 2, day: d }
-                    });
-                }
-            }
-            
-            // Find price range from scans
-            const prices = scans.map(s => s.price);
-            const minPrice = Math.min(...prices) * 0.9;
-            const maxPrice = Math.max(...prices) * 1.1;
-            
-            // Generate candles
-            let currentPrice = minPrice;
-            febDates.forEach((feb, idx) => {
-                const scan = scans.find(s => s.date === feb.date);
-                
-                if (scan) {
-                    // Use actual scan price
-                    currentPrice = scan.price;
-                } else {
-                    // Generate random movement
-                    const change = (Math.random() - 0.48) * 0.03;
-                    currentPrice = currentPrice * (1 + change);
-                }
-                
-                const open = currentPrice * (1 + (Math.random() - 0.5) * 0.01);
-                const close = currentPrice;
-                const high = Math.max(open, close) * (1 + Math.random() * 0.015);
-                const low = Math.min(open, close) * (1 - Math.random() * 0.015);
-                
-                data.push({
-                    time: feb.obj,
-                    open: Math.round(open),
-                    high: Math.round(high),
-                    low: Math.round(low),
-                    close: Math.round(close)
-                });
-            });
-            
-            return data;
         }
         
         function generateSampleScans(symbol) {
@@ -457,7 +567,12 @@
             if (!event || event.target.id === 'detail-modal') {
                 document.getElementById('detail-modal').classList.remove('active');
                 const container = document.getElementById('chart-container');
-                if (container) container.innerHTML = '';
+                if (container) {
+                    if (container.resizeHandler) {
+                        window.removeEventListener('resize', container.resizeHandler);
+                    }
+                    container.innerHTML = '';
+                }
             }
         }
     </script>
