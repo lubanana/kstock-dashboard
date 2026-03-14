@@ -13,6 +13,57 @@
         .grade-a { background: linear-gradient(135deg, #10b981, #059669); }
         .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
         .grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .stock-row { cursor: pointer; transition: all 0.2s; }
+        .stock-row:hover { background-color: #f0f9ff; transform: scale(1.01); }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        /* Criteria Cards */
+        .criteria-card {
+            border-left: 4px solid;
+            padding: 12px 16px;
+            margin: 8px 0;
+            background: #f9fafb;
+            border-radius: 0 8px 8px 0;
+        }
+        .criteria-pass { border-left-color: #10b981; background: #ecfdf5; }
+        .criteria-fail { border-left-color: #ef4444; background: #fef2f2; }
+        .criteria-neutral { border-left-color: #6b7280; background: #f3f4f6; }
     </style>
 </head>
 <body class="py-8 px-4">
@@ -21,31 +72,13 @@
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold text-white mb-3">📊 Buy Strength Score Report</h1>
             <p class="text-white/80 text-lg">매수 강도 점수 리포트 | 2026-03-13</p>
-            <div class="mt-4 inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
-                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span class="text-white text-sm">실시간 데이터</span>
-            </div>
+            <p class="text-white/60 text-sm mt-2">종목을 클릭하면 상세 판단 근거를 확인할 수 있습니다</p>
         </div>
 
         <!-- Summary Cards -->
         <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-600">50</div>
-                    <div class="text-sm text-gray-600">총 종목</div>
-                </div>
-                <div class="text-center p-4 bg-green-50 rounded-lg">
-                    <div class="text-3xl font-bold text-green-600">18</div>
-                    <div class="text-sm text-gray-600">A등급</div>
-                </div>
-                <div class="text-center p-4 bg-purple-50 rounded-lg">
-                    <div class="text-3xl font-bold text-purple-600">75.2</div>
-                    <div class="text-sm text-gray-600">평균 점수</div>
-                </div>
-                <div class="text-center p-4 bg-orange-50 rounded-lg">
-                    <div class="text-3xl font-bold text-orange-600">19258.0</div>
-                    <div class="text-sm text-gray-600">총 거래대금(억)</div>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="summary-cards">
+                <!-- Dynamic content -->
             </div>
         </div>
 
@@ -54,8 +87,8 @@
             <div class="flex items-center gap-3 mb-4">
                 <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center text-white font-bold">A</div>
                 <h2 class="text-xl font-bold">🎯 A등급 종목 (80점 이상)</h2>
+                <span class="text-sm text-gray-500" id="a-grade-count"></span>
             </div>
-            
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead class="bg-gray-50">
@@ -66,200 +99,17 @@
                             <th class="px-3 py-2 text-right text-sm">현재가</th>
                             <th class="px-3 py-2 text-right text-sm">거래대금</th>
                             <th class="px-3 py-2 text-center text-sm">총점</th>
-                            <th class="px-3 py-2 text-center text-sm">RSI</th>
-                            <th class="px-3 py-2 text-center text-sm">거래량</th>
+                            <th class="px-3 py-2 text-center text-sm">등급</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">1</td>
-                            <td class="px-3 py-3 font-bold">486450</td>
-                            <td class="px-3 py-3">미국AI전력인프라</td>
-                            <td class="px-3 py-3 text-right">21,430</td>
-                            <td class="px-3 py-3 text-right">129.0억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">100</span></td>
-                            <td class="px-3 py-3 text-center">53.3</td>
-                            <td class="px-3 py-3 text-center">2.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">2</td>
-                            <td class="px-3 py-3 font-bold">261240</td>
-                            <td class="px-3 py-3">미국달러선물</td>
-                            <td class="px-3 py-3 text-right">15,190</td>
-                            <td class="px-3 py-3 text-right">62.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">100</span></td>
-                            <td class="px-3 py-3 text-center">64.4</td>
-                            <td class="px-3 py-3 text-center">2.8x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">3</td>
-                            <td class="px-3 py-3 font-bold">2100</td>
-                            <td class="px-3 py-3">경농</td>
-                            <td class="px-3 py-3 text-right">9,750</td>
-                            <td class="px-3 py-3 text-right">146.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">100</span></td>
-                            <td class="px-3 py-3 text-center">51.0</td>
-                            <td class="px-3 py-3 text-center">3.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">4</td>
-                            <td class="px-3 py-3 font-bold">1130</td>
-                            <td class="px-3 py-3">대한제분</td>
-                            <td class="px-3 py-3 text-right">150,800</td>
-                            <td class="px-3 py-3 text-right">28.2억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">85</span></td>
-                            <td class="px-3 py-3 text-center">44.1</td>
-                            <td class="px-3 py-3 text-center">3.1x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">5</td>
-                            <td class="px-3 py-3 font-bold">453630</td>
-                            <td class="px-3 py-3">미국S</td>
-                            <td class="px-3 py-3 text-right">13,285</td>
-                            <td class="px-3 py-3 text-right">10.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">85</span></td>
-                            <td class="px-3 py-3 text-center">47.7</td>
-                            <td class="px-3 py-3 text-center">2.0x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">6</td>
-                            <td class="px-3 py-3 font-bold">496020</td>
-                            <td class="px-3 py-3">전단채플러스액티브</td>
-                            <td class="px-3 py-3 text-right">51,635</td>
-                            <td class="px-3 py-3 text-right">18.5억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">85</span></td>
-                            <td class="px-3 py-3 text-center">100.0</td>
-                            <td class="px-3 py-3 text-center">7.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">7</td>
-                            <td class="px-3 py-3 font-bold">3925</td>
-                            <td class="px-3 py-3">남양유업우</td>
-                            <td class="px-3 py-3 text-right">40,150</td>
-                            <td class="px-3 py-3 text-right">18.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">61.8</td>
-                            <td class="px-3 py-3 text-center">5.3x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">8</td>
-                            <td class="px-3 py-3 font-bold">415640</td>
-                            <td class="px-3 py-3">발해인프라</td>
-                            <td class="px-3 py-3 text-right">10,030</td>
-                            <td class="px-3 py-3 text-right">15.9억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">51.0</td>
-                            <td class="px-3 py-3 text-center">1.0x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">9</td>
-                            <td class="px-3 py-3 font-bold">19180</td>
-                            <td class="px-3 py-3">티에이치엔</td>
-                            <td class="px-3 py-3 text-right">8,760</td>
-                            <td class="px-3 py-3 text-right">155.1억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">56.8</td>
-                            <td class="px-3 py-3 text-center">3.2x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">10</td>
-                            <td class="px-3 py-3 font-bold">25860</td>
-                            <td class="px-3 py-3">남해화학</td>
-                            <td class="px-3 py-3 text-right">9,050</td>
-                            <td class="px-3 py-3 text-right">1345.2억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">66.0</td>
-                            <td class="px-3 py-3 text-center">5.2x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">11</td>
-                            <td class="px-3 py-3 font-bold">465580</td>
-                            <td class="px-3 py-3">미국빅테크TOP7</td>
-                            <td class="px-3 py-3 text-right">22,045</td>
-                            <td class="px-3 py-3 text-right">542.2억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">63.7</td>
-                            <td class="px-3 py-3 text-center">2.1x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">12</td>
-                            <td class="px-3 py-3 font-bold">475150</td>
-                            <td class="px-3 py-3">이터닉스</td>
-                            <td class="px-3 py-3 text-right">39,350</td>
-                            <td class="px-3 py-3 text-right">4543.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">66.3</td>
-                            <td class="px-3 py-3 text-center">3.3x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">13</td>
-                            <td class="px-3 py-3 font-bold">6880</td>
-                            <td class="px-3 py-3">신송홀딩스</td>
-                            <td class="px-3 py-3 text-right">7,010</td>
-                            <td class="px-3 py-3 text-right">33.0억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">51.9</td>
-                            <td class="px-3 py-3 text-center">1.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">14</td>
-                            <td class="px-3 py-3 font-bold">3280</td>
-                            <td class="px-3 py-3">흥아해운</td>
-                            <td class="px-3 py-3 text-right">2,400</td>
-                            <td class="px-3 py-3 text-right">2890.0억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">59.7</td>
-                            <td class="px-3 py-3 text-center">2.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">15</td>
-                            <td class="px-3 py-3 font-bold">1550</td>
-                            <td class="px-3 py-3">조비</td>
-                            <td class="px-3 py-3 text-right">17,450</td>
-                            <td class="px-3 py-3 text-right">719.4억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">59.9</td>
-                            <td class="px-3 py-3 text-center">4.5x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">16</td>
-                            <td class="px-3 py-3 font-bold">489250</td>
-                            <td class="px-3 py-3">미국배당다우존스</td>
-                            <td class="px-3 py-3 text-right">12,525</td>
-                            <td class="px-3 py-3 text-right">52.6억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">52.3</td>
-                            <td class="px-3 py-3 text-center">1.0x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">17</td>
-                            <td class="px-3 py-3 font-bold">8350</td>
-                            <td class="px-3 py-3">남선알미늄</td>
-                            <td class="px-3 py-3 text-right">1,513</td>
-                            <td class="px-3 py-3 text-right">1285.0억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">64.8</td>
-                            <td class="px-3 py-3 text-center">4.3x</td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">18</td>
-                            <td class="px-3 py-3 font-bold">6110</td>
-                            <td class="px-3 py-3">삼아알미늄</td>
-                            <td class="px-3 py-3 text-right">33,350</td>
-                            <td class="px-3 py-3 text-right">194.7억</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">80</span></td>
-                            <td class="px-3 py-3 text-center">53.1</td>
-                            <td class="px-3 py-3 text-center">3.3x</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="a-grade-tbody"></tbody>
                 </table>
             </div>
         </div>
 
         <!-- Top 20 Section -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">📈 TOP 20 종목</h2>
-            
+        <div class="glass rounded-2xl p-6 shadow-2xl">
+            <h2 class="text-xl font-bold mb-4">📈 전체 TOP 20</h2>
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead class="bg-gray-50">
@@ -268,240 +118,256 @@
                             <th class="px-3 py-2 text-left text-sm">종목코드</th>
                             <th class="px-3 py-2 text-left text-sm">종목명</th>
                             <th class="px-3 py-2 text-right text-sm">현재가</th>
-                            <th class="px-3 py-2 text-right text-sm">거래대금</th>
                             <th class="px-3 py-2 text-center text-sm">총점</th>
-                            <th class="px-3 py-2 text-center text-sm">추천등급</th>
+                            <th class="px-3 py-2 text-center text-sm">등급</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">1</td>
-                            <td class="px-3 py-3 font-bold">486450</td>
-                            <td class="px-3 py-3">미국AI전력인프라</td>
-                            <td class="px-3 py-3 text-right">21,430</td>
-                            <td class="px-3 py-3 text-right">129.0억</td>
-                            <td class="px-3 py-3 text-center font-bold">100</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">2</td>
-                            <td class="px-3 py-3 font-bold">261240</td>
-                            <td class="px-3 py-3">미국달러선물</td>
-                            <td class="px-3 py-3 text-right">15,190</td>
-                            <td class="px-3 py-3 text-right">62.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">100</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">3</td>
-                            <td class="px-3 py-3 font-bold">2100</td>
-                            <td class="px-3 py-3">경농</td>
-                            <td class="px-3 py-3 text-right">9,750</td>
-                            <td class="px-3 py-3 text-right">146.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">100</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">4</td>
-                            <td class="px-3 py-3 font-bold">1130</td>
-                            <td class="px-3 py-3">대한제분</td>
-                            <td class="px-3 py-3 text-right">150,800</td>
-                            <td class="px-3 py-3 text-right">28.2억</td>
-                            <td class="px-3 py-3 text-center font-bold">85</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">5</td>
-                            <td class="px-3 py-3 font-bold">453630</td>
-                            <td class="px-3 py-3">미국S</td>
-                            <td class="px-3 py-3 text-right">13,285</td>
-                            <td class="px-3 py-3 text-right">10.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">85</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">6</td>
-                            <td class="px-3 py-3 font-bold">496020</td>
-                            <td class="px-3 py-3">전단채플러스액티브</td>
-                            <td class="px-3 py-3 text-right">51,635</td>
-                            <td class="px-3 py-3 text-right">18.5억</td>
-                            <td class="px-3 py-3 text-center font-bold">85</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">7</td>
-                            <td class="px-3 py-3 font-bold">3925</td>
-                            <td class="px-3 py-3">남양유업우</td>
-                            <td class="px-3 py-3 text-right">40,150</td>
-                            <td class="px-3 py-3 text-right">18.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">8</td>
-                            <td class="px-3 py-3 font-bold">415640</td>
-                            <td class="px-3 py-3">발해인프라</td>
-                            <td class="px-3 py-3 text-right">10,030</td>
-                            <td class="px-3 py-3 text-right">15.9억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">9</td>
-                            <td class="px-3 py-3 font-bold">19180</td>
-                            <td class="px-3 py-3">티에이치엔</td>
-                            <td class="px-3 py-3 text-right">8,760</td>
-                            <td class="px-3 py-3 text-right">155.1억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">10</td>
-                            <td class="px-3 py-3 font-bold">25860</td>
-                            <td class="px-3 py-3">남해화학</td>
-                            <td class="px-3 py-3 text-right">9,050</td>
-                            <td class="px-3 py-3 text-right">1345.2억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">11</td>
-                            <td class="px-3 py-3 font-bold">465580</td>
-                            <td class="px-3 py-3">미국빅테크TOP7</td>
-                            <td class="px-3 py-3 text-right">22,045</td>
-                            <td class="px-3 py-3 text-right">542.2억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">12</td>
-                            <td class="px-3 py-3 font-bold">475150</td>
-                            <td class="px-3 py-3">이터닉스</td>
-                            <td class="px-3 py-3 text-right">39,350</td>
-                            <td class="px-3 py-3 text-right">4543.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">13</td>
-                            <td class="px-3 py-3 font-bold">6880</td>
-                            <td class="px-3 py-3">신송홀딩스</td>
-                            <td class="px-3 py-3 text-right">7,010</td>
-                            <td class="px-3 py-3 text-right">33.0억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">14</td>
-                            <td class="px-3 py-3 font-bold">3280</td>
-                            <td class="px-3 py-3">흥아해운</td>
-                            <td class="px-3 py-3 text-right">2,400</td>
-                            <td class="px-3 py-3 text-right">2890.0억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">15</td>
-                            <td class="px-3 py-3 font-bold">1550</td>
-                            <td class="px-3 py-3">조비</td>
-                            <td class="px-3 py-3 text-right">17,450</td>
-                            <td class="px-3 py-3 text-right">719.4억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">16</td>
-                            <td class="px-3 py-3 font-bold">489250</td>
-                            <td class="px-3 py-3">미국배당다우존스</td>
-                            <td class="px-3 py-3 text-right">12,525</td>
-                            <td class="px-3 py-3 text-right">52.6억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">17</td>
-                            <td class="px-3 py-3 font-bold">8350</td>
-                            <td class="px-3 py-3">남선알미늄</td>
-                            <td class="px-3 py-3 text-right">1,513</td>
-                            <td class="px-3 py-3 text-right">1285.0억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">18</td>
-                            <td class="px-3 py-3 font-bold">6110</td>
-                            <td class="px-3 py-3">삼아알미늄</td>
-                            <td class="px-3 py-3 text-right">33,350</td>
-                            <td class="px-3 py-3 text-right">194.7억</td>
-                            <td class="px-3 py-3 text-center font-bold">80</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">A</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">19</td>
-                            <td class="px-3 py-3 font-bold">497570</td>
-                            <td class="px-3 py-3">미국필라델피아AI반도체나스닥</td>
-                            <td class="px-3 py-3 text-right">16,825</td>
-                            <td class="px-3 py-3 text-right">370.3억</td>
-                            <td class="px-3 py-3 text-center font-bold">75</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">B</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">20</td>
-                            <td class="px-3 py-3 font-bold">446720</td>
-                            <td class="px-3 py-3">미국배당다우존스</td>
-                            <td class="px-3 py-3 text-right">13,355</td>
-                            <td class="px-3 py-3 text-right">56.1억</td>
-                            <td class="px-3 py-3 text-center font-bold">70</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">B</span></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="top20-tbody"></tbody>
                 </table>
-            </div>
-        </div>
-
-        <!-- Score Breakdown -->
-        <div class="glass rounded-2xl p-6 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">📊 점수 산출 기준</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-blue-50 rounded-xl p-4">
-                    <div class="text-lg font-bold text-blue-700 mb-2">📈 추세 점수 (40점)</div>
-                    <ul class="text-sm text-gray-700 space-y-1">
-                        <li>✓ 정배열 (주가 > 20EMA > 60EMA): +20점</li>
-                        <li>✓ 눌림목 (20EMA 대비 0~3%): +20점</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-purple-50 rounded-xl p-4">
-                    <div class="text-lg font-bold text-purple-700 mb-2">📊 모멘텀 점수 (30점)</div>
-                    <ul class="text-sm text-gray-700 space-y-1">
-                        <li>✓ RSI(14) 50~70: +15점</li>
-                        <li>✓ MACD Histogram 증가: +15점</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-orange-50 rounded-xl p-4">
-                    <div class="text-lg font-bold text-orange-700 mb-2">📉 거래량 점수 (30점)</div>
-                    <ul class="text-sm text-gray-700 space-y-1">
-                        <li>✓ 거래량 200% 돌파: +30점</li>
-                        <li>✓ 거래량 150% 돌파: +20점</li>
-                        <li>✓ 거래량 100% 돌파: +10점</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="mt-4 p-4 bg-gray-50 rounded-xl">
-                <div class="text-sm text-gray-600">
-                    <strong>하드 필터:</strong> 거래대금 10억 이상, 주가 1,000원 이상 | 
-                    <strong>등급 기준:</strong> A(80+), B(60+), C(40+)
-                </div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="text-center mt-8 text-white/60 text-sm">
             <p>Buy Strength Score Scanner | Generated: 2026-03-13</p>
+            <p class="mt-1">클릭하여 상세 판단 근거 확인</p>
         </div>
     </div>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content p-6 m-4" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                    <p id="modal-subtitle" class="text-gray-500"></p>
+                </div>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            </div>
+
+            <!-- Score Summary -->
+            <div class="bg-gray-50 rounded-xl p-4 mb-4">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm text-gray-600">총점</span>
+                    <span id="modal-total-score" class="text-2xl font-bold text-blue-600"></span>
+                </div>
+                <div class="progress-bar">
+                    <div id="modal-score-bar" class="progress-fill bg-blue-500"></div>
+                </div>
+            </div>
+
+            <!-- Price Info -->
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="text-xs text-gray-500">현재가</div>
+                    <div id="modal-price" class="text-lg font-bold"></div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="text-xs text-gray-500">거래대금</div>
+                    <div id="modal-amount" class="text-lg font-bold"></div>
+                </div>
+            </div>
+
+            <!-- Detailed Scores -->
+            <div class="space-y-3">
+                <!-- Trend Score -->
+                <div class="criteria-card criteria-pass">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-blue-700">📈 추세 점수</span>
+                        <span id="modal-trend-score" class="font-bold"></span>
+                    </div>
+                    <div class="text-sm text-gray-600 space-y-1">
+                        <div id="trend-detail-1">• 정배열 (주가 > 20EMA > 60EMA): <span class="font-semibold"></span></div>
+                        <div id="trend-detail-2">• 눌림목 (20EMA 대비 0~3%): <span class="font-semibold"></span></div>
+                    </div>
+                    <div class="progress-bar mt-2">
+                        <div id="trend-bar" class="progress-fill bg-blue-500"></div>
+                    </div>
+                </div>
+
+                <!-- Momentum Score -->
+                <div class="criteria-card criteria-pass">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-purple-700">📊 모멘텀 점수</span>
+                        <span id="modal-momentum-score" class="font-bold"></span>
+                    </div>
+                    <div class="text-sm text-gray-600 space-y-1">
+                        <div id="momentum-detail-1">• RSI(14) 50~70: <span class="font-semibold"></span></div>
+                        <div id="momentum-detail-2">• MACD Histogram 증가: <span class="font-semibold"></span></div>
+                    </div>
+                    <div class="progress-bar mt-2">
+                        <div id="momentum-bar" class="progress-fill bg-purple-500"></div>
+                    </div>
+                </div>
+
+                <!-- Volume Score -->
+                <div class="criteria-card criteria-pass">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-bold text-orange-700">📉 거래량 점수</span>
+                        <span id="modal-volume-score" class="font-bold"></span>
+                    </div>
+                    <div class="text-sm text-gray-600 space-y-1">
+                        <div id="volume-detail-1">• 거래량 비율: <span class="font-semibold"></span></div>
+                        <div id="volume-detail-2">• 기준: 20일 평균 대비 <span class="font-semibold"></span></div>
+                    </div>
+                    <div class="progress-bar mt-2">
+                        <div id="volume-bar" class="progress-fill bg-orange-500"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grade Badge -->
+            <div class="mt-4 text-center">
+                <span id="modal-grade" class="inline-block px-6 py-2 rounded-full text-white font-bold text-lg"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Stock Data
+        const stockData = {
+            "486450": {"name": "미국AI전력인프라", "market": "KOSPI", "price": 21430.0, "amount": 129.0, "total_score": 100, "trend_score": 40, "momentum_score": 30, "volume_score": 30, "rsi": 53.3, "volume_ratio": 2.5, "grade": "A"},
+            "261240": {"name": "미국달러선물", "market": "KOSPI", "price": 15190.0, "amount": 62.4, "total_score": 100, "trend_score": 40, "momentum_score": 30, "volume_score": 30, "rsi": 64.4, "volume_ratio": 2.8, "grade": "A"},
+            "002100": {"name": "경농", "market": "KOSPI", "price": 9750.0, "amount": 146.4, "total_score": 100, "trend_score": 40, "momentum_score": 30, "volume_score": 30, "rsi": 51.0, "volume_ratio": 3.5, "grade": "A"},
+            "001130": {"name": "대한제분", "market": "KOSPI", "price": 150800.0, "amount": 28.2, "total_score": 85, "trend_score": 40, "momentum_score": 15, "volume_score": 30, "rsi": 44.1, "volume_ratio": 3.1, "grade": "A"},
+            "453630": {"name": "미국S", "market": "KOSPI", "price": 13285.0, "amount": 10.4, "total_score": 85, "trend_score": 40, "momentum_score": 15, "volume_score": 30, "rsi": 47.7, "volume_ratio": 2.0, "grade": "A"},
+            "496020": {"name": "전단채플러스액티브", "market": "KOSPI", "price": 51635.0, "amount": 18.5, "total_score": 85, "trend_score": 40, "momentum_score": 15, "volume_score": 30, "rsi": 100.0, "volume_ratio": 7.5, "grade": "A"},
+            "003925": {"name": "남양유업우", "market": "KOSPI", "price": 40150.0, "amount": 18.4, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 61.8, "volume_ratio": 5.3, "grade": "A"},
+            "415640": {"name": "발해인프라", "market": "KOSPI", "price": 10030.0, "amount": 15.9, "total_score": 80, "trend_score": 40, "momentum_score": 30, "volume_score": 10, "rsi": 51.0, "volume_ratio": 1.0, "grade": "A"},
+            "019180": {"name": "티에이치엔", "market": "KOSPI", "price": 8760.0, "amount": 155.1, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 56.8, "volume_ratio": 3.2, "grade": "A"},
+            "025860": {"name": "남해화학", "market": "KOSPI", "price": 9050.0, "amount": 1345.2, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 66.0, "volume_ratio": 5.2, "grade": "A"},
+            "465580": {"name": "미국빅테크TOP7", "market": "KOSPI", "price": 22045.0, "amount": 542.2, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 63.7, "volume_ratio": 2.1, "grade": "A"},
+            "475150": {"name": "이터닉스", "market": "KOSPI", "price": 39350.0, "amount": 4543.4, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 66.3, "volume_ratio": 3.3, "grade": "A"},
+            "006880": {"name": "신송홀딩스", "market": "KOSPI", "price": 7010.0, "amount": 33.0, "total_score": 80, "trend_score": 40, "momentum_score": 30, "volume_score": 10, "rsi": 51.9, "volume_ratio": 1.5, "grade": "A"},
+            "003280": {"name": "흥아해운", "market": "KOSPI", "price": 2400.0, "amount": 2890.0, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 59.7, "volume_ratio": 2.5, "grade": "A"},
+            "001550": {"name": "조비", "market": "KOSPI", "price": 17450.0, "amount": 719.4, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 59.9, "volume_ratio": 4.5, "grade": "A"},
+            "489250": {"name": "미국배당다우존스", "market": "KOSPI", "price": 12525.0, "amount": 52.6, "total_score": 80, "trend_score": 40, "momentum_score": 30, "volume_score": 10, "rsi": 52.3, "volume_ratio": 1.0, "grade": "A"},
+            "008350": {"name": "남선알미늄", "market": "KOSPI", "price": 1513.0, "amount": 1285.0, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 64.8, "volume_ratio": 4.3, "grade": "A"},
+            "006110": {"name": "삼아알미늄", "market": "KOSPI", "price": 33350.0, "amount": 194.7, "total_score": 80, "trend_score": 20, "momentum_score": 30, "volume_score": 30, "rsi": 53.1, "volume_ratio": 3.3, "grade": "A"}
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSummary();
+            renderAGrade();
+            renderTop20();
+        });
+
+        function renderSummary() {
+            const stocks = Object.values(stockData);
+            const aGrade = stocks.filter(s => s.grade === 'A');
+            const avgScore = stocks.reduce((a, b) => a + b.total_score, 0) / stocks.length;
+            const totalAmount = stocks.reduce((a, b) => a + b.amount, 0);
+
+            document.getElementById('summary-cards').innerHTML = `
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600">${stocks.length}</div>
+                    <div class="text-sm text-gray-600">총 종목</div>
+                </div>
+                <div class="text-center p-4 bg-green-50 rounded-lg">
+                    <div class="text-3xl font-bold text-green-600">${aGrade.length}</div>
+                    <div class="text-sm text-gray-600">A등급</div>
+                </div>
+                <div class="text-center p-4 bg-purple-50 rounded-lg">
+                    <div class="text-3xl font-bold text-purple-600">${avgScore.toFixed(1)}</div>
+                    <div class="text-sm text-gray-600">평균 점수</div>
+                </div>
+                <div class="text-center p-4 bg-orange-50 rounded-lg">
+                    <div class="text-3xl font-bold text-orange-600">${Math.round(totalAmount)}</div>
+                    <div class="text-sm text-gray-600">총 거래대금(억)</div>
+                </div>
+            `;
+        }
+
+        function renderAGrade() {
+            const aGrade = Object.entries(stockData)
+                .filter(([k, v]) => v.grade === 'A')
+                .sort((a, b) => b[1].total_score - a[1].total_score);
+            
+            document.getElementById('a-grade-count').textContent = `(${aGrade.length}개)`;
+            
+            let html = '';
+            aGrade.forEach(([symbol, data], idx) => {
+                html += `
+                    <tr class="stock-row border-b" onclick="openModal('${symbol}')">
+                        <td class="px-3 py-3">${idx + 1}</td>
+                        <td class="px-3 py-3 font-bold text-blue-600">${symbol}</td>
+                        <td class="px-3 py-3">${data.name}</td>
+                        <td class="px-3 py-3 text-right">${data.price.toLocaleString()}</td>
+                        <td class="px-3 py-3 text-right">${data.amount.toFixed(1)}억</td>
+                        <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">${data.total_score}</span></td>
+                        <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">${data.grade}</span></td>
+                    </tr>
+                `;
+            });
+            document.getElementById('a-grade-tbody').innerHTML = html;
+        }
+
+        function renderTop20() {
+            const top20 = Object.entries(stockData)
+                .sort((a, b) => b[1].total_score - a[1].total_score)
+                .slice(0, 20);
+            
+            let html = '';
+            top20.forEach(([symbol, data], idx) => {
+                const gradeClass = data.grade === 'A' ? 'grade-a' : data.grade === 'B' ? 'grade-b' : 'grade-c';
+                html += `
+                    <tr class="stock-row border-b" onclick="openModal('${symbol}')">
+                        <td class="px-3 py-3">${idx + 1}</td>
+                        <td class="px-3 py-3 font-bold text-blue-600">${symbol}</td>
+                        <td class="px-3 py-3">${data.name}</td>
+                        <td class="px-3 py-3 text-right">${data.price.toLocaleString()}</td>
+                        <td class="px-3 py-3 text-center font-bold">${data.total_score}</td>
+                        <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white ${gradeClass} text-sm font-bold">${data.grade}</span></td>
+                    </tr>
+                `;
+            });
+            document.getElementById('top20-tbody').innerHTML = html;
+        }
+
+        function openModal(symbol) {
+            const data = stockData[symbol];
+            if (!data) return;
+
+            document.getElementById('modal-title').textContent = `${symbol} - ${data.name}`;
+            document.getElementById('modal-subtitle').textContent = `${data.market} | 현재가: ${data.price.toLocaleString()}원`;
+            document.getElementById('modal-total-score').textContent = data.total_score;
+            document.getElementById('modal-score-bar').style.width = `${data.total_score}%`;
+            document.getElementById('modal-price').textContent = `${data.price.toLocaleString()}원`;
+            document.getElementById('modal-amount').textContent = `${data.amount.toFixed(1)}억`;
+
+            // Trend Score Details
+            document.getElementById('modal-trend-score').textContent = `${data.trend_score}/40`;
+            document.getElementById('trend-bar').style.width = `${(data.trend_score / 40) * 100}%`;
+            document.getElementById('trend-detail-1').querySelector('span').textContent = data.trend_score >= 20 ? '✅ 통과 (+20점)' : '❌ 미통과';
+            document.getElementById('trend-detail-2').querySelector('span').textContent = data.trend_score >= 40 ? '✅ 통과 (+20점)' : (data.trend_score >= 20 ? '⚠️ 부분 충족' : '❌ 미통과');
+
+            // Momentum Score Details
+            document.getElementById('modal-momentum-score').textContent = `${data.momentum_score}/30`;
+            document.getElementById('momentum-bar').style.width = `${(data.momentum_score / 30) * 100}%`;
+            document.getElementById('momentum-detail-1').querySelector('span').textContent = data.rsi >= 50 && data.rsi <= 70 ? `✅ ${data.rsi.toFixed(1)} (적정)` : `⚠️ ${data.rsi.toFixed(1)}`;
+            document.getElementById('momentum-detail-2').querySelector('span').textContent = data.momentum_score >= 30 ? '✅ 증가세 (+15점)' : (data.momentum_score >= 15 ? '⚠️ 보통' : '❌ 감소세');
+
+            // Volume Score Details
+            document.getElementById('modal-volume-score').textContent = `${data.volume_score}/30`;
+            document.getElementById('volume-bar').style.width = `${(data.volume_score / 30) * 100}%`;
+            let volumeGrade = data.volume_ratio >= 2.0 ? '200% 돌파 (+30점)' : data.volume_ratio >= 1.5 ? '150% 돌파 (+20점)' : data.volume_ratio >= 1.0 ? '100% 돌파 (+10점)' : '미달';
+            document.getElementById('volume-detail-1').querySelector('span').textContent = `${data.volume_ratio.toFixed(1)}x ${data.volume_score >= 30 ? '✅' : ''}`;
+            document.getElementById('volume-detail-2').querySelector('span').textContent = volumeGrade;
+
+            // Grade
+            const gradeEl = document.getElementById('modal-grade');
+            gradeEl.textContent = `${data.grade} 등급`;
+            gradeEl.className = `inline-block px-6 py-2 rounded-full text-white font-bold text-lg ${data.grade === 'A' ? 'grade-a' : data.grade === 'B' ? 'grade-b' : 'grade-c'}`;
+
+            document.getElementById('detail-modal').classList.add('active');
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'detail-modal') {
+                document.getElementById('detail-modal').classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
