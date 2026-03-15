@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📊 K-Stock Pivot Strategy Reports</title>
+    <title>📊 K-Stock Strategy Reports</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,180 +20,16 @@
         <!-- Header -->
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold text-white mb-3">
-                <i class="fas fa-chart-line mr-3"></i>K-Stock Pivot Strategy
+                <i class="fas fa-chart-line mr-3"></i>K-Stock Strategy Reports
             </h1>
-            <p class="text-white/80 text-lg">피벗 포인트 돌파 전략 리포트 대시보드</p>
+            <p class="text-white/80 text-lg">K-Stock 매매 전략 리포트 대시보드</p>
             <div class="mt-4 inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2">
                 <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                 <span class="text-white text-sm">실시간 리포트 업데이트</span>
             </div>
         </div>
 
-        <!-- Latest Report Section -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-fire text-white text-xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold text-gray-800">🔥 최신 리포트</h2>
-                    <p class="text-gray-500 text-sm">Today's Pivot Breakout Signals</p>
-                </div>
-            </div>
-            
-            <a href="scan_report_20260313.html" class="report-card block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100 hover:border-blue-300">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center text-white">
-                            <i class="fas fa-file-alt text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 13일 스캔 리포트</h3>
-                            <p class="text-gray-500 text-sm">📈 43개 종목 신호 감지 | TradingView 차트</p>
-                            <div class="flex gap-2 mt-2">
-                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">KOSPI</span>
-                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">KOSDAQ</span>
-                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">Lightweight Charts</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-3xl font-bold text-blue-600">43</div>
-                        <div class="text-sm text-gray-500">신호 종목</div>
-                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <!-- Buy Strength Report Section -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-bolt text-white text-xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold text-gray-800">⚡ Buy Strength Score</h2>
-                    <p class="text-gray-500 text-sm">추세 · 모멘텀 · 거래량 기반 매수 강도 분석</p>
-                </div>
-            </div>
-            
-            <a href="buy_strength_report.html" class="report-card block bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-100 hover:border-green-300">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center text-white">
-                            <i class="fas fa-trophy text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 13일 Buy Strength 리포트</h3>
-                            <p class="text-gray-500 text-sm">📊 18개 A등급 종목 발굴 | 평균 점수 75점</p>
-                            <div class="flex gap-2 mt-2">
-                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">A등급 18개</span>
-                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">TOP 50</span>
-                                <span class="px-2 py-0.5 bg-orange-100 text-orange-700 rounded text-xs">실시간</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-3xl font-bold text-green-600">18</div>
-                        <div class="text-sm text-gray-500">A등급 종목</div>
-                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
-                    </div>
-                </div>
-            </a>
-            
-            <!-- Feb 2026 Backtest -->
-            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <a href="buy_strength_feb2026/symbol_summary.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-green-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">2월 백테스트 결과</h3>
-                            <p class="text-sm text-gray-500">평균 수익률 +14.6%</p>
-                        </div>
-                        <i class="fas fa-external-link-alt text-gray-400"></i>
-                    </div>
-                </a>
-                
-                <a href="buy_strength_feb2026/charts/summary.png" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-green-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600">
-                            <i class="fas fa-chart-area"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">2월 발굴 종목 차트</h3>
-                            <p class="text-sm text-gray-500">성과 추이 시각화</p>
-                        </div>
-                        <i class="fas fa-external-link-alt text-gray-400"></i>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Multi-Strategy Report Section -->
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
-                    <i class="fas fa-layer-group text-white text-xl"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold text-gray-800">🎯 Multi-Strategy Scanner</h2>
-                    <p class="text-gray-500 text-sm">5가지 전략 종합 분석</p>
-                </div>
-            </div>
-            
-            <a href="multi_strategy_report.html" class="report-card block bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-5 border border-purple-100 hover:border-purple-300">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center text-white">
-                            <i class="fas fa-bullseye text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 15일 종합 전략 리포트</h3>
-                            <p class="text-gray-500 text-sm">📊 3,286개 종목 분석 | 1,732개 발굴 | 5가지 전략 종합</p>
-                            <div class="flex gap-2 mt-2">
-                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">KOSPI 1,045</span>
-                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">KOSDAQ 687</span>
-                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">전략 4개 1종목</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-3xl font-bold text-purple-600">1,732</div>
-                        <div class="text-sm text-gray-500">발굴 종목</div>
-                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
-                    </div>
-                </div>
-            </a>
-            
-            <!-- Strategy Summary -->
-            <div class="mt-4 grid grid-cols-2 md:grid-cols-5 gap-2 text-center text-xs">
-                <div class="bg-white rounded-lg p-2">
-                    <div class="font-bold text-blue-600">20</div>
-                    <div class="text-gray-500">거래대금TOP20</div>
-                </div>
-                <div class="bg-white rounded-lg p-2">
-                    <div class="font-bold text-pink-600">0</div>
-                    <div class="text-gray-500">턴어라운드</div>
-                </div>
-                <div class="bg-white rounded-lg p-2">
-                    <div class="font-bold text-green-600">738</div>
-                    <div class="text-gray-500">모멘텀</div>
-                </div>
-                <div class="bg-white rounded-lg p-2">
-                    <div class="font-bold text-yellow-600">1</div>
-                    <div class="text-gray-500">2000억돌파</div>
-                </div>
-                <div class="bg-white rounded-lg p-2">
-                    <div class="font-bold text-purple-600">1,364</div>
-                    <div class="text-gray-500">MA200우상향</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Backtest Report Section -->
+        <!-- Backtest Section - Featured -->
         <div class="glass rounded-2xl p-6 mb-8 shadow-2xl border-2 border-yellow-400">
             <div class="flex items-center gap-3 mb-4">
                 <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
@@ -229,7 +65,6 @@
                 </div>
             </a>
             
-            <!-- Backtest Links -->
             <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <a href="multi_strategy_backtest/strategy_report.md" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-yellow-300">
                     <div class="flex items-center gap-3">
@@ -237,7 +72,7 @@
                             <i class="fas fa-file-alt"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 text-sm">전략 리포트 (MD)</h3>
+                            <h3 class="font-bold text-gray-800 text-sm">전략 리포트</h3>
                             <p class="text-xs text-gray-500">매매전략 상세</p>
                         </div>
                         <i class="fas fa-external-link-alt text-gray-400"></i>
@@ -250,7 +85,7 @@
                             <i class="fas fa-microscope"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 text-sm">심층 분석 리포트</h3>
+                            <h3 class="font-bold text-gray-800 text-sm">심층 분석</h3>
                             <p class="text-xs text-gray-500">종목별 공통점 분석</p>
                         </div>
                         <i class="fas fa-external-link-alt text-gray-400"></i>
@@ -263,7 +98,7 @@
                             <i class="fas fa-table"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-gray-800 text-sm">거래 내역 (CSV)</h3>
+                            <h3 class="font-bold text-gray-800 text-sm">거래 내역</h3>
                             <p class="text-xs text-gray-500">124회 거래 데이터</p>
                         </div>
                         <i class="fas fa-download text-gray-400"></i>
@@ -272,64 +107,225 @@
             </div>
         </div>
 
-        <!-- Previous Reports Grid -->
-        <div class="glass rounded-2xl p-6 shadow-2xl">
-            <h2 class="text-xl font-bold text-gray-800 mb-4">
-                <i class="fas fa-history mr-2"></i>이전 리포트
-            </h2>
+        <!-- Multi-Strategy Section -->
+        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-layer-group text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800">🎯 Multi-Strategy Scanner</h2>
+                    <p class="text-gray-500 text-sm">5가지 전략 종합 분석</p>
+                </div>
+            </div>
+            
+            <a href="multi_strategy_report.html" class="report-card block bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-5 border border-purple-100 hover:border-purple-300 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-bullseye text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 15일 종합 전략 리포트</h3>
+                            <p class="text-gray-500 text-sm">📊 3,286개 종목 분석 | 1,732개 발굴 | 5가지 전략</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">KOSPI 1,045</span>
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">KOSDAQ 687</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-purple-600">1,732</div>
+                        <div class="text-sm text-gray-500">발굴 종목</div>
+                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-2 text-center text-xs">
+                <div class="bg-white rounded-lg p-2">
+                    <div class="font-bold text-blue-600">20</div>
+                    <div class="text-gray-500">거래대금TOP20</div>
+                </div>
+                <div class="bg-white rounded-lg p-2">
+                    <div class="font-bold text-pink-600">0</div>
+                    <div class="text-gray-500">턴어라운드</div>
+                </div>
+                <div class="bg-white rounded-lg p-2">
+                    <div class="font-bold text-green-600">738</div>
+                    <div class="text-gray-500">모멘텀</div>
+                </div>
+                <div class="bg-white rounded-lg p-2">
+                    <div class="font-bold text-yellow-600">1</div>
+                    <div class="text-gray-500">2000억돌파</div>
+                </div>
+                <div class="bg-white rounded-lg p-2">
+                    <div class="font-bold text-purple-600">1,364</div>
+                    <div class="text-gray-500">MA200우상향</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buy Strength Section -->
+        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-bolt text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800">⚡ Buy Strength Score</h2>
+                    <p class="text-gray-500 text-sm">추세 · 모멘텀 · 거래량 기반 매수 강도 분석</p>
+                </div>
+            </div>
+            
+            <a href="buy_strength_report.html" class="report-card block bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-100 hover:border-green-300 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-trophy text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 13일 Buy Strength 리포트</h3>
+                            <p class="text-gray-500 text-sm">📊 18개 A등급 종목 발굴 | TradingView 차트</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">A등급 18개</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">TOP 50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-green-600">18</div>
+                        <div class="text-sm text-gray-500">A등급 종목</div>
+                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="buy_strength_monthly/feb2026_monthly_report.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-green-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2월 월간 리포트</h3>
+                            <p class="text-xs text-gray-500">3,742개 신호 분석</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="buy_strength_feb2026/charts/summary.png" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-green-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2월 차트</h3>
+                            <p class="text-xs text-gray-500">발굴 종목 시각화</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="buy_strength_20260314.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-green-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                            <i class="fas fa-file-csv"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">3월 14일 데이터</h3>
+                            <p class="text-xs text-gray-500">CSV 다운로드</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pivot Strategy Section -->
+        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-chart-bar text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800">📈 Pivot Strategy</h2>
+                    <p class="text-gray-500 text-sm">피벗 포인트 돌파 전략 리포트</p>
+                </div>
+            </div>
+            
+            <a href="scan_report_20260313.html" class="report-card block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100 hover:border-blue-300 mb-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-crosshairs text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">2026년 3월 13일 스캔 리포트</h3>
+                            <p class="text-gray-500 text-sm">📈 43개 종목 신호 감지 | Lightweight Charts</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">KOSPI</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">KOSDAQ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-blue-600">43</div>
+                        <div class="text-sm text-gray-500">신호 종목</div>
+                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
+                    </div>
+                </div>
+            </a>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Report Card 1 -->
+                <a href="daily_202602.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2026년 2월 일별 리포트</h3>
+                            <p class="text-xs text-gray-500">월간 집계 데이터</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="daily_202601.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2026년 1월 일별 리포트</h3>
+                            <p class="text-xs text-gray-500">월간 집계 데이터</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
                 <a href="scan_report_20260312.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
                     <div class="flex items-center gap-3">
                         <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-history"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">3월 12일 스캔 리포트</h3>
-                            <p class="text-sm text-gray-500">일일 피봇 돌파 신호</p>
+                            <h3 class="font-bold text-gray-800 text-sm">3월 12일 스캔 리포트</h3>
+                            <p class="text-xs text-gray-500">이전 거래일 데이터</p>
                         </div>
                         <i class="fas fa-external-link-alt text-gray-400"></i>
                     </div>
                 </a>
-
-                <!-- Report Card 2 -->
-                <a href="daily_202602.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">2026년 2월 일별 리포트</h3>
-                            <p class="text-sm text-gray-500">월간 집계 데이터</p>
-                        </div>
-                        <i class="fas fa-external-link-alt text-gray-400"></i>
-                    </div>
-                </a>
-
-                <!-- Report Card 3 -->
-                <a href="daily_202601.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">2026년 1월 일별 리포트</h3>
-                            <p class="text-sm text-gray-500">월간 집계 데이터</p>
-                        </div>
-                        <i class="fas fa-external-link-alt text-gray-400"></i>
-                    </div>
-                </a>
-
-                <!-- Report Card 4 -->
+                
                 <a href="daily_report_feb_2026.html" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                        <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600">
                             <i class="fas fa-file-invoice"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="font-bold text-gray-800">2월 상세 리포트</h3>
-                            <p class="text-sm text-gray-500">Detailed February Report</p>
+                            <h3 class="font-bold text-gray-800 text-sm">2월 상세 리포트</h3>
+                            <p class="text-xs text-gray-500">Detailed Report</p>
                         </div>
                         <i class="fas fa-external-link-alt text-gray-400"></i>
                     </div>
@@ -337,10 +333,71 @@
             </div>
         </div>
 
+        <!-- Data Files Section -->
+        <div class="glass rounded-2xl p-6 shadow-2xl">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-database mr-2"></i>데이터 파일
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="buy_strength_monthly/feb2026_symbol_summary.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-gray-400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2월 종목 요약</h3>
+                            <p class="text-xs text-gray-500">symbol_summary.csv</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="buy_strength_monthly/feb2026_daily_stats.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-gray-400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2월 일별 통계</h3>
+                            <p class="text-xs text-gray-500">daily_stats.csv</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="buy_strength_monthly/feb2026_all_signals.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-gray-400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">2월 전체 신호</h3>
+                            <p class="text-xs text-gray-500">all_signals.csv</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="multi_strategy_backtest/daily_values.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-gray-400">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">백테스트 일별 가치</h3>
+                            <p class="text-xs text-gray-500">daily_values.csv</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <!-- Footer -->
         <div class="text-center mt-8 text-white/60 text-sm">
-            <p>K-Stock Pivot Strategy Dashboard</p>
-            <p class="mt-1">Generated with TradingView Lightweight Charts</p>
+            <p>K-Stock Strategy Dashboard</p>
+            <p class="mt-1">Multi-Strategy · Buy Strength · Pivot Strategy</p>
         </div>
     </div>
 </body>
