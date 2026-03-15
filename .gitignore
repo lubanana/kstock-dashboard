@@ -12,11 +12,8 @@ __pycache__/
 .Python
 
 # Reports and outputs
-reports/
-*.png
-*.html
-*.csv
-*.xlsx
+reports/  # Raw reports folder - keep ignored
+# Note: docs/ folder is NOT ignored - used for GitHub Pages
 
 # Jupyter Notebook
 .ipynb_checkpoints
