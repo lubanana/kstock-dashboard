@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Strategy Scan Report - 2026-03-14</title>
+    <title>Multi-Strategy Scan Report - 2026-03-15</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,9 +11,6 @@
         * { font-family: 'Noto Sans KR', sans-serif; }
         body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .grade-a { background: linear-gradient(135deg, #10b981, #059669); }
-        .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); }
         .strategy-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 2px; }
         .s1 { background: #dbeafe; color: #1e40af; }
         .s2 { background: #fce7f3; color: #9d174d; }
@@ -26,29 +23,29 @@
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold text-white mb-3">🎯 Multi-Strategy Scan Report</h1>
-            <p class="text-white/80 text-lg">5가지 전략 종합 분석 | 2026-03-14</p>
+            <p class="text-white/80 text-lg">5가지 전략 종합 분석 | 2026-03-15</p>
         </div>
 
         <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-600">1046</div>
+                    <div class="text-3xl font-bold text-blue-600">1732</div>
                     <div class="text-sm text-gray-600">총 종목</div>
                 </div>
                 <div class="text-center p-4 bg-green-50 rounded-lg">
-                    <div class="text-3xl font-bold text-green-600">3</div>
-                    <div class="text-sm text-gray-600">3개 이상</div>
+                    <div class="text-3xl font-bold text-green-600">54</div>
+                    <div class="text-sm text-gray-600">2개 이상</div>
                 </div>
                 <div class="text-center p-4 bg-purple-50 rounded-lg">
                     <div class="text-3xl font-bold text-purple-600">20</div>
                     <div class="text-sm text-gray-600">거래대금TOP20</div>
                 </div>
                 <div class="text-center p-4 bg-orange-50 rounded-lg">
-                    <div class="text-3xl font-bold text-orange-600">15</div>
+                    <div class="text-3xl font-bold text-orange-600">81</div>
                     <div class="text-sm text-gray-600">모멘텀</div>
                 </div>
                 <div class="text-center p-4 bg-pink-50 rounded-lg">
-                    <div class="text-3xl font-bold text-pink-600">1035</div>
+                    <div class="text-3xl font-bold text-pink-600">1686</div>
                     <div class="text-sm text-gray-600">MA200우상향</div>
                 </div>
             </div>
@@ -63,6 +60,7 @@
                             <th class="px-3 py-2 text-left text-sm">순위</th>
                             <th class="px-3 py-2 text-left text-sm">종목코드</th>
                             <th class="px-3 py-2 text-left text-sm">종목명</th>
+                            <th class="px-3 py-2 text-center text-sm">시장</th>
                             <th class="px-3 py-2 text-right text-sm">현재가</th>
                             <th class="px-3 py-2 text-center text-sm">충족전략</th>
                             <th class="px-3 py-2 text-center text-sm">우선순위</th>
@@ -72,19 +70,21 @@
                     <tbody>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">1</td>
-                            <td class="px-3 py-3 font-bold">3280</td>
-                            <td class="px-3 py-3">흥아해운</td>
-                            <td class="px-3 py-3 text-right">2,335</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">3개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">10</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
+                            <td class="px-3 py-3 font-bold">417200</td>
+                            <td class="px-3 py-3">머트리얼즈</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">22,850</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">4개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">15</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">2</td>
                             <td class="px-3 py-3 font-bold">47040</td>
                             <td class="px-3 py-3">대우건설</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
                             <td class="px-3 py-3 text-right">12,320</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">3개</span></td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">3개</span></td>
                             <td class="px-3 py-3 text-center font-bold">10</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
@@ -92,253 +92,281 @@
                             <td class="px-3 py-3">3</td>
                             <td class="px-3 py-3 font-bold">475150</td>
                             <td class="px-3 py-3">이터닉스</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
                             <td class="px-3 py-3 text-right">39,350</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-a text-sm font-bold">3개</span></td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">3개</span></td>
                             <td class="px-3 py-3 text-center font-bold">10</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">4</td>
-                            <td class="px-3 py-3 font-bold">481050</td>
-                            <td class="px-3 py-3">년금리플러스액티브</td>
-                            <td class="px-3 py-3 text-right">1,022,435</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">39980</td>
+                            <td class="px-3 py-3">폴라리스AI</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">2,045</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">8</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">5</td>
-                            <td class="px-3 py-3 font-bold">660</td>
-                            <td class="px-3 py-3">하이닉스</td>
-                            <td class="px-3 py-3 text-right">910,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
+                            <td class="px-3 py-3 font-bold">481050</td>
+                            <td class="px-3 py-3">년금리플러스액티브</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">1,022,435</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">8</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">6</td>
-                            <td class="px-3 py-3 font-bold">720</td>
-                            <td class="px-3 py-3">현대건설</td>
-                            <td class="px-3 py-3 text-right">164,400</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">10170</td>
+                            <td class="px-3 py-3">대한광통신</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">7,400</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">7</td>
-                            <td class="px-3 py-3 font-bold">3670</td>
-                            <td class="px-3 py-3">포스코퓨처엠</td>
-                            <td class="px-3 py-3 text-right">190,900</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">32820</td>
+                            <td class="px-3 py-3">우리기술</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">24,450</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">8</td>
-                            <td class="px-3 py-3 font-bold">5380</td>
-                            <td class="px-3 py-3">현대차</td>
-                            <td class="px-3 py-3 text-right">517,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">660</td>
+                            <td class="px-3 py-3">하이닉스</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">910,000</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">9</td>
-                            <td class="px-3 py-3 font-bold">5930</td>
-                            <td class="px-3 py-3">삼성전자</td>
-                            <td class="px-3 py-3 text-right">183,300</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">720</td>
+                            <td class="px-3 py-3">현대건설</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">164,400</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">10</td>
-                            <td class="px-3 py-3 font-bold">5935</td>
-                            <td class="px-3 py-3">삼성전자우</td>
-                            <td class="px-3 py-3 text-right">133,900</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">5380</td>
+                            <td class="px-3 py-3">현대차</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">517,000</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">11</td>
-                            <td class="px-3 py-3 font-bold">10140</td>
-                            <td class="px-3 py-3">삼성중공업</td>
-                            <td class="px-3 py-3 text-right">30,700</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">5930</td>
+                            <td class="px-3 py-3">삼성전자</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">183,300</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">12</td>
-                            <td class="px-3 py-3 font-bold">12450</td>
-                            <td class="px-3 py-3">한화에어로스페이스</td>
-                            <td class="px-3 py-3 text-right">1,488,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">5935</td>
+                            <td class="px-3 py-3">삼성전자우</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">133,900</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">13</td>
-                            <td class="px-3 py-3 font-bold">34020</td>
-                            <td class="px-3 py-3">두산에너빌리티</td>
-                            <td class="px-3 py-3 text-right">106,500</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">10140</td>
+                            <td class="px-3 py-3">삼성중공업</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">30,700</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">14</td>
-                            <td class="px-3 py-3 font-bold">91160</td>
-                            <td class="px-3 py-3">반도체</td>
-                            <td class="px-3 py-3 text-right">96,935</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">12450</td>
+                            <td class="px-3 py-3">한화에어로스페이스</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">1,488,000</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">15</td>
-                            <td class="px-3 py-3 font-bold">122630</td>
-                            <td class="px-3 py-3">레버리지</td>
-                            <td class="px-3 py-3 text-right">79,725</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">34020</td>
+                            <td class="px-3 py-3">두산에너빌리티</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">106,500</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">16</td>
-                            <td class="px-3 py-3 font-bold">229200</td>
-                            <td class="px-3 py-3">코스닥150</td>
-                            <td class="px-3 py-3 text-right">19,925</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">91160</td>
+                            <td class="px-3 py-3">반도체</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">96,935</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">17</td>
-                            <td class="px-3 py-3 font-bold">233740</td>
-                            <td class="px-3 py-3">코스닥150레버리지</td>
-                            <td class="px-3 py-3 text-right">17,150</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">122630</td>
+                            <td class="px-3 py-3">레버리지</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">79,725</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">18</td>
-                            <td class="px-3 py-3 font-bold">396500</td>
-                            <td class="px-3 py-3">반도체TOP10</td>
-                            <td class="px-3 py-3 text-right">32,365</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">229200</td>
+                            <td class="px-3 py-3">코스닥150</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">19,925</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">7</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">19</td>
-                            <td class="px-3 py-3 font-bold">1550</td>
-                            <td class="px-3 py-3">조비</td>
-                            <td class="px-3 py-3 text-right">17,260</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
+                            <td class="px-3 py-3 font-bold">233740</td>
+                            <td class="px-3 py-3">코스닥150레버리지</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">17,150</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">7</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">20</td>
-                            <td class="px-3 py-3 font-bold">6110</td>
-                            <td class="px-3 py-3">삼아알미늄</td>
-                            <td class="px-3 py-3 text-right">33,850</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
+                            <td class="px-3 py-3 font-bold">396500</td>
+                            <td class="px-3 py-3">반도체TOP10</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
+                            <td class="px-3 py-3 text-right">32,365</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">7</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">21</td>
-                            <td class="px-3 py-3 font-bold">19180</td>
-                            <td class="px-3 py-3">티에이치엔</td>
-                            <td class="px-3 py-3 text-right">8,610</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">5710</td>
+                            <td class="px-3 py-3">대원산업</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">13,820</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">5</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">22</td>
-                            <td class="px-3 py-3 font-bold">58730</td>
-                            <td class="px-3 py-3">다스코</td>
-                            <td class="px-3 py-3 text-right">3,600</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-b text-sm font-bold">2개</span></td>
+                            <td class="px-3 py-3 font-bold">19210</td>
+                            <td class="px-3 py-3">와이지-원</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">13,790</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">5</td>
                             <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">23</td>
-                            <td class="px-3 py-3 font-bold">114800</td>
-                            <td class="px-3 py-3">인버스</td>
-                            <td class="px-3 py-3 text-right">1,711</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
+                            <td class="px-3 py-3 font-bold">33160</td>
+                            <td class="px-3 py-3">엠케이전자</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">14,300</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span></td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">24</td>
-                            <td class="px-3 py-3 font-bold">252670</td>
-                            <td class="px-3 py-3">선물인버스2X</td>
-                            <td class="px-3 py-3 text-right">284</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
+                            <td class="px-3 py-3 font-bold">39200</td>
+                            <td class="px-3 py-3">오스코텍</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">56,100</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span></td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">25</td>
-                            <td class="px-3 py-3 font-bold">459580</td>
-                            <td class="px-3 py-3">금리액티브</td>
-                            <td class="px-3 py-3 text-right">1,074,375</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
+                            <td class="px-3 py-3 font-bold">52020</td>
+                            <td class="px-3 py-3">에스티큐브</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">18,050</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
                             <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span></td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">26</td>
-                            <td class="px-3 py-3 font-bold">3920</td>
-                            <td class="px-3 py-3">남양유업</td>
-                            <td class="px-3 py-3 text-right">55,900</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">3</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span></td>
+                            <td class="px-3 py-3 font-bold">60370</td>
+                            <td class="px-3 py-3">마린솔루션</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">33,000</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">5</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">27</td>
-                            <td class="px-3 py-3 font-bold">3925</td>
-                            <td class="px-3 py-3">남양유업우</td>
-                            <td class="px-3 py-3 text-right">40,950</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">3</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span></td>
+                            <td class="px-3 py-3 font-bold">64820</td>
+                            <td class="px-3 py-3">케이프</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">11,180</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">5</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">28</td>
-                            <td class="px-3 py-3 font-bold">8350</td>
-                            <td class="px-3 py-3">남선알미늄</td>
-                            <td class="px-3 py-3 text-right">1,506</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">3</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span></td>
+                            <td class="px-3 py-3 font-bold">82920</td>
+                            <td class="px-3 py-3">비츠로셀</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">26,100</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">5</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">29</td>
-                            <td class="px-3 py-3 font-bold">8355</td>
-                            <td class="px-3 py-3">남선알미우</td>
-                            <td class="px-3 py-3 text-right">14,020</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">3</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span></td>
+                            <td class="px-3 py-3 font-bold">89890</td>
+                            <td class="px-3 py-3">코세스</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">28,850</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">5</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                         <tr class="border-b hover:bg-gray-50">
                             <td class="px-3 py-3">30</td>
-                            <td class="px-3 py-3 font-bold">51630</td>
-                            <td class="px-3 py-3">진양화학</td>
-                            <td class="px-3 py-3 text-right">2,485</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white grade-c text-sm font-bold">1개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">3</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span></td>
+                            <td class="px-3 py-3 font-bold">138080</td>
+                            <td class="px-3 py-3">오이솔루션</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
+                            <td class="px-3 py-3 text-right">35,850</td>
+                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
+                            <td class="px-3 py-3 text-center font-bold">5</td>
+                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -361,7 +389,7 @@
                 <div class="bg-green-50 rounded-xl p-4">
                     <div class="font-bold text-green-700 mb-2">🚀 전략3: 새로운 모멘텀</div>
                     <div class="text-sm text-gray-600">거래량 200%+ + 가격 돌파</div>
-                    <div class="text-2xl font-bold text-green-600 mt-2">19개</div>
+                    <div class="text-2xl font-bold text-green-600 mt-2">81개</div>
                 </div>
                 <div class="bg-yellow-50 rounded-xl p-4">
                     <div class="font-bold text-yellow-700 mb-2">💥 전략4: 거래대금 2000억+ 첫 돌파</div>
@@ -371,13 +399,13 @@
                 <div class="bg-purple-50 rounded-xl p-4">
                     <div class="font-bold text-purple-700 mb-2">📉 전략5: 200일선 우상향</div>
                     <div class="text-sm text-gray-600">장기 추세 상승 확인</div>
-                    <div class="text-2xl font-bold text-purple-600 mt-2">89개</div>
+                    <div class="text-2xl font-bold text-purple-600 mt-2">1686개</div>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-8 text-white/60 text-sm">
-            <p>Multi-Strategy Scanner | Generated: 2026-03-14</p>
+            <p>Multi-Strategy Scanner | Generated: 2026-03-15 | KOSPI + KOSDAQ Full Scan</p>
         </div>
     </div>
 </body>

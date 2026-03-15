@@ -65,10 +65,12 @@ class MultiStrategyScanner:
         self.today = datetime.now().strftime('%Y-%m-%d')
         
     def get_all_stocks(self) -> pd.DataFrame:
-        """전체 종목 리스트 로드"""
-        with open('./data/stock_list.json', 'r') as f:
-            data = json.load(f)
-        return pd.DataFrame(data['stocks'])
+        """전체 종목 리스트 로드 (DB에서 직접 로드)"""
+        query = "SELECT symbol, name, market FROM stock_info ORDER BY market, symbol"
+        df = pd.read_sql_query(query, self.db.conn)
+        df.columns = ['symbol', 'name', 'market']  # 컬럼명 통일
+        print(f"📊 DB에서 종목 로드: {len(df)}개 (KOSPI {len(df[df['market']=='KOSPI'])}, KOSDAQ {len(df[df['market']=='KOSDAQ'])})")
+        return df
     
     def calculate_ma(self, df: pd.DataFrame, period: int) -> pd.Series:
         """이동평균선 계산"""
