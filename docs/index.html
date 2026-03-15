@@ -193,6 +193,85 @@
             </div>
         </div>
 
+        <!-- Backtest Report Section -->
+        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl border-2 border-yellow-400">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-flask text-white text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800">🧪 백테스트 분석</h2>
+                    <p class="text-gray-500 text-sm">2026년 1월~3월 전략 검증 결과</p>
+                </div>
+            </div>
+            
+            <a href="multi_strategy_backtest_report.html" class="report-card block bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-5 border border-yellow-200 hover:border-yellow-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center text-white">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">Multi-Strategy 백테스트 리포트</h3>
+                            <p class="text-gray-500 text-sm">📈 수익률 +9.49% | 승률 38.7% | 124회 거래 분석</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">+9.49% 수익</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">71.4% 최고조합</span>
+                                <span class="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">Chart.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-orange-600">+9.49%</div>
+                        <div class="text-sm text-gray-500">총 수익률</div>
+                        <i class="fas fa-chevron-right text-gray-400 mt-2"></i>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Backtest Links -->
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <a href="multi_strategy_backtest/strategy_report.md" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-yellow-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">전략 리포트 (MD)</h3>
+                            <p class="text-xs text-gray-500">매매전략 상세</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="multi_strategy_backtest/deep_analysis_report.md" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-yellow-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">심층 분석 리포트</h3>
+                            <p class="text-xs text-gray-500">종목별 공통점 분석</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400"></i>
+                    </div>
+                </a>
+                
+                <a href="multi_strategy_backtest/trades.csv" class="report-card bg-white rounded-xl p-4 border border-gray-200 hover:border-yellow-300">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-800 text-sm">거래 내역 (CSV)</h3>
+                            <p class="text-xs text-gray-500">124회 거래 데이터</p>
+                        </div>
+                        <i class="fas fa-download text-gray-400"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <!-- Previous Reports Grid -->
         <div class="glass rounded-2xl p-6 shadow-2xl">
             <h2 class="text-xl font-bold text-gray-800 mb-4">
