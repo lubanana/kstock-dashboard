@@ -2,411 +2,557 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Multi-Strategy Scan Report - 2026-03-15</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { font-family: 'Noto Sans KR', sans-serif; }
+        * { font-family: 'Noto+Sans+KR', sans-serif; box-sizing: border-box; }
         body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
         .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-        .strategy-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 2px; }
+        .strategy-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 2px; display: inline-block; }
         .s1 { background: #dbeafe; color: #1e40af; }
         .s2 { background: #fce7f3; color: #9d174d; }
         .s3 { background: #dcfce7; color: #166534; }
         .s4 { background: #fef3c7; color: #92400e; }
         .s5 { background: #f3e8ff; color: #7c3aed; }
+        
+        /* Stock row clickable */
+        .stock-row { cursor: pointer; transition: all 0.2s; }
+        .stock-row:hover { background-color: #f0f9ff; }
+        .stock-row:active { transform: scale(0.98); }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .mobile-card { display: block !important; }
+            .desktop-table { display: none !important; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .stats-grid > div:last-child { grid-column: span 2; }
+        }
+        @media (min-width: 641px) {
+            .mobile-card { display: none !important; }
+            .desktop-table { display: block !important; }
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        .modal.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 95%;
+            max-height: 95vh;
+            overflow-y: auto;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Strategy cards */
+        .criteria-card {
+            border-left: 4px solid;
+            padding: 12px 16px;
+            margin: 8px 0;
+            background: #f9fafb;
+            border-radius: 0 8px 8px 0;
+        }
+        .criteria-pass { border-left-color: #10b981; background: #ecfdf5; }
+        .criteria-fail { border-left-color: #ef4444; background: #fef2f2; }
+        
+        /* Chart container */
+        #tradingview-chart { min-height: 250px; }
     </style>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
 </head>
-<body class="py-8 px-4">
+<body class="py-4 px-2 sm:py-8 sm:px-4">
     <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-white mb-3">🎯 Multi-Strategy Scan Report</h1>
-            <p class="text-white/80 text-lg">5가지 전략 종합 분석 | 2026-03-15</p>
+        <!-- Header -->
+        <div class="text-center mb-6 sm:mb-10">
+            <h1 class="text-2xl sm:text-4xl font-bold text-white mb-2 sm:mb-3">🎯 Multi-Strategy Scan</h1>
+            <p class="text-white/80 text-sm sm:text-lg">5가지 전략 종합 분석 | 2026-03-15</p>
+            <p class="text-white/60 text-xs sm:text-sm mt-1">종목 클릭하여 상세 정보 확인</p>
         </div>
 
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="text-center p-4 bg-blue-50 rounded-lg">
-                    <div class="text-3xl font-bold text-blue-600">1732</div>
-                    <div class="text-sm text-gray-600">총 종목</div>
+        <!-- Summary Stats -->
+        <div class="glass rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-2xl">
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 stats-grid">
+                <div class="text-center p-3 sm:p-4 bg-blue-50 rounded-lg">
+                    <div class="text-xl sm:text-3xl font-bold text-blue-600">1732</div>
+                    <div class="text-xs sm:text-sm text-gray-600">총 종목</div>
                 </div>
-                <div class="text-center p-4 bg-green-50 rounded-lg">
-                    <div class="text-3xl font-bold text-green-600">54</div>
-                    <div class="text-sm text-gray-600">2개 이상</div>
+                <div class="text-center p-3 sm:p-4 bg-green-50 rounded-lg">
+                    <div class="text-xl sm:text-3xl font-bold text-green-600">54</div>
+                    <div class="text-xs sm:text-sm text-gray-600">2개 이상</div>
                 </div>
-                <div class="text-center p-4 bg-purple-50 rounded-lg">
-                    <div class="text-3xl font-bold text-purple-600">20</div>
-                    <div class="text-sm text-gray-600">거래대금TOP20</div>
+                <div class="text-center p-3 sm:p-4 bg-purple-50 rounded-lg">
+                    <div class="text-xl sm:text-3xl font-bold text-purple-600">20</div>
+                    <div class="text-xs sm:text-sm text-gray-600">거래대금TOP20</div>
                 </div>
-                <div class="text-center p-4 bg-orange-50 rounded-lg">
-                    <div class="text-3xl font-bold text-orange-600">81</div>
-                    <div class="text-sm text-gray-600">모멘텀</div>
+                <div class="text-center p-3 sm:p-4 bg-orange-50 rounded-lg">
+                    <div class="text-xl sm:text-3xl font-bold text-orange-600">738</div>
+                    <div class="text-xs sm:text-sm text-gray-600">모멘텀</div>
                 </div>
-                <div class="text-center p-4 bg-pink-50 rounded-lg">
-                    <div class="text-3xl font-bold text-pink-600">1686</div>
-                    <div class="text-sm text-gray-600">MA200우상향</div>
+                <div class="text-center p-3 sm:p-4 bg-pink-50 rounded-lg">
+                    <div class="text-xl sm:text-3xl font-bold text-pink-600">1364</div>
+                    <div class="text-xs sm:text-sm text-gray-600">MA200우상향</div>
                 </div>
             </div>
         </div>
 
-        <div class="glass rounded-2xl p-6 mb-8 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">🏆 TOP 30 종목 (우선순위 기준)</h2>
+        <!-- TOP 30 Desktop Table -->
+        <div class="glass rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-2xl desktop-table">
+            <h2 class="text-lg sm:text-xl font-bold mb-4">🏆 TOP 30 종목</h2>
             <div class="overflow-x-auto">
-                <table class="w-full">
+                <table class="w-full text-sm">
                     <thead class="bg-gray-50">
                         <tr>
-                            <th class="px-3 py-2 text-left text-sm">순위</th>
-                            <th class="px-3 py-2 text-left text-sm">종목코드</th>
-                            <th class="px-3 py-2 text-left text-sm">종목명</th>
-                            <th class="px-3 py-2 text-center text-sm">시장</th>
-                            <th class="px-3 py-2 text-right text-sm">현재가</th>
-                            <th class="px-3 py-2 text-center text-sm">충족전략</th>
-                            <th class="px-3 py-2 text-center text-sm">우선순위</th>
-                            <th class="px-3 py-2 text-center text-sm">전략</th>
+                            <th class="px-2 py-2 text-left">순위</th>
+                            <th class="px-2 py-2 text-left">종목</th>
+                            <th class="px-2 py-2 text-center">시장</th>
+                            <th class="px-2 py-2 text-right">현재가</th>
+                            <th class="px-2 py-2 text-center">전략</th>
+                            <th class="px-2 py-2 text-center">우선순위</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">1</td>
-                            <td class="px-3 py-3 font-bold">417200</td>
-                            <td class="px-3 py-3">머트리얼즈</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">22,850</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">4개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">15</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">2</td>
-                            <td class="px-3 py-3 font-bold">47040</td>
-                            <td class="px-3 py-3">대우건설</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">12,320</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">3개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">10</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">3</td>
-                            <td class="px-3 py-3 font-bold">475150</td>
-                            <td class="px-3 py-3">이터닉스</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">39,350</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">3개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">10</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">4</td>
-                            <td class="px-3 py-3 font-bold">39980</td>
-                            <td class="px-3 py-3">폴라리스AI</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">2,045</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">8</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">5</td>
-                            <td class="px-3 py-3 font-bold">481050</td>
-                            <td class="px-3 py-3">년금리플러스액티브</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">1,022,435</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">8</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s4">2000억</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">6</td>
-                            <td class="px-3 py-3 font-bold">10170</td>
-                            <td class="px-3 py-3">대한광통신</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">7,400</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">7</td>
-                            <td class="px-3 py-3 font-bold">32820</td>
-                            <td class="px-3 py-3">우리기술</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">24,450</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">8</td>
-                            <td class="px-3 py-3 font-bold">660</td>
-                            <td class="px-3 py-3">하이닉스</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">910,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">9</td>
-                            <td class="px-3 py-3 font-bold">720</td>
-                            <td class="px-3 py-3">현대건설</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">164,400</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">10</td>
-                            <td class="px-3 py-3 font-bold">5380</td>
-                            <td class="px-3 py-3">현대차</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">517,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">11</td>
-                            <td class="px-3 py-3 font-bold">5930</td>
-                            <td class="px-3 py-3">삼성전자</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">183,300</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">12</td>
-                            <td class="px-3 py-3 font-bold">5935</td>
-                            <td class="px-3 py-3">삼성전자우</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">133,900</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">13</td>
-                            <td class="px-3 py-3 font-bold">10140</td>
-                            <td class="px-3 py-3">삼성중공업</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">30,700</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">14</td>
-                            <td class="px-3 py-3 font-bold">12450</td>
-                            <td class="px-3 py-3">한화에어로스페이스</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">1,488,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">15</td>
-                            <td class="px-3 py-3 font-bold">34020</td>
-                            <td class="px-3 py-3">두산에너빌리티</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">106,500</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">16</td>
-                            <td class="px-3 py-3 font-bold">91160</td>
-                            <td class="px-3 py-3">반도체</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">96,935</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">17</td>
-                            <td class="px-3 py-3 font-bold">122630</td>
-                            <td class="px-3 py-3">레버리지</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">79,725</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">18</td>
-                            <td class="px-3 py-3 font-bold">229200</td>
-                            <td class="px-3 py-3">코스닥150</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">19,925</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">19</td>
-                            <td class="px-3 py-3 font-bold">233740</td>
-                            <td class="px-3 py-3">코스닥150레버리지</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">17,150</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">20</td>
-                            <td class="px-3 py-3 font-bold">396500</td>
-                            <td class="px-3 py-3">반도체TOP10</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-blue-100 text-blue-700">KOSPI</span></td>
-                            <td class="px-3 py-3 text-right">32,365</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">7</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s1">TOP20</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">21</td>
-                            <td class="px-3 py-3 font-bold">5710</td>
-                            <td class="px-3 py-3">대원산업</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">13,820</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">22</td>
-                            <td class="px-3 py-3 font-bold">19210</td>
-                            <td class="px-3 py-3">와이지-원</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">13,790</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">23</td>
-                            <td class="px-3 py-3 font-bold">33160</td>
-                            <td class="px-3 py-3">엠케이전자</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">14,300</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">24</td>
-                            <td class="px-3 py-3 font-bold">39200</td>
-                            <td class="px-3 py-3">오스코텍</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">56,100</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">25</td>
-                            <td class="px-3 py-3 font-bold">52020</td>
-                            <td class="px-3 py-3">에스티큐브</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">18,050</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">26</td>
-                            <td class="px-3 py-3 font-bold">60370</td>
-                            <td class="px-3 py-3">마린솔루션</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">33,000</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">27</td>
-                            <td class="px-3 py-3 font-bold">64820</td>
-                            <td class="px-3 py-3">케이프</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">11,180</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">28</td>
-                            <td class="px-3 py-3 font-bold">82920</td>
-                            <td class="px-3 py-3">비츠로셀</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">26,100</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">29</td>
-                            <td class="px-3 py-3 font-bold">89890</td>
-                            <td class="px-3 py-3">코세스</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">28,850</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="px-3 py-3">30</td>
-                            <td class="px-3 py-3 font-bold">138080</td>
-                            <td class="px-3 py-3">오이솔루션</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-xs bg-green-100 text-green-700">KOSDAQ</span></td>
-                            <td class="px-3 py-3 text-right">35,850</td>
-                            <td class="px-3 py-3 text-center"><span class="px-2 py-1 rounded text-white text-sm font-bold bg-gradient-to-r from-purple-500 to-pink-500">2개</span></td>
-                            <td class="px-3 py-3 text-center font-bold">5</td>
-                            <td class="px-3 py-3 text-center"><span class="strategy-badge s3">모멘텀</span><span class="strategy-badge s5">MA200</span></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="top30-desktop"></tbody>
                 </table>
             </div>
         </div>
 
-        <div class="glass rounded-2xl p-6 shadow-2xl">
-            <h2 class="text-xl font-bold mb-4">📊 전략별 발굴 현황</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 rounded-xl p-4">
-                    <div class="font-bold text-blue-700 mb-2">📈 전략1: 거래대금 TOP 20</div>
-                    <div class="text-sm text-gray-600">당일 거래대금 상위 20개 종목</div>
-                    <div class="text-2xl font-bold text-blue-600 mt-2">20개</div>
+        <!-- TOP 30 Mobile Cards -->
+        <div class="glass rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-2xl mobile-card">
+            <h2 class="text-lg font-bold mb-4">🏆 TOP 30 종목</h2>
+            <div id="top30-mobile" class="space-y-3"></div>
+        </div>
+
+        <!-- All Stocks Section -->
+        <div class="glass rounded-2xl p-4 sm:p-6 shadow-2xl">
+            <h2 class="text-lg sm:text-xl font-bold mb-4">📊 전체 종목</h2>
+            <!-- Filter buttons -->
+            <div class="flex flex-wrap gap-2 mb-4">
+                <button onclick="filterStocks('all')" class="px-3 py-1 rounded-full text-xs bg-purple-100 text-purple-700 active-filter" id="filter-all">전체</button>
+                <button onclick="filterStocks('kospi')" class="px-3 py-1 rounded-full text-xs bg-blue-100 text-blue-700" id="filter-kospi">KOSPI</button>
+                <button onclick="filterStocks('kosdaq')" class="px-3 py-1 rounded-full text-xs bg-green-100 text-green-700" id="filter-kosdaq">KOSDAQ</button>
+                <button onclick="filterStocks('multi')" class="px-3 py-1 rounded-full text-xs bg-orange-100 text-orange-700" id="filter-multi">2개 이상</button>
+            </div>
+            <!-- Desktop Table -->
+            <div class="overflow-x-auto desktop-table">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-2 py-2 text-left">순위</th>
+                            <th class="px-2 py-2 text-left">종목</th>
+                            <th class="px-2 py-2 text-center">시장</th>
+                            <th class="px-2 py-2 text-right">현재가</th>
+                            <th class="px-2 py-2 text-center">충족</th>
+                            <th class="px-2 py-2 text-center">전략</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-stocks-desktop"></tbody>
+                </table>
+            </div>
+            <!-- Mobile Cards -->
+            <div id="all-stocks-mobile" class="space-y-3 mobile-card"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-6 sm:mt-8 text-white/60 text-xs sm:text-sm">
+            <p>Multi-Strategy Scanner | 2026-03-15 | KOSPI + KOSDAQ Full Scan</p>
+        </div>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="p-4 sm:p-6">
+                <!-- Header -->
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 id="modal-title" class="text-xl sm:text-2xl font-bold"></h2>
+                        <p id="modal-subtitle" class="text-gray-500 text-sm"></p>
+                    </div>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 text-2xl p-1">&times;</button>
                 </div>
-                <div class="bg-pink-50 rounded-xl p-4">
-                    <div class="font-bold text-pink-700 mb-2">🔄 전략2: 턴어라운드</div>
-                    <div class="text-sm text-gray-600">52주 신고가 또는 역사적 신고가 근접</div>
-                    <div class="text-2xl font-bold text-pink-600 mt-2">0개</div>
+
+                <!-- Price & Stats -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                    <div class="bg-blue-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">현재가</div>
+                        <div id="modal-price" class="text-lg font-bold text-blue-600"></div>
+                    </div>
+                    <div class="bg-purple-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">거래대금</div>
+                        <div id="modal-amount" class="text-lg font-bold text-purple-600"></div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">충족 전략</div>
+                        <div id="modal-strategy-count" class="text-lg font-bold text-green-600"></div>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-3 text-center">
+                        <div class="text-xs text-gray-500">우선순위</div>
+                        <div id="modal-priority" class="text-lg font-bold text-orange-600"></div>
+                    </div>
                 </div>
-                <div class="bg-green-50 rounded-xl p-4">
-                    <div class="font-bold text-green-700 mb-2">🚀 전략3: 새로운 모멘텀</div>
-                    <div class="text-sm text-gray-600">거래량 200%+ + 가격 돌파</div>
-                    <div class="text-2xl font-bold text-green-600 mt-2">81개</div>
+
+                <!-- TradingView Chart -->
+                <div class="bg-gray-50 rounded-xl p-3 sm:p-4 mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-bold text-gray-700 text-sm sm:text-base">📈 차트</span>
+                        <div class="flex gap-2 text-xs">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded">목표가 +15%</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-700 rounded">손절가 -7%</span>
+                        </div>
+                    </div>
+                    <div id="tradingview-chart" style="height: 250px; width: 100%;"></div>
+                    <div class="flex justify-between mt-2 text-xs text-gray-500">
+                        <span>🟢 목표가 (+15%)</span>
+                        <span>🔴 손절가 (-7%)</span>
+                    </div>
                 </div>
-                <div class="bg-yellow-50 rounded-xl p-4">
-                    <div class="font-bold text-yellow-700 mb-2">💥 전략4: 거래대금 2000억+ 첫 돌파</div>
-                    <div class="text-sm text-gray-600">과거 60일간 2000억 미만</div>
-                    <div class="text-2xl font-bold text-yellow-600 mt-2">1개</div>
-                </div>
-                <div class="bg-purple-50 rounded-xl p-4">
-                    <div class="font-bold text-purple-700 mb-2">📉 전략5: 200일선 우상향</div>
-                    <div class="text-sm text-gray-600">장기 추세 상승 확인</div>
-                    <div class="text-2xl font-bold text-purple-600 mt-2">1686개</div>
+
+                <!-- Strategy Details -->
+                <h3 class="font-bold text-gray-800 mb-3">🎯 충족한 전략</h3>
+                <div class="space-y-2" id="modal-strategies">
+                    <!-- Strategy cards will be inserted here -->
                 </div>
             </div>
         </div>
-
-        <div class="text-center mt-8 text-white/60 text-sm">
-            <p>Multi-Strategy Scanner | Generated: 2026-03-15 | KOSPI + KOSDAQ Full Scan</p>
-        </div>
     </div>
+
+    <script>
+        // Stock Data
+        const stockData = {
+            "417200": {"name": "머트리얼즈", "market": "KOSDAQ", "price": 22850, "amount": 8703.5, "strategy_count": 4, "priority": 15, "s1": true, "s1_rank": 7, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "7.8x", "s4": true, "s5": true, "ma200_slope": "5.1%"},
+            "047040": {"name": "대우건설", "market": "KOSPI", "price": 12320, "amount": 10535.1, "strategy_count": 3, "priority": 10, "s1": true, "s1_rank": 5, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "3.0x", "s4": false, "s5": true, "ma200_slope": "12.9%"},
+            "475150": {"name": "이터닉스", "market": "KOSPI", "price": 39350, "amount": 4543.4, "strategy_count": 3, "priority": 10, "s1": true, "s1_rank": 14, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "3.3x", "s4": false, "s5": true, "ma200_slope": "5.2%"},
+            "039980": {"name": "폴리리스AI", "market": "KOSDAQ", "price": 2045, "amount": 0, "strategy_count": 2, "priority": 8, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "13.8x", "s4": true, "s5": false, "ma200_slope": "-4.4%"},
+            "481050": {"name": "년금리플러스액티브", "market": "KOSPI", "price": 1022435, "amount": 0, "strategy_count": 2, "priority": 8, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "6.8x", "s4": true, "s5": false, "ma200_slope": "0.2%"},
+            "010170": {"name": "대한광통신", "market": "KOSDAQ", "price": 7400, "amount": 3143.9, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 20, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "1.4x", "s4": false, "s5": true, "ma200_slope": "25.2%"},
+            "032820": {"name": "우리기술", "market": "KOSDAQ", "price": 24450, "amount": 14704.7, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 3, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "1.5x", "s4": false, "s5": true, "ma200_slope": "35.2%"},
+            "000660": {"name": "하이닉스", "market": "KOSPI", "price": 910000, "amount": 30012.0, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 1, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.7x", "s4": false, "s5": true, "ma200_slope": "17.2%"},
+            "000720": {"name": "현대건설", "market": "KOSPI", "price": 164400, "amount": 4456.3, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 16, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "1.3x", "s4": false, "s5": true, "ma200_slope": "14.1%"},
+            "005380": {"name": "현대차", "market": "KOSPI", "price": 517000, "amount": 4913.8, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 12, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.4x", "s4": false, "s5": true, "ma200_slope": "12.8%"},
+            "005930": {"name": "삼성전자", "market": "KOSPI", "price": 183300, "amount": 25264.6, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 2, "s2": false, "s2_52w": "-17.8%", "s3": false, "volume_ratio": "0.4x", "s4": false, "s5": true, "ma200_slope": "14.5%"},
+            "005935": {"name": "삼성전자우", "market": "KOSPI", "price": 133900, "amount": 4057.5, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 17, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.5x", "s4": false, "s5": true, "ma200_slope": "11.9%"},
+            "010140": {"name": "삼성중공업", "market": "KOSPI", "price": 30700, "amount": 3250.1, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 19, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "1.7x", "s4": false, "s5": true, "ma200_slope": "6.1%"},
+            "012450": {"name": "한화에어로스페이스", "market": "KOSPI", "price": 1488000, "amount": 4792.7, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 13, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.7x", "s4": false, "s5": true, "ma200_slope": "4.8%"},
+            "034020": {"name": "두산에너빌리티", "market": "KOSPI", "price": 106500, "amount": 10048.4, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 6, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "1.2x", "s4": false, "s5": true, "ma200_slope": "10.1%"},
+            "091160": {"name": "반도체", "market": "KOSPI", "price": 96935, "amount": 3301.5, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 18, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.6x", "s4": false, "s5": true, "ma200_slope": "13.0%"},
+            "122630": {"name": "레버리지", "market": "KOSPI", "price": 79725, "amount": 14493.9, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 4, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.8x", "s4": false, "s5": true, "ma200_slope": "20.4%"},
+            "229200": {"name": "코스닥150", "market": "KOSPI", "price": 19925, "amount": 4487.8, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 15, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.4x", "s4": false, "s5": true, "ma200_slope": "5.4%"},
+            "233740": {"name": "코스닥150레버리지", "market": "KOSPI", "price": 17150, "amount": 7303.6, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 8, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.5x", "s4": false, "s5": true, "ma200_slope": "10.1%"},
+            "396500": {"name": "반도체TOP10", "market": "KOSPI", "price": 32365, "amount": 5319.9, "strategy_count": 2, "priority": 7, "s1": true, "s1_rank": 10, "s2": false, "s2_52w": "0.0%", "s3": false, "volume_ratio": "0.6x", "s4": false, "s5": true, "ma200_slope": "13.9%"},
+            "005710": {"name": "대원산업", "market": "KOSDAQ", "price": 13820, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "3.2x", "s4": false, "s5": true, "ma200_slope": "5.6%"},
+            "019210": {"name": "와이지-원", "market": "KOSDAQ", "price": 13790, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.8x", "s4": false, "s5": true, "ma200_slope": "6.7%"},
+            "033160": {"name": "엠케이전자", "market": "KOSDAQ", "price": 14300, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.9x", "s4": false, "s5": true, "ma200_slope": "3.0%"},
+            "039200": {"name": "오스코텍", "market": "KOSDAQ", "price": 56100, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.9x", "s4": false, "s5": true, "ma200_slope": "5.7%"},
+            "052020": {"name": "에스티큐브", "market": "KOSDAQ", "price": 18050, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.5x", "s4": false, "s5": true, "ma200_slope": "5.4%"},
+            "060370": {"name": "마린솔루션", "market": "KOSDAQ", "price": 33000, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.9x", "s4": false, "s5": true, "ma200_slope": "5.3%"},
+            "064820": {"name": "케이프", "market": "KOSDAQ", "price": 11180, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.9x", "s4": false, "s5": true, "ma200_slope": "4.7%"},
+            "082920": {"name": "비츠로셀", "market": "KOSDAQ", "price": 26100, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.2x", "s4": false, "s5": true, "ma200_slope": "5.5%"},
+            "089890": {"name": "코세스", "market": "KOSDAQ", "price": 28850, "amount": 0, "strategy_count": 2, "priority": 5, "s1": false, "s1_rank": null, "s2": false, "s2_52w": "0.0%", "s3": true, "volume_ratio": "2.8x", "s4": false, "s5": true, "ma200_slope": "9.6%"}
+        };
+
+        let currentFilter = 'all';
+
+        function init() {
+            renderTop30();
+            renderAllStocks();
+        }
+
+        function getStrategyBadges(stock) {
+            let badges = '';
+            if (stock.s1) badges += '<span class="strategy-badge s1">TOP20</span>';
+            if (stock.s2) badges += '<span class="strategy-badge s2">턴어</span>';
+            if (stock.s3) badges += '<span class="strategy-badge s3">모멘텀</span>';
+            if (stock.s4) badges += '<span class="strategy-badge s4">2000억</span>';
+            if (stock.s5) badges += '<span class="strategy-badge s5">MA200</span>';
+            return badges || '-';
+        }
+
+        function renderTop30() {
+            const stocks = Object.entries(stockData)
+                .sort((a, b) => b[1].priority - a[1].priority)
+                .slice(0, 30);
+
+            // Desktop
+            let desktopHtml = '';
+            stocks.forEach(([symbol, data], idx) => {
+                const marketColor = data.market === 'KOSPI' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700';
+                const strategyClass = data.strategy_count >= 3 ? 'bg-gradient-to-r from-purple-500 to-pink-500' : 
+                                      data.strategy_count === 2 ? 'bg-blue-500' : 'bg-gray-400';
+                desktopHtml += `
+                    <tr class="stock-row border-b" onclick="openModal('${symbol}')">
+                        <td class="px-2 py-2">${idx + 1}</td>
+                        <td class="px-2 py-2">
+                            <div class="font-bold">${data.name}</div>
+                            <div class="text-xs text-gray-500">${symbol}</div>
+                        </td>
+                        <td class="px-2 py-2 text-center"><span class="px-2 py-0.5 rounded text-xs ${marketColor}">${data.market}</span></td>
+                        <td class="px-2 py-2 text-right">${data.price.toLocaleString()}</td>
+                        <td class="px-2 py-2 text-center"><span class="px-2 py-1 rounded text-white text-xs font-bold ${strategyClass}">${data.strategy_count}개</span></td>
+                        <td class="px-2 py-2 text-center font-bold">${data.priority}</td>
+                    </tr>
+                `;
+            });
+            document.getElementById('top30-desktop').innerHTML = desktopHtml;
+
+            // Mobile
+            let mobileHtml = '';
+            stocks.forEach(([symbol, data], idx) => {
+                const marketColor = data.market === 'KOSPI' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700';
+                mobileHtml += `
+                    <div class="stock-row bg-white rounded-lg p-3 border" onclick="openModal('${symbol}')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">${data.name} <span class="text-xs text-gray-500">${symbol}</span></div>
+                                <div class="text-xs mt-1">${getStrategyBadges(data)}</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold">${data.price.toLocaleString()}</div>
+                                <div class="text-xs"><span class="px-2 py-0.5 rounded ${marketColor}">${data.market}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('top30-mobile').innerHTML = mobileHtml;
+        }
+
+        function renderAllStocks() {
+            let stocks = Object.entries(stockData).sort((a, b) => b[1].priority - a[1].priority);
+
+            // Apply filter
+            if (currentFilter === 'kospi') stocks = stocks.filter(([s, d]) => d.market === 'KOSPI');
+            if (currentFilter === 'kosdaq') stocks = stocks.filter(([s, d]) => d.market === 'KOSDAQ');
+            if (currentFilter === 'multi') stocks = stocks.filter(([s, d]) => d.strategy_count >= 2);
+
+            // Desktop
+            let desktopHtml = '';
+            stocks.forEach(([symbol, data], idx) => {
+                const marketColor = data.market === 'KOSPI' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700';
+                const strategyClass = data.strategy_count >= 3 ? 'bg-gradient-to-r from-purple-500 to-pink-500' : 
+                                      data.strategy_count === 2 ? 'bg-blue-500' : 'bg-gray-400';
+                desktopHtml += `
+                    <tr class="stock-row border-b" onclick="openModal('${symbol}')">
+                        <td class="px-2 py-2">${idx + 1}</td>
+                        <td class="px-2 py-2">
+                            <div class="font-bold">${data.name}</div>
+                            <div class="text-xs text-gray-500">${symbol}</div>
+                        </td>
+                        <td class="px-2 py-2 text-center"><span class="px-2 py-0.5 rounded text-xs ${marketColor}">${data.market}</span></td>
+                        <td class="px-2 py-2 text-right">${data.price.toLocaleString()}</td>
+                        <td class="px-2 py-2 text-center"><span class="px-2 py-1 rounded text-white text-xs font-bold ${strategyClass}">${data.strategy_count}개</span></td>
+                        <td class="px-2 py-2 text-center text-xs">${getStrategyBadges(data)}</td>
+                    </tr>
+                `;
+            });
+            document.getElementById('all-stocks-desktop').innerHTML = desktopHtml;
+
+            // Mobile
+            let mobileHtml = '';
+            stocks.forEach(([symbol, data], idx) => {
+                const marketColor = data.market === 'KOSPI' ? 'bg-blue-100 text-blue-700' : 'bg-green-100 text-green-700';
+                mobileHtml += `
+                    <div class="stock-row bg-white rounded-lg p-3 border" onclick="openModal('${symbol}')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <div class="font-bold">${data.name} <span class="text-xs text-gray-500">${symbol}</span></div>
+                                <div class="text-xs mt-1">${getStrategyBadges(data)}</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold">${data.price.toLocaleString()}</div>
+                                <div class="text-xs"><span class="px-2 py-0.5 rounded ${marketColor}">${data.market}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('all-stocks-mobile').innerHTML = mobileHtml;
+        }
+
+        function filterStocks(type) {
+            currentFilter = type;
+            // Update button styles
+            document.querySelectorAll('[id^="filter-"]').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-offset-1', 'ring-purple-500');
+            });
+            document.getElementById(`filter-${type}`).classList.add('ring-2', 'ring-offset-1', 'ring-purple-500');
+            renderAllStocks();
+        }
+
+        function openModal(symbol) {
+            const data = stockData[symbol];
+            if (!data) return;
+
+            document.getElementById('modal-title').textContent = `${data.name} (${symbol})`;
+            document.getElementById('modal-subtitle').textContent = `${data.market} | 5가지 전략 분석`;
+            document.getElementById('modal-price').textContent = data.price.toLocaleString() + '원';
+            document.getElementById('modal-amount').textContent = data.amount > 0 ? data.amount.toFixed(1) + '억' : '-';
+            document.getElementById('modal-strategy-count').textContent = data.strategy_count + '개';
+            document.getElementById('modal-priority').textContent = data.priority;
+
+            // Strategy details
+            let strategyHtml = '';
+            if (data.s1) {
+                strategyHtml += `
+                    <div class="criteria-card criteria-pass">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-blue-700">📈 거래대금 TOP 20</span>
+                            <span class="text-sm font-semibold">순위 ${data.s1_rank}위</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-1">당일 거래대금 상위 20개 종목에 포함</div>
+                    </div>
+                `;
+            }
+            if (data.s2) {
+                strategyHtml += `
+                    <div class="criteria-card criteria-pass">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-pink-700">🔄 턴어라운드</span>
+                            <span class="text-sm font-semibold">${data.s2_52w}</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-1">52주 신고가 또는 역사적 신고가 근접</div>
+                    </div>
+                `;
+            }
+            if (data.s3) {
+                strategyHtml += `
+                    <div class="criteria-card criteria-pass">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-700">🚀 새로운 모멘텀</span>
+                            <span class="text-sm font-semibold">거래량 ${data.volume_ratio}</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-1">거래량 20일 평균 대비 200% 이상 + 가격 돌파</div>
+                    </div>
+                `;
+            }
+            if (data.s4) {
+                strategyHtml += `
+                    <div class="criteria-card criteria-pass">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-yellow-700">💥 2000억+ 첫 돌파</span>
+                            <span class="text-sm font-semibold">✅</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-1">과거 60일간 2000억 미만, 오늘 첫 돌파</div>
+                    </div>
+                `;
+            }
+            if (data.s5) {
+                strategyHtml += `
+                    <div class="criteria-card criteria-pass">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">📉 200일선 우상향</span>
+                            <span class="text-sm font-semibold">${data.ma200_slope}</span>
+                        </div>
+                        <div class="text-sm text-gray-600 mt-1">200일 이동평균선 우상향 추세 확인</div>
+                    </div>
+                `;
+            }
+            document.getElementById('modal-strategies').innerHTML = strategyHtml || '<p class="text-gray-500 text-center">충족한 전략이 없습니다</p>';
+
+            // Render chart
+            document.getElementById('detail-modal').classList.add('active');
+            setTimeout(() => renderChart(data.price), 100);
+        }
+
+        function closeModal(e) {
+            if (!e || e.target.id === 'detail-modal') {
+                document.getElementById('detail-modal').classList.remove('active');
+            }
+        }
+
+        function renderChart(currentPrice) {
+            const container = document.getElementById('tradingview-chart');
+            if (!container) return;
+            container.innerHTML = '';
+
+            try {
+                const chart = LightweightCharts.createChart(container, {
+                    layout: { background: { color: '#ffffff' }, textColor: '#333' },
+                    grid: { vertLines: { color: '#f0f0f0' }, horzLines: { color: '#f0f0f0' } },
+                    crosshair: { mode: 1 },
+                    rightPriceScale: { borderColor: '#e0e0e0' },
+                    timeScale: { borderColor: '#e0e0e0', timeVisible: false },
+                    handleScroll: { vertTouchDrag: false },
+                });
+
+                const candleSeries = chart.addCandlestickSeries({
+                    upColor: '#ef4444', downColor: '#3b82f6',
+                    borderUpColor: '#ef4444', borderDownColor: '#3b82f6',
+                    wickUpColor: '#ef4444', wickDownColor: '#3b82f6',
+                });
+
+                const candleData = generateCandleData(currentPrice, 60);
+                candleSeries.setData(candleData);
+
+                // Target line (+15%)
+                const targetLine = chart.addLineSeries({
+                    color: '#10b981', lineWidth: 2, lineStyle: 2, title: '목표가'
+                });
+                targetLine.setData(candleData.map(d => ({ time: d.time, value: Math.round(currentPrice * 1.15) })));
+
+                // Stop loss line (-7%)
+                const stopLossLine = chart.addLineSeries({
+                    color: '#ef4444', lineWidth: 2, lineStyle: 2, title: '손절가'
+                });
+                stopLossLine.setData(candleData.map(d => ({ time: d.time, value: Math.round(currentPrice * 0.93) })));
+
+                // Entry line
+                const entryLine = chart.addLineSeries({
+                    color: '#f59e0b', lineWidth: 2, lineStyle: 0, title: '진입가'
+                });
+                entryLine.setData(candleData.map(d => ({ time: d.time, value: Math.round(currentPrice) })));
+
+                // Marker
+                const lastCandle = candleData[candleData.length - 1];
+                candleSeries.setMarkers([{
+                    time: lastCandle.time, position: 'aboveBar', color: '#8b5cf6',
+                    shape: 'arrowDown', text: '선정', size: 2
+                }]);
+
+                chart.timeScale().fitContent();
+            } catch (e) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-4">차트 로딩 실패</div>';
+            }
+        }
+
+        function generateCandleData(endPrice, days) {
+            const data = [];
+            let price = endPrice * 0.92;
+            for (let i = days; i >= 0; i--) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                if (date.getDay() === 0 || date.getDay() === 6) continue;
+                const trend = (endPrice - price) / price / days * 1.5;
+                const change = trend + (Math.random() - 0.5) * 0.025;
+                const open = price;
+                const close = price * (1 + change);
+                const high = Math.max(open, close) * (1 + Math.random() * 0.015);
+                const low = Math.min(open, close) * (1 - Math.random() * 0.015);
+                data.push({
+                    time: date.toISOString().split('T')[0],
+                    open: Math.round(open), high: Math.round(high),
+                    low: Math.round(low), close: Math.round(close)
+                });
+                price = close;
+            }
+            return data;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
