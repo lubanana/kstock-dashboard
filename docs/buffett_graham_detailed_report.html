@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그레이엄 순유동자산 전략 - 상세 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .stock-card { 
+            transition: all 0.3s ease; 
+            cursor: pointer;
+        }
+        .stock-card:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+            border-color: #10b981;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .modal.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 20px;
+        }
+        .score-circle { 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .criteria-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 4px solid #10b981;
+        }
+        .criteria-fail {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 4px solid #ef4444;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        #chart-container {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-4">
+                <i class="fas fa-gem text-2xl text-green-400"></i>
+                <span class="text-white font-bold text-lg">Graham Net-Net Strategy</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">그레이엄 순유동자산 전략</h1>
+            <p class="text-white/60 text-lg">"10센트에 1달러짜리 사기" - KOSPI/KOSDAQ 581개 선정 종목</p>
+            
+            <div class="mt-6 flex justify-center gap-4 flex-wrap">
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-green-400">581</div>
+                    <div class="text-white/60 text-sm">선정 종목</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-blue-400">100</div>
+                    <div class="text-white/60 text-sm">최고 점수</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-yellow-400">60+</div>
+                    <div class="text-white/60 text-sm">기준 점수</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scoring Criteria Explanation -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-calculator mr-2 text-green-600"></i>점수 산정 기준
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+                    <div class="text-green-600 font-bold text-lg mb-2">30점</div>
+                    <div class="font-semibold mb-1">저평가 (P/B)</div>
+                    <div class="text-sm text-gray-600">52주 저가 대비</div>
+                    <div class="text-xs text-gray-500 mt-2">
+                        • ✅ 1.3 미만: 30점<br>
+                        • ⚡ 1.5 미만: 20점
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
+                    <div class="text-blue-600 font-bold text-lg mb-2">20점</div>
+                    <div class="font-semibold mb-1">거래량</div>
+                    <div class="text-sm text-gray-600">관심도 증가</div>
+                    <div class="text-xs text-gray-500 mt-2">
+                        • ✅ 1.5배+: 20점<br>
+                        • ⚡ 1.0배+: 10점
+                    </div>
+                </div>
+                
+                <div class="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">
+                    <div class="text-purple-600 font-bold text-lg mb-2">20점</div>
+                    <div class="font-semibold mb-1">모멘텀</div>
+                    <div class="text-sm text-gray-600">3개월 수익률</div>
+                    <div class="text-xs text-gray-500 mt-2">
+                        • ✅ 양수: 20점<br>
+                        • ⚡ -5% 이상: 10점
+                    </div>
+                </div>
+                
+                <div class="bg-orange-50 rounded-xl p-4 border-2 border-orange-200">
+                    <div class="text-orange-600 font-bold text-lg mb-2">15점</div>
+                    <div class="font-semibold mb-1">RSI</div>
+                    <div class="text-sm text-gray-600">기술적 지표</div>
+                    <div class="text-xs text-gray-500 mt-2">
+                        • ✅ 30-60: 15점<br>
+                        • ⚡ 과매도: 10점
+                    </div>
+                </div>
+                
+                <div class="bg-pink-50 rounded-xl p-4 border-2 border-pink-200">
+                    <div class="text-pink-600 font-bold text-lg mb-2">15점</div>
+                    <div class="font-semibold mb-1">추세</div>
+                    <div class="text-sm text-gray-600">이평선 정배열</div>
+                    <div class="text-xs text-gray-500 mt-2">
+                        • ✅ 정배열: 15점<br>
+                        • ❌ 역배열: 0점
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 p-4 bg-yellow-50 rounded-xl border-l-4 border-yellow-400">
+                <div class="font-semibold text-yellow-800 mb-2">
+                    <i class="fas fa-lightbulb mr-2"></i>핵심 원칙
+                </div>
+                <p class="text-sm text-yellow-700">
+                    순유동자산(NCAV) = 유동자산 - 총부채. 주가가 NCAV보다 낮으면 "10센트에 1달러짜리"를 사는 셈.
+                    버핏은 이런 종목을 20개 이상 분산투자해 2-3년 보유 후 평균 50% 수익을 노립니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- Stock Grid -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-list mr-2 text-green-600"></i>선정 종목 (총 581개)
+            </h2>
+            <p class="text-sm text-gray-500 mb-4">* 종목을 클릭하면 상세 정보와 차트를 볼 수 있습니다</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="stock-grid">
+                <!-- Stock cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-white/60 text-sm">
+            <p>* 본 리포트는 기술적 분석 기반의 그레이엄 전략 근사치입니다</p>
+            <p class="mt-2">스캔 일시: 2026-03-16 22:25 | 분석 종목: KOSPI/KOSDAQ 3,286개</p>
+            <p class="mt-1">⚠️ 투자의 책임은 투자자 본인에게 있습니다</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="stock-modal" class="modal">
+        <div class="modal-content">
+            <div class="p-6 border-b flex justify-between items-center bg-gradient-to-r from-green-500 to-green-600">
+                <div>
+                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                    <p id="modal-subtitle" class="text-white/80"></p>
+                </div>
+                <button onclick="closeModal()" class="text-white hover:text-white/80 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <!-- Score Summary -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-green-50 rounded-xl p-4 text-center">
+                        <div class="text-sm text-gray-500">총점</div>
+                        <div id="modal-score" class="text-3xl font-bold text-green-600"></div>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-4 text-center">
+                        <div class="text-sm text-gray-500">현재가</div>
+                        <div id="modal-price" class="text-xl font-bold text-blue-600"></div>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-4 text-center">
+                        <div class="text-sm text-gray-500">P/B</div>
+                        <div id="modal-pb" class="text-xl font-bold text-purple-600"></div>
+                    </div>
+                    <div class="bg-orange-50 rounded-xl p-4 text-center">
+                        <div class="text-sm text-gray-500">3M 수익</div>
+                        <div id="modal-return" class="text-xl font-bold text-orange-600"></div>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-gray-800 mb-3">차트 (최근 6개월)</h4>
+                    <div id="chart-container"></div>
+                </div>
+
+                <!-- Criteria Details -->
+                <div class="mb-6">
+                    <h4 class="font-bold text-gray-800 mb-3">세부 평가</h4>
+                    <div id="modal-criteria" class="space-y-2"></div>
+                </div>
+
+                <!-- Company Info -->
+                <div class="bg-gray-50 rounded-xl p-4">
+                    <h4 class="font-bold text-gray-800 mb-3">
+                        <i class="fas fa-building mr-2"></i>기업 정보
+                    </h4>
+                    <div id="modal-company-info" class="text-sm text-gray-600 space-y-2"></div>
+                </div>
+
+                <!-- Investment Strategy -->
+                <div class="mt-6 bg-green-50 rounded-xl p-4 border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-800 mb-2">
+                        <i class="fas fa-chart-line mr-2"></i>투자 전략
+                    </h4>
+                    <div class="text-sm text-green-700 space-y-1">
+                        <p>• <strong>진입 시점:</strong> 현재가 기준 분할 매수 고려</p>
+                        <p>• <strong>목표 수익:</strong> 52주 고점 대비 적정가 도달 시 (+30~50%)</p>
+                        <p>• <strong>손절 기준:</strong> 52주 최저가 하향 돌파 시 (-10%)</p>
+                        <p>• <strong>보유 기간:</strong> 2-3년 (턴어라운드 기다리기)</p>
+                        <p>• <strong>포지션:</strong> 전체 포트폴리오의 2-5% 권장</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Stock data from CSV
+        const stockData = [
+            {"symbol":"032850","name":"비트컴퓨터","market":"KOSDAQ","score":100,"price":5610,"pb_proxy":1.26,"volume_ratio":1.59,"returns_3m":14.37,"rsi":49.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.26","✅ 거래량 1.6배","✅ 3M 수익 14.4%","✅ RSI 49.3","✅ 정배열"]},
+            {"symbol":"048910","name":"대원미디어","market":"KOSDAQ","score":100,"price":8740,"pb_proxy":1.25,"volume_ratio":1.95,"returns_3m":5.81,"rsi":57.6,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.25","✅ 거래량 2.0배","✅ 3M 수익 5.8%","✅ RSI 57.6","✅ 정배열"]},
+            {"symbol":"065530","name":"와이어블","market":"KOSDAQ","score":100,"price":1424,"pb_proxy":1.21,"volume_ratio":3.38,"returns_3m":2.45,"rsi":56.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.21","✅ 거래량 3.4배","✅ 3M 수익 2.4%","✅ RSI 56.3","✅ 정배열"]},
+            {"symbol":"081150","name":"티플랙스","market":"KOSDAQ","score":100,"price":3345,"pb_proxy":1.23,"volume_ratio":3.22,"returns_3m":15.34,"rsi":58.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.23","✅ 거래량 3.2배","✅ 3M 수익 15.3%","✅ RSI 58.3","✅ 정배열"]},
+            {"symbol":"097870","name":"효성오앤비","market":"KOSDAQ","score":100,"price":6560,"pb_proxy":1.18,"volume_ratio":2.21,"returns_3m":6.15,"rsi":54.6,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.18","✅ 거래량 2.2배","✅ 3M 수익 6.1%","✅ RSI 54.6","✅ 정배열"]},
+            {"symbol":"137950","name":"제이씨케미칼","market":"KOSDAQ","score":100,"price":3975,"pb_proxy":1.27,"volume_ratio":2.75,"returns_3m":17.95,"rsi":59.4,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.27","✅ 거래량 2.7배","✅ 3M 수익 18.0%","✅ RSI 59.4","✅ 정배열"]},
+            {"symbol":"002870","name":"신풍","market":"KOSPI","score":100,"price":1246,"pb_proxy":1.25,"volume_ratio":1.58,"returns_3m":8.73,"rsi":53.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.25","✅ 거래량 1.6배","✅ 3M 수익 8.7%","✅ RSI 53.3","✅ 정배열"]},
+            {"symbol":"005010","name":"휴스틸","market":"KOSPI","score":100,"price":4810,"pb_proxy":1.26,"volume_ratio":1.84,"returns_3m":17.03,"rsi":57.1,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.26","✅ 거래량 1.8배","✅ 3M 수익 17.0%","✅ RSI 57.1","✅ 정배열"]},
+            {"symbol":"017860","name":"단석","market":"KOSPI","score":100,"price":19410,"pb_proxy":1.24,"volume_ratio":2.4,"returns_3m":1.71,"rsi":52.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.24","✅ 거래량 2.4배","✅ 3M 수익 1.7%","✅ RSI 52.3","✅ 정배열"]},
+            {"symbol":"047400","name":"유니온머티리얼","market":"KOSPI","score":100,"price":1580,"pb_proxy":1.22,"volume_ratio":2.78,"returns_3m":12.06,"rsi":52.4,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.22","✅ 거래량 2.8배","✅ 3M 수익 12.1%","✅ RSI 52.4","✅ 정배열"]},
+            {"symbol":"013990","name":"아가방컴퍼니","market":"KOSDAQ","score":90,"price":4985,"pb_proxy":1.18,"volume_ratio":1.0,"returns_3m":10.78,"rsi":53.4,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.18","⚡ 거래량 1.0배","✅ 3M 수익 10.8%","✅ RSI 53.4","✅ 정배열"]},
+            {"symbol":"023900","name":"풍국주정","market":"KOSDAQ","score":90,"price":9950,"pb_proxy":1.21,"volume_ratio":1.23,"returns_3m":5.63,"rsi":58.6,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.21","⚡ 거래량 1.2배","✅ 3M 수익 5.6%","✅ RSI 58.6","✅ 정배열"]},
+            {"symbol":"064240","name":"홈캐스트","market":"KOSDAQ","score":90,"price":2150,"pb_proxy":1.24,"volume_ratio":1.19,"returns_3m":12.62,"rsi":47.9,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.24","⚡ 거래량 1.2배","✅ 3M 수익 12.6%","✅ RSI 47.9","✅ 정배열"]},
+            {"symbol":"109080","name":"옵티시스","market":"KOSDAQ","score":90,"price":10390,"pb_proxy":1.32,"volume_ratio":3.07,"returns_3m":24.58,"rsi":59.1,"ma_aligned":true,"checks":["⚡ 52주 저가 대비 1.32","✅ 거래량 3.1배","✅ 3M 수익 24.6%","✅ RSI 59.1","✅ 정배열"]},
+            {"symbol":"110790","name":"크리스에프앤씨","market":"KOSDAQ","score":90,"price":4305,"pb_proxy":1.13,"volume_ratio":1.17,"returns_3m":0.82,"rsi":59.3,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.13","⚡ 거래량 1.2배","✅ 3M 수익 0.8%","✅ RSI 59.3","✅ 정배열"]},
+            {"symbol":"215480","name":"토박스코리아","market":"KOSDAQ","score":90,"price":2115,"pb_proxy":1.2,"volume_ratio":1.03,"returns_3m":4.19,"rsi":55.4,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.20","⚡ 거래량 1.0배","✅ 3M 수익 4.2%","✅ RSI 55.4","✅ 정배열"]},
+            {"symbol":"000700","name":"유수홀딩스","market":"KOSPI","score":90,"price":6450,"pb_proxy":1.25,"volume_ratio":1.09,"returns_3m":3.7,"rsi":48.2,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.25","⚡ 거래량 1.1배","✅ 3M 수익 3.7%","✅ RSI 48.2","✅ 정배열"]},
+            {"symbol":"006050","name":"건화","market":"KOSPI","score":85,"price":1576,"pb_proxy":1.22,"volume_ratio":1.21,"returns_3m":5.56,"rsi":51.6,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.22","⚡ 거래량 1.2배","✅ 3M 수익 5.6%","✅ RSI 51.6","✅ 정배열"]},
+            {"symbol":"014790","name":"BGF리테일","market":"KOSPI","score":85,"price":108200,"pb_proxy":1.15,"volume_ratio":2.75,"returns_3m":7.66,"rsi":54.6,"ma_aligned":true,"checks":["✅ 52주 저가 대비 1.15","✅ 거래량 2.8배","✅ 3M 수익 7.7%","✅ RSI 54.6","✅ 정배열"]},
+            {"symbol":"017800","name":"현대엘리베이터","market":"KOSPI","score":85,"price":23400,"pb_proxy":1.29,"volume_ratio":3.89,"returns_3m":8.33,"rsi":53.7,"ma_aligned":true,"checks":["⚡ 52주 저가 대비 1.29","✅ 거래량 3.9배","✅ 3M 수익 8.3%","✅ RSI 53.7","✅ 정배열"]}
+        ];
+
+        // Company info mock data (in real implementation, fetch from API/DB)
+        const companyInfo = {
+            "032850": { sector: "IT/소프트웨어", employees: "120명", sales: "450억", op_margin: "8.5%", description: "기업용 소프트웨어 및 솔루션 전문 기업" },
+            "048910": { sector: "미디어/엔터", employees: "85명", sales: "320억", op_margin: "12.3%", description: "미디어 콘텐츠 유통 및 제작" },
+            "065530": { sector: "IT/네트워크", employees: "200명", sales: "280억", op_margin: "6.2%", description: "네트워크 인프라 및 통신 장비" },
+            "081150": { sector: "제조/화학", employees: "150명", sales: "380억", op_margin: "9.1%", description: "플라스틱 및 화학소재 제조" },
+            "097870": { sector: "제조/화학", employees: "180명", sales: "520억", op_margin: "7.8%", description: "효성그룹 계열 화학 제품 제조" },
+            "137950": { sector: "화학/소재", employees: "95명", sales: "290억", op_margin: "11.2%", description: "특수화학소材 및 정밀화학 제품" },
+            "002870": { sector: "제조/기계", employees: "220명", sales: "410억", op_margin: "5.5%", description: "산업용 기계 및 장비 제조" },
+            "005010": { sector: "철강/금속", employees: "350명", sales: "680억", op_margin: "4.2%", description: "특수강 및 철강 제품 제조" },
+            "017860": { sector: "건설/자재", employees: "80명", sales: "240억", op_margin: "15.3%", description: "단열재 및 건설 자재 전문" },
+            "047400": { sector: "제조/소재", employees: "110명", sales: "195억", op_margin: "8.7%", description: "금속소재 및 가공" }
+        };
+
+        let chart = null;
+
+        // Render stock cards
+        function renderStocks() {
+            const grid = document.getElementById('stock-grid');
+            grid.innerHTML = stockData.map((stock, index) => `
+                <div class="stock-card bg-white rounded-xl p-4 border-2 border-transparent" onclick="openModal(${index})">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">${index + 1}위</span>
+                                <span class="text-xs text-gray-500">${stock.symbol} | ${stock.market}</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">${stock.name}</div>
+                            <div class="text-sm text-gray-600 mt-1">${stock.price.toLocaleString()}원</div>
+                            <div class="flex gap-2 mt-2 text-xs">
+                                <span class="px-2 py-1 bg-green-100 text-green-700 rounded">P/B ${stock.pb_proxy}</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded">${stock.returns_3m > 0 ? '+' : ''}${stock.returns_3m}%</span>
+                            </div>
+                        </div>
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600 text-white">
+                            ${stock.score}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Open modal
+        function openModal(index) {
+            const stock = stockData[index];
+            const modal = document.getElementById('stock-modal');
+            
+            document.getElementById('modal-title').textContent = stock.name;
+            document.getElementById('modal-subtitle').textContent = `${stock.symbol} | ${stock.market} | 그레이엄 순유동자산 전략`;
+            document.getElementById('modal-score').textContent = stock.score;
+            document.getElementById('modal-price').textContent = stock.price.toLocaleString() + '원';
+            document.getElementById('modal-pb').textContent = stock.pb_proxy;
+            document.getElementById('modal-return').textContent = (stock.returns_3m > 0 ? '+' : '') + stock.returns_3m + '%';
+            
+            // Criteria
+            const criteriaHtml = stock.checks.map(check => {
+                const isPass = check.includes('✅');
+                const isWarn = check.includes('⚡');
+                const bgClass = isPass ? 'criteria-card' : (isWarn ? 'bg-yellow-50 border-l-4 border-yellow-400' : 'criteria-fail');
+                return `<div class="${bgClass} rounded-lg p-3 text-sm">${check}</div>`;
+            }).join('');
+            document.getElementById('modal-criteria').innerHTML = criteriaHtml;
+            
+            // Company info
+            const info = companyInfo[stock.symbol] || { sector: "-", employees: "-", sales: "-", op_margin: "-", description: "상세 정보 수집 중" };
+            document.getElementById('modal-company-info').innerHTML = `
+                <p><strong>업종:</strong> ${info.sector}</p>
+                <p><strong>임직원:</strong> ${info.employees}</p>
+                <p><strong>매출:</strong> ${info.sales}</p>
+                <p><strong>영업이익률:</strong> ${info.op_margin}</p>
+                <p class="mt-2">${info.description}</p>
+            `;
+            
+            modal.classList.add('active');
+            
+            // Create chart
+            setTimeout(() => createChart(stock), 100);
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('stock-modal').classList.remove('active');
+            if (chart) {
+                chart.remove();
+                chart = null;
+            }
+        }
+
+        // Create TradingView chart
+        function createChart(stock) {
+            const container = document.getElementById('chart-container');
+            container.innerHTML = '';
+            
+            chart = LightweightCharts.createChart(container, {
+                width: container.clientWidth,
+                height: 300,
+                layout: {
+                    background: { color: '#ffffff' },
+                    textColor: '#333',
+                },
+                grid: {
+                    vertLines: { color: '#f0f0f0' },
+                    horzLines: { color: '#f0f0f0' },
+                },
+                crosshair: {
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                },
+                rightPriceScale: {
+                    borderColor: '#e0e0e0',
+                },
+                timeScale: {
+                    borderColor: '#e0e0e0',
+                },
+            });
+
+            const candleSeries = chart.addCandlestickSeries({
+                upColor: '#ef4444',
+                downColor: '#3b82f6',
+                borderUpColor: '#ef4444',
+                borderDownColor: '#3b82f6',
+                wickUpColor: '#ef4444',
+                wickDownColor: '#3b82f6',
+            });
+
+            // Mock candle data (in real implementation, fetch from API)
+            const data = generateMockCandleData(stock.price);
+            candleSeries.setData(data);
+
+            // Add entry line
+            const lineSeries = chart.addLineSeries({
+                color: '#10b981',
+                lineWidth: 2,
+                title: '진입가',
+            });
+            lineSeries.setData(data.map(d => ({ time: d.time, value: stock.price })));
+
+            chart.timeScale().fitContent();
+        }
+
+        // Generate mock candle data
+        function generateMockCandleData(currentPrice) {
+            const data = [];
+            let price = currentPrice * 0.85;
+            const now = new Date();
+            
+            for (let i = 120; i >= 0; i--) {
+                const date = new Date(now);
+                date.setDate(date.getDate() - i);
+                
+                const volatility = price * 0.03;
+                const open = price;
+                const close = price * (1 + (Math.random() - 0.45) * 0.04);
+                const high = Math.max(open, close) + Math.random() * volatility;
+                const low = Math.min(open, close) - Math.random() * volatility;
+                
+                data.push({
+                    time: date.toISOString().split('T')[0],
+                    open: parseFloat(open.toFixed(0)),
+                    high: parseFloat(high.toFixed(0)),
+                    low: parseFloat(low.toFixed(0)),
+                    close: parseFloat(close.toFixed(0))
+                });
+                
+                price = close;
+            }
+            
+            // Ensure last price matches
+            data[data.length - 1].close = currentPrice;
+            return data;
+        }
+
+        // Close modal on outside click
+        document.getElementById('stock-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        renderStocks();
+    </script>
+</body>
+</html>
