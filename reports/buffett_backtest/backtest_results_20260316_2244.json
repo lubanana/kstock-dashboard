@@ -1,0 +1,1887 @@
+{
+  "graham": {
+    "strategy": "graham",
+    "start_date": "2024-01-01",
+    "end_date": "2026-03-13",
+    "initial_capital": 100000000,
+    "final_value": 213964449.0,
+    "total_return_pct": 113.96,
+    "cagr_pct": 40.22,
+    "mdd_pct": 0,
+    "total_trades": 51,
+    "win_rate_pct": 70.59,
+    "avg_trade_return_pct": 14.19,
+    "portfolio_history": [
+      {
+        "date": "2024-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-10-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-11-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-12-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-10-01",
+        "value": 127213600.0
+      },
+      {
+        "date": "2025-11-01",
+        "value": 145928184.0
+      },
+      {
+        "date": "2025-12-01",
+        "value": 150668819.0
+      },
+      {
+        "date": "2026-01-01",
+        "value": 152531384.0
+      },
+      {
+        "date": "2026-02-01",
+        "value": 197128834.0
+      },
+      {
+        "date": "2026-03-01",
+        "value": 238662399.0
+      }
+    ],
+    "trades": [
+      {
+        "symbol": "005930",
+        "entry_date": "2025-09-01",
+        "exit_date": "2025-10-01",
+        "entry_price": 67600.0,
+        "exit_price": 86000.0,
+        "shares": 1479,
+        "profit": 27213600.0,
+        "return_pct": 27.21893491124261
+      },
+      {
+        "symbol": "437730",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 23150.0,
+        "exit_price": 31250.0,
+        "shares": 549,
+        "profit": 4446900.0,
+        "return_pct": 34.98920086393089
+      },
+      {
+        "symbol": "126340",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 52664.0,
+        "exit_price": 53539.0,
+        "shares": 241,
+        "profit": 210875.0,
+        "return_pct": 1.6614765304572288
+      },
+      {
+        "symbol": "194700",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 20900.0,
+        "exit_price": 17060.0,
+        "shares": 608,
+        "profit": -2334720.0,
+        "return_pct": -18.373205741626798
+      },
+      {
+        "symbol": "199430",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 13950.0,
+        "exit_price": 26650.0,
+        "shares": 911,
+        "profit": 11569700.0,
+        "return_pct": 91.03942652329748
+      },
+      {
+        "symbol": "041190",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 11020.0,
+        "exit_price": 8990.0,
+        "shares": 1154,
+        "profit": -2342620.0,
+        "return_pct": -18.42105263157895
+      },
+      {
+        "symbol": "003230",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 1558000.0,
+        "exit_price": 1348000.0,
+        "shares": 8,
+        "profit": -1680000.0,
+        "return_pct": -13.478818998716303
+      },
+      {
+        "symbol": "445150",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 30415.0,
+        "exit_price": 33795.0,
+        "shares": 418,
+        "profit": 1412840.0,
+        "return_pct": 11.112937695216175
+      },
+      {
+        "symbol": "259630",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 13250.0,
+        "exit_price": 17370.0,
+        "shares": 960,
+        "profit": 3955200.0,
+        "return_pct": 31.09433962264152
+      },
+      {
+        "symbol": "329180",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 528000.0,
+        "exit_price": 600000.0,
+        "shares": 24,
+        "profit": 1728000.0,
+        "return_pct": 13.636363636363647
+      },
+      {
+        "symbol": "490590",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 12008.0,
+        "exit_price": 13659.0,
+        "shares": 1059,
+        "profit": 1748409.0,
+        "return_pct": 13.749167221852087
+      },
+      {
+        "symbol": "097230",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 28100.0,
+        "exit_price": 21450.0,
+        "shares": 519,
+        "profit": -3451350.0,
+        "return_pct": -23.66548042704626
+      },
+      {
+        "symbol": "445680",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 75700.0,
+        "exit_price": 94800.0,
+        "shares": 192,
+        "profit": 3667200.0,
+        "return_pct": 25.231175693527085
+      },
+      {
+        "symbol": "402340",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 260000.0,
+        "exit_price": 302000.0,
+        "shares": 56,
+        "profit": 2352000.0,
+        "return_pct": 16.153846153846164
+      },
+      {
+        "symbol": "214370",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 64900.0,
+        "exit_price": 81900.0,
+        "shares": 224,
+        "profit": 3808000.0,
+        "return_pct": 26.19414483821263
+      },
+      {
+        "symbol": "067310",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 29400.0,
+        "exit_price": 25300.0,
+        "shares": 496,
+        "profit": -2033600.0,
+        "return_pct": -13.945578231292522
+      },
+      {
+        "symbol": "440110",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 25400.0,
+        "exit_price": 27100.0,
+        "shares": 574,
+        "profit": 975800.0,
+        "return_pct": 6.692913385826782
+      },
+      {
+        "symbol": "168360",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 21650.0,
+        "exit_price": 17860.0,
+        "shares": 674,
+        "profit": -2554460.0,
+        "return_pct": -17.505773672055426
+      },
+      {
+        "symbol": "417450",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 13124.0,
+        "exit_price": 12207.0,
+        "shares": 1111,
+        "profit": -1018787.0,
+        "return_pct": -6.987199024687596
+      },
+      {
+        "symbol": "126340",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 53539.0,
+        "exit_price": 61020.0,
+        "shares": 272,
+        "profit": 2034832.0,
+        "return_pct": 13.972991650946032
+      },
+      {
+        "symbol": "014680",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 232500.0,
+        "exit_price": 248000.0,
+        "shares": 62,
+        "profit": 961000.0,
+        "return_pct": 6.666666666666665
+      },
+      {
+        "symbol": "413630",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 4870.0,
+        "exit_price": 4545.0,
+        "shares": 3093,
+        "profit": -1005225.0,
+        "return_pct": -6.673511293634493
+      },
+      {
+        "symbol": "327260",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 20050.0,
+        "exit_price": 22850.0,
+        "shares": 751,
+        "profit": 2102800.0,
+        "return_pct": 13.965087281795508
+      },
+      {
+        "symbol": "007660",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 135300.0,
+        "exit_price": 119200.0,
+        "shares": 111,
+        "profit": -1787100.0,
+        "return_pct": -11.89948263118995
+      },
+      {
+        "symbol": "010170",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 2232.0,
+        "exit_price": 2132.0,
+        "shares": 6750,
+        "profit": -675000.0,
+        "return_pct": -4.480286738351258
+      },
+      {
+        "symbol": "440110",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 27100.0,
+        "exit_price": 21250.0,
+        "shares": 555,
+        "profit": -3246750.0,
+        "return_pct": -21.586715867158667
+      },
+      {
+        "symbol": "200470",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 5240.0,
+        "exit_price": 6790.0,
+        "shares": 2875,
+        "profit": 4456250.0,
+        "return_pct": 29.580152671755734
+      },
+      {
+        "symbol": "466100",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 41200.0,
+        "exit_price": 63000.0,
+        "shares": 365,
+        "profit": 7957000.0,
+        "return_pct": 52.9126213592233
+      },
+      {
+        "symbol": "107600",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 34200.0,
+        "exit_price": 28950.0,
+        "shares": 440,
+        "profit": -2310000.0,
+        "return_pct": -15.350877192982459
+      },
+      {
+        "symbol": "246720",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 8640.0,
+        "exit_price": 8270.0,
+        "shares": 1743,
+        "profit": -644910.0,
+        "return_pct": -4.2824074074074066
+      },
+      {
+        "symbol": "087010",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 317500.0,
+        "exit_price": 254000.0,
+        "shares": 47,
+        "profit": -2984500.0,
+        "return_pct": -19.999999999999996
+      },
+      {
+        "symbol": "437730",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 55200.0,
+        "exit_price": 67000.0,
+        "shares": 276,
+        "profit": 3256800.0,
+        "return_pct": 21.376811594202906
+      },
+      {
+        "symbol": "413630",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 4545.0,
+        "exit_price": 4790.0,
+        "shares": 3356,
+        "profit": 822220.0,
+        "return_pct": 5.3905390539053855
+      },
+      {
+        "symbol": "243880",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 94550.0,
+        "exit_price": 166070.0,
+        "shares": 161,
+        "profit": 11514720.0,
+        "return_pct": 75.64251718667371
+      },
+      {
+        "symbol": "090360",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 80100.0,
+        "exit_price": 88900.0,
+        "shares": 190,
+        "profit": 1672000.0,
+        "return_pct": 10.986267166042452
+      },
+      {
+        "symbol": "240810",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 67900.0,
+        "exit_price": 114400.0,
+        "shares": 224,
+        "profit": 10416000.0,
+        "return_pct": 68.48306332842415
+      },
+      {
+        "symbol": "033530",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 10050.0,
+        "exit_price": 10620.0,
+        "shares": 1517,
+        "profit": 864690.0,
+        "return_pct": 5.671641791044779
+      },
+      {
+        "symbol": "317830",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 13680.0,
+        "exit_price": 13610.0,
+        "shares": 1114,
+        "profit": -77980.0,
+        "return_pct": -0.511695906432752
+      },
+      {
+        "symbol": "100790",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 12450.0,
+        "exit_price": 17600.0,
+        "shares": 1225,
+        "profit": 6308750.0,
+        "return_pct": 41.36546184738956
+      },
+      {
+        "symbol": "277810",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 470500.0,
+        "exit_price": 728000.0,
+        "shares": 32,
+        "profit": 8240000.0,
+        "return_pct": 54.729011689691816
+      },
+      {
+        "symbol": "394670",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 10375.0,
+        "exit_price": 11450.0,
+        "shares": 1470,
+        "profit": 1580250.0,
+        "return_pct": 10.361445783132538
+      },
+      {
+        "symbol": "126340",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 95200.0,
+        "exit_price": 123600.0,
+        "shares": 207,
+        "profit": 5878800.0,
+        "return_pct": 29.831932773109248
+      },
+      {
+        "symbol": "200470",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 8670.0,
+        "exit_price": 8850.0,
+        "shares": 2273,
+        "profit": 409140.0,
+        "return_pct": 2.076124567474058
+      },
+      {
+        "symbol": "010170",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 3460.0,
+        "exit_price": 4295.0,
+        "shares": 5697,
+        "profit": 4756995.0,
+        "return_pct": 24.132947976878615
+      },
+      {
+        "symbol": "397030",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 58300.0,
+        "exit_price": 72200.0,
+        "shares": 338,
+        "profit": 4698200.0,
+        "return_pct": 23.84219554030875
+      },
+      {
+        "symbol": "089970",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 30050.0,
+        "exit_price": 41600.0,
+        "shares": 656,
+        "profit": 7576800.0,
+        "return_pct": 38.43594009983362
+      },
+      {
+        "symbol": "241770",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 25450.0,
+        "exit_price": 28550.0,
+        "shares": 774,
+        "profit": 2399400.0,
+        "return_pct": 12.180746561886057
+      },
+      {
+        "symbol": "078890",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 6470.0,
+        "exit_price": 7810.0,
+        "shares": 3046,
+        "profit": 4081640.0,
+        "return_pct": 20.710973724884084
+      },
+      {
+        "symbol": "417840",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 6530.0,
+        "exit_price": 7320.0,
+        "shares": 3018,
+        "profit": 2384220.0,
+        "return_pct": 12.098009188361413
+      },
+      {
+        "symbol": "482630",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 15225.0,
+        "exit_price": 19080.0,
+        "shares": 1294,
+        "profit": 4988370.0,
+        "return_pct": 25.320197044334968
+      },
+      {
+        "symbol": "128940",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 484000.0,
+        "exit_price": 593000.0,
+        "shares": 40,
+        "profit": 4360000.0,
+        "return_pct": 22.5206611570248
+      }
+    ]
+  },
+  "quality": {
+    "strategy": "quality",
+    "start_date": "2024-01-01",
+    "end_date": "2026-03-13",
+    "initial_capital": 100000000,
+    "final_value": 198777075.0,
+    "total_return_pct": 98.78,
+    "cagr_pct": 35.71,
+    "mdd_pct": -3.95,
+    "total_trades": 50,
+    "win_rate_pct": 46.0,
+    "avg_trade_return_pct": 18.44,
+    "portfolio_history": [
+      {
+        "date": "2024-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-10-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-11-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-12-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-10-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-11-01",
+        "value": 115341508.0
+      },
+      {
+        "date": "2025-12-01",
+        "value": 110787188.0
+      },
+      {
+        "date": "2026-01-01",
+        "value": 164642097.0
+      },
+      {
+        "date": "2026-02-01",
+        "value": 193780197.0
+      },
+      {
+        "date": "2026-03-01",
+        "value": 221763566.0
+      }
+    ],
+    "trades": [
+      {
+        "symbol": "090360",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 44950.0,
+        "exit_price": 86900.0,
+        "shares": 222,
+        "profit": 9312900.0,
+        "return_pct": 93.32591768631812
+      },
+      {
+        "symbol": "424980",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 9240.0,
+        "exit_price": 10930.0,
+        "shares": 1082,
+        "profit": 1828580.0,
+        "return_pct": 18.29004329004329
+      },
+      {
+        "symbol": "263860",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 25350.0,
+        "exit_price": 20850.0,
+        "shares": 394,
+        "profit": -1773000.0,
+        "return_pct": -17.751479289940832
+      },
+      {
+        "symbol": "215100",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 6370.0,
+        "exit_price": 9980.0,
+        "shares": 1569,
+        "profit": 5664090.0,
+        "return_pct": 56.67189952904239
+      },
+      {
+        "symbol": "251370",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 16080.0,
+        "exit_price": 12930.0,
+        "shares": 621,
+        "profit": -1956150.0,
+        "return_pct": -19.589552238805975
+      },
+      {
+        "symbol": "207760",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 1681.0,
+        "exit_price": 1642.0,
+        "shares": 5948,
+        "profit": -231972.0,
+        "return_pct": -2.3200475907198093
+      },
+      {
+        "symbol": "254490",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 17440.0,
+        "exit_price": 17090.0,
+        "shares": 573,
+        "profit": -200550.0,
+        "return_pct": -2.006880733944949
+      },
+      {
+        "symbol": "099320",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 68800.0,
+        "exit_price": 60300.0,
+        "shares": 145,
+        "profit": -1232500.0,
+        "return_pct": -12.354651162790697
+      },
+      {
+        "symbol": "278240",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 10879.0,
+        "exit_price": 13029.0,
+        "shares": 919,
+        "profit": 1975850.0,
+        "return_pct": 19.762845849802368
+      },
+      {
+        "symbol": "291630",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 4835.0,
+        "exit_price": 5780.0,
+        "shares": 2068,
+        "profit": 1954260.0,
+        "return_pct": 19.544984488107552
+      },
+      {
+        "symbol": "005950",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 10670.0,
+        "exit_price": 9350.0,
+        "shares": 1080,
+        "profit": -1425600.0,
+        "return_pct": -12.371134020618557
+      },
+      {
+        "symbol": "042700",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 143700.0,
+        "exit_price": 121700.0,
+        "shares": 80,
+        "profit": -1760000.0,
+        "return_pct": -15.30967292971468
+      },
+      {
+        "symbol": "086520",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 88000.0,
+        "exit_price": 93000.0,
+        "shares": 131,
+        "profit": 655000.0,
+        "return_pct": 5.681818181818188
+      },
+      {
+        "symbol": "462010",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 5695.0,
+        "exit_price": 5685.0,
+        "shares": 2025,
+        "profit": -20250.0,
+        "return_pct": -0.17559262510974394
+      },
+      {
+        "symbol": "461950",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 5760.0,
+        "exit_price": 5710.0,
+        "shares": 2002,
+        "profit": -100100.0,
+        "return_pct": -0.868055555555558
+      },
+      {
+        "symbol": "466810",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 6690.0,
+        "exit_price": 6420.0,
+        "shares": 1724,
+        "profit": -465480.0,
+        "return_pct": -4.0358744394618835
+      },
+      {
+        "symbol": "247540",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 160000.0,
+        "exit_price": 158900.0,
+        "shares": 72,
+        "profit": -79200.0,
+        "return_pct": -0.6874999999999964
+      },
+      {
+        "symbol": "305540",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 20050.0,
+        "exit_price": 18890.0,
+        "shares": 575,
+        "profit": -667000.0,
+        "return_pct": -5.785536159601001
+      },
+      {
+        "symbol": "455860",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 5325.0,
+        "exit_price": 5290.0,
+        "shares": 2166,
+        "profit": -75810.0,
+        "return_pct": -0.6572769953051671
+      },
+      {
+        "symbol": "305720",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 16180.0,
+        "exit_price": 15315.0,
+        "shares": 712,
+        "profit": -615880.0,
+        "return_pct": -5.346106304079113
+      },
+      {
+        "symbol": "084670",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 12650.0,
+        "exit_price": 73200.0,
+        "shares": 875,
+        "profit": 52981250.0,
+        "return_pct": 478.6561264822135
+      },
+      {
+        "symbol": "002020",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 54100.0,
+        "exit_price": 50000.0,
+        "shares": 204,
+        "profit": -836400.0,
+        "return_pct": -7.5785582255083135
+      },
+      {
+        "symbol": "000240",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 28200.0,
+        "exit_price": 26150.0,
+        "shares": 392,
+        "profit": -803600.0,
+        "return_pct": -7.269503546099287
+      },
+      {
+        "symbol": "111770",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 88800.0,
+        "exit_price": 81800.0,
+        "shares": 124,
+        "profit": -868000.0,
+        "return_pct": -7.88288288288288
+      },
+      {
+        "symbol": "006730",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 11530.0,
+        "exit_price": 13100.0,
+        "shares": 960,
+        "profit": 1507200.0,
+        "return_pct": 13.61665221162185
+      },
+      {
+        "symbol": "334690",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 7194.0,
+        "exit_price": 7980.0,
+        "shares": 1539,
+        "profit": 1209654.0,
+        "return_pct": 10.925771476230196
+      },
+      {
+        "symbol": "024830",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 10500.0,
+        "exit_price": 10300.0,
+        "shares": 1055,
+        "profit": -211000.0,
+        "return_pct": -1.904761904761909
+      },
+      {
+        "symbol": "009970",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 166700.0,
+        "exit_price": 191500.0,
+        "shares": 66,
+        "profit": 1636800.0,
+        "return_pct": 14.877024595080979
+      },
+      {
+        "symbol": "067000",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 2280.0,
+        "exit_price": 2055.0,
+        "shares": 4859,
+        "profit": -1093275.0,
+        "return_pct": -9.868421052631582
+      },
+      {
+        "symbol": "139240",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 11990.0,
+        "exit_price": 12350.0,
+        "shares": 923,
+        "profit": 332280.0,
+        "return_pct": 3.0025020850708906
+      },
+      {
+        "symbol": "368770",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 10800.0,
+        "exit_price": 16810.0,
+        "shares": 1524,
+        "profit": 9159240.0,
+        "return_pct": 55.64814814814816
+      },
+      {
+        "symbol": "039860",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 6000.0,
+        "exit_price": 5110.0,
+        "shares": 2744,
+        "profit": -2442160.0,
+        "return_pct": -14.833333333333332
+      },
+      {
+        "symbol": "038500",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 4990.0,
+        "exit_price": 8400.0,
+        "shares": 3299,
+        "profit": 11249590.0,
+        "return_pct": 68.33667334669337
+      },
+      {
+        "symbol": "274090",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 17780.0,
+        "exit_price": 29800.0,
+        "shares": 925,
+        "profit": 11118500.0,
+        "return_pct": 67.60404949381326
+      },
+      {
+        "symbol": "357550",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 70200.0,
+        "exit_price": 58500.0,
+        "shares": 234,
+        "profit": -2737800.0,
+        "return_pct": -16.666666666666664
+      },
+      {
+        "symbol": "298830",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 8040.0,
+        "exit_price": 8900.0,
+        "shares": 2047,
+        "profit": 1760420.0,
+        "return_pct": 10.696517412935314
+      },
+      {
+        "symbol": "012610",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 4875.0,
+        "exit_price": 4920.0,
+        "shares": 3377,
+        "profit": 151965.0,
+        "return_pct": 0.9230769230769154
+      },
+      {
+        "symbol": "334690",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 7980.0,
+        "exit_price": 9140.0,
+        "shares": 2063,
+        "profit": 2393080.0,
+        "return_pct": 14.536340852130337
+      },
+      {
+        "symbol": "196700",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 2135.0,
+        "exit_price": 2210.0,
+        "shares": 7711,
+        "profit": 578325.0,
+        "return_pct": 3.512880562060894
+      },
+      {
+        "symbol": "008355",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 18000.0,
+        "exit_price": 15710.0,
+        "shares": 914,
+        "profit": -2093060.0,
+        "return_pct": -12.722222222222223
+      },
+      {
+        "symbol": "101330",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 6950.0,
+        "exit_price": 5850.0,
+        "shares": 2788,
+        "profit": -3066800.0,
+        "return_pct": -15.827338129496404
+      },
+      {
+        "symbol": "019010",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 3995.0,
+        "exit_price": 6150.0,
+        "shares": 4850,
+        "profit": 10451750.0,
+        "return_pct": 53.94242803504381
+      },
+      {
+        "symbol": "138540",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 56530.0,
+        "exit_price": 73900.0,
+        "shares": 342,
+        "profit": 5940540.0,
+        "return_pct": 30.727047585352917
+      },
+      {
+        "symbol": "007820",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 6220.0,
+        "exit_price": 5750.0,
+        "shares": 3115,
+        "profit": -1464050.0,
+        "return_pct": -7.556270096463025
+      },
+      {
+        "symbol": "452260",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 1821.0,
+        "exit_price": 3150.0,
+        "shares": 10641,
+        "profit": 14141889.0,
+        "return_pct": 72.9818780889621
+      },
+      {
+        "symbol": "251630",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 7850.0,
+        "exit_price": 7000.0,
+        "shares": 2468,
+        "profit": -2097800.0,
+        "return_pct": -10.828025477707005
+      },
+      {
+        "symbol": "432470",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 16710.0,
+        "exit_price": 16010.0,
+        "shares": 1159,
+        "profit": -811300.0,
+        "return_pct": -4.189108318372236
+      },
+      {
+        "symbol": "139290",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 26820.0,
+        "exit_price": 33285.0,
+        "shares": 722,
+        "profit": 4667730.0,
+        "return_pct": 24.105145413870254
+      },
+      {
+        "symbol": "094820",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 15420.0,
+        "exit_price": 18530.0,
+        "shares": 1256,
+        "profit": 3906160.0,
+        "return_pct": 20.16861219195849
+      },
+      {
+        "symbol": "215600",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 4470.0,
+        "exit_price": 3620.0,
+        "shares": 4335,
+        "profit": -3684750.0,
+        "return_pct": -19.01565995525727
+      }
+    ]
+  },
+  "dividend": {
+    "strategy": "dividend",
+    "start_date": "2024-01-01",
+    "end_date": "2026-03-13",
+    "initial_capital": 100000000,
+    "final_value": 156282266.0,
+    "total_return_pct": 56.28,
+    "cagr_pct": 21.95,
+    "mdd_pct": -3.44,
+    "total_trades": 50,
+    "win_rate_pct": 76.0,
+    "avg_trade_return_pct": 13.03,
+    "portfolio_history": [
+      {
+        "date": "2024-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-10-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-11-01",
+        "value": 100000000
+      },
+      {
+        "date": "2024-12-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-01-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-02-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-03-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-04-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-05-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-06-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-07-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-08-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-09-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-10-01",
+        "value": 100000000
+      },
+      {
+        "date": "2025-11-01",
+        "value": 116548075.0
+      },
+      {
+        "date": "2025-12-01",
+        "value": 112534514.0
+      },
+      {
+        "date": "2026-01-01",
+        "value": 125557130.0
+      },
+      {
+        "date": "2026-02-01",
+        "value": 155576666.0
+      },
+      {
+        "date": "2026-03-01",
+        "value": 180864696.0
+      }
+    ],
+    "trades": [
+      {
+        "symbol": "298040",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 1375000.0,
+        "exit_price": 2135000.0,
+        "shares": 7,
+        "profit": 5320000.0,
+        "return_pct": 55.27272727272727
+      },
+      {
+        "symbol": "425420",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 44200.0,
+        "exit_price": 40750.0,
+        "shares": 226,
+        "profit": -779700.0,
+        "return_pct": -7.805429864253388
+      },
+      {
+        "symbol": "319400",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 8980.0,
+        "exit_price": 10100.0,
+        "shares": 1113,
+        "profit": 1246560.0,
+        "return_pct": 12.47216035634744
+      },
+      {
+        "symbol": "267250",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 156700.0,
+        "exit_price": 205000.0,
+        "shares": 63,
+        "profit": 3042900.0,
+        "return_pct": 30.82322910019144
+      },
+      {
+        "symbol": "194700",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 20900.0,
+        "exit_price": 17060.0,
+        "shares": 478,
+        "profit": -1835520.0,
+        "return_pct": -18.373205741626798
+      },
+      {
+        "symbol": "039490",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 243500.0,
+        "exit_price": 297000.0,
+        "shares": 41,
+        "profit": 2193500.0,
+        "return_pct": 21.97125256673511
+      },
+      {
+        "symbol": "434730",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 37135.0,
+        "exit_price": 50250.0,
+        "shares": 269,
+        "profit": 3527935.0,
+        "return_pct": 35.31708630671873
+      },
+      {
+        "symbol": "000880",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 84800.0,
+        "exit_price": 95600.0,
+        "shares": 117,
+        "profit": 1263600.0,
+        "return_pct": 12.735849056603765
+      },
+      {
+        "symbol": "139230",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 12495.0,
+        "exit_price": 15770.0,
+        "shares": 800,
+        "profit": 2620000.0,
+        "return_pct": 26.210484193677463
+      },
+      {
+        "symbol": "032830",
+        "entry_date": "2025-10-01",
+        "exit_date": "2025-11-01",
+        "entry_price": 155100.0,
+        "exit_price": 154300.0,
+        "shares": 64,
+        "profit": -51200.0,
+        "return_pct": -0.5157962604771082
+      },
+      {
+        "symbol": "278470",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 255000.0,
+        "exit_price": 252500.0,
+        "shares": 45,
+        "profit": -112500.0,
+        "return_pct": -0.9803921568627416
+      },
+      {
+        "symbol": "033640",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 17390.0,
+        "exit_price": 17240.0,
+        "shares": 670,
+        "profit": -100500.0,
+        "return_pct": -0.8625646923519303
+      },
+      {
+        "symbol": "093520",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 26400.0,
+        "exit_price": 21950.0,
+        "shares": 441,
+        "profit": -1962450.0,
+        "return_pct": -16.85606060606061
+      },
+      {
+        "symbol": "425420",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 40750.0,
+        "exit_price": 46850.0,
+        "shares": 286,
+        "profit": 1744600.0,
+        "return_pct": 14.969325153374236
+      },
+      {
+        "symbol": "434730",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 50250.0,
+        "exit_price": 46590.0,
+        "shares": 231,
+        "profit": -845460.0,
+        "return_pct": -7.283582089552243
+      },
+      {
+        "symbol": "417450",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 13124.0,
+        "exit_price": 12207.0,
+        "shares": 888,
+        "profit": -814296.0,
+        "return_pct": -6.987199024687596
+      },
+      {
+        "symbol": "367760",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 20850.0,
+        "exit_price": 21085.0,
+        "shares": 558,
+        "profit": 131130.0,
+        "return_pct": 1.127098321342923
+      },
+      {
+        "symbol": "139230",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 15770.0,
+        "exit_price": 13165.0,
+        "shares": 739,
+        "profit": -1925095.0,
+        "return_pct": -16.51870640456563
+      },
+      {
+        "symbol": "471780",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 16370.0,
+        "exit_price": 17405.0,
+        "shares": 711,
+        "profit": 735885.0,
+        "return_pct": 6.322541233964563
+      },
+      {
+        "symbol": "433500",
+        "entry_date": "2025-11-01",
+        "exit_date": "2025-12-01",
+        "entry_price": 42285.0,
+        "exit_price": 39140.0,
+        "shares": 275,
+        "profit": -864875.0,
+        "return_pct": -7.437625635568168
+      },
+      {
+        "symbol": "187790",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 3090.0,
+        "exit_price": 3480.0,
+        "shares": 3641,
+        "profit": 1419990.0,
+        "return_pct": 12.621359223300965
+      },
+      {
+        "symbol": "471780",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 17405.0,
+        "exit_price": 17685.0,
+        "shares": 646,
+        "profit": 180880.0,
+        "return_pct": 1.6087331226658952
+      },
+      {
+        "symbol": "394670",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 10115.0,
+        "exit_price": 10375.0,
+        "shares": 1112,
+        "profit": 289120.0,
+        "return_pct": 2.5704399406821565
+      },
+      {
+        "symbol": "395270",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 19025.0,
+        "exit_price": 20980.0,
+        "shares": 591,
+        "profit": 1155405.0,
+        "return_pct": 10.275952693823909
+      },
+      {
+        "symbol": "033530",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 8500.0,
+        "exit_price": 10050.0,
+        "shares": 1323,
+        "profit": 2050650.0,
+        "return_pct": 18.23529411764706
+      },
+      {
+        "symbol": "417970",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 20450.0,
+        "exit_price": 26200.0,
+        "shares": 550,
+        "profit": 3162500.0,
+        "return_pct": 28.117359413202927
+      },
+      {
+        "symbol": "474590",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 18045.0,
+        "exit_price": 19410.0,
+        "shares": 623,
+        "profit": 850395.0,
+        "return_pct": 7.564422277639227
+      },
+      {
+        "symbol": "487750",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 13280.0,
+        "exit_price": 14620.0,
+        "shares": 847,
+        "profit": 1134980.0,
+        "return_pct": 10.090361445783124
+      },
+      {
+        "symbol": "446690",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 27308.0,
+        "exit_price": 29236.0,
+        "shares": 412,
+        "profit": 794336.0,
+        "return_pct": 7.060202138567462
+      },
+      {
+        "symbol": "002220",
+        "entry_date": "2025-12-01",
+        "exit_date": "2026-01-01",
+        "entry_price": 4310.0,
+        "exit_price": 5070.0,
+        "shares": 2611,
+        "profit": 1984360.0,
+        "return_pct": 17.63341067285382
+      },
+      {
+        "symbol": "085910",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 8970.0,
+        "exit_price": 13430.0,
+        "shares": 1399,
+        "profit": 6239540.0,
+        "return_pct": 49.721293199554076
+      },
+      {
+        "symbol": "417970",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 26200.0,
+        "exit_price": 23400.0,
+        "shares": 479,
+        "profit": -1341200.0,
+        "return_pct": -10.687022900763354
+      },
+      {
+        "symbol": "033530",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 10050.0,
+        "exit_price": 10620.0,
+        "shares": 1249,
+        "profit": 711930.0,
+        "return_pct": 5.671641791044779
+      },
+      {
+        "symbol": "471780",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 17685.0,
+        "exit_price": 22205.0,
+        "shares": 709,
+        "profit": 3204680.0,
+        "return_pct": 25.558382810291214
+      },
+      {
+        "symbol": "394670",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 10375.0,
+        "exit_price": 11450.0,
+        "shares": 1210,
+        "profit": 1300750.0,
+        "return_pct": 10.361445783132538
+      },
+      {
+        "symbol": "474590",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 19410.0,
+        "exit_price": 26250.0,
+        "shares": 646,
+        "profit": 4418640.0,
+        "return_pct": 35.23956723338486
+      },
+      {
+        "symbol": "315960",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 39740.0,
+        "exit_price": 52580.0,
+        "shares": 315,
+        "profit": 4044600.0,
+        "return_pct": 32.31001509813789
+      },
+      {
+        "symbol": "449690",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 27570.0,
+        "exit_price": 35540.0,
+        "shares": 455,
+        "profit": 3626350.0,
+        "return_pct": 28.90823358723249
+      },
+      {
+        "symbol": "450190",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 27995.0,
+        "exit_price": 36025.0,
+        "shares": 448,
+        "profit": 3597440.0,
+        "return_pct": 28.683693516699414
+      },
+      {
+        "symbol": "292150",
+        "entry_date": "2026-01-01",
+        "exit_date": "2026-02-01",
+        "entry_price": 21126.0,
+        "exit_price": 28225.0,
+        "shares": 594,
+        "profit": 4216806.0,
+        "return_pct": 33.603143046483
+      },
+      {
+        "symbol": "315960",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 52580.0,
+        "exit_price": 65840.0,
+        "shares": 295,
+        "profit": 3911700.0,
+        "return_pct": 25.21871434005325
+      },
+      {
+        "symbol": "292150",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 28225.0,
+        "exit_price": 34490.0,
+        "shares": 551,
+        "profit": 3452015.0,
+        "return_pct": 22.19663418954827
+      },
+      {
+        "symbol": "417970",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 23400.0,
+        "exit_price": 21750.0,
+        "shares": 664,
+        "profit": -1095600.0,
+        "return_pct": -7.051282051282048
+      },
+      {
+        "symbol": "450190",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 36025.0,
+        "exit_price": 39625.0,
+        "shares": 431,
+        "profit": 1551600.0,
+        "return_pct": 9.99306037473977
+      },
+      {
+        "symbol": "449690",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 35540.0,
+        "exit_price": 39010.0,
+        "shares": 437,
+        "profit": 1516390.0,
+        "return_pct": 9.763646595385488
+      },
+      {
+        "symbol": "469790",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 25995.0,
+        "exit_price": 31615.0,
+        "shares": 598,
+        "profit": 3360760.0,
+        "return_pct": 21.619542219657628
+      },
+      {
+        "symbol": "471780",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 22205.0,
+        "exit_price": 26595.0,
+        "shares": 700,
+        "profit": 3073000.0,
+        "return_pct": 19.770321999549644
+      },
+      {
+        "symbol": "290130",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 31020.0,
+        "exit_price": 37825.0,
+        "shares": 501,
+        "profit": 3409305.0,
+        "return_pct": 21.93745970341714
+      },
+      {
+        "symbol": "275300",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 20735.0,
+        "exit_price": 24585.0,
+        "shares": 750,
+        "profit": 2887500.0,
+        "return_pct": 18.56763925729443
+      },
+      {
+        "symbol": "078890",
+        "entry_date": "2026-02-01",
+        "exit_date": "2026-03-01",
+        "entry_price": 6470.0,
+        "exit_price": 7810.0,
+        "shares": 2404,
+        "profit": 3221360.0,
+        "return_pct": 20.710973724884084
+      }
+    ]
+  }
+}

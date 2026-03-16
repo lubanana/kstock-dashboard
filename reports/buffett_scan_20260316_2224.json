@@ -1,0 +1,14 @@
+{
+  "strategy1": [
+    {
+      "symbol": "032850",
+      "name": "비트컴퓨터",
+      "market": "KOSDAQ",
+      "strategy": "그레이엄 순유동자산",
+      "score": 100,
+      "price": 5610.0,
+      "pb_proxy": 1.26,
+      "volume_ratio": 1.59,
+      "returns_3m": 14.37,
+      "rsi": 49.3,
+      "ma_aligned": 

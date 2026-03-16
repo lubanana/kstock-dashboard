@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버핏 3전략 종합 리포트 - 20260317_0607</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .stock-card { transition: all 0.3s ease; }
+        .stock-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .strategy-badge { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .strategy-1 { background: #10b981; color: white; }
+        .strategy-2 { background: #3b82f6; color: white; }
+        .strategy-3 { background: #f59e0b; color: white; }
+        .score-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-4">
+                <span class="text-3xl">📊</span>
+                <span class="text-white font-bold text-lg">Buffett Value Investing</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">버핏 3전략 종합 리포트</h1>
+            <p class="text-white/60 text-lg">KOSPI/KOSDAQ 3,286종목 대상 스캔 및 분석</p>
+            
+            <div class="mt-6 flex justify-center gap-4 flex-wrap">
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-green-400">1793</div>
+                    <div class="text-white/60 text-sm">총 선정 종목</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-blue-400">3</div>
+                    <div class="text-white/60 text-sm">전략</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-yellow-400">3,286</div>
+                    <div class="text-white/60 text-sm">분석 종목</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strategy Overview -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🎯 3가지 전략 개요</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-5 text-white">
+                    <div class="text-3xl font-bold mb-2">전략 1</div>
+                    <div class="text-xl font-semibold mb-3">그레이엄 순유동자산</div>
+                    <div class="text-sm opacity-90 mb-4">"10센트에 1달러짜리 사기"</div>
+                    <div class="space-y-2 text-sm">
+                        <div>📊 선정: 581개</div>
+                        <div>🎯 핵심: 저평가 + 거래량</div>
+                        <div>⏰ 보유: 2-3년</div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-5 text-white">
+                    <div class="text-3xl font-bold mb-2">전략 2</div>
+                    <div class="text-xl font-semibold mb-3">퀄리티 적정가</div>
+                    <div class="text-sm opacity-90 mb-4">"해자 있는 좋은 회사를 싸게"</div>
+                    <div class="space-y-2 text-sm">
+                        <div>📊 선정: 406개</div>
+                        <div>🎯 핵심: ROE + Moat</div>
+                        <div>⏰ 보유: 5-10년</div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl p-5 text-white">
+                    <div class="text-3xl font-bold mb-2">전략 3</div>
+                    <div class="text-xl font-semibold mb-3">배당성장</div>
+                    <div class="text-sm opacity-90 mb-4">"현금창출 머신 모으기"</div>
+                    <div class="space-y-2 text-sm">
+                        <div>📊 선정: 806개</div>
+                        <div>🎯 핵심: 안정성 + 배당</div>
+                        <div>⏰ 보유: 10년+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 전략 1: 그레이엄 순유동자산 -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🎯 전략 1: 그레이엄 순유동자산 TOP 10</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">1위</span>
+                                <span class="text-xs text-gray-500">032850 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">비트컴퓨터</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 5,610.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">2위</span>
+                                <span class="text-xs text-gray-500">048910 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">대원미디어</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 8,740.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">3위</span>
+                                <span class="text-xs text-gray-500">065530 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">와이어블</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 1,424.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">4위</span>
+                                <span class="text-xs text-gray-500">081150 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">티플랙스</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 3,345.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">5위</span>
+                                <span class="text-xs text-gray-500">097870 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">효성오앤비</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 6,560.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">6위</span>
+                                <span class="text-xs text-gray-500">137950 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">제이씨케미칼</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 3,975.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">7위</span>
+                                <span class="text-xs text-gray-500">002870 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">신풍</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 1,246.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">8위</span>
+                                <span class="text-xs text-gray-500">005010 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">휴스틸</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 4,810.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">9위</span>
+                                <span class="text-xs text-gray-500">017860 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">단석</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 19,410.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-green-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-1">10위</span>
+                                <span class="text-xs text-gray-500">047400 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">유니온머티리얼</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 1,580.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-green-400 to-green-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 전략 2: 퀄리티 적정가 -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🎯 전략 2: 퀄리티 적정가 TOP 10</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">1위</span>
+                                <span class="text-xs text-gray-500">024740 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">한일단조</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 3,435.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">2위</span>
+                                <span class="text-xs text-gray-500">040910 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">아이씨디</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 5,500.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">3위</span>
+                                <span class="text-xs text-gray-500">127710 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">아시아경제</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 1,336.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">4위</span>
+                                <span class="text-xs text-gray-500">310870 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">디와이씨</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 1,609.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">5위</span>
+                                <span class="text-xs text-gray-500">321550 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">티움바이오</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 7,420.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">6위</span>
+                                <span class="text-xs text-gray-500">001230 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">동국홀딩스</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 9,680.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">7위</span>
+                                <span class="text-xs text-gray-500">003925 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">남양유업우</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 45,000.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">8위</span>
+                                <span class="text-xs text-gray-500">009900 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">명신산업</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 10,800.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">9위</span>
+                                <span class="text-xs text-gray-500">336260 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">두산퓨얼셀</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 42,850.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-2">10위</span>
+                                <span class="text-xs text-gray-500">036830 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">솔브레인홀딩스</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 54,500.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-blue-400 to-blue-600">
+                            95
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 전략 3: 배당성장 -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🎯 전략 3: 배당성장 TOP 10</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">1위</span>
+                                <span class="text-xs text-gray-500">068930 | KOSDAQ</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">디지털대성</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 8,860.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">2위</span>
+                                <span class="text-xs text-gray-500">203780 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">미국나스닥바이오</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 31,160.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">3위</span>
+                                <span class="text-xs text-gray-500">251350 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">선진국</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 37,160.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">4위</span>
+                                <span class="text-xs text-gray-500">360750 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">미국S</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 24,785.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">5위</span>
+                                <span class="text-xs text-gray-500">399110 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">미국S</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 19,615.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">6위</span>
+                                <span class="text-xs text-gray-500">415640 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">발해인프라</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 9,950.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">7위</span>
+                                <span class="text-xs text-gray-500">426020 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">미국S</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 28,890.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">8위</span>
+                                <span class="text-xs text-gray-500">429000 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">미국S</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 13,670.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">9위</span>
+                                <span class="text-xs text-gray-500">433880 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">액티브</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 17,610.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stock-card bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="strategy-badge strategy-3">10위</span>
+                                <span class="text-xs text-gray-500">433980 | KOSPI</span>
+                            </div>
+                            <div class="text-lg font-bold text-gray-800">액티브</div>
+                            <div class="text-sm text-gray-600 mt-1">현재가: 15,265.0원</div>
+                        </div>
+                        
+                        <div class="score-circle bg-gradient-to-br from-amber-400 to-amber-600">
+                            100
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Backtest Results -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">📈 백테스트 결과 (2024.01 ~ 2026.03)</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-3 text-left">전략</th>
+                            <th class="p-3 text-right">총수익률</th>
+                            <th class="p-3 text-right">CAGR</th>
+                            <th class="p-3 text-right">MDD</th>
+                            <th class="p-3 text-right">승률</th>
+                            <th class="p-3 text-right">거래횟수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="border-b">
+                            <td class="p-3 font-semibold">그레이엄 순유동자산</td>
+                            <td class="p-3 text-right text-green-600 font-bold">114.0%</td>
+                            <td class="p-3 text-right">40.2%</td>
+                            <td class="p-3 text-right text-red-500">0.0%</td>
+                            <td class="p-3 text-right">70.6%</td>
+                            <td class="p-3 text-right">51회</td>
+                        </tr>
+
+                        <tr class="border-b">
+                            <td class="p-3 font-semibold">퀄리티 적정가</td>
+                            <td class="p-3 text-right text-green-600 font-bold">98.8%</td>
+                            <td class="p-3 text-right">35.7%</td>
+                            <td class="p-3 text-right text-red-500">-4.0%</td>
+                            <td class="p-3 text-right">46.0%</td>
+                            <td class="p-3 text-right">50회</td>
+                        </tr>
+
+                        <tr class="border-b">
+                            <td class="p-3 font-semibold">배당성장</td>
+                            <td class="p-3 text-right text-green-600 font-bold">56.3%</td>
+                            <td class="p-3 text-right">21.9%</td>
+                            <td class="p-3 text-right text-red-500">-3.4%</td>
+                            <td class="p-3 text-right">76.0%</td>
+                            <td class="p-3 text-right">50회</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-white/60 text-sm">
+            <p>* 본 리포트는 기술적 분석 기반의 버핏 전략 근사치입니다</p>
+            <p class="mt-2">스캔 일시: 20260317_0607 | 분석 종목: KOSPI/KOSDAQ 3,286개</p>
+            <p class="mt-1">⚠️ 투자의 책임은 투자자 본인에게 있습니다</p>
+        </div>
+    </div>
+</body>
+</html>
