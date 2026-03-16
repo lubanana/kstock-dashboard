@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이터닉스 (475150) 심층 기술적 분석 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .positive { color: #10b981; }
+        .negative { color: #ef4444; }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-4">
+                <i class="fas fa-microchip text-2xl text-blue-400"></i>
+                <span class="text-white font-bold text-lg">반도체 장비</span>
+            </div>
+            <h1 class="text-5xl font-bold text-white mb-3">이터닉스</h1>
+            <p class="text-white/60 text-xl">475150 | 심층 기술적 분석 리포트</p>
+            <div class="mt-4 flex justify-center gap-6 text-white/60">
+                <span><i class="far fa-calendar-alt mr-2"></i>2026-03-13</span>
+                <span><i class="fas fa-chart-line mr-2"></i>강력 매수 권장</span>
+            </div>
+        </div>
+
+        <!-- Price Overview -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">현재가</div>
+                    <div class="text-4xl font-bold text-gray-800">39,350</div>
+                    <div class="text-lg text-green-600 font-medium"><i class="fas fa-arrow-up"></i> +5.35%</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">전일대비</div>
+                    <div class="text-3xl font-bold text-green-600">+2,000</div>
+                    <div class="text-sm text-gray-400">원</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">거래량</div>
+                    <div class="text-3xl font-bold text-blue-600">1,154만</div>
+                    <div class="text-sm text-gray-400">주 (3.3배)</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-sm text-gray-500 mb-1">1개월 수익률</div>
+                    <div class="text-3xl font-bold text-green-600">+74.12%</div>
+                    <div class="text-sm text-gray-400">고점 대비 -10%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overall Signal -->
+        <div class="glass rounded-2xl p-6 mb-6 bg-gradient-to-r from-green-50 to-emerald-50">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center text-white">
+                        <i class="fas fa-rocket text-3xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">종합 판단: 매우 긍정적</h2>
+                        <p class="text-gray-600">강력 매수 권장 | 매수신호 3.5점 vs 매도신호 0.5점</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-5xl font-bold text-green-600">80</div>
+                    <div class="text-sm text-gray-500">점수</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            
+            <!-- Moving Averages -->
+            <div class="glass rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-chart-line mr-2 text-blue-600"></i>이동평균선</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <span class="font-medium">MA5</span>
+                        <div class="text-right">
+                            <div class="font-bold">32,590원</div>
+                            <div class="text-sm text-green-600">▲ 20.74%</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <span class="font-medium">MA10</span>
+                        <div class="text-right">
+                            <div class="font-bold">29,040원</div>
+                            <div class="text-sm text-green-600">▲ 35.50%</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <span class="font-medium">MA20</span>
+                        <div class="text-right">
+                            <div class="font-bold">28,352원</div>
+                            <div class="text-sm text-green-600">▲ 38.79%</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <span class="font-medium">MA60</span>
+                        <div class="text-right">
+                            <div class="font-bold">23,250원</div>
+                            <div class="text-sm text-green-600">▲ 69.25%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-green-100 rounded-lg text-center">
+                    <span class="text-green-800 font-bold">📈 정배열 (강세)</span>
+                </div>
+            </div>
+
+            <!-- RSI & MACD -->
+            <div class="glass rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-tachometer-alt mr-2 text-purple-600"></i>오실레이터</h3>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">RSI(14)</span>
+                        <span class="text-xl font-bold">66.3</span>
+                    </div>
+                    <div class="h-4 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-green-400 to-green-500" style="width: 66.3%"></div>
+                    </div>
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>과매도 30</span>
+                        <span>중립</span>
+                        <span>과매수 70</span>
+                    </div>
+                    <div class="mt-2 text-sm text-green-600">✓ 양호한 상승세 (상승중)</div>
+                </div>
+
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">MACD</span>
+                        <span class="text-green-600 font-bold">상승중</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                        <div class="p-2 bg-gray-50 rounded">
+                            <div class="text-gray-500">MACD</div>
+                            <div class="font-bold">2,898</div>
+                        </div>
+                        <div class="p-2 bg-gray-50 rounded">
+                            <div class="text-gray-500">Signal</div>
+                            <div class="font-bold">1,948</div>
+                        </div>
+                        <div class="p-2 bg-green-50 rounded">
+                            <div class="text-gray-500">Hist</div>
+                            <div class="font-bold text-green-600">+950</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bollinger & Support -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            
+            <div class="glass rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-arrows-alt-v mr-2 text-orange-600"></i>볼린저 밴드</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">상단 (저항)</span>
+                        <span class="font-bold text-orange-600">37,097원</span>
+                    </div>
+                    <div class="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                        <span class="text-gray-500">중단 (기준)</span>
+                        <span class="font-bold">28,352원</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">하단 (지지)</span>
+                        <span class="font-bold text-blue-600">19,608원</span>
+                    </div>
+                </div>
+                <div class="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                    <div class="text-red-700 font-bold">⚠️ 상단 돌파 (과매수)</div>
+                    <div class="text-sm text-red-600 mt-1">현재가가 상단 밴드를 6.1% 상회 중입니다. 단기 조정 가능성이 있습니다.</div>
+                </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-layer-group mr-2 text-indigo-600"></i>지지/저항선</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-3 bg-red-50 rounded-lg">
+                        <div>
+                            <div class="text-sm text-gray-500">저항선 (20일 최고)</div>
+                            <div class="text-xl font-bold text-red-600">43,700원</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-gray-500">남은 여력</div>
+                            <div class="font-bold text-red-600">+11.1%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center p-3 bg-green-50 rounded-lg">
+                        <div>
+                            <div class="text-sm text-gray-500">지지선 (20일 최저)</div>
+                            <div class="text-xl font-bold text-green-600">20,950원</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm text-gray-500">하락 여력</div>
+                            <div class="font-bold text-green-600">-46.8%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trading Strategy -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4"><i class="fas fa-chess-knight mr-2 text-indigo-600"></i>매매 전략</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-4 bg-gray-50 rounded-xl text-center">
+                    <div class="text-sm text-gray-500 mb-1">진입가</div>
+                    <div class="text-3xl font-bold text-gray-800">39,350원</div>
+                </div>
+                <div class="p-4 bg-green-50 rounded-xl text-center">
+                    <div class="text-sm text-gray-500 mb-1">목표가 (+15%)</div>
+                    <div class="text-3xl font-bold text-green-600">45,252원</div>
+                </div>
+                <div class="p-4 bg-red-50 rounded-xl text-center">
+                    <div class="text-sm text-gray-500 mb-1">손절가 (-7%)</div>
+                    <div class="text-3xl font-bold text-red-600">36,596원</div>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-4 bg-indigo-50 rounded-xl">
+                <div class="flex justify-between items-center">
+                    <span class="font-medium text-gray-700">리스크/리워드 비율</span>
+                    <span class="text-2xl font-bold text-indigo-600">1 : 2.1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Warning -->
+        <div class="glass rounded-2xl p-6 mb-6 border-2 border-red-200">
+            <h3 class="text-xl font-bold text-red-700 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i>주의사항 및 리스크</h3>
+            <div class="space-y-3">
+                <div class="flex items-start gap-3 p-3 bg-red-50 rounded-lg">
+                    <i class="fas fa-exclamation-circle text-red-500 mt-1"></i>
+                    <div>
+                        <div class="font-bold text-red-800">볼린저 밴드 상단 돌파</div>
+                        <div class="text-sm text-red-600">현재가가 상단 밴드를 6.1% 상회 중. 단기 조정 가능성이 있습니다.</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-3 p-3 bg-yellow-50 rounded-lg">
+                    <i class="fas fa-exclamation-circle text-yellow-500 mt-1"></i>
+                    <div>
+                        <div class="font-bold text-yellow-800">높은 변동성 (ATR 8.32%)</div>
+                        <div class="text-sm text-yellow-700">포지션 사이즈를 30% 이하로 제한하세요.</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+                    <i class="fas fa-info-circle text-orange-500 mt-1"></i>
+                    <div>
+                        <div class="font-bold text-orange-800">단기 급등주의 (1개월 +74%)</div>
+                        <div class="text-sm text-orange-700">분할 매수 전략 권장.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-white/60 text-sm">
+            <p>* 이 분석은 기술적 지표만을 기반으로 하며, 투자 참고용입니다.</p>
+            <p class="mt-2">데이터 기준: 2026-03-13 | Buy Strength Score + 기술적 분석</p>
+        </div>
+    </div>
+</body>
+</html>
