@@ -1,0 +1,357 @@
+[
+  {
+    "symbol": "486450",
+    "name": "미국AI전력인프라",
+    "sector": "AI",
+    "timestamp": "2026-03-16T09:20:36.719614",
+    "news_sentiment": {
+      "score": 0.72,
+      "mentions": 38,
+      "positive_keywords": [
+        "데이터센터",
+        "전력 수요",
+        "AI 투자"
+      ],
+      "negative_keywords": [],
+      "trend": "increasing"
+    },
+    "industry_data": {
+      "growth_rate": 28.7,
+      "market_size": 198.0,
+      "trends": [
+        "생성형 AI",
+        "엔터프라이즈 AI",
+        "AI 반도체"
+      ],
+      "risks": [
+        "규제 리스크",
+        "윤리적 이슈"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "미국AI전력인프라",
+        "index": 65,
+        "trend": "rising"
+      },
+      {
+        "keyword": "AI",
+        "index": 85,
+        "trend": "rising"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 100,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "261240",
+    "name": "미국달러선물",
+    "sector": "ETF",
+    "timestamp": "2026-03-16T09:20:36.869236",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "미국달러선물",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "ETF",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "002100",
+    "name": "경농",
+    "sector": "농업",
+    "timestamp": "2026-03-16T09:20:36.937446",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "경농",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "농업",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "475150",
+    "name": "이터닉스",
+    "sector": "반도체",
+    "timestamp": "2026-03-16T09:20:37.002345",
+    "news_sentiment": {
+      "score": 0.65,
+      "mentions": 45,
+      "positive_keywords": [
+        "AI 반도체",
+        "장비 수주",
+        "신규 계약"
+      ],
+      "negative_keywords": [
+        "경쟁 심화"
+      ],
+      "trend": "increasing"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "이터닉스",
+        "index": 45,
+        "trend": "rising"
+      },
+      {
+        "keyword": "반도체",
+        "index": 78,
+        "trend": "rising"
+      },
+      {
+        "keyword": "AI",
+        "index": 85,
+        "trend": "rising"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 100,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "025860",
+    "name": "남해화학",
+    "sector": "화학",
+    "timestamp": "2026-03-16T09:20:37.071255",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "남해화학",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "화학",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "019180",
+    "name": "티에이치엔",
+    "sector": "IT",
+    "timestamp": "2026-03-16T09:20:37.137234",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "티에이치엔",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "IT",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "006110",
+    "name": "삼아알미늄",
+    "sector": "비철금속",
+    "timestamp": "2026-03-16T09:20:37.197796",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "삼아알미늄",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "비철금속",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  },
+  {
+    "symbol": "001130",
+    "name": "대한제분",
+    "sector": "식품",
+    "timestamp": "2026-03-16T09:20:37.259502",
+    "news_sentiment": {
+      "score": 0.5,
+      "mentions": 20,
+      "positive_keywords": [
+        "성장"
+      ],
+      "negative_keywords": [],
+      "trend": "stable"
+    },
+    "industry_data": {
+      "growth_rate": 18.5,
+      "market_size": 612.0,
+      "trends": [
+        "AI 칩 수요 증가",
+        "HBM 고성장",
+        "파운드리 투자 확대"
+      ],
+      "risks": [
+        "중국 경쟁 심화",
+        "사이클 조정"
+      ]
+    },
+    "google_trends": [
+      {
+        "keyword": "대한제분",
+        "index": 50,
+        "trend": "stable"
+      },
+      {
+        "keyword": "식품",
+        "index": 50,
+        "trend": "stable"
+      }
+    ],
+    "macro_indicators": [],
+    "composite_score": 96.0,
+    "recommendation": "STRONG_BUY"
+  }
+]
