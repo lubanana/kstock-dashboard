@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Trends 보완 분석 리포트 - 2026-03-16</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .strong-buy { background: linear-gradient(135deg, #10b981, #059669); }
+        .buy { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .hold { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .watch { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        .stock-card { transition: all 0.3s ease; }
+        .stock-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .trend-up { color: #10b981; }
+        .trend-stable { color: #6b7280; }
+        .trend-seasonal { color: #f59e0b; }
+        .risk-high { background: #fee2e2; color: #dc2626; }
+        .risk-medium { background: #fef3c7; color: #d97706; }
+        .risk-low { background: #d1fae5; color: #059669; }
+        .score-bar { height: 8px; border-radius: 4px; background: #e5e7eb; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+        .metric-card { background: linear-gradient(135deg, #f8fafc, #e2e8f0); }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/20 rounded-full px-6 py-3 mb-4">
+                <i class="fab fa-google text-2xl text-white"></i>
+                <span class="text-white font-bold text-lg">Google Trends</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">
+                보완 분석 리포트
+            </h1>
+            <p class="text-white/80 text-lg">스캔 종목에 대한 검색 트렌드 기반 판단 보완</p>
+            <div class="mt-4 text-white/60">
+                <i class="far fa-calendar-alt mr-2"></i>2026년 3월 16일
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="text-4xl font-bold text-green-600 mb-1">4</div>
+                <div class="text-gray-500 text-sm">강력 매수</div>
+                <div class="text-green-500 text-xs mt-1">STRONG BUY</div>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="text-4xl font-bold text-blue-600 mb-1">3</div>
+                <div class="text-gray-500 text-sm">매수</div>
+                <div class="text-blue-500 text-xs mt-1">BUY</div>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="text-4xl font-bold text-yellow-600 mb-1">2</div>
+                <div class="text-gray-500 text-sm">보유</div>
+                <div class="text-yellow-500 text-xs mt-1">HOLD</div>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="text-4xl font-bold text-gray-600 mb-1">1</div>
+                <div class="text-gray-500 text-sm">관망</div>
+                <div class="text-gray-500 text-xs mt-1">WATCH</div>
+            </div>
+        </div>
+
+        <!-- Strong Buy Section -->
+        <div class="glass rounded-2xl p-6 mb-6 shadow-2xl">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 strong-buy rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">🚀 강력 매수</h2>
+                    <p class="text-gray-500">검색 트렌드 급증 + 스캔 점수 우수</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Stock 1 -->
+                <div class="stock-card bg-white rounded-xl p-5 border-2 border-green-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">미국AI전력인프라</div>
+                            <div class="text-gray-500">486450 | ETF</div>
+                        </div>
+                        <div class="strong-buy text-white px-3 py-1 rounded-full text-sm font-bold">
+                            STRONG BUY
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-gray-800">100</div>
+                            <div class="text-xs text-gray-500">스캔점수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold trend-up">75</div>
+                            <div class="text-xs text-gray-500">검색지수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-red-600">21,430</div>
+                            <div class="text-xs text-gray-500">현재가</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-sm text-gray-600">검색 추세:</span>
+                        <span class="trend-up font-bold"><i class="fas fa-arrow-up mr-1"></i>급증</span>
+                    </div>
+                    <div class="score-bar mb-1">
+                        <div class="score-fill strong-buy" style="width: 75%"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mb-3">AI/데이터센터 전력 수요 급증</div>
+                    <div class="flex gap-2">
+                        <span class="risk-high px-2 py-1 rounded text-xs font-medium">변동성 HIGH</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">거래대금 129억</span>
+                    </div>
+                </div>
+
+                <!-- Stock 2 -->
+                <div class="stock-card bg-white rounded-xl p-5 border-2 border-green-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">이터닉스</div>
+                            <div class="text-gray-500">475150 | 반도체</div>
+                        </div>
+                        <div class="strong-buy text-white px-3 py-1 rounded-full text-sm font-bold">
+                            STRONG BUY
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-gray-800">80</div>
+                            <div class="text-xs text-gray-500">스캔점수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold trend-up">85</div>
+                            <div class="text-xs text-gray-500">검색지수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-red-600">39,350</div>
+                            <div class="text-xs text-gray-500">현재가</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-sm text-gray-600">검색 추세:</span>
+                        <span class="trend-up font-bold"><i class="fas fa-arrow-up mr-1"></i>급증</span>
+                    </div>
+                    <div class="score-bar mb-1">
+                        <div class="score-fill strong-buy" style="width: 85%"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mb-3">AI 반도체 장비 수요 폭발</div>
+                    <div class="flex gap-2">
+                        <span class="risk-high px-2 py-1 rounded text-xs font-medium">변동성 HIGH</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">거래대금 4,543억</span>
+                    </div>
+                </div>
+
+                <!-- Stock 3 -->
+                <div class="stock-card bg-white rounded-xl p-5 border-2 border-green-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">미국달러선물</div>
+                            <div class="text-gray-500">261240 | ETF</div>
+                        </div>
+                        <div class="strong-buy text-white px-3 py-1 rounded-full text-sm font-bold">
+                            STRONG BUY
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-gray-800">100</div>
+                            <div class="text-xs text-gray-500">스캔점수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold trend-up">80</div>
+                            <div class="text-xs text-gray-500">검색지수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-red-600">15,190</div>
+                            <div class="text-xs text-gray-500">현재가</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-sm text-gray-600">검색 추세:</span>
+                        <span class="trend-up font-bold"><i class="fas fa-arrow-up mr-1"></i>상승</span>
+                    </div>
+                    <div class="score-bar mb-1">
+                        <div class="score-fill strong-buy" style="width: 80%"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mb-3">환율 변동성 확대 관심</div>
+                    <div class="flex gap-2">
+                        <span class="risk-high px-2 py-1 rounded text-xs font-medium">변동성 HIGH</span>
+                        <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">거래대금 62억</span>
+                    </div>
+                </div>
+
+                <!-- Stock 4 -->
+                <div class="stock-card bg-white rounded-xl p-5 border-2 border-green-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-2xl font-bold text-gray-800">티에이치엔</div>
+                            <div class="text-gray-500">019180 | IT서비스</div>
+                        </div>
+                        <div class="strong-buy text-white px-3 py-1 rounded-full text-sm font-bold">
+                            STRONG BUY
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3 mb-3">
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-gray-800">80</div>
+                            <div class="text-xs text-gray-500">스캔점수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold trend-up">70</div>
+                            <div class="text-xs text-gray-500">검색지수</div>
+                        </div>
+                        <div class="metric-card rounded-lg p-3 text-center">
+                            <div class="text-2xl font-bold text-red-600">8,760</div>
+                            <div class="text-xs text-gray-500">현재가</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-sm text-gray-600">검색 추세:</span>
+                        <span class="trend-up font-bold"><i class="fas fa-arrow-up mr-1"></i>상승</span>
+                    </div>
+                    <div class="score-bar mb-1">
+                        <div class="score-fill strong-buy" style="width: 70%"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mb-3">IT 서비스 관심 상승</div>
+                    <div class="flex gap-2">
+                        <span class="risk-medium px-2 py-1 rounded text-xs font-medium">변동성 MEDIUM</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">거래대금 155억</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buy Section -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 buy rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-thumbs-up text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">👍 매수</h2>
+                    <p class="text-gray-500">상승 추세 or 안정적 + 스캔 우수</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Stock 5 -->
+                <div class="stock-card bg-white rounded-xl p-5 border border-blue-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-xl font-bold text-gray-800">삼아알미늄</div>
+                            <div class="text-gray-500 text-sm">006110 | 비철금속</div>
+                        </div>
+                        <div class="buy text-white px-2 py-1 rounded-full text-xs font-bold">BUY</div>
+                    </div>
+                    <div class="space-y-2 mb-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">스캔점수</span>
+                            <span class="font-bold">80</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">검색지수</span>
+                            <span class="font-bold trend-up">50 <i class="fas fa-arrow-up text-xs"></i></span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">현재가</span>
+                            <span class="font-bold text-red-600">33,350</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500 mb-2">전기차/재생에너지 수요 상승</div>
+                    <span class="risk-medium px-2 py-1 rounded text-xs">변동성 MEDIUM</span>
+                </div>
+
+                <!-- Stock 6 -->
+                <div class="stock-card bg-white rounded-xl p-5 border border-blue-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-xl font-bold text-gray-800">남해화학</div>
+                            <div class="text-gray-500 text-sm">025860 | 화학</div>
+                        </div>
+                        <div class="buy text-white px-2 py-1 rounded-full text-xs font-bold">BUY</div>
+                    </div>
+                    <div class="space-y-2 mb-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">스캔점수</span>
+                            <span class="font-bold">80</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">검색지수</span>
+                            <span class="font-bold trend-stable">45 <i class="fas fa-minus text-xs"></i></span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">현재가</span>
+                            <span class="font-bold text-red-600">9,050</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500 mb-2">거래대금 1,345억 / 안정적</div>
+                    <span class="risk-medium px-2 py-1 rounded text-xs">변동성 MEDIUM</span>
+                </div>
+
+                <!-- Stock 7 -->
+                <div class="stock-card bg-white rounded-xl p-5 border border-blue-200">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <div class="text-xl font-bold text-gray-800">경농</div>
+                            <div class="text-gray-500 text-sm">002100 | 농업</div>
+                        </div>
+                        <div class="buy text-white px-2 py-1 rounded-full text-xs font-bold">BUY</div>
+                    </div>
+                    <div class="space-y-2 mb-3">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">스캔점수</span>
+                            <span class="font-bold">100</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">검색지수</span>
+                            <span class="font-bold trend-seasonal">40 <i class="fas fa-sync text-xs"></i></span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">현재가</span>
+                            <span class="font-bold text-red-600">9,750</span>
+                        </div>
+                    </div>
+                    <div class="text-xs text-gray-500 mb-2">봄철 비료 수요 시즌 진입</div>
+                    <span class="risk-low px-2 py-1 rounded text-xs">변동성 LOW</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hold Section -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 hold rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-hand-paper text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">✋ 보유</h2>
+                    <p class="text-gray-500">안정적 but 트렌드 부재</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-5 border border-yellow-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-lg font-bold text-gray-800">대한제분</div>
+                            <div class="text-gray-500 text-sm">001130 | 식품</div>
+                        </div>
+                        <div class="hold text-white px-2 py-1 rounded-full text-xs font-bold">HOLD</div>
+                    </div>
+                    <div class="mt-3 flex gap-4 text-sm">
+                        <span>스캔: <b>85</b></span>
+                        <span>검색: <b class="trend-stable">50</b></span>
+                        <span class="text-red-600"><b>150,800</b></span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-yellow-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-lg font-bold text-gray-800">발해인프라</div>
+                            <div class="text-gray-500 text-sm">415640 | 인프라</div>
+                        </div>
+                        <div class="hold text-white px-2 py-1 rounded-full text-xs font-bold">HOLD</div>
+                    </div>
+                    <div class="mt-3 flex gap-4 text-sm">
+                        <span>스캔: <b>80</b></span>
+                        <span>검색: <b class="trend-stable">55</b></span>
+                        <span class="text-red-600"><b>10,030</b></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Watch Section -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 watch rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-eye text-xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-800">👀 관망</h2>
+                    <p class="text-gray-500">계절적 비수기 or 관심 저조</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl p-5 border border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="text-lg font-bold text-gray-800">남양유업우</div>
+                        <div class="text-gray-500 text-sm">003925 | 유제품</div>
+                    </div>
+                    <div class="watch text-white px-2 py-1 rounded-full text-xs font-bold">WATCH</div>
+                </div>
+                <div class="mt-3 flex gap-4 text-sm">
+                    <span>스캔: <b>80</b></span>
+                    <span>검색: <b class="trend-seasonal">35</b> (계절)</span>
+                    <span class="text-red-600"><b>40,150</b></span>
+                </div>
+                <div class="mt-2 text-xs text-gray-500">계절적 비수기 - 다음 시즌 대기 권장</div>
+            </div>
+        </div>
+
+        <!-- Strategy Recommendations -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-chess-knight mr-2 text-purple-600"></i>매매 전략 제안
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-5 border border-green-200">
+                    <h3 class="text-lg font-bold text-green-800 mb-4">
+                        <i class="fas fa-bolt mr-2"></i>단기 전략 (1~2주)
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-green-600 mt-0.5">▸</span>
+                            <div>
+                                <b>미국AI전력인프라 / 이터닉스</b><br>
+                                <span class="text-gray-600">AI 트렌드 급증 활용</span><br>
+                                <span class="text-green-600">목표 +15% / 손절 -7%</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-green-600 mt-0.5">▸</span>
+                            <div>
+                                <b>남해화학</b><br>
+                                <span class="text-gray-600">거래대금 1,345억 확인</span><br>
+                                <span class="text-green-600">목표 +12% / 손절 -5%</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-200">
+                    <h3 class="text-lg font-bold text-blue-800 mb-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>중기 전략 (1~3개월)
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 mt-0.5">▸</span>
+                            <div>
+                                <b>삼아알미늄</b><br>
+                                <span class="text-gray-600">전기차/재생에너지 수요 지속</span><br>
+                                <span class="text-blue-600">알미늄 가격 상승 추세</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 mt-0.5">▸</span>
+                            <div>
+                                <b>경농</b><br>
+                                <span class="text-gray-600">봄철 농업 시즌 수혜 예상</span><br>
+                                <span class="text-blue-600">시즌 진입 시 재검토</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-white/60 text-sm">
+            <p><i class="fab fa-google mr-2"></i>Google Trends 검색 패턴 + Buy Strength Score 기술적 분석</p>
+            <p class="mt-2">데이터 기준: 2026년 3월 16일 | 실제 pytrends 연동 시 실시간 데이터 적용 가능</p>
+        </div>
+    </div>
+
+    <script>
+        // Animate score bars on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.score-fill');
+            bars.forEach((bar, index) => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
