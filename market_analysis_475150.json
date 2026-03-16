@@ -1,0 +1,52 @@
+{
+  "symbol": "475150",
+  "name": "이터닉스",
+  "sector": "반도체",
+  "timestamp": "2026-03-16T09:15:45.146180",
+  "news_sentiment": {
+    "score": 0.65,
+    "mentions": 45,
+    "positive_keywords": [
+      "AI 반도체",
+      "장비 수주",
+      "신규 계약"
+    ],
+    "negative_keywords": [
+      "경쟁 심화"
+    ],
+    "trend": "increasing"
+  },
+  "industry_data": {
+    "growth_rate": 18.5,
+    "market_size": 612.0,
+    "trends": [
+      "AI 칩 수요 증가",
+      "HBM 고성장",
+      "파운드리 투자 확대"
+    ],
+    "risks": [
+      "중국 경쟁 심화",
+      "사이클 조정"
+    ]
+  },
+  "google_trends": [
+    {
+      "keyword": "이터닉스",
+      "index": 45,
+      "trend": "rising"
+    },
+    {
+      "keyword": "반도체",
+      "index": 78,
+      "trend": "rising"
+    },
+    {
+      "keyword": "AI",
+      "index": 85,
+      "trend": "rising"
+    }
+  ],
+  "macro_indicators": [],
+  "composite_score": 100,
+  "recommendation": "STRONG_BUY"
+}

@@ -1,0 +1,45 @@
+{
+  "symbol": "486450",
+  "name": "미국AI전력인프라",
+  "sector": "AI",
+  "timestamp": "2026-03-16T09:17:50.667295",
+  "news_sentiment": {
+    "score": 0.72,
+    "mentions": 38,
+    "positive_keywords": [
+      "데이터센터",
+      "전력 수요",
+      "AI 투자"
+    ],
+    "negative_keywords": [],
+    "trend": "increasing"
+  },
+  "industry_data": {
+    "growth_rate": 28.7,
+    "market_size": 198.0,
+    "trends": [
+      "생성형 AI",
+      "엔터프라이즈 AI",
+      "AI 반도체"
+    ],
+    "risks": [
+      "규제 리스크",
+      "윤리적 이슈"
+    ]
+  },
+  "google_trends": [
+    {
+      "keyword": "미국AI전력인프라",
+      "index": 65,
+      "trend": "rising"
+    },
+    {
+      "keyword": "AI",
+      "index": 85,
+      "trend": "rising"
+    }
+  ],
+  "macro_indicators": [],
+  "composite_score": 100,
+  "recommendation": "STRONG_BUY"
+}
