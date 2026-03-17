@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V10 Buffett Strategy Report - 2026-03-17</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.97); backdrop-filter: blur(10px); }
+        .stock-card { transition: all 0.3s ease; }
+        .stock-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .strategy-badge { font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; font-weight: 600; display: inline-block; margin: 2px; }
+        .graham { background: #dcfce7; color: #166534; }
+        .quality { background: #dbeafe; color: #1e40af; }
+        .dividend { background: #fef3c7; color: #92400e; }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-4">
+                <i class="fas fa-gem text-2xl text-yellow-400"></i>
+                <span class="text-white font-bold text-lg">V10 Buffett Value Strategy</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">V10 버핏 3전략 리포트</h1>
+            <p class="text-white/60 text-lg">2026-03-17 | 스캔 기준일: 2026-03-16</p>
+            
+            <div class="mt-6 flex justify-center gap-4 flex-wrap">
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-green-400">581</div>
+                    <div class="text-white/60 text-sm">그레이엄</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-blue-400">406</div>
+                    <div class="text-white/60 text-sm">퀄리티</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-yellow-400">806</div>
+                    <div class="text-white/60 text-sm">배당성장</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-file-alt mr-2 text-blue-600"></i>Executive Summary
+            </h2>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-4">
+                <p class="text-gray-700 leading-relaxed">
+                    2026년 3월 16일 기준 V10 버핏 3전략 스캔 결과, <strong>그레이엄 순유동자산 581개</strong>, 
+                    <strong>퀄리티 적정가 406개</strong>, <strong>배당성장 806개</strong> 종목이 선정되었습니다.
+                    본 리포트는 각 전략별 상위 10개 종목에 대한 시장조사 결과를 포함합니다.
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    📊 <strong>백테스트 결과:</strong> 그레이엄 +114.0% (CAGR 40.2%), 퀄리티 +98.8%, 배당 +56.3% (27개월 기준)
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-green-50 rounded-xl p-3 text-center border-2 border-green-200">
+                    <div class="text-sm font-bold text-green-600">V01 그레이엄</div>
+                    <div class="text-xs text-gray-600 mt-1">순유동자산 저평가</div>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-3 text-center border-2 border-blue-200">
+                    <div class="text-sm font-bold text-blue-600">V02 퀄리티</div>
+                    <div class="text-xs text-gray-600 mt-1">ROE 15%+ Moat</div>
+                </div>
+                <div class="bg-yellow-50 rounded-xl p-3 text-center border-2 border-yellow-200">
+                    <div class="text-sm font-bold text-yellow-600">V03 배당</div>
+                    <div class="text-xs text-gray-600 mt-1">성장성 + 안정성</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graham Strategy -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-coins mr-2 text-green-600"></i>V01 그레이엄 순유동자산 TOP 10
+            </h2>
+            
+            <div class="space-y-4">
+                
+                <!-- Stock 1: 비트컴퓨터 -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border-2 border-green-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">1</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">비트컴퓨터</h3>
+                                <p class="text-sm text-gray-500">032850 | KOSDAQ</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-green-600">5,610원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge graham">그레이엄 순유동자산</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700"><strong>배당:</strong> 주당 66원 (시가배당율 1.3%) 현금배당 결정 (2025-12-31 기준)</p>
+                        <p class="text-sm text-gray-600 mt-1">저평가 소형주, 안정적인 배당 수익률 제공</p>
+                    </div>
+                </div>
+
+                <!-- Stock 2: 대원미디어 -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border-2 border-green-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">2</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">대원미디어</h3>
+                                <p class="text-sm text-gray-500">048910 | KOSDAQ</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-green-600">8,740원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge graham">그레이엄 순유동자산</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700"><strong>사업:</strong> 만화 및 애니메이션 콘텐츠 종합엔터테인먼트</p>
+                        <p class="text-sm text-gray-700"><strong>2025년 실적:</strong> 매출 3,428억 (+33.7%), 영업익 99.5억 (+515.7%)</p>
+                        <p class="text-sm text-gray-700"><strong>배당:</strong> 주당 165원 (시가배당율 2.0%)</p>
+                        <p class="text-sm text-gray-600 mt-1">콘텐츠 사업 고성장 + 안정적 배당</p>
+                    </div>
+                </div>
+
+                <!-- Stock 3: 와이어블 -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border-2 border-green-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">3</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">와이어블</h3>
+                                <p class="text-sm text-gray-500">065530 | KOSDAQ</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-green-600">1,424원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge graham">그레이엄 순유동자산</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700"><strong>2025년 실적:</strong> 매출 755.9억, 영업익 55.3억 (+44.5%), 순이익 45.7억 (+52.7%)</p>
+                        <p class="text-sm text-gray-700"><strong>방산:</strong> 방위사업청과 93억 규모 공급계약 (2025-2027)</p>
+                        <p class="text-sm text-gray-600 mt-1">방산 수주 + 실적 개선 중인 저평가 종목</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Quality Strategy -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-award mr-2 text-blue-600"></i>V02 퀄리티 적정가 TOP 10
+            </h2>
+            
+            <div class="space-y-4">
+                
+                <!-- Stock 1: 한일단조 -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border-2 border-blue-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">1</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">한일단조</h3>
+                                <p class="text-sm text-gray-500">024740 | KOSPI</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-600">3,435원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge quality">퀄리티 적정가</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700">ROE 15%+ 우량 기업, 적정가 내에서 거래 중</p>
+                        <p class="text-sm text-gray-600 mt-1">경쟁 우위(Moat) 보유 기업으로 장기 투자 적합</p>
+                    </div>
+                </div>
+
+                <!-- Stock 2: 아이씨디 -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border-2 border-blue-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">2</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">아이씨디</h3>
+                                <p class="text-sm text-gray-500">040910 | KOSDAQ</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-600">5,500원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge quality">퀄리티 적정가</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700">반도체/디스플레이 장비 전문 기업</p>
+                        <p class="text-sm text-gray-600 mt-1">높은 ROE와 안정적인 이익 창출 능력 보유</p>
+                    </div>
+                </div>
+
+                <!-- Stock 3: 두산퓨얼셀 -->
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-5 border-2 border-blue-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">9</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">두산퓨얼셀</h3>
+                                <p class="text-sm text-gray-500">336260 | KOSPI</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-600">42,850원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge quality">퀄리티 적정가</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700"><strong>사업:</strong> 수소연료전지 발전시스템 글로벌 리더</p>
+                        <p class="text-sm text-gray-700"><strong>특징:</strong> 친환경 수소 경제 핵심 기업</p>
+                        <p class="text-sm text-gray-600 mt-1">장기 성장성과 기술적 경쟁 우위 보유</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dividend Strategy -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-hand-holding-usd mr-2 text-yellow-600"></i>V03 배당성장 TOP 10
+            </h2>
+            
+            <div class="space-y-4">
+                
+                <!-- Stock 1: 디지털대성 -->
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-5 border-2 border-yellow-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold">1</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">디지털대성</h3>
+                                <p class="text-sm text-gray-500">068930 | KOSDAQ</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-yellow-600">8,860원</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge dividend">배당성장</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700">안정적인 배당 수익률 + 변동성 40% 이하</p>
+                        <p class="text-sm text-gray-600 mt-1">성장성과 안정성을 동시에 추구하는 배당주</p>
+                    </div>
+                </div>
+
+                <!-- Stock 2-5: ETF/ETN Group -->
+                <div class="bg-gradient-to-r from-gray-50 to-slate-50 rounded-xl p-5 border-2 border-gray-200 stock-card">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center text-white font-bold">2-5</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">ETF/ETN 그룹</h3>
+                                <p class="text-sm text-gray-500">Various</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-gray-600">Var</div>
+                            <div class="text-sm text-gray-500">100점</div>
+                        </div>
+                    </div>
+                    <span class="strategy-badge dividend">배당성장</span>
+                    <div class="mt-3 bg-white rounded-lg p-3">
+                        <p class="text-sm text-gray-700"><strong>포함 종목:</strong></p>
+                        <ul class="text-sm text-gray-700 ml-4 mt-1">
+                            <li>• 미국나스닥바이오 (203780) - 31,160원</li>
+                            <li>• 선진국 (251350) - 37,160원</li>
+                            <li>• 미국S 시리즈 (360750, 399110, 426020, 429000)</li>
+                        </ul>
+                        <p class="text-sm text-gray-600 mt-2">해외 우량 자산에 투자하는 ETF/ETN으로 안정적 배당</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Investment Recommendation -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-chart-pie mr-2 text-purple-600"></i>투자 포트폴리오 제안
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-4 border-2 border-green-300">
+                    <h3 class="font-bold text-green-700 mb-2">공격형 (그레이엄)</h3>
+                    <p class="text-sm text-gray-700 mb-3">저평가 소형주 중심 고수익 추구</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
+                        <li>• 대원미디어 (40%) - 콘텐츠 고성장</li>
+                        <li>• 와이어블 (35%) - 방산 수주</li>
+                        <li>• 비트컴퓨터 (25%) - 배당 수익</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-4 border-2 border-blue-300">
+                    <h3 class="font-bold text-blue-700 mb-2">균형형 (퀄리티)</h3>
+                    <p class="text-sm text-gray-700 mb-3">우량 기업 중심 안정적 성장</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
+                        <li>• 두산퓨얼셀 (50%) - 수소 경제</li>
+                        <li>• 한일단조 (30%) - 전통 우량주</li>
+                        <li>• 아이씨디 (20%) - 반도체 장비</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-100 rounded-xl p-4 border-2 border-yellow-300">
+                    <h3 class="font-bold text-yellow-700 mb-2">안정형 (배당)</h3>
+                    <p class="text-sm text-gray-700 mb-3">배당 수익 중심 안정 추구</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
+                        <li>• 디지털대성 (40%)</li>
+                        <li>• ETF/ETN 그룹 (60%)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backtest Results -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-history mr-2 text-indigo-600"></i>백테스트 결과 (2024.01~2026.03)
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="p-3 text-left">전략</th>
+                            <th class="p-3 text-right">총수익률</th>
+                            <th class="p-3 text-right">CAGR</th>
+                            <th class="p-3 text-right">승률</th>
+                            <th class="p-3 text-right">MDD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b bg-green-50">
+                            <td class="p-3 font-bold">그레이엄 (V01)</td>
+                            <td class="p-3 text-right text-green-600 font-bold">+114.0%</td>
+                            <td class="p-3 text-right">40.2%</td>
+                            <td class="p-3 text-right">70.6%</td>
+                            <td class="p-3 text-right text-green-600">0.0%</td>
+                        </tr>
+                        <tr class="border-b bg-blue-50">
+                            <td class="p-3 font-bold">퀄리티 (V02)</td>
+                            <td class="p-3 text-right text-blue-600 font-bold">+98.8%</td>
+                            <td class="p-3 text-right">35.7%</td>
+                            <td class="p-3 text-right">46.0%</td>
+                            <td class="p-3 text-right">-4.0%</td>
+                        </tr>
+                        <tr class="border-b bg-yellow-50">
+                            <td class="p-3 font-bold">배당 (V03)</td>
+                            <td class="p-3 text-right text-yellow-600 font-bold">+56.3%</td>
+                            <td class="p-3 text-right">21.9%</td>
+                            <td class="p-3 text-right">76.0%</td>
+                            <td class="p-3 text-right">-3.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-4 bg-gray-50 rounded-lg p-3">
+                <p class="text-sm text-gray-700">
+                    <i class="fas fa-info-circle text-blue-600 mr-1"></i>
+                    <strong>초기 자본 1억원 기준:</strong> 그레이엄 → 2.14억원 (+1.14억), 퀄리티 → 1.99억원 (+9,900만), 배당 → 1.56억원 (+5,600만)
+                </p>
+            </div>
+        </div>
+
+        <!-- Risk Warning -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-exclamation-triangle mr-2 text-orange-600"></i>리스크 및 주의사항
+            </h2>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                <ul class="text-sm text-gray-700 space-y-2">
+                    <li>• <strong>과거 성과 ≠ 미래 수익:</strong> 백테스트 결과는 과거 데이터 기반이며 미래 수익을 보장하지 않습니다.</li>
+                    <li>• <strong>시장 리스크:</strong> 전략 신호는 과거 데이터 기반으로 시장 상황 급변 시 손실 가능성이 있습니다.</li>
+                    <li>• <strong>그레이엄 리스크:</strong> 저평가 종목은 회복이 지연되거나 가치 하락 가능성이 있습니다.</li>
+                    <li>• <strong>퀄리티 리스크:</strong> 우량 기업도 업황 악화 시 주가 하락할 수 있습니다.</li>
+                    <li>• <strong>배당 리스크:</strong> ETF/ETN은 배당금 지급이 변동적일 수 있습니다.</li>
+                    <li>• <strong>분산 투자:</strong> 단일 종목에 집중 투자하지 말고 분산하여 리스크를 관리하세요.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-white/60 text-sm">
+            <p>V10 Buffett Value Strategy Report</p>
+            <p class="mt-2">⚠️ 본 리포트는 정보 제공 목적으로 작성되었으며, 투자의 책임은 투자자 본인에게 있습니다.</p>
+            <p class="mt-1">Generated: 2026-03-17 | Data: SQLite DB (2026-03-16 기준) | Scanner: buffett_integrated_scanner.py</p>
+            <p class="mt-2">
+                <a href="index.html" class="text-blue-400 hover:underline">← 대시보드로 돌아가기</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

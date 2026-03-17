@@ -36,7 +36,8 @@ class BuffettIntegratedScanner:
         with DatabaseManager(self.db_path) as db:
             cursor = db.conn.cursor()
             cursor.execute("SELECT symbol, name, market FROM stock_info ORDER BY market, symbol")
-            return [dict(row) for row in cursor.fetchall()]
+            columns = [description[0] for description in cursor.description]
+            return [dict(zip(columns, row)) for row in cursor.fetchall()]
     
     def get_price_data(self, symbol: str, days: int = 252) -> pd.DataFrame:
         """주가 데이터 조회 - fdr_wrapper 사용"""
