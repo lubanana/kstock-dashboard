@@ -21,12 +21,11 @@ import numpy as np
 from datetime import datetime, timedelta
 from pathlib import Path
 import json
-import sqlite3
 from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass, field
 from collections import defaultdict
 
-from local_db import LocalDB
+from fdr_wrapper import FDRWrapper, DatabaseManager
 
 
 @dataclass
@@ -74,6 +73,9 @@ class MultiStrategyBacktester:
         self.initial_capital = initial_capital
         self.current_capital = initial_capital
         
+        # fdr_wrapper 인스턴스
+        self.fdr = FDRWrapper(db_path=db_path)
+        
         # 포트폴리오 상태
         self.positions: Dict[str, Position] = {}  # 현재 보유 포지션
         self.trades: List[Trade] = []  # 완료된 거래
@@ -84,41 +86,40 @@ class MultiStrategyBacktester:
         self.position_size_per_strategy = 0.1  # 전략당 10% 투자
         
     def get_trading_dates(self, start_date: str, end_date: str) -> List[str]:
-        """거래일 목록 반환"""
-        conn = sqlite3.connect(self.db_path)
-        query = """
-            SELECT DISTINCT date FROM stock_prices 
-            WHERE date BETWEEN ? AND ?
-            ORDER BY date
-        """
-        dates = pd.read_sql_query(query, conn, params=(start_date, end_date))['date'].tolist()
-        conn.close()
+        """거래일 목록 반환 - fdr_wrapper 통해 DB 조회"""
+        with DatabaseManager(self.db_path) as db:
+            query = """
+                SELECT DISTINCT date FROM stock_prices 
+                WHERE date BETWEEN ? AND ?
+                ORDER BY date
+            """
+            dates = pd.read_sql_query(query, db.conn, params=(start_date, end_date))['date'].tolist()
         return dates
     
     def get_stock_data_on_date(self, symbol: str, date: str, days_back: int = 252) -> pd.DataFrame:
-        """특정 날짜 기준 과거 데이터 조회"""
-        conn = sqlite3.connect(self.db_path)
-        query = """
-            SELECT * FROM stock_prices 
-            WHERE symbol = ? AND date <= ?
-            ORDER BY date DESC
-            LIMIT ?
-        """
-        df = pd.read_sql_query(query, conn, params=(symbol, date, days_back))
-        conn.close()
+        """특정 날짜 기준 과거 데이터 조회 - fdr_wrapper 사용"""
+        # 시작일 계산 (days_back 만큼 이전)
+        end_dt = datetime.strptime(date, '%Y-%m-%d')
+        start_dt = end_dt - timedelta(days=days_back * 1.5)  # 여유분
+        start_date = start_dt.strftime('%Y-%m-%d')
+        
+        # fdr_wrapper로 데이터 조회
+        df = self.fdr.get_price(symbol, start_date, date)
         
         if df.empty:
             return pd.DataFrame()
         
+        # 최근 days_back 개만 필터링
         df = df.sort_values('date')
+        df = df.tail(days_back)
+        
         df.columns = [c.lower() for c in df.columns]
         return df
     
     def get_stock_info(self) -> pd.DataFrame:
-        """전체 종목 정보 조회"""
-        conn = sqlite3.connect(self.db_path)
-        df = pd.read_sql_query("SELECT symbol, name, market FROM stock_info", conn)
-        conn.close()
+        """전체 종목 정보 조회 - fdr_wrapper 통해 DB 조회"""
+        with DatabaseManager(self.db_path) as db:
+            df = pd.read_sql_query("SELECT symbol, name, market FROM stock_info", db.conn)
         return df
     
     def calculate_ma(self, series: pd.Series, period: int) -> float:

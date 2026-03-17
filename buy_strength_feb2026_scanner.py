@@ -15,9 +15,9 @@ import numpy as np
 from datetime import datetime, timedelta
 from pathlib import Path
 import json
-import sqlite3
 
 from buy_strength_scanner import BuyStrengthScanner
+from fdr_wrapper import FDRWrapper
 
 
 def get_date_range(year: int, month: int) -> list:
@@ -43,7 +43,7 @@ def get_date_range(year: int, month: int) -> list:
 
 def scan_for_date(scan_date: str, db_path: str = './data/pivot_strategy.db') -> pd.DataFrame:
     """
-    특정 날짜 기준으로 스캔 실행
+    특정 날짜 기준으로 스캔 실행 - fdr_wrapper 사용
     
     Args:
         scan_date: 스캔 기준일 (YYYY-MM-DD)
@@ -61,6 +61,9 @@ def scan_for_date(scan_date: str, db_path: str = './data/pivot_strategy.db') -> 
         min_price=1000
     )
     
+    # fdr_wrapper 인스턴스 생성
+    fdr = FDRWrapper(db_path=db_path)
+    
     # 종목 리스트 로드
     with open('./data/stock_list.json', 'r') as f:
         stocks_data = json.load(f)
@@ -68,23 +71,20 @@ def scan_for_date(scan_date: str, db_path: str = './data/pivot_strategy.db') -> 
     
     results = []
     
+    # 시작일 계산 (200일 이전 데이터 필요)
+    end_dt = datetime.strptime(scan_date, '%Y-%m-%d')
+    start_dt = end_dt - timedelta(days=300)
+    start_date = start_dt.strftime('%Y-%m-%d')
+    
     for idx, row in stocks.iterrows():
         if idx % 200 == 0:
             print(f"   진행: {idx}/{len(stocks)}")
         
         try:
-            # 해당 날짜 기준 데이터 조회
             symbol = row['symbol']
             
-            # DB에서 해당 날짜까지의 데이터 조회
-            conn = sqlite3.connect(db_path)
-            query = """
-                SELECT * FROM stock_prices 
-                WHERE symbol = ? AND date <= ?
-                ORDER BY date
-            """
-            df = pd.read_sql_query(query, conn, params=(symbol, scan_date))
-            conn.close()
+            # fdr_wrapper로 데이터 조회
+            df = fdr.get_price(symbol, start_date, scan_date)
             
             if len(df) < 60:
                 continue

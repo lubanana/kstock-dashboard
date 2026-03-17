@@ -5,7 +5,6 @@
 KOSPI/KOSDAQ 3,286종목 대상
 """
 
-import sqlite3
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -14,6 +13,8 @@ import os
 from typing import List, Dict, Tuple
 import warnings
 warnings.filterwarnings('ignore')
+
+from fdr_wrapper import FDRWrapper, DatabaseManager
 
 class BuffettIntegratedScanner:
     """
@@ -27,42 +28,30 @@ class BuffettIntegratedScanner:
             'strategy2': [],  # 퀄리티 적정가
             'strategy3': []   # 배당성장
         }
-        self.conn = None
+        # fdr_wrapper 인스턴스 생성
+        self.fdr = FDRWrapper(db_path=db_path)
         
-    def connect_db(self):
-        """DB 연결"""
-        self.conn = sqlite3.connect(self.db_path)
-        self.conn.row_factory = sqlite3.Row
-        
-    def close_db(self):
-        """DB 종료"""
-        if self.conn:
-            self.conn.close()
-            
     def get_all_stocks(self) -> List[Dict]:
-        """전체 종목 리스트 조회"""
-        cursor = self.conn.cursor()
-        cursor.execute("SELECT symbol, name, market FROM stock_info ORDER BY market, symbol")
-        return [dict(row) for row in cursor.fetchall()]
+        """전체 종목 리스트 조회 - fdr_wrapper 통해 DB 조회"""
+        with DatabaseManager(self.db_path) as db:
+            cursor = db.conn.cursor()
+            cursor.execute("SELECT symbol, name, market FROM stock_info ORDER BY market, symbol")
+            return [dict(row) for row in cursor.fetchall()]
     
     def get_price_data(self, symbol: str, days: int = 252) -> pd.DataFrame:
-        """주가 데이터 조회"""
-        cursor = self.conn.cursor()
-        cursor.execute("""
-            SELECT date, open, high, low, close, volume 
-            FROM stock_prices 
-            WHERE symbol = ? 
-            ORDER BY date DESC 
-            LIMIT ?
-        """, (symbol, days))
+        """주가 데이터 조회 - fdr_wrapper 사용"""
+        end_date = datetime.now().strftime('%Y-%m-%d')
+        start_dt = datetime.now() - timedelta(days=days * 1.5)
+        start_date = start_dt.strftime('%Y-%m-%d')
         
-        rows = cursor.fetchall()
-        if not rows or len(rows) < 60:  # 최소 60일 데이터 필요
+        # fdr_wrapper로 데이터 조회
+        df = self.fdr.get_price(symbol, start_date, end_date)
+        
+        if df.empty or len(df) < 60:  # 최소 60일 데이터 필요
             return None
-            
-        df = pd.DataFrame(rows, columns=['date', 'open', 'high', 'low', 'close', 'volume'])
-        df['date'] = pd.to_datetime(df['date'])
-        df = df.sort_values('date')
+        
+        # 최근 days개만 사용
+        df = df.sort_values('date').tail(days)
         
         # 기술적 지표 계산
         df['ma20'] = df['close'].rolling(20).mean()
@@ -404,49 +393,43 @@ class BuffettIntegratedScanner:
         print("🔍 버핏 3전략 통합 스캔 시작")
         print("=" * 60)
         
-        self.connect_db()
+        stocks = self.get_all_stocks()
+        print(f"총 {len(stocks)}개 종목 스캔 대상")
         
-        try:
-            stocks = self.get_all_stocks()
-            print(f"총 {len(stocks)}개 종목 스캔 대상")
+        for i, stock in enumerate(stocks):
+            if i % 500 == 0:
+                print(f"  진행: {i}/{len(stocks)} ({i/len(stocks)*100:.1f}%)")
             
-            for i, stock in enumerate(stocks):
-                if i % 500 == 0:
-                    print(f"  진행: {i}/{len(stocks)} ({i/len(stocks)*100:.1f}%)")
-                
-                symbol = stock['symbol']
-                name = stock['name']
-                market = stock['market']
-                
-                # 주가 데이터 조회
-                df = self.get_price_data(symbol)
-                if df is None:
-                    continue
-                
-                # 3전략 동시 스크리닝
-                s1 = self.screen_strategy1_graham(symbol, name, market, df)
-                s2 = self.screen_strategy2_quality(symbol, name, market, df)
-                s3 = self.screen_strategy3_dividend(symbol, name, market, df)
-                
-                if s1:
-                    self.results['strategy1'].append(s1)
-                if s2:
-                    self.results['strategy2'].append(s2)
-                if s3:
-                    self.results['strategy3'].append(s3)
+            symbol = stock['symbol']
+            name = stock['name']
+            market = stock['market']
             
-            # 정렬
-            self.results['strategy1'].sort(key=lambda x: x['score'], reverse=True)
-            self.results['strategy2'].sort(key=lambda x: x['score'], reverse=True)
-            self.results['strategy3'].sort(key=lambda x: x['score'], reverse=True)
+            # 주가 데이터 조회 (fdr_wrapper 사용)
+            df = self.get_price_data(symbol)
+            if df is None:
+                continue
             
-            print(f"\n✅ 스캔 완료!")
-            print(f"  전략1 (그레이엄): {len(self.results['strategy1'])}개")
-            print(f"  전략2 (퀄리티): {len(self.results['strategy2'])}개")
-            print(f"  전략3 (배당): {len(self.results['strategy3'])}개")
+            # 3전략 동시 스크리닝
+            s1 = self.screen_strategy1_graham(symbol, name, market, df)
+            s2 = self.screen_strategy2_quality(symbol, name, market, df)
+            s3 = self.screen_strategy3_dividend(symbol, name, market, df)
             
-        finally:
-            self.close_db()
+            if s1:
+                self.results['strategy1'].append(s1)
+            if s2:
+                self.results['strategy2'].append(s2)
+            if s3:
+                self.results['strategy3'].append(s3)
+        
+        # 정렬
+        self.results['strategy1'].sort(key=lambda x: x['score'], reverse=True)
+        self.results['strategy2'].sort(key=lambda x: x['score'], reverse=True)
+        self.results['strategy3'].sort(key=lambda x: x['score'], reverse=True)
+        
+        print(f"\n✅ 스캔 완료!")
+        print(f"  전략1 (그레이엄): {len(self.results['strategy1'])}개")
+        print(f"  전략2 (퀄리티): {len(self.results['strategy2'])}개")
+        print(f"  전략3 (배당): {len(self.results['strategy3'])}개")
         
         return self.results
     
