@@ -213,6 +213,45 @@ STRATEGY_CATALOG = {
             'total_return': {'V01': 1.14, 'V02': 0.988, 'V03': 0.563},
             'period_months': 27
         }
+    },
+    
+    # N 시리즈 - NPS Value (국민연금 패턴)
+    'N01': {
+        'name': 'NPS 저평가 우량주',
+        'category': 'NPS Value',
+        'description': '국민연금 장기 가치 투자 패턴 복제',
+        'file': 'nps_value_scanner_real.py',
+        'type': 'scanner',
+        'criteria': [
+            '3년 연속 ROE 10~15%',
+            'PBR ≤ 1.0 or 업종 하위 30%',
+            'NPS 지분 ≥ 5%',
+            '배당성향 20~50%'
+        ],
+        'params': {
+            'roe_min': 0.10,
+            'roe_max': 0.15,
+            'pbr_max': 1.0,
+            'nps_min': 0.05,
+            'payout_range': [0.20, 0.50],
+            'min_market_cap': 1000e8,
+            'exclude_financials': True
+        },
+        'scoring_weights': {
+            'roe': 0.40,
+            'dividend': 0.25,
+            'valuation': 0.20,
+            'nps': 0.15
+        }
+    },
+    'N02': {
+        'name': 'NPS 알고리즘 문서',
+        'category': 'NPS Value',
+        'description': '4-Filter 알고리즘 설계 문서',
+        'file': 'nps_scanner_algorithm.py',
+        'type': 'documentation',
+        'criteria': ['알고리즘 설계', '필터링 로직', '스코어링 가중치'],
+        'note': '설계 문서 참조용'
     }
 }
 

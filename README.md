@@ -94,6 +94,45 @@ python strategy_cli.py best             # 추천 조합 보기
 - RSI(15점): 30-60 사이
 - 추세(15점): 정배열
 
+### N 시리즈 - NPS Value (국민연금 패턴)
+| 코드 | 이름 | 설명 | 필터 | 파일 |
+|------|------|------|------|------|
+| **N01** | NPS 저평가 우량주 | 국민연금 장기 가치 투자 패턴 복제 | 4-Filters | `nps_value_scanner_real.py` |
+| **N02** | NPS 알고리즘 문서 | 4-Filter 설계 문서 | - | `nps_scanner_algorithm.py` |
+
+**4-Filter 알고리즘:**
+```
+[Filter 1: ROE] 3년 연속 10% ≤ ROE ≤ 15%
+    Score = 100 - |ROE_AVG - 12.5%| × 1000
+
+[Filter 2: PBR] PBR ≤ 1.0 OR 업종 하위 30%
+    Score = Absolute(50) + Relative to Industry(50)
+
+[Filter 3: NPS] 지분 ≥ 5% AND 2분기 유지/확대
+    Score = min(70, 지분율×1000) + Trend Bonus(30)
+
+[Filter 4: Dividend] 3년 평균 > 시장평균, 성향 20~50%
+    Score = Yield(50) + Payout(50)
+```
+
+**가중치:**
+- ROE: 40% (최우선)
+- 배당: 25%
+- 저평가: 20%
+- NPS 지분: 15%
+
+**세부 조건:**
+- 금융업(은행/증권/보험) 제외
+- 관리/환기종목 제외
+- 시가총액 1,000억원 이상
+
+**사용 방법:**
+```bash
+python nps_value_scanner_real.py              # 전체 스캔
+python nps_value_scanner_real.py --limit 100  # 100개만 테스트
+python strategy_cli.py run N01                # CLI로 실행
+```
+
 ---
 
 ## 🚀 빠른 시작

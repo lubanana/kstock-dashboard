@@ -18,10 +18,15 @@ Examples:
     
     # 최고 조합 보기
     python strategy_cli.py best
+
+    # NPS Value Scanner 실행
+    python strategy_cli.py run N01
+    python strategy_cli.py run N01 --limit 100
 """
 
 import argparse
 import sys
+import subprocess
 from strategy_catalog import (
     list_strategies, get_strategy_info, run_strategy, 
     run_sequential, get_best_combinations, print_strategy_table
@@ -68,6 +73,11 @@ def cmd_info(args):
             for k, v in info['backtest_result'].items():
                 print(f"  {k}: {v}")
         
+        if 'scoring_weights' in info:
+            print(f"\n⚖️ 가중치:")
+            for k, v in info['scoring_weights'].items():
+                print(f"  {k}: {v*100:.0f}%")
+        
         if 'note' in info:
             print(f"\n💡 참고: {info['note']}")
             
@@ -78,6 +88,40 @@ def cmd_info(args):
 
 def cmd_run(args):
     """전략 실행"""
+    # NPS Value Scanner 직접 실행
+    if args.code == 'N01':
+        print("🏛️ NPS Value Scanner 실행")
+        print("=" * 60)
+        
+        cmd = ['python3', 'nps_value_scanner_real.py']
+        if hasattr(args, 'limit') and args.limit:
+            print(f"   테스트 모드: 상위 {args.limit}개 종목만 스캔")
+            # Import and run with limit
+            try:
+                from nps_value_scanner_real import NPSValueScannerReal
+                scanner = NPSValueScannerReal()
+                results = scanner.run_scan(max_stocks=args.limit)
+                if results:
+                    scanner.print_summary()
+                    scanner.export_results()
+                return
+            except Exception as e:
+                print(f"❌ 실행 오류: {e}")
+                return
+        else:
+            # Full scan
+            try:
+                from nps_value_scanner_real import NPSValueScannerReal
+                scanner = NPSValueScannerReal()
+                results = scanner.run_scan()
+                if results:
+                    scanner.print_summary()
+                    scanner.export_results()
+                return
+            except Exception as e:
+                print(f"❌ 실행 오류: {e}")
+                return
+    
     result = run_strategy(args.code)
     print(f"\n✅ 실행 결과:")
     print(f"  코드: {result['code']}")
@@ -152,11 +196,15 @@ def main():
   V01-V03 : 버핏 3전략 개별
   V10     : 버핏 3전략 종합
   V11     : 버핏 백테스트
+  N01     : NPS 저평가 우량주 (4-Filter)
+  N02     : NPS 알고리즘 문서
 
 예시:
   python strategy_cli.py list
   python strategy_cli.py info M03
   python strategy_cli.py run M03
+  python strategy_cli.py run N01              # NPS 전체 스캔
+  python strategy_cli.py run N01 --limit 100  # NPS 100개 테스트
   python strategy_cli.py sequential M01,M02,M03
   python strategy_cli.py best
         '''
@@ -176,7 +224,8 @@ def main():
     
     # run
     run_parser = subparsers.add_parser('run', help='전략 실행')
-    run_parser.add_argument('code', help='전략 코드 (예: M03)')
+    run_parser.add_argument('code', help='전략 코드 (예: M03, N01)')
+    run_parser.add_argument('--limit', '-l', type=int, help='테스트용 종목 수 제한 (N01 전용)')
     run_parser.set_defaults(func=cmd_run)
     
     # sequential
