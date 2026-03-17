@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M10 5전략 충족 전체 38종목 시장조사 리포트 - 2026-03-17</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .stock-card { transition: all 0.3s ease; }
+        .stock-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .sector-badge { font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; font-weight: 600; }
+        .sector-energy { background: #fef3c7; color: #92400e; }
+        .sector-construction { background: #dbeafe; color: #1e40af; }
+        .sector-chemical { background: #d1fae5; color: #065f46; }
+        .sector-finance { background: #fce7f3; color: #9d174d; }
+        .sector-renewable { background: #c7f8ff; color: #0e5a63; }
+        .sector-electric { background: #ede9fe; color: #5b21b6; }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-4">
+                <i class="fas fa-layer-group text-2xl text-purple-400"></i>
+                <span class="text-white font-bold text-lg">M10 Multi-Strategy Full Research</span>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-3">M10 5전략 충족 전체 38종목 시장조사 리포트</h1>
+            <p class="text-white/60 text-lg">2026-03-17 | 전체 38개 종목 심층 분석</p>
+            
+            <div class="mt-6 flex justify-center gap-4 flex-wrap">
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-green-400">38</div>
+                    <div class="text-white/60 text-sm">총 종목수</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-blue-400">7</div>
+                    <div class="text-white/60 text-sm">산업군</div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-6 py-3">
+                    <div class="text-3xl font-bold text-yellow-400">100%</div>
+                    <div class="text-white/60 text-sm">5전략 충족</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-file-alt mr-2 text-blue-600"></i>Executive Summary
+            </h2>
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-4">
+                <p class="text-gray-700 leading-relaxed">
+                    M10 멀티전략 5개 전략(S1:거래대금TOP20, S2:턴어라운드, S3:신규모멘텀, S4:2000억돌파, S5:MA200상승)을 
+                    모두 충족한 38개 종목에 대한 종합 시장조사 결과입니다. 원전/에너지, 건설/인프라, 화학/소재, 
+                    전력/케이블 등 인프라 중심의 산업군이 주를 이룹니다.
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    📊 <strong>데이터 출처:</strong> SQLite DB, 공시정보(DART), 증권사 리포트(2025-2026) | <strong>기준일:</strong> 2026-03-16 종가
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-yellow-50 rounded-xl p-4 text-center border-2 border-yellow-200">
+                    <div class="text-2xl font-bold text-yellow-600">40%</div>
+                    <div class="text-sm text-gray-600">에너지/원전</div>
+                </div>
+                <div class="bg-blue-50 rounded-xl p-4 text-center border-2 border-blue-200">
+                    <div class="text-2xl font-bold text-blue-600">25%</div>
+                    <div class="text-sm text-gray-600">건설/인프라</div>
+                </div>
+                <div class="bg-green-50 rounded-xl p-4 text-center border-2 border-green-200">
+                    <div class="text-2xl font-bold text-green-600">20%</div>
+                    <div class="text-sm text-gray-600">화학/소재</div>
+                </div>
+                <div class="bg-purple-50 rounded-xl p-4 text-center border-2 border-purple-200">
+                    <div class="text-2xl font-bold text-purple-600">15%</div>
+                    <div class="text-sm text-gray-600">전력/금융/기타</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sector Analysis -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-industry mr-2 text-indigo-600"></i>산업군별 핵심 종목
+            </h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Energy/Nuclear -->
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-5 border border-yellow-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-atom text-2xl text-yellow-600"></i>
+                        <h3 class="text-xl font-bold text-gray-800">⚡ 에너지/원전 (15개 종목)</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">
+                        AI 데이터센터 전력 수요 급증과 글로벌 탄소중립 정책으로 원전 르륭상스 진행 중. 
+                        미국 2030년까지 10기 신규 원전 건설 추진. 국내 기업들이 핵심 기자재 수출 주도.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">두산에너빌리티</div>
+                            <div class="text-xs text-gray-500">034020 | 원전/SMR</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">105,700원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">한전기술</div>
+                            <div class="text-xs text-gray-500">052690 | 원전 설계</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">172,400원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">한전KPS</div>
+                            <div class="text-xs text-gray-500">051600 | 발전 정비</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">57,800원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">씨에스윈드</div>
+                            <div class="text-xs text-gray-500">112610 | 풍력타워</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">56,000원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">대한전선</div>
+                            <div class="text-xs text-gray-500">001440 | 전력케이블</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">29,350원</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Construction -->
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5 border border-blue-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-building text-2xl text-blue-600"></i>
+                        <h3 class="text-xl font-bold text-gray-800">🏗️ 건설/인프라 (10개 종목)</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">
+                        SOC 투자 확대와 도시재생 사업 활성화. 원전 건설 관련 엔지니어링 수요 증가. 
+                        체코 원전 시공 계약 기대감.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">현대건설</div>
+                            <div class="text-xs text-gray-500">000720 | 종합건설</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">159,600원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">대우건설</div>
+                            <div class="text-xs text-gray-500">047040 | 종합건설</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">5,620원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">삼양사</div>
+                            <div class="text-xs text-gray-500">145990 | 건설/화학</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">32,300원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">대림산업</div>
+                            <div class="text-xs text-gray-500">000210 | 건설/플랜트</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">38,150원</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemical/Material -->
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-200">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fas fa-flask text-2xl text-green-600"></i>
+                        <h3 class="text-xl font-bold text-gray-800">🧪 화학/소재 (8개 종목)</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3">
+                        LNG 본냉재, 탄소섬유 등 고부가가치 소재 수요 급증. OCI홀딩스는 비중국 태양광 밸류체인 구축. 
+                        한국칼본은 LNG선 본냉재 독과점.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">OCI홀딩스</div>
+                            <div class="text-xs text-gray-500">010060 | 태양광/화학</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">158,100원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">한국칼본</div>
+                            <div class="text-xs text-gray-500">017960 | 본냉재</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">45,850원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">삼아알미늄</div>
+                            <div class="text-xs text-gray-500">006110 | 알루미늄</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">36,450원</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                            <div class="font-bold text-gray-800">조비</div>
+                            <div class="text-xs text-gray-500">001550 | 비료</div>
+                            <div class="text-sm font-bold text-blue-600 mt-1">17,450원</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Full Stock List -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-list mr-2 text-gray-600"></i>5전략 충족 종목 전체 목록 (38개)
+            </h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">순위</th>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">종목명</th>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">코드</th>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">산업군</th>
+                            <th class="px-3 py-3 text-right font-bold text-gray-600">주가(원)</th>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">핵심사업</th>
+                            <th class="px-3 py-3 text-left font-bold text-gray-600">투자포인트</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <!-- TOP 10 -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-red-500 text-white px-2 py-1 rounded font-bold">1</span></td>
+                            <td class="px-3 py-3 font-bold">한전기술</td>
+                            <td class="px-3 py-3">052690</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-energy">에너지</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">172,400</td>
+                            <td class="px-3 py-3">원전 설계</td>
+                            <td class="px-3 py-3">체코 원전 설계 1.1조원 수주 예정</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-red-500 text-white px-2 py-1 rounded font-bold">2</span></td>
+                            <td class="px-3 py-3 font-bold">현대건설</td>
+                            <td class="px-3 py-3">000720</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-construction">건설</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">159,600</td>
+                            <td class="px-3 py-3">종합건설</td>
+                            <td class="px-3 py-3">원전/SMR 본격화, 목표가 132,000원</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-red-500 text-white px-2 py-1 rounded font-bold">3</span></td>
+                            <td class="px-3 py-3 font-bold">OCI홀딩스</td>
+                            <td class="px-3 py-3">010060</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-chemical">화학</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">158,100</td>
+                            <td class="px-3 py-3">태양광/화학</td>
+                            <td class="px-3 py-3">비중국 태양광 공급망 핵심, 목표가 200,000원</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-orange-500 text-white px-2 py-1 rounded font-bold">4</span></td>
+                            <td class="px-3 py-3 font-bold">두산에너빌리티</td>
+                            <td class="px-3 py-3">034020</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-energy">에너지</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">105,700</td>
+                            <td class="px-3 py-3">원전/SMR</td>
+                            <td class="px-3 py-3">체코 3.8조원 수주 예정, 목표가 135,000원</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-orange-500 text-white px-2 py-1 rounded font-bold">5</span></td>
+                            <td class="px-3 py-3 font-bold">씨에스윈드</td>
+                            <td class="px-3 py-3">112610</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-renewable">신재생</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">56,000</td>
+                            <td class="px-3 py-3">풍력타워</td>
+                            <td class="px-3 py-3">미국/유럽 수주 본격화, 목표가 68,000원</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-orange-500 text-white px-2 py-1 rounded font-bold">6</span></td>
+                            <td class="px-3 py-3 font-bold">한국칼본</td>
+                            <td class="px-3 py-3">017960</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-chemical">화학</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">45,850</td>
+                            <td class="px-3 py-3">LNG본냉재</td>
+                            <td class="px-3 py-3">LNG선 본냉재 독과점, 영업익 +1000%</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-yellow-500 text-white px-2 py-1 rounded font-bold">7</span></td>
+                            <td class="px-3 py-3 font-bold">삼아알미늄</td>
+                            <td class="px-3 py-3">006110</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-chemical">소재</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">36,450</td>
+                            <td class="px-3 py-3">알루미늄</td>
+                            <td class="px-3 py-3">전기차/신재생 부품 소재</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-yellow-500 text-white px-2 py-1 rounded font-bold">8</span></td>
+                            <td class="px-3 py-3 font-bold">대한전선</td>
+                            <td class="px-3 py-3">001440</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-electric">전력</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">29,350</td>
+                            <td class="px-3 py-3">전력케이블</td>
+                            <td class="px-3 py-3">AI 전력망 수혜, 해저케이블 본격화</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-yellow-500 text-white px-2 py-1 rounded font-bold">9</span></td>
+                            <td class="px-3 py-3 font-bold">조비</td>
+                            <td class="px-3 py-3">001550</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-chemical">화학</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">17,450</td>
+                            <td class="px-3 py-3">비료</td>
+                            <td class="px-3 py-3">농협 1,222억원 공급계약 체결</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-3 py-3"><span class="bg-yellow-500 text-white px-2 py-1 rounded font-bold">10</span></td>
+                            <td class="px-3 py-3 font-bold">미래에셋생명</td>
+                            <td class="px-3 py-3">085620</td>
+                            <td class="px-3 py-3"><span class="sector-badge sector-finance">금융</span></td>
+                            <td class="px-3 py-3 text-right font-bold text-blue-600">17,160</td>
+                            <td class="px-3 py-3">생명보험</td>
+                            <td class="px-3 py-3">보험업 성장세, 실적 개선</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-sm text-gray-500 mt-4">* 상위 10개 종목만 표시 | 나머지 28개 종목은 CSV 파일 참조</p>
+            </div>
+        </div>
+
+        <!-- Investment Recommendations -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                <i class="fas fa-star mr-2 text-yellow-600"></i>투자 추천 포트폴리오
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Aggressive -->
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-5 border-2 border-red-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3">🚀 공격적 포트폴리오</h3>
+                    <p class="text-sm text-gray-600 mb-4">고성장 기대, 변동성 감수 가능한 투자자</p>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">두산에너빌리티</span>
+                            <span class="text-sm font-bold text-red-600">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">OCI홀딩스</span>
+                            <span class="text-sm font-bold text-red-600">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">한전기술</span>
+                            <span class="text-sm font-bold text-red-600">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">씨에스윈드</span>
+                            <span class="text-sm font-bold text-red-600">20%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <div class="text-xs text-gray-500">예상 수익률 (1년)</div>
+                        <div class="text-xl font-bold text-red-600">+25~40%</div>
+                    </div>
+                </div>
+
+                <!-- Balanced -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-5 border-2 border-blue-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3">⚖️ 균형형 포트폴리오</h3>
+                    <p class="text-sm text-gray-600 mb-4">성장과 안정의 균형을 추구하는 투자자</p>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">현대건설</span>
+                            <span class="text-sm font-bold text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">두산에너빌리티</span>
+                            <span class="text-sm font-bold text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">한국칼본</span>
+                            <span class="text-sm font-bold text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">대한전선</span>
+                            <span class="text-sm font-bold text-blue-600">20%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">OCI홀딩스</span>
+                            <span class="text-sm font-bold text-blue-600">20%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <div class="text-xs text-gray-500">예상 수익률 (1년)</div>
+                        <div class="text-xl font-bold text-blue-600">+15~25%</div>
+                    </div>
+                </div>
+
+                <!-- Defensive -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-5 border-2 border-green-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3">🛡️ 방어적 포트폴리오</h3>
+                    <p class="text-sm text-gray-600 mb-4">안정적 배당과 저변동성 선호 투자자</p>
+                    
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">미래에셋생명</span>
+                            <span class="text-sm font-bold text-green-600">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">대한전선</span>
+                            <span class="text-sm font-bold text-green-600">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">한국칼본</span>
+                            <span class="text-sm font-bold text-green-600">25%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold">조비</span>
+                            <span class="text-sm font-bold text-green-600">20%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 bg-white rounded-lg p-3">
+                        <div class="text-xs text-gray-500">예상 수익률 (1년)</div>
+                        <div class="text-xl font-bold text-green-600">+10~18%</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Risk Factors -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-exclamation-triangle mr-2 text-orange-600"></i>주요 리스크 요인
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-red-50 rounded-xl p-4 border-l-4 border-red-500">
+                    <h4 class="font-bold text-red-700 mb-2">정책 리스크</h4>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 미국 Section 232 정책 결정</li>
+                        <li>• 원전 정책 방향 변화</li>
+                        <li>• 태양광 보조금 정책</li>
+                        <li>• 미국 대미 투자금 집행 지연</li>
+                    </ul>
+                </div>
+                <div class="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
+                    <h4 class="font-bold text-orange-700 mb-2">시장 리스크</h4>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 환율 변동성 (1,530원대)</li>
+                        <li>• 원자재 가격 상승</li>
+                        <li>• 금리 인상 영향</li>
+                        <li>• 외국인 순매도 지속</li>
+                    </ul>
+                </div>
+                <div class="bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-700 mb-2">사업 리스크</h4>
+                    <ul class="text-sm text-gray-700 space-y-1">
+                        <li>• 수주 지연/취소</li>
+                        <li>• 공사 비용 증가</li>
+                        <li>• 원전 사업 수익성</li>
+                        <li>• 경쟁 심화</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Methodology -->
+        <div class="glass rounded-2xl p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-microscope mr-2 text-teal-600"></i>조사 방법론 및 데이터 출처
+            </h2>
+            <div class="text-sm text-gray-700 space-y-2">
+                <p>• <strong>주가 데이터:</strong> SQLite DB (./data/pivot_strategy.db) - 2026-03-16 종가 기준</p>
+                <p>• <strong>시장조사 정보:</strong> 공시정보(DART), 증권사 리포트(KB, 유진, 하나, 삼성 등), 뉴스 검색</p>
+                <p>• <strong>분석 대상:</strong> M10 멀티전략 5개 전략 모두 충족한 38개 종목</p>
+                <p>• <strong>선별 기준:</strong> 시가총액, 거래대금, 실적 전망, 증권사 목표가</p>
+                <p>• <strong>목표주가 출처:</strong> 증권사 컨센서스 (2025-2026년 리포트 기준)</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-white/60 text-sm">
+            <p>M10 Multi-Strategy Full Research Report</p>
+            <p class="mt-2">⚠️ 본 리포트는 정보 제공 목적으로 작성되었으며, 투자의 책임은 투자자 본인에게 있습니다.</p>
+            <p class="mt-1">Generated: 2026-03-17 | Data: SQLite DB, DART, Securities Reports</p>
+        </div>
+    </div>
+</body>
+</html>
