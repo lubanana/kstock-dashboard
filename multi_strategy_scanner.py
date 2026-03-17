@@ -61,7 +61,7 @@ class MultiStrategyScanner:
     
     def __init__(self, db_path: str = './data/pivot_strategy.db'):
         self.db = LocalDB(db_path)
-        self.fdr = FDRWrapper(db_path)
+        self.fdr = FDRWrapper(db_path=db_path)  # 수정: keyword argument 사용
         self.today = datetime.now().strftime('%Y-%m-%d')
         
     def get_all_stocks(self) -> pd.DataFrame:

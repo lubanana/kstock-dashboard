@@ -295,6 +295,7 @@ class FDRWrapper:
         symbol: str, 
         start: Optional[str] = None, 
         end: Optional[str] = None,
+        min_days: Optional[int] = None,
         use_cache: bool = True
     ) -> pd.DataFrame:
         """
@@ -311,9 +312,11 @@ class FDRWrapper:
         symbol : str
             종목코드 (예: '005930')
         start : str, optional
-            시작일 (YYYY-MM-DD), None이면 1년 전
+            시작일 (YYYY-MM-DD), None이면 min_days 기반 계산
         end : str, optional
             종료일 (YYYY-MM-DD), None이면 오늘
+        min_days : int, optional
+            최소 데이터 일수 (start가 None일 때 1년 + 여유분으로 계산)
         use_cache : bool
             DB 캐시 사용 여부 (기본 True)
         
@@ -325,8 +328,14 @@ class FDRWrapper:
         # 기본 날짜 설정
         if end is None:
             end = datetime.now().strftime('%Y-%m-%d')
+        
+        # start가 None이면 min_days 기반으로 계산
         if start is None:
-            start = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
+            if min_days is not None:
+                # min_days + 여유분(50%)으로 시작일 계산
+                start = (datetime.now() - timedelta(days=int(min_days * 1.5))).strftime('%Y-%m-%d')
+            else:
+                start = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
         
         # 날짜 형식 통일
         start = pd.to_datetime(start).strftime('%Y-%m-%d')
