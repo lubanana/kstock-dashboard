@@ -1,0 +1,20 @@
+[
+  {
+    "symbol": "005930",
+    "name": "삼성전자",
+    "sector": NaN,
+    "current_price": 183300.0,
+    "has_disclosure": true,
+    "disclosure_count": 2605,
+    "returns_1y": 2.1822916666666665,
+    "volatility": 0.45839349204050783,
+    "volume_avg": 21918825.962809917,
+    "score_momentum": 90,
+    "score_stability": 30,
+    "score_value": 30,
+    "score_nps": 80,
+    "total_score": 61.5,
+    "grade": "B",
+    "rank": 1
+  }
+]

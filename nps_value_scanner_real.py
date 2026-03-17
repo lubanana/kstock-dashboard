@@ -96,11 +96,19 @@ class NPSValueScannerReal:
         logger.info("📊 Loading stock universe...")
         
         try:
-            # Get all stocks with price data
-            stocks = self.fdr.db.get_all_stocks()
+            # Get all stocks from stock_info
+            import sqlite3
+            conn = sqlite3.connect('./data/pivot_strategy.db')
+            query = '''
+                SELECT s.symbol, s.name, s.sector
+                FROM stock_info s
+                ORDER BY s.symbol
+            '''
+            stocks = pd.read_sql_query(query, conn)
+            conn.close()
             
-            # Filter by market cap
-            stocks = stocks[stocks['market_cap'] >= self.min_market_cap].copy()
+            # Add placeholder market cap (will be updated later)
+            stocks['market_cap'] = 0.0
             
             # Exclude financial sector
             for sector in self.exclude_sectors:
@@ -111,6 +119,8 @@ class NPSValueScannerReal:
             
         except Exception as e:
             logger.error(f"❌ Failed to load stocks: {e}")
+            import traceback
+            traceback.print_exc()
             return pd.DataFrame()
     
     def get_latest_prices(self, symbols: List[str]) -> Dict[str, float]:

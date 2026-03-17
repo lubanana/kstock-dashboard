@@ -405,7 +405,8 @@ class DartDisclosureWrapper:
         # Fetch from API
         try:
             logger.info(f"🌐 Fetching disclosures from API: {corp_code}")
-            df = self._fetch_from_api(self.dart.list, corp_code, start_date, end_date, page_count)
+            # Note: dart.list doesn't accept page_count, signature is (corp, start, end, kind, kind_detail, final)
+            df = self._fetch_from_api(self.dart.list, corp_code, start_date, end_date)
             
             if df is not None and not df.empty:
                 records = df.to_dict('records')
