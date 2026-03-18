@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B01 + AI 예측 종합 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .grade-a { background: linear-gradient(135deg, #10b981, #059669); }
+        .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .grade-d { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        .up { color: #ef4444; }
+        .down { color: #3b82f6; }
+        .card-hover { transition: all 0.3s ease; cursor: pointer; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+        .modal-content { background: white; margin: 5% auto; padding: 0; border-radius: 20px; width: 90%; max-width: 1000px; max-height: 90vh; overflow: hidden; }
+        .modal-header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; }
+        .modal-body { padding: 20px; max-height: 70vh; overflow-y: auto; }
+        .close { color: white; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: #ddd; }
+        #chart-container { width: 100%; height: 400px; }
+    </style>
+</head>
+<body class="p-4">
+    <!-- 모달 -->
+    <div id="stockModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                <p id="modal-subtitle" class="text-sm opacity-80"></p>
+            </div>
+            <div class="modal-body">
+                <div id="chart-container"></div>
+                <div id="stock-details" class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+        <!-- 헤더 -->
+        <div class="glass p-8 mb-6 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-chart-line text-blue-600 mr-3"></i>B01 + AI 예측 종합 리포트
+            </h1>
+            <p class="text-gray-600 text-lg">Buffett Quality + Breakout + Machine Learning Prediction</p>
+            <p class="text-gray-500 mt-2">생성일: 2026년 03월 18일 20:09</p>
+        </div>
+
+        <!-- 요약 카드 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-list-ol text-3xl text-blue-600 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">26</div>
+                <div class="text-gray-600">선정 종목</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-trophy text-3xl text-yellow-500 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">4</div>
+                <div class="text-gray-600">A등급 종목</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-arrow-trend-up text-3xl text-green-500 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">8</div>
+                <div class="text-gray-600">상승 예측</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-brain text-3xl text-purple-600 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">15</div>
+                <div class="text-gray-600">AI 종목 학습</div>
+            </div>
+        </div>
+
+        <!-- 투자 전략 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>추천 투자 전략
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-200">
+                    <h3 class="font-bold text-green-800 mb-2">
+                        <i class="fas fa-star mr-2"></i>강력 매수 (A등급 + 상승 예측)
+                    </h3>
+                    <p class="text-green-700 text-sm">005930, 000660, 009150</p>
+                    <p class="text-gray-600 text-xs mt-2">품질 A등급 + AI 상승 예측 70% 이상</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5 border border-blue-200">
+                    <h3 class="font-bold text-blue-800 mb-2">
+                        <i class="fas fa-thumbs-up mr-2"></i>매수 (B등급 + 상승 예측)
+                    </h3>
+                    <p class="text-blue-700 text-sm">005380, 006400, 000270, 950160</p>
+                    <p class="text-gray-600 text-xs mt-2">품질 B등급 + AI 상승 예측 65% 이상</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-5 border border-orange-200">
+                    <h3 class="font-bold text-orange-800 mb-2">
+                        <i class="fas fa-eye mr-2"></i>관망 (AI 하띋 예측)
+                    </h3>
+                    <p class="text-orange-700 text-sm">032830, 012450</p>
+                    <p class="text-gray-600 text-xs mt-2">B01 선정되었으나 AI 하띋 예측</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 종목 테이블 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-table text-blue-600 mr-2"></i>B01 선정 종목 상세
+            </h2>
+            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-info-circle mr-1"></i>종목명 클릭 시 상세 정보와 차트를 확인할 수 있습니다</p>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-3 text-left text-sm font-bold text-gray-700">순위</th>
+                            <th class="p-3 text-left text-sm font-bold text-gray-700">종목</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">B01등급</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">점수</th>
+                            <th class="p-3 text-right text-sm font-bold text-gray-700">현재가</th>
+                            <th class="p-3 text-right text-sm font-bold text-gray-700">목표가</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">AI예측</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">확신도</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">브레이크아웃</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('005930', '삼성전자', 208500.0, 239774.99999999997, 193905.0, 'A', 85, '상승', 81.1)">
+                            <td class="p-3 text-sm font-medium">1</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">삼성전자 <span class="text-xs text-gray-500">(005930)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩208,500</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩239,775</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 81.1%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">81.1%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('000660', 'SK하이닉스', 1056000.0, 1214400.0, 982080.0, 'A', 85, '상승', 75.3)">
+                            <td class="p-3 text-sm font-medium">2</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">SK하이닉스 <span class="text-xs text-gray-500">(000660)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩1,056,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩1,214,400</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75.3%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">75.3%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('032830', '삼성생명', 235000.0, 270250.0, 218550.0, 'A', 85, '하띋', 62.5)">
+                            <td class="p-3 text-sm font-medium">3</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">삼성생명 <span class="text-xs text-gray-500">(032830)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩235,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩270,250</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>하띋
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 62.5%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">62.5%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('009150', '삼성전기', 464000.0, 533600.0, 431520.0, 'A', 85, '상승', 68.7)">
+                            <td class="p-3 text-sm font-medium">4</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">삼성전기 <span class="text-xs text-gray-500">(009150)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩464,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩533,600</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 68.7%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">68.7%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('005380', '현대차', 545000.0, 626750.0, 506850.0, 'B', 70, '상승', 72.4)">
+                            <td class="p-3 text-sm font-medium">5</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">현대차 <span class="text-xs text-gray-500">(005380)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩545,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩626,750</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 72.4%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">72.4%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('006400', '삼성SDI', 405000.0, 465749.99999999994, 376650.0, 'B', 70, '상승', 69.8)">
+                            <td class="p-3 text-sm font-medium">6</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">삼성SDI <span class="text-xs text-gray-500">(006400)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩405,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩465,750</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 69.8%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">69.8%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('000270', '기아', 175100.0, 201364.99999999997, 162843.0, 'B', 70, '상승', 71.2)">
+                            <td class="p-3 text-sm font-medium">7</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">기아 <span class="text-xs text-gray-500">(000270)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩175,100</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩201,365</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 71.2%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">71.2%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('012450', '한화에어로스페이스', 1390000.0, 1598499.9999999998, 1292700.0, 'B', 70, '하띋', 58.3)">
+                            <td class="p-3 text-sm font-medium">8</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">한화에어로스페이스 <span class="text-xs text-gray-500">(012450)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩1,390,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩1,598,500</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>하띋
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 58.3%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">58.3%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('950160', '코스모신소재', 100700.0, 115804.99999999999, 93651.0, 'B', 70, '상승', 65.9)">
+                            <td class="p-3 text-sm font-medium">9</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">코스모신소재 <span class="text-xs text-gray-500">(950160)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩100,700</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩115,805</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 65.9%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">65.9%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('012330', '현대모비스', 430000.0, 494499.99999999994, 399900.0, 'B', 65, '상승', 67.4)">
+                            <td class="p-3 text-sm font-medium">10</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">현대모비스 <span class="text-xs text-gray-500">(012330)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩430,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩494,500</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 67.4%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">67.4%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('028260', '삼성물산', 299000.0, 343850.0, 278070.0, 'B', 65, '-', 0)">
+                            <td class="p-3 text-sm font-medium">11</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">삼성물산 <span class="text-xs text-gray-500">(028260)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩299,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩343,850</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('105560', 'KB금융', 154700.0, 177905.0, 143871.0, 'B', 65, '-', 0)">
+                            <td class="p-3 text-sm font-medium">12</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">KB금융 <span class="text-xs text-gray-500">(105560)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩154,700</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩177,905</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('128940', '한미약품', 531000.0, 610650.0, 493830.0, 'B', 65, '-', 0)">
+                            <td class="p-3 text-sm font-medium">13</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">한미약품 <span class="text-xs text-gray-500">(128940)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩531,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩610,650</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('316140', '우리금융지주', 33500.0, 38525.0, 31155.0, 'B', 65, '-', 0)">
+                            <td class="p-3 text-sm font-medium">14</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">우리금융지주 <span class="text-xs text-gray-500">(316140)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩33,500</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩38,525</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('024110', '기업은행', 23850.0, 27427.499999999996, 22180.5, 'B', 65, '-', 0)">
+                            <td class="p-3 text-sm font-medium">15</td>
+                            <td class="p-3">
+                                <div class="font-bold text-blue-600 hover:underline">기업은행 <span class="text-xs text-gray-500">(024110)</span></div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩23,850</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩27,427</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 품질 지표 분석 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-chart-bar text-blue-600 mr-2"></i>B01 품질 지표 분석
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-blue-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 ROE (추정)</div>
+                    <div class="text-2xl font-bold text-blue-700">18.5%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 15% 이상</div>
+                </div>
+                <div class="bg-green-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 부채비율 (추정)</div>
+                    <div class="text-2xl font-bold text-green-700">42.3%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 50% 이하</div>
+                </div>
+                <div class="bg-purple-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 수익률 (추정)</div>
+                    <div class="text-2xl font-bold text-purple-700">12.8%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 10% 이상</div>
+                </div>
+                <div class="bg-orange-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 PBR (추정)</div>
+                    <div class="text-2xl font-bold text-orange-700">1.45</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 2.0 이하</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 면책 조항 -->
+        <div class="glass p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>면책 조항
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li>• 본 리포트는 투자 참고 자료이며, 투자 결정은 투자자 본인의 책임입니다.</li>
+                <li>• B01 전략은 기술적 지표 기반 추정치를 사용하며, 실제 재무제표와 차이가 있을 수 있습니다.</li>
+                <li>• AI 예측은 과거 데이터 기반이며, 미래 수익률을 보장하지 않습니다.</li>
+                <li>• 추천 전략은 시뮬레이션 결과이며, 실제 거래 시 슬리피지와 수수료를 고려해야 합니다.</li>
+            </ul>
+        </div>
+
+        <div class="text-center text-gray-500 text-sm mt-6 pb-6">
+            <p>Generated by K-Stock Strategy System | B01 + Advanced Predictor</p>
+        </div>
+    </div>
+
+    <script>
+        let chart = null;
+        
+        function openModal(symbol, name, price, target, stopLoss, grade, score, aiPred, confidence) {
+            document.getElementById('stockModal').style.display = 'block';
+            document.getElementById('modal-title').innerHTML = name + ' <span class="text-sm">(' + symbol + ')</span>';
+            
+            // 상세 정보 표시
+            const predColor = aiPred === '상승' ? 'text-red-500' : 'text-blue-500';
+            const gradeClass = grade === 'A' ? 'bg-green-500' : (grade === 'B' ? 'bg-blue-500' : 'bg-yellow-500');
+            
+            document.getElementById('stock-details').innerHTML = `
+                <div class="bg-blue-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">현재가</div>
+                    <div class="text-xl font-bold text-gray-800">₩${price.toLocaleString()}</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">목표가 (+15%)</div>
+                    <div class="text-xl font-bold text-green-600">₩${target.toLocaleString()}</div>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">손절가 (-7%)</div>
+                    <div class="text-xl font-bold text-red-600">₩${stopLoss.toLocaleString()}</div>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">B01 점수</div>
+                    <div class="text-xl font-bold text-purple-700">${score}점 <span class="${gradeClass} text-white px-2 py-0.5 rounded text-xs">${grade}</span></div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 text-center col-span-2">
+                    <div class="text-xs text-gray-600">AI 예측</div>
+                    <div class="text-xl font-bold ${predColor}">${aiPred} (${confidence.toFixed(1)}% 확신도)</div>
+                </div>
+            `;
+            
+            // 차트 생성
+            createChart(symbol);
+        }
+        
+        function closeModal() {
+            document.getElementById('stockModal').style.display = 'none';
+            if (chart) {
+                chart.remove();
+                chart = null;
+            }
+        }
+        
+        async function createChart(symbol) {
+            const container = document.getElementById('chart-container');
+            container.innerHTML = '';
+            
+            chart = LightweightCharts.createChart(container, {
+                width: container.clientWidth,
+                height: 400,
+                layout: {
+                    background: { color: '#ffffff' },
+                    textColor: '#333',
+                },
+                grid: {
+                    vertLines: { color: '#f0f0f0' },
+                    horzLines: { color: '#f0f0f0' },
+                },
+                crosshair: {
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                },
+                rightPriceScale: {
+                    borderColor: '#ccc',
+                },
+                timeScale: {
+                    borderColor: '#ccc',
+                    timeVisible: true,
+                },
+            });
+            
+            const candlestickSeries = chart.addCandlestickSeries({
+                upColor: '#ef4444',
+                downColor: '#3b82f6',
+                borderUpColor: '#ef4444',
+                borderDownColor: '#3b82f6',
+                wickUpColor: '#ef4444',
+                wickDownColor: '#3b82f6',
+            });
+            
+            // 샘플 데이터 (실제로는 API에서 가져와야 함)
+            const sampleData = generateSampleData();
+            candlestickSeries.setData(sampleData);
+            
+            // 최근 60일만 표시
+            chart.timeScale().setVisibleLogicalRange({
+                from: sampleData.length - 60,
+                to: sampleData.length,
+            });
+            
+            chart.applyOptions({
+                localization: {
+                    priceFormatter: price => '₩' + price.toLocaleString(),
+                },
+            });
+        }
+        
+        function generateSampleData() {
+            // 샘플 데이터 생성 (실제 사용 시 API 연동 필요)
+            const data = [];
+            let price = 200000;
+            const now = new Date();
+            
+            for (let i = 100; i >= 0; i--) {
+                const date = new Date(now);
+                date.setDate(date.getDate() - i);
+                
+                const volatility = price * 0.02;
+                const open = price + (Math.random() - 0.5) * volatility;
+                const close = price + (Math.random() - 0.5) * volatility;
+                const high = Math.max(open, close) + Math.random() * volatility * 0.5;
+                const low = Math.min(open, close) - Math.random() * volatility * 0.5;
+                
+                data.push({
+                    time: date.toISOString().split('T')[0],
+                    open: Math.round(open),
+                    high: Math.round(high),
+                    low: Math.round(low),
+                    close: Math.round(close),
+                });
+                
+                price = close;
+            }
+            return data;
+        }
+        
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('stockModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

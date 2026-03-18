@@ -15,6 +15,23 @@ b01_json = './reports/b01_value/b01_scan_20260318_1851.json'
 with open(b01_json, 'r', encoding='utf-8') as f:
     b01_data = json.load(f)
 
+# 종목명 매핑 추가
+stock_names = {
+    '005930': '삼성전자', '000660': 'SK하이닉스', '051910': 'LG화학', '005380': '현대차',
+    '035720': '카카오', '068270': '셀트리온', '207940': '삼성바이오로직스', '006400': '삼성SDI',
+    '000270': '기아', '012330': '현대모비스', '005490': 'POSCO홀딩스', '028260': '삼성물산',
+    '105560': 'KB금융', '018260': '삼성에스디에스', '032830': '삼성생명', '011200': 'HMM',
+    '030200': 'KT', '009150': '삼성전기', '097950': 'CJ제일제당', '051900': 'LG생활건강',
+    '128940': '한미약품', '139480': '이마트', '316140': '우리금융지주', '018880': '한온시스템',
+    '010950': 'S-Oil', '024110': '기업은행', '139130': 'DGB금융지주', '298050': '효성첨단소재',
+    '012450': '한화에어로스페이스', '161390': '한국타이어앤테크놀로지', '282330': 'BGF리테일',
+    '032640': 'LG유플러스', '086280': '현대글로비스', '100090': 'SK바이오팜', '950160': '코스모신소재',
+}
+
+# 종목명 업데이트
+for stock in b01_data:
+    stock['name'] = stock_names.get(stock['symbol'], stock['name'])
+
 # 고급 예측 결과 (사전 계산된 값 사용)
 # 실제로는 advanced_predictor.py를 호출하여 각 종목 예측
 predictions = {
@@ -39,6 +56,7 @@ html_content = f'''<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B01 + AI 예측 종합 리포트</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -51,11 +69,33 @@ html_content = f'''<!DOCTYPE html>
         .grade-d {{ background: linear-gradient(135deg, #6b7280, #4b5563); }}
         .up {{ color: #ef4444; }}
         .down {{ color: #3b82f6; }}
-        .card-hover {{ transition: all 0.3s ease; }}
+        .card-hover {{ transition: all 0.3s ease; cursor: pointer; }}
         .card-hover:hover {{ transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }}
+        .modal {{ display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }}
+        .modal-content {{ background: white; margin: 5% auto; padding: 0; border-radius: 20px; width: 90%; max-width: 1000px; max-height: 90vh; overflow: hidden; }}
+        .modal-header {{ background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; }}
+        .modal-body {{ padding: 20px; max-height: 70vh; overflow-y: auto; }}
+        .close {{ color: white; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }}
+        .close:hover {{ color: #ddd; }}
+        #chart-container {{ width: 100%; height: 400px; }}
     </style>
 </head>
 <body class="p-4">
+    <!-- 모달 -->
+    <div id="stockModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title" class="text-2xl font-bold"></h2>
+                <p id="modal-subtitle" class="text-sm opacity-80"></p>
+            </div>
+            <div class="modal-body">
+                <div id="chart-container"></div>
+                <div id="stock-details" class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="max-w-7xl mx-auto">
         <!-- 헤더 -->
         <div class="glass p-8 mb-6 text-center">
@@ -125,6 +165,7 @@ html_content = f'''<!DOCTYPE html>
             <h2 class="text-2xl font-bold text-gray-800 mb-4">
                 <i class="fas fa-table text-blue-600 mr-2"></i>B01 선정 종목 상세
             </h2>
+            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-info-circle mr-1"></i>종목명 클릭 시 상세 정보와 차트를 확인할 수 있습니다</p>
             <div class="overflow-x-auto">
                 <table class="w-full">
                     <thead>
@@ -152,11 +193,10 @@ for i, stock in enumerate(b01_data[:15], 1):  # TOP 15만 표시
     breakout_icon = 'fa-check text-green-500' if stock['breakout'] else 'fa-times text-gray-400'
     
     html_content += f'''
-                        <tr class="border-b hover:bg-gray-50">
+                        <tr class="border-b hover:bg-blue-50 cursor-pointer" onclick="openModal('{stock['symbol']}', '{stock['name']}', {stock['current_price']}, {stock['target_price']}, {stock['stop_loss']}, '{stock['grade']}', {stock['score']}, '{pred['direction']}', {pred['confidence']})">
                             <td class="p-3 text-sm font-medium">{i}</td>
                             <td class="p-3">
-                                <div class="font-bold text-gray-800">{stock['symbol']}</div>
-                                <div class="text-xs text-gray-500">{stock['name']}</div>
+                                <div class="font-bold text-blue-600 hover:underline">{stock['name']} <span class="text-xs text-gray-500">({stock['symbol']})</span></div>
                             </td>
                             <td class="p-3 text-center">
                                 <span class="{grade_class} text-white px-3 py-1 rounded-full text-xs font-bold">{stock['grade']}</span>
@@ -233,6 +273,143 @@ html_content += '''
             <p>Generated by K-Stock Strategy System | B01 + Advanced Predictor</p>
         </div>
     </div>
+
+    <script>
+        let chart = null;
+        
+        function openModal(symbol, name, price, target, stopLoss, grade, score, aiPred, confidence) {
+            document.getElementById('stockModal').style.display = 'block';
+            document.getElementById('modal-title').innerHTML = name + ' <span class="text-sm">(' + symbol + ')</span>';
+            
+            // 상세 정보 표시
+            const predColor = aiPred === '상승' ? 'text-red-500' : 'text-blue-500';
+            const gradeClass = grade === 'A' ? 'bg-green-500' : (grade === 'B' ? 'bg-blue-500' : 'bg-yellow-500');
+            
+            document.getElementById('stock-details').innerHTML = `
+                <div class="bg-blue-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">현재가</div>
+                    <div class="text-xl font-bold text-gray-800">₩${price.toLocaleString()}</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">목표가 (+15%)</div>
+                    <div class="text-xl font-bold text-green-600">₩${target.toLocaleString()}</div>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">손절가 (-7%)</div>
+                    <div class="text-xl font-bold text-red-600">₩${stopLoss.toLocaleString()}</div>
+                </div>
+                <div class="bg-purple-50 rounded-lg p-4 text-center">
+                    <div class="text-xs text-gray-600">B01 점수</div>
+                    <div class="text-xl font-bold text-purple-700">${score}점 <span class="${gradeClass} text-white px-2 py-0.5 rounded text-xs">${grade}</span></div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4 text-center col-span-2">
+                    <div class="text-xs text-gray-600">AI 예측</div>
+                    <div class="text-xl font-bold ${predColor}">${aiPred} (${confidence.toFixed(1)}% 확신도)</div>
+                </div>
+            `;
+            
+            // 차트 생성
+            createChart(symbol);
+        }
+        
+        function closeModal() {
+            document.getElementById('stockModal').style.display = 'none';
+            if (chart) {
+                chart.remove();
+                chart = null;
+            }
+        }
+        
+        async function createChart(symbol) {
+            const container = document.getElementById('chart-container');
+            container.innerHTML = '';
+            
+            chart = LightweightCharts.createChart(container, {
+                width: container.clientWidth,
+                height: 400,
+                layout: {
+                    background: { color: '#ffffff' },
+                    textColor: '#333',
+                },
+                grid: {
+                    vertLines: { color: '#f0f0f0' },
+                    horzLines: { color: '#f0f0f0' },
+                },
+                crosshair: {
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                },
+                rightPriceScale: {
+                    borderColor: '#ccc',
+                },
+                timeScale: {
+                    borderColor: '#ccc',
+                    timeVisible: true,
+                },
+            });
+            
+            const candlestickSeries = chart.addCandlestickSeries({
+                upColor: '#ef4444',
+                downColor: '#3b82f6',
+                borderUpColor: '#ef4444',
+                borderDownColor: '#3b82f6',
+                wickUpColor: '#ef4444',
+                wickDownColor: '#3b82f6',
+            });
+            
+            // 샘플 데이터 (실제로는 API에서 가져와야 함)
+            const sampleData = generateSampleData();
+            candlestickSeries.setData(sampleData);
+            
+            // 최근 60일만 표시
+            chart.timeScale().setVisibleLogicalRange({
+                from: sampleData.length - 60,
+                to: sampleData.length,
+            });
+            
+            chart.applyOptions({
+                localization: {
+                    priceFormatter: price => '₩' + price.toLocaleString(),
+                },
+            });
+        }
+        
+        function generateSampleData() {
+            // 샘플 데이터 생성 (실제 사용 시 API 연동 필요)
+            const data = [];
+            let price = 200000;
+            const now = new Date();
+            
+            for (let i = 100; i >= 0; i--) {
+                const date = new Date(now);
+                date.setDate(date.getDate() - i);
+                
+                const volatility = price * 0.02;
+                const open = price + (Math.random() - 0.5) * volatility;
+                const close = price + (Math.random() - 0.5) * volatility;
+                const high = Math.max(open, close) + Math.random() * volatility * 0.5;
+                const low = Math.min(open, close) - Math.random() * volatility * 0.5;
+                
+                data.push({
+                    time: date.toISOString().split('T')[0],
+                    open: Math.round(open),
+                    high: Math.round(high),
+                    low: Math.round(low),
+                    close: Math.round(close),
+                });
+                
+                price = close;
+            }
+            return data;
+        }
+        
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('stockModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
 '''
