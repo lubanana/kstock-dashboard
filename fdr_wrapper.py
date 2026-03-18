@@ -371,8 +371,45 @@ class FDRWrapper:
                             # 부분 데이터 (확장이 필요한 경우)
                             self._cache_stats['partial'] += 1
                             print(f"⚠️ DB 부분 데이터: {symbol} (DB: {min_date}~{max_date}, 요청: {start}~{end})")
-                            # 여기서는 API 호출 후 병합하는 로직을 추가할 수 있음
-                            # 현재는 부분 데이터라도 반환
+                            # API 호출하여 누락된 데이터를 가져와서 병합
+                            print(f"🌐 API 호출 (부분 데이터 보완): {symbol}")
+                            try:
+                                df_api = fdr_module.DataReader(symbol, start, end)
+                                if not df_api.empty:
+                                    # API 데이터 표준화
+                                    df_api = df_api.copy()
+                                    # 컬럼명 소문자로 변환
+                                    df_api.columns = [c.lower() for c in df_api.columns]
+                                    # 필요한 컬럼만 선택/재정렬
+                                    col_map = {'open': 'open', 'high': 'high', 'low': 'low', 'close': 'close', 'volume': 'volume'}
+                                    for old, new in col_map.items():
+                                        if old in df_api.columns:
+                                            df_api[new] = df_api[old]
+                                    
+                                    df_api['symbol'] = symbol
+                                    df_api = df_api.reset_index()
+                                    if 'date' in df_api.columns:
+                                        pass  # 이미 date 컬럼 있음
+                                    elif 'Date' in df_api.columns:
+                                        df_api = df_api.rename(columns={'Date': 'date'})
+                                    else:
+                                        # 인덱스가 날짜
+                                        df_api = df_api.rename(columns={df_api.columns[0]: 'date'})
+                                    df_api['date'] = pd.to_datetime(df_api['date']).dt.strftime('%Y-%m-%d')
+                                    df_api = df_api[['symbol', 'date', 'open', 'high', 'low', 'close', 'volume']]
+                                    
+                                    # DB에 저장
+                                    saved = self.db.save_prices(symbol, df_api)
+                                    print(f"💾 DB 업데이트: {saved} rows 저장")
+                                    
+                                    # DB에서 다시 조회 (병합된 데이터)
+                                    df_merged = self.db.get_price_range(symbol, start, end)
+                                    if not df_merged.empty:
+                                        print(f"✅ 병합 데이터 반환: {len(df_merged)} rows")
+                                        return df_merged
+                            except Exception as e:
+                                print(f"⚠️ API 호출 실패, DB 데이터 반환: {e}")
+                            # API 실패 시 DB 데이터라도 반환
                             return df_db
             except Exception as e:
                 print(f"⚠️ DB 조회 오류: {e}")
