@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B01 + AI 예측 종합 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .grade-a { background: linear-gradient(135deg, #10b981, #059669); }
+        .grade-b { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .grade-d { background: linear-gradient(135deg, #6b7280, #4b5563); }
+        .up { color: #ef4444; }
+        .down { color: #3b82f6; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-7xl mx-auto">
+        <!-- 헤더 -->
+        <div class="glass p-8 mb-6 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                <i class="fas fa-chart-line text-blue-600 mr-3"></i>B01 + AI 예측 종합 리포트
+            </h1>
+            <p class="text-gray-600 text-lg">Buffett Quality + Breakout + Machine Learning Prediction</p>
+            <p class="text-gray-500 mt-2">생성일: 2026년 03월 18일 18:55</p>
+        </div>
+
+        <!-- 요약 카드 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-list-ol text-3xl text-blue-600 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">26</div>
+                <div class="text-gray-600">선정 종목</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-trophy text-3xl text-yellow-500 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">4</div>
+                <div class="text-gray-600">A등급 종목</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-arrow-trend-up text-3xl text-green-500 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">8</div>
+                <div class="text-gray-600">상승 예측</div>
+            </div>
+            <div class="glass p-6 text-center card-hover">
+                <i class="fas fa-brain text-3xl text-purple-600 mb-3"></i>
+                <div class="text-3xl font-bold text-gray-800">15</div>
+                <div class="text-gray-600">AI 종목 학습</div>
+            </div>
+        </div>
+
+        <!-- 투자 전략 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>추천 투자 전략
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-5 border border-green-200">
+                    <h3 class="font-bold text-green-800 mb-2">
+                        <i class="fas fa-star mr-2"></i>강력 매수 (A등급 + 상승 예측)
+                    </h3>
+                    <p class="text-green-700 text-sm">005930, 000660, 009150</p>
+                    <p class="text-gray-600 text-xs mt-2">품질 A등급 + AI 상승 예측 70% 이상</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-5 border border-blue-200">
+                    <h3 class="font-bold text-blue-800 mb-2">
+                        <i class="fas fa-thumbs-up mr-2"></i>매수 (B등급 + 상승 예측)
+                    </h3>
+                    <p class="text-blue-700 text-sm">005380, 006400, 000270, 950160</p>
+                    <p class="text-gray-600 text-xs mt-2">품질 B등급 + AI 상승 예측 65% 이상</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-5 border border-orange-200">
+                    <h3 class="font-bold text-orange-800 mb-2">
+                        <i class="fas fa-eye mr-2"></i>관망 (AI 하띋 예측)
+                    </h3>
+                    <p class="text-orange-700 text-sm">032830, 012450</p>
+                    <p class="text-gray-600 text-xs mt-2">B01 선정되었으나 AI 하띋 예측</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 종목 테이블 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-table text-blue-600 mr-2"></i>B01 선정 종목 상세
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-3 text-left text-sm font-bold text-gray-700">순위</th>
+                            <th class="p-3 text-left text-sm font-bold text-gray-700">종목</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">B01등급</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">점수</th>
+                            <th class="p-3 text-right text-sm font-bold text-gray-700">현재가</th>
+                            <th class="p-3 text-right text-sm font-bold text-gray-700">목표가</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">AI예측</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">확신도</th>
+                            <th class="p-3 text-center text-sm font-bold text-gray-700">브레이크아웃</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">1</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">005930</div>
+                                <div class="text-xs text-gray-500">005930</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩208,500</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩239,775</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 81.1%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">81.1%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">2</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">000660</div>
+                                <div class="text-xs text-gray-500">000660</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩1,056,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩1,214,400</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75.3%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">75.3%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">3</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">032830</div>
+                                <div class="text-xs text-gray-500">032830</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩235,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩270,250</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>하띋
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 62.5%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">62.5%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">4</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">009150</div>
+                                <div class="text-xs text-gray-500">009150</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-a text-white px-3 py-1 rounded-full text-xs font-bold">A</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">85점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩464,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩533,600</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 68.7%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">68.7%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">5</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">005380</div>
+                                <div class="text-xs text-gray-500">005380</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩545,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩626,750</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 72.4%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">72.4%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">6</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">006400</div>
+                                <div class="text-xs text-gray-500">006400</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩405,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩465,750</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 69.8%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">69.8%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">7</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">000270</div>
+                                <div class="text-xs text-gray-500">000270</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩175,100</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩201,365</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 71.2%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">71.2%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">8</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">012450</div>
+                                <div class="text-xs text-gray-500">012450</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩1,390,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩1,598,500</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>하띋
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 58.3%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">58.3%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">9</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">950160</div>
+                                <div class="text-xs text-gray-500">950160</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">70점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩100,700</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩115,805</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 65.9%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">65.9%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">10</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">012330</div>
+                                <div class="text-xs text-gray-500">012330</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩430,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩494,500</td>
+                            <td class="p-3 text-center">
+                                <span class="up font-bold">
+                                    <i class="fas fa-arrow-up mr-1"></i>상승
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 67.4%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">67.4%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">11</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">028260</div>
+                                <div class="text-xs text-gray-500">028260</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩299,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩343,850</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">12</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">105560</div>
+                                <div class="text-xs text-gray-500">105560</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩154,700</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩177,905</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">13</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">128940</div>
+                                <div class="text-xs text-gray-500">128940</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩531,000</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩610,650</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">14</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">316140</div>
+                                <div class="text-xs text-gray-500">316140</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩33,500</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩38,525</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-3 text-sm font-medium">15</td>
+                            <td class="p-3">
+                                <div class="font-bold text-gray-800">024110</div>
+                                <div class="text-xs text-gray-500">024110</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <span class="grade-b text-white px-3 py-1 rounded-full text-xs font-bold">B</span>
+                            </td>
+                            <td class="p-3 text-center text-sm">65점</td>
+                            <td class="p-3 text-right text-sm font-medium">₩23,850</td>
+                            <td class="p-3 text-right text-sm text-green-600">₩27,427</td>
+                            <td class="p-3 text-center">
+                                <span class="down font-bold">
+                                    <i class="fas fa-arrow-down mr-1"></i>-
+                                </span>
+                            </td>
+                            <td class="p-3 text-center">
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 0%"></div>
+                                </div>
+                                <div class="text-xs text-gray-600 mt-1">0.0%</div>
+                            </td>
+                            <td class="p-3 text-center">
+                                <i class="fas fa-times text-gray-400"></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 품질 지표 분석 -->
+        <div class="glass p-6 mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-chart-bar text-blue-600 mr-2"></i>B01 품질 지표 분석
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-blue-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 ROE (추정)</div>
+                    <div class="text-2xl font-bold text-blue-700">18.5%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 15% 이상</div>
+                </div>
+                <div class="bg-green-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 부채비율 (추정)</div>
+                    <div class="text-2xl font-bold text-green-700">42.3%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 50% 이하</div>
+                </div>
+                <div class="bg-purple-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 수익률 (추정)</div>
+                    <div class="text-2xl font-bold text-purple-700">12.8%</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 10% 이상</div>
+                </div>
+                <div class="bg-orange-50 rounded-xl p-4">
+                    <div class="text-sm text-gray-600 mb-1">평균 PBR (추정)</div>
+                    <div class="text-2xl font-bold text-orange-700">1.45</div>
+                    <div class="text-xs text-gray-500 mt-1">버핏 기준 2.0 이하</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 면책 조항 -->
+        <div class="glass p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-3">
+                <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>면책 조항
+            </h3>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li>• 본 리포트는 투자 참고 자료이며, 투자 결정은 투자자 본인의 책임입니다.</li>
+                <li>• B01 전략은 기술적 지표 기반 추정치를 사용하며, 실제 재무제표와 차이가 있을 수 있습니다.</li>
+                <li>• AI 예측은 과거 데이터 기반이며, 미래 수익률을 보장하지 않습니다.</li>
+                <li>• 추천 전략은 시뮬레이션 결과이며, 실제 거래 시 슬리피지와 수수료를 고려해야 합니다.</li>
+            </ul>
+        </div>
+
+        <div class="text-center text-gray-500 text-sm mt-6 pb-6">
+            <p>Generated by K-Stock Strategy System | B01 + Advanced Predictor</p>
+        </div>
+    </div>
+</body>
+</html>
