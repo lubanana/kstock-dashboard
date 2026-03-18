@@ -1,0 +1,43 @@
+{
+  "symbol": "034020",
+  "name": "두산에너빌리티",
+  "sector": "에너지",
+  "timestamp": "2026-03-18T10:28:17.571347",
+  "news_sentiment": {
+    "score": 0.5,
+    "mentions": 20,
+    "positive_keywords": [
+      "성장"
+    ],
+    "negative_keywords": [],
+    "trend": "stable"
+  },
+  "industry_data": {
+    "growth_rate": 18.5,
+    "market_size": 612.0,
+    "trends": [
+      "AI 칩 수요 증가",
+      "HBM 고성장",
+      "파운드리 투자 확대"
+    ],
+    "risks": [
+      "중국 경쟁 심화",
+      "사이클 조정"
+    ]
+  },
+  "google_trends": [
+    {
+      "keyword": "두산에너빌리티",
+      "index": 50,
+      "trend": "stable"
+    },
+    {
+      "keyword": "에너지",
+      "index": 50,
+      "trend": "stable"
+    }
+  ],
+  "macro_indicators": [],
+  "composite_score": 96.0,
+  "recommendation": "STRONG_BUY"
+}

@@ -1,0 +1,43 @@
+{
+  "symbol": "003280",
+  "name": "흥아해운",
+  "sector": "해운",
+  "timestamp": "2026-03-18T08:58:13.517185",
+  "news_sentiment": {
+    "score": 0.5,
+    "mentions": 20,
+    "positive_keywords": [
+      "성장"
+    ],
+    "negative_keywords": [],
+    "trend": "stable"
+  },
+  "industry_data": {
+    "growth_rate": 18.5,
+    "market_size": 612.0,
+    "trends": [
+      "AI 칩 수요 증가",
+      "HBM 고성장",
+      "파운드리 투자 확대"
+    ],
+    "risks": [
+      "중국 경쟁 심화",
+      "사이클 조정"
+    ]
+  },
+  "google_trends": [
+    {
+      "keyword": "흥아해운",
+      "index": 50,
+      "trend": "stable"
+    },
+    {
+      "keyword": "해운",
+      "index": 50,
+      "trend": "stable"
+    }
+  ],
+  "macro_indicators": [],
+  "composite_score": 96.0,
+  "recommendation": "STRONG_BUY"
+}

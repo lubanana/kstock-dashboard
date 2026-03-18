@@ -1,0 +1,48 @@
+{
+  "symbol": "042700",
+  "name": "한미반도체",
+  "sector": "반도체",
+  "timestamp": "2026-03-18T10:28:24.475204",
+  "news_sentiment": {
+    "score": 0.5,
+    "mentions": 20,
+    "positive_keywords": [
+      "성장"
+    ],
+    "negative_keywords": [],
+    "trend": "stable"
+  },
+  "industry_data": {
+    "growth_rate": 18.5,
+    "market_size": 612.0,
+    "trends": [
+      "AI 칩 수요 증가",
+      "HBM 고성장",
+      "파운드리 투자 확대"
+    ],
+    "risks": [
+      "중국 경쟁 심화",
+      "사이클 조정"
+    ]
+  },
+  "google_trends": [
+    {
+      "keyword": "한미반도체",
+      "index": 50,
+      "trend": "stable"
+    },
+    {
+      "keyword": "반도체",
+      "index": 78,
+      "trend": "rising"
+    },
+    {
+      "keyword": "AI",
+      "index": 85,
+      "trend": "rising"
+    }
+  ],
+  "macro_indicators": [],
+  "composite_score": 100,
+  "recommendation": "STRONG_BUY"
+}
