@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N01 NPS Value Strategy - Market Intelligence Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { font-family: 'Noto Sans KR', sans-serif; }
+        body { background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%); min-height: 100vh; }
+        .glass { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .score-ring { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; border: 4px solid; }
+        .score-a { border-color: #10b981; color: #10b981; }
+        .score-b { border-color: #3b82f6; color: #3b82f6; }
+        .score-c { border-color: #f59e0b; color: #f59e0b; }
+        .score-d { border-color: #6b7280; color: #6b7280; }
+        .score-f { border-color: #ef4444; color: #ef4444; }
+        .stock-card { transition: all 0.3s ease; border-left: 4px solid transparent; }
+        .stock-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .risk-high { border-left-color: #ef4444; }
+        .risk-medium { border-left-color: #f59e0b; }
+        .risk-low { border-left-color: #10b981; }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="glass p-8 mb-8 text-center">
+            <div class="inline-flex items-center gap-3 mb-4">
+                <i class="fas fa-landmark text-4xl text-blue-600"></i>
+                <h1 class="text-4xl font-black gradient-text">N01 NPS Value Strategy</h1>
+            </div>
+            <p class="text-gray-600 text-lg mb-2">🏛️ 국민연금 장기 가치 투자 패턴 분석 리포트</p>
+            <p class="text-gray-500">생성일: 2026-03-18 15:13</p>
+            
+            <div class="flex justify-center gap-4 mt-6">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold">
+                    <i class="fas fa-chart-line mr-2"></i>선정 종목: 6개
+                </span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-bold">
+                    <i class="fas fa-database mr-2"></i>데이터 소스: dart_focused.db
+                </span>
+                <span class="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold">
+                    <i class="fas fa-bolt mr-2"></i>Ultra Fast Mode
+                </span>
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="glass p-6 text-center">
+                <div class="text-3xl font-bold text-blue-600">6</div>
+                <div class="text-gray-500 text-sm">선정 종목</div>
+            </div>
+            <div class="glass p-6 text-center">
+                <div class="text-3xl font-bold text-purple-600">0</div>
+                <div class="text-gray-500 text-sm">AB등급</div>
+            </div>
+            <div class="glass p-6 text-center">
+                <div class="text-3xl font-bold text-green-600">400.8%</div>
+                <div class="text-gray-500 text-sm">평균 1년 수익률</div>
+            </div>
+            <div class="glass p-6 text-center">
+                <div class="text-3xl font-bold text-orange-600">41</div>
+                <div class="text-gray-500 text-sm">평균 공시 건수</div>
+            </div>
+        </div>
+
+        <!-- TOP 5 Stocks -->
+        <div class="glass p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                <i class="fas fa-trophy text-yellow-500"></i>
+                TOP 5 선정 종목 상세 분석
+            </h2>
+
+            <div class="stock-card risk-medium glass p-6 mb-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <!-- Rank & Grade -->
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="score-ring score-d">D</div>
+                        <div class="text-sm font-bold text-gray-500">#1</div>
+                    </div>
+                    
+                    <!-- Stock Info -->
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">증권</h3>
+                            <span class="text-gray-500">(001510)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">KOSPI</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">N/A</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                            <span><i class="fas fa-won-sign mr-1"></i>현재가: 1,880원</span>
+                            <span><i class="fas fa-chart-line mr-1 text-green-600"></i>1년 수익률: +298.3%</span>
+                            <span><i class="fas fa-wave-square mr-1 text-orange-600"></i>변동성: 79.7%</span>
+                            <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>공시: 76건</span>
+                        </div>
+                        
+                        <!-- Score Breakdown -->
+                        <div class="grid grid-cols-4 gap-2 mb-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">모멘텀</div>
+                                <div class="text-lg font-bold text-blue-600">90</div>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">안정성</div>
+                                <div class="text-lg font-bold text-purple-600">20</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">가치</div>
+                                <div class="text-lg font-bold text-orange-600">20</div>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">NPS</div>
+                                <div class="text-lg font-bold text-green-600">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendation -->
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="text-center">
+                            <div class="text-xs text-gray-500 mb-1">총점</div>
+                            <div class="text-3xl font-black text-gray-800">48.5</div>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-bold">WATCH</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-yellow-100 text-yellow-700">
+                            위험도: MEDIUM
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card risk-low glass p-6 mb-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <!-- Rank & Grade -->
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="score-ring score-d">D</div>
+                        <div class="text-sm font-bold text-gray-500">#2</div>
+                    </div>
+                    
+                    <!-- Stock Info -->
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">삼성전자</h3>
+                            <span class="text-gray-500">(005930)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">KOSPI</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">N/A</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                            <span><i class="fas fa-won-sign mr-1"></i>현재가: 208,500원</span>
+                            <span><i class="fas fa-chart-line mr-1 text-green-600"></i>1년 수익률: +284.0%</span>
+                            <span><i class="fas fa-wave-square mr-1 text-orange-600"></i>변동성: 45.9%</span>
+                            <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>공시: 56건</span>
+                        </div>
+                        
+                        <!-- Score Breakdown -->
+                        <div class="grid grid-cols-4 gap-2 mb-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">모멘텀</div>
+                                <div class="text-lg font-bold text-blue-600">90</div>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">안정성</div>
+                                <div class="text-lg font-bold text-purple-600">20</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">가치</div>
+                                <div class="text-lg font-bold text-orange-600">20</div>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">NPS</div>
+                                <div class="text-lg font-bold text-green-600">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendation -->
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="text-center">
+                            <div class="text-xs text-gray-500 mb-1">총점</div>
+                            <div class="text-3xl font-black text-gray-800">48.5</div>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-bold">WATCH</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
+                            위험도: LOW
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card risk-high glass p-6 mb-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <!-- Rank & Grade -->
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="score-ring score-d">D</div>
+                        <div class="text-sm font-bold text-gray-500">#3</div>
+                    </div>
+                    
+                    <!-- Stock Info -->
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">우리기술</h3>
+                            <span class="text-gray-500">(032820)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">KOSDAQ</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">N/A</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                            <span><i class="fas fa-won-sign mr-1"></i>현재가: 25,950원</span>
+                            <span><i class="fas fa-chart-line mr-1 text-green-600"></i>1년 수익률: +1165.9%</span>
+                            <span><i class="fas fa-wave-square mr-1 text-orange-600"></i>변동성: 102.2%</span>
+                            <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>공시: 28건</span>
+                        </div>
+                        
+                        <!-- Score Breakdown -->
+                        <div class="grid grid-cols-4 gap-2 mb-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">모멘텀</div>
+                                <div class="text-lg font-bold text-blue-600">90</div>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">안정성</div>
+                                <div class="text-lg font-bold text-purple-600">20</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">가치</div>
+                                <div class="text-lg font-bold text-orange-600">20</div>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">NPS</div>
+                                <div class="text-lg font-bold text-green-600">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendation -->
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="text-center">
+                            <div class="text-xs text-gray-500 mb-1">총점</div>
+                            <div class="text-3xl font-black text-gray-800">48.5</div>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-bold">WATCH</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700">
+                            위험도: HIGH
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card risk-high glass p-6 mb-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <!-- Rank & Grade -->
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="score-ring score-d">D</div>
+                        <div class="text-sm font-bold text-gray-500">#4</div>
+                    </div>
+                    
+                    <!-- Stock Info -->
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">휴림로봇</h3>
+                            <span class="text-gray-500">(090710)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">KOSDAQ</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">N/A</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                            <span><i class="fas fa-won-sign mr-1"></i>현재가: 14,790원</span>
+                            <span><i class="fas fa-chart-line mr-1 text-green-600"></i>1년 수익률: +604.3%</span>
+                            <span><i class="fas fa-wave-square mr-1 text-orange-600"></i>변동성: 104.1%</span>
+                            <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>공시: 28건</span>
+                        </div>
+                        
+                        <!-- Score Breakdown -->
+                        <div class="grid grid-cols-4 gap-2 mb-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">모멘텀</div>
+                                <div class="text-lg font-bold text-blue-600">90</div>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">안정성</div>
+                                <div class="text-lg font-bold text-purple-600">20</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">가치</div>
+                                <div class="text-lg font-bold text-orange-600">20</div>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">NPS</div>
+                                <div class="text-lg font-bold text-green-600">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendation -->
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="text-center">
+                            <div class="text-xs text-gray-500 mb-1">총점</div>
+                            <div class="text-3xl font-black text-gray-800">48.5</div>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-bold">WATCH</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700">
+                            위험도: HIGH
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card risk-medium glass p-6 mb-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <!-- Rank & Grade -->
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="score-ring score-d">D</div>
+                        <div class="text-sm font-bold text-gray-500">#5</div>
+                    </div>
+                    
+                    <!-- Stock Info -->
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-800">흥아해운</h3>
+                            <span class="text-gray-500">(003280)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">KOSPI</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">N/A</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                            <span><i class="fas fa-won-sign mr-1"></i>현재가: 2,915원</span>
+                            <span><i class="fas fa-chart-line mr-1 text-green-600"></i>1년 수익률: +60.9%</span>
+                            <span><i class="fas fa-wave-square mr-1 text-orange-600"></i>변동성: 76.2%</span>
+                            <span><i class="fas fa-file-alt mr-1 text-blue-600"></i>공시: 31건</span>
+                        </div>
+                        
+                        <!-- Score Breakdown -->
+                        <div class="grid grid-cols-4 gap-2 mb-4">
+                            <div class="bg-blue-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">모멘텀</div>
+                                <div class="text-lg font-bold text-blue-600">80</div>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">안정성</div>
+                                <div class="text-lg font-bold text-purple-600">20</div>
+                            </div>
+                            <div class="bg-orange-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">가치</div>
+                                <div class="text-lg font-bold text-orange-600">20</div>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg text-center">
+                                <div class="text-xs text-gray-500">NPS</div>
+                                <div class="text-lg font-bold text-green-600">50</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommendation -->
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="text-center">
+                            <div class="text-xs text-gray-500 mb-1">총점</div>
+                            <div class="text-3xl font-black text-gray-800">45.5</div>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-bold">WATCH</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-yellow-100 text-yellow-700">
+                            위험도: MEDIUM
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Strategy Info -->
+        <div class="glass p-8 mb-8">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-3">
+                <i class="fas fa-info-circle text-blue-600"></i>
+                N01 전략 설명
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold text-gray-700 mb-2">📊 평가 기준</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>모멘텀 점수 (30%): 1년 수익률 기반</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>안정성 점수 (25%): 변동성 기반</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>가치 점수 (20%): 공시 투명도 기반</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>NPS 점수 (25%): 국민연금 선호도</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-700 mb-2">🎯 선정 필터</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-filter text-blue-500 mr-2"></i>최소 주가: 1,000원 이상</li>
+                        <li><i class="fas fa-filter text-blue-500 mr-2"></i>최소 거래량: 1천만 이상</li>
+                        <li><i class="fas fa-filter text-blue-500 mr-2"></i>금융업종 제외</li>
+                        <li><i class="fas fa-filter text-blue-500 mr-2"></i>공시 데이터 보유 종목</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-white/70 text-sm py-6">
+            <p>⚠️ 본 리포트는 정보 제공 목적으로 작성되었으며, 투자 결정의 책임은 투자자 본인에게 있습니다.</p>
+            <p class="mt-1">Generated by K-Stock Strategy System | 2026-03-18 15:13</p>
+        </div>
+    </div>
+</body>
+</html>
