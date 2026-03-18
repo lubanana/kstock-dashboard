@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N01 + N02 NPS Value Strategy Report - 2026-03-18</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #0d2137 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .score-bar { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%); }
+        .nps-gold { color: #d4af37; }
+        .nps-border { border-color: #d4af37; }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <div class="max-w-7xl mx-auto px-6 py-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-block p-4 rounded-full bg-yellow-500/20 mb-4">
+                <i class="fas fa-landmark text-5xl nps-gold"></i>
+            </div>
+            <h1 class="text-4xl font-bold mb-2">🏛️ NPS Value Strategy Report</h1>
+            <p class="text-white/60 text-lg">N01 + N02 국민연금 장기 가치 투자 패턴 분석</p>
+            <p class="text-white/40 text-sm mt-2">Generated: 2026-03-18 14:09</p>
+        </div>
+
+        <!-- Strategy Overview Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <!-- N01 Card -->
+            <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 card-hover">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <span class="font-bold text-xl">N01</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">NPS 저평가 우량주</h2>
+                            <p class="text-white/50 text-sm">실제 스캔 실행</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">✅ 완료</span>
+                </div>
+                <p class="text-white/70 mb-4">국민연금 장기 가치 투자 패턴을 복제하는 4-Filter 알고리즘</p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-white/50">대상 종목</div>
+                        <div class="text-xl font-bold">40개</div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-white/50">선정 종목</div>
+                        <div class="text-xl font-bold text-yellow-400">1개</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- N02 Card -->
+            <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 card-hover">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
+                            <span class="font-bold text-xl">N02</span>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">4-Filter 알고리즘</h2>
+                            <p class="text-white/50 text-sm">설계 문서</p>
+                        </div>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">📋 문서</span>
+                </div>
+                <p class="text-white/70 mb-4">NPS 가치투자 전략의 필터링 로직 및 스코어링 가중치 설계</p>
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-white/50">필터 개수</div>
+                        <div class="text-xl font-bold">4개</div>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <div class="text-white/50">스코어링</div>
+                        <div class="text-xl font-bold">100점</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- N01 Results Section -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden mb-10">
+            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 px-6 py-4">
+                <h2 class="text-2xl font-bold text-white">
+                    <i class="fas fa-trophy mr-2 text-yellow-400"></i>
+                    N01 스캔 결과 - 선정 종목
+                </h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Winner Card -->
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-2xl p-6 mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">
+                                1
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">삼성전자</div>
+                                <div class="text-gray-500">005930 | KOSPI</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-4xl font-bold text-yellow-600">B</div>
+                            <div class="text-gray-500">등급</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4 mb-4">
+                        <div class="bg-white rounded-xl p-4 text-center shadow">
+                            <div class="text-2xl font-bold text-blue-600">61.5</div>
+                            <div class="text-gray-500 text-sm">총점</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 text-center shadow">
+                            <div class="text-2xl font-bold text-green-600">204,250</div>
+                            <div class="text-gray-500 text-sm">현재가(원)</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 text-center shadow">
+                            <div class="text-2xl font-bold text-purple-600">+254.6%</div>
+                            <div class="text-gray-500 text-sm">1년 수익률</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-4 text-center shadow">
+                            <div class="text-2xl font-bold text-orange-600">2,605</div>
+                            <div class="text-gray-500 text-sm">공시 건수</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Score Breakdown -->
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">모멘텀 점수 (30%)</span>
+                                <span class="font-bold text-blue-600">90/100</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-blue-500 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">NPS 지분 점수 (25%)</span>
+                                <span class="font-bold text-yellow-600">80/100</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-yellow-500 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">안정성 점수 (25%)</span>
+                                <span class="font-bold text-green-600">30/100</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-green-500 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-gray-600">밸류에이션 점수 (20%)</span>
+                                <span class="font-bold text-purple-600">30/100</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded-full">
+                                <div class="h-2 bg-purple-500 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analysis Note -->
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <h4 class="font-bold text-blue-800 mb-2">
+                        <i class="fas fa-info-circle mr-2"></i>분석 참고사항
+                    </h4>
+                    <ul class="text-blue-700 text-sm space-y-1">
+                        <li>• N01 스캔은 캐시된 공시 데이터(40개 종목)를 기반으로 실행되었습니다.</li>
+                        <li>• DART API 현재 "정의되지 않은 오류"로 인해 전체 3,286개 종목 스캔은 제한적입니다.</li>
+                        <li>• 삼성전자는 NPS 지분 보유 및 안정적 모멘텀으로 유일하게 필터 통과했습니다.</li>
+                        <li>• 1년 수익률 +254.6%는 강력한 상승세를 보여주고 있습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- N02 Algorithm Section -->
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden mb-10">
+            <div class="bg-gradient-to-r from-purple-900 to-indigo-900 px-6 py-4">
+                <h2 class="text-2xl font-bold text-white">
+                    <i class="fas fa-code-branch mr-2 text-purple-400"></i>
+                    N02 4-Filter 알고리즘 설계
+                </h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-blue-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold">1</div>
+                            <h3 class="font-bold text-gray-800">수익성 필터 (ROE)</h3>
+                        </div>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• 3년 연속 ROE 10~15%</li>
+                            <li>• 목표 평균: 12.5%</li>
+                            <li>• 가중치: 40%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-green-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold">2</div>
+                            <h3 class="font-bold text-gray-800">배당 필터</h3>
+                        </div>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• 배당성향 20~50%</li>
+                            <li>• 안정적 배당 정책</li>
+                            <li>• 가중치: 25%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-purple-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold">3</div>
+                            <h3 class="font-bold text-gray-800">밸류에이션 필터</h3>
+                        </div>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• PBR ≤ 1.0 OR 업종 하위 30%</li>
+                            <li>• 저평가 기업 선별</li>
+                            <li>• 가중치: 20%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-5 border-l-4 border-yellow-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">4</div>
+                            <h3 class="font-bold text-gray-800">NPS 지분 필터</h3>
+                        </div>
+                        <ul class="text-gray-600 text-sm space-y-1">
+                            <li>• NPS 지분 ≥ 5%</li>
+                            <li>• 2분기 이상 연속 보유</li>
+                            <li>• 가중치: 15%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Scoring Formula -->
+                <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-200">
+                    <h4 class="font-bold text-indigo-800 mb-3">
+                        <i class="fas fa-calculator mr-2"></i>스코어링 공식
+                    </h4>
+                    <div class="bg-white rounded-lg p-4 font-mono text-sm text-indigo-700">
+                        총점 = (ROE_점수 × 0.40) + (배당_점수 × 0.25) + (밸류에이션_점수 × 0.20) + (NPS_점수 × 0.15)
+                    </div>
+                    <div class="mt-3 text-indigo-600 text-sm">
+                        <strong>등급 기준:</strong> A (85+), B (70-84), C (55-69), D (40-54), F (&lt;40)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Coverage -->
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20 mb-10">
+            <h3 class="text-xl font-bold mb-4">
+                <i class="fas fa-database mr-2 text-blue-400"></i>
+                데이터 구축 현황
+            </h3>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-400">2,427</div>
+                    <div class="text-white/60">재무제표 보유 종목</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-400">77,253</div>
+                    <div class="text-white/60">재무제표 레코드</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-400">57,816</div>
+                    <div class="text-white/60">지분공시 레코드</div>
+                </div>
+            </div>
+            <p class="text-white/50 text-sm mt-4 text-center">
+                DART 재무제표 + 지분공시 구축 완료 (2026-03-18 기준) | DB 크기: 21.9MB
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-white/40 text-sm">
+            <p>NPS Value Strategy Report | Generated by K-Stock Strategy System</p>
+            <p class="mt-1">Data Source: DART (OpenDart API), FDR (FinanceDataReader)</p>
+        </div>
+    </div>
+</body>
+</html>
