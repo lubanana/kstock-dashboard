@@ -1,0 +1,2605 @@
+{
+  "total_trades": 64,
+  "win_rate": 56.25,
+  "avg_return": 6.725112715483086,
+  "total_return": 109.50072712971428,
+  "final_capital": 209500727.12971428,
+  "trades": [
+    {
+      "symbol": "000500",
+      "entry_date": "2025-01-01",
+      "entry_price": 51820.6,
+      "exit_date": "2025-01-17",
+      "exit_price": 68520.6,
+      "return_pct": 32.22656626901272,
+      "holding_days": 16,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.7513036502206165,
+      "value_score": 71.35993281016461,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-01-01",
+      "entry_price": 97550.0,
+      "exit_date": "2025-02-10",
+      "exit_price": 93071.42857142857,
+      "return_pct": -4.591052207659082,
+      "holding_days": 40,
+      "exit_reason": "손절",
+      "rr_ratio": 2.7709282296650684,
+      "value_score": 65.96336829501915,
+      "strategy_type": "Graham_NetNet"
+    },
+    {
+      "symbol": "011200",
+      "entry_date": "2025-01-31",
+      "entry_price": 18595.0,
+      "exit_date": "2025-02-24",
+      "exit_price": 21580.06,
+      "return_pct": 16.053025006722244,
+      "holding_days": 24,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.633323251417773,
+      "value_score": 70.15611977907822,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "002320",
+      "entry_date": "2025-01-01",
+      "entry_price": 18830.0,
+      "exit_date": "2025-03-02",
+      "exit_price": 19520.0,
+      "return_pct": 3.664365374402549,
+      "holding_days": 60,
+      "exit_reason": "기간만료",
+      "rr_ratio": 4.771407407407398,
+      "value_score": 68.3047219466345,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000700",
+      "entry_date": "2025-01-01",
+      "entry_price": 5235.0,
+      "exit_date": "2025-03-02",
+      "exit_price": 5420.0,
+      "return_pct": 3.5339063992359123,
+      "holding_days": 60,
+      "exit_reason": "기간만료",
+      "rr_ratio": 3.6256045197740083,
+      "value_score": 68.0617925192737,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2025-01-31",
+      "entry_price": 14920.0,
+      "exit_date": "2025-03-28",
+      "exit_price": 14636.07142857143,
+      "return_pct": -1.903006510915353,
+      "holding_days": 56,
+      "exit_reason": "손절",
+      "rr_ratio": 4.80388427672957,
+      "value_score": 90.4640714008152,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "035720",
+      "entry_date": "2025-03-02",
+      "entry_price": 41875.0,
+      "exit_date": "2025-03-31",
+      "exit_price": 39619.642857142855,
+      "return_pct": -5.385927505330495,
+      "holding_days": 29,
+      "exit_reason": "손절",
+      "rr_ratio": 4.089596199524937,
+      "value_score": 73.31496586042758,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "207940",
+      "entry_date": "2025-01-31",
+      "entry_price": 1517720.852,
+      "exit_date": "2025-04-01",
+      "exit_price": 1557105.0,
+      "return_pct": 2.594953343897264,
+      "holding_days": 60,
+      "exit_reason": "기간만료",
+      "rr_ratio": 3.5897508862352274,
+      "value_score": 82.65178481689938,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "012330",
+      "entry_date": "2025-01-31",
+      "entry_price": 251500.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 261500.0,
+      "return_pct": 3.9761431411530817,
+      "holding_days": 60,
+      "exit_reason": "기간만료",
+      "rr_ratio": 3.210666666666668,
+      "value_score": 82.36186062999457,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000700",
+      "entry_date": "2025-04-01",
+      "entry_price": 5515.0,
+      "exit_date": "2025-04-02",
+      "exit_price": 5384.285714285715,
+      "return_pct": -2.3701593057893984,
+      "holding_days": 1,
+      "exit_reason": "손절",
+      "rr_ratio": 2.3093114754098405,
+      "value_score": 70.0,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004020",
+      "entry_date": "2025-03-02",
+      "entry_price": 25602.4,
+      "exit_date": "2025-04-03",
+      "exit_price": 23898.828571428574,
+      "return_pct": -6.653952084849184,
+      "holding_days": 32,
+      "exit_reason": "손절",
+      "rr_ratio": 3.9916142557652017,
+      "value_score": 68.49712048892803,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004800",
+      "entry_date": "2025-04-01",
+      "entry_price": 47550.0,
+      "exit_date": "2025-04-07",
+      "exit_price": 46167.857142857145,
+      "return_pct": -2.9067147363677286,
+      "holding_days": 6,
+      "exit_reason": "손절",
+      "rr_ratio": 2.5075555555555615,
+      "value_score": 82.49872093619294,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "002700",
+      "entry_date": "2025-04-01",
+      "entry_price": 1480.0,
+      "exit_date": "2025-04-09",
+      "exit_price": 1437.357142857143,
+      "return_pct": -2.8812741312741292,
+      "holding_days": 8,
+      "exit_reason": "손절",
+      "rr_ratio": 2.2022914572864347,
+      "value_score": 71.35326041780351,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "003200",
+      "entry_date": "2025-05-01",
+      "entry_price": 8320.36,
+      "exit_date": "2025-05-14",
+      "exit_price": 9340.36,
+      "return_pct": 12.259084943439946,
+      "holding_days": 13,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.25,
+      "value_score": 84.75794730577309,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028050",
+      "entry_date": "2025-05-01",
+      "entry_price": 18975.0,
+      "exit_date": "2025-05-27",
+      "exit_price": 21602.3,
+      "return_pct": 13.846113306982868,
+      "holding_days": 26,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.6114089347079026,
+      "value_score": 66.89691572714571,
+      "strategy_type": "Graham_NetNet"
+    },
+    {
+      "symbol": "004800",
+      "entry_date": "2025-05-01",
+      "entry_price": 50662.0,
+      "exit_date": "2025-05-28",
+      "exit_price": 59662.0,
+      "return_pct": 17.764794125774742,
+      "holding_days": 27,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.926686217008789,
+      "value_score": 75.9220811219642,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "001040",
+      "entry_date": "2025-05-01",
+      "entry_price": 122550.0,
+      "exit_date": "2025-06-04",
+      "exit_price": 147481.4,
+      "return_pct": 20.343859649122802,
+      "holding_days": 34,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.2363430690774253,
+      "value_score": 76.97949959221022,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2025-05-31",
+      "entry_price": 15390.0,
+      "exit_date": "2025-06-09",
+      "exit_price": 16217.32,
+      "return_pct": 5.375698505523065,
+      "holding_days": 9,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.4318459259259138,
+      "value_score": 85.86015499810674,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-05-31",
+      "entry_price": 195600.0,
+      "exit_date": "2025-06-11",
+      "exit_price": 237860.4,
+      "return_pct": 21.605521472392635,
+      "holding_days": 11,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.23435748792271,
+      "value_score": 79.02305205431844,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "002700",
+      "entry_date": "2025-05-01",
+      "entry_price": 1496.0,
+      "exit_date": "2025-06-18",
+      "exit_price": 1457.2142857142858,
+      "return_pct": -2.592627960275015,
+      "holding_days": 48,
+      "exit_reason": "손절",
+      "rr_ratio": 3.5743057090239487,
+      "value_score": 90.87596198652548,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028050",
+      "entry_date": "2025-05-31",
+      "entry_price": 20916.48,
+      "exit_date": "2025-07-04",
+      "exit_price": 24276.48,
+      "return_pct": 16.06388837892418,
+      "holding_days": 34,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.3684210526315788,
+      "value_score": 77.4640533847183,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2025-06-30",
+      "entry_price": 17555.14,
+      "exit_date": "2025-07-14",
+      "exit_price": 21285.14,
+      "return_pct": 21.247338386364337,
+      "holding_days": 14,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 5.792567942318349,
+      "value_score": 88.20092761540602,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "005930",
+      "entry_date": "2025-06-30",
+      "entry_price": 58700.0,
+      "exit_date": "2025-07-17",
+      "exit_price": 65184.4,
+      "return_pct": 11.046678023850088,
+      "holding_days": 17,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.6898251851851893,
+      "value_score": 88.23934204113212,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "105560",
+      "entry_date": "2025-06-30",
+      "entry_price": 106700.0,
+      "exit_date": "2025-07-25",
+      "exit_price": 124811.6,
+      "return_pct": 16.974320524835996,
+      "holding_days": 25,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.612000000000004,
+      "value_score": 84.99288116763393,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004170",
+      "entry_date": "2025-05-31",
+      "entry_price": 171998.4,
+      "exit_date": "2025-07-30",
+      "exit_price": 172100.0,
+      "return_pct": 0.05907031693318415,
+      "holding_days": 60,
+      "exit_reason": "기간만료",
+      "rr_ratio": 3.527559055118112,
+      "value_score": 79.20043098076816,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "012330",
+      "entry_date": "2025-07-30",
+      "entry_price": 303000.0,
+      "exit_date": "2025-07-31",
+      "exit_price": 287250.0,
+      "return_pct": -5.198019801980198,
+      "holding_days": 1,
+      "exit_reason": "손절",
+      "rr_ratio": 2.1295238095238096,
+      "value_score": 86.33863515278804,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "068270",
+      "entry_date": "2025-07-30",
+      "entry_price": 177900.0,
+      "exit_date": "2025-08-01",
+      "exit_price": 171557.14285714287,
+      "return_pct": -3.5654059262828164,
+      "holding_days": 2,
+      "exit_reason": "손절",
+      "rr_ratio": 3.842495495495502,
+      "value_score": 81.26992084133036,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028260",
+      "entry_date": "2025-07-30",
+      "entry_price": 174200.0,
+      "exit_date": "2025-08-01",
+      "exit_price": 164235.7142857143,
+      "return_pct": -5.7200262424143,
+      "holding_days": 2,
+      "exit_reason": "손절",
+      "rr_ratio": 3.29870107526882,
+      "value_score": 80.03612853247958,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "010950",
+      "entry_date": "2025-07-30",
+      "entry_price": 61900.0,
+      "exit_date": "2025-08-04",
+      "exit_price": 59500.0,
+      "return_pct": -3.877221324717286,
+      "holding_days": 5,
+      "exit_reason": "손절",
+      "rr_ratio": 2.4223333333333357,
+      "value_score": 80.91819653678536,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028050",
+      "entry_date": "2025-07-30",
+      "entry_price": 25248.4,
+      "exit_date": "2025-08-19",
+      "exit_price": 29048.4,
+      "return_pct": 15.050458642923909,
+      "holding_days": 20,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.8373333333333344,
+      "value_score": 84.10806323996529,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "016360",
+      "entry_date": "2025-06-30",
+      "entry_price": 70901.6,
+      "exit_date": "2025-08-20",
+      "exit_price": 66369.45714285715,
+      "return_pct": -6.392158790694221,
+      "holding_days": 51,
+      "exit_reason": "손절",
+      "rr_ratio": 4.677698975571318,
+      "value_score": 87.27443554886756,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-08-29",
+      "entry_price": 104150.0,
+      "exit_date": "2025-09-16",
+      "exit_price": 101176.78571428571,
+      "return_pct": -2.8547424730814113,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "rr_ratio": 2.7449753753753696,
+      "value_score": 83.10472990984037,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "012330",
+      "entry_date": "2025-08-29",
+      "entry_price": 305883.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 294043.71428571426,
+      "return_pct": -3.870527526631339,
+      "holding_days": 28,
+      "exit_reason": "손절",
+      "rr_ratio": 3.6742081447963724,
+      "value_score": 79.95080693913063,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028050",
+      "entry_date": "2025-08-29",
+      "entry_price": 28213.6,
+      "exit_date": "2025-09-30",
+      "exit_price": 26906.45714285714,
+      "return_pct": -4.633023992481848,
+      "holding_days": 32,
+      "exit_reason": "손절",
+      "rr_ratio": 3.9781420765027273,
+      "value_score": 88.03168850552356,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-09-28",
+      "entry_price": 322362.0,
+      "exit_date": "2025-10-10",
+      "exit_price": 431362.0,
+      "return_pct": 33.81291839608887,
+      "holding_days": 12,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.506459948320414,
+      "value_score": 85.61266698580022,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000950",
+      "entry_date": "2025-09-28",
+      "entry_price": 36872.1,
+      "exit_date": "2025-10-10",
+      "exit_price": 34932.81428571428,
+      "return_pct": -5.259493531113545,
+      "holding_days": 12,
+      "exit_reason": "손절",
+      "rr_ratio": 4.35727440147329,
+      "value_score": 70.01184875068772,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004170",
+      "entry_date": "2025-09-28",
+      "entry_price": 183900.0,
+      "exit_date": "2025-10-13",
+      "exit_price": 174792.85714285713,
+      "return_pct": -4.95222558844093,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "rr_ratio": 5.671548235294111,
+      "value_score": 72.00324489125498,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004800",
+      "entry_date": "2025-08-29",
+      "entry_price": 84550.0,
+      "exit_date": "2025-10-15",
+      "exit_price": 96736.2,
+      "return_pct": 14.41301005322294,
+      "holding_days": 47,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.9014761904761897,
+      "value_score": 86.118048390889,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "005380",
+      "entry_date": "2025-08-29",
+      "entry_price": 216000.0,
+      "exit_date": "2025-10-16",
+      "exit_price": 236124.0,
+      "return_pct": 9.316666666666666,
+      "holding_days": 48,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.324318584070801,
+      "value_score": 81.84846465030641,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028260",
+      "entry_date": "2025-09-28",
+      "entry_price": 184250.0,
+      "exit_date": "2025-10-29",
+      "exit_price": 227293.0,
+      "return_pct": 23.361194029850747,
+      "holding_days": 31,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.622953586497888,
+      "value_score": 79.8389375635793,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "016360",
+      "entry_date": "2025-10-28",
+      "entry_price": 75700.0,
+      "exit_date": "2025-11-05",
+      "exit_price": 71789.28571428571,
+      "return_pct": -5.166069069635785,
+      "holding_days": 8,
+      "exit_reason": "손절",
+      "rr_ratio": 2.8588127853881247,
+      "value_score": 84.46903076860174,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "105560",
+      "entry_date": "2025-10-28",
+      "entry_price": 114900.0,
+      "exit_date": "2025-11-06",
+      "exit_price": 127645.2,
+      "return_pct": 11.092428198433419,
+      "holding_days": 9,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.3053333333333303,
+      "value_score": 84.15626267193458,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "068270",
+      "entry_date": "2025-10-28",
+      "entry_price": 176350.0,
+      "exit_date": "2025-11-13",
+      "exit_price": 193902.6,
+      "return_pct": 9.953274737737457,
+      "holding_days": 16,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.9124314074074102,
+      "value_score": 84.54952312789317,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "032830",
+      "entry_date": "2025-09-28",
+      "entry_price": 154700.0,
+      "exit_date": "2025-11-19",
+      "exit_price": 147275.0,
+      "return_pct": -4.79961215255333,
+      "holding_days": 52,
+      "exit_reason": "손절",
+      "rr_ratio": 3.975111111111113,
+      "value_score": 66.47506087923533,
+      "strategy_type": "Dividend_Machine"
+    },
+    {
+      "symbol": "003200",
+      "entry_date": "2025-11-27",
+      "entry_price": 11740.0,
+      "exit_date": "2025-12-09",
+      "exit_price": 12925.08,
+      "return_pct": 10.094378194207836,
+      "holding_days": 12,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.0790877192982453,
+      "value_score": 90.13843158892112,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "051910",
+      "entry_date": "2025-11-27",
+      "entry_price": 391750.0,
+      "exit_date": "2025-12-15",
+      "exit_price": 361937.5,
+      "return_pct": -7.610082961072112,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "rr_ratio": 2.756327044025157,
+      "value_score": 86.07782582571733,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "016360",
+      "entry_date": "2025-12-27",
+      "entry_price": 80300.0,
+      "exit_date": "2025-12-29",
+      "exit_price": 78071.42857142857,
+      "return_pct": -2.775306884895934,
+      "holding_days": 2,
+      "exit_reason": "손절",
+      "rr_ratio": 2.9096666666666557,
+      "value_score": 85.06586633075833,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "005500",
+      "entry_date": "2025-12-27",
+      "entry_price": 20570.0,
+      "exit_date": "2025-12-29",
+      "exit_price": 19955.535714285714,
+      "return_pct": -2.9871866101812654,
+      "holding_days": 2,
+      "exit_reason": "손절",
+      "rr_ratio": 2.110586457425167,
+      "value_score": 82.59842401234496,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-12-27",
+      "entry_price": 574440.0,
+      "exit_date": "2025-12-30",
+      "exit_price": 654440.0,
+      "return_pct": 13.926606782257503,
+      "holding_days": 3,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.2090729783037495,
+      "value_score": 90.40393069637194,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "005930",
+      "entry_date": "2025-11-27",
+      "entry_price": 103450.0,
+      "exit_date": "2026-01-02",
+      "exit_price": 123462.2,
+      "return_pct": 19.344804253262442,
+      "holding_days": 36,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.3058501474926216,
+      "value_score": 84.28844372435573,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "032830",
+      "entry_date": "2025-12-27",
+      "entry_price": 159900.0,
+      "exit_date": "2026-01-02",
+      "exit_price": 153300.0,
+      "return_pct": -4.127579737335835,
+      "holding_days": 6,
+      "exit_reason": "손절",
+      "rr_ratio": 3.1846060606060598,
+      "value_score": 86.96169904674444,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "028260",
+      "entry_date": "2025-11-27",
+      "entry_price": 224500.0,
+      "exit_date": "2026-01-07",
+      "exit_price": 260276.0,
+      "return_pct": 15.935857461024499,
+      "holding_days": 41,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.4918606965174157,
+      "value_score": 87.92917972572515,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2025-12-27",
+      "entry_price": 20825.0,
+      "exit_date": "2026-01-08",
+      "exit_price": 20332.14285714286,
+      "return_pct": -2.366660950094316,
+      "holding_days": 12,
+      "exit_reason": "손절",
+      "rr_ratio": 2.8355072463768205,
+      "value_score": 84.67435448464934,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "004170",
+      "entry_date": "2025-11-27",
+      "entry_price": 210555.4,
+      "exit_date": "2026-01-14",
+      "exit_price": 275855.4,
+      "return_pct": 31.013215524275335,
+      "holding_days": 48,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.267973856209152,
+      "value_score": 82.01317928164173,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2026-01-26",
+      "entry_price": 20775.0,
+      "exit_date": "2026-01-28",
+      "exit_price": 21948.9,
+      "return_pct": 5.650541516245494,
+      "holding_days": 2,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 2.236000000000003,
+      "value_score": 87.53542446174342,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2026-01-26",
+      "entry_price": 712364.0,
+      "exit_date": "2026-01-30",
+      "exit_price": 910364.0,
+      "return_pct": 27.79477907361967,
+      "holding_days": 4,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 4.453012048192774,
+      "value_score": 90.58572049559041,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "105560",
+      "entry_date": "2026-01-26",
+      "entry_price": 130150.0,
+      "exit_date": "2026-02-06",
+      "exit_price": 149715.0,
+      "return_pct": 15.032654629273914,
+      "holding_days": 11,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.356740196078428,
+      "value_score": 88.57859084788475,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "016360",
+      "entry_date": "2026-01-26",
+      "entry_price": 80650.0,
+      "exit_date": "2026-02-10",
+      "exit_price": 95295.8,
+      "return_pct": 18.15970241785493,
+      "holding_days": 15,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.8182718808193634,
+      "value_score": 87.95122924912437,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "032830",
+      "entry_date": "2026-01-26",
+      "entry_price": 174598.6,
+      "exit_date": "2026-02-13",
+      "exit_price": 212298.6,
+      "return_pct": 21.59238390227642,
+      "holding_days": 18,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.393121182899388,
+      "value_score": 86.29110328557545,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "012330",
+      "entry_date": "2026-02-25",
+      "entry_price": 449260.0,
+      "exit_date": "2026-02-26",
+      "exit_price": 519260.0,
+      "return_pct": 15.58117793705204,
+      "holding_days": 1,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.1259968102073343,
+      "value_score": 84.38954012276375,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "010950",
+      "entry_date": "2026-02-25",
+      "entry_price": 107300.0,
+      "exit_date": "2026-03-03",
+      "exit_price": 135697.2,
+      "return_pct": 26.465237651444557,
+      "holding_days": 6,
+      "exit_reason": "목표가도달",
+      "rr_ratio": 3.9975947712418365,
+      "value_score": 84.93317519192067,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "003550",
+      "entry_date": "2026-02-25",
+      "entry_price": 96175.6,
+      "exit_date": "2026-03-04",
+      "exit_price": 90947.02857142857,
+      "return_pct": -5.436484335498229,
+      "holding_days": 7,
+      "exit_reason": "손절",
+      "rr_ratio": 2.7158469945355157,
+      "value_score": 88.02070076703055,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "024110",
+      "entry_date": "2026-02-25",
+      "entry_price": 26245.7,
+      "exit_date": "2026-03-04",
+      "exit_price": 24574.27142857143,
+      "return_pct": -6.368390141732064,
+      "holding_days": 7,
+      "exit_reason": "손절",
+      "rr_ratio": 5.17521367521367,
+      "value_score": 85.99577325756572,
+      "strategy_type": "Quality_FairPrice"
+    },
+    {
+      "symbol": "001040",
+      "entry_date": "2026-02-25",
+      "entry_price": 211300.0,
+      "exit_date": "2026-03-04",
+      "exit_price": 193182.14285714284,
+      "return_pct": -8.574470962071539,
+      "holding_days": 7,
+      "exit_reason": "손절",
+      "rr_ratio": 2.9249154346540487,
+      "value_score": 85.58140771340592,
+      "strategy_type": "Quality_FairPrice"
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-01-01",
+      "equity": 202580620.0
+    },
+    {
+      "date": "2025-01-02",
+      "equity": 205410760.0
+    },
+    {
+      "date": "2025-01-03",
+      "equity": 204453850.0
+    },
+    {
+      "date": "2025-01-04",
+      "equity": 204453850.0
+    },
+    {
+      "date": "2025-01-05",
+      "equity": 204453850.0
+    },
+    {
+      "date": "2025-01-06",
+      "equity": 205853100.0
+    },
+    {
+      "date": "2025-01-07",
+      "equity": 206193900.0
+    },
+    {
+      "date": "2025-01-08",
+      "equity": 205879950.0
+    },
+    {
+      "date": "2025-01-09",
+      "equity": 208575380.0
+    },
+    {
+      "date": "2025-01-10",
+      "equity": 209072210.0
+    },
+    {
+      "date": "2025-01-11",
+      "equity": 209072210.0
+    },
+    {
+      "date": "2025-01-12",
+      "equity": 209072210.0
+    },
+    {
+      "date": "2025-01-13",
+      "equity": 208810040.0
+    },
+    {
+      "date": "2025-01-14",
+      "equity": 208892080.0
+    },
+    {
+      "date": "2025-01-15",
+      "equity": 209138220.0
+    },
+    {
+      "date": "2025-01-16",
+      "equity": 208669000.0
+    },
+    {
+      "date": "2025-01-17",
+      "equity": 185066100.0
+    },
+    {
+      "date": "2025-01-18",
+      "equity": 185066100.0
+    },
+    {
+      "date": "2025-01-19",
+      "equity": 185066100.0
+    },
+    {
+      "date": "2025-01-20",
+      "equity": 184839990.0
+    },
+    {
+      "date": "2025-01-21",
+      "equity": 184760370.0
+    },
+    {
+      "date": "2025-01-22",
+      "equity": 185702230.0
+    },
+    {
+      "date": "2025-01-23",
+      "equity": 185585620.0
+    },
+    {
+      "date": "2025-01-24",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-25",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-26",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-27",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-28",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-29",
+      "equity": 185183650.0
+    },
+    {
+      "date": "2025-01-31",
+      "equity": 239818010.0
+    },
+    {
+      "date": "2025-02-01",
+      "equity": 239818010.0
+    },
+    {
+      "date": "2025-02-02",
+      "equity": 239818010.0
+    },
+    {
+      "date": "2025-02-03",
+      "equity": 236902250.0
+    },
+    {
+      "date": "2025-02-04",
+      "equity": 236695840.0
+    },
+    {
+      "date": "2025-02-05",
+      "equity": 237147576.0
+    },
+    {
+      "date": "2025-02-06",
+      "equity": 237717182.0
+    },
+    {
+      "date": "2025-02-07",
+      "equity": 237822274.0
+    },
+    {
+      "date": "2025-02-08",
+      "equity": 237822274.0
+    },
+    {
+      "date": "2025-02-09",
+      "equity": 237822274.0
+    },
+    {
+      "date": "2025-02-10",
+      "equity": 211086573.71428573
+    },
+    {
+      "date": "2025-02-11",
+      "equity": 211886689.71428573
+    },
+    {
+      "date": "2025-02-12",
+      "equity": 211408069.71428573
+    },
+    {
+      "date": "2025-02-13",
+      "equity": 211650233.71428573
+    },
+    {
+      "date": "2025-02-14",
+      "equity": 212292279.71428573
+    },
+    {
+      "date": "2025-02-15",
+      "equity": 212292279.71428573
+    },
+    {
+      "date": "2025-02-16",
+      "equity": 212292279.71428573
+    },
+    {
+      "date": "2025-02-17",
+      "equity": 212785791.71428573
+    },
+    {
+      "date": "2025-02-18",
+      "equity": 212854627.71428573
+    },
+    {
+      "date": "2025-02-19",
+      "equity": 213035313.71428573
+    },
+    {
+      "date": "2025-02-20",
+      "equity": 213482227.71428573
+    },
+    {
+      "date": "2025-02-21",
+      "equity": 213695069.71428573
+    },
+    {
+      "date": "2025-02-22",
+      "equity": 213695069.71428573
+    },
+    {
+      "date": "2025-02-23",
+      "equity": 213695069.71428573
+    },
+    {
+      "date": "2025-02-24",
+      "equity": 202395235.27428573
+    },
+    {
+      "date": "2025-02-25",
+      "equity": 202196501.27428573
+    },
+    {
+      "date": "2025-02-26",
+      "equity": 202760465.27428573
+    },
+    {
+      "date": "2025-02-27",
+      "equity": 202728797.27428573
+    },
+    {
+      "date": "2025-02-28",
+      "equity": 201113757.27428573
+    },
+    {
+      "date": "2025-03-01",
+      "equity": 201113757.27428573
+    },
+    {
+      "date": "2025-03-02",
+      "equity": 173701122.27428573
+    },
+    {
+      "date": "2025-03-03",
+      "equity": 173701122.27428573
+    },
+    {
+      "date": "2025-03-04",
+      "equity": 173434368.27428573
+    },
+    {
+      "date": "2025-03-05",
+      "equity": 174071268.27428573
+    },
+    {
+      "date": "2025-03-06",
+      "equity": 176020862.27428573
+    },
+    {
+      "date": "2025-03-07",
+      "equity": 176358988.27428573
+    },
+    {
+      "date": "2025-03-08",
+      "equity": 176358988.27428573
+    },
+    {
+      "date": "2025-03-09",
+      "equity": 176358988.27428573
+    },
+    {
+      "date": "2025-03-10",
+      "equity": 175918886.27428573
+    },
+    {
+      "date": "2025-03-11",
+      "equity": 174227978.27428573
+    },
+    {
+      "date": "2025-03-12",
+      "equity": 174746190.27428573
+    },
+    {
+      "date": "2025-03-13",
+      "equity": 175114912.27428573
+    },
+    {
+      "date": "2025-03-14",
+      "equity": 174559268.27428573
+    },
+    {
+      "date": "2025-03-15",
+      "equity": 174559268.27428573
+    },
+    {
+      "date": "2025-03-16",
+      "equity": 174559268.27428573
+    },
+    {
+      "date": "2025-03-17",
+      "equity": 175235796.27428573
+    },
+    {
+      "date": "2025-03-18",
+      "equity": 175866112.27428573
+    },
+    {
+      "date": "2025-03-19",
+      "equity": 175645040.27428573
+    },
+    {
+      "date": "2025-03-20",
+      "equity": 175678924.27428573
+    },
+    {
+      "date": "2025-03-21",
+      "equity": 175708374.27428573
+    },
+    {
+      "date": "2025-03-22",
+      "equity": 175708374.27428573
+    },
+    {
+      "date": "2025-03-23",
+      "equity": 175708374.27428573
+    },
+    {
+      "date": "2025-03-24",
+      "equity": 176080564.27428573
+    },
+    {
+      "date": "2025-03-25",
+      "equity": 175371318.27428573
+    },
+    {
+      "date": "2025-03-26",
+      "equity": 175590574.27428573
+    },
+    {
+      "date": "2025-03-27",
+      "equity": 174271410.27428573
+    },
+    {
+      "date": "2025-03-28",
+      "equity": 158830260.91714287
+    },
+    {
+      "date": "2025-03-29",
+      "equity": 158830260.91714287
+    },
+    {
+      "date": "2025-03-30",
+      "equity": 158830260.91714287
+    },
+    {
+      "date": "2025-03-31",
+      "equity": 146420980.06
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 177387049.24400002
+    },
+    {
+      "date": "2025-04-02",
+      "equity": 158023314.24400002
+    },
+    {
+      "date": "2025-04-03",
+      "equity": 146860402.81542858
+    },
+    {
+      "date": "2025-04-04",
+      "equity": 147058432.81542858
+    },
+    {
+      "date": "2025-04-05",
+      "equity": 147058432.81542858
+    },
+    {
+      "date": "2025-04-06",
+      "equity": 147058432.81542858
+    },
+    {
+      "date": "2025-04-07",
+      "equity": 127069457.81542858
+    },
+    {
+      "date": "2025-04-08",
+      "equity": 127267697.81542858
+    },
+    {
+      "date": "2025-04-09",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-10",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-11",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-12",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-13",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-14",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-15",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-16",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-17",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-18",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-19",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-20",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-21",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-22",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-23",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-24",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-25",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-26",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-27",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-28",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-29",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-04-30",
+      "equity": 108649952.81542858
+    },
+    {
+      "date": "2025-05-01",
+      "equity": 220474562.81542858
+    },
+    {
+      "date": "2025-05-02",
+      "equity": 219989062.81542858
+    },
+    {
+      "date": "2025-05-03",
+      "equity": 219989062.81542858
+    },
+    {
+      "date": "2025-05-04",
+      "equity": 219989062.81542858
+    },
+    {
+      "date": "2025-05-05",
+      "equity": 219989062.81542858
+    },
+    {
+      "date": "2025-05-06",
+      "equity": 219989062.81542858
+    },
+    {
+      "date": "2025-05-07",
+      "equity": 221051537.81542858
+    },
+    {
+      "date": "2025-05-08",
+      "equity": 221591012.81542858
+    },
+    {
+      "date": "2025-05-09",
+      "equity": 222090957.81542858
+    },
+    {
+      "date": "2025-05-10",
+      "equity": 222090957.81542858
+    },
+    {
+      "date": "2025-05-11",
+      "equity": 222090957.81542858
+    },
+    {
+      "date": "2025-05-12",
+      "equity": 223928367.81542858
+    },
+    {
+      "date": "2025-05-13",
+      "equity": 223996772.81542858
+    },
+    {
+      "date": "2025-05-14",
+      "equity": 202997772.81542858
+    },
+    {
+      "date": "2025-05-15",
+      "equity": 202373647.81542858
+    },
+    {
+      "date": "2025-05-16",
+      "equity": 201148947.81542858
+    },
+    {
+      "date": "2025-05-17",
+      "equity": 201148947.81542858
+    },
+    {
+      "date": "2025-05-18",
+      "equity": 201148947.81542858
+    },
+    {
+      "date": "2025-05-19",
+      "equity": 200234422.81542858
+    },
+    {
+      "date": "2025-05-20",
+      "equity": 201332597.81542858
+    },
+    {
+      "date": "2025-05-21",
+      "equity": 202041747.81542858
+    },
+    {
+      "date": "2025-05-22",
+      "equity": 202806297.81542858
+    },
+    {
+      "date": "2025-05-23",
+      "equity": 202801497.81542858
+    },
+    {
+      "date": "2025-05-24",
+      "equity": 202801497.81542858
+    },
+    {
+      "date": "2025-05-25",
+      "equity": 202801497.81542858
+    },
+    {
+      "date": "2025-05-26",
+      "equity": 204620172.81542858
+    },
+    {
+      "date": "2025-05-27",
+      "equity": 184895531.31542858
+    },
+    {
+      "date": "2025-05-28",
+      "equity": 164004356.31542858
+    },
+    {
+      "date": "2025-05-29",
+      "equity": 164946106.31542858
+    },
+    {
+      "date": "2025-05-30",
+      "equity": 164187706.31542858
+    },
+    {
+      "date": "2025-05-31",
+      "equity": 234012196.31542858
+    },
+    {
+      "date": "2025-06-01",
+      "equity": 234012196.31542858
+    },
+    {
+      "date": "2025-06-02",
+      "equity": 232702511.31542858
+    },
+    {
+      "date": "2025-06-03",
+      "equity": 232702511.31542858
+    },
+    {
+      "date": "2025-06-04",
+      "equity": 215386964.11542857
+    },
+    {
+      "date": "2025-06-05",
+      "equity": 216410514.11542857
+    },
+    {
+      "date": "2025-06-06",
+      "equity": 216410514.11542857
+    },
+    {
+      "date": "2025-06-07",
+      "equity": 216410514.11542857
+    },
+    {
+      "date": "2025-06-08",
+      "equity": 216410514.11542857
+    },
+    {
+      "date": "2025-06-09",
+      "equity": 200529081.8354286
+    },
+    {
+      "date": "2025-06-10",
+      "equity": 201107106.8354286
+    },
+    {
+      "date": "2025-06-11",
+      "equity": 185262976.23542857
+    },
+    {
+      "date": "2025-06-12",
+      "equity": 185479501.23542857
+    },
+    {
+      "date": "2025-06-13",
+      "equity": 184261951.23542857
+    },
+    {
+      "date": "2025-06-14",
+      "equity": 184261951.23542857
+    },
+    {
+      "date": "2025-06-15",
+      "equity": 184261951.23542857
+    },
+    {
+      "date": "2025-06-16",
+      "equity": 184377126.23542857
+    },
+    {
+      "date": "2025-06-17",
+      "equity": 184137476.23542857
+    },
+    {
+      "date": "2025-06-18",
+      "equity": 163105763.73542857
+    },
+    {
+      "date": "2025-06-19",
+      "equity": 162943213.73542857
+    },
+    {
+      "date": "2025-06-20",
+      "equity": 162996263.73542857
+    },
+    {
+      "date": "2025-06-21",
+      "equity": 162996263.73542857
+    },
+    {
+      "date": "2025-06-22",
+      "equity": 162996263.73542857
+    },
+    {
+      "date": "2025-06-23",
+      "equity": 162942063.73542857
+    },
+    {
+      "date": "2025-06-24",
+      "equity": 163456813.73542857
+    },
+    {
+      "date": "2025-06-25",
+      "equity": 163108063.73542857
+    },
+    {
+      "date": "2025-06-26",
+      "equity": 162747213.73542857
+    },
+    {
+      "date": "2025-06-27",
+      "equity": 162830263.73542857
+    },
+    {
+      "date": "2025-06-28",
+      "equity": 162830263.73542857
+    },
+    {
+      "date": "2025-06-29",
+      "equity": 162830263.73542857
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 237580003.73542857
+    },
+    {
+      "date": "2025-07-01",
+      "equity": 238849793.73542857
+    },
+    {
+      "date": "2025-07-02",
+      "equity": 239411333.73542857
+    },
+    {
+      "date": "2025-07-03",
+      "equity": 241426433.73542857
+    },
+    {
+      "date": "2025-07-04",
+      "equity": 223425733.73542857
+    },
+    {
+      "date": "2025-07-05",
+      "equity": 223425733.73542857
+    },
+    {
+      "date": "2025-07-06",
+      "equity": 223425733.73542857
+    },
+    {
+      "date": "2025-07-07",
+      "equity": 223716303.73542857
+    },
+    {
+      "date": "2025-07-08",
+      "equity": 226444933.73542857
+    },
+    {
+      "date": "2025-07-09",
+      "equity": 226409033.73542857
+    },
+    {
+      "date": "2025-07-10",
+      "equity": 226883433.73542857
+    },
+    {
+      "date": "2025-07-11",
+      "equity": 227889383.73542857
+    },
+    {
+      "date": "2025-07-12",
+      "equity": 227889383.73542857
+    },
+    {
+      "date": "2025-07-13",
+      "equity": 227889383.73542857
+    },
+    {
+      "date": "2025-07-14",
+      "equity": 212327653.73542857
+    },
+    {
+      "date": "2025-07-15",
+      "equity": 212496853.73542857
+    },
+    {
+      "date": "2025-07-16",
+      "equity": 210080853.73542857
+    },
+    {
+      "date": "2025-07-17",
+      "equity": 192412148.9354286
+    },
+    {
+      "date": "2025-07-18",
+      "equity": 191644148.9354286
+    },
+    {
+      "date": "2025-07-19",
+      "equity": 191644148.9354286
+    },
+    {
+      "date": "2025-07-20",
+      "equity": 191644148.9354286
+    },
+    {
+      "date": "2025-07-21",
+      "equity": 191551848.9354286
+    },
+    {
+      "date": "2025-07-22",
+      "equity": 191191948.9354286
+    },
+    {
+      "date": "2025-07-23",
+      "equity": 191096548.9354286
+    },
+    {
+      "date": "2025-07-24",
+      "equity": 190629548.9354286
+    },
+    {
+      "date": "2025-07-25",
+      "equity": 173921009.3354286
+    },
+    {
+      "date": "2025-07-26",
+      "equity": 173921009.3354286
+    },
+    {
+      "date": "2025-07-27",
+      "equity": 173921009.3354286
+    },
+    {
+      "date": "2025-07-28",
+      "equity": 172860209.3354286
+    },
+    {
+      "date": "2025-07-29",
+      "equity": 173142609.3354286
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 256567766.1354286
+    },
+    {
+      "date": "2025-07-31",
+      "equity": 234566616.1354286
+    },
+    {
+      "date": "2025-08-01",
+      "equity": 191719037.564
+    },
+    {
+      "date": "2025-08-02",
+      "equity": 191719037.564
+    },
+    {
+      "date": "2025-08-03",
+      "equity": 191719037.564
+    },
+    {
+      "date": "2025-08-04",
+      "equity": 171709487.564
+    },
+    {
+      "date": "2025-08-05",
+      "equity": 172557387.564
+    },
+    {
+      "date": "2025-08-06",
+      "equity": 173360687.564
+    },
+    {
+      "date": "2025-08-07",
+      "equity": 173426837.564
+    },
+    {
+      "date": "2025-08-08",
+      "equity": 173390987.564
+    },
+    {
+      "date": "2025-08-09",
+      "equity": 173390987.564
+    },
+    {
+      "date": "2025-08-10",
+      "equity": 173390987.564
+    },
+    {
+      "date": "2025-08-11",
+      "equity": 173064287.564
+    },
+    {
+      "date": "2025-08-12",
+      "equity": 173567137.564
+    },
+    {
+      "date": "2025-08-13",
+      "equity": 173551987.564
+    },
+    {
+      "date": "2025-08-14",
+      "equity": 174100287.564
+    },
+    {
+      "date": "2025-08-15",
+      "equity": 174100287.564
+    },
+    {
+      "date": "2025-08-16",
+      "equity": 174100287.564
+    },
+    {
+      "date": "2025-08-17",
+      "equity": 174100287.564
+    },
+    {
+      "date": "2025-08-18",
+      "equity": 174050887.564
+    },
+    {
+      "date": "2025-08-19",
+      "equity": 154878937.564
+    },
+    {
+      "date": "2025-08-20",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-21",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-22",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-23",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-24",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-25",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-26",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-27",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-28",
+      "equity": 136383241.13542858
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 276123741.13542855
+    },
+    {
+      "date": "2025-08-30",
+      "equity": 276123741.13542855
+    },
+    {
+      "date": "2025-08-31",
+      "equity": 276123741.13542855
+    },
+    {
+      "date": "2025-09-01",
+      "equity": 276797441.13542855
+    },
+    {
+      "date": "2025-09-02",
+      "equity": 276177441.13542855
+    },
+    {
+      "date": "2025-09-03",
+      "equity": 276145641.13542855
+    },
+    {
+      "date": "2025-09-04",
+      "equity": 274340641.13542855
+    },
+    {
+      "date": "2025-09-05",
+      "equity": 275171341.13542855
+    },
+    {
+      "date": "2025-09-06",
+      "equity": 275171341.13542855
+    },
+    {
+      "date": "2025-09-07",
+      "equity": 275171341.13542855
+    },
+    {
+      "date": "2025-09-08",
+      "equity": 274297141.13542855
+    },
+    {
+      "date": "2025-09-09",
+      "equity": 274847441.13542855
+    },
+    {
+      "date": "2025-09-10",
+      "equity": 276718141.13542855
+    },
+    {
+      "date": "2025-09-11",
+      "equity": 276874441.13542855
+    },
+    {
+      "date": "2025-09-12",
+      "equity": 276242441.13542855
+    },
+    {
+      "date": "2025-09-13",
+      "equity": 276242441.13542855
+    },
+    {
+      "date": "2025-09-14",
+      "equity": 276242441.13542855
+    },
+    {
+      "date": "2025-09-15",
+      "equity": 275361441.13542855
+    },
+    {
+      "date": "2025-09-16",
+      "equity": 247337132.20685714
+    },
+    {
+      "date": "2025-09-17",
+      "equity": 247061532.20685714
+    },
+    {
+      "date": "2025-09-18",
+      "equity": 247749532.20685714
+    },
+    {
+      "date": "2025-09-19",
+      "equity": 246091732.20685714
+    },
+    {
+      "date": "2025-09-20",
+      "equity": 246091732.20685714
+    },
+    {
+      "date": "2025-09-21",
+      "equity": 246091732.20685714
+    },
+    {
+      "date": "2025-09-22",
+      "equity": 246545432.20685714
+    },
+    {
+      "date": "2025-09-23",
+      "equity": 247254832.20685714
+    },
+    {
+      "date": "2025-09-24",
+      "equity": 245389632.20685714
+    },
+    {
+      "date": "2025-09-25",
+      "equity": 244429932.20685714
+    },
+    {
+      "date": "2025-09-26",
+      "equity": 215370635.7782857
+    },
+    {
+      "date": "2025-09-27",
+      "equity": 215370635.7782857
+    },
+    {
+      "date": "2025-09-28",
+      "equity": 300610035.77828574
+    },
+    {
+      "date": "2025-09-29",
+      "equity": 301741035.77828574
+    },
+    {
+      "date": "2025-09-30",
+      "equity": 273170135.77828574
+    },
+    {
+      "date": "2025-10-01",
+      "equity": 273746435.77828574
+    },
+    {
+      "date": "2025-10-02",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-03",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-04",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-05",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-06",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-07",
+      "equity": 277310835.77828574
+    },
+    {
+      "date": "2025-10-10",
+      "equity": 246063321.4925714
+    },
+    {
+      "date": "2025-10-11",
+      "equity": 246063321.4925714
+    },
+    {
+      "date": "2025-10-12",
+      "equity": 246063321.4925714
+    },
+    {
+      "date": "2025-10-13",
+      "equity": 228673671.4925714
+    },
+    {
+      "date": "2025-10-14",
+      "equity": 232018571.4925714
+    },
+    {
+      "date": "2025-10-15",
+      "equity": 205594327.89257142
+    },
+    {
+      "date": "2025-10-16",
+      "equity": 181067151.89257142
+    },
+    {
+      "date": "2025-10-17",
+      "equity": 179784451.89257142
+    },
+    {
+      "date": "2025-10-18",
+      "equity": 179784451.89257142
+    },
+    {
+      "date": "2025-10-19",
+      "equity": 179784451.89257142
+    },
+    {
+      "date": "2025-10-20",
+      "equity": 179880951.89257142
+    },
+    {
+      "date": "2025-10-21",
+      "equity": 179562451.89257142
+    },
+    {
+      "date": "2025-10-22",
+      "equity": 179870151.89257142
+    },
+    {
+      "date": "2025-10-23",
+      "equity": 179958151.89257142
+    },
+    {
+      "date": "2025-10-24",
+      "equity": 180285151.89257142
+    },
+    {
+      "date": "2025-10-25",
+      "equity": 180285151.89257142
+    },
+    {
+      "date": "2025-10-26",
+      "equity": 180285151.89257142
+    },
+    {
+      "date": "2025-10-27",
+      "equity": 180811851.89257142
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 242462051.89257142
+    },
+    {
+      "date": "2025-10-29",
+      "equity": 227076464.89257142
+    },
+    {
+      "date": "2025-10-30",
+      "equity": 226575064.89257142
+    },
+    {
+      "date": "2025-10-31",
+      "equity": 226359364.89257142
+    },
+    {
+      "date": "2025-11-01",
+      "equity": 226359364.89257142
+    },
+    {
+      "date": "2025-11-02",
+      "equity": 226359364.89257142
+    },
+    {
+      "date": "2025-11-03",
+      "equity": 226390464.89257142
+    },
+    {
+      "date": "2025-11-04",
+      "equity": 226333764.89257142
+    },
+    {
+      "date": "2025-11-05",
+      "equity": 204695661.32114285
+    },
+    {
+      "date": "2025-11-06",
+      "equity": 185944306.92114285
+    },
+    {
+      "date": "2025-11-07",
+      "equity": 185303506.92114285
+    },
+    {
+      "date": "2025-11-08",
+      "equity": 185303506.92114285
+    },
+    {
+      "date": "2025-11-09",
+      "equity": 185303506.92114285
+    },
+    {
+      "date": "2025-11-10",
+      "equity": 186129906.92114285
+    },
+    {
+      "date": "2025-11-11",
+      "equity": 186091106.92114285
+    },
+    {
+      "date": "2025-11-12",
+      "equity": 188083506.92114285
+    },
+    {
+      "date": "2025-11-13",
+      "equity": 169054408.52114284
+    },
+    {
+      "date": "2025-11-14",
+      "equity": 167456008.52114284
+    },
+    {
+      "date": "2025-11-15",
+      "equity": 167456008.52114284
+    },
+    {
+      "date": "2025-11-16",
+      "equity": 167456008.52114284
+    },
+    {
+      "date": "2025-11-17",
+      "equity": 167456008.52114284
+    },
+    {
+      "date": "2025-11-18",
+      "equity": 166926808.52114284
+    },
+    {
+      "date": "2025-11-19",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-20",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-21",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-22",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-23",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-24",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-25",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-26",
+      "equity": 150065308.52114284
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 303001688.52114284
+    },
+    {
+      "date": "2025-11-28",
+      "equity": 300113148.52114284
+    },
+    {
+      "date": "2025-11-29",
+      "equity": 300113148.52114284
+    },
+    {
+      "date": "2025-11-30",
+      "equity": 300113148.52114284
+    },
+    {
+      "date": "2025-12-01",
+      "equity": 301798288.52114284
+    },
+    {
+      "date": "2025-12-02",
+      "equity": 303705208.52114284
+    },
+    {
+      "date": "2025-12-03",
+      "equity": 309189928.52114284
+    },
+    {
+      "date": "2025-12-04",
+      "equity": 307548608.52114284
+    },
+    {
+      "date": "2025-12-05",
+      "equity": 309721388.52114284
+    },
+    {
+      "date": "2025-12-06",
+      "equity": 309721388.52114284
+    },
+    {
+      "date": "2025-12-07",
+      "equity": 309721388.52114284
+    },
+    {
+      "date": "2025-12-08",
+      "equity": 311855248.52114284
+    },
+    {
+      "date": "2025-12-09",
+      "equity": 282459373.00114286
+    },
+    {
+      "date": "2025-12-10",
+      "equity": 280768873.00114286
+    },
+    {
+      "date": "2025-12-11",
+      "equity": 281857373.00114286
+    },
+    {
+      "date": "2025-12-12",
+      "equity": 283318373.00114286
+    },
+    {
+      "date": "2025-12-13",
+      "equity": 283318373.00114286
+    },
+    {
+      "date": "2025-12-14",
+      "equity": 283318373.00114286
+    },
+    {
+      "date": "2025-12-15",
+      "equity": 251564123.00114283
+    },
+    {
+      "date": "2025-12-16",
+      "equity": 249595623.00114283
+    },
+    {
+      "date": "2025-12-17",
+      "equity": 252139623.00114283
+    },
+    {
+      "date": "2025-12-18",
+      "equity": 250522123.00114283
+    },
+    {
+      "date": "2025-12-19",
+      "equity": 250272623.00114283
+    },
+    {
+      "date": "2025-12-20",
+      "equity": 250272623.00114283
+    },
+    {
+      "date": "2025-12-21",
+      "equity": 250272623.00114283
+    },
+    {
+      "date": "2025-12-22",
+      "equity": 250821123.00114283
+    },
+    {
+      "date": "2025-12-23",
+      "equity": 250792123.00114283
+    },
+    {
+      "date": "2025-12-24",
+      "equity": 251035623.00114283
+    },
+    {
+      "date": "2025-12-25",
+      "equity": 251035623.00114283
+    },
+    {
+      "date": "2025-12-26",
+      "equity": 251890123.00114283
+    },
+    {
+      "date": "2025-12-27",
+      "equity": 346960223.00114286
+    },
+    {
+      "date": "2025-12-28",
+      "equity": 346960223.00114286
+    },
+    {
+      "date": "2025-12-29",
+      "equity": 309962488.00114286
+    },
+    {
+      "date": "2025-12-30",
+      "equity": 291401738.00114286
+    },
+    {
+      "date": "2025-12-31",
+      "equity": 291401738.00114286
+    },
+    {
+      "date": "2026-01-01",
+      "equity": 291401738.00114286
+    },
+    {
+      "date": "2026-01-02",
+      "equity": 241501376.00114283
+    },
+    {
+      "date": "2026-01-03",
+      "equity": 241501376.00114283
+    },
+    {
+      "date": "2026-01-04",
+      "equity": 241501376.00114283
+    },
+    {
+      "date": "2026-01-05",
+      "equity": 244230126.00114283
+    },
+    {
+      "date": "2026-01-06",
+      "equity": 244813376.00114283
+    },
+    {
+      "date": "2026-01-07",
+      "equity": 218076584.00114283
+    },
+    {
+      "date": "2026-01-08",
+      "equity": 197999798.28685713
+    },
+    {
+      "date": "2026-01-09",
+      "equity": 198638798.28685713
+    },
+    {
+      "date": "2026-01-10",
+      "equity": 198638798.28685713
+    },
+    {
+      "date": "2026-01-11",
+      "equity": 198638798.28685713
+    },
+    {
+      "date": "2026-01-12",
+      "equity": 199774798.28685713
+    },
+    {
+      "date": "2026-01-13",
+      "equity": 200058798.28685713
+    },
+    {
+      "date": "2026-01-14",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-15",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-16",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-17",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-18",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-19",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-20",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-21",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-22",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-23",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-24",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-25",
+      "equity": 170920398.28685713
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 346116498.2868571
+    },
+    {
+      "date": "2026-01-27",
+      "equity": 354253998.2868571
+    },
+    {
+      "date": "2026-01-28",
+      "equity": 323338163.7868571
+    },
+    {
+      "date": "2026-01-29",
+      "equity": 325651163.7868571
+    },
+    {
+      "date": "2026-01-30",
+      "equity": 292622163.7868571
+    },
+    {
+      "date": "2026-01-31",
+      "equity": 292622163.7868571
+    },
+    {
+      "date": "2026-02-01",
+      "equity": 292622163.7868571
+    },
+    {
+      "date": "2026-02-02",
+      "equity": 287496963.7868571
+    },
+    {
+      "date": "2026-02-03",
+      "equity": 294190563.7868571
+    },
+    {
+      "date": "2026-02-04",
+      "equity": 297069963.7868571
+    },
+    {
+      "date": "2026-02-05",
+      "equity": 293988763.7868571
+    },
+    {
+      "date": "2026-02-06",
+      "equity": 260742093.78685713
+    },
+    {
+      "date": "2026-02-07",
+      "equity": 260742093.78685713
+    },
+    {
+      "date": "2026-02-08",
+      "equity": 260742093.78685713
+    },
+    {
+      "date": "2026-02-09",
+      "equity": 264088293.78685713
+    },
+    {
+      "date": "2026-02-10",
+      "equity": 232030167.18685713
+    },
+    {
+      "date": "2026-02-11",
+      "equity": 232478667.18685713
+    },
+    {
+      "date": "2026-02-12",
+      "equity": 233453667.18685713
+    },
+    {
+      "date": "2026-02-13",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-14",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-15",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-16",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-17",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-18",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-19",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-20",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-21",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-22",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-23",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-24",
+      "equity": 200830167.18685713
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 408884367.1868571
+    },
+    {
+      "date": "2026-02-26",
+      "equity": 375141767.1868571
+    },
+    {
+      "date": "2026-02-27",
+      "equity": 374023567.1868571
+    },
+    {
+      "date": "2026-02-28",
+      "equity": 374023567.1868571
+    },
+    {
+      "date": "2026-03-01",
+      "equity": 374023567.1868571
+    },
+    {
+      "date": "2026-03-02",
+      "equity": 374023567.1868571
+    },
+    {
+      "date": "2026-03-03",
+      "equity": 338156219.9868572
+    },
+    {
+      "date": "2026-03-04",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-05",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-06",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-07",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-08",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-09",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-10",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-11",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-12",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-13",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-14",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-15",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-16",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-17",
+      "equity": 209500727.12971428
+    },
+    {
+      "date": "2026-03-18",
+      "equity": 209500727.12971428
+    }
+  ],
+  "parameters": {
+    "value_score_threshold": 65.0,
+    "risk_reward_ratio": 1.5,
+    "atr_multiplier": 1.5,
+    "fib_entry_tolerance": 0.05
+  }
+}

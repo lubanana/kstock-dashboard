@@ -1,0 +1,273 @@
+{
+  "total_trades": 10,
+  "win_rate": 50.0,
+  "avg_return": 1.0668637555116414,
+  "total_return": 8.145144854341213,
+  "max_drawdown": 6.999999999999986,
+  "final_capital": 108145144.85434121,
+  "trades": [
+    {
+      "symbol": "001275",
+      "entry_date": "2025-01-31",
+      "entry_price": 22150.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 21850.0,
+      "return_pct": -1.3544018058690765,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 72.56506894871809,
+      "filters_passed": [
+        "RSI(50.0)",
+        "Volume(2.7x)",
+        "ADX(30.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "002150",
+      "entry_date": "2025-01-31",
+      "entry_price": 6550.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 6650.0,
+      "return_pct": 1.526717557251911,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.3488161095027,
+      "filters_passed": [
+        "RSI(45.6)",
+        "Volume(1.6x)",
+        "ADX(26.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000760",
+      "entry_date": "2025-03-02",
+      "entry_price": 10230.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 10300.0,
+      "return_pct": 0.6842619745845546,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.04564646880215,
+      "filters_passed": [
+        "RSI(47.3)",
+        "Volume(3.6x)",
+        "ADX(33.3)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000225",
+      "entry_date": "2025-04-01",
+      "entry_price": 4770.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 5230.0,
+      "return_pct": 9.643605870020956,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 77.96070224078817,
+      "filters_passed": [
+        "RSI(45.3)",
+        "Volume(2.7x)",
+        "ADX(37.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001275",
+      "entry_date": "2025-04-01",
+      "entry_price": 21800.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 20274.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 74.93051784235526,
+      "filters_passed": [
+        "RSI(45.5)",
+        "Volume(2.9x)",
+        "ADX(53.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001067",
+      "entry_date": "2025-05-01",
+      "entry_price": 60600.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 63000.0,
+      "return_pct": 3.960396039603964,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.02841177834054,
+      "filters_passed": [
+        "RSI(50.0)",
+        "Volume(1.2x)",
+        "ADX(76.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000020",
+      "entry_date": "2025-10-28",
+      "entry_price": 6370.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 6180.0,
+      "return_pct": -2.982731554160123,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.5219353628555,
+      "filters_passed": [
+        "RSI(50.7)",
+        "Volume(1.3x)",
+        "ADX(51.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001067",
+      "entry_date": "2025-12-27",
+      "entry_price": 60800.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 59700.0,
+      "return_pct": -1.8092105263157854,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.16253877797283,
+      "filters_passed": [
+        "RSI(53.8)",
+        "Volume(4.2x)",
+        "ADX(48.5)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "003465",
+      "entry_date": "2026-01-26",
+      "entry_price": 2670.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 3070.4999999999995,
+      "return_pct": 14.999999999999991,
+      "holding_days": 20,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.96262949810786,
+      "filters_passed": [
+        "RSI(48.1)",
+        "Volume(2.8x)",
+        "ADX(40.1)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000145",
+      "entry_date": "2026-02-25",
+      "entry_price": 11930.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 11094.900000000001,
+      "return_pct": -6.999999999999984,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 72.21118093013676,
+      "filters_passed": [
+        "RSI(47.5)",
+        "Volume(1.3x)",
+        "ADX(25.4)",
+        "Trend(정배열)"
+      ]
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-01-01",
+      "equity": 100000000
+    },
+    {
+      "date": "2025-01-31",
+      "equity": 100086157.87569141
+    },
+    {
+      "date": "2025-03-02",
+      "equity": 100771009.39585744
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 102103003.55569157
+    },
+    {
+      "date": "2025-05-01",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-05-31",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-09-28",
+      "equity": 106146686.86482787
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 102980616.14201511
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 102980616.14201511
+    },
+    {
+      "date": "2025-12-27",
+      "equity": 101117479.99470893
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 116285101.99391526
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 108145144.85434121
+    }
+  ],
+  "parameters": {
+    "primary_threshold": 70.0,
+    "meta_threshold": 70.0,
+    "rsi_range": [
+      45.0,
+      65.0
+    ],
+    "volume_threshold": 1.2,
+    "adx_threshold": 25.0,
+    "trend_filter": true
+  }
+}

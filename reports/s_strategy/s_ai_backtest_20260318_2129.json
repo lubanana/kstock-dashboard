@@ -1,0 +1,468 @@
+{
+  "total_trades": 36,
+  "win_rate": 27.77777777777778,
+  "avg_return": -1.2876984126984103,
+  "total_return": -17.800077935440218,
+  "max_drawdown": 39.05010861093558,
+  "final_capital": 82199922.06455979,
+  "trades": [
+    {
+      "symbol": "003670",
+      "entry_date": "2025-01-01",
+      "entry_price": 137739.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 158399.84999999998,
+      "return_pct": 14.999999999999991,
+      "holding_days": 19,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "001570",
+      "entry_date": "2025-01-01",
+      "entry_price": 21200.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 24379.999999999996,
+      "return_pct": 14.999999999999991,
+      "holding_days": 19,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003300",
+      "entry_date": "2025-01-01",
+      "entry_price": 14000.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 14090.0,
+      "return_pct": 0.642857142857145,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "strategy": "S3"
+    },
+    {
+      "symbol": "001570",
+      "entry_date": "2025-01-31",
+      "entry_price": 18010.0,
+      "exit_date": "2025-02-05",
+      "exit_price": 20711.5,
+      "return_pct": 14.999999999999991,
+      "holding_days": 4,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000150",
+      "entry_date": "2025-01-31",
+      "entry_price": 284000.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 264120.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 1,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003160",
+      "entry_date": "2025-01-31",
+      "entry_price": 17020.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 15828.6,
+      "return_pct": -6.999999999999995,
+      "holding_days": 1,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "003230",
+      "entry_date": "2025-01-31",
+      "entry_price": 684000.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 636120.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 1,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003160",
+      "entry_date": "2025-03-02",
+      "entry_price": 13220.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 15202.999999999998,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003240",
+      "entry_date": "2025-03-02",
+      "entry_price": 717000.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 666810.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-03-02",
+      "entry_price": 93200.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 107179.99999999999,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003670",
+      "entry_date": "2025-04-01",
+      "entry_price": 115542.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 132873.3,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "002630",
+      "entry_date": "2025-05-31",
+      "entry_price": 1179.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 1355.85,
+      "return_pct": 14.999999999999991,
+      "holding_days": 20,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000320",
+      "entry_date": "2025-05-31",
+      "entry_price": 18160.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 16888.8,
+      "return_pct": -7.000000000000006,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S3"
+    },
+    {
+      "symbol": "002960",
+      "entry_date": "2025-05-31",
+      "entry_price": 402500.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 374325.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S3"
+    },
+    {
+      "symbol": "001810",
+      "entry_date": "2025-06-30",
+      "entry_price": 1725.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 1604.25,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "002100",
+      "entry_date": "2025-06-30",
+      "entry_price": 10060.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 9355.800000000001,
+      "return_pct": -6.999999999999984,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "001440",
+      "entry_date": "2025-07-30",
+      "entry_price": 15610.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 14517.300000000001,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "003530",
+      "entry_date": "2025-07-30",
+      "entry_price": 5790.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 5384.700000000001,
+      "return_pct": -6.999999999999984,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003230",
+      "entry_date": "2025-08-29",
+      "entry_price": 1566000.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 1456380.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000250",
+      "entry_date": "2025-09-28",
+      "entry_price": 216000.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 200880.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-09-28",
+      "entry_price": 100200.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 115229.99999999999,
+      "return_pct": 14.999999999999991,
+      "holding_days": 18,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003230",
+      "entry_date": "2025-09-28",
+      "entry_price": 1466000.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 1363380.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-09-28",
+      "entry_price": 336500.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 312945.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000670",
+      "entry_date": "2025-09-28",
+      "entry_price": 41103.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 38225.79,
+      "return_pct": -6.999999999999995,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "strategy": "S3"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-10-28",
+      "entry_price": 521000.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 484530.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003230",
+      "entry_date": "2025-10-28",
+      "entry_price": 1261000.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 1450150.0,
+      "return_pct": 14.999999999999991,
+      "holding_days": 23,
+      "exit_reason": "목표가도달",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003160",
+      "entry_date": "2025-11-27",
+      "entry_price": 21000.0,
+      "exit_date": "2025-12-26",
+      "exit_price": 19530.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "000157",
+      "entry_date": "2025-11-27",
+      "entry_price": 466500.0,
+      "exit_date": "2025-12-26",
+      "exit_price": 433845.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "002290",
+      "entry_date": "2025-12-27",
+      "entry_price": 4015.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 3733.9500000000003,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2026-01-26",
+      "entry_price": 736000.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 684480.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "002230",
+      "entry_date": "2026-01-26",
+      "entry_price": 12580.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 11699.400000000001,
+      "return_pct": -6.999999999999984,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "000990",
+      "entry_date": "2026-01-26",
+      "entry_price": 90700.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 84351.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "002995",
+      "entry_date": "2026-01-26",
+      "entry_price": 15730.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 14628.900000000001,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "strategy": "S2"
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2026-02-25",
+      "entry_price": 1018000.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 946740.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "strategy": "S1"
+    },
+    {
+      "symbol": "003830",
+      "entry_date": "2026-02-25",
+      "entry_price": 141400.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 131502.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "strategy": "S3"
+    },
+    {
+      "symbol": "003545",
+      "entry_date": "2026-02-25",
+      "entry_price": 27900.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 25947.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "strategy": "S3"
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-01-01",
+      "equity": 110214285.71428572
+    },
+    {
+      "date": "2025-01-31",
+      "equity": 108561071.42857143
+    },
+    {
+      "date": "2025-03-02",
+      "equity": 116884086.9047619
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 134416699.94047618
+    },
+    {
+      "date": "2025-05-01",
+      "equity": 134416699.94047618
+    },
+    {
+      "date": "2025-05-31",
+      "equity": 134864755.6069444
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 125424222.71445832
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 116644527.12444624
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 108479410.22573501
+    },
+    {
+      "date": "2025-09-28",
+      "equity": 105658945.55986589
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 109885303.38226053
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 102193332.1455023
+    },
+    {
+      "date": "2025-12-27",
+      "equity": 95039798.89531714
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 88387012.97264493
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 82199922.06455979
+    }
+  ]
+}

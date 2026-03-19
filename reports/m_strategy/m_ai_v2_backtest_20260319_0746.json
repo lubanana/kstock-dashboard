@@ -1,0 +1,1451 @@
+{
+  "total_trades": 72,
+  "win_rate": 34.72222222222222,
+  "avg_return": -1.3472102661029608,
+  "total_return": -16.665601337249893,
+  "max_drawdown": 18.543072444787654,
+  "final_capital": 83334398.66275011,
+  "trades": [
+    {
+      "symbol": "000140",
+      "entry_date": "2025-01-01",
+      "entry_price": 9100.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 9030.0,
+      "return_pct": -0.7692307692307665,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.80391841517184,
+      "filters_passed": [
+        "RSI(47.4)",
+        "Volume(0.9x)",
+        "ADX(50.3)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000320",
+      "entry_date": "2025-01-01",
+      "entry_price": 12880.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 12960.0,
+      "return_pct": 0.6211180124223503,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 61.714908409808714,
+      "filters_passed": [
+        "RSI(39.3)",
+        "Volume(1.3x)",
+        "ADX(56.2)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001067",
+      "entry_date": "2025-01-01",
+      "entry_price": 60700.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 61700.0,
+      "return_pct": 1.6474464579901094,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.9171793024523,
+      "filters_passed": [
+        "RSI(44.9)",
+        "Volume(4.2x)",
+        "ADX(69.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001800",
+      "entry_date": "2025-01-01",
+      "entry_price": 15060.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 15180.0,
+      "return_pct": 0.7968127490039834,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 62.409442726164635,
+      "filters_passed": [
+        "RSI(46.3)",
+        "Volume(0.9x)",
+        "ADX(47.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "002170",
+      "entry_date": "2025-01-01",
+      "entry_price": 49700.0,
+      "exit_date": "2025-01-31",
+      "exit_price": 48400.0,
+      "return_pct": -2.6156941649899346,
+      "holding_days": 19,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 70.52110290189242,
+      "filters_passed": [
+        "RSI(51.5)",
+        "Volume(0.8x)",
+        "ADX(22.5)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000140",
+      "entry_date": "2025-01-31",
+      "entry_price": 9030.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 8740.0,
+      "return_pct": -3.2115171650055396,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.12867044839676,
+      "filters_passed": [
+        "RSI(48.9)",
+        "Volume(0.9x)",
+        "ADX(31.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000815",
+      "entry_date": "2025-01-31",
+      "entry_price": 284500.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 264585.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.995316342753384,
+      "filters_passed": [
+        "RSI(64.4)",
+        "Volume(3.3x)",
+        "ADX(32.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000970",
+      "entry_date": "2025-01-31",
+      "entry_price": 6120.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 6110.0,
+      "return_pct": -0.16339869281045694,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 69.0426927383685,
+      "filters_passed": [
+        "RSI(45.9)",
+        "Volume(2.5x)",
+        "ADX(39.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001060",
+      "entry_date": "2025-01-31",
+      "entry_price": 23400.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 21762.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.95344678870816,
+      "filters_passed": [
+        "RSI(38.5)",
+        "Volume(1.2x)",
+        "ADX(44.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001230",
+      "entry_date": "2025-01-31",
+      "entry_price": 7260.0,
+      "exit_date": "2025-02-28",
+      "exit_price": 7520.0,
+      "return_pct": 3.581267217630857,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.08899583852336,
+      "filters_passed": [
+        "RSI(38.1)",
+        "Volume(3.0x)",
+        "ADX(52.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000020",
+      "entry_date": "2025-03-02",
+      "entry_price": 6210.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 6040.0,
+      "return_pct": -2.7375201288244777,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.25898290341807,
+      "filters_passed": [
+        "RSI(55.8)",
+        "Volume(1.2x)",
+        "ADX(17.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000080",
+      "entry_date": "2025-03-02",
+      "entry_price": 18950.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 19430.0,
+      "return_pct": 2.5329815303430037,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 68.66655615569995,
+      "filters_passed": [
+        "RSI(46.7)",
+        "Volume(1.2x)",
+        "ADX(28.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000140",
+      "entry_date": "2025-03-02",
+      "entry_price": 8740.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 8470.0,
+      "return_pct": -3.089244851258577,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.721858740609214,
+      "filters_passed": [
+        "RSI(48.9)",
+        "Volume(1.0x)",
+        "ADX(26.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000220",
+      "entry_date": "2025-03-02",
+      "entry_price": 4725.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 4394.25,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.54072377159918,
+      "filters_passed": [
+        "RSI(55.6)",
+        "Volume(1.1x)",
+        "ADX(41.1)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-03-02",
+      "entry_price": 93200.0,
+      "exit_date": "2025-04-01",
+      "exit_price": 107179.99999999999,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 77.7929156551458,
+      "filters_passed": [
+        "RSI(44.9)",
+        "Volume(1.4x)",
+        "ADX(56.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000087",
+      "entry_date": "2025-04-01",
+      "entry_price": 15190.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 15240.0,
+      "return_pct": 0.3291639236339794,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.88674847229194,
+      "filters_passed": [
+        "RSI(54.5)",
+        "Volume(2.6x)",
+        "ADX(43.2)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000225",
+      "entry_date": "2025-04-01",
+      "entry_price": 4770.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 5230.0,
+      "return_pct": 9.643605870020956,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 77.96070224078817,
+      "filters_passed": [
+        "RSI(45.3)",
+        "Volume(2.7x)",
+        "ADX(37.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000227",
+      "entry_date": "2025-04-01",
+      "entry_price": 9520.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 10948.0,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.370503866817614,
+      "filters_passed": [
+        "RSI(47.0)",
+        "Volume(1.9x)",
+        "ADX(34.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000430",
+      "entry_date": "2025-04-01",
+      "entry_price": 3615.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 3361.9500000000003,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.64339771627617,
+      "filters_passed": [
+        "RSI(38.6)",
+        "Volume(0.9x)",
+        "ADX(26.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000590",
+      "entry_date": "2025-04-01",
+      "entry_price": 71600.0,
+      "exit_date": "2025-04-30",
+      "exit_price": 74100.0,
+      "return_pct": 3.4916201117318524,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 62.74800674498944,
+      "filters_passed": [
+        "RSI(46.5)",
+        "Volume(1.6x)",
+        "ADX(35.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-05-01",
+      "entry_price": 90400.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 84072.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.61353814025512,
+      "filters_passed": [
+        "RSI(54.7)",
+        "Volume(1.1x)",
+        "ADX(38.3)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001067",
+      "entry_date": "2025-05-01",
+      "entry_price": 60600.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 63000.0,
+      "return_pct": 3.960396039603964,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.02841177834054,
+      "filters_passed": [
+        "RSI(50.0)",
+        "Volume(1.2x)",
+        "ADX(76.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001420",
+      "entry_date": "2025-05-01",
+      "entry_price": 3670.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 3413.1000000000004,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.75162910865207,
+      "filters_passed": [
+        "RSI(56.3)",
+        "Volume(1.0x)",
+        "ADX(18.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "002170",
+      "entry_date": "2025-05-01",
+      "entry_price": 46200.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 52600.0,
+      "return_pct": 13.85281385281385,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.74668357896762,
+      "filters_passed": [
+        "RSI(36.5)",
+        "Volume(1.3x)",
+        "ADX(21.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "002785",
+      "entry_date": "2025-05-01",
+      "entry_price": 3900.0,
+      "exit_date": "2025-05-30",
+      "exit_price": 3627.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.721172094220485,
+      "filters_passed": [
+        "RSI(70.8)",
+        "Volume(11.1x)",
+        "ADX(24.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000070",
+      "entry_date": "2025-05-31",
+      "entry_price": 49046.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 45612.78,
+      "return_pct": -7.000000000000006,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.36488395292602,
+      "filters_passed": [
+        "RSI(73.7)",
+        "Volume(2.2x)",
+        "ADX(18.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000180",
+      "entry_date": "2025-05-31",
+      "entry_price": 1455.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 1353.15,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.594225513317284,
+      "filters_passed": [
+        "RSI(74.3)",
+        "Volume(2.5x)",
+        "ADX(15.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000270",
+      "entry_date": "2025-05-31",
+      "entry_price": 89400.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 83142.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 76.70126076969802,
+      "filters_passed": [
+        "RSI(42.3)",
+        "Volume(1.6x)",
+        "ADX(21.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2025-05-31",
+      "entry_price": 204500.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 190185.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 83.57442553133292,
+      "filters_passed": [
+        "RSI(58.3)",
+        "Volume(1.7x)",
+        "ADX(22.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000810",
+      "entry_date": "2025-05-31",
+      "entry_price": 404500.0,
+      "exit_date": "2025-06-30",
+      "exit_price": 376185.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.96789530468938,
+      "filters_passed": [
+        "RSI(63.6)",
+        "Volume(2.8x)",
+        "ADX(22.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000225",
+      "entry_date": "2025-06-30",
+      "entry_price": 5200.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 4836.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.95567695538702,
+      "filters_passed": [
+        "RSI(50.8)",
+        "Volume(1.2x)",
+        "ADX(36.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000430",
+      "entry_date": "2025-06-30",
+      "entry_price": 3695.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 3680.0,
+      "return_pct": -0.4059539918809252,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 61.87188602113466,
+      "filters_passed": [
+        "RSI(36.3)",
+        "Volume(0.9x)",
+        "ADX(31.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000860",
+      "entry_date": "2025-06-30",
+      "entry_price": 12500.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 11625.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.933656854351135,
+      "filters_passed": [
+        "RSI(40.1)",
+        "Volume(1.2x)",
+        "ADX(21.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001230",
+      "entry_date": "2025-06-30",
+      "entry_price": 7870.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 7319.1,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.29512872206395,
+      "filters_passed": [
+        "RSI(37.6)",
+        "Volume(0.8x)",
+        "ADX(32.3)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001530",
+      "entry_date": "2025-06-30",
+      "entry_price": 36858.0,
+      "exit_date": "2025-07-30",
+      "exit_price": 34277.94,
+      "return_pct": -6.999999999999995,
+      "holding_days": 23,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.63205318149184,
+      "filters_passed": [
+        "RSI(61.2)",
+        "Volume(1.4x)",
+        "ADX(32.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000490",
+      "entry_date": "2025-07-30",
+      "entry_price": 9970.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 9900.0,
+      "return_pct": -0.7021063189568744,
+      "holding_days": 22,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.47836516858933,
+      "filters_passed": [
+        "RSI(39.7)",
+        "Volume(1.0x)",
+        "ADX(26.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000500",
+      "entry_date": "2025-07-30",
+      "entry_price": 63500.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 73025.0,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 70.30257237767509,
+      "filters_passed": [
+        "RSI(40.4)",
+        "Volume(1.1x)",
+        "ADX(27.5)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000760",
+      "entry_date": "2025-07-30",
+      "entry_price": 12610.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 11727.300000000001,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.46490716777255,
+      "filters_passed": [
+        "RSI(41.0)",
+        "Volume(0.9x)",
+        "ADX(32.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000990",
+      "entry_date": "2025-07-30",
+      "entry_price": 46100.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 42873.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 22,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.57451452594732,
+      "filters_passed": [
+        "RSI(49.4)",
+        "Volume(0.9x)",
+        "ADX(20.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001260",
+      "entry_date": "2025-07-30",
+      "entry_price": 8850.0,
+      "exit_date": "2025-08-29",
+      "exit_price": 10177.5,
+      "return_pct": 14.999999999999991,
+      "holding_days": 22,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.09510372972755,
+      "filters_passed": [
+        "RSI(35.3)",
+        "Volume(0.9x)",
+        "ADX(57.1)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000220",
+      "entry_date": "2025-08-29",
+      "entry_price": 4355.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 4245.0,
+      "return_pct": -2.5258323765786406,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.42840781671472,
+      "filters_passed": [
+        "RSI(35.8)",
+        "Volume(0.9x)",
+        "ADX(64.5)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000225",
+      "entry_date": "2025-08-29",
+      "entry_price": 4975.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 4770.0,
+      "return_pct": -4.120603015075375,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.36292116515269,
+      "filters_passed": [
+        "RSI(49.6)",
+        "Volume(1.6x)",
+        "ADX(59.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000227",
+      "entry_date": "2025-08-29",
+      "entry_price": 10400.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 10540.0,
+      "return_pct": 1.3461538461538414,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.02910535414667,
+      "filters_passed": [
+        "RSI(47.8)",
+        "Volume(1.2x)",
+        "ADX(64.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000650",
+      "entry_date": "2025-08-29",
+      "entry_price": 41500.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 40200.0,
+      "return_pct": -3.1325301204819245,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 60.805672605604975,
+      "filters_passed": [
+        "RSI(45.1)",
+        "Volume(0.8x)",
+        "ADX(31.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001360",
+      "entry_date": "2025-08-29",
+      "entry_price": 1562.0,
+      "exit_date": "2025-09-26",
+      "exit_price": 1616.0,
+      "return_pct": 3.457106274007682,
+      "holding_days": 21,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.00321058571875,
+      "filters_passed": [
+        "RSI(38.7)",
+        "Volume(2.0x)",
+        "ADX(31.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000020",
+      "entry_date": "2025-09-28",
+      "entry_price": 6350.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 6370.0,
+      "return_pct": 0.31496062992126816,
+      "holding_days": 18,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.54189973713885,
+      "filters_passed": [
+        "RSI(45.5)",
+        "Volume(1.1x)",
+        "ADX(32.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000080",
+      "entry_date": "2025-09-28",
+      "entry_price": 18980.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 19030.0,
+      "return_pct": 0.26343519494205214,
+      "holding_days": 18,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 62.80409550595607,
+      "filters_passed": [
+        "RSI(39.4)",
+        "Volume(0.8x)",
+        "ADX(26.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000120",
+      "entry_date": "2025-09-28",
+      "entry_price": 82300.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 83700.0,
+      "return_pct": 1.7010935601458055,
+      "holding_days": 18,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 72.60171763132891,
+      "filters_passed": [
+        "RSI(46.2)",
+        "Volume(0.8x)",
+        "ADX(22.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000180",
+      "entry_date": "2025-09-28",
+      "entry_price": 1712.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 1592.16,
+      "return_pct": -6.999999999999995,
+      "holding_days": 18,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 61.19211936604688,
+      "filters_passed": [
+        "RSI(49.0)",
+        "Volume(1.3x)",
+        "ADX(41.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000220",
+      "entry_date": "2025-09-28",
+      "entry_price": 4245.0,
+      "exit_date": "2025-10-28",
+      "exit_price": 4215.0,
+      "return_pct": -0.7067137809187329,
+      "holding_days": 18,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.1555719372712,
+      "filters_passed": [
+        "RSI(38.7)",
+        "Volume(2.1x)",
+        "ADX(19.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000020",
+      "entry_date": "2025-10-28",
+      "entry_price": 6370.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 6180.0,
+      "return_pct": -2.982731554160123,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.5219353628555,
+      "filters_passed": [
+        "RSI(50.7)",
+        "Volume(1.3x)",
+        "ADX(51.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000100",
+      "entry_date": "2025-10-28",
+      "entry_price": 119500.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 120200.0,
+      "return_pct": 0.585774058577404,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 69.83817788664841,
+      "filters_passed": [
+        "RSI(49.2)",
+        "Volume(1.1x)",
+        "ADX(17.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000120",
+      "entry_date": "2025-10-28",
+      "entry_price": 83700.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 96254.99999999999,
+      "return_pct": 14.999999999999991,
+      "holding_days": 23,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.55911071318297,
+      "filters_passed": [
+        "RSI(49.5)",
+        "Volume(1.0x)",
+        "ADX(30.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000220",
+      "entry_date": "2025-10-28",
+      "entry_price": 4215.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 4205.0,
+      "return_pct": -0.23724792408066353,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 71.17520447957884,
+      "filters_passed": [
+        "RSI(37.6)",
+        "Volume(0.9x)",
+        "ADX(35.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000390",
+      "entry_date": "2025-10-28",
+      "entry_price": 5920.0,
+      "exit_date": "2025-11-27",
+      "exit_price": 5730.0,
+      "return_pct": -3.2094594594594628,
+      "holding_days": 23,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.54611374235463,
+      "filters_passed": [
+        "RSI(50.0)",
+        "Volume(0.9x)",
+        "ADX(67.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000950",
+      "entry_date": "2025-11-27",
+      "entry_price": 39400.0,
+      "exit_date": "2025-12-26",
+      "exit_price": 36642.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 21,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.64400530693094,
+      "filters_passed": [
+        "RSI(70.8)",
+        "Volume(12.4x)",
+        "ADX(15.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "002920",
+      "entry_date": "2025-11-27",
+      "entry_price": 1980.0,
+      "exit_date": "2025-12-26",
+      "exit_price": 2277.0,
+      "return_pct": 14.999999999999991,
+      "holding_days": 21,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.53331204395819,
+      "filters_passed": [
+        "RSI(48.0)",
+        "Volume(3.0x)",
+        "ADX(42.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000080",
+      "entry_date": "2025-12-27",
+      "entry_price": 18940.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 17614.2,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.66398559692755,
+      "filters_passed": [
+        "RSI(50.0)",
+        "Volume(1.9x)",
+        "ADX(15.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000105",
+      "entry_date": "2025-12-27",
+      "entry_price": 103000.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 95790.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 67.35241019986884,
+      "filters_passed": [
+        "RSI(36.8)",
+        "Volume(1.5x)",
+        "ADX(55.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000120",
+      "entry_date": "2025-12-27",
+      "entry_price": 94400.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 87792.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.95518695077847,
+      "filters_passed": [
+        "RSI(43.1)",
+        "Volume(1.0x)",
+        "ADX(15.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000140",
+      "entry_date": "2025-12-27",
+      "entry_price": 10120.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 9411.6,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.38255712033597,
+      "filters_passed": [
+        "RSI(47.3)",
+        "Volume(2.8x)",
+        "ADX(19.7)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000480",
+      "entry_date": "2025-12-27",
+      "entry_price": 5070.0,
+      "exit_date": "2026-01-26",
+      "exit_price": 4715.1,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 64.18776201441995,
+      "filters_passed": [
+        "RSI(57.7)",
+        "Volume(1.6x)",
+        "ADX(43.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000080",
+      "entry_date": "2026-01-26",
+      "entry_price": 17970.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 18100.0,
+      "return_pct": 0.7234279354479733,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.4411323203215,
+      "filters_passed": [
+        "RSI(47.1)",
+        "Volume(1.1x)",
+        "ADX(57.8)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000100",
+      "entry_date": "2026-01-26",
+      "entry_price": 109000.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 113100.0,
+      "return_pct": 3.7614678899082543,
+      "holding_days": 20,
+      "exit_reason": "기간만료",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 72.84086027073391,
+      "filters_passed": [
+        "RSI(37.0)",
+        "Volume(1.1x)",
+        "ADX(51.6)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000400",
+      "entry_date": "2026-01-26",
+      "entry_price": 1698.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 1579.14,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 66.78802894207283,
+      "filters_passed": [
+        "RSI(42.1)",
+        "Volume(1.1x)",
+        "ADX(46.2)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000540",
+      "entry_date": "2026-01-26",
+      "entry_price": 3660.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 3403.8,
+      "return_pct": -6.999999999999995,
+      "holding_days": 20,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 63.75205015744697,
+      "filters_passed": [
+        "RSI(57.5)",
+        "Volume(2.9x)",
+        "ADX(41.9)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000815",
+      "entry_date": "2026-01-26",
+      "entry_price": 371500.0,
+      "exit_date": "2026-02-25",
+      "exit_price": 427224.99999999994,
+      "return_pct": 14.999999999999991,
+      "holding_days": 20,
+      "exit_reason": "목표가도달",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 76.62133648815441,
+      "filters_passed": [
+        "RSI(46.1)",
+        "Volume(1.0x)",
+        "ADX(35.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000145",
+      "entry_date": "2026-02-25",
+      "entry_price": 11930.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 11094.900000000001,
+      "return_pct": -6.999999999999984,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 72.21118093013678,
+      "filters_passed": [
+        "RSI(47.5)",
+        "Volume(1.3x)",
+        "ADX(25.4)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "000815",
+      "entry_date": "2026-02-25",
+      "entry_price": 425000.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 395250.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 69.14007455222752,
+      "filters_passed": [
+        "RSI(71.1)",
+        "Volume(0.9x)",
+        "ADX(15.5)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001067",
+      "entry_date": "2026-02-25",
+      "entry_price": 60000.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 55800.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 73.79626295893317,
+      "filters_passed": [
+        "RSI(55.0)",
+        "Volume(1.2x)",
+        "ADX(53.2)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001390",
+      "entry_date": "2026-02-25",
+      "entry_price": 5810.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 5403.3,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.32260585060932,
+      "filters_passed": [
+        "RSI(55.9)",
+        "Volume(1.1x)",
+        "ADX(18.0)",
+        "Trend(정배열)"
+      ]
+    },
+    {
+      "symbol": "001540",
+      "entry_date": "2026-02-25",
+      "entry_price": 8800.0,
+      "exit_date": "2026-03-18",
+      "exit_price": 8184.0,
+      "return_pct": -6.999999999999995,
+      "holding_days": 15,
+      "exit_reason": "손절",
+      "primary_pred": "상승",
+      "meta_confidence": 99.97482755134823,
+      "ai_confidence": 65.86991978958551,
+      "filters_passed": [
+        "RSI(62.8)",
+        "Volume(4.1x)",
+        "ADX(28.2)",
+        "Trend(정배열)"
+      ]
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-01-01",
+      "equity": 99936090.45703913
+    },
+    {
+      "date": "2025-01-31",
+      "equity": 97179123.82056281
+    },
+    {
+      "date": "2025-03-02",
+      "equity": 98093815.82229099
+    },
+    {
+      "date": "2025-04-01",
+      "equity": 102304863.64252469
+    },
+    {
+      "date": "2025-05-01",
+      "equity": 101652815.38769762
+    },
+    {
+      "date": "2025-05-31",
+      "equity": 94537118.31055881
+    },
+    {
+      "date": "2025-06-30",
+      "equity": 89166284.24404933
+    },
+    {
+      "date": "2025-07-30",
+      "equity": 91894396.9166476
+    },
+    {
+      "date": "2025-08-29",
+      "equity": 90979918.02418679
+    },
+    {
+      "date": "2025-09-28",
+      "equity": 89992381.16290936
+    },
+    {
+      "date": "2025-10-28",
+      "equity": 91640381.96341597
+    },
+    {
+      "date": "2025-11-27",
+      "equity": 95305997.2419526
+    },
+    {
+      "date": "2025-12-27",
+      "equity": 88634577.43501592
+    },
+    {
+      "date": "2026-01-26",
+      "equity": 89606880.28252697
+    },
+    {
+      "date": "2026-02-25",
+      "equity": 83334398.66275011
+    }
+  ],
+  "parameters": {
+    "primary_threshold": 60.0,
+    "meta_threshold": 65.0,
+    "rsi_range": [
+      35.0,
+      75.0
+    ],
+    "volume_threshold": 0.8,
+    "adx_threshold": 15.0,
+    "trend_filter": true
+  }
+}
