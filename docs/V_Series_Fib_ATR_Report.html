@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Series + Fibonacci + ATR 백테스트 리포트</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            transition: transform 0.2s;
+        }
+        .stat-card:hover { transform: translateY(-4px); }
+        .stat-card .label { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
+        .stat-card .value { font-size: 2rem; font-weight: 700; }
+        .stat-card .value.positive { color: var(--success); }
+        .stat-card .value.negative { color: var(--danger); }
+        .stat-card .value.neutral { color: var(--primary); }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary);
+        }
+        .chart-container { height: 400px; margin: 20px 0; }
+        .trade-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .trade-table th, .trade-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .trade-table th {
+            background: rgba(59, 130, 246, 0.1);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .trade-table tr:hover { background: rgba(255,255,255,0.05); }
+        .trade-table .win { color: var(--success); font-weight: 600; }
+        .trade-table .loss { color: var(--danger); font-weight: 600; }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-success { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+        .badge-danger { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .badge-warning { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
+        .badge-info { background: rgba(59, 130, 246, 0.2); color: var(--primary); }
+        .strategy-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .info-item {
+            background: rgba(255,255,255,0.03);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .info-item .label { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; }
+        .info-item .value { font-size: 1.1rem; font-weight: 600; }
+        .highlight {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(59, 130, 246, 0.2));
+            border: 1px solid var(--success);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .highlight h3 { color: var(--success); font-size: 1.8rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 V-Series + Fibonacci + ATR</h1>
+            <p class="subtitle">Value Investing + Fibonacci Retracement + ATR Risk Management</p>
+            <p class="subtitle">백테스트 기간: 2025-01-01 ~ 2026-03-18</p>
+        </div>
+        
+        <div class="highlight">
+            <h3>총 수익률 +109.50%</h3>
+            <p>초기 자본 ₩100,000,000 → 최종 자본 ₩209,500,727</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">총 거래 횟수</div>
+                <div class="value neutral">64회</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">승률</div>
+                <div class="value positive">56.2%</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">평균 수익률</div>
+                <div class="value positive">+6.73%</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">평균 보유기간</div>
+                <div class="value neutral">22.5일</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">평균 손익비</div>
+                <div class="value neutral">1:3.45</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">최대 수익</div>
+                <div class="value positive">+33.81%</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 자산 곡선 (Equity Curve)</h2>
+            <div class="chart-container">
+                <canvas id="equityChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⚙️ 전략 파라미터</h2>
+            <div class="strategy-info">
+                <div class="info-item">
+                    <div class="label">가치점수 기준</div>
+                    <div class="value">65점+</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">최소 손익비</div>
+                    <div class="value">1:1.5</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">ATR 배수</div>
+                    <div class="value">×1.5</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Fibonacci 허용범위</div>
+                    <div class="value">±5%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 10 수익 거래</h2>
+            <table class="trade-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목</th>
+                        <th>진입가</th>
+                        <th>청산가</th>
+                        <th>수익률</th>
+                        <th>보유일</th>
+                        <th>청산사유</th>
+                        <th>전략유형</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩322,362</td>
+                        <td>₩431,362</td>
+                        <td class="win">+33.81%</td>
+                        <td>12일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>가온전선</strong><br><small>000500</small></td>
+                        <td>₩51,821</td>
+                        <td>₩68,521</td>
+                        <td class="win">+32.23%</td>
+                        <td>16일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>신세계</strong><br><small>004170</small></td>
+                        <td>₩210,555</td>
+                        <td>₩275,855</td>
+                        <td class="win">+31.01%</td>
+                        <td>48일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩712,364</td>
+                        <td>₩910,364</td>
+                        <td class="win">+27.79%</td>
+                        <td>4일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><strong>S-Oil</strong><br><small>010950</small></td>
+                        <td>₩107,300</td>
+                        <td>₩135,697</td>
+                        <td class="win">+26.47%</td>
+                        <td>6일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td><strong>삼성물산</strong><br><small>028260</small></td>
+                        <td>₩184,250</td>
+                        <td>₩227,293</td>
+                        <td class="win">+23.36%</td>
+                        <td>31일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩195,600</td>
+                        <td>₩237,860</td>
+                        <td class="win">+21.61%</td>
+                        <td>11일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td><strong>삼성생명</strong><br><small>032830</small></td>
+                        <td>₩174,599</td>
+                        <td>₩212,299</td>
+                        <td class="win">+21.59%</td>
+                        <td>18일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩17,555</td>
+                        <td>₩21,285</td>
+                        <td class="win">+21.25%</td>
+                        <td>14일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td><strong>CJ</strong><br><small>001040</small></td>
+                        <td>₩122,550</td>
+                        <td>₩147,481</td>
+                        <td class="win">+20.34%</td>
+                        <td>34일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                        <td><span class="badge badge-info">Quality_FairPrice</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📉 하위 5 거래 (손실)</h2>
+            <table class="trade-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목</th>
+                        <th>진입가</th>
+                        <th>청산가</th>
+                        <th>수익률</th>
+                        <th>보유일</th>
+                        <th>청산사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td><strong>CJ</strong><br><small>001040</small></td>
+                        <td>₩211,300</td>
+                        <td>₩193,182</td>
+                        <td class="loss">-8.57%</td>
+                        <td>7일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td><strong>LG화학</strong><br><small>051910</small></td>
+                        <td>₩391,750</td>
+                        <td>₩361,938</td>
+                        <td class="loss">-7.61%</td>
+                        <td>18일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td><strong>현대제철</strong><br><small>004020</small></td>
+                        <td>₩25,602</td>
+                        <td>₩23,899</td>
+                        <td class="loss">-6.65%</td>
+                        <td>32일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td><strong>삼성증권</strong><br><small>016360</small></td>
+                        <td>₩70,902</td>
+                        <td>₩66,369</td>
+                        <td class="loss">-6.39%</td>
+                        <td>51일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩26,246</td>
+                        <td>₩24,574</td>
+                        <td class="loss">-6.37%</td>
+                        <td>7일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📋 전체 거래 내역</h2>
+            <table class="trade-table">
+                <thead>
+                    <tr>
+                        <th>진입일</th>
+                        <th>종목</th>
+                        <th>진입가</th>
+                        <th>목표가</th>
+                        <th>손절가</th>
+                        <th>청산일</th>
+                        <th>청산가</th>
+                        <th>수익률</th>
+                        <th>보유일</th>
+                        <th>청산사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td><strong>가온전선</strong><br><small>000500</small></td>
+                        <td>₩51,821</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-01-17</td>
+                        <td>₩68,521</td>
+                        <td class="win">+32.23%</td>
+                        <td>16일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td><strong>기아</strong><br><small>000270</small></td>
+                        <td>₩97,550</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-02-10</td>
+                        <td>₩93,071</td>
+                        <td class="loss">-4.59%</td>
+                        <td>40일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-31</td>
+                        <td><strong>HMM</strong><br><small>011200</small></td>
+                        <td>₩18,595</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-02-24</td>
+                        <td>₩21,580</td>
+                        <td class="win">+16.05%</td>
+                        <td>24일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td><strong>한진</strong><br><small>002320</small></td>
+                        <td>₩18,830</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-03-02</td>
+                        <td>₩19,520</td>
+                        <td class="win">+3.66%</td>
+                        <td>60일</td>
+                        <td><span class="badge badge-warning">기간만료</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-01</td>
+                        <td><strong>유수홀딩스</strong><br><small>000700</small></td>
+                        <td>₩5,235</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-03-02</td>
+                        <td>₩5,420</td>
+                        <td class="win">+3.53%</td>
+                        <td>60일</td>
+                        <td><span class="badge badge-warning">기간만료</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-31</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩14,920</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-03-28</td>
+                        <td>₩14,636</td>
+                        <td class="loss">-1.90%</td>
+                        <td>56일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-03-02</td>
+                        <td><strong>카카오</strong><br><small>035720</small></td>
+                        <td>₩41,875</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-03-31</td>
+                        <td>₩39,620</td>
+                        <td class="loss">-5.39%</td>
+                        <td>29일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-31</td>
+                        <td><strong>삼성바이오로직스</strong><br><small>207940</small></td>
+                        <td>₩1,517,721</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-01</td>
+                        <td>₩1,557,105</td>
+                        <td class="win">+2.59%</td>
+                        <td>60일</td>
+                        <td><span class="badge badge-warning">기간만료</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-01-31</td>
+                        <td><strong>현대모비스</strong><br><small>012330</small></td>
+                        <td>₩251,500</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-01</td>
+                        <td>₩261,500</td>
+                        <td class="win">+3.98%</td>
+                        <td>60일</td>
+                        <td><span class="badge badge-warning">기간만료</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-04-01</td>
+                        <td><strong>유수홀딩스</strong><br><small>000700</small></td>
+                        <td>₩5,515</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-02</td>
+                        <td>₩5,384</td>
+                        <td class="loss">-2.37%</td>
+                        <td>1일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-03-02</td>
+                        <td><strong>현대제철</strong><br><small>004020</small></td>
+                        <td>₩25,602</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-03</td>
+                        <td>₩23,899</td>
+                        <td class="loss">-6.65%</td>
+                        <td>32일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-04-01</td>
+                        <td><strong>효성</strong><br><small>004800</small></td>
+                        <td>₩47,550</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-07</td>
+                        <td>₩46,168</td>
+                        <td class="loss">-2.91%</td>
+                        <td>6일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-04-01</td>
+                        <td><strong>신일전자</strong><br><small>002700</small></td>
+                        <td>₩1,480</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-04-09</td>
+                        <td>₩1,437</td>
+                        <td class="loss">-2.88%</td>
+                        <td>8일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-01</td>
+                        <td><strong>일신방직</strong><br><small>003200</small></td>
+                        <td>₩8,320</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-05-14</td>
+                        <td>₩9,340</td>
+                        <td class="win">+12.26%</td>
+                        <td>13일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-01</td>
+                        <td><strong>삼성E&A</strong><br><small>028050</small></td>
+                        <td>₩18,975</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-05-27</td>
+                        <td>₩21,602</td>
+                        <td class="win">+13.85%</td>
+                        <td>26일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-01</td>
+                        <td><strong>효성</strong><br><small>004800</small></td>
+                        <td>₩50,662</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-05-28</td>
+                        <td>₩59,662</td>
+                        <td class="win">+17.76%</td>
+                        <td>27일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-01</td>
+                        <td><strong>CJ</strong><br><small>001040</small></td>
+                        <td>₩122,550</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-06-04</td>
+                        <td>₩147,481</td>
+                        <td class="win">+20.34%</td>
+                        <td>34일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-31</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩15,390</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-06-09</td>
+                        <td>₩16,217</td>
+                        <td class="win">+5.38%</td>
+                        <td>9일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-31</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩195,600</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-06-11</td>
+                        <td>₩237,860</td>
+                        <td class="win">+21.61%</td>
+                        <td>11일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-01</td>
+                        <td><strong>신일전자</strong><br><small>002700</small></td>
+                        <td>₩1,496</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-06-18</td>
+                        <td>₩1,457</td>
+                        <td class="loss">-2.59%</td>
+                        <td>48일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-31</td>
+                        <td><strong>삼성E&A</strong><br><small>028050</small></td>
+                        <td>₩20,916</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-04</td>
+                        <td>₩24,276</td>
+                        <td class="win">+16.06%</td>
+                        <td>34일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-06-30</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩17,555</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-14</td>
+                        <td>₩21,285</td>
+                        <td class="win">+21.25%</td>
+                        <td>14일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-06-30</td>
+                        <td><strong>삼성전자</strong><br><small>005930</small></td>
+                        <td>₩58,700</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-17</td>
+                        <td>₩65,184</td>
+                        <td class="win">+11.05%</td>
+                        <td>17일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-06-30</td>
+                        <td><strong>KB금융</strong><br><small>105560</small></td>
+                        <td>₩106,700</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-25</td>
+                        <td>₩124,812</td>
+                        <td class="win">+16.97%</td>
+                        <td>25일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-05-31</td>
+                        <td><strong>신세계</strong><br><small>004170</small></td>
+                        <td>₩171,998</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-30</td>
+                        <td>₩172,100</td>
+                        <td class="win">+0.06%</td>
+                        <td>60일</td>
+                        <td><span class="badge badge-warning">기간만료</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-07-30</td>
+                        <td><strong>현대모비스</strong><br><small>012330</small></td>
+                        <td>₩303,000</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-07-31</td>
+                        <td>₩287,250</td>
+                        <td class="loss">-5.20%</td>
+                        <td>1일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-07-30</td>
+                        <td><strong>셀트리온</strong><br><small>068270</small></td>
+                        <td>₩177,900</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-08-01</td>
+                        <td>₩171,557</td>
+                        <td class="loss">-3.57%</td>
+                        <td>2일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-07-30</td>
+                        <td><strong>삼성물산</strong><br><small>028260</small></td>
+                        <td>₩174,200</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-08-01</td>
+                        <td>₩164,236</td>
+                        <td class="loss">-5.72%</td>
+                        <td>2일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-07-30</td>
+                        <td><strong>S-Oil</strong><br><small>010950</small></td>
+                        <td>₩61,900</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-08-04</td>
+                        <td>₩59,500</td>
+                        <td class="loss">-3.88%</td>
+                        <td>5일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-07-30</td>
+                        <td><strong>삼성E&A</strong><br><small>028050</small></td>
+                        <td>₩25,248</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-08-19</td>
+                        <td>₩29,048</td>
+                        <td class="win">+15.05%</td>
+                        <td>20일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-06-30</td>
+                        <td><strong>삼성증권</strong><br><small>016360</small></td>
+                        <td>₩70,902</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-08-20</td>
+                        <td>₩66,369</td>
+                        <td class="loss">-6.39%</td>
+                        <td>51일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-08-29</td>
+                        <td><strong>기아</strong><br><small>000270</small></td>
+                        <td>₩104,150</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-09-16</td>
+                        <td>₩101,177</td>
+                        <td class="loss">-2.85%</td>
+                        <td>18일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-08-29</td>
+                        <td><strong>현대모비스</strong><br><small>012330</small></td>
+                        <td>₩305,883</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-09-26</td>
+                        <td>₩294,044</td>
+                        <td class="loss">-3.87%</td>
+                        <td>28일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-08-29</td>
+                        <td><strong>삼성E&A</strong><br><small>028050</small></td>
+                        <td>₩28,214</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-09-30</td>
+                        <td>₩26,906</td>
+                        <td class="loss">-4.63%</td>
+                        <td>32일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-28</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩322,362</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-10</td>
+                        <td>₩431,362</td>
+                        <td class="win">+33.81%</td>
+                        <td>12일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-28</td>
+                        <td><strong>전방</strong><br><small>000950</small></td>
+                        <td>₩36,872</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-10</td>
+                        <td>₩34,933</td>
+                        <td class="loss">-5.26%</td>
+                        <td>12일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-28</td>
+                        <td><strong>신세계</strong><br><small>004170</small></td>
+                        <td>₩183,900</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-13</td>
+                        <td>₩174,793</td>
+                        <td class="loss">-4.95%</td>
+                        <td>15일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-08-29</td>
+                        <td><strong>효성</strong><br><small>004800</small></td>
+                        <td>₩84,550</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-15</td>
+                        <td>₩96,736</td>
+                        <td class="win">+14.41%</td>
+                        <td>47일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-08-29</td>
+                        <td><strong>현대차</strong><br><small>005380</small></td>
+                        <td>₩216,000</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-16</td>
+                        <td>₩236,124</td>
+                        <td class="win">+9.32%</td>
+                        <td>48일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-28</td>
+                        <td><strong>삼성물산</strong><br><small>028260</small></td>
+                        <td>₩184,250</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-10-29</td>
+                        <td>₩227,293</td>
+                        <td class="win">+23.36%</td>
+                        <td>31일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-10-28</td>
+                        <td><strong>삼성증권</strong><br><small>016360</small></td>
+                        <td>₩75,700</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-11-05</td>
+                        <td>₩71,789</td>
+                        <td class="loss">-5.17%</td>
+                        <td>8일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-10-28</td>
+                        <td><strong>KB금융</strong><br><small>105560</small></td>
+                        <td>₩114,900</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-11-06</td>
+                        <td>₩127,645</td>
+                        <td class="win">+11.09%</td>
+                        <td>9일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-10-28</td>
+                        <td><strong>셀트리온</strong><br><small>068270</small></td>
+                        <td>₩176,350</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-11-13</td>
+                        <td>₩193,903</td>
+                        <td class="win">+9.95%</td>
+                        <td>16일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-09-28</td>
+                        <td><strong>삼성생명</strong><br><small>032830</small></td>
+                        <td>₩154,700</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-11-19</td>
+                        <td>₩147,275</td>
+                        <td class="loss">-4.80%</td>
+                        <td>52일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-11-27</td>
+                        <td><strong>일신방직</strong><br><small>003200</small></td>
+                        <td>₩11,740</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-12-09</td>
+                        <td>₩12,925</td>
+                        <td class="win">+10.09%</td>
+                        <td>12일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-11-27</td>
+                        <td><strong>LG화학</strong><br><small>051910</small></td>
+                        <td>₩391,750</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-12-15</td>
+                        <td>₩361,938</td>
+                        <td class="loss">-7.61%</td>
+                        <td>18일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-12-27</td>
+                        <td><strong>삼성증권</strong><br><small>016360</small></td>
+                        <td>₩80,300</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-12-29</td>
+                        <td>₩78,071</td>
+                        <td class="loss">-2.78%</td>
+                        <td>2일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-12-27</td>
+                        <td><strong>삼진제약</strong><br><small>005500</small></td>
+                        <td>₩20,570</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-12-29</td>
+                        <td>₩19,956</td>
+                        <td class="loss">-2.99%</td>
+                        <td>2일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-12-27</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩574,440</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2025-12-30</td>
+                        <td>₩654,440</td>
+                        <td class="win">+13.93%</td>
+                        <td>3일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-11-27</td>
+                        <td><strong>삼성전자</strong><br><small>005930</small></td>
+                        <td>₩103,450</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-02</td>
+                        <td>₩123,462</td>
+                        <td class="win">+19.34%</td>
+                        <td>36일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-12-27</td>
+                        <td><strong>삼성생명</strong><br><small>032830</small></td>
+                        <td>₩159,900</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-02</td>
+                        <td>₩153,300</td>
+                        <td class="loss">-4.13%</td>
+                        <td>6일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-11-27</td>
+                        <td><strong>삼성물산</strong><br><small>028260</small></td>
+                        <td>₩224,500</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-07</td>
+                        <td>₩260,276</td>
+                        <td class="win">+15.94%</td>
+                        <td>41일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-12-27</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩20,825</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-08</td>
+                        <td>₩20,332</td>
+                        <td class="loss">-2.37%</td>
+                        <td>12일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025-11-27</td>
+                        <td><strong>신세계</strong><br><small>004170</small></td>
+                        <td>₩210,555</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-14</td>
+                        <td>₩275,855</td>
+                        <td class="win">+31.01%</td>
+                        <td>48일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-01-26</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩20,775</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-28</td>
+                        <td>₩21,949</td>
+                        <td class="win">+5.65%</td>
+                        <td>2일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-01-26</td>
+                        <td><strong>SK하이닉스</strong><br><small>000660</small></td>
+                        <td>₩712,364</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-01-30</td>
+                        <td>₩910,364</td>
+                        <td class="win">+27.79%</td>
+                        <td>4일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-01-26</td>
+                        <td><strong>KB금융</strong><br><small>105560</small></td>
+                        <td>₩130,150</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-02-06</td>
+                        <td>₩149,715</td>
+                        <td class="win">+15.03%</td>
+                        <td>11일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-01-26</td>
+                        <td><strong>삼성증권</strong><br><small>016360</small></td>
+                        <td>₩80,650</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-02-10</td>
+                        <td>₩95,296</td>
+                        <td class="win">+18.16%</td>
+                        <td>15일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-01-26</td>
+                        <td><strong>삼성생명</strong><br><small>032830</small></td>
+                        <td>₩174,599</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-02-13</td>
+                        <td>₩212,299</td>
+                        <td class="win">+21.59%</td>
+                        <td>18일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-02-25</td>
+                        <td><strong>현대모비스</strong><br><small>012330</small></td>
+                        <td>₩449,260</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-02-26</td>
+                        <td>₩519,260</td>
+                        <td class="win">+15.58%</td>
+                        <td>1일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-02-25</td>
+                        <td><strong>S-Oil</strong><br><small>010950</small></td>
+                        <td>₩107,300</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-03-03</td>
+                        <td>₩135,697</td>
+                        <td class="win">+26.47%</td>
+                        <td>6일</td>
+                        <td><span class="badge badge-success">목표가도달</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-02-25</td>
+                        <td><strong>LG</strong><br><small>003550</small></td>
+                        <td>₩96,176</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-03-04</td>
+                        <td>₩90,947</td>
+                        <td class="loss">-5.44%</td>
+                        <td>7일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-02-25</td>
+                        <td><strong>기업은행</strong><br><small>024110</small></td>
+                        <td>₩26,246</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-03-04</td>
+                        <td>₩24,574</td>
+                        <td class="loss">-6.37%</td>
+                        <td>7일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026-02-25</td>
+                        <td><strong>CJ</strong><br><small>001040</small></td>
+                        <td>₩211,300</td>
+                        <td>₩0</td>
+                        <td>₩0</td>
+                        <td>2026-03-04</td>
+                        <td>₩193,182</td>
+                        <td class="loss">-8.57%</td>
+                        <td>7일</td>
+                        <td><span class="badge badge-danger">손절</span></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>📝 요약 분석</h2>
+            <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; line-height: 2;">
+                <p><strong>✅ 강점:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>높은 승률 (56.2%) - Fibonacci 진입과 ATR 기반 손절의 조합 효과적</li>
+                    <li>우수한 손익비 (평균 1:3.45) - 리스크 관리가 효과적으로 작동</li>
+                    <li>목표가 도달률 높음 (31회 / 64회)</li>
+                    <li>가치 투자 기반 선별로 안정적인 종목 선정</li>
+                </ul>
+                
+                <p><strong>⚠️ 개선점:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>손절 발생 28회 - 시장 변동성이 큰 구간에서 손절 빈번</li>
+                    <li>일부 거래에서 짧은 보유기간 (1-2일) 후 손절 - 진입 타이밍 미세 조정 필요</li>
+                </ul>
+                
+                <p><strong>📊 종합 평가:</strong></p>
+                <p>V-Series + Fibonacci + ATR 전략은 가치 투자의 안정성과 기술적 분석의 정밀함을 결합하여 
+                약 14개월 만에 <strong>자본을 2배 이상</strong> 성장시키는 뛰어난 결과를 보였습니다. 
+                특히 목표가 도달률이 높아 손익비 관리가 효과적이며, ATR 기반 동적 손절가 설정이 
+                변동성에 적응하는 데 기여했습니다.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; padding: 30px; color: var(--text-muted);">
+            <p>Generated: 2026-03-19 09:25</p>
+            <p>V-Series Fibonacci ATR Backtest Report</p>
+        </div>
+    </div>
+    
+    <script>
+        // Equity Curve Chart
+        const equityData = [{"date": "2025-01-01", "equity": 202580620.0}, {"date": "2025-01-02", "equity": 205410760.0}, {"date": "2025-01-03", "equity": 204453850.0}, {"date": "2025-01-04", "equity": 204453850.0}, {"date": "2025-01-05", "equity": 204453850.0}, {"date": "2025-01-06", "equity": 205853100.0}, {"date": "2025-01-07", "equity": 206193900.0}, {"date": "2025-01-08", "equity": 205879950.0}, {"date": "2025-01-09", "equity": 208575380.0}, {"date": "2025-01-10", "equity": 209072210.0}, {"date": "2025-01-11", "equity": 209072210.0}, {"date": "2025-01-12", "equity": 209072210.0}, {"date": "2025-01-13", "equity": 208810040.0}, {"date": "2025-01-14", "equity": 208892080.0}, {"date": "2025-01-15", "equity": 209138220.0}, {"date": "2025-01-16", "equity": 208669000.0}, {"date": "2025-01-17", "equity": 185066100.0}, {"date": "2025-01-18", "equity": 185066100.0}, {"date": "2025-01-19", "equity": 185066100.0}, {"date": "2025-01-20", "equity": 184839990.0}, {"date": "2025-01-21", "equity": 184760370.0}, {"date": "2025-01-22", "equity": 185702230.0}, {"date": "2025-01-23", "equity": 185585620.0}, {"date": "2025-01-24", "equity": 185183650.0}, {"date": "2025-01-25", "equity": 185183650.0}, {"date": "2025-01-26", "equity": 185183650.0}, {"date": "2025-01-27", "equity": 185183650.0}, {"date": "2025-01-28", "equity": 185183650.0}, {"date": "2025-01-29", "equity": 185183650.0}, {"date": "2025-01-31", "equity": 239818010.0}, {"date": "2025-02-01", "equity": 239818010.0}, {"date": "2025-02-02", "equity": 239818010.0}, {"date": "2025-02-03", "equity": 236902250.0}, {"date": "2025-02-04", "equity": 236695840.0}, {"date": "2025-02-05", "equity": 237147576.0}, {"date": "2025-02-06", "equity": 237717182.0}, {"date": "2025-02-07", "equity": 237822274.0}, {"date": "2025-02-08", "equity": 237822274.0}, {"date": "2025-02-09", "equity": 237822274.0}, {"date": "2025-02-10", "equity": 211086573.71428573}, {"date": "2025-02-11", "equity": 211886689.71428573}, {"date": "2025-02-12", "equity": 211408069.71428573}, {"date": "2025-02-13", "equity": 211650233.71428573}, {"date": "2025-02-14", "equity": 212292279.71428573}, {"date": "2025-02-15", "equity": 212292279.71428573}, {"date": "2025-02-16", "equity": 212292279.71428573}, {"date": "2025-02-17", "equity": 212785791.71428573}, {"date": "2025-02-18", "equity": 212854627.71428573}, {"date": "2025-02-19", "equity": 213035313.71428573}, {"date": "2025-02-20", "equity": 213482227.71428573}, {"date": "2025-02-21", "equity": 213695069.71428573}, {"date": "2025-02-22", "equity": 213695069.71428573}, {"date": "2025-02-23", "equity": 213695069.71428573}, {"date": "2025-02-24", "equity": 202395235.27428573}, {"date": "2025-02-25", "equity": 202196501.27428573}, {"date": "2025-02-26", "equity": 202760465.27428573}, {"date": "2025-02-27", "equity": 202728797.27428573}, {"date": "2025-02-28", "equity": 201113757.27428573}, {"date": "2025-03-01", "equity": 201113757.27428573}, {"date": "2025-03-02", "equity": 173701122.27428573}, {"date": "2025-03-03", "equity": 173701122.27428573}, {"date": "2025-03-04", "equity": 173434368.27428573}, {"date": "2025-03-05", "equity": 174071268.27428573}, {"date": "2025-03-06", "equity": 176020862.27428573}, {"date": "2025-03-07", "equity": 176358988.27428573}, {"date": "2025-03-08", "equity": 176358988.27428573}, {"date": "2025-03-09", "equity": 176358988.27428573}, {"date": "2025-03-10", "equity": 175918886.27428573}, {"date": "2025-03-11", "equity": 174227978.27428573}, {"date": "2025-03-12", "equity": 174746190.27428573}, {"date": "2025-03-13", "equity": 175114912.27428573}, {"date": "2025-03-14", "equity": 174559268.27428573}, {"date": "2025-03-15", "equity": 174559268.27428573}, {"date": "2025-03-16", "equity": 174559268.27428573}, {"date": "2025-03-17", "equity": 175235796.27428573}, {"date": "2025-03-18", "equity": 175866112.27428573}, {"date": "2025-03-19", "equity": 175645040.27428573}, {"date": "2025-03-20", "equity": 175678924.27428573}, {"date": "2025-03-21", "equity": 175708374.27428573}, {"date": "2025-03-22", "equity": 175708374.27428573}, {"date": "2025-03-23", "equity": 175708374.27428573}, {"date": "2025-03-24", "equity": 176080564.27428573}, {"date": "2025-03-25", "equity": 175371318.27428573}, {"date": "2025-03-26", "equity": 175590574.27428573}, {"date": "2025-03-27", "equity": 174271410.27428573}, {"date": "2025-03-28", "equity": 158830260.91714287}, {"date": "2025-03-29", "equity": 158830260.91714287}, {"date": "2025-03-30", "equity": 158830260.91714287}, {"date": "2025-03-31", "equity": 146420980.06}, {"date": "2025-04-01", "equity": 177387049.24400002}, {"date": "2025-04-02", "equity": 158023314.24400002}, {"date": "2025-04-03", "equity": 146860402.81542858}, {"date": "2025-04-04", "equity": 147058432.81542858}, {"date": "2025-04-05", "equity": 147058432.81542858}, {"date": "2025-04-06", "equity": 147058432.81542858}, {"date": "2025-04-07", "equity": 127069457.81542858}, {"date": "2025-04-08", "equity": 127267697.81542858}, {"date": "2025-04-09", "equity": 108649952.81542858}, {"date": "2025-04-10", "equity": 108649952.81542858}, {"date": "2025-04-11", "equity": 108649952.81542858}, {"date": "2025-04-12", "equity": 108649952.81542858}, {"date": "2025-04-13", "equity": 108649952.81542858}, {"date": "2025-04-14", "equity": 108649952.81542858}, {"date": "2025-04-15", "equity": 108649952.81542858}, {"date": "2025-04-16", "equity": 108649952.81542858}, {"date": "2025-04-17", "equity": 108649952.81542858}, {"date": "2025-04-18", "equity": 108649952.81542858}, {"date": "2025-04-19", "equity": 108649952.81542858}, {"date": "2025-04-20", "equity": 108649952.81542858}, {"date": "2025-04-21", "equity": 108649952.81542858}, {"date": "2025-04-22", "equity": 108649952.81542858}, {"date": "2025-04-23", "equity": 108649952.81542858}, {"date": "2025-04-24", "equity": 108649952.81542858}, {"date": "2025-04-25", "equity": 108649952.81542858}, {"date": "2025-04-26", "equity": 108649952.81542858}, {"date": "2025-04-27", "equity": 108649952.81542858}, {"date": "2025-04-28", "equity": 108649952.81542858}, {"date": "2025-04-29", "equity": 108649952.81542858}, {"date": "2025-04-30", "equity": 108649952.81542858}, {"date": "2025-05-01", "equity": 220474562.81542858}, {"date": "2025-05-02", "equity": 219989062.81542858}, {"date": "2025-05-03", "equity": 219989062.81542858}, {"date": "2025-05-04", "equity": 219989062.81542858}, {"date": "2025-05-05", "equity": 219989062.81542858}, {"date": "2025-05-06", "equity": 219989062.81542858}, {"date": "2025-05-07", "equity": 221051537.81542858}, {"date": "2025-05-08", "equity": 221591012.81542858}, {"date": "2025-05-09", "equity": 222090957.81542858}, {"date": "2025-05-10", "equity": 222090957.81542858}, {"date": "2025-05-11", "equity": 222090957.81542858}, {"date": "2025-05-12", "equity": 223928367.81542858}, {"date": "2025-05-13", "equity": 223996772.81542858}, {"date": "2025-05-14", "equity": 202997772.81542858}, {"date": "2025-05-15", "equity": 202373647.81542858}, {"date": "2025-05-16", "equity": 201148947.81542858}, {"date": "2025-05-17", "equity": 201148947.81542858}, {"date": "2025-05-18", "equity": 201148947.81542858}, {"date": "2025-05-19", "equity": 200234422.81542858}, {"date": "2025-05-20", "equity": 201332597.81542858}, {"date": "2025-05-21", "equity": 202041747.81542858}, {"date": "2025-05-22", "equity": 202806297.81542858}, {"date": "2025-05-23", "equity": 202801497.81542858}, {"date": "2025-05-24", "equity": 202801497.81542858}, {"date": "2025-05-25", "equity": 202801497.81542858}, {"date": "2025-05-26", "equity": 204620172.81542858}, {"date": "2025-05-27", "equity": 184895531.31542858}, {"date": "2025-05-28", "equity": 164004356.31542858}, {"date": "2025-05-29", "equity": 164946106.31542858}, {"date": "2025-05-30", "equity": 164187706.31542858}, {"date": "2025-05-31", "equity": 234012196.31542858}, {"date": "2025-06-01", "equity": 234012196.31542858}, {"date": "2025-06-02", "equity": 232702511.31542858}, {"date": "2025-06-03", "equity": 232702511.31542858}, {"date": "2025-06-04", "equity": 215386964.11542857}, {"date": "2025-06-05", "equity": 216410514.11542857}, {"date": "2025-06-06", "equity": 216410514.11542857}, {"date": "2025-06-07", "equity": 216410514.11542857}, {"date": "2025-06-08", "equity": 216410514.11542857}, {"date": "2025-06-09", "equity": 200529081.8354286}, {"date": "2025-06-10", "equity": 201107106.8354286}, {"date": "2025-06-11", "equity": 185262976.23542857}, {"date": "2025-06-12", "equity": 185479501.23542857}, {"date": "2025-06-13", "equity": 184261951.23542857}, {"date": "2025-06-14", "equity": 184261951.23542857}, {"date": "2025-06-15", "equity": 184261951.23542857}, {"date": "2025-06-16", "equity": 184377126.23542857}, {"date": "2025-06-17", "equity": 184137476.23542857}, {"date": "2025-06-18", "equity": 163105763.73542857}, {"date": "2025-06-19", "equity": 162943213.73542857}, {"date": "2025-06-20", "equity": 162996263.73542857}, {"date": "2025-06-21", "equity": 162996263.73542857}, {"date": "2025-06-22", "equity": 162996263.73542857}, {"date": "2025-06-23", "equity": 162942063.73542857}, {"date": "2025-06-24", "equity": 163456813.73542857}, {"date": "2025-06-25", "equity": 163108063.73542857}, {"date": "2025-06-26", "equity": 162747213.73542857}, {"date": "2025-06-27", "equity": 162830263.73542857}, {"date": "2025-06-28", "equity": 162830263.73542857}, {"date": "2025-06-29", "equity": 162830263.73542857}, {"date": "2025-06-30", "equity": 237580003.73542857}, {"date": "2025-07-01", "equity": 238849793.73542857}, {"date": "2025-07-02", "equity": 239411333.73542857}, {"date": "2025-07-03", "equity": 241426433.73542857}, {"date": "2025-07-04", "equity": 223425733.73542857}, {"date": "2025-07-05", "equity": 223425733.73542857}, {"date": "2025-07-06", "equity": 223425733.73542857}, {"date": "2025-07-07", "equity": 223716303.73542857}, {"date": "2025-07-08", "equity": 226444933.73542857}, {"date": "2025-07-09", "equity": 226409033.73542857}, {"date": "2025-07-10", "equity": 226883433.73542857}, {"date": "2025-07-11", "equity": 227889383.73542857}, {"date": "2025-07-12", "equity": 227889383.73542857}, {"date": "2025-07-13", "equity": 227889383.73542857}, {"date": "2025-07-14", "equity": 212327653.73542857}, {"date": "2025-07-15", "equity": 212496853.73542857}, {"date": "2025-07-16", "equity": 210080853.73542857}, {"date": "2025-07-17", "equity": 192412148.9354286}, {"date": "2025-07-18", "equity": 191644148.9354286}, {"date": "2025-07-19", "equity": 191644148.9354286}, {"date": "2025-07-20", "equity": 191644148.9354286}, {"date": "2025-07-21", "equity": 191551848.9354286}, {"date": "2025-07-22", "equity": 191191948.9354286}, {"date": "2025-07-23", "equity": 191096548.9354286}, {"date": "2025-07-24", "equity": 190629548.9354286}, {"date": "2025-07-25", "equity": 173921009.3354286}, {"date": "2025-07-26", "equity": 173921009.3354286}, {"date": "2025-07-27", "equity": 173921009.3354286}, {"date": "2025-07-28", "equity": 172860209.3354286}, {"date": "2025-07-29", "equity": 173142609.3354286}, {"date": "2025-07-30", "equity": 256567766.1354286}, {"date": "2025-07-31", "equity": 234566616.1354286}, {"date": "2025-08-01", "equity": 191719037.564}, {"date": "2025-08-02", "equity": 191719037.564}, {"date": "2025-08-03", "equity": 191719037.564}, {"date": "2025-08-04", "equity": 171709487.564}, {"date": "2025-08-05", "equity": 172557387.564}, {"date": "2025-08-06", "equity": 173360687.564}, {"date": "2025-08-07", "equity": 173426837.564}, {"date": "2025-08-08", "equity": 173390987.564}, {"date": "2025-08-09", "equity": 173390987.564}, {"date": "2025-08-10", "equity": 173390987.564}, {"date": "2025-08-11", "equity": 173064287.564}, {"date": "2025-08-12", "equity": 173567137.564}, {"date": "2025-08-13", "equity": 173551987.564}, {"date": "2025-08-14", "equity": 174100287.564}, {"date": "2025-08-15", "equity": 174100287.564}, {"date": "2025-08-16", "equity": 174100287.564}, {"date": "2025-08-17", "equity": 174100287.564}, {"date": "2025-08-18", "equity": 174050887.564}, {"date": "2025-08-19", "equity": 154878937.564}, {"date": "2025-08-20", "equity": 136383241.13542858}, {"date": "2025-08-21", "equity": 136383241.13542858}, {"date": "2025-08-22", "equity": 136383241.13542858}, {"date": "2025-08-23", "equity": 136383241.13542858}, {"date": "2025-08-24", "equity": 136383241.13542858}, {"date": "2025-08-25", "equity": 136383241.13542858}, {"date": "2025-08-26", "equity": 136383241.13542858}, {"date": "2025-08-27", "equity": 136383241.13542858}, {"date": "2025-08-28", "equity": 136383241.13542858}, {"date": "2025-08-29", "equity": 276123741.13542855}, {"date": "2025-08-30", "equity": 276123741.13542855}, {"date": "2025-08-31", "equity": 276123741.13542855}, {"date": "2025-09-01", "equity": 276797441.13542855}, {"date": "2025-09-02", "equity": 276177441.13542855}, {"date": "2025-09-03", "equity": 276145641.13542855}, {"date": "2025-09-04", "equity": 274340641.13542855}, {"date": "2025-09-05", "equity": 275171341.13542855}, {"date": "2025-09-06", "equity": 275171341.13542855}, {"date": "2025-09-07", "equity": 275171341.13542855}, {"date": "2025-09-08", "equity": 274297141.13542855}, {"date": "2025-09-09", "equity": 274847441.13542855}, {"date": "2025-09-10", "equity": 276718141.13542855}, {"date": "2025-09-11", "equity": 276874441.13542855}, {"date": "2025-09-12", "equity": 276242441.13542855}, {"date": "2025-09-13", "equity": 276242441.13542855}, {"date": "2025-09-14", "equity": 276242441.13542855}, {"date": "2025-09-15", "equity": 275361441.13542855}, {"date": "2025-09-16", "equity": 247337132.20685714}, {"date": "2025-09-17", "equity": 247061532.20685714}, {"date": "2025-09-18", "equity": 247749532.20685714}, {"date": "2025-09-19", "equity": 246091732.20685714}, {"date": "2025-09-20", "equity": 246091732.20685714}, {"date": "2025-09-21", "equity": 246091732.20685714}, {"date": "2025-09-22", "equity": 246545432.20685714}, {"date": "2025-09-23", "equity": 247254832.20685714}, {"date": "2025-09-24", "equity": 245389632.20685714}, {"date": "2025-09-25", "equity": 244429932.20685714}, {"date": "2025-09-26", "equity": 215370635.7782857}, {"date": "2025-09-27", "equity": 215370635.7782857}, {"date": "2025-09-28", "equity": 300610035.77828574}, {"date": "2025-09-29", "equity": 301741035.77828574}, {"date": "2025-09-30", "equity": 273170135.77828574}, {"date": "2025-10-01", "equity": 273746435.77828574}, {"date": "2025-10-02", "equity": 277310835.77828574}, {"date": "2025-10-03", "equity": 277310835.77828574}, {"date": "2025-10-04", "equity": 277310835.77828574}, {"date": "2025-10-05", "equity": 277310835.77828574}, {"date": "2025-10-06", "equity": 277310835.77828574}, {"date": "2025-10-07", "equity": 277310835.77828574}, {"date": "2025-10-10", "equity": 246063321.4925714}, {"date": "2025-10-11", "equity": 246063321.4925714}, {"date": "2025-10-12", "equity": 246063321.4925714}, {"date": "2025-10-13", "equity": 228673671.4925714}, {"date": "2025-10-14", "equity": 232018571.4925714}, {"date": "2025-10-15", "equity": 205594327.89257142}, {"date": "2025-10-16", "equity": 181067151.89257142}, {"date": "2025-10-17", "equity": 179784451.89257142}, {"date": "2025-10-18", "equity": 179784451.89257142}, {"date": "2025-10-19", "equity": 179784451.89257142}, {"date": "2025-10-20", "equity": 179880951.89257142}, {"date": "2025-10-21", "equity": 179562451.89257142}, {"date": "2025-10-22", "equity": 179870151.89257142}, {"date": "2025-10-23", "equity": 179958151.89257142}, {"date": "2025-10-24", "equity": 180285151.89257142}, {"date": "2025-10-25", "equity": 180285151.89257142}, {"date": "2025-10-26", "equity": 180285151.89257142}, {"date": "2025-10-27", "equity": 180811851.89257142}, {"date": "2025-10-28", "equity": 242462051.89257142}, {"date": "2025-10-29", "equity": 227076464.89257142}, {"date": "2025-10-30", "equity": 226575064.89257142}, {"date": "2025-10-31", "equity": 226359364.89257142}, {"date": "2025-11-01", "equity": 226359364.89257142}, {"date": "2025-11-02", "equity": 226359364.89257142}, {"date": "2025-11-03", "equity": 226390464.89257142}, {"date": "2025-11-04", "equity": 226333764.89257142}, {"date": "2025-11-05", "equity": 204695661.32114285}, {"date": "2025-11-06", "equity": 185944306.92114285}, {"date": "2025-11-07", "equity": 185303506.92114285}, {"date": "2025-11-08", "equity": 185303506.92114285}, {"date": "2025-11-09", "equity": 185303506.92114285}, {"date": "2025-11-10", "equity": 186129906.92114285}, {"date": "2025-11-11", "equity": 186091106.92114285}, {"date": "2025-11-12", "equity": 188083506.92114285}, {"date": "2025-11-13", "equity": 169054408.52114284}, {"date": "2025-11-14", "equity": 167456008.52114284}, {"date": "2025-11-15", "equity": 167456008.52114284}, {"date": "2025-11-16", "equity": 167456008.52114284}, {"date": "2025-11-17", "equity": 167456008.52114284}, {"date": "2025-11-18", "equity": 166926808.52114284}, {"date": "2025-11-19", "equity": 150065308.52114284}, {"date": "2025-11-20", "equity": 150065308.52114284}, {"date": "2025-11-21", "equity": 150065308.52114284}, {"date": "2025-11-22", "equity": 150065308.52114284}, {"date": "2025-11-23", "equity": 150065308.52114284}, {"date": "2025-11-24", "equity": 150065308.52114284}, {"date": "2025-11-25", "equity": 150065308.52114284}, {"date": "2025-11-26", "equity": 150065308.52114284}, {"date": "2025-11-27", "equity": 303001688.52114284}, {"date": "2025-11-28", "equity": 300113148.52114284}, {"date": "2025-11-29", "equity": 300113148.52114284}, {"date": "2025-11-30", "equity": 300113148.52114284}, {"date": "2025-12-01", "equity": 301798288.52114284}, {"date": "2025-12-02", "equity": 303705208.52114284}, {"date": "2025-12-03", "equity": 309189928.52114284}, {"date": "2025-12-04", "equity": 307548608.52114284}, {"date": "2025-12-05", "equity": 309721388.52114284}, {"date": "2025-12-06", "equity": 309721388.52114284}, {"date": "2025-12-07", "equity": 309721388.52114284}, {"date": "2025-12-08", "equity": 311855248.52114284}, {"date": "2025-12-09", "equity": 282459373.00114286}, {"date": "2025-12-10", "equity": 280768873.00114286}, {"date": "2025-12-11", "equity": 281857373.00114286}, {"date": "2025-12-12", "equity": 283318373.00114286}, {"date": "2025-12-13", "equity": 283318373.00114286}, {"date": "2025-12-14", "equity": 283318373.00114286}, {"date": "2025-12-15", "equity": 251564123.00114283}, {"date": "2025-12-16", "equity": 249595623.00114283}, {"date": "2025-12-17", "equity": 252139623.00114283}, {"date": "2025-12-18", "equity": 250522123.00114283}, {"date": "2025-12-19", "equity": 250272623.00114283}, {"date": "2025-12-20", "equity": 250272623.00114283}, {"date": "2025-12-21", "equity": 250272623.00114283}, {"date": "2025-12-22", "equity": 250821123.00114283}, {"date": "2025-12-23", "equity": 250792123.00114283}, {"date": "2025-12-24", "equity": 251035623.00114283}, {"date": "2025-12-25", "equity": 251035623.00114283}, {"date": "2025-12-26", "equity": 251890123.00114283}, {"date": "2025-12-27", "equity": 346960223.00114286}, {"date": "2025-12-28", "equity": 346960223.00114286}, {"date": "2025-12-29", "equity": 309962488.00114286}, {"date": "2025-12-30", "equity": 291401738.00114286}, {"date": "2025-12-31", "equity": 291401738.00114286}, {"date": "2026-01-01", "equity": 291401738.00114286}, {"date": "2026-01-02", "equity": 241501376.00114283}, {"date": "2026-01-03", "equity": 241501376.00114283}, {"date": "2026-01-04", "equity": 241501376.00114283}, {"date": "2026-01-05", "equity": 244230126.00114283}, {"date": "2026-01-06", "equity": 244813376.00114283}, {"date": "2026-01-07", "equity": 218076584.00114283}, {"date": "2026-01-08", "equity": 197999798.28685713}, {"date": "2026-01-09", "equity": 198638798.28685713}, {"date": "2026-01-10", "equity": 198638798.28685713}, {"date": "2026-01-11", "equity": 198638798.28685713}, {"date": "2026-01-12", "equity": 199774798.28685713}, {"date": "2026-01-13", "equity": 200058798.28685713}, {"date": "2026-01-14", "equity": 170920398.28685713}, {"date": "2026-01-15", "equity": 170920398.28685713}, {"date": "2026-01-16", "equity": 170920398.28685713}, {"date": "2026-01-17", "equity": 170920398.28685713}, {"date": "2026-01-18", "equity": 170920398.28685713}, {"date": "2026-01-19", "equity": 170920398.28685713}, {"date": "2026-01-20", "equity": 170920398.28685713}, {"date": "2026-01-21", "equity": 170920398.28685713}, {"date": "2026-01-22", "equity": 170920398.28685713}, {"date": "2026-01-23", "equity": 170920398.28685713}, {"date": "2026-01-24", "equity": 170920398.28685713}, {"date": "2026-01-25", "equity": 170920398.28685713}, {"date": "2026-01-26", "equity": 346116498.2868571}, {"date": "2026-01-27", "equity": 354253998.2868571}, {"date": "2026-01-28", "equity": 323338163.7868571}, {"date": "2026-01-29", "equity": 325651163.7868571}, {"date": "2026-01-30", "equity": 292622163.7868571}, {"date": "2026-01-31", "equity": 292622163.7868571}, {"date": "2026-02-01", "equity": 292622163.7868571}, {"date": "2026-02-02", "equity": 287496963.7868571}, {"date": "2026-02-03", "equity": 294190563.7868571}, {"date": "2026-02-04", "equity": 297069963.7868571}, {"date": "2026-02-05", "equity": 293988763.7868571}, {"date": "2026-02-06", "equity": 260742093.78685713}, {"date": "2026-02-07", "equity": 260742093.78685713}, {"date": "2026-02-08", "equity": 260742093.78685713}, {"date": "2026-02-09", "equity": 264088293.78685713}, {"date": "2026-02-10", "equity": 232030167.18685713}, {"date": "2026-02-11", "equity": 232478667.18685713}, {"date": "2026-02-12", "equity": 233453667.18685713}, {"date": "2026-02-13", "equity": 200830167.18685713}, {"date": "2026-02-14", "equity": 200830167.18685713}, {"date": "2026-02-15", "equity": 200830167.18685713}, {"date": "2026-02-16", "equity": 200830167.18685713}, {"date": "2026-02-17", "equity": 200830167.18685713}, {"date": "2026-02-18", "equity": 200830167.18685713}, {"date": "2026-02-19", "equity": 200830167.18685713}, {"date": "2026-02-20", "equity": 200830167.18685713}, {"date": "2026-02-21", "equity": 200830167.18685713}, {"date": "2026-02-22", "equity": 200830167.18685713}, {"date": "2026-02-23", "equity": 200830167.18685713}, {"date": "2026-02-24", "equity": 200830167.18685713}, {"date": "2026-02-25", "equity": 408884367.1868571}, {"date": "2026-02-26", "equity": 375141767.1868571}, {"date": "2026-02-27", "equity": 374023567.1868571}, {"date": "2026-02-28", "equity": 374023567.1868571}, {"date": "2026-03-01", "equity": 374023567.1868571}, {"date": "2026-03-02", "equity": 374023567.1868571}, {"date": "2026-03-03", "equity": 338156219.9868572}, {"date": "2026-03-04", "equity": 209500727.12971428}, {"date": "2026-03-05", "equity": 209500727.12971428}, {"date": "2026-03-06", "equity": 209500727.12971428}, {"date": "2026-03-07", "equity": 209500727.12971428}, {"date": "2026-03-08", "equity": 209500727.12971428}, {"date": "2026-03-09", "equity": 209500727.12971428}, {"date": "2026-03-10", "equity": 209500727.12971428}, {"date": "2026-03-11", "equity": 209500727.12971428}, {"date": "2026-03-12", "equity": 209500727.12971428}, {"date": "2026-03-13", "equity": 209500727.12971428}, {"date": "2026-03-14", "equity": 209500727.12971428}, {"date": "2026-03-15", "equity": 209500727.12971428}, {"date": "2026-03-16", "equity": 209500727.12971428}, {"date": "2026-03-17", "equity": 209500727.12971428}, {"date": "2026-03-18", "equity": 209500727.12971428}];
+        
+        const ctx = document.getElementById('equityChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: equityData.map(d => d.date),
+                datasets: [{
+                    label: '총 자산',
+                    data: equityData.map(d => d.equity),
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0,
+                    pointHoverRadius: 6
+                }, {
+                    label: '초기 자본',
+                    data: equityData.map(() => 100000000),
+                    borderColor: '#64748b',
+                    borderDash: [5, 5],
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: '#f1f5f9' }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ₩' + context.parsed.y.toLocaleString();
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#94a3b8' },
+                        grid: { color: '#334155' }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function(value) {
+                                return '₩' + (value / 1000000).toFixed(0) + 'M';
+                            }
+                        },
+                        grid: { color: '#334155' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
