@@ -171,6 +171,226 @@ python3 -m http.server 8080 --directory docs
 
 ---
 
+## 💻 스캐너 코드 사용 예시
+
+### 1. 리버모어 스캐너 (52주 신고가)
+```python
+from livermore_scanner import LivermoreScanner
+import pandas as pd
+
+# 스캐너 초기화
+scanner = LivermoreScanner()
+
+# 특정 종목 스캔
+symbols = ['005930', '000660', '051910']
+results = scanner.scan(symbols)
+
+# 결과 확인
+for stock in results:
+    print(f"{stock['name']}: {stock['price']:,}원 (신고가 돌파)")
+```
+
+### 2. 오닐 스캐너 (CANSLIM)
+```python
+from oneil_scanner import ONeilScanner
+
+scanner = ONeilScanner(
+    min_eps_growth=0.25,      # 최소 EPS 성장률 25%
+    min_relative_strength=80,  # 상대강도 80 이상
+    min_volume_surge=2.0       # 거래량 2배 이상
+)
+
+# 스캔 실행
+results = scanner.scan_market(
+    start_date='2026-03-01',
+    end_date='2026-03-18'
+)
+
+# 상위 10개 출력
+for stock in results[:10]:
+    print(f"{stock['code']} - RS: {stock['rs_score']}, Volume: {stock['volume_ratio']:.1f}x")
+```
+
+### 3. 미너비니 스캐너 (VCP)
+```python
+from minervini_scanner import MinerviniScanner
+
+scanner = MinerviniScanner(
+    max_contractions=4,        # 최대 4단계 수축
+    min_rs_rank=80,            # RS 순위 80% 이상
+    max_volatility_decrease=0.6 # 변동성 60% 이하로 축소
+)
+
+# VCP 패턴 검색
+vcp_stocks = scanner.find_vcp_patterns(
+    symbols=['035720', '068270'],
+    lookback_days=60
+)
+
+for stock in vcp_stocks:
+    print(f"{stock['code']}: {stock['contractions']}단계 수축, Pivot: {stock['pivot_price']}")
+```
+
+### 4. SEPA VCP 스캐너
+```python
+from sepa_vcp_strategy import SEPAVCPStrategy
+
+strategy = SEPAVCPStrategy(
+    trend_template=True,      # 트렌드 템플릿 적용
+    min_rs_rank=80,
+    vcp_contractions=3
+)
+
+# 백테스트
+results = strategy.backtest(
+    symbols=['005930', '000660'],
+    start_date='2025-01-01',
+    end_date='2026-03-18'
+)
+
+print(f"총 수익률: {results['total_return']:.2f}%")
+print(f"승률: {results['win_rate']:.1f}%")
+```
+
+### 5. Pivot Point 스캐너
+```python
+from pivot_strategy import PivotStrategy
+
+strategy = PivotStrategy(
+    pivot_lookback=20,        # 20일 피봇
+    volume_threshold=1.5,     # 거래량 1.5배
+    min_price=1000           # 최소 주가 1,000원
+)
+
+# 피봇 브레이크아웃 탐지
+breakouts = strategy.scan_breakouts(
+    date='2026-03-18',
+    market='KOSPI'
+)
+
+for stock in breakouts:
+    print(f"{stock['code']}: 피봇 {stock['pivot_level']:,} 돌파!")
+```
+
+### 6. Buy Strength 스캐너
+```python
+from buy_strength_scanner import BuyStrengthScanner
+
+scanner = BuyStrengthScanner(
+    trend_weight=0.4,         # 추세 가중치 40%
+    momentum_weight=0.3,      # 모멘텀 가중치 30%
+    volume_weight=0.3         # 거래량 가중치 30%
+)
+
+# 종합 점수 계산
+scores = scanner.calculate_scores(
+    symbols=['005930', '035720', '068270']
+)
+
+# A등급 이상 필터링
+a_grade = [s for s in scores if s['grade'] == 'A']
+for stock in a_grade:
+    print(f"{stock['name']}: {stock['total_score']:.1f}점 ({stock['grade']}등급)")
+```
+
+### 7. Buffett 스캐너 (B01)
+```python
+from b01_scanner import B01Scanner
+
+scanner = B01Scanner(
+    graham_weight=0.3,        # Graham 30%
+    quality_weight=0.4,       # Quality 40%
+    dividend_weight=0.3       # Dividend 30%
+)
+
+# 가치주 스캔
+value_stocks = scanner.scan_value_stocks(
+    min_market_cap=100000000000,  # 시총 1,000억 이상
+    top_n=20
+)
+
+for stock in value_stocks:
+    print(f"{stock['name']}: 가치점수 {stock['value_score']}/100")
+```
+
+### 8. NPS 가치 스캐너
+```python
+from nps_value_scanner import NPSValueScanner
+
+scanner = NPSValueScanner()
+
+# NPS 기준 가치주 필터링
+nps_stocks = scanner.scan(
+    min_dividend_yield=2.0,   # 배당수익률 2%+
+    max_pe=15,                # PER 15 이하
+    min_roe=10                # ROE 10%+
+)
+
+print(f"NPS 가치주 {len(nps_stocks)}개 발견")
+for stock in nps_stocks[:5]:
+    print(f"  - {stock['name']}: PER {stock['pe']}, ROE {stock['roe']}%")
+```
+
+### 9. V-Series Fibonacci + ATR 스캐너
+```python
+from v_series_fib_atr_backtest import ValueFibATRStrategy, BacktestEngine
+
+# 전략 설정
+strategy = ValueFibATRStrategy(
+    value_score_threshold=65.0,   # 가치점수 65점+
+    risk_reward_ratio=1.5,        # 1:1.5 손익비
+    atr_multiplier=1.5,           # ATR × 1.5
+    fib_entry_tolerance=0.05      # ±5% 허용
+)
+
+# 백테스트 엔진
+engine = BacktestEngine(
+    strategy=strategy,
+    initial_capital=100_000_000,
+    rebalance_days=30
+)
+
+# 백테스트 실행
+results = engine.run_backtest(
+    symbols=['005930', '000660', '051910'],
+    start_date='2025-01-01',
+    end_date='2026-03-18',
+    max_positions=5
+)
+
+print(f"📊 V-Series 결과:")
+print(f"  총 수익률: {results['total_return']:+.2f}%")
+print(f"  승률: {results['win_rate']:.1f}%")
+print(f"  최종 자본: ₩{results['final_capital']:,.0f}")
+```
+
+### 10. 통합 멀티 스트레티지 스캐너
+```python
+from buffett_integrated_scanner import IntegratedScanner
+
+# 통합 스캐너 (모든 전략 병렬 실행)
+scanner = IntegratedScanner(
+    strategies=['livermore', 'oneil', 'minervini', 'buffett', 'v_series'],
+    max_workers=5
+)
+
+# 전체 시장 스캔
+all_results = scanner.scan_all(
+    market='KOSPI',
+    date='2026-03-18'
+)
+
+# 중복 제거 및 종합 점수 계산
+combined = scanner.combine_results(all_results)
+
+print("🔥 통합 추천 종목 TOP 10:")
+for i, stock in enumerate(combined[:10], 1):
+    strategies = ', '.join(stock['strategies'])
+    print(f"{i}. {stock['name']} ({stock['code']}) - {strategies}")
+```
+
+---
+
 ## 📊 데이터베이스
 
 - **종목 수**: 3,286개 (KOSPI 1,619 + KOSDAQ 1,667)
