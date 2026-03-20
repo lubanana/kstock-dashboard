@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통합 멀티 전략 리포트 - 2026-03-20 21:14</title>
+    <style>
+        :root { --primary: #3b82f6; --success: #22c55e; --danger: #ef4444; --warning: #f59e0b; 
+                 --purple: #8b5cf6; --gold: #fbbf24; --cyan: #06b6d4; --bg: #0f172a; 
+                 --card: #1e293b; --text: #f1f5f9; --text-muted: #94a3b8; --border: #334155; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Segoe UI", "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); 
+                   border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border); }
+        .header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .header .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .header .timestamp { color: var(--warning); font-size: 1rem; margin-top: 5px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid var(--border); text-align: center; }
+        .stat-card .label { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px; }
+        .stat-card .value { font-size: 1.8rem; font-weight: 700; }
+        .filter-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
+        .filter-tab { padding: 10px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; 
+                      cursor: pointer; transition: all 0.3s; font-weight: 600; }
+        .filter-tab:hover, .filter-tab.active { background: var(--primary); border-color: var(--primary); }
+        .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .stock-card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid var(--border); 
+                      transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+        .stock-card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 8px 30px rgba(59,130,246,0.2); }
+        .stock-card.v { border-left: 4px solid var(--success); }
+        .stock-card.b01 { border-left: 4px solid var(--gold); }
+        .stock-card.nps { border-left: 4px solid var(--purple); }
+        .stock-card.multi { border-left: 4px solid var(--cyan); }
+        .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .stock-name { font-size: 1.2rem; font-weight: 700; }
+        .stock-code { color: var(--text-muted); font-size: 0.85rem; }
+        .strategy-badge { padding: 3px 10px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; }
+        .strategy-badge.v { background: rgba(34,197,94,0.2); color: var(--success); }
+        .strategy-badge.b01 { background: rgba(251,191,36,0.2); color: var(--gold); }
+        .strategy-badge.nps { background: rgba(139,92,246,0.2); color: var(--purple); }
+        .strategy-badge.multi { background: rgba(6,182,212,0.2); color: var(--cyan); }
+        .score-badge { background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(59,130,246,0.1)); 
+                       color: var(--primary); padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 700; }
+        .price-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+        .price-box { background: rgba(255,255,255,0.03); padding: 10px; border-radius: 6px; text-align: center; }
+        .price-box .label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 3px; }
+        .price-box .value { font-size: 1rem; font-weight: 600; }
+        .price-box.target { border-left: 2px solid var(--success); }
+        .price-box.stop { border-left: 2px solid var(--danger); }
+        .rr-info { display: flex; justify-content: space-between; font-size: 0.85rem; margin-top: 10px; padding-top: 10px; 
+                   border-top: 1px solid var(--border); }
+        .rr-badge { color: var(--primary); font-weight: 600; }
+        
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; 
+                  background: rgba(0,0,0,0.9); overflow: auto; }
+        .modal-content { background: var(--card); margin: 20px auto; padding: 25px; border-radius: 16px; 
+                         width: 95%; max-width: 1100px; max-height: 95vh; overflow-y: auto; position: relative; 
+                         border: 1px solid var(--border); }
+        .close { position: absolute; top: 15px; right: 20px; color: var(--text-muted); font-size: 32px; 
+                 font-weight: bold; cursor: pointer; z-index: 1001; background: var(--bg); width: 40px; height: 40px; 
+                 border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .close:hover { color: var(--text); }
+        .modal-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--border); }
+        .modal-title { font-size: 1.6rem; margin-bottom: 5px; }
+        .modal-subtitle { color: var(--text-muted); font-size: 0.95rem; }
+        .tradingview-container { height: 450px; margin: 15px 0; border-radius: 8px; overflow: hidden; 
+                                border: 1px solid var(--border); }
+        .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 15px 0; }
+        .detail-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; }
+        .detail-item .label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+        .detail-item .value { font-size: 1.1rem; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 통합 멀티 전략 리포트</h1>
+            <p class="subtitle">V-Strategy + B01 + NPS + Multi-Strategy</p>
+            <p class="timestamp">생성일시: 2026-03-20 21:14 (KST) | 데이터 기준: 2026-03-20</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="label">총 선정 종목</div>
+                <div class="value">78개</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">V-Strategy</div>
+                <div class="value">54개</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">B01 Buffett</div>
+                <div class="value">0개</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">NPS</div>
+                <div class="value">24개</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Multi</div>
+                <div class="value">0개</div>
+            </div>
+        </div>
+        
+        <div class="filter-tabs">
+            <div class="filter-tab active" onclick="filterStocks('all')">전체</div>
+            <div class="filter-tab" onclick="filterStocks('V')">V-Strategy</div>
+            <div class="filter-tab" onclick="filterStocks('B01')">B01</div>
+            <div class="filter-tab" onclick="filterStocks('NPS')">NPS</div>
+            <div class="filter-tab" onclick="filterStocks('Multi')">Multi</div>
+        </div>
+        
+        <div class="stock-grid" id="stockGrid"></div>
+    </div>
+    
+    <div id="stockModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        const stockData = [{"symbol": "055550", "name": "신한지주", "score": 84.71751412429379, "current_price": 95000.0, "target_price": 109442.85714285714, "stop_loss": 87778.57142857142, "rr_ratio": 2.0, "atr": 4814.285714285715, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "009540", "name": "009540", "score": 83.72881355932203, "current_price": 425000.0, "target_price": 499035.7142857143, "stop_loss": 387982.14285714284, "rr_ratio": 2.0, "atr": 24678.571428571428, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "247540", "name": "247540", "score": 82.43194658448897, "current_price": 196500.0, "target_price": 244350.0, "stop_loss": 172575.0, "rr_ratio": 2.0, "atr": 15950.0, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "009830", "name": "한화솔루션", "score": 82.13983050847457, "current_price": 49750.0, "target_price": 63860.71428571429, "stop_loss": 42694.642857142855, "rr_ratio": 2.0, "atr": 4703.571428571428, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "105560", "name": "KB금융", "score": 75.36979969183356, "current_price": 155700.0, "target_price": 181800.0, "stop_loss": 142650.0, "rr_ratio": 2.0, "atr": 8700.0, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "005930", "name": "삼성전자", "score": 75.30064205945898, "current_price": 199400.0, "target_price": 238807.14285714284, "stop_loss": 179696.42857142858, "rr_ratio": 2.0, "atr": 13135.714285714286, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "032830", "name": "삼성생명", "score": 74.86735445836403, "current_price": 230500.0, "target_price": 277782.14285714284, "stop_loss": 206858.92857142858, "rr_ratio": 2.0, "atr": 15760.714285714286, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "035900", "name": "035900", "score": 72.65394464089744, "current_price": 66200.0, "target_price": 76378.57142857142, "stop_loss": 61110.71428571429, "rr_ratio": 2.0, "atr": 3392.8571428571427, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "000150", "name": "두산", "score": 72.28813559322035, "current_price": 1149000.0, "target_price": 1481142.8571428573, "stop_loss": 982928.5714285714, "rr_ratio": 2.0, "atr": 110714.28571428571, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "000500", "name": "000500", "score": 71.66038920276209, "current_price": 111200.0, "target_price": 138285.7142857143, "stop_loss": 97657.14285714286, "rr_ratio": 2.0, "atr": 9028.57142857143, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "032830", "name": "삼성생명", "score": 70, "current_price": 230500.0, "target_price": 277782.14285714284, "stop_loss": 206858.92857142858, "rr_ratio": 2.0, "atr": 15760.714285714286, "rsi": 46.95340501792115, "strategy": "NPS"}, {"symbol": "000150", "name": "두산", "score": 70, "current_price": 1149000.0, "target_price": 1481142.8571428573, "stop_loss": 982928.5714285714, "rr_ratio": 2.0, "atr": 110714.28571428571, "rsi": 46.48936170212765, "strategy": "NPS"}, {"symbol": "009830", "name": "한화솔루션", "score": 70, "current_price": 49750.0, "target_price": 63860.71428571429, "stop_loss": 42694.642857142855, "rr_ratio": 2.0, "atr": 4703.571428571428, "rsi": 48.44290657439446, "strategy": "NPS"}, {"symbol": "018880", "name": "018880", "score": 70, "current_price": 4400.0, "target_price": 5369.642857142857, "stop_loss": 3915.1785714285716, "rr_ratio": 2.0, "atr": 323.2142857142857, "rsi": 47.66187050359712, "strategy": "NPS"}, {"symbol": "006800", "name": "006800", "score": 70, "current_price": 69900.0, "target_price": 87596.35714285714, "stop_loss": 61051.82142857143, "rr_ratio": 2.0, "atr": 5898.785714285715, "rsi": 46.9848399775407, "strategy": "NPS"}, {"symbol": "001800", "name": "001800", "score": 70, "current_price": 24800.0, "target_price": 27896.428571428572, "stop_loss": 23251.785714285714, "rr_ratio": 2.0, "atr": 1032.142857142857, "rsi": 48.93617021276595, "strategy": "NPS"}, {"symbol": "003000", "name": "003000", "score": 70, "current_price": 6280.0, "target_price": 7765.0, "stop_loss": 5537.5, "rr_ratio": 2.0, "atr": 495.0, "rsi": 60.8235294117647, "strategy": "NPS"}, {"symbol": "263750", "name": "263750", "score": 70, "current_price": 65600.0, "target_price": 85378.57142857142, "stop_loss": 55710.71428571429, "rr_ratio": 2.0, "atr": 6592.857142857143, "rsi": 65.01035196687371, "strategy": "NPS"}, {"symbol": "221840", "name": "221840", "score": 70, "current_price": 2820.0, "target_price": 3430.714285714286, "stop_loss": 2514.642857142857, "rr_ratio": 2.0, "atr": 203.57142857142858, "rsi": 47.35202492211838, "strategy": "NPS"}, {"symbol": "095340", "name": "095340", "score": 70, "current_price": 247000.0, "target_price": 316321.4285714286, "stop_loss": 212339.2857142857, "rr_ratio": 2.0, "atr": 23107.14285714286, "rsi": 63.27130264446622, "strategy": "NPS"}, {"symbol": "058470", "name": "058470", "score": 70, "current_price": 116600.0, "target_price": 151635.7142857143, "stop_loss": 99082.14285714286, "rr_ratio": 2.0, "atr": 11678.57142857143, "rsi": 61.20092378752887, "strategy": "NPS"}, {"symbol": "039030", "name": "039030", "score": 70, "current_price": 410500.0, "target_price": 534678.5714285715, "stop_loss": 348410.71428571426, "rr_ratio": 2.0, "atr": 41392.857142857145, "rsi": 55.80286168521462, "strategy": "NPS"}, {"symbol": "004100", "name": "004100", "score": 70, "current_price": 3015.0, "target_price": 3580.714285714286, "stop_loss": 2732.142857142857, "rr_ratio": 2.0, "atr": 188.57142857142858, "rsi": 48.66920152091255, "strategy": "NPS"}, {"symbol": "000500", "name": "000500", "score": 70, "current_price": 111200.0, "target_price": 138285.7142857143, "stop_loss": 97657.14285714286, "rr_ratio": 2.0, "atr": 9028.57142857143, "rsi": 46.02122015915119, "strategy": "NPS"}, {"symbol": "000210", "name": "000210", "score": 70, "current_price": 64900.0, "target_price": 77917.85714285714, "stop_loss": 58391.07142857143, "rr_ratio": 2.0, "atr": 4339.285714285715, "rsi": 65.06849315068493, "strategy": "NPS"}, {"symbol": "000070", "name": "000070", "score": 70, "current_price": 71500.0, "target_price": 80500.0, "stop_loss": 67000.0, "rr_ratio": 2.0, "atr": 3000.0, "rsi": 47.69874476987447, "strategy": "NPS"}, {"symbol": "001040", "name": "001040", "score": 69.0377931277223, "current_price": 207000.0, "target_price": 248057.14285714284, "stop_loss": 186471.42857142858, "rr_ratio": 2.0, "atr": 13685.714285714286, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "047050", "name": "포스코DX", "score": 68.97058823529412, "current_price": 71600.0, "target_price": 91925.0, "stop_loss": 61437.5, "rr_ratio": 2.0, "atr": 6775.0, "fib_level": "fib_50", "strategy": "V"}, {"symbol": "005420", "name": "005420", "score": 68.88888888888889, "current_price": 15040.0, "target_price": 18415.0, "stop_loss": 13352.5, "rr_ratio": 2.0, "atr": 1125.0, "fib_level": "fib_50", "strategy": "V"}, {"symbol": "042000", "name": "042000", "score": 68.88412017167383, "current_price": 30800.0, "target_price": 37571.42857142857, "stop_loss": 27414.285714285714, "rr_ratio": 2.0, "atr": 2257.1428571428573, "fib_level": "fib_50", "strategy": "V"}];
+        const stockNames = {"005930": "삼성전자", "000660": "SK하이닉스", "051910": "LG화학", "005380": "현대차", "035720": "카카오", "068270": "셀트리온", "207940": "삼성바이오로직스", "006400": "삼성SDI", "000270": "기아", "012330": "현대모비스", "005490": "POSCO홀딩스", "028260": "삼성물산", "105560": "KB금융", "018260": "삼성에스디에스", "032830": "삼성생명", "034730": "SK", "000150": "두산", "016360": "삼성증권", "009830": "한화솔루션", "003490": "대한항공", "004170": "신세계", "000100": "유한양행", "011200": "HMM", "030200": "KT", "010950": "S-Oil", "034220": "LG디스플레이", "086790": "하나금융지주", "055550": "신한지주"};
+        let currentFilter = 'all';
+        let tvWidget = null;
+        
+        function formatNumber(num) {
+            return "₩" + parseFloat(num).toLocaleString("ko-KR", {maximumFractionDigits: 0});
+        }
+        
+        function getStrategyClass(strategy) {
+            return strategy.toLowerCase();
+        }
+        
+        function getStrategyBadge(strategy) {
+            return strategy;
+        }
+        
+        function renderCards() {
+            const grid = document.getElementById("stockGrid");
+            grid.innerHTML = "";
+            
+            let filtered = stockData;
+            if (currentFilter !== 'all') {
+                filtered = stockData.filter(s => s.strategy === currentFilter);
+            }
+            
+            filtered.forEach((stock, i) => {
+                const name = stockNames[stock.symbol] || stock.symbol;
+                const sClass = getStrategyClass(stock.strategy);
+                
+                const card = document.createElement("div");
+                card.className = "stock-card " + sClass;
+                card.onclick = () => openModal(stock);
+                card.innerHTML = `
+                    <div class="stock-header">
+                        <div>
+                            <div class="stock-name">${i+1}. ${name}</div>
+                            <div class="stock-code">${stock.symbol}</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <span class="strategy-badge ${sClass}">${getStrategyBadge(stock.strategy)}</span>
+                            <div class="score-badge" style="margin-top: 6px;">${stock.score.toFixed(1)}점</div>
+                        </div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price-box current">
+                            <div class="label">현재가</div>
+                            <div class="value">${formatNumber(stock.current_price)}</div>
+                        </div>
+                        <div class="price-box target">
+                            <div class="label">목표가</div>
+                            <div class="value" style="color: var(--success)">${formatNumber(stock.target_price)}</div>
+                        </div>
+                        <div class="price-box stop">
+                            <div class="label">손절가</div>
+                            <div class="value" style="color: var(--danger)">${formatNumber(stock.stop_loss)}</div>
+                        </div>
+                    </div>
+                    <div class="rr-info">
+                        <span class="rr-badge">손익비 1:${stock.rr_ratio.toFixed(2)}</span>
+                        <span style="color: var(--text-muted);">📊 클릭하여 차트 보기</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+        
+        function filterStocks(strategy) {
+            currentFilter = strategy;
+            document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            renderCards();
+        }
+        
+        function openModal(stock) {
+            const modal = document.getElementById("stockModal");
+            const body = document.getElementById("modalBody");
+            const name = stockNames[stock.symbol] || stock.symbol;
+            
+            body.innerHTML = `
+                <div class="modal-header">
+                    <div class="modal-title">${name} (${stock.symbol})</div>
+                    <div class="modal-subtitle">${stock.strategy} 전략 | 점수: ${stock.score.toFixed(1)}</div>
+                </div>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="label">현재가</div>
+                        <div class="value">${formatNumber(stock.current_price)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success);">${formatNumber(stock.target_price)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger);">${formatNumber(stock.stop_loss)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">손익비</div>
+                        <div class="value" style="color: var(--primary);">1:${stock.rr_ratio.toFixed(2)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">ATR</div>
+                        <div class="value">${formatNumber(stock.atr)}</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">예상수익</div>
+                        <div class="value" style="color: var(--success);">+${((stock.target_price - stock.current_price) / stock.current_price * 100).toFixed(1)}%</div>
+                    </div>
+                </div>
+                <div class="tradingview-container" id="tv_chart"></div>
+            `;
+            
+            modal.style.display = "block";
+            
+            // Destroy previous widget if exists
+            if (tvWidget) {
+                tvWidget = null;
+            }
+            
+            // Create new TradingView widget
+            setTimeout(() => {
+                try {
+                    tvWidget = new TradingView.widget({
+                        autosize: true,
+                        symbol: "KRX:" + stock.symbol,
+                        interval: "D",
+                        timezone: "Asia/Seoul",
+                        theme: "dark",
+                        style: "1",
+                        locale: "kr",
+                        toolbar_bg: "#1e293b",
+                        enable_publishing: false,
+                        hide_top_toolbar: false,
+                        hide_legend: false,
+                        save_image: false,
+                        container_id: "tv_chart",
+                        studies: ["RSI@tv-basicstudies", "MACD@tv-basicstudies"],
+                        show_popup_button: true,
+                        popup_width: "1000",
+                        popup_height: "650"
+                    });
+                } catch (e) {
+                    console.error("TradingView widget error:", e);
+                    document.getElementById("tv_chart").innerHTML = 
+                        '<div style="display: flex; justify-content: center; align-items: center; height: 100%; color: var(--text-muted);">' +
+                        '차트를 불러올 수 없습니다. 직접 <a href="https://www.tradingview.com/chart/?symbol=KRX:' + stock.symbol + '" target="_blank" style="color: var(--primary); margin: 0 5px;">TradingView</a>에서 확인해주세요.</div>';
+                }
+            }, 200);
+        }
+        
+        function closeModal() {
+            document.getElementById("stockModal").style.display = "none";
+            if (tvWidget) {
+                tvWidget = null;
+            }
+        }
+        
+        window.onclick = function(e) {
+            if (e.target === document.getElementById("stockModal")) closeModal();
+        };
+        
+        document.addEventListener("DOMContentLoaded", renderCards);
+    </script>
+    
+    <footer style="text-align: center; padding: 30px; color: var(--text-muted); border-top: 1px solid var(--border); margin-top: 40px;">
+        <p>Integrated Multi-Strategy Report with TradingView</p>
+        <p style="font-size: 0.85rem; margin-top: 10px;">본 리포트는 투자 참고 자료입니다.</p>
+    </footer>
+</body>
+</html>
