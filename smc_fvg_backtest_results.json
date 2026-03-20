@@ -1,0 +1,45 @@
+{
+  "initial_capital": 10000,
+  "final_capital": 9572.897515968958,
+  "total_return": -4.271024840310419,
+  "total_trades": 2,
+  "winning_trades": 0,
+  "losing_trades": 2,
+  "win_rate": 0.0,
+  "avg_win_pct": 0,
+  "avg_loss_pct": -1.1099269019979445,
+  "profit_factor": 0.0,
+  "max_drawdown": 4.271024840310419,
+  "trades": [
+    {
+      "entry_time": "2025-01-10 04:00:00",
+      "exit_time": "2025-01-10 05:00:00",
+      "entry_price": 47749.5015938488,
+      "exit_price": 47058.54796719138,
+      "sl_price": 47058.54796719138,
+      "tp_price": 50136.97667354124,
+      "position": "LONG",
+      "status": "CLOSED_SL",
+      "pnl": -211.057066581986,
+      "pnl_pct": -1.4470384058342332,
+      "rr_ratio": 3.455333306870629,
+      "fvg_size": 0.011179275306926653,
+      "size": 0.2894550260449839
+    },
+    {
+      "entry_time": "2025-01-18 12:00:00",
+      "exit_time": "2025-01-18 18:00:00",
+      "entry_price": 51727.167699083686,
+      "exit_price": 51327.412182072265,
+      "sl_price": 51327.412182072265,
+      "tp_price": 54313.526084037876,
+      "position": "LONG",
+      "status": "CLOSED_SL",
+      "pnl": -216.04541744905453,
+      "pnl_pct": -0.7728153981616559,
+      "rr_ratio": 6.4698503832788825,
+      "fvg_size": 0.0032080956553887973,
+      "size": 0.489746483380658
+    }
+  ]
+}
