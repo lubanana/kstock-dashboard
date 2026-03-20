@@ -1,0 +1,202 @@
+{
+  "scan_date": "2026-03-20",
+  "total_symbols": 28,
+  "selected_count": 5,
+  "stocks": [
+    {
+      "symbol": "086790",
+      "name": "하나금융지주",
+      "buffett_score": 75,
+      "buffett_details": {
+        "trend": {
+          "score": 15,
+          "max": 30
+        },
+        "volatility": {
+          "score": 15,
+          "max": 25,
+          "value": "39.5%"
+        },
+        "profit": {
+          "score": 25,
+          "max": 25,
+          "value": "24.6%"
+        },
+        "stability": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "volatility": 39.548736227156475,
+      "yoy_return": 24.591947769314473,
+      "current_price": 114500.0,
+      "entry_price": 114500.0,
+      "target_price": 139842.85714285713,
+      "stop_loss": 101828.57142857143,
+      "rr_ratio": 2.0,
+      "atr": 6335.714285714285,
+      "fib_level": "fib_50",
+      "fib_high": 133700.0,
+      "fib_low": 91000.0,
+      "expected_return": 22.13349968808483,
+      "expected_loss": -11.066749844042414,
+      "strategy": "B01_Buffett"
+    },
+    {
+      "symbol": "055550",
+      "name": "신한지주",
+      "buffett_score": 75,
+      "buffett_details": {
+        "trend": {
+          "score": 15,
+          "max": 30
+        },
+        "volatility": {
+          "score": 15,
+          "max": 25,
+          "value": "37.0%"
+        },
+        "profit": {
+          "score": 25,
+          "max": 25,
+          "value": "23.9%"
+        },
+        "stability": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "volatility": 36.959053905423,
+      "yoy_return": 23.859191655801826,
+      "current_price": 95000.0,
+      "entry_price": 95000.0,
+      "target_price": 114257.14285714286,
+      "stop_loss": 85371.42857142857,
+      "rr_ratio": 1.9999999999999984,
+      "atr": 4814.285714285715,
+      "fib_level": "fib_382",
+      "fib_high": 107200.0,
+      "fib_low": 74600.0,
+      "expected_return": 20.27067669172932,
+      "expected_loss": -10.135338345864668,
+      "strategy": "B01_Buffett"
+    },
+    {
+      "symbol": "105560",
+      "name": "KB금융",
+      "buffett_score": 70,
+      "buffett_details": {
+        "trend": {
+          "score": 15,
+          "max": 30
+        },
+        "volatility": {
+          "score": 10,
+          "max": 25,
+          "value": "40.7%"
+        },
+        "profit": {
+          "score": 25,
+          "max": 25,
+          "value": "28.5%"
+        },
+        "stability": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "volatility": 40.726481635689105,
+      "yoy_return": 28.465346534653463,
+      "current_price": 155700.0,
+      "entry_price": 155700.0,
+      "target_price": 190500.0,
+      "stop_loss": 138300.0,
+      "rr_ratio": 2.0,
+      "atr": 8700.0,
+      "fib_level": "fib_382",
+      "fib_high": 172500.0,
+      "fib_low": 121400.0,
+      "expected_return": 22.350674373795762,
+      "expected_loss": -11.175337186897881,
+      "strategy": "B01_Buffett"
+    },
+    {
+      "symbol": "030200",
+      "name": "KT",
+      "buffett_score": 70,
+      "buffett_details": {
+        "trend": {
+          "score": 15,
+          "max": 30
+        },
+        "volatility": {
+          "score": 15,
+          "max": 25,
+          "value": "38.1%"
+        },
+        "profit": {
+          "score": 25,
+          "max": 25,
+          "value": "22.5%"
+        },
+        "stability": {
+          "score": 15,
+          "max": 20
+        }
+      },
+      "volatility": 38.09666558217431,
+      "yoy_return": 22.515212981744423,
+      "current_price": 60400.0,
+      "entry_price": 60400.0,
+      "target_price": 71714.28571428571,
+      "stop_loss": 54742.857142857145,
+      "rr_ratio": 2.0,
+      "atr": 2828.5714285714284,
+      "fib_level": "fib_50",
+      "fib_high": 69400.0,
+      "fib_low": 51300.0,
+      "expected_return": 18.73226111636707,
+      "expected_loss": -9.366130558183535,
+      "strategy": "B01_Buffett"
+    },
+    {
+      "symbol": "003490",
+      "name": "대한항공",
+      "buffett_score": 65,
+      "buffett_details": {
+        "trend": {
+          "score": 15,
+          "max": 30
+        },
+        "volatility": {
+          "score": 10,
+          "max": 25,
+          "value": "47.1%"
+        },
+        "profit": {
+          "score": 20,
+          "max": 25,
+          "value": "13.4%"
+        },
+        "stability": {
+          "score": 20,
+          "max": 20
+        }
+      },
+      "volatility": 47.05853632845675,
+      "yoy_return": 13.394919168591224,
+      "current_price": 24550.0,
+      "entry_price": 24550.0,
+      "target_price": 30592.857142857145,
+      "stop_loss": 21528.571428571428,
+      "rr_ratio": 2.0,
+      "atr": 1510.7142857142858,
+      "fib_level": "below_618",
+      "fib_high": 29750.0,
+      "fib_low": 21600.0,
+      "expected_return": 24.6144893802735,
+      "expected_loss": -12.30724469013675,
+      "strategy": "B01_Buffett"
+    }
+  ]
+}
