@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통합 멀티 전략 리포트 - 2026-03-21 01:14</title>
+    <style>
+        :root { --primary: #3b82f6; --success: #22c55e; --danger: #ef4444; --warning: #f59e0b; 
+                 --purple: #8b5cf6; --gold: #fbbf24; --cyan: #06b6d4; --bg: #0f172a; 
+                 --card: #1e293b; --text: #f1f5f9; --text-muted: #94a3b8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+                background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); 
+                  border-radius: 16px; margin-bottom: 30px; border: 1px solid #334155; }
+        h1 { font-size: 2.5em; margin-bottom: 10px; background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .subtitle { color: var(--text-muted); font-size: 1.1em; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .summary-card { background: var(--card); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #334155; }
+        .summary-card.v { border-top: 3px solid #8b5cf6; }
+        .summary-card.nps { border-top: 3px solid #22c55e; }
+        .summary-card.b01 { border-top: 3px solid #f59e0b; }
+        .summary-card.multi { border-top: 3px solid #06b6d4; }
+        .summary-card h3 { font-size: 2em; margin-bottom: 5px; }
+        .summary-card p { color: var(--text-muted); font-size: 0.9em; }
+        
+        .filters { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
+        .filter-btn { padding: 10px 20px; border: 1px solid #334155; background: var(--card); color: var(--text); 
+                      border-radius: 8px; cursor: pointer; transition: all 0.3s; font-weight: 500; }
+        .filter-btn:hover { background: #334155; }
+        .filter-btn.active { background: var(--primary); border-color: var(--primary); }
+        .filter-btn.v.active { background: #8b5cf6; border-color: #8b5cf6; }
+        .filter-btn.nps.active { background: #22c55e; border-color: #22c55e; }
+        .filter-btn.b01.active { background: #f59e0b; border-color: #f59e0b; }
+        .filter-btn.multi.active { background: #06b6d4; border-color: #06b6d4; }
+        
+        .stocks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+        .stock-card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid #334155; 
+                      transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+        .stock-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .stock-card.v { border-left: 4px solid #8b5cf6; }
+        .stock-card.nps { border-left: 4px solid #22c55e; }
+        .stock-card.b01 { border-left: 4px solid #f59e0b; }
+        .stock-card.multi { border-left: 4px solid #06b6d4; }
+        
+        .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .stock-info { display: flex; align-items: center; gap: 10px; }
+        .stock-rank { font-size: 1.5em; font-weight: bold; color: var(--text-muted); }
+        .stock-name { font-size: 1.3em; font-weight: 600; }
+        .stock-code { font-size: 0.85em; color: var(--text-muted); background: #334155; padding: 2px 8px; border-radius: 4px; }
+        .strategy-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75em; font-weight: 600; text-transform: uppercase; }
+        .strategy-badge.v { background: rgba(139, 92, 246, 0.2); color: #a78bfa; }
+        .strategy-badge.nps { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .strategy-badge.b01 { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .strategy-badge.multi { background: rgba(6, 182, 212, 0.2); color: #22d3ee; }
+        
+        .score-display { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .score-value { font-size: 2em; font-weight: bold; }
+        .score-bar { flex: 1; height: 8px; background: #334155; border-radius: 4px; overflow: hidden; }
+        .score-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+        .score-fill.high { background: linear-gradient(90deg, #22c55e, #4ade80); }
+        .score-fill.medium { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .score-fill.low { background: linear-gradient(90deg, #ef4444, #f87171); }
+        
+        .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
+        .price-box { background: #0f172a; padding: 12px; border-radius: 8px; text-align: center; }
+        .price-box.label { font-size: 0.75em; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
+        .price-box.value { font-size: 1.1em; font-weight: 600; }
+        .price-box.target { color: #4ade80; }
+        .price-box.stop { color: #f87171; }
+        
+        .rr-ratio { display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 10px 15px; border-radius: 8px; }
+        .rr-label { font-size: 0.85em; color: var(--text-muted); }
+        .rr-value { font-size: 1.1em; font-weight: bold; color: #fbbf24; }
+        
+        .detail-btn { width: 100%; margin-top: 15px; padding: 12px; background: var(--primary); color: white; 
+                      border: none; border-radius: 8px; cursor: pointer; font-weight: 500; transition: background 0.2s; }
+        .detail-btn:hover { background: #2563eb; }
+        
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                  background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .modal.active { display: flex; }
+        .modal-content { background: var(--card); border-radius: 16px; width: 100%; max-width: 1000px; 
+                         max-height: 90vh; overflow-y: auto; border: 1px solid #334155; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; 
+                        padding: 20px; border-bottom: 1px solid #334155; }
+        .modal-title { font-size: 1.5em; }
+        .modal-close { background: none; border: none; color: var(--text); font-size: 1.5em; cursor: pointer; }
+        .modal-body { padding: 20px; }
+        .chart-container { height: 400px; background: #0f172a; border-radius: 8px; margin-bottom: 20px; }
+        
+        .loading { text-align: center; padding: 60px; color: var(--text-muted); }
+        .spinner { width: 40px; height: 40px; border: 3px solid #334155; border-top-color: var(--primary); 
+                   border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        @media (max-width: 768px) {
+            .stocks-grid { grid-template-columns: 1fr; }
+            .price-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 통합 멀티 전략 리포트</h1>
+            <p class="subtitle">V-Strategy · NPS · B01 · Multi | 2026-03-21 01:14</p>
+        </header>
+        
+        <div class="summary">
+            <div class="summary-card v">
+                <h3 id="v-count">0</h3>
+                <p>V-Strategy</p>
+            </div>
+            <div class="summary-card nps">
+                <h3 id="nps-count">0</h3>
+                <p>NPS</p>
+            </div>
+            <div class="summary-card b01">
+                <h3 id="b01-count">0</h3>
+                <p>B01 Buffett</p>
+            </div>
+            <div class="summary-card multi">
+                <h3 id="multi-count">0</h3>
+                <p>Multi-Strategy</p>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn v" data-filter="V">V-Strategy</button>
+            <button class="filter-btn nps" data-filter="NPS">NPS</button>
+            <button class="filter-btn b01" data-filter="B01">B01</button>
+            <button class="filter-btn multi" data-filter="Multi">Multi</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>데이터 로딩 중...</p>
+        </div>
+        
+        <div class="stocks-grid" id="stocks-grid"></div>
+    </div>
+    
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">종목 상세</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="tradingview-chart" class="chart-container"></div>
+                <div id="modal-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        const stocks = [{"symbol": "000250", "name": "삼천당제약", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 907000.0, "target_price": 1159000.0, "stop_loss": 781000.0, "rr_ratio": 2.0, "atr": 84000.0, "rsi": 56.3664596273292, "strategy": "NPS"}, {"symbol": "001260", "name": "남광토건", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 9330.0, "target_price": 11001.0, "stop_loss": 8494.0, "rr_ratio": 2.0, "atr": 557.1428571428571, "rsi": 56.26477541371159, "strategy": "NPS"}, {"symbol": "001510", "name": "SK증권", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 2585.0, "target_price": 3512.0, "stop_loss": 2121.0, "rr_ratio": 2.0, "atr": 309.07142857142856, "rsi": 58.85947046843177, "strategy": "NPS"}, {"symbol": "001515", "name": "증권우", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 4185.0, "target_price": 5267.0, "stop_loss": 3644.0, "rr_ratio": 2.0, "atr": 360.7142857142857, "rsi": 51.12881806108898, "strategy": "NPS"}, {"symbol": "002150", "name": "도화엔지니어링", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 6670.0, "target_price": 7401.0, "stop_loss": 6305.0, "rr_ratio": 2.0, "atr": 243.57142857142858, "rsi": 50.0, "strategy": "NPS"}, {"symbol": "002990", "name": "금호건설", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 5630.0, "target_price": 6672.0, "stop_loss": 5109.0, "rr_ratio": 2.0, "atr": 347.5, "rsi": 56.36094674556214, "strategy": "NPS"}, {"symbol": "003075", "name": "코오롱글로벌우", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 16380.0, "target_price": 18131.0, "stop_loss": 15505.0, "rr_ratio": 2.0, "atr": 583.5714285714286, "rsi": 51.98728139904611, "strategy": "NPS"}, {"symbol": "003380", "name": "하림지주", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 17700.0, "target_price": 21726.0, "stop_loss": 15687.0, "rr_ratio": 2.0, "atr": 1342.142857142857, "rsi": 56.647940074906366, "strategy": "NPS"}, {"symbol": "003480", "name": "한진중공업홀딩스", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 5300.0, "target_price": 6210.0, "stop_loss": 4845.0, "rr_ratio": 2.0, "atr": 303.2142857142857, "rsi": 52.15686274509803, "strategy": "NPS"}, {"symbol": "003920", "name": "남양유업", "score": 100, "trend_score": 40, "momentum_score": 35, "volume_score": 25, "current_price": 54000.0, "target_price": 61961.0, "stop_loss": 50020.0, "rr_ratio": 2.0, "atr": 2653.5714285714284, "rsi": 57.43589743589743, "strategy": "NPS"}, {"symbol": "004170", "name": "신세계", "score": 72.5, "fib_score": 85.0, "trend_score": 30, "current_price": 344000.0, "target_price": 423500.0, "stop_loss": 304250.0, "rr_ratio": 2.0, "atr": 26500.0, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "049720", "name": "고려신용정보", "score": 72.5, "fib_score": 85.0, "trend_score": 30, "current_price": 10500.0, "target_price": 11299.0, "stop_loss": 10100.0, "rr_ratio": 2.0, "atr": 266.42857142857144, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "139480", "name": "이마트", "score": 72.5, "fib_score": 85.0, "trend_score": 30, "current_price": 100700.0, "target_price": 116450.0, "stop_loss": 92825.0, "rr_ratio": 2.0, "atr": 5250.0, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "154030", "name": "아이윈", "score": 72.5, "fib_score": 85.0, "trend_score": 30, "current_price": 2135.0, "target_price": 2553.0, "stop_loss": 1926.0, "rr_ratio": 2.0, "atr": 139.28571428571428, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "404260", "name": "기후변화솔루션", "score": 72.47353899998589, "fib_score": 84.94707799997178, "trend_score": 30, "current_price": 22250.0, "target_price": 26012.0, "stop_loss": 20369.0, "rr_ratio": 2.0, "atr": 1253.9285714285713, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "005940", "name": "NH투자증권", "score": 72.38690512093612, "fib_score": 84.77381024187225, "trend_score": 30, "current_price": 35600.0, "target_price": 42339.0, "stop_loss": 32230.0, "rr_ratio": 2.0, "atr": 2246.4285714285716, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "015260", "name": "에이엔피", "score": 72.3579150774205, "fib_score": 84.71583015484099, "trend_score": 30, "current_price": 665.0, "target_price": 1059.0, "stop_loss": 468.0, "rr_ratio": 2.0, "atr": 131.28571428571428, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "084010", "name": "대한제강", "score": 72.30137711864407, "fib_score": 84.60275423728814, "trend_score": 30, "current_price": 12010.0, "target_price": 14395.0, "stop_loss": 10818.0, "rr_ratio": 2.0, "atr": 795.0, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "013700", "name": "까뮤이앤씨", "score": 72.28082992402105, "fib_score": 84.56165984804208, "trend_score": 30, "current_price": 1276.0, "target_price": 1472.0, "stop_loss": 1178.0, "rr_ratio": 2.0, "atr": 65.21428571428571, "fib_level": "fib_382", "strategy": "V"}, {"symbol": "233740", "name": "코스닥150레버리지", "score": 72.28082992402105, "fib_score": 84.56165984804208, "trend_score": 30, "current_price": 17430.0, "target_price": 23768.0, "stop_loss": 14261.0, "rr_ratio": 2.0, "atr": 2112.5, "fib_level": "fib_382", "strategy": "V"}];
+        
+        // 카운트 업데이트
+        const counts = { V: 0, NPS: 0, B01: 0, Multi: 0 };
+        stocks.forEach(s => { counts[s.strategy] = (counts[s.strategy] || 0) + 1; });
+        document.getElementById('v-count').textContent = counts.V;
+        document.getElementById('nps-count').textContent = counts.NPS;
+        document.getElementById('b01-count').textContent = counts.B01;
+        document.getElementById('multi-count').textContent = counts.Multi;
+        
+        // 로딩 숨기기
+        document.getElementById('loading').style.display = 'none';
+        
+        let currentFilter = 'all';
+        let tvWidget = null;
+        
+        function formatPrice(price) {
+            if (price >= 1000000) return (price / 1000000).toFixed(2) + 'M';
+            if (price >= 1000) return (price / 1000).toFixed(1) + 'K';
+            return price.toLocaleString();
+        }
+        
+        function renderStocks() {
+            const grid = document.getElementById('stocks-grid');
+            grid.innerHTML = '';
+            
+            const filtered = currentFilter === 'all' 
+                ? stocks 
+                : stocks.filter(s => s.strategy === currentFilter);
+            
+            filtered.forEach((stock, index) => {
+                const card = document.createElement('div');
+                card.className = `stock-card ${stock.strategy.toLowerCase()}`;
+                
+                const scoreClass = stock.score >= 80 ? 'high' : stock.score >= 60 ? 'medium' : 'low';
+                
+                card.innerHTML = `
+                    <div class="stock-header">
+                        <div class="stock-info">
+                            <span class="stock-rank">#${index + 1}</span>
+                            <div>
+                                <div class="stock-name">${stock.name}</div>
+                                <span class="stock-code">${stock.symbol}</span>
+                            </div>
+                        </div>
+                        <span class="strategy-badge ${stock.strategy.toLowerCase()}">${stock.strategy}</span>
+                    </div>
+                    
+                    <div class="score-display">
+                        <span class="score-value">${stock.score.toFixed(1)}</span>
+                        <div class="score-bar">
+                            <div class="score-fill ${scoreClass}" style="width: ${stock.score}%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-grid">
+                        <div class="price-box">
+                            <div class="price-box label">현재가</div>
+                            <div class="price-box value">₩${formatPrice(stock.current_price)}</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-box label">목표가</div>
+                            <div class="price-box value target">₩${formatPrice(stock.target_price)}</div>
+                        </div>
+                        <div class="price-box">
+                            <div class="price-box label">손절가</div>
+                            <div class="price-box value stop">₩${formatPrice(stock.stop_loss)}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="rr-ratio">
+                        <span class="rr-label">손익비 (R:R)</span>
+                        <span class="rr-value">1:${stock.rr_ratio.toFixed(2)}</span>
+                    </div>
+                    
+                    <button class="detail-btn" onclick="openModal('${stock.symbol}', '${stock.name}', '${stock.strategy}')">
+                        차트 보기
+                    </button>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+        
+        // 필터 버튼 이벤트
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderStocks();
+            });
+        });
+        
+        // 모달 함수
+        function openModal(symbol, name, strategy) {
+            document.getElementById('modal-title').textContent = `${name} (${symbol}) - ${strategy}`;
+            document.getElementById('modal').classList.add('active');
+            
+            if (tvWidget) {
+                tvWidget.remove();
+            }
+            
+            tvWidget = new TradingView.widget({
+                container_id: 'tradingview-chart',
+                symbol: 'KRX:' + symbol,
+                interval: 'D',
+                timezone: 'Asia/Seoul',
+                theme: 'dark',
+                style: '1',
+                locale: 'kr',
+                toolbar_bg: '#1e293b',
+                enable_publishing: false,
+                hide_top_toolbar: false,
+                hide_legend: false,
+                save_image: false,
+                height: 400,
+                studies: ['RSI@tv-basicstudies', 'MASimple@tv-basicstudies'],
+                overrides: {
+                    'mainSeriesProperties.candleStyle.upColor': '#22c55e',
+                    'mainSeriesProperties.candleStyle.downColor': '#ef4444'
+                }
+            });
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            if (tvWidget) {
+                tvWidget.remove();
+                tvWidget = null;
+            }
+        }
+        
+        // 초기 렌더링
+        renderStocks();
+        
+        // ESC 키로 모달 닫기
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+        
+        // 모달 외부 클릭으로 닫기
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') closeModal();
+        });
+    </script>
+</body>
+</html>

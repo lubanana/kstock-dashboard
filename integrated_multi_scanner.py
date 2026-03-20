@@ -237,19 +237,24 @@ class IntegratedMultiStrategyScanner:
         }
     
     def calculate_atr_targets(self, current_price: float, atr: float, rr: float = 2.0) -> Dict:
-        """ATR 기반 목표가/손절가 계산"""
+        """ATR 기반 목표가/손절가 계산 - 실제 손익비 반환"""
         sl_multiplier = 1.5
         tp_multiplier = sl_multiplier * rr
         
         stop_loss = current_price - (atr * sl_multiplier)
         target_price = current_price + (atr * tp_multiplier)
         
+        # 실제 손익비 계산
+        potential_gain = target_price - current_price
+        potential_loss = current_price - stop_loss
+        actual_rr = potential_gain / potential_loss if potential_loss > 0 else rr
+        
         return {
-            'entry': current_price,
-            'stop_loss': stop_loss,
-            'target': target_price,
-            'rr_ratio': rr,
-            'atr': atr
+            'entry': round(current_price, 0),
+            'stop_loss': round(stop_loss, 0),
+            'target': round(target_price, 0),
+            'rr_ratio': round(actual_rr, 2),
+            'atr': round(atr, 2)
         }
     
     def scan(self) -> Dict:
@@ -424,6 +429,12 @@ class IntegratedMultiStrategyScanner:
             '001465': 'BYC우', '001470': '삼부토건', '001500': '현대차증권',
             '001510': 'SK증권', '001520': '동양', '001550': '조비',
             '001560': '제일연마', '001570': '금양', '001620': '케이비아이동국증권',
+            # 추가 종목 (결과에 나타난 종목들)
+            '049720': '고려신용정보', '139480': '이마트', '154030': '아이윈',
+            '001750': '한양증권', '002870': '신풍', '003300': '한일홀딩스',
+            '049770': '대우증권', '049800': '우진플라임', '002600': '조흥',
+            '001515': 'SK증권우', '002210': '동성제약', '002220': '한일철관',
+            '002240': '고려제강', '002270': '기신정기', '002600': '조흥',
         }
         return names.get(symbol, symbol)
     
