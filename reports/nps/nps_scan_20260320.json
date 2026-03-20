@@ -1,0 +1,112 @@
+{
+  "scan_date": "2026-03-20",
+  "total_symbols": 28,
+  "selected_count": 3,
+  "stocks": [
+    {
+      "symbol": "000660",
+      "name": "SK하이닉스",
+      "nps_score": 65,
+      "nps_details": {
+        "trend": {
+          "score": 35,
+          "max": 35
+        },
+        "momentum": {
+          "score": 30,
+          "max": 35,
+          "rsi": 44.678217821782184,
+          "return_20d": 15.113636363636363
+        },
+        "volume": {
+          "score": 0,
+          "max": 30
+        }
+      },
+      "rsi": 44.678217821782184,
+      "return_20d": 15.113636363636363,
+      "current_price": 1013000.0,
+      "entry_price": 1013000.0,
+      "target_price": 1292514.2857142857,
+      "stop_loss": 873242.8571428572,
+      "rr_ratio": 2.0,
+      "atr": 77642.85714285714,
+      "fib_level": "fib_382",
+      "fib_high": 1099000.0,
+      "fib_low": 728000.0,
+      "expected_return": 27.59272317021576,
+      "expected_loss": -13.79636158510788,
+      "strategy": "NPS"
+    },
+    {
+      "symbol": "032830",
+      "name": "삼성생명",
+      "nps_score": 65,
+      "nps_details": {
+        "trend": {
+          "score": 35,
+          "max": 35
+        },
+        "momentum": {
+          "score": 30,
+          "max": 35,
+          "rsi": 46.95340501792115,
+          "return_20d": 12.165450121654501
+        },
+        "volume": {
+          "score": 0,
+          "max": 30
+        }
+      },
+      "rsi": 46.95340501792115,
+      "return_20d": 12.165450121654501,
+      "current_price": 230500.0,
+      "entry_price": 230500.0,
+      "target_price": 287238.5714285714,
+      "stop_loss": 202130.7142857143,
+      "rr_ratio": 2.0,
+      "atr": 15760.714285714286,
+      "fib_level": "fib_382",
+      "fib_high": 259500.0,
+      "fib_low": 159300.0,
+      "expected_return": 24.615432290052677,
+      "expected_loss": -12.307716145026339,
+      "strategy": "NPS"
+    },
+    {
+      "symbol": "000150",
+      "name": "두산",
+      "nps_score": 65,
+      "nps_details": {
+        "trend": {
+          "score": 35,
+          "max": 35
+        },
+        "momentum": {
+          "score": 30,
+          "max": 35,
+          "rsi": 46.48936170212765,
+          "return_20d": 21.97452229299363
+        },
+        "volume": {
+          "score": 0,
+          "max": 30
+        }
+      },
+      "rsi": 46.48936170212765,
+      "return_20d": 21.97452229299363,
+      "current_price": 1149000.0,
+      "entry_price": 1149000.0,
+      "target_price": 1547571.4285714286,
+      "stop_loss": 949714.2857142857,
+      "rr_ratio": 2.0,
+      "atr": 110714.28571428571,
+      "fib_level": "fib_382",
+      "fib_high": 1295000.0,
+      "fib_low": 792000.0,
+      "expected_return": 34.68854904886237,
+      "expected_loss": -17.344274524431185,
+      "strategy": "NPS"
+    }
+  ]
+}
