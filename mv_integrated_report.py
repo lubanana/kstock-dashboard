@@ -6,8 +6,9 @@ M-Strategy + V-Strategy 통합 리포트 (피볼나치 + ATR 기반)
 
 import pandas as pd
 import json
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
+import shutil
 
 # Stock name mapping
 STOCK_NAMES = {
@@ -98,7 +99,7 @@ def generate_market_research(symbol: str) -> dict:
     }
 
 
-def generate_html_report(v_data: dict, m_data: dict, output_path: str):
+def generate_html_report(v_data: dict, m_data: dict, output_path: str, timestamp: str):
     """통합 HTML 리포트 생성"""
     
     scan_date = v_data.get('scan_date', datetime.now().strftime('%Y-%m-%d'))
@@ -122,255 +123,68 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
     # 가치점수 기준 정렬
     all_stocks.sort(key=lambda x: x.get('value_score', 0), reverse=True)
     
-    html = f'''<!DOCTYPE html>
+    html_parts = []
+    
+    # Header
+    html_parts.append(f'''<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M+V 통합 선정 종목 리포트 - {scan_date}</title>
+    <title>M+V 통합 선정 종목 리포트 - {timestamp}</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
     <style>
         :root {{
-            --primary: #3b82f6;
-            --success: #22c55e;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --purple: #8b5cf6;
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border: #334155;
+            --primary: #3b82f6; --success: #22c55e; --danger: #ef4444;
+            --warning: #f59e0b; --purple: #8b5cf6;
+            --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --text-muted: #94a3b8; --border: #334155;
         }}
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{
-            font-family: 'Segoe UI', 'Noto Sans KR', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }}
+        body {{ font-family: 'Segoe UI', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }}
         .container {{ max-width: 1400px; margin: 0 auto; padding: 20px; }}
-        
-        .header {{
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
-            border-radius: 16px;
-            margin-bottom: 30px;
-            border: 1px solid var(--border);
-        }}
+        .header {{ text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border); }}
         .header h1 {{ font-size: 2.5rem; margin-bottom: 10px; }}
         .header .subtitle {{ color: var(--text-muted); font-size: 1.1rem; }}
-        .header .badge {{
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
-            padding: 8px 20px;
-            border-radius: 20px;
-            margin-top: 15px;
-            font-weight: 600;
-        }}
-        
-        .strategy-tabs {{
-            display: flex;
-            gap: 10px;
-            margin-bottom: 30px;
-            justify-content: center;
-        }}
-        .tab {{
-            padding: 12px 30px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }}
-        .tab.active {{
-            background: var(--primary);
-            border-color: var(--primary);
-        }}
-        .tab:not(.active) {{
-            background: var(--card);
-            border-color: var(--border);
-            color: var(--text-muted);
-        }}
-        .tab:hover:not(.active) {{ border-color: var(--primary); color: var(--text); }}
-        
-        .stats-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }}
-        .stat-card {{
-            background: var(--card);
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }}
+        .header .timestamp {{ color: var(--warning); font-size: 1rem; margin-top: 5px; }}
+        .header .badge {{ display: inline-block; background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3)); padding: 8px 20px; border-radius: 20px; margin-top: 15px; font-weight: 600; }}
+        .stats-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }}
+        .stat-card {{ background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--border); text-align: center; }}
         .stat-card .label {{ color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }}
         .stat-card .value {{ font-size: 2rem; font-weight: 700; }}
-        .stat-card.primary .value {{ color: var(--primary); }}
-        .stat-card.success .value {{ color: var(--success); }}
-        .stat-card.purple .value {{ color: var(--purple); }}
-        .stat-card.warning .value {{ color: var(--warning); }}
-        
-        .stock-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }}
-        .stock-card {{
-            background: var(--card);
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }}
-        .stock-card::before {{
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--primary);
-        }}
+        .stock-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; margin-bottom: 30px; }}
+        .stock-card {{ background: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }}
+        .stock-card::before {{ content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--primary); }}
         .stock-card.v-series::before {{ background: var(--success); }}
         .stock-card.m-strategy::before {{ background: var(--purple); }}
-        .stock-card:hover {{
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
-        }}
-        
-        .stock-header {{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }}
+        .stock-card:hover {{ transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2); }}
+        .stock-header {{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }}
         .stock-name {{ font-size: 1.3rem; font-weight: 700; }}
         .stock-code {{ color: var(--text-muted); font-size: 0.9rem; }}
-        .source-badge {{
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }}
+        .source-badge {{ padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }}
         .source-badge.v-series {{ background: rgba(34, 197, 94, 0.2); color: var(--success); }}
         .source-badge.m-strategy {{ background: rgba(139, 92, 246, 0.2); color: var(--purple); }}
-        
-        .value-score {{
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
-            color: var(--success);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-        }}
-        
-        .price-row {{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 16px 0;
-        }}
-        .price-box {{
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-        }}
+        .value-score {{ background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1)); color: var(--success); padding: 8px 16px; border-radius: 20px; font-weight: 600; }}
+        .price-row {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }}
+        .price-box {{ background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; }}
         .price-box .label {{ font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }}
         .price-box .value {{ font-size: 1.1rem; font-weight: 600; }}
         .price-box.target {{ border-left: 3px solid var(--success); }}
         .price-box.stop {{ border-left: 3px solid var(--danger); }}
         .price-box.current {{ border-left: 3px solid var(--primary); }}
-        
-        .fib-info {{
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }}
-        .fib-tag {{
-            background: rgba(139, 92, 246, 0.2);
-            color: #a78bfa;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-        }}
-        .rr-badge {{
-            display: inline-block;
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }}
-        
-        .modal {{
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            overflow: auto;
-        }}
-        .modal-content {{
-            background: var(--card);
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 1000px;
-            border: 1px solid var(--border);
-            max-height: 90vh;
-            overflow-y: auto;
-        }}
-        .close {{
-            color: var(--text-muted);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }}
+        .fib-info {{ display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }}
+        .fib-tag {{ background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; }}
+        .rr-badge {{ display: inline-block; background: rgba(59, 130, 246, 0.2); color: var(--primary); padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; }}
+        .modal {{ display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); overflow: auto; }}
+        .modal-content {{ background: var(--card); margin: 50px auto; padding: 30px; border-radius: 16px; width: 90%; max-width: 1000px; border: 1px solid var(--border); max-height: 90vh; overflow-y: auto; }}
+        .close {{ color: var(--text-muted); float: right; font-size: 28px; font-weight: bold; cursor: pointer; }}
         .close:hover {{ color: var(--text); }}
-        
         .chart-container {{ height: 400px; margin: 20px 0; }}
-        
-        .research-section {{
-            background: rgba(255,255,255,0.03);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }}
-        .research-section h3 {{
-            color: var(--primary);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-        }}
-        .research-item {{
-            margin: 12px 0;
-            padding: 12px;
-            background: rgba(255,255,255,0.02);
-            border-radius: 8px;
-        }}
-        .research-item .label {{
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }}
+        .research-section {{ background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-top: 20px; }}
+        .research-section h3 {{ color: var(--primary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }}
+        .research-item {{ margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px; }}
+        .research-item .label {{ font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }}
     </style>
 </head>
 <body>
@@ -378,7 +192,7 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
         <div class="header">
             <h1>📈 M+V 통합 선정 종목 리포트</h1>
             <p class="subtitle">Fibonacci + ATR 기반 통합 전략</p>
-            <p class="subtitle">기준일: {scan_date}</p>
+            <p class="timestamp">생성일시: {timestamp} (KST)</p>
             <div class="badge">Value Score + M-Strategy + Fibonacci Retracement + ATR Risk Management</div>
         </div>
         
@@ -402,7 +216,7 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
         </div>
         
         <div class="stock-grid">
-'''
+''')
     
     # Stock cards
     for i, stock in enumerate(all_stocks, 1):
@@ -411,7 +225,7 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
         source_class = 'v-series' if stock.get('source') == 'V-Series' else 'm-strategy'
         source_badge_class = 'v-series' if stock.get('source') == 'V-Series' else 'm-strategy'
         
-        html += f'''
+        html_parts.append(f'''
             <div class="stock-card {source_class}" onclick="openModal('{stock['symbol']}')">
                 <div class="stock-header">
                     <div>
@@ -451,9 +265,9 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
                     <span class="fib-tag">ATR ₩{stock.get('atr', 0):,.0f}</span>
                 </div>
             </div>
-'''
+''')
     
-    html += '''
+    html_parts.append('''
         </div>
         
         <div id="stockModal" class="modal">
@@ -463,9 +277,7 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
             </div>
         </div>
     </div>
-    
-    <script>
-'''
+''')
     
     # Stock data for JavaScript
     stock_data_js = []
@@ -493,7 +305,8 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
             'catalyst': research['catalyst']
         })
     
-    html += f'''
+    html_parts.append(f'''
+    <script>
         const stockData = {json.dumps(stock_data_js, ensure_ascii=False)};
         
         function openModal(symbol) {{
@@ -503,65 +316,65 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
             const modalBody = document.getElementById('modalBody');
             modalBody.innerHTML = `
                 <h2>${{stock.name}} (${{stock.symbol}})</h2>
-                <p style="color: var(--text-muted)">${{stock.industry}} | ${{stock.source}}</p>
+                <p style="color: #94a3b8">${{stock.industry}} | ${{stock.source}}</p>
                 
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
-                    <div class="price-box current">
-                        <div class="label">현재가</div>
-                        <div class="value">₩${{stock.current_price.toLocaleString()}}</div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #3b82f6;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">현재가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600;">₩${{stock.current_price.toLocaleString()}}</div>
                     </div>
-                    <div class="price-box target">
-                        <div class="label">목표가</div>
-                        <div class="value" style="color: var(--success)">₩${{stock.target_price.toLocaleString()}}</div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #22c55e;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">목표가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">₩${{stock.target_price.toLocaleString()}}</div>
                     </div>
-                    <div class="price-box stop">
-                        <div class="label">손절가</div>
-                        <div class="value" style="color: var(--danger)">₩${{stock.stop_loss.toLocaleString()}}</div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #ef4444;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">손절가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">₩${{stock.stop_loss.toLocaleString()}}</div>
                     </div>
                 </div>
                 
                 <div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
                     <div>
-                        <span class="label">가치점수: </span>
-                        <span style="font-weight: 600; color: var(--success)">${{stock.value_score.toFixed(1)}}점</span>
+                        <span style="color: #94a3b8;">가치점수: </span>
+                        <span style="font-weight: 600; color: #22c55e;">${{stock.value_score.toFixed(1)}}점</span>
                     </div>
                     <div>
-                        <span class="label">손익비: </span>
-                        <span style="font-weight: 600; color: var(--primary)">1:${{stock.rr_ratio.toFixed(2)}}</span>
+                        <span style="color: #94a3b8;">손익비: </span>
+                        <span style="font-weight: 600; color: #3b82f6;">1:${{stock.rr_ratio.toFixed(2)}}</span>
                     </div>
                     <div>
-                        <span class="label">예상수익률: </span>
-                        <span style="font-weight: 600; color: var(--success)">+${{stock.expected_return.toFixed(1)}}%</span>
+                        <span style="color: #94a3b8;">예상수익률: </span>
+                        <span style="font-weight: 600; color: #22c55e;">+${{stock.expected_return.toFixed(1)}}%</span>
                     </div>
                 </div>
                 
-                <div class="fib-info">
-                    <span class="fib-tag">Fib Level: ${{stock.fib_level}}</span>
-                    <span class="fib-tag">Fib High: ₩${{stock.fib_high.toLocaleString()}}</span>
-                    <span class="fib-tag">Fib Low: ₩${{stock.fib_low.toLocaleString()}}</span>
-                    <span class="fib-tag">ATR: ₩${{stock.atr.toLocaleString()}}</span>
+                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib Level: ${{stock.fib_level}}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib High: ₩${{stock.fib_high.toLocaleString()}}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib Low: ₩${{stock.fib_low.toLocaleString()}}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">ATR: ₩${{stock.atr.toLocaleString()}}</span>
                 </div>
                 
-                <div class="research-section">
-                    <h3>📊 시장조사 리포트</h3>
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-top: 20px;">
+                    <h3 style="color: #3b82f6; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #3b82f6;">📊 시장조사 리포트</h3>
                     
-                    <div class="research-item">
-                        <div class="label">🎯 투자 전망</div>
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">🎯 투자 전망</div>
                         <div>${{stock.outlook}}</div>
                     </div>
                     
-                    <div class="research-item">
-                        <div class="label">⚠️ 주요 리스크</div>
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">⚠️ 주요 리스크</div>
                         <div>${{stock.risk}}</div>
                     </div>
                     
-                    <div class="research-item">
-                        <div class="label">🚀 촉매제</div>
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">🚀 촉매제</div>
                         <div>${{stock.catalyst}}</div>
                     </div>
                 </div>
                 
-                <div class="chart-container">
+                <div style="height: 400px; margin: 20px 0;">
                     <canvas id="modalChart"></canvas>
                 </div>
             `;
@@ -643,7 +456,9 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
     </script>
 </body>
 </html>
-'''
+''')
+    
+    html = ''.join(html_parts)
     
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
@@ -652,20 +467,30 @@ def generate_html_report(v_data: dict, m_data: dict, output_path: str):
 
 
 def main():
+    # 한국 시간 (KST, UTC+9)
+    kst = timezone(timedelta(hours=9))
+    now = datetime.now(kst)
+    
+    # 날짜-시간 형식: YYYYMMDD_HHMM (한국 시간)
+    timestamp = now.strftime('%Y%m%d_%H%M')
+    scan_date = now.strftime('%Y%m%d')
+    display_time = now.strftime('%Y-%m-%d %H:%M')
+    
     # 결과 파일 로드
-    v_result = load_scan_result('./reports/v_series/v_series_scan_20260320.json')
-    m_result = load_scan_result('./reports/m10/m10_scan_20260320.json')
+    v_result = load_scan_result(f'./reports/v_series/v_series_scan_{scan_date}.json')
+    m_result = load_scan_result(f'./reports/m10/m10_scan_{scan_date}.json')
     
     if not v_result:
         print("❌ V-Series 결과 파일을 찾을 수 없습니다")
         return
     
-    # HTML 리포트 생성
-    output_path = './reports/MV_Integrated_Report_20260320.html'
-    generate_html_report(v_result, m_result, output_path)
+    # HTML 리포트 생성 (날짜-시간 포함 파일명)
+    output_filename = f'MV_Integrated_Report_{timestamp}.html'
+    output_path = f'./reports/{output_filename}'
+    generate_html_report(v_result, m_result, output_path, f"{display_time} KST")
     
     # 요약 출력
-    print(f"\n📊 스캔 요약 (2026-03-20):")
+    print(f"\n📊 스캔 요약 ({display_time} KST):")
     print(f"   V-Series: {v_result.get('selected_count', 0)}개 종목")
     if m_result:
         print(f"   M-Strategy: {m_result.get('selected_count', 0)}개 종목")
@@ -678,9 +503,10 @@ def main():
         print(f"      {i}. {name} ({stock['symbol']}): {stock['value_score']:.1f}점, RR 1:{stock['rr_ratio']:.2f}")
     
     # GitHub에 복사
-    import shutil
-    shutil.copy(output_path, './docs/')
-    print(f"\n📁 GitHub Pages용으로 docs/ 폴더에 복사 완료")
+    docs_path = f'./docs/{output_filename}'
+    shutil.copy(output_path, docs_path)
+    print(f"\n📁 GitHub Pages용으로 docs/ 폴에 복사 완료: {output_filename}")
+    print(f"   URL: https://lubanana.github.io/kstock-dashboard/{output_filename}")
 
 
 if __name__ == '__main__':
