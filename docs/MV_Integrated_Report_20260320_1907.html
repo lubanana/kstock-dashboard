@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M+V 통합 선정 종목 리포트 - 2026-03-20 19:07 KST</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <style>
+        :root {
+            --primary: #3b82f6; --success: #22c55e; --danger: #ef4444;
+            --warning: #f59e0b; --purple: #8b5cf6;
+            --bg: #0f172a; --card: #1e293b; --text: #f1f5f9;
+            --text-muted: #94a3b8; --border: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); border-radius: 16px; margin-bottom: 30px; border: 1px solid var(--border); }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+        .header .timestamp { color: var(--warning); font-size: 1rem; margin-top: 5px; }
+        .header .badge { display: inline-block; background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3)); padding: 8px 20px; border-radius: 20px; margin-top: 15px; font-weight: 600; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--border); text-align: center; }
+        .stat-card .label { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 8px; }
+        .stat-card .value { font-size: 2rem; font-weight: 700; }
+        .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stock-card { background: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .stock-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--primary); }
+        .stock-card.v-series::before { background: var(--success); }
+        .stock-card.m-strategy::before { background: var(--purple); }
+        .stock-card:hover { transform: translateY(-4px); border-color: var(--primary); box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2); }
+        .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .stock-name { font-size: 1.3rem; font-weight: 700; }
+        .stock-code { color: var(--text-muted); font-size: 0.9rem; }
+        .source-badge { padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+        .source-badge.v-series { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+        .source-badge.m-strategy { background: rgba(139, 92, 246, 0.2); color: var(--purple); }
+        .value-score { background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1)); color: var(--success); padding: 8px 16px; border-radius: 20px; font-weight: 600; }
+        .price-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+        .price-box { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; }
+        .price-box .label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+        .price-box .value { font-size: 1.1rem; font-weight: 600; }
+        .price-box.target { border-left: 3px solid var(--success); }
+        .price-box.stop { border-left: 3px solid var(--danger); }
+        .price-box.current { border-left: 3px solid var(--primary); }
+        .fib-info { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+        .fib-tag { background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; }
+        .rr-badge { display: inline-block; background: rgba(59, 130, 246, 0.2); color: var(--primary); padding: 4px 12px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); overflow: auto; }
+        .modal-content { background: var(--card); margin: 50px auto; padding: 30px; border-radius: 16px; width: 90%; max-width: 1000px; border: 1px solid var(--border); max-height: 90vh; overflow-y: auto; }
+        .close { color: var(--text-muted); float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: var(--text); }
+        .chart-container { height: 400px; margin: 20px 0; }
+        .research-section { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-top: 20px; }
+        .research-section h3 { color: var(--primary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .research-item { margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px; }
+        .research-item .label { font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 M+V 통합 선정 종목 리포트</h1>
+            <p class="subtitle">Fibonacci + ATR 기반 통합 전략</p>
+            <p class="timestamp">생성일시: 2026-03-20 19:07 KST (KST)</p>
+            <div class="badge">Value Score + M-Strategy + Fibonacci Retracement + ATR Risk Management</div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card primary">
+                <div class="label">총 선정 종목</div>
+                <div class="value">10개</div>
+            </div>
+            <div class="stat-card success">
+                <div class="label">V-Series</div>
+                <div class="value">10개</div>
+            </div>
+            <div class="stat-card purple">
+                <div class="label">M-Strategy</div>
+                <div class="value">0개</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="label">평균 손익비</div>
+                <div class="value">1:3.1</div>
+            </div>
+        </div>
+        
+        <div class="stock-grid">
+
+            <div class="stock-card v-series" onclick="openModal('000150')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">두산</div>
+                        <div class="stock-code">000150 | 중공업/건설</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">83점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩1,189,000</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩1,520,570</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩1,012,429</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:1.88</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +27.9% / 손실 -14.9%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_382</span>
+                    <span class="fib-tag">ATR ₩117,714</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('005930')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">삼성전자</div>
+                        <div class="stock-code">005930 | 반도체/전자</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">82점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩208,500</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩257,423</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩187,071</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:2.28</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +23.5% / 손실 -10.3%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_382</span>
+                    <span class="fib-tag">ATR ₩14,286</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('032830')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">삼성생명</div>
+                        <div class="stock-code">032830 | 금융/보험</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">82점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩235,000</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩302,142</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩210,877</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:2.78</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +28.6% / 손실 -10.3%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩16,082</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('016360')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">삼성증권</div>
+                        <div class="stock-code">016360 | 금융/증권</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">78점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩101,500</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩139,547</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩92,543</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:4.25</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +37.5% / 손실 -8.8%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩5,971</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('000270')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">기아</div>
+                        <div class="stock-code">000270 | 자동차</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">76점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩175,100</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩251,063</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩155,996</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:3.98</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +43.4% / 손실 -10.9%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩12,736</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('006400')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">삼성SDI</div>
+                        <div class="stock-code">006400 | 배터리/에너지</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">76점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩405,000</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩550,750</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩360,429</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:3.27</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +36.0% / 손실 -11.0%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩29,714</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('005380')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">현대차</div>
+                        <div class="stock-code">005380 | 자동차</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">74점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩545,000</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩808,128</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩469,357</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:3.48</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +48.3% / 손실 -13.9%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_618</span>
+                    <span class="fib-tag">ATR ₩50,429</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('009830')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">한화솔루션</div>
+                        <div class="stock-code">009830 | 에너지/화학</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">71점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩50,800</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩71,660</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩43,761</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:2.96</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +41.1% / 손실 -13.9%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩4,693</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('003490')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">대한항공</div>
+                        <div class="stock-code">003490 | 항공/운송</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">69점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩25,500</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩34,540</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩23,229</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:3.98</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +35.4% / 손실 -8.9%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩1,514</span>
+                </div>
+            </div>
+
+            <div class="stock-card v-series" onclick="openModal('004170')">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">신세계</div>
+                        <div class="stock-code">004170 | 유통/백화점</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span class="source-badge v-series">V-Series</span>
+                        <div class="value-score" style="margin-top: 8px;">66점</div>
+                    </div>
+                </div>
+                
+                <div class="price-row">
+                    <div class="price-box current">
+                        <div class="label">현재가</div>
+                        <div class="value">₩345,500</div>
+                    </div>
+                    <div class="price-box target">
+                        <div class="label">목표가</div>
+                        <div class="value" style="color: var(--success)">₩434,558</div>
+                    </div>
+                    <div class="price-box stop">
+                        <div class="label">손절가</div>
+                        <div class="value" style="color: var(--danger)">₩304,036</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="rr-badge">손익비 1:2.15</span>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">
+                        수익 +25.8% / 손실 -12.0%
+                    </span>
+                </div>
+                
+                <div class="fib-info">
+                    <span class="fib-tag">Fib fib_50</span>
+                    <span class="fib-tag">ATR ₩27,643</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <div id="stockModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const stockData = [{"symbol": "000150", "name": "두산", "industry": "중공업/건설", "source": "V-Series", "value_score": 83.2361436170494, "current_price": 1189000.0, "target_price": 1520570.0, "stop_loss": 1012428.5714285714, "rr_ratio": 1.8778236245954685, "expected_return": 27.886459209419677, "expected_loss": -14.850414513997363, "fib_level": "fib_382", "atr": 117714.28571428571, "fib_high": 1295000.0, "fib_low": 930000.0, "outlook": "업황 개선 및 수익성 회복 기대", "risk": "경기 변동성 및 환율 리스크", "catalyst": "실적 개선, 신사업 진출"}, {"symbol": "005930", "name": "삼성전자", "industry": "반도체/전자", "source": "V-Series", "value_score": 82.24056918395583, "current_price": 208500.0, "target_price": 257422.6, "stop_loss": 187071.42857142858, "rr_ratio": 2.283054666666668, "expected_return": 23.464076738609116, "expected_loss": -10.277492291880778, "fib_level": "fib_382", "atr": 14285.714285714286, "fib_high": 223000.0, "fib_low": 167300.0, "outlook": "AI 반도체 수요 증가로 중장기 성장세 지속 예상", "risk": "미중 무역분쟁 및 공급망 리스크", "catalyst": "AI 서버 투자 증가, HBM 수요 확대"}, {"symbol": "032830", "name": "삼성생명", "industry": "금융/보험", "source": "V-Series", "value_score": 81.60605005594587, "current_price": 235000.0, "target_price": 302142.0, "stop_loss": 210876.7857142857, "rr_ratio": 2.783294100229476, "expected_return": 28.571063829787235, "expected_loss": -10.265197568389059, "fib_level": "fib_50", "atr": 16082.142857142857, "fib_high": 259500.0, "fib_low": 190500.0, "outlook": "업황 개선 및 수익성 회복 기대", "risk": "경기 변동성 및 환율 리스크", "catalyst": "실적 개선, 신사업 진출"}, {"symbol": "016360", "name": "삼성증권", "industry": "금융/증권", "source": "V-Series", "value_score": 77.55201712447894, "current_price": 101500.0, "target_price": 139546.8, "stop_loss": 92542.85714285714, "rr_ratio": 4.247649122807017, "expected_return": 37.48453201970442, "expected_loss": -8.824771287825472, "fib_level": "fib_50", "atr": 5971.428571428572, "fib_high": 119400.0, "fib_low": 86800.0, "outlook": "업황 개선 및 수익성 회복 기대", "risk": "경기 변동성 및 환율 리스크", "catalyst": "실적 개선, 신사업 진출"}, {"symbol": "000270", "name": "기아", "industry": "자동차", "source": "V-Series", "value_score": 75.72827249190813, "current_price": 175100.0, "target_price": 251063.2, "stop_loss": 155996.42857142858, "rr_ratio": 3.9763873621237638, "expected_return": 43.38275271273558, "expected_loss": -10.910092192216688, "fib_level": "fib_50", "atr": 12735.714285714286, "fib_high": 212500.0, "fib_low": 150100.0, "outlook": "전기차 전환 가속화 및 수출 호조", "risk": "원자재 가격 상승 및 환율 변동", "catalyst": "신차 출시, 전기차 수요 증가"}, {"symbol": "006400", "name": "삼성SDI", "industry": "배터리/에너지", "source": "V-Series", "value_score": 75.70545408069567, "current_price": 405000.0, "target_price": 550750.0, "stop_loss": 360428.5714285714, "rr_ratio": 3.2700320512820507, "expected_return": 35.98765432098766, "expected_loss": -11.005291005291006, "fib_level": "fib_50", "atr": 29714.285714285714, "fib_high": 473500.0, "fib_low": 348500.0, "outlook": "2차 전지 수요 지속 성장", "risk": "원재료 가격 변동 및 공급 과잉 우려", "catalyst": "전기차 판매 증가, ESS 수요"}, {"symbol": "005380", "name": "현대차", "industry": "자동차", "source": "V-Series", "value_score": 73.7778303872918, "current_price": 545000.0, "target_price": 808128.0, "stop_loss": 469357.14285714284, "rr_ratio": 3.478557129367327, "expected_return": 48.28036697247706, "expected_loss": -13.879423328964617, "fib_level": "fib_618", "atr": 50428.57142857143, "fib_high": 687000.0, "fib_low": 491000.0, "outlook": "전기차 전환 가속화 및 수출 호조", "risk": "원자재 가격 상승 및 환율 변동", "catalyst": "신차 출시, 전기차 수요 증가"}, {"symbol": "009830", "name": "한화솔루션", "industry": "에너지/화학", "source": "V-Series", "value_score": 71.18222249018497, "current_price": 50800.0, "target_price": 71660.0, "stop_loss": 43760.71428571428, "rr_ratio": 2.963368848300354, "expected_return": 41.06299212598425, "expected_loss": -13.856861642294719, "fib_level": "fib_50", "atr": 4692.857142857143, "fib_high": 59300.0, "fib_low": 39300.0, "outlook": "정유 마진 개선 및 태양광 사업 확대", "risk": "유가 변동성 및 환율 리스크", "catalyst": "정유 마진 회복, 신재생에너지 투자"}, {"symbol": "003490", "name": "대한항공", "industry": "항공/운송", "source": "V-Series", "value_score": 68.6974423761044, "current_price": 25500.0, "target_price": 34539.5, "stop_loss": 23228.571428571428, "rr_ratio": 3.979654088050313, "expected_return": 35.449019607843134, "expected_loss": -8.907563025210088, "fib_level": "fib_50", "atr": 1514.2857142857142, "fib_high": 29750.0, "fib_low": 22000.0, "outlook": "업황 개선 및 수익성 회복 기대", "risk": "경기 변동성 및 환율 리스크", "catalyst": "실적 개선, 신사업 진출"}, {"symbol": "004170", "name": "신세계", "industry": "유통/백화점", "source": "V-Series", "value_score": 65.56364359296956, "current_price": 345500.0, "target_price": 434558.0, "stop_loss": 304035.7142857143, "rr_ratio": 2.1478242894056865, "expected_return": 25.776555716353112, "expected_loss": -12.001240438288185, "fib_level": "fib_50", "atr": 27642.85714285714, "fib_high": 384500.0, "fib_low": 303500.0, "outlook": "업황 개선 및 수익성 회복 기대", "risk": "경기 변동성 및 환율 리스크", "catalyst": "실적 개선, 신사업 진출"}];
+        
+        function openModal(symbol) {
+            const stock = stockData.find(s => s.symbol === symbol);
+            if (!stock) return;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <h2>${stock.name} (${stock.symbol})</h2>
+                <p style="color: #94a3b8">${stock.industry} | ${stock.source}</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 20px 0;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #3b82f6;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">현재가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600;">₩${stock.current_price.toLocaleString()}</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #22c55e;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">목표가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #22c55e;">₩${stock.target_price.toLocaleString()}</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; text-align: center; border-left: 3px solid #ef4444;">
+                        <div style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 4px;">손절가</div>
+                        <div style="font-size: 1.1rem; font-weight: 600; color: #ef4444;">₩${stock.stop_loss.toLocaleString()}</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+                    <div>
+                        <span style="color: #94a3b8;">가치점수: </span>
+                        <span style="font-weight: 600; color: #22c55e;">${stock.value_score.toFixed(1)}점</span>
+                    </div>
+                    <div>
+                        <span style="color: #94a3b8;">손익비: </span>
+                        <span style="font-weight: 600; color: #3b82f6;">1:${stock.rr_ratio.toFixed(2)}</span>
+                    </div>
+                    <div>
+                        <span style="color: #94a3b8;">예상수익률: </span>
+                        <span style="font-weight: 600; color: #22c55e;">+${stock.expected_return.toFixed(1)}%</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib Level: ${stock.fib_level}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib High: ₩${stock.fib_high.toLocaleString()}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">Fib Low: ₩${stock.fib_low.toLocaleString()}</span>
+                    <span style="background: rgba(139, 92, 246, 0.2); color: #a78bfa; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem;">ATR: ₩${stock.atr.toLocaleString()}</span>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; margin-top: 20px;">
+                    <h3 style="color: #3b82f6; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #3b82f6;">📊 시장조사 리포트</h3>
+                    
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">🎯 투자 전망</div>
+                        <div>${stock.outlook}</div>
+                    </div>
+                    
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">⚠️ 주요 리스크</div>
+                        <div>${stock.risk}</div>
+                    </div>
+                    
+                    <div style="margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.02); border-radius: 8px;">
+                        <div style="font-weight: 600; color: #94a3b8; margin-bottom: 4px;">🚀 촉매제</div>
+                        <div>${stock.catalyst}</div>
+                    </div>
+                </div>
+                
+                <div style="height: 400px; margin: 20px 0;">
+                    <canvas id="modalChart"></canvas>
+                </div>
+            `;
+            
+            document.getElementById('stockModal').style.display = 'block';
+            drawChart(stock);
+        }
+        
+        function closeModal() {
+            document.getElementById('stockModal').style.display = 'none';
+        }
+        
+        function drawChart(stock) {
+            const ctx = document.getElementById('modalChart').getContext('2d');
+            
+            const labels = ['1월', '2월', '3월', '4월', '5월', '6월'];
+            const data = [
+                stock.current_price * 0.9,
+                stock.current_price * 0.95,
+                stock.current_price * 0.92,
+                stock.current_price * 0.98,
+                stock.current_price * 1.02,
+                stock.current_price
+            ];
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '주가',
+                        data: data,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: '목표가',
+                        data: Array(6).fill(stock.target_price),
+                        borderColor: '#22c55e',
+                        borderDash: [5, 5],
+                        pointRadius: 0
+                    }, {
+                        label: '손절가',
+                        data: Array(6).fill(stock.stop_loss),
+                        borderColor: '#ef4444',
+                        borderDash: [5, 5],
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#f1f5f9' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: '#334155' }
+                        },
+                        x: {
+                            ticks: { color: '#94a3b8' },
+                            grid: { color: '#334155' }
+                        }
+                    }
+                }
+            });
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('stockModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
