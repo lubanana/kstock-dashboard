@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ultimate Stock Screener - Top Picks</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 20px; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 20px; }
+        .header h1 { margin: 0; font-size: 28px; }
+        .header p { margin: 10px 0 0 0; opacity: 0.9; }
+        .section { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .section h2 { color: #333; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #667eea; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #f8f9ff; }
+        .rank { font-weight: bold; font-size: 18px; width: 50px; text-align: center; }
+        .score { font-weight: bold; color: #667eea; font-size: 20px; }
+        .price { font-weight: bold; color: #333; }
+        .target { color: #28a745; font-weight: bold; }
+        .stop { color: #dc3545; }
+        .rr { color: #666; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 11px; margin: 2px; }
+        .badge-blue { background: #e3f2fd; color: #1976d2; }
+        .badge-green { background: #e8f5e9; color: #388e3c; }
+        .badge-orange { background: #fff3e0; color: #f57c00; }
+        .badge-red { background: #ffebee; color: #d32f2f; }
+        .reasons { font-size: 12px; color: #666; }
+        .top3 { background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%); color: #333; }
+        .methodology { background: #f8f9fa; padding: 15px; border-radius: 5px; font-size: 13px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Ultimate Stock Screener</h1>
+        <p>내일 급등 가능성 높은 종목 TOP 10 (1000점 체계) | 생성일: 2026-03-22 23:08</p>
+    </div>
+    
+    <div class="section">
+        <h2>🏆 TOP 10 급등 예상 종목</h2>
+        <table>
+            <tr>
+                <th>순위</th>
+                <th>종목</th>
+                <th>현재가</th>
+                <th>종합점수</th>
+                <th>목표가</th>
+                <th>손절가</th>
+                <th>손익비</th>
+                <th>선정근거</th>
+            </tr>
+
+            <tr class="top3">
+                <td class="rank">#1</td>
+                <td><strong>미국반도체</strong><br><small>390390</small></td>
+                <td class="price">40,390원</td>
+                <td class="score">700점</td>
+                <td class="target">44,074원</td>
+                <td class="stop">38,548원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-red">주가>EMA20</span> <span class="badge badge-red">정배열20>60</span> <span class="badge badge-red">정배열60>120</span> <span class="badge badge-red">52주고가-10%</span> <span class="badge badge-red">RSI50</span></td>
+            </tr>
+
+            <tr class="top3">
+                <td class="rank">#2</td>
+                <td><strong>미국필라델피아AI반도체나스닥</strong><br><small>497570</small></td>
+                <td class="price">17,025원</td>
+                <td class="score">700점</td>
+                <td class="target">18,634원</td>
+                <td class="stop">16,221원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-red">주가>EMA20</span> <span class="badge badge-red">정배열20>60</span> <span class="badge badge-red">정배열60>120</span> <span class="badge badge-red">52주고가-10%</span> <span class="badge badge-red">RSI51</span></td>
+            </tr>
+
+            <tr class="top3">
+                <td class="rank">#3</td>
+                <td><strong>미국나스닥100액티브</strong><br><small>426030</small></td>
+                <td class="price">40,530원</td>
+                <td class="score">690점</td>
+                <td class="target">45,349원</td>
+                <td class="stop">38,121원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-red">주가>EMA20</span> <span class="badge badge-red">정배열20>60</span> <span class="badge badge-red">정배열60>120</span> <span class="badge badge-red">52주고가-10%</span> <span class="badge badge-red">60일+20%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#4</td>
+                <td><strong>글로벌AI</strong><br><small>471040</small></td>
+                <td class="price">25,840원</td>
+                <td class="score">690점</td>
+                <td class="target">28,946원</td>
+                <td class="stop">24,287원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-orange">주가>EMA20</span> <span class="badge badge-orange">정배열20>60</span> <span class="badge badge-orange">정배열60>120</span> <span class="badge badge-orange">52주고가-10%</span> <span class="badge badge-orange">60일+30%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#5</td>
+                <td><strong>미국AI전력핵심인프라</strong><br><small>487230</small></td>
+                <td class="price">20,925원</td>
+                <td class="score">690점</td>
+                <td class="target">23,255원</td>
+                <td class="stop">19,760원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-orange">주가>EMA20</span> <span class="badge badge-orange">정배열20>60</span> <span class="badge badge-orange">정배열60>120</span> <span class="badge badge-orange">52주고가-10%</span> <span class="badge badge-orange">60일+28%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#6</td>
+                <td><strong>미국필라델피아반도체나스닥</strong><br><small>381180</small></td>
+                <td class="price">30,875원</td>
+                <td class="score">680점</td>
+                <td class="target">33,804원</td>
+                <td class="stop">29,411원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-orange">주가>EMA20</span> <span class="badge badge-orange">정배열20>60</span> <span class="badge badge-orange">정배열60>120</span> <span class="badge badge-orange">52주고가-10%</span> <span class="badge badge-orange">RSI51</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#7</td>
+                <td><strong>금화피에스시</strong><br><small>036190</small></td>
+                <td class="price">38,800원</td>
+                <td class="score">670점</td>
+                <td class="target">45,643원</td>
+                <td class="stop">35,379원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-blue">주가>EMA20</span> <span class="badge badge-blue">정배열20>60</span> <span class="badge badge-blue">정배열60>120</span> <span class="badge badge-blue">52주고가-10%</span> <span class="badge badge-blue">60일+27%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#8</td>
+                <td><strong>한전KPS</strong><br><small>051600</small></td>
+                <td class="price">67,500원</td>
+                <td class="score">670점</td>
+                <td class="target">82,014원</td>
+                <td class="stop">60,243원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-blue">주가>EMA20</span> <span class="badge badge-blue">정배열20>60</span> <span class="badge badge-blue">정배열60>120</span> <span class="badge badge-blue">52주고가-10%</span> <span class="badge badge-blue">60일+30%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#9</td>
+                <td><strong>건설</strong><br><small>117700</small></td>
+                <td class="price">7,630원</td>
+                <td class="score">670점</td>
+                <td class="target">9,551원</td>
+                <td class="stop">6,669원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-blue">주가>EMA20</span> <span class="badge badge-blue">정배열20>60</span> <span class="badge badge-blue">정배열60>120</span> <span class="badge badge-blue">52주고가-10%</span> <span class="badge badge-blue">60일+89%</span></td>
+            </tr>
+
+            <tr class="">
+                <td class="rank">#10</td>
+                <td><strong>신재생에너지액티브</strong><br><small>385510</small></td>
+                <td class="price">45,400원</td>
+                <td class="score">670점</td>
+                <td class="target">56,536원</td>
+                <td class="stop">39,832원</td>
+                <td class="rr">1:2.0</td>
+                <td class="reasons"><span class="badge badge-blue">주가>EMA20</span> <span class="badge badge-blue">정배열20>60</span> <span class="badge badge-blue">정배열60>120</span> <span class="badge badge-blue">52주고가-10%</span> <span class="badge badge-blue">60일+57%</span></td>
+            </tr>
+
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>📊 점수 세부 내역 (TOP 10)</h2>
+        <table>
+            <tr>
+                <th>순위</th>
+                <th>종목</th>
+                <th>추세<br>(250)</th>
+                <th>모멘텀<br>(200)</th>
+                <th>거래량<br>(200)</th>
+                <th>리스크<br>(150)</th>
+                <th>피봇<br>(200)</th>
+                <th>총점</th>
+            </tr>
+
+            <tr>
+                <td>#1</td>
+                <td><strong>미국반도체</strong></td>
+                <td>220</td>
+                <td>130</td>
+                <td>120</td>
+                <td>110</td>
+                <td>120</td>
+                <td class="score">700</td>
+            </tr>
+
+            <tr>
+                <td>#2</td>
+                <td><strong>미국필라델피아AI반도체나스닥</strong></td>
+                <td>220</td>
+                <td>130</td>
+                <td>120</td>
+                <td>110</td>
+                <td>120</td>
+                <td class="score">700</td>
+            </tr>
+
+            <tr>
+                <td>#3</td>
+                <td><strong>미국나스닥100액티브</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>120</td>
+                <td>60</td>
+                <td>80</td>
+                <td class="score">690</td>
+            </tr>
+
+            <tr>
+                <td>#4</td>
+                <td><strong>글로벌AI</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>120</td>
+                <td>60</td>
+                <td>80</td>
+                <td class="score">690</td>
+            </tr>
+
+            <tr>
+                <td>#5</td>
+                <td><strong>미국AI전력핵심인프라</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>80</td>
+                <td>60</td>
+                <td>120</td>
+                <td class="score">690</td>
+            </tr>
+
+            <tr>
+                <td>#6</td>
+                <td><strong>미국필라델피아반도체나스닥</strong></td>
+                <td>220</td>
+                <td>130</td>
+                <td>100</td>
+                <td>110</td>
+                <td>120</td>
+                <td class="score">680</td>
+            </tr>
+
+            <tr>
+                <td>#7</td>
+                <td><strong>금화피에스시</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>100</td>
+                <td>60</td>
+                <td>80</td>
+                <td class="score">670</td>
+            </tr>
+
+            <tr>
+                <td>#8</td>
+                <td><strong>한전KPS</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>160</td>
+                <td>0</td>
+                <td>80</td>
+                <td class="score">670</td>
+            </tr>
+
+            <tr>
+                <td>#9</td>
+                <td><strong>건설</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>160</td>
+                <td>0</td>
+                <td>80</td>
+                <td class="score">670</td>
+            </tr>
+
+            <tr>
+                <td>#10</td>
+                <td><strong>신재생에너지액티브</strong></td>
+                <td>250</td>
+                <td>180</td>
+                <td>160</td>
+                <td>0</td>
+                <td>80</td>
+                <td class="score">670</td>
+            </tr>
+
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>🔍 참조용 종목 (11-50위)</h2>
+        <table>
+            <tr>
+                <th>순위</th>
+                <th>종목</th>
+                <th>현재가</th>
+                <th>점수</th>
+                <th>RSI</th>
+                <th>거래량비율</th>
+                <th>주요 특징</th>
+            </tr>
+
+            <tr>
+                <td>#11</td>
+                <td><strong>비에이치</strong><br><small>090460</small></td>
+                <td>22,150원</td>
+                <td>650점</td>
+                <td>60.2</td>
+                <td>3.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#12</td>
+                <td><strong>건설</strong><br><small>139220</small></td>
+                <td>8,310원</td>
+                <td>650점</td>
+                <td>53.5</td>
+                <td>2.7x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#13</td>
+                <td><strong>신재생에너지</strong><br><small>377990</small></td>
+                <td>28,150원</td>
+                <td>650점</td>
+                <td>56.3</td>
+                <td>3.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#14</td>
+                <td><strong>글로벌원자력</strong><br><small>442320</small></td>
+                <td>45,735원</td>
+                <td>650점</td>
+                <td>51.6</td>
+                <td>0.3x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#15</td>
+                <td><strong>글로벌AI인공지능액티브</strong><br><small>456600</small></td>
+                <td>44,435원</td>
+                <td>650점</td>
+                <td>57.8</td>
+                <td>1.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#16</td>
+                <td><strong>태광</strong><br><small>023160</small></td>
+                <td>35,700원</td>
+                <td>640점</td>
+                <td>64.4</td>
+                <td>3.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#17</td>
+                <td><strong>에스씨디</strong><br><small>042110</small></td>
+                <td>1,451원</td>
+                <td>640점</td>
+                <td>62.7</td>
+                <td>2.9x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#18</td>
+                <td><strong>에너지</strong><br><small>100840</small></td>
+                <td>53,300원</td>
+                <td>640점</td>
+                <td>60.1</td>
+                <td>6.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#19</td>
+                <td><strong>우진</strong><br><small>105840</small></td>
+                <td>31,200원</td>
+                <td>640점</td>
+                <td>61.0</td>
+                <td>4.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#20</td>
+                <td><strong>엔비디아밸류체인액티브</strong><br><small>483320</small></td>
+                <td>18,190원</td>
+                <td>640점</td>
+                <td>53.6</td>
+                <td>0.4x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#21</td>
+                <td><strong>글로벌</strong><br><small>001250</small></td>
+                <td>2,750원</td>
+                <td>630점</td>
+                <td>59.7</td>
+                <td>3.2x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#22</td>
+                <td><strong>금호건설</strong><br><small>002990</small></td>
+                <td>5,630원</td>
+                <td>630점</td>
+                <td>60.7</td>
+                <td>5.4x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#23</td>
+                <td><strong>코오롱글로벌</strong><br><small>003070</small></td>
+                <td>11,970원</td>
+                <td>630점</td>
+                <td>64.3</td>
+                <td>7.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#24</td>
+                <td><strong>네패스</strong><br><small>033640</small></td>
+                <td>21,050원</td>
+                <td>630점</td>
+                <td>57.5</td>
+                <td>5.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#25</td>
+                <td><strong>네패스아크</strong><br><small>330860</small></td>
+                <td>25,000원</td>
+                <td>630점</td>
+                <td>63.1</td>
+                <td>8.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#26</td>
+                <td><strong>대명에너지</strong><br><small>389260</small></td>
+                <td>23,350원</td>
+                <td>630점</td>
+                <td>58.4</td>
+                <td>3.3x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#27</td>
+                <td><strong>미국나스닥AI테크액티브</strong><br><small>411420</small></td>
+                <td>23,655원</td>
+                <td>630점</td>
+                <td>58.7</td>
+                <td>1.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#28</td>
+                <td><strong>미국AI테크액티브</strong><br><small>495940</small></td>
+                <td>16,535원</td>
+                <td>630점</td>
+                <td>61.6</td>
+                <td>1.7x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#29</td>
+                <td><strong>한국콜마</strong><br><small>161890</small></td>
+                <td>76,700원</td>
+                <td>620점</td>
+                <td>50.5</td>
+                <td>2.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#30</td>
+                <td><strong>미국반도체NYSE</strong><br><small>469060</small></td>
+                <td>24,495원</td>
+                <td>620점</td>
+                <td>49.7</td>
+                <td>0.7x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#31</td>
+                <td><strong>미국반도체데일리타겟커버드콜</strong><br><small>480040</small></td>
+                <td>13,920원</td>
+                <td>620점</td>
+                <td>50.7</td>
+                <td>0.8x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#32</td>
+                <td><strong>구글밸류체인액티브</strong><br><small>483340</small></td>
+                <td>18,085원</td>
+                <td>620점</td>
+                <td>55.5</td>
+                <td>1.0x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#33</td>
+                <td><strong>코오롱글로벌우</strong><br><small>003075</small></td>
+                <td>16,380원</td>
+                <td>610점</td>
+                <td>50.7</td>
+                <td>4.2x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#34</td>
+                <td><strong>디아이</strong><br><small>003160</small></td>
+                <td>38,750원</td>
+                <td>610점</td>
+                <td>54.1</td>
+                <td>1.2x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#35</td>
+                <td><strong>국영지앤엠</strong><br><small>006050</small></td>
+                <td>1,390원</td>
+                <td>610점</td>
+                <td>59.9</td>
+                <td>3.8x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#36</td>
+                <td><strong>코리아써키트</strong><br><small>007810</small></td>
+                <td>64,600원</td>
+                <td>610점</td>
+                <td>55.7</td>
+                <td>1.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#37</td>
+                <td><strong>삼호개발</strong><br><small>010960</small></td>
+                <td>4,200원</td>
+                <td>610점</td>
+                <td>53.1</td>
+                <td>3.0x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#38</td>
+                <td><strong>태양</strong><br><small>053620</small></td>
+                <td>7,160원</td>
+                <td>610점</td>
+                <td>56.0</td>
+                <td>1.7x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#39</td>
+                <td><strong>모바일어플라이언스</strong><br><small>087260</small></td>
+                <td>2,240원</td>
+                <td>610점</td>
+                <td>59.4</td>
+                <td>2.9x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#40</td>
+                <td><strong>중공업</strong><br><small>097230</small></td>
+                <td>28,450원</td>
+                <td>610점</td>
+                <td>59.0</td>
+                <td>1.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#41</td>
+                <td><strong>티엠씨</strong><br><small>217590</small></td>
+                <td>23,600원</td>
+                <td>610점</td>
+                <td>66.7</td>
+                <td>4.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#42</td>
+                <td><strong>심텍</strong><br><small>222800</small></td>
+                <td>62,500원</td>
+                <td>610점</td>
+                <td>59.8</td>
+                <td>1.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#43</td>
+                <td><strong>이앤씨</strong><br><small>375500</small></td>
+                <td>67,400원</td>
+                <td>610점</td>
+                <td>68.1</td>
+                <td>5.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#44</td>
+                <td><strong>태양광</strong><br><small>457990</small></td>
+                <td>37,310원</td>
+                <td>610점</td>
+                <td>56.8</td>
+                <td>2.4x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#45</td>
+                <td><strong>글로벌AI전력인프라액티브</strong><br><small>491010</small></td>
+                <td>24,585원</td>
+                <td>610점</td>
+                <td>55.1</td>
+                <td>0.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#46</td>
+                <td><strong>하림지주</strong><br><small>003380</small></td>
+                <td>17,700원</td>
+                <td>600점</td>
+                <td>56.5</td>
+                <td>3.6x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#47</td>
+                <td><strong>동일산업</strong><br><small>004890</small></td>
+                <td>39,500원</td>
+                <td>600점</td>
+                <td>49.4</td>
+                <td>2.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#48</td>
+                <td><strong>한신공영</strong><br><small>004960</small></td>
+                <td>17,730원</td>
+                <td>600점</td>
+                <td>66.6</td>
+                <td>5.1x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#49</td>
+                <td><strong>경인전자</strong><br><small>009140</small></td>
+                <td>22,900원</td>
+                <td>600점</td>
+                <td>60.8</td>
+                <td>2.5x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+            <tr>
+                <td>#50</td>
+                <td><strong>티케이케미칼</strong><br><small>104480</small></td>
+                <td>2,325원</td>
+                <td>600점</td>
+                <td>66.2</td>
+                <td>6.0x</td>
+                <td class="reasons">주가>EMA20, 정배열20>60, 정배열60>120</td>
+            </tr>
+
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>📈 채점 방법론 (1000점 체계)</h2>
+        <div class="methodology">
+            <strong>1. 추세 점수 (250점)</strong><br>
+            • 주가 > EMA20 (60점) | EMA20 > EMA60 (60점) | EMA60 > EMA120 (50점)<br>
+            • 52주 고가 근접 10% 이내 (50점) | 20% 이내 (30점)<br>
+            • 60일 수익률 +20% 이상 (30점)<br><br>
+            
+            <strong>2. 모멘텀 점수 (200점)</strong><br>
+            • RSI 45-65 (60점) | MACD > 0 (40점) | MACD 3일 연속 증가 (30점)<br>
+            • 20일 수익률 +5~30% (50점)<br><br>
+            
+            <strong>3. 거래량 점수 (200점)</strong><br>
+            • 거래량 2.5배 이상 (80점) | 2배 (60점) | 1.5배 (40점)<br>
+            • 거래대금 100억 이상 (60점) | 50억 (40점)<br>
+            • 거래량 증가 추세 (20점)<br><br>
+            
+            <strong>4. 변동성/리스크 점수 (150점)</strong><br>
+            • ATR 2-5% 적정 변동성 (60점) | BB 중상단 위치 (50점)<br><br>
+            
+            <strong>5. 피봇/브레이크아웃 점수 (200점)</strong><br>
+            • 20일 고가 3% 이내 근접 (80점) | 7% 이내 눌림목 (40점)<br>
+            • 좁은 박스권 수렴 (40점)<br><br>
+            
+            <strong>목표가/손절가:</strong> ATR 기반 (목표=현재가+ATR×4, 손절=현재가-ATR×2)
+        </div>
+    </div>
+    
+    <div class="section" style="text-align: center; color: #666; font-size: 12px;">
+        <p>⚠️ 본 분석은 기술적 분석 기반 예측이며, 투자 결정은 본인의 판단과 책임하에 신중히 이루어져야 합니다.</p>
+        <p>Generated by Ultimate Stock Screener | Data: FinanceDataReader | DB: pivot_strategy.db</p>
+    </div>
+</body>
+</html>

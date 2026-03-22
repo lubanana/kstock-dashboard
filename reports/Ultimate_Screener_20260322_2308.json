@@ -1,0 +1,1457 @@
+{
+  "generated_at": "2026-03-22T23:08:35.555796",
+  "top10": [
+    {
+      "symbol": "390390",
+      "name": "미국반도체",
+      "price": 40390.0,
+      "score": 700,
+      "scores": {
+        "total": 700,
+        "trend": 220,
+        "momentum": 130,
+        "volume": 120,
+        "volatility": 110,
+        "pivot": 120
+      },
+      "rsi": 50.5,
+      "vol_ratio": 1.71,
+      "stop_loss": 38548.0,
+      "target": 44074.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI50",
+        "MACD+",
+        "MACD증가",
+        "대금420억"
+      ]
+    },
+    {
+      "symbol": "497570",
+      "name": "미국필라델피아AI반도체나스닥",
+      "price": 17025.0,
+      "score": 700,
+      "scores": {
+        "total": 700,
+        "trend": 220,
+        "momentum": 130,
+        "volume": 120,
+        "volatility": 110,
+        "pivot": 120
+      },
+      "rsi": 50.6,
+      "vol_ratio": 1.57,
+      "stop_loss": 16221.0,
+      "target": 18634.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI51",
+        "MACD+",
+        "MACD증가",
+        "대금205억"
+      ]
+    },
+    {
+      "symbol": "426030",
+      "name": "미국나스닥100액티브",
+      "price": 40530.0,
+      "score": 690,
+      "scores": {
+        "total": 690,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 61.5,
+      "vol_ratio": 1.89,
+      "stop_loss": 38121.0,
+      "target": 45349.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+20%",
+        "RSI61",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "471040",
+      "name": "글로벌AI",
+      "price": 25840.0,
+      "score": 690,
+      "scores": {
+        "total": 690,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 57.5,
+      "vol_ratio": 2.97,
+      "stop_loss": 24287.0,
+      "target": 28946.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+30%",
+        "RSI57",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "487230",
+      "name": "미국AI전력핵심인프라",
+      "price": 20925.0,
+      "score": 690,
+      "scores": {
+        "total": 690,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 80,
+        "volatility": 60,
+        "pivot": 120
+      },
+      "rsi": 56.2,
+      "vol_ratio": 1.13,
+      "stop_loss": 19760.0,
+      "target": 23255.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+28%",
+        "RSI56",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "381180",
+      "name": "미국필라델피아반도체나스닥",
+      "price": 30875.0,
+      "score": 680,
+      "scores": {
+        "total": 680,
+        "trend": 220,
+        "momentum": 130,
+        "volume": 100,
+        "volatility": 110,
+        "pivot": 120
+      },
+      "rsi": 51.3,
+      "vol_ratio": 1.34,
+      "stop_loss": 29411.0,
+      "target": 33804.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI51",
+        "MACD+",
+        "MACD증가",
+        "대금659억"
+      ]
+    },
+    {
+      "symbol": "036190",
+      "name": "금화피에스시",
+      "price": 38800.0,
+      "score": 670,
+      "scores": {
+        "total": 670,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 100,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 59.5,
+      "vol_ratio": 4.29,
+      "stop_loss": 35379.0,
+      "target": 45643.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+27%",
+        "RSI59",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "051600",
+      "name": "한전KPS",
+      "price": 67500.0,
+      "score": 670,
+      "scores": {
+        "total": 670,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 59.0,
+      "vol_ratio": 3.86,
+      "stop_loss": 60243.0,
+      "target": 82014.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+30%",
+        "RSI59",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "117700",
+      "name": "건설",
+      "price": 7630.0,
+      "score": 670,
+      "scores": {
+        "total": 670,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 57.6,
+      "vol_ratio": 3.73,
+      "stop_loss": 6669.0,
+      "target": 9551.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+89%",
+        "RSI58",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "385510",
+      "name": "신재생에너지액티브",
+      "price": 45400.0,
+      "score": 670,
+      "scores": {
+        "total": 670,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 55.7,
+      "vol_ratio": 2.75,
+      "stop_loss": 39832.0,
+      "target": 56536.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+57%",
+        "RSI56",
+        "MACD+",
+        "MACD증가"
+      ]
+    }
+  ],
+  "reference_11_50": [
+    {
+      "symbol": "090460",
+      "name": "비에이치",
+      "price": 22150.0,
+      "score": 650,
+      "scores": {
+        "total": 650,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 140,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 60.2,
+      "vol_ratio": 3.13,
+      "stop_loss": 19139.0,
+      "target": 28173.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+25%",
+        "RSI60",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "139220",
+      "name": "건설",
+      "price": 8310.0,
+      "score": 650,
+      "scores": {
+        "total": 650,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 140,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 53.5,
+      "vol_ratio": 2.69,
+      "stop_loss": 7226.0,
+      "target": 10479.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+79%",
+        "RSI54",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "377990",
+      "name": "신재생에너지",
+      "price": 28150.0,
+      "score": 650,
+      "scores": {
+        "total": 650,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 140,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 56.3,
+      "vol_ratio": 3.08,
+      "stop_loss": 24644.0,
+      "target": 35163.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+61%",
+        "RSI56",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "442320",
+      "name": "글로벌원자력",
+      "price": 45735.0,
+      "score": 650,
+      "scores": {
+        "total": 650,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 40,
+        "volatility": 60,
+        "pivot": 120
+      },
+      "rsi": 51.6,
+      "vol_ratio": 0.33,
+      "stop_loss": 42250.0,
+      "target": 52705.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+25%",
+        "RSI52",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "456600",
+      "name": "글로벌AI인공지능액티브",
+      "price": 44435.0,
+      "score": 650,
+      "scores": {
+        "total": 650,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 80,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 57.8,
+      "vol_ratio": 1.09,
+      "stop_loss": 41071.0,
+      "target": 51163.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+31%",
+        "RSI58",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "023160",
+      "name": "태광",
+      "price": 35700.0,
+      "score": 640,
+      "scores": {
+        "total": 640,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 64.4,
+      "vol_ratio": 3.63,
+      "stop_loss": 29386.0,
+      "target": 48329.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+54%",
+        "RSI64",
+        "MACD+",
+        "20일+16%"
+      ]
+    },
+    {
+      "symbol": "042110",
+      "name": "에스씨디",
+      "price": 1451.0,
+      "score": 640,
+      "scores": {
+        "total": 640,
+        "trend": 220,
+        "momentum": 180,
+        "volume": 100,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 62.7,
+      "vol_ratio": 2.92,
+      "stop_loss": 1329.0,
+      "target": 1694.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI63",
+        "MACD+",
+        "MACD증가",
+        "20일+10%"
+      ]
+    },
+    {
+      "symbol": "100840",
+      "name": "에너지",
+      "price": 53300.0,
+      "score": 640,
+      "scores": {
+        "total": 640,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 60.1,
+      "vol_ratio": 6.57,
+      "stop_loss": 44786.0,
+      "target": 70329.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+38%",
+        "RSI60",
+        "MACD+",
+        "20일+8%"
+      ]
+    },
+    {
+      "symbol": "105840",
+      "name": "우진",
+      "price": 31200.0,
+      "score": 640,
+      "scores": {
+        "total": 640,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 61.0,
+      "vol_ratio": 4.07,
+      "stop_loss": 25471.0,
+      "target": 42657.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+70%",
+        "RSI61",
+        "MACD+",
+        "20일+14%"
+      ]
+    },
+    {
+      "symbol": "483320",
+      "name": "엔비디아밸류체인액티브",
+      "price": 18190.0,
+      "score": 640,
+      "scores": {
+        "total": 640,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 60,
+        "volatility": 60,
+        "pivot": 120
+      },
+      "rsi": 53.6,
+      "vol_ratio": 0.39,
+      "stop_loss": 17141.0,
+      "target": 20289.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+33%",
+        "RSI54",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "001250",
+      "name": "글로벌",
+      "price": 2750.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 120,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 59.7,
+      "vol_ratio": 3.18,
+      "stop_loss": 2483.0,
+      "target": 3284.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI60",
+        "MACD+",
+        "MACD증가",
+        "거래량3.2배"
+      ]
+    },
+    {
+      "symbol": "002990",
+      "name": "금호건설",
+      "price": 5630.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 60.7,
+      "vol_ratio": 5.43,
+      "stop_loss": 4942.0,
+      "target": 7006.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+30%",
+        "RSI61",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "003070",
+      "name": "코오롱글로벌",
+      "price": 11970.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 64.3,
+      "vol_ratio": 7.13,
+      "stop_loss": 10580.0,
+      "target": 14750.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+27%",
+        "RSI64",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "033640",
+      "name": "네패스",
+      "price": 21050.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 57.5,
+      "vol_ratio": 5.48,
+      "stop_loss": 17849.0,
+      "target": 27453.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+32%",
+        "RSI58",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "330860",
+      "name": "네패스아크",
+      "price": 25000.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 63.1,
+      "vol_ratio": 8.1,
+      "stop_loss": 21169.0,
+      "target": 32663.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+61%",
+        "RSI63",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "389260",
+      "name": "대명에너지",
+      "price": 23350.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 40
+      },
+      "rsi": 58.4,
+      "vol_ratio": 3.26,
+      "stop_loss": 18349.0,
+      "target": 33353.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+22%",
+        "RSI58",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "411420",
+      "name": "미국나스닥AI테크액티브",
+      "price": 23655.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 60,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 58.7,
+      "vol_ratio": 1.61,
+      "stop_loss": 22113.0,
+      "target": 26739.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+25%",
+        "RSI59",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "495940",
+      "name": "미국AI테크액티브",
+      "price": 16535.0,
+      "score": 630,
+      "scores": {
+        "total": 630,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 60,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 61.6,
+      "vol_ratio": 1.67,
+      "stop_loss": 15271.0,
+      "target": 19062.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+33%",
+        "RSI62",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "161890",
+      "name": "한국콜마",
+      "price": 76700.0,
+      "score": 620,
+      "scores": {
+        "total": 620,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 140,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 50.5,
+      "vol_ratio": 2.59,
+      "stop_loss": 68971.0,
+      "target": 92157.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+23%",
+        "RSI51",
+        "MACD+",
+        "20일+6%"
+      ]
+    },
+    {
+      "symbol": "469060",
+      "name": "미국반도체NYSE",
+      "price": 24495.0,
+      "score": 620,
+      "scores": {
+        "total": 620,
+        "trend": 220,
+        "momentum": 130,
+        "volume": 40,
+        "volatility": 110,
+        "pivot": 120
+      },
+      "rsi": 49.7,
+      "vol_ratio": 0.74,
+      "stop_loss": 23274.0,
+      "target": 26936.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI50",
+        "MACD+",
+        "MACD증가",
+        "거래량증가"
+      ]
+    },
+    {
+      "symbol": "480040",
+      "name": "미국반도체데일리타겟커버드콜",
+      "price": 13920.0,
+      "score": 620,
+      "scores": {
+        "total": 620,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 20,
+        "volatility": 110,
+        "pivot": 120
+      },
+      "rsi": 50.7,
+      "vol_ratio": 0.81,
+      "stop_loss": 13073.0,
+      "target": 15614.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI51",
+        "MACD+",
+        "MACD증가",
+        "ATR3.0%"
+      ]
+    },
+    {
+      "symbol": "483340",
+      "name": "구글밸류체인액티브",
+      "price": 18085.0,
+      "score": 620,
+      "scores": {
+        "total": 620,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 40,
+        "volatility": 60,
+        "pivot": 120
+      },
+      "rsi": 55.5,
+      "vol_ratio": 0.96,
+      "stop_loss": 16941.0,
+      "target": 20372.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+27%",
+        "RSI55",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "003075",
+      "name": "코오롱글로벌우",
+      "price": 16380.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 100,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 50.7,
+      "vol_ratio": 4.19,
+      "stop_loss": 15274.0,
+      "target": 18591.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI51",
+        "MACD+",
+        "MACD증가",
+        "거래량4.2배"
+      ]
+    },
+    {
+      "symbol": "003160",
+      "name": "디아이",
+      "price": 38750.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 100,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 54.1,
+      "vol_ratio": 1.16,
+      "stop_loss": 31829.0,
+      "target": 52593.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+95%",
+        "RSI54",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "006050",
+      "name": "국영지앤엠",
+      "price": 1390.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 100,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 59.9,
+      "vol_ratio": 3.79,
+      "stop_loss": 1273.0,
+      "target": 1624.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI60",
+        "MACD+",
+        "MACD증가",
+        "거래량3.8배"
+      ]
+    },
+    {
+      "symbol": "007810",
+      "name": "코리아써키트",
+      "price": 64600.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 230,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 55.7,
+      "vol_ratio": 1.5,
+      "stop_loss": 53414.0,
+      "target": 86971.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-20%",
+        "60일+81%",
+        "RSI56",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "010960",
+      "name": "삼호개발",
+      "price": 4200.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 100,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 53.1,
+      "vol_ratio": 3.01,
+      "stop_loss": 3881.0,
+      "target": 4837.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI53",
+        "MACD+",
+        "MACD증가",
+        "거래량3.0배"
+      ]
+    },
+    {
+      "symbol": "053620",
+      "name": "태양",
+      "price": 7160.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 220,
+        "momentum": 150,
+        "volume": 60,
+        "volatility": 60,
+        "pivot": 120
+      },
+      "rsi": 56.0,
+      "vol_ratio": 1.69,
+      "stop_loss": 6746.0,
+      "target": 7989.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI56",
+        "MACD+",
+        "MACD증가",
+        "거래량증가"
+      ]
+    },
+    {
+      "symbol": "087260",
+      "name": "모바일어플라이언스",
+      "price": 2240.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 230,
+        "momentum": 180,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 59.4,
+      "vol_ratio": 2.91,
+      "stop_loss": 1912.0,
+      "target": 2896.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-20%",
+        "60일+40%",
+        "RSI59",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "097230",
+      "name": "중공업",
+      "price": 28450.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 100,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 59.0,
+      "vol_ratio": 1.47,
+      "stop_loss": 23434.0,
+      "target": 38481.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+29%",
+        "RSI59",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "217590",
+      "name": "티엠씨",
+      "price": 23600.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 120,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 66.7,
+      "vol_ratio": 4.5,
+      "stop_loss": 19429.0,
+      "target": 31943.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+30%",
+        "MACD+",
+        "MACD증가",
+        "거래량4.5배"
+      ]
+    },
+    {
+      "symbol": "222800",
+      "name": "심텍",
+      "price": 62500.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 100,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 59.8,
+      "vol_ratio": 1.46,
+      "stop_loss": 52271.0,
+      "target": 82957.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+21%",
+        "RSI60",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "375500",
+      "name": "이앤씨",
+      "price": 67400.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 120,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 68.1,
+      "vol_ratio": 5.55,
+      "stop_loss": 57579.0,
+      "target": 87043.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+60%",
+        "MACD+",
+        "MACD증가",
+        "거래량5.6배"
+      ]
+    },
+    {
+      "symbol": "457990",
+      "name": "태양광",
+      "price": 37310.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 140,
+        "volatility": 0,
+        "pivot": 40
+      },
+      "rsi": 56.8,
+      "vol_ratio": 2.43,
+      "stop_loss": 31923.0,
+      "target": 48083.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+76%",
+        "RSI57",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "491010",
+      "name": "글로벌AI전력인프라액티브",
+      "price": 24585.0,
+      "score": 610,
+      "scores": {
+        "total": 610,
+        "trend": 250,
+        "momentum": 180,
+        "volume": 40,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 55.1,
+      "vol_ratio": 0.59,
+      "stop_loss": 22811.0,
+      "target": 28134.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+37%",
+        "RSI55",
+        "MACD+",
+        "MACD증가"
+      ]
+    },
+    {
+      "symbol": "003380",
+      "name": "하림지주",
+      "price": 17700.0,
+      "score": 600,
+      "scores": {
+        "total": 600,
+        "trend": 250,
+        "momentum": 110,
+        "volume": 160,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 56.5,
+      "vol_ratio": 3.58,
+      "stop_loss": 14983.0,
+      "target": 23134.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+77%",
+        "RSI56",
+        "20일+6%",
+        "거래량3.6배"
+      ]
+    },
+    {
+      "symbol": "004890",
+      "name": "동일산업",
+      "price": 39500.0,
+      "score": 600,
+      "scores": {
+        "total": 600,
+        "trend": 220,
+        "momentum": 130,
+        "volume": 60,
+        "volatility": 110,
+        "pivot": 80
+      },
+      "rsi": 49.4,
+      "vol_ratio": 2.15,
+      "stop_loss": 37464.0,
+      "target": 43571.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI49",
+        "MACD+",
+        "MACD증가",
+        "거래량2.2배"
+      ]
+    },
+    {
+      "symbol": "004960",
+      "name": "한신공영",
+      "price": 17730.0,
+      "score": 600,
+      "scores": {
+        "total": 600,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 66.6,
+      "vol_ratio": 5.11,
+      "stop_loss": 15300.0,
+      "target": 22590.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+51%",
+        "MACD+",
+        "MACD증가",
+        "20일+19%"
+      ]
+    },
+    {
+      "symbol": "009140",
+      "name": "경인전자",
+      "price": 22900.0,
+      "score": 600,
+      "scores": {
+        "total": 600,
+        "trend": 220,
+        "momentum": 180,
+        "volume": 60,
+        "volatility": 60,
+        "pivot": 80
+      },
+      "rsi": 60.8,
+      "vol_ratio": 2.47,
+      "stop_loss": 21300.0,
+      "target": 26100.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "RSI61",
+        "MACD+",
+        "MACD증가",
+        "20일+11%"
+      ]
+    },
+    {
+      "symbol": "104480",
+      "name": "티케이케미칼",
+      "price": 2325.0,
+      "score": 600,
+      "scores": {
+        "total": 600,
+        "trend": 250,
+        "momentum": 150,
+        "volume": 120,
+        "volatility": 0,
+        "pivot": 80
+      },
+      "rsi": 66.2,
+      "vol_ratio": 6.03,
+      "stop_loss": 2067.0,
+      "target": 2842.0,
+      "rr_ratio": 2.0,
+      "reasons": [
+        "주가>EMA20",
+        "정배열20>60",
+        "정배열60>120",
+        "52주고가-10%",
+        "60일+44%",
+        "MACD+",
+        "MACD증가",
+        "20일+15%"
+      ]
+    }
+  ]
+}
