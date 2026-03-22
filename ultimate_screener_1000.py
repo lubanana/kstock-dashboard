@@ -3,6 +3,10 @@
 Ultimate Stock Screener - 1000 Point Scale
 ==========================================
 종합 분석 시스템
+
+개선사항:
+- ETF/개별주 분리 표시 (리스크 관리)
+- 유동성 필터: 거래량비율 < 0.5 별도 표시
 """
 
 import sqlite3
@@ -41,6 +45,39 @@ class UltimateScreener:
         }
         names.update(defaults)
         return names
+    
+    def is_etf(self, symbol, name):
+        """ETF 여부 확인"""
+        # ETF 관련 키워드
+        etf_keywords = ['ETF', 'etf', 'ETN', 'etn', '레버리지', '인버스', ' securities', 'fund']
+        # 특정 ETF 패턴 (코드 기반)
+        etf_patterns = ['3', '37', '38', '39', '4', '5', '6']  # ETF 코드 패턴
+        
+        # 이름에서 ETF 키워드 확인
+        name_upper = name.upper()
+        for keyword in etf_keywords:
+            if keyword.upper() in name_upper:
+                return True
+        
+        # 특정 코드 패턴 (한국 ETF)
+        if symbol.startswith(('3', '37', '38', '39', '4', '5', '6')):
+            return True
+        
+        return False
+    
+    def check_liquidity(self, vol_ratio):
+        """유동성 체크
+        Returns:
+            'high' - 거래량비율 >= 1.0 (정상)
+            'medium' - 거래량비율 0.5 ~ 1.0 (주의)
+            'low' - 거래량비율 < 0.5 (유동성 부족)
+        """
+        if vol_ratio >= 1.0:
+            return 'high'
+        elif vol_ratio >= 0.5:
+            return 'medium'
+        else:
+            return 'low'
     
     def get_price(self, symbol, days=120):
         query = '''SELECT date, open, high, low, close, volume 
@@ -104,6 +141,14 @@ class UltimateScreener:
         
         latest = df.iloc[-1]
         price = latest['close']
+        name = self.stock_names.get(symbol, symbol)
+        vol_ratio = latest['vol_ratio']
+        
+        # ETF 여부 확인
+        is_etf = self.is_etf(symbol, name)
+        
+        # 유동성 상태 확인
+        liquidity = self.check_liquidity(vol_ratio)
         
         scores = {'total': 0}
         reasons = []
@@ -169,7 +214,6 @@ class UltimateScreener:
         
         # 3. 거래량 점수 (0-200)
         vol_score = 0
-        vol_ratio = latest['vol_ratio']
         if vol_ratio >= 2.5:
             vol_score += 80
             reasons.append(f'거래량{vol_ratio:.1f}배')
@@ -231,90 +275,72 @@ class UltimateScreener:
                     pivot_score += 40
                     reasons.append(f'눌림목{proximity:.1f}%')
             
-            # 박스권 상단 돌파 시도
             if recent_high > recent_low:
                 box_range = (recent_high - recent_low) / recent_low * 100
-                if box_range < 15:  # 좁은 박스권
+                if box_range < 15:
                     pivot_score += 40
                     reasons.append('박스권수렴')
         
         scores['pivot'] = min(pivot_score, 200)
         scores['total'] += scores['pivot']
         
-        # 목표가/손절가 계산 - 동적 계산 (항상 2.0이 나오지 않도록)
+        # 목표가/손절가 계산
         if latest['atr14'] > 0 and len(df) >= 20:
-            # ATR 기반 기본값
             atr = latest['atr14']
-            
-            # 1. 최근 20일 고가/저가 기반 피봇 레벨 계산
             recent_high = df['high'].tail(20).max()
             recent_low = df['low'].tail(20).min()
             
-            # 2. 목표가 계산 - 여러 방법 중 최대값 사용
             targets = []
+            targets.append(price + atr * 3)
+            targets.append(price + atr * 4.5)
             
-            # ATR 기반 확장 (3~6배 변동)
-            targets.append(price + atr * 3)  # 보수적
-            targets.append(price + atr * 4.5)  # 중립
-            
-            # 최근 고가 돌파 목표
             if recent_high > price:
-                # 고가 돌파 후 상승 목표 (고가 + 고가-저가의 50~100%)
                 box_range = recent_high - recent_low
                 targets.append(recent_high + box_range * 0.5)
                 targets.append(recent_high + box_range * 0.8)
             
-            # 피본나치 확장 (상승추세 가정)
             if len(df) >= 10:
                 last_low = df['low'].tail(10).min()
                 if price > last_low:
                     move = price - last_low
-                    targets.append(price + move * 1.272)  # 피본나치 127.2%
-                    targets.append(price + move * 1.618)  # 피본나치 161.8%
+                    targets.append(price + move * 1.272)
+                    targets.append(price + move * 1.618)
             
-            # 3. 손절가 계산 - 여러 방법 중 최소값 사용 (더 타이트하게)
             stop_losses = []
-            
-            # ATR 기반 (1.5~2.5배)
             stop_losses.append(price - atr * 1.5)
             stop_losses.append(price - atr * 2.0)
             stop_losses.append(price - atr * 2.5)
-            
-            # EMA20 기반 (추세 이탈 기준)
             stop_losses.append(latest['ema20'] * 0.98)
             stop_losses.append(latest['ema20'] * 0.95)
             
-            # 최근 저가 기반
             recent_low_5d = df['low'].tail(5).min()
             stop_losses.append(recent_low_5d * 0.99)
             
-            # 최종 목표가/손절가 선택
             target = max([t for t in targets if t > price] or [price * 1.10])
             stop_loss = min([s for s in stop_losses if s < price] or [price * 0.93])
             
-            # 손익비 계산
             potential_gain = target - price
             potential_loss = price - stop_loss
             rr = potential_gain / potential_loss if potential_loss > 0 else 0
-            
         else:
-            # 데이터 부족시 기본값
             stop_loss = price * 0.93
             target = price * 1.15
             rr = (target - price) / (price - stop_loss)
         
         return {
             'symbol': symbol,
-            'name': self.stock_names.get(symbol, symbol),
+            'name': name,
             'price': round(price, 0),
             'score': scores['total'],
             'scores': scores,
             'rsi': round(latest['rsi'], 1),
-            'vol_ratio': round(latest['vol_ratio'], 2),
+            'vol_ratio': round(vol_ratio, 2),
             'stop_loss': round(stop_loss, 0),
             'target': round(target, 0),
             'rr_ratio': round(rr, 2),
-            'reasons': reasons[:8]  # 상위 8개 이유만
+            'reasons': reasons[:8],
+            'is_etf': is_etf,
+            'liquidity': liquidity
         }
     
     def scan_all(self):
@@ -323,28 +349,50 @@ class UltimateScreener:
         symbols = [row[0] for row in cursor.fetchall()]
         
         print(f"총 {len(symbols)}개 종목 분석 시작...")
-        results = []
+        
+        all_results = []
+        etf_results = []
+        stock_results = []
+        low_liquidity = []  # 유동성 부족 종목
         
         for i, symbol in enumerate(symbols, 1):
             if i % 100 == 0:
                 print(f"  진행: {i}/{len(symbols)} ({i/len(symbols)*100:.1f}%)")
             
             result = self.score_stock(symbol)
-            if result and result['score'] >= 500:  # 500점 이상만
-                results.append(result)
+            if result and result['score'] >= 500:
+                all_results.append(result)
+                
+                # ETF/개별주 분리
+                if result['is_etf']:
+                    etf_results.append(result)
+                else:
+                    stock_results.append(result)
+                
+                # 유동성 부족 종목 체크
+                if result['liquidity'] == 'low':
+                    low_liquidity.append(result)
         
         # 점수 순 정렬
-        results.sort(key=lambda x: x['score'], reverse=True)
-        return results
+        all_results.sort(key=lambda x: x['score'], reverse=True)
+        etf_results.sort(key=lambda x: x['score'], reverse=True)
+        stock_results.sort(key=lambda x: x['score'], reverse=True)
+        low_liquidity.sort(key=lambda x: x['score'], reverse=True)
+        
+        return {
+            'all': all_results,
+            'etf': etf_results,
+            'stock': stock_results,
+            'low_liquidity': low_liquidity
+        }
     
     def generate_report(self, results):
         now = datetime.now().strftime('%Y%m%d_%H%M')
         
-        # TOP 10
-        top10 = results[:10]
-        
-        # 참조용 11-50위
-        reference = results[10:50]
+        all_results = results['all']
+        etf_results = results['etf']
+        stock_results = results['stock']
+        low_liquidity = results['low_liquidity']
         
         # HTML 리포트
         html = f"""<!DOCTYPE html>
@@ -357,8 +405,18 @@ class UltimateScreener:
         .header {{ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 20px; }}
         .header h1 {{ margin: 0; font-size: 28px; }}
         .header p {{ margin: 10px 0 0 0; opacity: 0.9; }}
+        .summary {{ background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }}
+        .summary-grid {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }}
+        .summary-item {{ text-align: center; padding: 15px; border-radius: 8px; background: #f8f9fa; }}
+        .summary-item h3 {{ margin: 0; font-size: 24px; color: #667eea; }}
+        .summary-item p {{ margin: 5px 0 0 0; color: #666; font-size: 14px; }}
         .section {{ background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }}
         .section h2 {{ color: #333; border-bottom: 2px solid #667eea; padding-bottom: 10px; }}
+        .tabs {{ display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; }}
+        .tab {{ padding: 10px 20px; cursor: pointer; border-radius: 5px 5px 0 0; background: #f5f5f5; }}
+        .tab.active {{ background: #667eea; color: white; }}
+        .tab-content {{ display: none; }}
+        .tab-content.active {{ display: block; }}
         table {{ width: 100%; border-collapse: collapse; }}
         th {{ background: #667eea; color: white; padding: 12px; text-align: left; }}
         td {{ padding: 10px; border-bottom: 1px solid #eee; }}
@@ -374,8 +432,15 @@ class UltimateScreener:
         .badge-green {{ background: #e8f5e9; color: #388e3c; }}
         .badge-orange {{ background: #fff3e0; color: #f57c00; }}
         .badge-red {{ background: #ffebee; color: #d32f2f; }}
+        .badge-gray {{ background: #eeeeee; color: #616161; }}
+        .badge-purple {{ background: #f3e5f5; color: #7b1fa2; }}
+        .badge-liquidity-low {{ background: #ffcdd2; color: #c62828; border: 1px solid #ef5350; }}
+        .badge-liquidity-medium {{ background: #fff9c4; color: #f57f17; }}
+        .badge-etf {{ background: #e1f5fe; color: #0277bd; border: 1px solid #4fc3f7; }}
         .reasons {{ font-size: 12px; color: #666; }}
         .top3 {{ background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%); color: #333; }}
+        .warning-box {{ background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; border-radius: 5px; }}
+        .danger-box {{ background: #ffebee; border-left: 4px solid #f44336; padding: 15px; margin: 20px 0; border-radius: 5px; }}
         .methodology {{ background: #f8f9fa; padding: 15px; border-radius: 5px; font-size: 13px; line-height: 1.6; }}
     </style>
 </head>
@@ -385,110 +450,79 @@ class UltimateScreener:
         <p>내일 급등 가능성 높은 종목 TOP 10 (1000점 체계) | 생성일: {datetime.now().strftime('%Y-%m-%d %H:%M')}</p>
     </div>
     
-    <div class="section">
-        <h2>🏆 TOP 10 급등 예상 종목</h2>
-        <table>
-            <tr>
-                <th>순위</th>
-                <th>종목</th>
-                <th>현재가</th>
-                <th>종합점수</th>
-                <th>목표가</th>
-                <th>손절가</th>
-                <th>손익비</th>
-                <th>선정근거</th>
-            </tr>
+    <!-- 요약 통계 -->
+    <div class="summary">
+        <h2 style="margin-top:0;">📊 분석 요약</h2>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <h3>{len(all_results)}</h3>
+                <p>전체 선정 종목</p>
+            </div>
+            <div class="summary-item">
+                <h3>{len(stock_results)}</h3>
+                <p>개별주</p>
+            </div>
+            <div class="summary-item">
+                <h3>{len(etf_results)}</h3>
+                <p>ETF/ETN</p>
+            </div>
+            <div class="summary-item" style="background:#ffcdd2;">
+                <h3 style="color:#c62828;">{len(low_liquidity)}</h3>
+                <p style="color:#c62828;">유동성 부족 ⚠️</p>
+            </div>
+        </div>
+    </div>
 """
         
-        for i, r in enumerate(top10, 1):
-            row_class = 'top3' if i <= 3 else ''
-            badge_class = 'badge-red' if i <= 3 else ('badge-orange' if i <= 6 else 'badge-blue')
+        # 유동성 부족 경고 박스
+        if low_liquidity:
+            html += f"""
+    <div class="danger-box">
+        <strong>⚠️ 유동성 주의 종목 ({len(low_liquidity)}개)</strong><br>
+        거래량비율 0.5 미만 종목은 체결 리스크가 높습니다. 투자 시 주의가 필요합니다.<br>
+        <small>대상: {', '.join([r['name'] for r in low_liquidity[:10]])}{'...' if len(low_liquidity) > 10 else ''}</small>
+    </div>
+"""
+        
+        # 탭 메뉴
+        html += """
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('stocks')">🏢 개별주</div>
+        <div class="tab" onclick="showTab('etfs')">📈 ETF/ETN</div>
+        <div class="tab" onclick="showTab('all')">📋 전체 순위</div>
+        <div class="tab" onclick="showTab('liquidity')">⚠️ 유동성 부족</div>
+    </div>
+"""
+        
+        # 개별주 탭
+        html += self._generate_table_section('stocks', 'active', stock_results, '개별주 TOP 10', True)
+        
+        # ETF 탭
+        html += self._generate_table_section('etfs', '', etf_results, 'ETF/ETN TOP 10', True)
+        
+        # 전체 순위 탭
+        html += self._generate_table_section('all', '', all_results, '전체 순위 TOP 10', True)
+        
+        # 유동성 부족 탭
+        html += self._generate_table_section('liquidity', '', low_liquidity, '유동성 부족 종목', False)
+        
+        # JavaScript
+        html += """
+    <script>
+        function showTab(tabName) {
+            // 모든 탭 비활성화
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             
-            reasons_html = ' '.join([f'<span class="badge {badge_class}">{reason}</span>' for reason in r['reasons'][:5]])
-            
-            html += f"""
-            <tr class="{row_class}">
-                <td class="rank">#{i}</td>
-                <td><strong>{r['name']}</strong><br><small>{r['symbol']}</small></td>
-                <td class="price">{r['price']:,.0f}원</td>
-                <td class="score">{r['score']}점</td>
-                <td class="target">{r['target']:,.0f}원</td>
-                <td class="stop">{r['stop_loss']:,.0f}원</td>
-                <td class="rr">1:{r['rr_ratio']:.1f}</td>
-                <td class="reasons">{reasons_html}</td>
-            </tr>
+            // 선택한 탭 활성화
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
 """
         
+        # 방법론 섹션
         html += """
-        </table>
-    </div>
-    
-    <div class="section">
-        <h2>📊 점수 세부 내역 (TOP 10)</h2>
-        <table>
-            <tr>
-                <th>순위</th>
-                <th>종목</th>
-                <th>추세<br>(250)</th>
-                <th>모멘텀<br>(200)</th>
-                <th>거래량<br>(200)</th>
-                <th>리스크<br>(150)</th>
-                <th>피봇<br>(200)</th>
-                <th>총점</th>
-            </tr>
-"""
-        
-        for i, r in enumerate(top10, 1):
-            s = r['scores']
-            html += f"""
-            <tr>
-                <td>#{i}</td>
-                <td><strong>{r['name']}</strong></td>
-                <td>{s['trend']}</td>
-                <td>{s['momentum']}</td>
-                <td>{s['volume']}</td>
-                <td>{s['volatility']}</td>
-                <td>{s['pivot']}</td>
-                <td class="score">{r['score']}</td>
-            </tr>
-"""
-        
-        html += """
-        </table>
-    </div>
-    
-    <div class="section">
-        <h2>🔍 참조용 종목 (11-50위)</h2>
-        <table>
-            <tr>
-                <th>순위</th>
-                <th>종목</th>
-                <th>현재가</th>
-                <th>점수</th>
-                <th>RSI</th>
-                <th>거래량비율</th>
-                <th>주요 특징</th>
-            </tr>
-"""
-        
-        for i, r in enumerate(reference, 11):
-            reasons_short = ', '.join(r['reasons'][:3])
-            html += f"""
-            <tr>
-                <td>#{i}</td>
-                <td><strong>{r['name']}</strong><br><small>{r['symbol']}</small></td>
-                <td>{r['price']:,.0f}원</td>
-                <td>{r['score']}점</td>
-                <td>{r['rsi']}</td>
-                <td>{r['vol_ratio']:.1f}x</td>
-                <td class="reasons">{reasons_short}</td>
-            </tr>
-"""
-        
-        html += """
-        </table>
-    </div>
-    
     <div class="section">
         <h2>📈 채점 방법론 (1000점 체계)</h2>
         <div class="methodology">
@@ -513,12 +547,16 @@ class UltimateScreener:
             • 20일 고가 3% 이내 근접 (80점) | 7% 이내 눌림목 (40점)<br>
             • 좁은 박스권 수렴 (40점)<br><br>
             
-            <strong>목표가/손절가:</strong> ATR 기반 (목표=현재가+ATR×4, 손절=현재가-ATR×2)
+            <strong>유동성 필터:</strong><br>
+            • 🟢 정상: 거래량비율 ≥ 1.0 | 🟡 주의: 0.5 ~ 1.0 | 🔴 부족: < 0.5<br><br>
+            
+            <strong>목표가/손절가:</strong> ATR 기반 동적 계산
         </div>
     </div>
     
     <div class="section" style="text-align: center; color: #666; font-size: 12px;">
         <p>⚠️ 본 분석은 기술적 분석 기반 예측이며, 투자 결정은 본인의 판단과 책임하에 신중히 이루어져야 합니다.</p>
+        <p>ETF와 개별주는 리스크 특성이 다륯오, 포트폴리오 구성 시 유의하시기 바랍니다.</p>
         <p>Generated by Ultimate Stock Screener | Data: FinanceDataReader | DB: pivot_strategy.db</p>
     </div>
 </body>
@@ -535,45 +573,134 @@ class UltimateScreener:
         # JSON 저장
         json_data = {
             'generated_at': datetime.now().isoformat(),
-            'top10': top10,
-            'reference_11_50': reference
+            'summary': {
+                'total': len(all_results),
+                'stocks': len(stock_results),
+                'etfs': len(etf_results),
+                'low_liquidity': len(low_liquidity)
+            },
+            'top10_stocks': stock_results[:10],
+            'top10_etfs': etf_results[:10],
+            'low_liquidity': low_liquidity
         }
         with open(f'./reports/Ultimate_Screener_{now}.json', 'w', encoding='utf-8') as f:
             json.dump(json_data, f, ensure_ascii=False, indent=2)
         
         return filename
+    
+    def _generate_table_section(self, tab_id, active_class, results, title, show_rr):
+        """테이블 섹션 생성 헬퍼"""
+        html = f'<div id="{tab_id}" class="tab-content {active_class}">\n'
+        html += f'<div class="section">\n<h2>{title}</h2>\n'
+        
+        if not results:
+            html += '<p style="text-align:center; color:#999; padding:40px;">해당 조건을 만족하는 종목이 없습니다.</p>\n'
+            html += '</div></div>\n'
+            return html
+        
+        html += """<table>
+            <tr>
+                <th>순위</th>
+                <th>종목</th>
+                <th>유형</th>
+                <th>유동성</th>
+                <th>현재가</th>
+                <th>종합점수</th>
+                <th>목표가</th>
+                <th>손절가</th>
+"""
+        if show_rr:
+            html += "                <th>손익비</th>\n"
+        html += "                <th>선정근거</th>\n            </tr>\n"
+        
+        for i, r in enumerate(results[:10], 1):
+            row_class = 'top3' if i <= 3 else ''
+            badge_class = 'badge-red' if i <= 3 else ('badge-orange' if i <= 6 else 'badge-blue')
+            
+            # 유형 뱃지
+            type_badge = '<span class="badge badge-etf">ETF</span>' if r['is_etf'] else '<span class="badge badge-green">개별주</span>'
+            
+            # 유동성 뱃지
+            if r['liquidity'] == 'low':
+                liq_badge = '<span class="badge badge-liquidity-low">부족</span>'
+            elif r['liquidity'] == 'medium':
+                liq_badge = '<span class="badge badge-liquidity-medium">주의</span>'
+            else:
+                liq_badge = '<span class="badge badge-blue">정상</span>'
+            
+            reasons_html = ' '.join([f'<span class="badge {badge_class}">{reason}</span>' for reason in r['reasons'][:4]])
+            
+            html += f"""
+            <tr class="{row_class}">
+                <td class="rank">#{i}</td>
+                <td><strong>{r['name']}</strong><br><small>{r['symbol']}</small></td>
+                <td>{type_badge}</td>
+                <td>{liq_badge}</td>
+                <td class="price">{r['price']:,.0f}원</td>
+                <td class="score">{r['score']}점</td>
+                <td class="target">{r['target']:,.0f}원</td>
+                <td class="stop">{r['stop_loss']:,.0f}원</td>
+"""
+            if show_rr:
+                html += f"                <td class=\"rr\">1:{r['rr_ratio']:.1f}</td>\n"
+            html += f"                <td class=\"reasons\">{reasons_html}</td>\n            </tr>\n"
+        
+        html += """</table>
+    </div>
+</div>
+"""
+        return html
 
 
 def main():
     screener = UltimateScreener()
     
-    print("="*70)
+    print("=" * 70)
     print("🚀 Ultimate Stock Screener - 1000 Point Scale")
-    print("="*70)
+    print("=" * 70)
+    print("개선사항: ETF/개별주 분리 | 유동성 필터 추가")
     print()
     
     results = screener.scan_all()
     
-    print(f"\n✅ 분석 완료: {len(results)}개 종목 500점 이상")
+    print(f"\n✅ 분석 완료!")
+    print(f"   전체 선정: {len(results['all'])}개")
+    print(f"   개별주: {len(results['stock'])}개")
+    print(f"   ETF/ETN: {len(results['etf'])}개")
+    print(f"   유동성 부족: {len(results['low_liquidity'])}개")
     
-    if len(results) >= 10:
-        # TOP 10 출력
-        print("\n" + "="*70)
-        print("🏆 TOP 10 급등 예상 종목")
-        print("="*70)
+    if results['all']:
+        # 결과 출력
+        if results['stock']:
+            print("\n" + "=" * 70)
+            print("🏢 개별주 TOP 10")
+            print("=" * 70)
+            for i, r in enumerate(results['stock'][:10], 1):
+                liq_warn = " ⚠️유동성부족" if r['liquidity'] == 'low' else ""
+                print(f"\n#{i} {r['name']} ({r['symbol']}){liq_warn}")
+                print(f"   현재가: {r['price']:,.0f}원 | 점수: {r['score']}/1000점")
+                print(f"   목표가: {r['target']:,.0f}원 | 손절가: {r['stop_loss']:,.0f}원")
+                print(f"   손익비: 1:{r['rr_ratio']:.2f} | 거래량비율: {r['vol_ratio']:.2f}x")
         
-        for i, r in enumerate(results[:10], 1):
-            print(f"\n#{i} {r['name']} ({r['symbol']})")
-            print(f"   현재가: {r['price']:,.0f}원 | 점수: {r['score']}/1000점")
-            print(f"   목표가: {r['target']:,.0f}원 (+{((r['target']/r['price']-1)*100):.1f}%)")
-            print(f"   손절가: {r['stop_loss']:,.0f}원 (-{((1-r['stop_loss']/r['price'])*100):.1f}%)")
-            print(f"   손익비: 1:{r['rr_ratio']:.2f}")
-            print(f"   근거: {', '.join(r['reasons'][:5])}")
+        if results['etf']:
+            print("\n" + "=" * 70)
+            print("📈 ETF/ETN TOP 10")
+            print("=" * 70)
+            for i, r in enumerate(results['etf'][:10], 1):
+                print(f"\n#{i} {r['name']} ({r['symbol']})")
+                print(f"   현재가: {r['price']:,.0f}원 | 점수: {r['score']}/1000점")
+                print(f"   거래량비율: {r['vol_ratio']:.2f}x")
+        
+        if results['low_liquidity']:
+            print("\n" + "=" * 70)
+            print("⚠️ 유동성 부족 종목 (거래량비율 < 0.5)")
+            print("=" * 70)
+            for r in results['low_liquidity'][:10]:
+                print(f"   {r['name']} ({r['symbol']}): 거래량비율 {r['vol_ratio']:.2f}x")
         
         # 리포트 생성
         filename = screener.generate_report(results)
         print(f"\n📄 리포트 저장: reports/{filename}")
-        print(f"   docs/{filename}")
     
     screener.conn.close()
 
