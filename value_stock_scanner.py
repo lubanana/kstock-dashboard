@@ -19,7 +19,12 @@ import json
 import sys
 import os
 
-sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', buffering=1)
+# 버퍼링 설정은 메인 함수에서만
+if __name__ == '__main__':
+    try:
+        sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', buffering=1)
+    except:
+        pass
 
 
 class ValueStockScanner:
@@ -127,28 +132,56 @@ class ValueStockScanner:
         """재무 지표 추정 (가격 데이터 기반)"""
         fund = self.fundamental_cache.get(symbol, {})
         
-        # 캐시에 없으면 기본값 사용 (향후 DART 연동 필요)
-        if not fund:
-            # 거래대금 기반 시가총액 추정 (rough estimate)
-            avg_volume = df['volume'].tail(20).mean()
-            est_market_cap = price * avg_volume * 252 / 1e8  # rough estimate
-            
+        # 거래대금 기반 시가총액 추정
+        avg_volume = df['volume'].tail(20).mean()
+        est_market_cap = price * avg_volume / 1e8  # rough estimate in 억원
+        
+        # 캐시에 재무 데이터가 있으면 사용
+        if fund and fund.get('per') and fund.get('per') < 90:
             return {
-                'per': 15.0,  # 시장 평균 가정
-                'pbr': 1.0,
-                'roe': 10.0,
-                'market_cap': est_market_cap,
-                'debt_ratio': 100.0,
-                'is_estimated': True
+                'per': fund.get('per'),
+                'pbr': fund.get('pbr', 1.0),
+                'roe': fund.get('roe', 10.0),
+                'market_cap': fund.get('market_cap', est_market_cap),
+                'debt_ratio': fund.get('debt_ratio', 100.0),
+                'is_estimated': False
             }
         
+        # 재무 데이터 없음 - 가격/거래량 기반 추정
+        # 52주 변동성으로 PER 추정 (높은 변동성 = 높은 PER 가정)
+        volatility = df['close'].pct_change().rolling(60).std().iloc[-1] * np.sqrt(252) * 100
+        
+        # 추정 PER 계산 (변동성 기반)
+        if volatility > 50:
+            est_per = 25.0
+        elif volatility > 40:
+            est_per = 20.0
+        elif volatility > 30:
+            est_per = 15.0
+        elif volatility > 20:
+            est_per = 12.0
+        else:
+            est_per = 10.0
+        
+        # 추정 PBR 계산 (시총/추정 자산)
+        # 소형주는 PBR이 높은 경향
+        if est_market_cap > 10000:  # 대형주
+            est_pbr = 1.0
+        elif est_market_cap > 1000:  # 중형주
+            est_pbr = 1.2
+        elif est_market_cap > 500:  # 중소형주
+            est_pbr = 1.5
+        else:  # 소형주
+            est_pbr = 2.0
+        
         return {
-            'per': fund.get('per', 15.0),
-            'pbr': fund.get('pbr', 1.0),
-            'roe': fund.get('roe', 10.0),
-            'market_cap': fund.get('market_cap', 0),
-            'debt_ratio': fund.get('debt_ratio', 100.0),
-            'is_estimated': False
+            'per': round(est_per, 1),
+            'pbr': round(est_pbr, 1),
+            'roe': round(100 / est_pbr, 1),  # ROE = 1/PBR (추정)
+            'market_cap': round(est_market_cap, 0),
+            'debt_ratio': 100.0,
+            'is_estimated': True,
+            'estimation_note': f'변동성{volatility:.1f}% 기반 추정'
         }
     
     def score_value(self, fund, price, df):
@@ -415,11 +448,11 @@ class ValueStockScanner:
         # 총점
         total_score = value_score + health_score + momentum_score + risk_score
         
-        # 최소 요건 체크
-        if value_score < 100:  # 가치평가가 너무 낮으면 제외
+        # 최소 요건 체크 - 적절한 필터 (완화)
+        if total_score < 550:  # 총점 550점 미만 제외 (580에서 완화)
             return None
         
-        if risk_score < 50:  # 리스크가 너무 높으면 제외
+        if risk_score < 40:  # 리스크 점수 체크 (50에서 완화)
             return None
         
         # 목표가/손절가 계산
@@ -467,7 +500,7 @@ class ValueStockScanner:
         }
     
     def scan_all(self):
-        """전체 종목 스캔"""
+        """전체 종목 스캔 - 상위 30개만 선정"""
         cursor = self.conn.cursor()
         cursor.execute('SELECT DISTINCT symbol FROM stock_prices WHERE date >= "2025-01-01"')
         symbols = [row[0] for row in cursor.fetchall()]
@@ -487,16 +520,17 @@ class ValueStockScanner:
                 print(f"  진행: {i}/{len(symbols)} ({progress:.1f}%) | 예상남은시간: {eta:.1f}분")
             
             result = self.scan_stock(symbol)
-            if result and result['score'] >= 500:  # 500점 이상만
+            if result:  # scan_stock에서 이미 필터링됨
                 results.append(result)
         
-        # 점수 순 정렬
+        # 점수 순 정렬 후 상위 30개만
         results.sort(key=lambda x: x['score'], reverse=True)
+        top_results = results[:30]
         
         total_time = (datetime.now() - start_time).total_seconds() / 60
-        print(f"\n✅ 스캔 완료: {len(results)}개 종목 발굴 (총 {total_time:.1f}분)")
+        print(f"\n✅ 스캔 완료: 전체 {len(results)}개 중 상위 {len(top_results)}개 선정 (총 {total_time:.1f}분)")
         
-        return results
+        return top_results
 
 
 def main():
