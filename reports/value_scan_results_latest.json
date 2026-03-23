@@ -1,5 +1,586 @@
 [
   {
+    "symbol": "000270",
+    "name": "기아",
+    "price": 168500.0,
+    "score": 750,
+    "scores": {
+      "value": 260,
+      "health": 260,
+      "momentum": 170,
+      "risk": 60
+    },
+    "fundamentals": {
+      "per": 6.8,
+      "pbr": 0.9,
+      "roe": 15.8,
+      "market_cap": 32000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 33.3,
+      "vol_ratio": 1.06,
+      "volatility": 71.1
+    },
+    "target": 202336.0,
+    "stop_loss": 151582.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 6.8,
+          "score": 120
+        },
+        "pbr": {
+          "value": 0.9,
+          "score": 60
+        },
+        "roe": {
+          "value": 15.8,
+          "score": 80
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 32000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 33.33333333333333,
+          "score": 50
+        },
+        "return_20d": {
+          "value": -1.920838183934808,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 71.07352052922896,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 1.0596341848193969,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 32000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "105560",
+    "name": "금융",
+    "price": 155200.0,
+    "score": 730,
+    "scores": {
+      "value": 240,
+      "health": 260,
+      "momentum": 160,
+      "risk": 70
+    },
+    "fundamentals": {
+      "per": 6.8,
+      "pbr": 0.7,
+      "roe": 11.2,
+      "market_cap": 65000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 46.7,
+      "vol_ratio": 0.73,
+      "volatility": 44.2
+    },
+    "target": 180957.0,
+    "stop_loss": 142321.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 6.8,
+          "score": 120
+        },
+        "pbr": {
+          "value": 0.7,
+          "score": 80
+        },
+        "roe": {
+          "value": 11.2,
+          "score": 40
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 65000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 46.68989547038328,
+          "score": 40
+        },
+        "return_20d": {
+          "value": -8.056872037914692,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 44.18689458086942,
+          "penalty": 30
+        },
+        "liquidity": {
+          "vol_ratio": 0.7291711720921821,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 65000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "055550",
+    "name": "신한지주",
+    "price": 97900.0,
+    "score": 725,
+    "scores": {
+      "value": 240,
+      "health": 260,
+      "momentum": 140,
+      "risk": 85
+    },
+    "fundamentals": {
+      "per": 6.5,
+      "pbr": 0.6,
+      "roe": 10.2,
+      "market_cap": 52000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 51.7,
+      "vol_ratio": 1.33,
+      "volatility": 39.8
+    },
+    "target": 112750.0,
+    "stop_loss": 90475.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 6.5,
+          "score": 120
+        },
+        "pbr": {
+          "value": 0.6,
+          "score": 80
+        },
+        "roe": {
+          "value": 10.2,
+          "score": 40
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 52000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 51.67785234899329,
+          "score": 20
+        },
+        "return_20d": {
+          "value": -4.019607843137255,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 39.77312286698605,
+          "penalty": 15
+        },
+        "liquidity": {
+          "vol_ratio": 1.325822957030223,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 52000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "214320",
+    "name": "이노션",
+    "price": 19570.0,
+    "score": 715,
+    "scores": {
+      "value": 220,
+      "health": 240,
+      "momentum": 160,
+      "risk": 95
+    },
+    "fundamentals": {
+      "per": 8.5,
+      "pbr": 1.2,
+      "roe": 15.2,
+      "market_cap": 9500.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 43.6,
+      "vol_ratio": 0.55,
+      "volatility": 23.5
+    },
+    "target": 21119.0,
+    "stop_loss": 18795.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.5,
+          "score": 100
+        },
+        "pbr": {
+          "value": 1.2,
+          "score": 40
+        },
+        "roe": {
+          "value": 15.2,
+          "score": 80
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 9500.0,
+          "score": 80
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 43.61702127659574,
+          "score": 40
+        },
+        "return_20d": {
+          "value": -4.068627450980392,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 23.538333987862973,
+          "penalty": 5
+        },
+        "liquidity": {
+          "vol_ratio": 0.5475139442826572,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 9500.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "005380",
+    "name": "현대차",
+    "price": 517000.0,
+    "score": 695,
+    "scores": {
+      "value": 240,
+      "health": 260,
+      "momentum": 150,
+      "risk": 45
+    },
+    "fundamentals": {
+      "per": 7.2,
+      "pbr": 0.8,
+      "roe": 12.3,
+      "market_cap": 48000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 29.6,
+      "vol_ratio": 0.48,
+      "volatility": 90.0
+    },
+    "target": 643214.0,
+    "stop_loss": 453893.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 7.2,
+          "score": 120
+        },
+        "pbr": {
+          "value": 0.8,
+          "score": 60
+        },
+        "roe": {
+          "value": 12.3,
+          "score": 60
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 48000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 40
+        },
+        "rsi": {
+          "value": 29.610389610389618,
+          "score": 60
+        },
+        "return_20d": {
+          "value": 1.5717092337917484,
+          "score": 50
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 89.95175533134554,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 0.47512592200792775,
+          "penalty": 15
+        },
+        "size": {
+          "market_cap": 48000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "086790",
+    "name": "하나금융지주",
+    "price": 113200.0,
+    "score": 690,
+    "scores": {
+      "value": 240,
+      "health": 260,
+      "momentum": 120,
+      "risk": 70
+    },
+    "fundamentals": {
+      "per": 6.2,
+      "pbr": 0.5,
+      "roe": 9.8,
+      "market_cap": 38000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 40.0,
+      "vol_ratio": 1.68,
+      "volatility": 43.2
+    },
+    "target": 132229.0,
+    "stop_loss": 103686.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 6.2,
+          "score": 120
+        },
+        "pbr": {
+          "value": 0.5,
+          "score": 80
+        },
+        "roe": {
+          "value": 9.8,
+          "score": 40
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 38000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 40
+        },
+        "rsi": {
+          "value": 40.0462962962963,
+          "score": 40
+        },
+        "return_20d": {
+          "value": -13.785224676313785,
+          "score": 40
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 43.237459174447665,
+          "penalty": 30
+        },
+        "liquidity": {
+          "vol_ratio": 1.6784325871520351,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 38000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "003690",
+    "name": "코리안리",
+    "price": 13170.0,
+    "score": 685,
+    "scores": {
+      "value": 200,
+      "health": 240,
+      "momentum": 160,
+      "risk": 85
+    },
+    "fundamentals": {
+      "per": 8.5,
+      "pbr": 0.9,
+      "roe": 11.8,
+      "market_cap": 5200.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 43.3,
+      "vol_ratio": 0.63,
+      "volatility": 38.6
+    },
+    "target": 14991.0,
+    "stop_loss": 12259.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.5,
+          "score": 100
+        },
+        "pbr": {
+          "value": 0.9,
+          "score": 60
+        },
+        "roe": {
+          "value": 11.8,
+          "score": 40
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 5200.0,
+          "score": 80
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 43.29159212880143,
+          "score": 40
+        },
+        "return_20d": {
+          "value": -6.330014224751067,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 38.57588055701597,
+          "penalty": 15
+        },
+        "liquidity": {
+          "vol_ratio": 0.6294173162020972,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 5200.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
     "symbol": "459580",
     "name": "금리액티브",
     "price": 1074950.0,
@@ -249,6 +830,172 @@
     }
   },
   {
+    "symbol": "010950",
+    "name": "S-Oil",
+    "price": 111800.0,
+    "score": 645,
+    "scores": {
+      "value": 220,
+      "health": 260,
+      "momentum": 120,
+      "risk": 45
+    },
+    "fundamentals": {
+      "per": 8.5,
+      "pbr": 0.9,
+      "roe": 12.5,
+      "market_cap": 22000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 50.9,
+      "vol_ratio": 0.33,
+      "volatility": 83.2
+    },
+    "target": 157100.0,
+    "stop_loss": 89150.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.5,
+          "score": 100
+        },
+        "pbr": {
+          "value": 0.9,
+          "score": 60
+        },
+        "roe": {
+          "value": 12.5,
+          "score": 60
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 22000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 40
+        },
+        "rsi": {
+          "value": 50.929752066115704,
+          "score": 20
+        },
+        "return_20d": {
+          "value": -6.833333333333333,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 83.1530086243208,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 0.33170350417089883,
+          "penalty": 15
+        },
+        "size": {
+          "market_cap": 22000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "000810",
+    "name": "삼성화재",
+    "price": 474500.0,
+    "score": 630,
+    "scores": {
+      "value": 220,
+      "health": 260,
+      "momentum": 80,
+      "risk": 70
+    },
+    "fundamentals": {
+      "per": 8.2,
+      "pbr": 0.9,
+      "roe": 12.5,
+      "market_cap": 85000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 37.2,
+      "vol_ratio": 1.2,
+      "volatility": 49.6
+    },
+    "target": 547250.0,
+    "stop_loss": 438125.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.2,
+          "score": 100
+        },
+        "pbr": {
+          "value": 0.9,
+          "score": 60
+        },
+        "roe": {
+          "value": 12.5,
+          "score": 60
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 85000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 20
+        },
+        "rsi": {
+          "value": 37.1824480369515,
+          "score": 50
+        },
+        "return_20d": {
+          "value": -23.220064724919094,
+          "score": 10
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 49.633439203267564,
+          "penalty": 30
+        },
+        "liquidity": {
+          "vol_ratio": 1.1961916403814181,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 85000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
     "symbol": "133690",
     "name": "미국나스닥100",
     "price": 161845.0,
@@ -415,6 +1162,338 @@
     }
   },
   {
+    "symbol": "000720",
+    "name": "현대건설",
+    "price": 164000.0,
+    "score": 620,
+    "scores": {
+      "value": 200,
+      "health": 260,
+      "momentum": 100,
+      "risk": 60
+    },
+    "fundamentals": {
+      "per": 8.2,
+      "pbr": 0.5,
+      "roe": 6.5,
+      "market_cap": 12000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 49.7,
+      "vol_ratio": 0.86,
+      "volatility": 86.6
+    },
+    "target": 208979.0,
+    "stop_loss": 141511.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.2,
+          "score": 100
+        },
+        "pbr": {
+          "value": 0.5,
+          "score": 80
+        },
+        "roe": {
+          "value": 6.5,
+          "score": 20
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 12000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 49.717514124293785,
+          "score": 40
+        },
+        "return_20d": {
+          "value": 27.82540919719408,
+          "score": 0
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 86.61008748031021,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 0.8596939687831361,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 12000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "035250",
+    "name": "강원랜드",
+    "price": 18190.0,
+    "score": 615,
+    "scores": {
+      "value": 160,
+      "health": 210,
+      "momentum": 150,
+      "risk": 95
+    },
+    "fundamentals": {
+      "per": 12.5,
+      "pbr": 1.8,
+      "roe": 15.2,
+      "market_cap": 8500.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 39.6,
+      "vol_ratio": 0.93,
+      "volatility": 25.0
+    },
+    "target": 19816.0,
+    "stop_loss": 17377.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 12.5,
+          "score": 60
+        },
+        "pbr": {
+          "value": 1.8,
+          "score": 20
+        },
+        "roe": {
+          "value": 15.2,
+          "score": 80
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 8500.0,
+          "score": 80
+        },
+        "stability": {
+          "score": 70
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 40
+        },
+        "rsi": {
+          "value": 39.56310679611651,
+          "score": 50
+        },
+        "return_20d": {
+          "value": -6.188757091284168,
+          "score": 60
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 24.970488046796863,
+          "penalty": 5
+        },
+        "liquidity": {
+          "vol_ratio": 0.9256235281595007,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 8500.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "005930",
+    "name": "삼성전자",
+    "price": 199400.0,
+    "score": 600,
+    "scores": {
+      "value": 160,
+      "health": 230,
+      "momentum": 150,
+      "risk": 60
+    },
+    "fundamentals": {
+      "per": 12.5,
+      "pbr": 1.8,
+      "roe": 15.2,
+      "market_cap": 450000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 43.8,
+      "vol_ratio": 0.77,
+      "volatility": 69.0
+    },
+    "target": 238807.0,
+    "stop_loss": 179696.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 12.5,
+          "score": 60
+        },
+        "pbr": {
+          "value": 1.8,
+          "score": 20
+        },
+        "roe": {
+          "value": 15.2,
+          "score": 80
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 450000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 70
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 43.844492440604746,
+          "score": 40
+        },
+        "return_20d": {
+          "value": 4.892162019989479,
+          "score": 50
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 69.0430145882194,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 0.7656611269063511,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 450000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
+    "symbol": "015760",
+    "name": "한국전력",
+    "price": 49150.0,
+    "score": 600,
+    "scores": {
+      "value": 200,
+      "health": 260,
+      "momentum": 80,
+      "risk": 60
+    },
+    "fundamentals": {
+      "per": 8.2,
+      "pbr": 0.5,
+      "roe": 6.8,
+      "market_cap": 28000.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 35.1,
+      "vol_ratio": 0.85,
+      "volatility": 72.2
+    },
+    "target": 59854.0,
+    "stop_loss": 43798.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 8.2,
+          "score": 100
+        },
+        "pbr": {
+          "value": 0.5,
+          "score": 80
+        },
+        "roe": {
+          "value": 6.8,
+          "score": 20
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 28000.0,
+          "score": 100
+        },
+        "stability": {
+          "score": 100
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 20
+        },
+        "rsi": {
+          "value": 35.0877192982456,
+          "score": 50
+        },
+        "return_20d": {
+          "value": -21.984126984126984,
+          "score": 10
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 72.23240205039853,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 0.8464356081763034,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 28000.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
     "symbol": "476830",
     "name": "알지노믹스",
     "price": 214500.0,
@@ -498,35 +1577,35 @@
     }
   },
   {
-    "symbol": "055550",
-    "name": "신한지주",
-    "price": 97900.0,
-    "score": 595,
+    "symbol": "003550",
+    "name": "LG",
+    "price": 95500.0,
+    "score": 590,
     "scores": {
-      "value": 180,
-      "health": 190,
-      "momentum": 140,
-      "risk": 85
+      "value": 120,
+      "health": 230,
+      "momentum": 170,
+      "risk": 70
     },
     "fundamentals": {
-      "per": 15.0,
+      "per": 15.2,
       "pbr": 1.2,
-      "roe": 83.3,
-      "market_cap": 2039.0,
-      "is_estimated": true
+      "roe": 8.5,
+      "market_cap": 28000.0,
+      "is_estimated": false
     },
     "technical": {
-      "rsi": 51.7,
-      "vol_ratio": 1.33,
-      "volatility": 39.8
+      "rsi": 38.3,
+      "vol_ratio": 0.73,
+      "volatility": 48.5
     },
-    "target": 112750.0,
-    "stop_loss": 90475.0,
+    "target": 110950.0,
+    "stop_loss": 87775.0,
     "rr_ratio": 2.0,
     "details": {
       "value": {
         "per": {
-          "value": 15.0,
+          "value": 15.2,
           "score": 40
         },
         "pbr": {
@@ -534,8 +1613,8 @@
           "score": 40
         },
         "roe": {
-          "value": 83.3,
-          "score": 100
+          "value": 8.5,
+          "score": 40
         }
       },
       "health": {
@@ -544,8 +1623,8 @@
           "score": 60
         },
         "market_cap": {
-          "value": 2039.0,
-          "score": 60
+          "value": 28000.0,
+          "score": 100
         },
         "stability": {
           "score": 70
@@ -556,25 +1635,25 @@
           "score": 60
         },
         "rsi": {
-          "value": 51.67785234899329,
-          "score": 20
+          "value": 38.26923076923077,
+          "score": 50
         },
         "return_20d": {
-          "value": -4.019607843137255,
+          "value": -3.0456852791878175,
           "score": 60
         }
       },
       "risk": {
         "volatility": {
-          "value": 39.77312286698605,
-          "penalty": 15
+          "value": 48.53464365195169,
+          "penalty": 30
         },
         "liquidity": {
-          "vol_ratio": 1.325822957030223,
+          "vol_ratio": 0.7300776311819643,
           "penalty": 0
         },
         "size": {
-          "market_cap": 2039.0,
+          "market_cap": 28000.0,
           "penalty": 0
         }
       }
@@ -747,44 +1826,44 @@
     }
   },
   {
-    "symbol": "000270",
-    "name": "기아",
-    "price": 168500.0,
-    "score": 570,
+    "symbol": "096770",
+    "name": "이노베이션",
+    "price": 113900.0,
+    "score": 565,
     "scores": {
-      "value": 160,
-      "health": 180,
-      "momentum": 170,
-      "risk": 60
+      "value": 140,
+      "health": 260,
+      "momentum": 120,
+      "risk": 45
     },
     "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.2,
-      "roe": 83.3,
-      "market_cap": 3110.0,
-      "is_estimated": true
+      "per": 12.5,
+      "pbr": 0.8,
+      "roe": 6.5,
+      "market_cap": 28000.0,
+      "is_estimated": false
     },
     "technical": {
-      "rsi": 33.3,
-      "vol_ratio": 1.06,
-      "volatility": 71.1
+      "rsi": 41.4,
+      "vol_ratio": 0.5,
+      "volatility": 69.3
     },
-    "target": 202336.0,
-    "stop_loss": 151582.0,
+    "target": 143664.0,
+    "stop_loss": 99018.0,
     "rr_ratio": 2.0,
     "details": {
       "value": {
         "per": {
-          "value": 25.0,
-          "score": 20
+          "value": 12.5,
+          "score": 60
         },
         "pbr": {
-          "value": 1.2,
-          "score": 40
+          "value": 0.8,
+          "score": 60
         },
         "roe": {
-          "value": 83.3,
-          "score": 100
+          "value": 6.5,
+          "score": 20
         }
       },
       "health": {
@@ -793,203 +1872,37 @@
           "score": 60
         },
         "market_cap": {
-          "value": 3110.0,
-          "score": 80
+          "value": 28000.0,
+          "score": 100
         },
         "stability": {
-          "score": 40
+          "score": 100
         }
       },
       "momentum": {
         "trend": {
-          "score": 60
+          "score": 40
         },
         "rsi": {
-          "value": 33.33333333333333,
-          "score": 50
+          "value": 41.375,
+          "score": 40
         },
         "return_20d": {
-          "value": -1.920838183934808,
-          "score": 60
+          "value": -10.736677115987462,
+          "score": 40
         }
       },
       "risk": {
         "volatility": {
-          "value": 71.07352052922896,
+          "value": 69.31750097344904,
           "penalty": 40
         },
         "liquidity": {
-          "vol_ratio": 1.0596341848193969,
-          "penalty": 0
+          "vol_ratio": 0.4974716740276287,
+          "penalty": 15
         },
         "size": {
-          "market_cap": 3110.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "000660",
-    "name": "하이닉스",
-    "price": 1007000.0,
-    "score": 570,
-    "scores": {
-      "value": 160,
-      "health": 200,
-      "momentum": 150,
-      "risk": 60
-    },
-    "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.0,
-      "roe": 100.0,
-      "market_cap": 47937.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 46.5,
-      "vol_ratio": 0.67,
-      "volatility": 77.1
-    },
-    "target": 1234143.0,
-    "stop_loss": 893429.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 25.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.0,
-          "score": 40
-        },
-        "roe": {
-          "value": 100.0,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 47937.0,
-          "score": 100
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 46.52061855670103,
-          "score": 40
-        },
-        "return_20d": {
-          "value": 6.111696522655427,
-          "score": 50
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 77.0689343020078,
-          "penalty": 40
-        },
-        "liquidity": {
-          "vol_ratio": 0.6739924031370566,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 47937.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "005930",
-    "name": "삼성전자",
-    "price": 199400.0,
-    "score": 570,
-    "scores": {
-      "value": 160,
-      "health": 200,
-      "momentum": 150,
-      "risk": 60
-    },
-    "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.0,
-      "roe": 100.0,
-      "market_cap": 66481.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 43.8,
-      "vol_ratio": 0.77,
-      "volatility": 69.0
-    },
-    "target": 238807.0,
-    "stop_loss": 179696.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 25.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.0,
-          "score": 40
-        },
-        "roe": {
-          "value": 100.0,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 66481.0,
-          "score": 100
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 43.844492440604746,
-          "score": 40
-        },
-        "return_20d": {
-          "value": 4.892162019989479,
-          "score": 50
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 69.0430145882194,
-          "penalty": 40
-        },
-        "liquidity": {
-          "vol_ratio": 0.7656611269063511,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 66481.0,
+          "market_cap": 28000.0,
           "penalty": 0
         }
       }
@@ -1328,6 +2241,89 @@
     }
   },
   {
+    "symbol": "051600",
+    "name": "한전KPS",
+    "price": 67500.0,
+    "score": 560,
+    "scores": {
+      "value": 160,
+      "health": 210,
+      "momentum": 130,
+      "risk": 60
+    },
+    "fundamentals": {
+      "per": 12.5,
+      "pbr": 1.8,
+      "roe": 15.2,
+      "market_cap": 8500.0,
+      "is_estimated": false
+    },
+    "technical": {
+      "rsi": 59.0,
+      "vol_ratio": 3.86,
+      "volatility": 52.7
+    },
+    "target": 78386.0,
+    "stop_loss": 62057.0,
+    "rr_ratio": 2.0,
+    "details": {
+      "value": {
+        "per": {
+          "value": 12.5,
+          "score": 60
+        },
+        "pbr": {
+          "value": 1.8,
+          "score": 20
+        },
+        "roe": {
+          "value": 15.2,
+          "score": 80
+        }
+      },
+      "health": {
+        "debt_ratio": {
+          "value": 100.0,
+          "score": 60
+        },
+        "market_cap": {
+          "value": 8500.0,
+          "score": 80
+        },
+        "stability": {
+          "score": 70
+        }
+      },
+      "momentum": {
+        "trend": {
+          "score": 60
+        },
+        "rsi": {
+          "value": 58.95765472312704,
+          "score": 20
+        },
+        "return_20d": {
+          "value": 7.484076433121019,
+          "score": 50
+        }
+      },
+      "risk": {
+        "volatility": {
+          "value": 52.72597189604566,
+          "penalty": 40
+        },
+        "liquidity": {
+          "vol_ratio": 3.8552823131374563,
+          "penalty": 0
+        },
+        "size": {
+          "market_cap": 8500.0,
+          "penalty": 0
+        }
+      }
+    }
+  },
+  {
     "symbol": "161510",
     "name": "고배당주",
     "price": 26800.0,
@@ -1411,89 +2407,6 @@
     }
   },
   {
-    "symbol": "005380",
-    "name": "현대차",
-    "price": 517000.0,
-    "score": 555,
-    "scores": {
-      "value": 160,
-      "health": 200,
-      "momentum": 150,
-      "risk": 45
-    },
-    "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.0,
-      "roe": 100.0,
-      "market_cap": 10642.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 29.6,
-      "vol_ratio": 0.48,
-      "volatility": 90.0
-    },
-    "target": 643214.0,
-    "stop_loss": 453893.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 25.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.0,
-          "score": 40
-        },
-        "roe": {
-          "value": 100.0,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 10642.0,
-          "score": 100
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 40
-        },
-        "rsi": {
-          "value": 29.610389610389618,
-          "score": 60
-        },
-        "return_20d": {
-          "value": 1.5717092337917484,
-          "score": 50
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 89.95175533134554,
-          "penalty": 40
-        },
-        "liquidity": {
-          "vol_ratio": 0.47512592200792775,
-          "penalty": 15
-        },
-        "size": {
-          "market_cap": 10642.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
     "symbol": "006400",
     "name": "삼성SDI",
     "price": 400500.0,
@@ -1571,338 +2484,6 @@
         },
         "size": {
           "market_cap": 3626.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "381180",
-    "name": "미국필라델피아반도체나스닥",
-    "price": 30875.0,
-    "score": 555,
-    "scores": {
-      "value": 160,
-      "health": 170,
-      "momentum": 140,
-      "risk": 85
-    },
-    "fundamentals": {
-      "per": 15.0,
-      "pbr": 1.5,
-      "roe": 66.7,
-      "market_cap": 666.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 51.3,
-      "vol_ratio": 1.34,
-      "volatility": 32.8
-    },
-    "target": 33071.0,
-    "stop_loss": 29777.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 15.0,
-          "score": 40
-        },
-        "pbr": {
-          "value": 1.5,
-          "score": 20
-        },
-        "roe": {
-          "value": 66.7,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 666.0,
-          "score": 40
-        },
-        "stability": {
-          "score": 70
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 51.267991775188484,
-          "score": 20
-        },
-        "return_20d": {
-          "value": -0.499516596841766,
-          "score": 60
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 32.78308241956188,
-          "penalty": 15
-        },
-        "liquidity": {
-          "vol_ratio": 1.3443285606097368,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 666.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "005935",
-    "name": "삼성전자우",
-    "price": 139200.0,
-    "score": 550,
-    "scores": {
-      "value": 160,
-      "health": 180,
-      "momentum": 150,
-      "risk": 60
-    },
-    "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.2,
-      "roe": 83.3,
-      "market_cap": 8398.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 47.6,
-      "vol_ratio": 1.18,
-      "volatility": 66.6
-    },
-    "target": 167946.0,
-    "stop_loss": 124827.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 25.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.2,
-          "score": 40
-        },
-        "roe": {
-          "value": 83.3,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 8398.0,
-          "score": 80
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 47.638603696098556,
-          "score": 40
-        },
-        "return_20d": {
-          "value": 3.0347890451517396,
-          "score": 50
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 66.64003988001109,
-          "penalty": 40
-        },
-        "liquidity": {
-          "vol_ratio": 1.1837413541348567,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 8398.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "105560",
-    "name": "금융",
-    "price": 155200.0,
-    "score": 550,
-    "scores": {
-      "value": 160,
-      "health": 160,
-      "momentum": 160,
-      "risk": 70
-    },
-    "fundamentals": {
-      "per": 20.0,
-      "pbr": 1.2,
-      "roe": 83.3,
-      "market_cap": 2289.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 46.7,
-      "vol_ratio": 0.73,
-      "volatility": 44.2
-    },
-    "target": 180957.0,
-    "stop_loss": 142321.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 20.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.2,
-          "score": 40
-        },
-        "roe": {
-          "value": 83.3,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 2289.0,
-          "score": 60
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 46.68989547038328,
-          "score": 40
-        },
-        "return_20d": {
-          "value": -8.056872037914692,
-          "score": 60
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 44.18689458086942,
-          "penalty": 30
-        },
-        "liquidity": {
-          "vol_ratio": 0.7291711720921821,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 2289.0,
-          "penalty": 0
-        }
-      }
-    }
-  },
-  {
-    "symbol": "402340",
-    "name": "스퀘어",
-    "price": 608000.0,
-    "score": 550,
-    "scores": {
-      "value": 160,
-      "health": 180,
-      "momentum": 150,
-      "risk": 60
-    },
-    "fundamentals": {
-      "per": 25.0,
-      "pbr": 1.2,
-      "roe": 83.3,
-      "market_cap": 3818.0,
-      "is_estimated": true
-    },
-    "technical": {
-      "rsi": 46.0,
-      "vol_ratio": 0.88,
-      "volatility": 82.1
-    },
-    "target": 758643.0,
-    "stop_loss": 532679.0,
-    "rr_ratio": 2.0,
-    "details": {
-      "value": {
-        "per": {
-          "value": 25.0,
-          "score": 20
-        },
-        "pbr": {
-          "value": 1.2,
-          "score": 40
-        },
-        "roe": {
-          "value": 83.3,
-          "score": 100
-        }
-      },
-      "health": {
-        "debt_ratio": {
-          "value": 100.0,
-          "score": 60
-        },
-        "market_cap": {
-          "value": 3818.0,
-          "score": 80
-        },
-        "stability": {
-          "score": 40
-        }
-      },
-      "momentum": {
-        "trend": {
-          "score": 60
-        },
-        "rsi": {
-          "value": 45.969498910675384,
-          "score": 40
-        },
-        "return_20d": {
-          "value": 4.827586206896552,
-          "score": 50
-        }
-      },
-      "risk": {
-        "volatility": {
-          "value": 82.10423534079949,
-          "penalty": 40
-        },
-        "liquidity": {
-          "vol_ratio": 0.882020040958484,
-          "penalty": 0
-        },
-        "size": {
-          "market_cap": 3818.0,
           "penalty": 0
         }
       }
