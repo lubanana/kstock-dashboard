@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korea Value Stock TOP30 | 2026-03-23 16:33</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: rgba(255,255,255,0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .header .meta {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            min-width: 120px;
+        }
+        
+        .meta-item .label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .meta-item .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .section {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            font-size: 1.5rem;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        th:first-child { border-radius: 10px 0 0 0; }
+        th:last-child { border-radius: 0 10px 0 0; }
+        
+        td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover td {
+            background: #f8f9ff;
+        }
+        
+        .rank {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #667eea;
+        }
+        
+        .rank.top1 { color: #ffd700; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .rank.top2 { color: #c0c0c0; }
+        .rank.top3 { color: #cd7f32; }
+        
+        .stock-name {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 1rem;
+        }
+        
+        .stock-code {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .est-badge {
+            display: inline-block;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-left: 4px;
+        }
+        
+        .score {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #667eea;
+        }
+        
+        .score-bar {
+            width: 100%;
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .score-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+        }
+        
+        .price { font-weight: 600; color: #333; }
+        .target { color: #28a745; font-weight: 600; }
+        .stop { color: #dc3545; }
+        .rr { color: #666; font-size: 0.9rem; }
+        
+        .per-val { font-weight: 600; }
+        .pbr-val { font-weight: 600; }
+        
+        .sub-scores {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+        
+        .sub-score {
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .sub-score.value { background: #e3f2fd; color: #1565c0; }
+        .sub-score.health { background: #e8f5e9; color: #2e7d32; }
+        .sub-score.momentum { background: #fff3e0; color: #ef6c00; }
+        .sub-score.risk { background: #fce4ec; color: #c2185b; }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .methodology {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            line-height: 1.8;
+        }
+        
+        .methodology h3 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .score-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .score-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+        
+        .score-item.value { border-color: #1565c0; }
+        .score-item.health { border-color: #2e7d32; }
+        .score-item.momentum { border-color: #ef6c00; }
+        .score-item.risk { border-color: #c2185b; }
+        
+        .score-item h4 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .score-item .points {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .disclaimer {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8rem; }
+            .meta { flex-direction: column; }
+            table { font-size: 0.75rem; }
+            th, td { padding: 8px 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 Korea Value Stock Report</h1>
+            <p class="subtitle">한국 저평가 우량주 TOP 30 | 가치투자 기반 종합 평가</p>
+            
+            <div class="meta">
+                <div class="meta-item">
+                    <div class="label">분석 종목</div>
+                    <div class="value">3,305개</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">선정 종목</div>
+                    <div class="value">23개</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">최소 점수</div>
+                    <div class="value">650점</div>
+                </div>
+                <div class="meta-item">
+                    <div class="label">생성일</div>
+                    <div class="value">2026-03-23</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Note -->
+        <div class="note">
+            <strong>📌 참고사항:</strong> 
+            <span class="est-badge">추정</span> 표시는 재무 데이터가 없어 가격/거래량 기반으로 추정한 값입니다. 
+            실제 투자 시 FnGuide 또는 한경컨센서스에서 정확한 재무지표를 확인하세요.
+        </div>
+        
+        <!-- TOP 30 Table -->
+        <div class="section">
+            <h2>🏆 TOP 30 저평가 종목</h2>
+            
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>종목</th>
+                            <th>현재가</th>
+                            <th>PER</th>
+                            <th>PBR</th>
+                            <th>총점</th>
+                            <th>세부점수</th>
+                            <th>목표가</th>
+                            <th>손절가</th>
+                            <th>손익비</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td><span class="rank top1">#1</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">금리액티브</div>
+                                <div class="stock-code">459580</div>
+                            </td>
+                            <td><span class="price">1,074,950원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">670점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 67.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">240</span>
+                                    <span class="sub-score momentum" title="모멘텀">110</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">1,075,304원</span></td>
+                            <td><span class="stop">1,074,773원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank top2">#2</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미국S</div>
+                                <div class="stock-code">360750</div>
+                            </td>
+                            <td><span class="price">24,620원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">660점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 66.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">220</span>
+                                    <span class="sub-score momentum" title="모멘텀">120</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">25,309원</span></td>
+                            <td><span class="stop">24,276원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank top3">#3</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미국S</div>
+                                <div class="stock-code">379800</div>
+                            </td>
+                            <td><span class="price">22,505원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">660점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 66.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">220</span>
+                                    <span class="sub-score momentum" title="모멘텀">120</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">23,144원</span></td>
+                            <td><span class="stop">22,186원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#4</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미국나스닥100</div>
+                                <div class="stock-code">133690</div>
+                            </td>
+                            <td><span class="price">161,845원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">630점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 63.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">220</span>
+                                    <span class="sub-score momentum" title="모멘텀">90</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">167,997원</span></td>
+                            <td><span class="stop">158,769원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#5</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미국나스닥100</div>
+                                <div class="stock-code">379810</div>
+                            </td>
+                            <td><span class="price">24,255원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">630점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 63.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">220</span>
+                                    <span class="sub-score momentum" title="모멘텀">90</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">25,144원</span></td>
+                            <td><span class="stop">23,810원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#6</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">알지노믹스</div>
+                                <div class="stock-code">476830</div>
+                            </td>
+                            <td><span class="price">214,500원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">600점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 60.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">220</span>
+                                    <span class="sub-score health" title="재무건전성">220</span>
+                                    <span class="sub-score momentum" title="모멘텀">60</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">274,564원</span></td>
+                            <td><span class="stop">184,468원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#7</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">신한지주</div>
+                                <div class="stock-code">055550</div>
+                            </td>
+                            <td><span class="price">97,900원</span></td>
+                            <td><span class="per-val" style="color:#ffc107">15.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">595점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 59.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">180</span>
+                                    <span class="sub-score health" title="재무건전성">190</span>
+                                    <span class="sub-score momentum" title="모멘텀">140</span>
+                                    <span class="sub-score risk" title="리스크">85</span>
+                                </div>
+                            </td>
+                            <td><span class="target">112,750원</span></td>
+                            <td><span class="stop">90,475원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#8</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">레버리지</div>
+                                <div class="stock-code">122630</div>
+                            </td>
+                            <td><span class="price">89,320원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">590점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 59.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">170</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">119,190원</span></td>
+                            <td><span class="stop">74,385원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#9</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">머니마켓액티브</div>
+                                <div class="stock-code">488770</div>
+                            </td>
+                            <td><span class="price">103,875원</span></td>
+                            <td><span class="per-val" style="color:#17a2b8">10.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.5x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">580점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 58.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">200</span>
+                                    <span class="sub-score health" title="재무건전성">170</span>
+                                    <span class="sub-score momentum" title="모멘텀">110</span>
+                                    <span class="sub-score risk" title="리스크">100</span>
+                                </div>
+                            </td>
+                            <td><span class="target">103,915원</span></td>
+                            <td><span class="stop">103,855원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#10</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">기아</div>
+                                <div class="stock-code">000270</div>
+                            </td>
+                            <td><span class="price">168,500원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">570점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 57.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">170</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">202,336원</span></td>
+                            <td><span class="stop">151,582원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#11</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">하이닉스</div>
+                                <div class="stock-code">000660</div>
+                            </td>
+                            <td><span class="price">1,007,000원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">570점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 57.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">150</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">1,234,143원</span></td>
+                            <td><span class="stop">893,429원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#12</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">삼성전자</div>
+                                <div class="stock-code">005930</div>
+                            </td>
+                            <td><span class="price">199,400원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">570점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 57.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">150</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">238,807원</span></td>
+                            <td><span class="stop">179,696원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#13</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">코스닥150</div>
+                                <div class="stock-code">229200</div>
+                            </td>
+                            <td><span class="price">20,090원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">565점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 56.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">45</span>
+                                </div>
+                            </td>
+                            <td><span class="target">23,848원</span></td>
+                            <td><span class="stop">18,211원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#14</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">코스닥150레버리지</div>
+                                <div class="stock-code">233740</div>
+                            </td>
+                            <td><span class="price">17,430원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">565점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 56.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">45</span>
+                                </div>
+                            </td>
+                            <td><span class="target">23,709원</span></td>
+                            <td><span class="stop">14,291원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#15</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미래에셋증권</div>
+                                <div class="stock-code">006800</div>
+                            </td>
+                            <td><span class="price">67,700원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">560점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 56.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">84,783원</span></td>
+                            <td><span class="stop">59,158원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#16</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">한화솔루션</div>
+                                <div class="stock-code">009830</div>
+                            </td>
+                            <td><span class="price">51,700원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">560점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 56.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">66,421원</span></td>
+                            <td><span class="stop">44,339원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#17</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">고배당주</div>
+                                <div class="stock-code">161510</div>
+                            </td>
+                            <td><span class="price">26,800원</span></td>
+                            <td><span class="per-val" style="color:#ffc107">15.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.5x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">560점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 56.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">170</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">70</span>
+                                </div>
+                            </td>
+                            <td><span class="target">30,285원</span></td>
+                            <td><span class="stop">25,057원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#18</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">현대차</div>
+                                <div class="stock-code">005380</div>
+                            </td>
+                            <td><span class="price">517,000원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#17a2b8">1.0x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">555점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">200</span>
+                                    <span class="sub-score momentum" title="모멘텀">150</span>
+                                    <span class="sub-score risk" title="리스크">45</span>
+                                </div>
+                            </td>
+                            <td><span class="target">643,214원</span></td>
+                            <td><span class="stop">453,893원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#19</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">삼성SDI</div>
+                                <div class="stock-code">006400</div>
+                            </td>
+                            <td><span class="price">400,500원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">555점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">170</span>
+                                    <span class="sub-score risk" title="리스크">45</span>
+                                </div>
+                            </td>
+                            <td><span class="target">482,786원</span></td>
+                            <td><span class="stop">359,357원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#20</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">미국필라델피아반도체나스닥</div>
+                                <div class="stock-code">381180</div>
+                            </td>
+                            <td><span class="price">30,875원</span></td>
+                            <td><span class="per-val" style="color:#ffc107">15.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.5x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">555점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.5%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">170</span>
+                                    <span class="sub-score momentum" title="모멘텀">140</span>
+                                    <span class="sub-score risk" title="리스크">85</span>
+                                </div>
+                            </td>
+                            <td><span class="target">33,071원</span></td>
+                            <td><span class="stop">29,777원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#21</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">삼성전자우</div>
+                                <div class="stock-code">005935</div>
+                            </td>
+                            <td><span class="price">139,200원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">550점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">150</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">167,946원</span></td>
+                            <td><span class="stop">124,827원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#22</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">금융</div>
+                                <div class="stock-code">105560</div>
+                            </td>
+                            <td><span class="price">155,200원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">20.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">550점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">160</span>
+                                    <span class="sub-score momentum" title="모멘텀">160</span>
+                                    <span class="sub-score risk" title="리스크">70</span>
+                                </div>
+                            </td>
+                            <td><span class="target">180,957원</span></td>
+                            <td><span class="stop">142,321원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="rank ">#23</span></td>
+                            <td style="text-align:left;">
+                                <div class="stock-name">스퀘어</div>
+                                <div class="stock-code">402340</div>
+                            </td>
+                            <td><span class="price">608,000원</span></td>
+                            <td><span class="per-val" style="color:#dc3545">25.0x</span><span class="est-badge">추정</span></td>
+                            <td><span class="pbr-val" style="color:#ffc107">1.2x</span><span class="est-badge">추정</span></td>
+                            <td>
+                                <span class="score">550점</span>
+                                <div class="score-bar">
+                                    <div class="score-bar-fill" style="width: 55.0%"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sub-scores">
+                                    <span class="sub-score value" title="가치평가">160</span>
+                                    <span class="sub-score health" title="재무건전성">180</span>
+                                    <span class="sub-score momentum" title="모멘텀">150</span>
+                                    <span class="sub-score risk" title="리스크">60</span>
+                                </div>
+                            </td>
+                            <td><span class="target">758,643원</span></td>
+                            <td><span class="stop">532,679원</span></td>
+                            <td><span class="rr">1:2.00</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background:#28a745;"></div>
+                    <span>PER < 8 (매우 저평가)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background:#17a2b8;"></div>
+                    <span>PER 8~12 (저평가)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background:#ffc107;"></div>
+                    <span>PER 12~20 (보통)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background:#dc3545;"></div>
+                    <span>PER > 20 (고평가)</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Methodology -->
+        <div class="section">
+            <h2>📈 평가 방법론 (1000점 체계)</h2>
+            
+            <div class="methodology">
+                <p>본 리포트는 다음 4가지 영역에서 종합 평가하여 저평가 우량주를 선정합니다.</p>
+                
+                <div class="score-breakdown">
+                    <div class="score-item value">
+                        <h4>💎 가치평가 (400점)</h4>
+                        <div class="points">PER · PBR · ROE · 52주 위치</div>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                            낮은 PER/PBR, 높은 ROE, 52주 저점 대비 낮은 위치
+                        </p>
+                    </div>
+                    
+                    <div class="score-item health">
+                        <h4>🏢 재무건전성 (300점)</h4>
+                        <div class="points">부채비율 · 시총 · 이익안정성</div>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                            낮은 부채비율, 중대형주 선호, 안정적 수익성
+                        </p>
+                    </div>
+                    
+                    <div class="score-item momentum">
+                        <h4>📊 기술적모멘텀 (200점)</h4>
+                        <div class="points">추세 · RSI · 20일 수익률</div>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                            정배열 추세, 과매도(RSI < 40), 적정 눌림목
+                        </p>
+                    </div>
+                    
+                    <div class="score-item risk">
+                        <h4>🛡️ 리스크관리 (100점)</h4>
+                        <div class="points">변동성 · 유동성 · 규모</div>
+                        <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">
+                            적정 변동성, 거래량 유동성, 중소형주 리스크 관리
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <strong>⚠️ 투자 유의사항</strong><br>
+            본 리포트는 기술적 분석 및 재무 데이터를 기반으로 한 참고 자료이며, 투자 권유가 아닙니다. 
+            실제 투자 결정은 투자자 본인의 판단과 책임하에 신중히 이루어져야 합니다. 
+            과거의 수익률이 미래의 수익률을 보장하지 않으며, 원금 손실의 가능성이 있습니다. 
+            <span class="est-badge">추정</span> 표시된 재무지표는 가격/거래량 기반 추정치이므로 
+            실제 투자 시 FnGuide 또는 한경컨센서스에서 정확한 값을 확인하세요.
+            <br><br>
+            <strong>Generated by:</strong> Korea Value Stock Scanner | 
+            <strong>Data:</strong> FinanceDataReader | 
+            <strong>Date:</strong> 2026-03-23 16:33
+        </div>
+    </div>
+</body>
+</html>
