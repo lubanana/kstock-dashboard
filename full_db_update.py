@@ -44,8 +44,11 @@ def get_latest_date(symbol):
     return result[0] if result else None
 
 
-def full_update(target_date='2026-03-20'):
+def full_update(target_date=None):
     """전체 종목 업데이트"""
+    if target_date is None:
+        target_date = datetime.now(timezone(timedelta(hours=9))).strftime('%Y-%m-%d')
+    
     symbols = get_all_symbols_from_db()
     total = len(symbols)
     
@@ -119,5 +122,8 @@ def full_update(target_date='2026-03-20'):
 
 
 if __name__ == '__main__':
-    target = sys.argv[1] if len(sys.argv) > 1 else '2026-03-20'
+    if len(sys.argv) > 1:
+        target = sys.argv[1]
+    else:
+        target = None  # 오늘 날짜로 자동 설정
     full_update(target)
