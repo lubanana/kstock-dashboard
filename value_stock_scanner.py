@@ -57,28 +57,27 @@ class ValueStockScanner:
         return names
     
     def _load_fundamental_data(self):
-        """재무 데이터 로드 (캐시 또는 DB에서)"""
-        # 실제 환경에서는 DART API 또는 기존 DB의 fundamental 테이블 사용
+        """재무 데이터 로드 (DB에서)"""
         fund_data = {}
         cursor = self.conn.cursor()
         
         try:
-            # stock_info 테이블에서 기본 정보 로드 시도
+            # stock_info 테이블에서 기본 정보 로드
             cursor.execute('''
-                SELECT symbol, market_cap, per, pbr, eps, bps 
+                SELECT symbol, market_cap, per, pbr, roe
                 FROM stock_info 
                 WHERE per IS NOT NULL OR pbr IS NOT NULL
             ''')
             for row in cursor.fetchall():
                 fund_data[row[0]] = {
                     'market_cap': row[1] or 0,
-                    'per': row[2] or 99.9,
-                    'pbr': row[3] or 9.9,
-                    'eps': row[4] or 0,
-                    'bps': row[5] or 0
+                    'per': row[2],
+                    'pbr': row[3],
+                    'roe': row[4] or 10.0,
+                    'is_real': True  # 실제 데이터 표시
                 }
-        except:
-            pass
+        except Exception as e:
+            print(f"DB load error: {e}")
         
         return fund_data
     
@@ -137,13 +136,13 @@ class ValueStockScanner:
         est_market_cap = price * avg_volume / 1e8  # rough estimate in 억원
         
         # 캐시에 재무 데이터가 있으면 사용
-        if fund and fund.get('per') and fund.get('per') < 90:
+        if fund and fund.get('per') and fund.get('per') < 90 and fund.get('is_real'):
             return {
                 'per': fund.get('per'),
                 'pbr': fund.get('pbr', 1.0),
                 'roe': fund.get('roe', 10.0),
                 'market_cap': fund.get('market_cap', est_market_cap),
-                'debt_ratio': fund.get('debt_ratio', 100.0),
+                'debt_ratio': 100.0,
                 'is_estimated': False
             }
         
