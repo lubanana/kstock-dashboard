@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T00:09:34.946182+09:00",
+  "timestamp": "2026-03-24T05:00:02.255017+09:00",
   "korean_stocks": [],
   "crypto_opportunities": [
     {
@@ -87,23 +87,23 @@
       },
       {
         "date": "2026-03-20",
-        "total_volume": 5176941533,
+        "total_volume": 5262422513,
         "active_stocks": 3299
       },
       {
         "date": "2026-03-19",
-        "total_volume": 6535086696,
-        "active_stocks": 3215
+        "total_volume": 6535560884,
+        "active_stocks": 3216
       },
       {
         "date": "2026-03-18",
-        "total_volume": 6267378286,
-        "active_stocks": 3298
+        "total_volume": 6268065807,
+        "active_stocks": 3299
       },
       {
         "date": "2026-03-17",
-        "total_volume": 5723178943,
-        "active_stocks": 3299
+        "total_volume": 5723793333,
+        "active_stocks": 3300
       }
     ],
     "market_breadth": {
