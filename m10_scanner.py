@@ -8,6 +8,10 @@ Features:
 - 기술적 필터: RSI, Volume, ADX
 - Fibonacci 목표가/손절가 계산
 - 시장조사 리포트 생성
+
+Usage:
+    python m10_scanner.py                    # 오늘 날짜로 스캔
+    python m10_scanner.py --date 2026-03-24  # 지정 날짜로 스캔
 """
 
 import pandas as pd
@@ -16,10 +20,11 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Tuple
 import json
 import os
+import sys
+import argparse
 import warnings
 warnings.filterwarnings('ignore')
 
-import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fdr_wrapper import FDRWrapper, get_price
@@ -311,6 +316,17 @@ class M10Scanner:
 
 def main():
     """메인 실행"""
+    # 명령행 인자 파싱
+    parser = argparse.ArgumentParser(description='M10 Scanner - M-Strategy 기반 종목 스캐너')
+    parser.add_argument('--date', type=str, help='스캔 기준일 (YYYY-MM-DD 형식). 미지정 시 오늘 날짜')
+    args = parser.parse_args()
+    
+    # 스캔 날짜 설정
+    if args.date:
+        scan_date = datetime.strptime(args.date, '%Y-%m-%d')
+    else:
+        scan_date = datetime.now()
+    
     # 테스트용 대형주 리스트
     symbols = [
         '005930', '000660', '051910', '005380', '035720',
@@ -326,6 +342,7 @@ def main():
     ]
     
     print("📊 M10 스캐너 실행")
+    print(f"   스캔 기준일: {scan_date.strftime('%Y-%m-%d')}")
     print(f"   종목: {len(symbols)}개")
     
     # 스캐너 초기화
@@ -341,7 +358,6 @@ def main():
     )
     
     # 스캔 실행
-    scan_date = datetime(2026, 3, 20)  # 2026-03-20 기준
     results = scanner.scan(symbols, scan_date)
     
     # TOP 20 선택
