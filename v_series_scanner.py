@@ -2,6 +2,10 @@
 """
 V-Series Daily Scanner
 오늘 기준 V-Series (Value + Fibonacci + ATR) 종목 스캔
+
+Usage:
+    python v_series_scanner.py                    # 오늘 날짜로 스캔
+    python v_series_scanner.py --date 2026-03-24  # 지정 날짜로 스캔
 """
 
 import pandas as pd
@@ -10,10 +14,11 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional, Tuple
 import json
 import os
+import sys
+import argparse
 import warnings
 warnings.filterwarnings('ignore')
 
-import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fdr_wrapper import get_price
@@ -307,6 +312,17 @@ def load_kospi_kosdaq_symbols() -> List[str]:
 
 def main():
     """메인 실행"""
+    # 명령행 인자 파싱
+    parser = argparse.ArgumentParser(description='V-Series Scanner - Value + Fibonacci + ATR 기반 종목 스캐너')
+    parser.add_argument('--date', type=str, help='스캔 기준일 (YYYY-MM-DD 형식). 미지정 시 오늘 날짜')
+    args = parser.parse_args()
+    
+    # 스캔 날짜 설정
+    if args.date:
+        scan_date = datetime.strptime(args.date, '%Y-%m-%d')
+    else:
+        scan_date = datetime.now()
+    
     # 종목 리스트 로드
     print("📊 종목 리스트 로드 중...")
     
@@ -325,6 +341,7 @@ def main():
     ]
     
     print(f"   테스트용 {len(symbols)}개 종목")
+    print(f"   스캔 기준일: {scan_date.strftime('%Y-%m-%d')}")
     
     # 스캐너 초기화
     scanner = ValueFibATRScanner(
@@ -335,7 +352,6 @@ def main():
     )
     
     # 스캔 실행
-    scan_date = datetime(2026, 3, 20)  # 2026-03-20 기준
     results = scanner.scan(symbols, scan_date)
     
     # TOP 20 선택

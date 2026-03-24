@@ -2,6 +2,10 @@
 """
 B01 Buffett Value Strategy Scanner with Fibonacci + ATR
 버핏 가치투자 스타일 B01 스캐너 - 피볼나치 + ATR 적용
+
+Usage:
+    python b01_buffett_scanner.py                    # 오늘 날짜로 스캔
+    python b01_buffett_scanner.py --date 2026-03-24  # 지정 날짜로 스캔
 """
 
 import pandas as pd
@@ -11,6 +15,7 @@ from typing import Dict, List
 import json
 from pathlib import Path
 import sys
+import argparse
 sys.path.insert(0, '.')
 from fdr_wrapper import get_price
 
@@ -36,10 +41,11 @@ class B01BuffettScanner:
             '000100', '011200', '030200', '010950', '034220', '086790', '055550'
         ]
     
-    def fetch_data(self, symbol: str, days: int = 120) -> pd.DataFrame:
+    def fetch_data(self, symbol: str, end_date: datetime = None, days: int = 120) -> pd.DataFrame:
         """종목 데이터 조회"""
         try:
-            end_date = datetime(2026, 3, 20)
+            if end_date is None:
+                end_date = datetime.now()
             start_date = end_date - timedelta(days=days)
             
             df = get_price(
@@ -204,12 +210,15 @@ class B01BuffettScanner:
             'reward_amount': reward
         }
     
-    def scan(self) -> List[Dict]:
+    def scan(self, scan_date: datetime = None) -> List[Dict]:
         """스캔 실행"""
+        if scan_date is None:
+            scan_date = datetime.now()
+            
         print("=" * 70)
         print("🎯 B01 Buffett Value Strategy Scanner (Fibonacci + ATR)")
         print("=" * 70)
-        print(f"기준일: 2026-03-20")
+        print(f"기준일: {scan_date.strftime('%Y-%m-%d')}")
         print(f"대상 종목: {len(self.symbols)}개")
         print("-" * 70)
         
@@ -219,7 +228,7 @@ class B01BuffettScanner:
             print(f"\n   [{i}/{len(self.symbols)}] {symbol}")
             
             # 데이터 조회
-            df = self.fetch_data(symbol)
+            df = self.fetch_data(symbol, end_date=scan_date)
             if df.empty:
                 print("   ❌ 데이터 부족")
                 continue
@@ -290,10 +299,13 @@ class B01BuffettScanner:
         }
         return names.get(symbol, symbol)
     
-    def print_results(self):
+    def print_results(self, scan_date: datetime = None):
         """결과 출력"""
+        if scan_date is None:
+            scan_date = datetime.now()
+            
         print("\n" + "=" * 70)
-        print(f"🎯 B01 Buffett 전략 선정 종목 TOP {len(self.results)} (2026-03-20)")
+        print(f"🎯 B01 Buffett 전략 선정 종목 TOP {len(self.results)} ({scan_date.strftime('%Y-%m-%d')})")
         print("=" * 70)
         
         for i, stock in enumerate(self.results[:10], 1):
@@ -309,16 +321,20 @@ class B01BuffettScanner:
         
         print("\n" + "=" * 70)
     
-    def save_results(self):
+    def save_results(self, scan_date: datetime = None):
         """결과 저장"""
+        if scan_date is None:
+            scan_date = datetime.now()
+            
         output_dir = Path('./reports/b01_buffett')
         output_dir.mkdir(parents=True, exist_ok=True)
         
-        output_file = output_dir / 'b01_buffett_scan_20260320.json'
+        timestamp = scan_date.strftime('%Y%m%d')
+        output_file = output_dir / f'b01_buffett_scan_{timestamp}.json'
         
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump({
-                'scan_date': '2026-03-20',
+                'scan_date': scan_date.strftime('%Y-%m-%d'),
                 'total_symbols': len(self.symbols),
                 'selected_count': len(self.results),
                 'stocks': self.results
@@ -328,10 +344,21 @@ class B01BuffettScanner:
 
 
 def main():
+    # 명령행 인자 파싱
+    parser = argparse.ArgumentParser(description='B01 Buffett Scanner - 가치투자 기반 종목 스캐너')
+    parser.add_argument('--date', type=str, help='스캔 기준일 (YYYY-MM-DD 형식). 미지정 시 오늘 날짜')
+    args = parser.parse_args()
+    
+    # 스캔 날짜 설정
+    if args.date:
+        scan_date = datetime.strptime(args.date, '%Y-%m-%d')
+    else:
+        scan_date = datetime.now()
+    
     scanner = B01BuffettScanner()
-    results = scanner.scan()
-    scanner.print_results()
-    scanner.save_results()
+    results = scanner.scan(scan_date)
+    scanner.print_results(scan_date)
+    scanner.save_results(scan_date)
     
     print(f"\n📊 총 선정: {len(results)}개 종목")
 
