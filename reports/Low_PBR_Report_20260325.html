@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>저PBR 종목 스캔 리포트 - 2026-03-25</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .subtitle { font-size: 1.4em; color: #aaa; }
+        .header .date { font-size: 1em; color: #888; margin-top: 10px; }
+        
+        .section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .section h2 {
+            color: #e94560;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .stat-card .number {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #4ecca3;
+        }
+        .stat-card .label { color: #aaa; font-size: 0.9em; }
+        
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        .stock-table th {
+            background: rgba(233,69,96,0.3);
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        .stock-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .stock-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .rank { font-weight: bold; color: #e94560; font-size: 1.1em; }
+        .stock-name { text-align: left !important; font-weight: bold; }
+        .stock-code { color: #888; font-size: 0.85em; }
+        .pbr-low { color: #ff6b6b; font-weight: bold; }
+        .per-good { color: #4ecdc4; }
+        .per-bad { color: #ffaa00; }
+        
+        .warning {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <h1>📉 저PBR 종목 스캔 리포트</h1>
+            <div class="subtitle">PBR ≤ 0.6 종목 | 코스피/코스닥 전체 대상</div>
+            <div class="date">2026년 3월 25일 | 데이터: 네이버 증권</div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 스캔 개요</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">649</div>
+                    <div class="label">PBR≤0.6 종목</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">637</div>
+                    <div class="label">PER 확인 가능</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">0.40</div>
+                    <div class="label">평균 PBR</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">0.01</div>
+                    <div class="label">최소 PBR</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🏆 TOP 100 저PBR 종목</h2>
+            <p style="color: #aaa; margin-bottom: 15px;">※ 부채비율 < 50% 추가 필터링 필요</p>
+            
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목코드</th>
+                        <th>PBR</th>
+                        <th>PER</th>
+                        <th>평가</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="rank">1</td>
+                        <td class="stock-name">
+                            900270
+                            <br><span class="stock-code">�����⑷렇猷�</span>
+                        </td>
+                        <td class="pbr-low">0.01</td>
+                        <td class="per-bad">130.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">2</td>
+                        <td class="stock-name">
+                            008600
+                            <br><span class="stock-code">���鍮����</span>
+                        </td>
+                        <td class="pbr-low">0.04</td>
+                        <td class="per-bad">4044.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">3</td>
+                        <td class="stock-name">
+                            900120
+                            <br><span class="stock-code">��⑥����ㅼ�����</span>
+                        </td>
+                        <td class="pbr-low">0.07</td>
+                        <td class="per-good">1.07</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">4</td>
+                        <td class="stock-name">
+                            000540
+                            <br><span class="stock-code">��κ뎅������</span>
+                        </td>
+                        <td class="pbr-low">0.08</td>
+                        <td class="per-good">4.46</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">5</td>
+                        <td class="stock-name">
+                            000545
+                            <br><span class="stock-code">��κ뎅�����ъ��</span>
+                        </td>
+                        <td class="pbr-low">0.08</td>
+                        <td class="per-good">6.72</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">6</td>
+                        <td class="stock-name">
+                            085620
+                            <br><span class="stock-code">誘몃�����������紐�</span>
+                        </td>
+                        <td class="pbr-low">0.09</td>
+                        <td class="">17.17</td>
+                        <td>👀 관심</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">7</td>
+                        <td class="stock-name">
+                            377460
+                            <br><span class="stock-code">��������������대��</span>
+                        </td>
+                        <td class="pbr-low">0.10</td>
+                        <td class="">17.97</td>
+                        <td>👀 관심</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">8</td>
+                        <td class="stock-name">
+                            009415
+                            <br><span class="stock-code">������嫄댁�ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.10</td>
+                        <td class="per-bad">224.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">9</td>
+                        <td class="stock-name">
+                            009410
+                            <br><span class="stock-code">������嫄댁��</span>
+                        </td>
+                        <td class="pbr-low">0.10</td>
+                        <td class="per-bad">224.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">10</td>
+                        <td class="stock-name">
+                            088350
+                            <br><span class="stock-code">���������紐�</span>
+                        </td>
+                        <td class="pbr-low">0.12</td>
+                        <td class="per-good">5.56</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">11</td>
+                        <td class="stock-name">
+                            012630
+                            <br><span class="stock-code">HDC</span>
+                        </td>
+                        <td class="pbr-low">0.12</td>
+                        <td class="per-good">6.6</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">12</td>
+                        <td class="stock-name">
+                            004960
+                            <br><span class="stock-code">������怨듭��</span>
+                        </td>
+                        <td class="pbr-low">0.13</td>
+                        <td class="per-good">9.46</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">13</td>
+                        <td class="stock-name">
+                            900300
+                            <br><span class="stock-code">��ㅺ�������곗����ㅻ�����</span>
+                        </td>
+                        <td class="pbr-low">0.13</td>
+                        <td class="per-bad">841.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">14</td>
+                        <td class="stock-name">
+                            071320
+                            <br><span class="stock-code">吏�������諛⑷났���</span>
+                        </td>
+                        <td class="pbr-low">0.14</td>
+                        <td class="per-good">3.12</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">15</td>
+                        <td class="stock-name">
+                            000300
+                            <br><span class="stock-code">DH��ㅽ����μ��</span>
+                        </td>
+                        <td class="pbr-low">0.15</td>
+                        <td class="per-good">1.16</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">16</td>
+                        <td class="stock-name">
+                            082640
+                            <br><span class="stock-code">���������紐�</span>
+                        </td>
+                        <td class="pbr-low">0.16</td>
+                        <td class="per-good">8.0</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">17</td>
+                        <td class="stock-name">
+                            003240
+                            <br><span class="stock-code">���愿���곗��</span>
+                        </td>
+                        <td class="pbr-low">0.16</td>
+                        <td class="per-good">8.42</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">18</td>
+                        <td class="stock-name">
+                            040610
+                            <br><span class="stock-code">SG&G</span>
+                        </td>
+                        <td class="pbr-low">0.17</td>
+                        <td class="per-good">2.78</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">19</td>
+                        <td class="stock-name">
+                            021820
+                            <br><span class="stock-code">��몄�����怨�</span>
+                        </td>
+                        <td class="pbr-low">0.17</td>
+                        <td class="per-good">3.75</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">20</td>
+                        <td class="stock-name">
+                            003830
+                            <br><span class="stock-code">������������</span>
+                        </td>
+                        <td class="pbr-low">0.17</td>
+                        <td class="">17.27</td>
+                        <td>👀 관심</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">21</td>
+                        <td class="stock-name">
+                            017940
+                            <br><span class="stock-code">E1</span>
+                        </td>
+                        <td class="pbr-low">0.18</td>
+                        <td class="per-good">6.55</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">22</td>
+                        <td class="stock-name">
+                            016610
+                            <br><span class="stock-code">DB利�沅�</span>
+                        </td>
+                        <td class="pbr-low">0.18</td>
+                        <td class="per-good">7.4</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">23</td>
+                        <td class="stock-name">
+                            139480
+                            <br><span class="stock-code">��대�����</span>
+                        </td>
+                        <td class="pbr-low">0.18</td>
+                        <td class="">20.02</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">24</td>
+                        <td class="stock-name">
+                            900110
+                            <br><span class="stock-code">��댁�ㅽ�몄�������������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.19</td>
+                        <td class="per-good">2.77</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">25</td>
+                        <td class="stock-name">
+                            005725
+                            <br><span class="stock-code">��μ�쇱��</span>
+                        </td>
+                        <td class="pbr-low">0.19</td>
+                        <td class="per-good">2.78</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">26</td>
+                        <td class="stock-name">
+                            024800
+                            <br><span class="stock-code">�����깊�곗��������</span>
+                        </td>
+                        <td class="pbr-low">0.19</td>
+                        <td class="per-good">3.56</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">27</td>
+                        <td class="stock-name">
+                            005720
+                            <br><span class="stock-code">��μ��</span>
+                        </td>
+                        <td class="pbr-low">0.19</td>
+                        <td class="per-good">4.25</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">28</td>
+                        <td class="stock-name">
+                            071840
+                            <br><span class="stock-code">濡���고����대�����</span>
+                        </td>
+                        <td class="pbr-low">0.19</td>
+                        <td class="per-bad">103.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">29</td>
+                        <td class="stock-name">
+                            000850
+                            <br><span class="stock-code">���泥�湲곌났</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="per-good">7.4</td>
+                        <td>🔥 매우저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">30</td>
+                        <td class="stock-name">
+                            487570
+                            <br><span class="stock-code">HS��⑥��</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="">10.94</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">31</td>
+                        <td class="stock-name">
+                            067830
+                            <br><span class="stock-code">��몄�대��議�I&C</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="">12.73</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">32</td>
+                        <td class="stock-name">
+                            000070
+                            <br><span class="stock-code">��쇱�������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="">14.99</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">33</td>
+                        <td class="stock-name">
+                            058650
+                            <br><span class="stock-code">��몄�������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="">25.08</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">34</td>
+                        <td class="stock-name">
+                            000180
+                            <br><span class="stock-code">��깆갹湲곗��吏�二�</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="per-bad">153.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">35</td>
+                        <td class="stock-name">
+                            043220
+                            <br><span class="stock-code">��곗����ㅻ�μ�ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.20</td>
+                        <td class="per-bad">1728.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">36</td>
+                        <td class="stock-name">
+                            005440
+                            <br><span class="stock-code">������吏������������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-good">4.27</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">37</td>
+                        <td class="stock-name">
+                            043370
+                            <br><span class="stock-code">��쇱����댁��������</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-good">5.45</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">38</td>
+                        <td class="stock-name">
+                            004690
+                            <br><span class="stock-code">��쇱��由�</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-good">5.56</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">39</td>
+                        <td class="stock-name">
+                            139130
+                            <br><span class="stock-code">iM湲���듭��二�</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-good">7.18</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">40</td>
+                        <td class="stock-name">
+                            138930
+                            <br><span class="stock-code">BNK湲���듭��二�</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-good">7.41</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">41</td>
+                        <td class="stock-name">
+                            014790
+                            <br><span class="stock-code">HL D&I</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="">10.62</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">42</td>
+                        <td class="stock-name">
+                            030610
+                            <br><span class="stock-code">援�蹂댁��沅�</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="">12.1</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">43</td>
+                        <td class="stock-name">
+                            001810
+                            <br><span class="stock-code">臾대┝SP</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-bad">78.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">44</td>
+                        <td class="stock-name">
+                            001940
+                            <br><span class="stock-code">KISCO�����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-bad">208.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">45</td>
+                        <td class="stock-name">
+                            001130
+                            <br><span class="stock-code">���������遺�</span>
+                        </td>
+                        <td class="pbr-low">0.21</td>
+                        <td class="per-bad">14949.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">46</td>
+                        <td class="stock-name">
+                            013580
+                            <br><span class="stock-code">怨�猷↔굔���</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">3.16</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">47</td>
+                        <td class="stock-name">
+                            021320
+                            <br><span class="stock-code">KCC嫄댁��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">3.26</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">48</td>
+                        <td class="stock-name">
+                            092230
+                            <br><span class="stock-code">KPX�����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">4.35</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">49</td>
+                        <td class="stock-name">
+                            900260
+                            <br><span class="stock-code">濡���ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">5.22</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">50</td>
+                        <td class="stock-name">
+                            101330
+                            <br><span class="stock-code">紐⑤����댁��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">6.09</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">51</td>
+                        <td class="stock-name">
+                            027410
+                            <br><span class="stock-code">BGF</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">7.32</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">52</td>
+                        <td class="stock-name">
+                            001200
+                            <br><span class="stock-code">���吏���ъ��利�沅�</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">7.76</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">53</td>
+                        <td class="stock-name">
+                            121440
+                            <br><span class="stock-code">怨⑦��議댄����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">8.98</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">54</td>
+                        <td class="stock-name">
+                            004840
+                            <br><span class="stock-code">DRB������</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-good">9.34</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">55</td>
+                        <td class="stock-name">
+                            036460
+                            <br><span class="stock-code">���援�媛���ㅺ났���</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="">24.98</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">56</td>
+                        <td class="stock-name">
+                            023530
+                            <br><span class="stock-code">濡���곗�쇳��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-bad">61.09</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">57</td>
+                        <td class="stock-name">
+                            004020
+                            <br><span class="stock-code">���������泥�</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-bad">168.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">58</td>
+                        <td class="stock-name">
+                            000860
+                            <br><span class="stock-code">媛���⑥��鍮���ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-bad">207.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">59</td>
+                        <td class="stock-name">
+                            460850
+                            <br><span class="stock-code">���援���⑥��</span>
+                        </td>
+                        <td class="pbr-low">0.22</td>
+                        <td class="per-bad">1770.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">60</td>
+                        <td class="stock-name">
+                            005960
+                            <br><span class="stock-code">���遺�嫄댁��</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-good">4.01</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">61</td>
+                        <td class="stock-name">
+                            000370
+                            <br><span class="stock-code">�����������대낫���</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-good">4.25</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">62</td>
+                        <td class="stock-name">
+                            900250
+                            <br><span class="stock-code">��щ━��ㅽ�����������</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-good">4.48</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">63</td>
+                        <td class="stock-name">
+                            036530
+                            <br><span class="stock-code">SNT�����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-good">7.87</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">64</td>
+                        <td class="stock-name">
+                            005965
+                            <br><span class="stock-code">���遺�嫄댁�ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-good">8.55</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">65</td>
+                        <td class="stock-name">
+                            001275
+                            <br><span class="stock-code">遺�援�利�沅����</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">11.37</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">66</td>
+                        <td class="stock-name">
+                            00088K
+                            <br><span class="stock-code">������3���B</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">11.88</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">67</td>
+                        <td class="stock-name">
+                            003300
+                            <br><span class="stock-code">�����쇳����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">12.81</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">68</td>
+                        <td class="stock-name">
+                            002920
+                            <br><span class="stock-code">�����깃린���</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">20.36</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">69</td>
+                        <td class="stock-name">
+                            005800
+                            <br><span class="stock-code">���������肄�猷�</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">22.74</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">70</td>
+                        <td class="stock-name">
+                            001270
+                            <br><span class="stock-code">遺�援�利�沅�</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">22.79</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">71</td>
+                        <td class="stock-name">
+                            000880
+                            <br><span class="stock-code">������</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="">29.63</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">72</td>
+                        <td class="stock-name">
+                            009200
+                            <br><span class="stock-code">臾대┝�����댄��</span>
+                        </td>
+                        <td class="pbr-low">0.23</td>
+                        <td class="per-bad">369.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">73</td>
+                        <td class="stock-name">
+                            000950
+                            <br><span class="stock-code">���諛�</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-good">2.03</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">74</td>
+                        <td class="stock-name">
+                            001450
+                            <br><span class="stock-code">��������댁��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-good">2.73</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">75</td>
+                        <td class="stock-name">
+                            000590
+                            <br><span class="stock-code">CS�����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-good">3.28</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">76</td>
+                        <td class="stock-name">
+                            001755
+                            <br><span class="stock-code">������利�沅����</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-good">6.39</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">77</td>
+                        <td class="stock-name">
+                            001750
+                            <br><span class="stock-code">������利�沅�</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-good">6.43</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">78</td>
+                        <td class="stock-name">
+                            057050
+                            <br><span class="stock-code">�����������쇳��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="">10.05</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">79</td>
+                        <td class="stock-name">
+                            000400
+                            <br><span class="stock-code">濡���곗����대낫���</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="">12.15</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">80</td>
+                        <td class="stock-name">
+                            002030
+                            <br><span class="stock-code">�����몄��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="">13.58</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">81</td>
+                        <td class="stock-name">
+                            004150
+                            <br><span class="stock-code">�����������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="">19.3</td>
+                        <td>👀 관심</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">82</td>
+                        <td class="stock-name">
+                            030530
+                            <br><span class="stock-code">�����듯����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-bad">163.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">83</td>
+                        <td class="stock-name">
+                            128820
+                            <br><span class="stock-code">�����깆�곗��</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-bad">196.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">84</td>
+                        <td class="stock-name">
+                            002820
+                            <br><span class="stock-code">SUN&L</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-bad">303.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">85</td>
+                        <td class="stock-name">
+                            000670
+                            <br><span class="stock-code">������</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-bad">422.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">86</td>
+                        <td class="stock-name">
+                            050110
+                            <br><span class="stock-code">罹�������</span>
+                        </td>
+                        <td class="pbr-low">0.24</td>
+                        <td class="per-bad">1914.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">87</td>
+                        <td class="stock-name">
+                            003480
+                            <br><span class="stock-code">���吏�以�怨듭�������⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-good">2.52</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">88</td>
+                        <td class="stock-name">
+                            012620
+                            <br><span class="stock-code">�����쇳�밴��</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-good">4.96</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">89</td>
+                        <td class="stock-name">
+                            037350
+                            <br><span class="stock-code">��깅����댁��吏�</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-good">8.07</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">90</td>
+                        <td class="stock-name">
+                            002320
+                            <br><span class="stock-code">���吏�</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">103.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">91</td>
+                        <td class="stock-name">
+                            001520
+                            <br><span class="stock-code">������</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">326.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">92</td>
+                        <td class="stock-name">
+                            001525
+                            <br><span class="stock-code">���������</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">326.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">93</td>
+                        <td class="stock-name">
+                            001527
+                            <br><span class="stock-code">������2���B</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">326.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">94</td>
+                        <td class="stock-name">
+                            363280
+                            <br><span class="stock-code">��곗����댄����⑹��</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">1031.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">95</td>
+                        <td class="stock-name">
+                            36328K
+                            <br><span class="stock-code">��곗����댄����⑹�ㅼ��</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">1031.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">96</td>
+                        <td class="stock-name">
+                            004890
+                            <br><span class="stock-code">�����쇱�곗��</span>
+                        </td>
+                        <td class="pbr-low">0.25</td>
+                        <td class="per-bad">5321.0</td>
+                        <td>⚠️ 적자/고PER</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">97</td>
+                        <td class="stock-name">
+                            005710
+                            <br><span class="stock-code">��������곗��</span>
+                        </td>
+                        <td class="pbr-low">0.26</td>
+                        <td class="per-good">3.5</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">98</td>
+                        <td class="stock-name">
+                            002690
+                            <br><span class="stock-code">�����쇱��媛�</span>
+                        </td>
+                        <td class="pbr-low">0.26</td>
+                        <td class="per-good">4.39</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">99</td>
+                        <td class="stock-name">
+                            006125
+                            <br><span class="stock-code">SK�����ㅼ빱踰�由ъ��</span>
+                        </td>
+                        <td class="pbr-low">0.26</td>
+                        <td class="per-good">6.19</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">100</td>
+                        <td class="stock-name">
+                            129260
+                            <br><span class="stock-code">��명�곗�����</span>
+                        </td>
+                        <td class="pbr-low">0.26</td>
+                        <td class="per-good">7.49</td>
+                        <td>✅ 저평가</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>⚠️ 추가 확인 사항</h2>
+            
+            <div class="warning">
+                <h3>🚨 부채비율 확인 필요</h3>
+                <p>위 종목들은 PBR ≤ 0.6 조건을 만족하지만, <strong>부채비율 < 50%</strong> 조건을 추가로 확인해야 합니다.</p>
+                <br>
+                <h4>확인 방법:</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>FnGuide:</strong> https://comp.fnguide.com/ - 재묵비율 탭</li>
+                    <li><strong>DART:</strong> https://dart.fss.or.kr/ - 사업보고서</li>
+                    <li><strong>네이버증권:</strong> 종목별 재무제표 탭</li>
+                </ul>
+                <br>
+                <h4>주의사항:</h4>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>PBR이 극도로 낮으면(<0.1) 청산 위험이 있을 수 있음</li>
+                    <li>PER이 100+인 종목은 적자 또는 일회성 이익 가능성</li>
+                    <li>반드시 최근 분기 재무재표 확인 필요</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 저PBR 스크래퍼 v2.0</p>
+            <p>데이터 출처: 네이버 증권 | 생성일: 2026-03-25</p>
+            <p style="margin-top: 10px; color: #666;">※ 본 리포트는 투자 참고용이며, 투자 결정은 투자자 본인의 책임입니다.</p>
+        </div>
+        
+    </div>
+</body>
+</html>
