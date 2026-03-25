@@ -1,0 +1,5843 @@
+[
+  {
+    "symbol": "900270",
+    "success": true,
+    "name": "�����⑷렇猷�",
+    "per": 130.0,
+    "pbr": 0.01,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "008600",
+    "success": true,
+    "name": "���鍮����",
+    "per": 4044.0,
+    "pbr": 0.04,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900120",
+    "success": true,
+    "name": "��⑥����ㅼ�����",
+    "per": 1.07,
+    "pbr": 0.07,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000540",
+    "success": true,
+    "name": "��κ뎅������",
+    "per": 4.46,
+    "pbr": 0.08,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000545",
+    "success": true,
+    "name": "��κ뎅�����ъ��",
+    "per": 6.72,
+    "pbr": 0.08,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "085620",
+    "success": true,
+    "name": "誘몃�����������紐�",
+    "per": 17.17,
+    "pbr": 0.09,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009415",
+    "success": true,
+    "name": "������嫄댁�ㅼ��",
+    "per": 224.0,
+    "pbr": 0.1,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009410",
+    "success": true,
+    "name": "������嫄댁��",
+    "per": 224.0,
+    "pbr": 0.1,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "377460",
+    "success": true,
+    "name": "��������������대��",
+    "per": 17.97,
+    "pbr": 0.1,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "012630",
+    "success": true,
+    "name": "HDC",
+    "per": 6.6,
+    "pbr": 0.12,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "088350",
+    "success": true,
+    "name": "���������紐�",
+    "per": 5.56,
+    "pbr": 0.12,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004960",
+    "success": true,
+    "name": "������怨듭��",
+    "per": 9.46,
+    "pbr": 0.13,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900300",
+    "success": true,
+    "name": "��ㅺ�������곗����ㅻ�����",
+    "per": 841.0,
+    "pbr": 0.13,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "071320",
+    "success": true,
+    "name": "吏�������諛⑷났���",
+    "per": 3.12,
+    "pbr": 0.14,
+    "bps": 180,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000300",
+    "success": true,
+    "name": "DH��ㅽ����μ��",
+    "per": 1.16,
+    "pbr": 0.15,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003240",
+    "success": true,
+    "name": "���愿���곗��",
+    "per": 8.42,
+    "pbr": 0.16,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "082640",
+    "success": true,
+    "name": "���������紐�",
+    "per": 8.0,
+    "pbr": 0.16,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003830",
+    "success": true,
+    "name": "������������",
+    "per": 17.27,
+    "pbr": 0.17,
+    "bps": 638,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "021820",
+    "success": true,
+    "name": "��몄�����怨�",
+    "per": 3.75,
+    "pbr": 0.17,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "040610",
+    "success": true,
+    "name": "SG&G",
+    "per": 2.78,
+    "pbr": 0.17,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "016610",
+    "success": true,
+    "name": "DB利�沅�",
+    "per": 7.4,
+    "pbr": 0.18,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "017940",
+    "success": true,
+    "name": "E1",
+    "per": 6.55,
+    "pbr": 0.18,
+    "bps": 249,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "139480",
+    "success": true,
+    "name": "��대�����",
+    "per": 20.02,
+    "pbr": 0.18,
+    "bps": 427,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005720",
+    "success": true,
+    "name": "��μ��",
+    "per": 4.25,
+    "pbr": 0.19,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005725",
+    "success": true,
+    "name": "��μ�쇱��",
+    "per": 2.78,
+    "pbr": 0.19,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024800",
+    "success": true,
+    "name": "�����깊�곗��������",
+    "per": 3.56,
+    "pbr": 0.19,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "071840",
+    "success": true,
+    "name": "濡���고����대�����",
+    "per": 103.0,
+    "pbr": 0.19,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900110",
+    "success": true,
+    "name": "��댁�ㅽ�몄�������������⑹��",
+    "per": 2.77,
+    "pbr": 0.19,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000070",
+    "success": true,
+    "name": "��쇱�������⑹��",
+    "per": 14.99,
+    "pbr": 0.2,
+    "bps": 231,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000180",
+    "success": true,
+    "name": "��깆갹湲곗��吏�二�",
+    "per": 153.0,
+    "pbr": 0.2,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000850",
+    "success": true,
+    "name": "���泥�湲곌났",
+    "per": 7.4,
+    "pbr": 0.2,
+    "bps": 157,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "043220",
+    "success": true,
+    "name": "��곗����ㅻ�μ�ㅼ��",
+    "per": 1728.0,
+    "pbr": 0.2,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "058650",
+    "success": true,
+    "name": "��몄�������⑹��",
+    "per": 25.08,
+    "pbr": 0.2,
+    "bps": 530,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "067830",
+    "success": true,
+    "name": "��몄�대��議�I&C",
+    "per": 12.73,
+    "pbr": 0.2,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "487570",
+    "success": true,
+    "name": "HS��⑥��",
+    "per": 10.94,
+    "pbr": 0.2,
+    "bps": 148,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001130",
+    "success": true,
+    "name": "���������遺�",
+    "per": 14949.0,
+    "pbr": 0.21,
+    "bps": 603,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001810",
+    "success": true,
+    "name": "臾대┝SP",
+    "per": 78.0,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "001940",
+    "success": true,
+    "name": "KISCO�����⑹��",
+    "per": 208.0,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004690",
+    "success": true,
+    "name": "��쇱��由�",
+    "per": 5.56,
+    "pbr": 0.21,
+    "bps": 443,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005440",
+    "success": true,
+    "name": "������吏������������⑹��",
+    "per": 4.27,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014790",
+    "success": true,
+    "name": "HL D&I",
+    "per": 10.62,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "030610",
+    "success": true,
+    "name": "援�蹂댁��沅�",
+    "per": 12.1,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "043370",
+    "success": true,
+    "name": "��쇱����댁��������",
+    "per": 5.45,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "138930",
+    "success": true,
+    "name": "BNK湲���듭��二�",
+    "per": 7.41,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "139130",
+    "success": true,
+    "name": "iM湲���듭��二�",
+    "per": 7.18,
+    "pbr": 0.21,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000860",
+    "success": true,
+    "name": "媛���⑥��鍮���ㅼ��",
+    "per": 207.0,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001200",
+    "success": true,
+    "name": "���吏���ъ��利�沅�",
+    "per": 7.76,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004020",
+    "success": true,
+    "name": "���������泥�",
+    "per": 168.0,
+    "pbr": 0.22,
+    "bps": 142,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004840",
+    "success": true,
+    "name": "DRB������",
+    "per": 9.34,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013580",
+    "success": true,
+    "name": "怨�猷↔굔���",
+    "per": 3.16,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "021320",
+    "success": true,
+    "name": "KCC嫄댁��",
+    "per": 3.26,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "023530",
+    "success": true,
+    "name": "濡���곗�쇳��",
+    "per": 61.09,
+    "pbr": 0.22,
+    "bps": 335,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "027410",
+    "success": true,
+    "name": "BGF",
+    "per": 7.32,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "036460",
+    "success": true,
+    "name": "���援�媛���ㅺ났���",
+    "per": 24.98,
+    "pbr": 0.22,
+    "bps": 112,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "092230",
+    "success": true,
+    "name": "KPX�����⑹��",
+    "per": 4.35,
+    "pbr": 0.22,
+    "bps": 236,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "101330",
+    "success": true,
+    "name": "紐⑤����댁��",
+    "per": 6.09,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "121440",
+    "success": true,
+    "name": "怨⑦��議댄����⑹��",
+    "per": 8.98,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "460850",
+    "success": true,
+    "name": "���援���⑥��",
+    "per": 1770.0,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900260",
+    "success": true,
+    "name": "濡���ㅼ��",
+    "per": 5.22,
+    "pbr": 0.22,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000370",
+    "success": true,
+    "name": "�����������대낫���",
+    "per": 4.25,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000880",
+    "success": true,
+    "name": "������",
+    "per": 29.63,
+    "pbr": 0.23,
+    "bps": 111,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "00088K",
+    "success": true,
+    "name": "������3���B",
+    "per": 11.88,
+    "pbr": 0.23,
+    "bps": 111,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001270",
+    "success": true,
+    "name": "遺�援�利�沅�",
+    "per": 22.79,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001275",
+    "success": true,
+    "name": "遺�援�利�沅����",
+    "per": 11.37,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002920",
+    "success": true,
+    "name": "�����깃린���",
+    "per": 20.36,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003300",
+    "success": true,
+    "name": "�����쇳����⑹��",
+    "per": 12.81,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005800",
+    "success": true,
+    "name": "���������肄�猷�",
+    "per": 22.74,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005960",
+    "success": true,
+    "name": "���遺�嫄댁��",
+    "per": 4.01,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005965",
+    "success": true,
+    "name": "���遺�嫄댁�ㅼ��",
+    "per": 8.55,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009200",
+    "success": true,
+    "name": "臾대┝�����댄��",
+    "per": 369.0,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "036530",
+    "success": true,
+    "name": "SNT�����⑹��",
+    "per": 7.87,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900250",
+    "success": true,
+    "name": "��щ━��ㅽ�����������",
+    "per": 4.48,
+    "pbr": 0.23,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000400",
+    "success": true,
+    "name": "濡���곗����대낫���",
+    "per": 12.15,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000590",
+    "success": true,
+    "name": "CS�����⑹��",
+    "per": 3.28,
+    "pbr": 0.24,
+    "bps": 242,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000670",
+    "success": true,
+    "name": "������",
+    "per": 422.0,
+    "pbr": 0.24,
+    "bps": 206,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000950",
+    "success": true,
+    "name": "���諛�",
+    "per": 2.03,
+    "pbr": 0.24,
+    "bps": 184,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001450",
+    "success": true,
+    "name": "��������댁��",
+    "per": 2.73,
+    "pbr": 0.24,
+    "bps": 121,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001750",
+    "success": true,
+    "name": "������利�沅�",
+    "per": 6.43,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001755",
+    "success": true,
+    "name": "������利�沅����",
+    "per": 6.39,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002030",
+    "success": true,
+    "name": "�����몄��",
+    "per": 13.58,
+    "pbr": 0.24,
+    "bps": 548,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002820",
+    "success": true,
+    "name": "SUN&L",
+    "per": 303.0,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004150",
+    "success": true,
+    "name": "�����������⑹��",
+    "per": 19.3,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "030530",
+    "success": true,
+    "name": "�����듯����⑹��",
+    "per": 163.0,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "050110",
+    "success": true,
+    "name": "罹�������",
+    "per": 1914.0,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "057050",
+    "success": true,
+    "name": "�����������쇳��",
+    "per": 10.05,
+    "pbr": 0.24,
+    "bps": 179,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "128820",
+    "success": true,
+    "name": "�����깆�곗��",
+    "per": 196.0,
+    "pbr": 0.24,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001520",
+    "success": true,
+    "name": "������",
+    "per": 326.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001525",
+    "success": true,
+    "name": "���������",
+    "per": 326.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001527",
+    "success": true,
+    "name": "������2���B",
+    "per": 326.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002320",
+    "success": true,
+    "name": "���吏�",
+    "per": 103.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003480",
+    "success": true,
+    "name": "���吏�以�怨듭�������⑹��",
+    "per": 2.52,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004890",
+    "success": true,
+    "name": "�����쇱�곗��",
+    "per": 5321.0,
+    "pbr": 0.25,
+    "bps": 189,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012620",
+    "success": true,
+    "name": "�����쇳�밴��",
+    "per": 4.96,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "037350",
+    "success": true,
+    "name": "��깅����댁��吏�",
+    "per": 8.07,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "363280",
+    "success": true,
+    "name": "��곗����댄����⑹��",
+    "per": 1031.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "36328K",
+    "success": true,
+    "name": "��곗����댄����⑹�ㅼ��",
+    "per": 1031.0,
+    "pbr": 0.25,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002690",
+    "success": true,
+    "name": "�����쇱��媛�",
+    "per": 4.39,
+    "pbr": 0.26,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003200",
+    "success": true,
+    "name": "��쇱��諛⑹��",
+    "per": 11.45,
+    "pbr": 0.26,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003380",
+    "success": true,
+    "name": "���由쇱��二�",
+    "per": 14.34,
+    "pbr": 0.26,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "005710",
+    "success": true,
+    "name": "��������곗��",
+    "per": 3.5,
+    "pbr": 0.26,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "006120",
+    "success": true,
+    "name": "SK�����ㅼ빱踰�由�",
+    "per": 9.09,
+    "pbr": 0.26,
+    "bps": 150,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006125",
+    "success": true,
+    "name": "SK�����ㅼ빱踰�由ъ��",
+    "per": 6.19,
+    "pbr": 0.26,
+    "bps": 150,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "129260",
+    "success": true,
+    "name": "��명�곗�����",
+    "per": 7.49,
+    "pbr": 0.26,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002020",
+    "success": true,
+    "name": "肄���ㅻ”",
+    "per": 8727.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002025",
+    "success": true,
+    "name": "肄���ㅻ”���",
+    "per": 8727.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002460",
+    "success": true,
+    "name": "HS������",
+    "per": 4.6,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003460",
+    "success": true,
+    "name": "������利�沅�",
+    "per": 21.02,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003465",
+    "success": true,
+    "name": "������利�沅����",
+    "per": 20.79,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004440",
+    "success": true,
+    "name": "��쇱�쇱�⑥��������",
+    "per": 50.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007680",
+    "success": true,
+    "name": "������",
+    "per": 741.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "024110",
+    "success": true,
+    "name": "湲곗��������",
+    "per": 6.9,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024830",
+    "success": true,
+    "name": "��몄��臾쇱��",
+    "per": 4.24,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "030210",
+    "success": true,
+    "name": "��ㅼ�ы�ъ��利�沅�",
+    "per": 22.79,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "033920",
+    "success": true,
+    "name": "臾댄��",
+    "per": null,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "104480",
+    "success": true,
+    "name": "��곗����댁��誘몄뭡",
+    "per": 1115.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "241820",
+    "success": true,
+    "name": "��쇱�⑥��",
+    "per": 16917.0,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "267290",
+    "success": true,
+    "name": "寃쎈��������媛����",
+    "per": 4.03,
+    "pbr": 0.27,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001230",
+    "success": true,
+    "name": "���援������⑹��",
+    "per": 20.55,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003120",
+    "success": true,
+    "name": "��쇱�깆����댁�����",
+    "per": 134.86,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004990",
+    "success": true,
+    "name": "濡���곗��二�",
+    "per": 6125.0,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "00499K",
+    "success": true,
+    "name": "濡���곗��二쇱��",
+    "per": 6125.0,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006980",
+    "success": true,
+    "name": "��곗��",
+    "per": 5.06,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007860",
+    "success": true,
+    "name": "������",
+    "per": 2.33,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "010100",
+    "success": true,
+    "name": "���援�臾대����μ��",
+    "per": 4.75,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016250",
+    "success": true,
+    "name": "SGC E&C",
+    "per": 12847.0,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "019010",
+    "success": true,
+    "name": "踰���댁��",
+    "per": 5.28,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "023410",
+    "success": true,
+    "name": "���吏�湲곗��",
+    "per": 16.63,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "029530",
+    "success": true,
+    "name": "������由ъ��",
+    "per": 27.77,
+    "pbr": 0.28,
+    "bps": 114,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032940",
+    "success": true,
+    "name": "������",
+    "per": 6.41,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "052330",
+    "success": true,
+    "name": "肄����",
+    "per": 6.31,
+    "pbr": 0.28,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "069960",
+    "success": true,
+    "name": "������諛깊�����",
+    "per": 9.45,
+    "pbr": 0.28,
+    "bps": 209,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000320",
+    "success": true,
+    "name": "��몃（�����⑹��",
+    "per": 9.48,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000325",
+    "success": true,
+    "name": "��몃（�����⑹�ㅼ��",
+    "per": 12.99,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011370",
+    "success": true,
+    "name": "������",
+    "per": 2.36,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "012160",
+    "success": true,
+    "name": "������",
+    "per": 474.0,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014710",
+    "success": true,
+    "name": "��ъ“��⑦�몃��",
+    "per": 1637.0,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "029460",
+    "success": true,
+    "name": "耳���댁��",
+    "per": 10.26,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032830",
+    "success": true,
+    "name": "��쇱�깆��紐�",
+    "per": 19.76,
+    "pbr": 0.29,
+    "bps": 236,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "034830",
+    "success": true,
+    "name": "���援����吏�������",
+    "per": 2.0,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "037710",
+    "success": true,
+    "name": "愿�二쇱����멸��",
+    "per": 7.0,
+    "pbr": 0.29,
+    "bps": 102,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "072710",
+    "success": true,
+    "name": "�����ы����⑹��",
+    "per": 4.25,
+    "pbr": 0.29,
+    "bps": 231,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "094840",
+    "success": true,
+    "name": "������由щ�������댁�����",
+    "per": 4.84,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "200880",
+    "success": true,
+    "name": "�����곗�댄��",
+    "per": 3.47,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "316140",
+    "success": true,
+    "name": "��곕━湲���듭��二�",
+    "per": 7.6,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900340",
+    "success": true,
+    "name": "��������몃��",
+    "per": 4.84,
+    "pbr": 0.29,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000050",
+    "success": true,
+    "name": "寃쎈갑",
+    "per": 5.62,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001500",
+    "success": true,
+    "name": "������李⑥��沅�",
+    "per": 11.58,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001720",
+    "success": true,
+    "name": "������利�沅�",
+    "per": 24.33,
+    "pbr": 0.3,
+    "bps": 188,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002240",
+    "success": true,
+    "name": "怨���ㅼ��媛�",
+    "per": 11.43,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006360",
+    "success": true,
+    "name": "GS嫄댁��",
+    "per": 25.07,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006660",
+    "success": true,
+    "name": "��쇱�깃났議�",
+    "per": 7.96,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009770",
+    "success": true,
+    "name": "��쇱��������",
+    "per": 3.02,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "015360",
+    "success": true,
+    "name": "INVENI",
+    "per": 5.41,
+    "pbr": 0.3,
+    "bps": 109,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "020000",
+    "success": true,
+    "name": "������",
+    "per": 12.98,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "060980",
+    "success": true,
+    "name": "HL�����⑹��",
+    "per": 40.99,
+    "pbr": 0.3,
+    "bps": 102,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "104700",
+    "success": true,
+    "name": "���援�泥�媛�",
+    "per": 82.0,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "127710",
+    "success": true,
+    "name": "���������寃쎌��",
+    "per": 1386.0,
+    "pbr": 0.3,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "145995",
+    "success": true,
+    "name": "��쇱����ъ��",
+    "per": 29380.0,
+    "pbr": 0.3,
+    "bps": 149,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "145990",
+    "success": true,
+    "name": "��쇱�����",
+    "per": 29380.0,
+    "pbr": 0.3,
+    "bps": 149,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "375500",
+    "success": true,
+    "name": "DL��댁�ㅼ��",
+    "per": 8.03,
+    "pbr": 0.3,
+    "bps": 118,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "37550K",
+    "success": true,
+    "name": "DL��댁�ㅼ�⑥��",
+    "per": 3.39,
+    "pbr": 0.3,
+    "bps": 118,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "37550L",
+    "success": true,
+    "name": "DL��댁�ㅼ��2���(������)",
+    "per": 5.11,
+    "pbr": 0.3,
+    "bps": 118,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002170",
+    "success": true,
+    "name": "��쇱����듭��",
+    "per": 7.36,
+    "pbr": 0.31,
+    "bps": 155,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005010",
+    "success": true,
+    "name": "��댁�ㅽ��",
+    "per": 10.37,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005990",
+    "success": true,
+    "name": "留ㅼ�쇳����⑹��",
+    "per": 7.33,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "006200",
+    "success": true,
+    "name": "���援������������⑹��",
+    "per": 27.58,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013120",
+    "success": true,
+    "name": "������媛�諛�",
+    "per": 32.39,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "017650",
+    "success": true,
+    "name": "���由쇱��吏�",
+    "per": 5.98,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "025530",
+    "success": true,
+    "name": "SJM�����⑹��",
+    "per": 5.19,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "081580",
+    "success": true,
+    "name": "��깆�곗�����",
+    "per": 3.68,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "093050",
+    "success": true,
+    "name": "LF",
+    "per": 8.14,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "121800",
+    "success": true,
+    "name": "鍮���댄��",
+    "per": 2.84,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "294870",
+    "success": true,
+    "name": "HDC��������곗��媛�諛�",
+    "per": 9.31,
+    "pbr": 0.31,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000680",
+    "success": true,
+    "name": "LS��ㅽ�몄�����",
+    "per": 278.0,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000760",
+    "success": true,
+    "name": "��댄����곗��",
+    "per": 339.0,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002380",
+    "success": true,
+    "name": "KCC",
+    "per": 3.08,
+    "pbr": 0.32,
+    "bps": 704,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003470",
+    "success": true,
+    "name": "���������利�沅�",
+    "per": 14.74,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003475",
+    "success": true,
+    "name": "���������利�沅����",
+    "per": 13.73,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003540",
+    "success": true,
+    "name": "������利�沅�",
+    "per": 15.84,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003545",
+    "success": true,
+    "name": "������利�沅����",
+    "per": 10.78,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003547",
+    "success": true,
+    "name": "������利�沅�2���B",
+    "per": 10.22,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003690",
+    "success": true,
+    "name": "肄�由ъ��由�",
+    "per": 7.64,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004970",
+    "success": true,
+    "name": "�����쇨�����",
+    "per": 33.59,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "008110",
+    "success": true,
+    "name": "������������",
+    "per": 451.0,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009580",
+    "success": true,
+    "name": "臾대┝P&P",
+    "per": 544.0,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "015750",
+    "success": true,
+    "name": "��깆�고����댄��",
+    "per": 4.02,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "025000",
+    "success": true,
+    "name": "KPX耳�誘몄뭡",
+    "per": 4.75,
+    "pbr": 0.32,
+    "bps": 133,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "035810",
+    "success": true,
+    "name": "��댁�������⑹��",
+    "per": 11.53,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "084010",
+    "success": true,
+    "name": "���������媛�",
+    "per": null,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "086790",
+    "success": true,
+    "name": "������湲���듭��二�",
+    "per": 7.7,
+    "pbr": 0.32,
+    "bps": 136,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "088790",
+    "success": true,
+    "name": "吏����",
+    "per": 14.46,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "452260",
+    "success": true,
+    "name": "������媛ㅻ�щ━���",
+    "per": 157.35,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "45226K",
+    "success": true,
+    "name": "������媛ㅻ�щ━������",
+    "per": 419.41,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900310",
+    "success": true,
+    "name": "而щ�щ�����",
+    "per": 37.0,
+    "pbr": 0.32,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "003535",
+    "success": true,
+    "name": "��������ъ��利�沅����",
+    "per": 37.14,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003530",
+    "success": true,
+    "name": "��������ъ��利�沅�",
+    "per": 24.98,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005830",
+    "success": true,
+    "name": "DB�����대낫���",
+    "per": 8.64,
+    "pbr": 0.33,
+    "bps": 200,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "008420",
+    "success": true,
+    "name": "臾몃같泥�媛�",
+    "per": 8.3,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "010960",
+    "success": true,
+    "name": "��쇳�멸��諛�",
+    "per": 5.42,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013870",
+    "success": true,
+    "name": "吏����鍮�肄�由ъ��",
+    "per": 5.69,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "023600",
+    "success": true,
+    "name": "��쇰낫���吏�",
+    "per": 6.5,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "037400",
+    "success": true,
+    "name": "��곕━�����고����쇱�댁��",
+    "per": 157.0,
+    "pbr": 0.33,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "078930",
+    "success": true,
+    "name": "GS",
+    "per": null,
+    "pbr": 0.33,
+    "bps": 131,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "078935",
+    "success": true,
+    "name": "GS���",
+    "per": null,
+    "pbr": 0.33,
+    "bps": 131,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000210",
+    "success": true,
+    "name": "DL",
+    "per": 3887.0,
+    "pbr": 0.34,
+    "bps": 173,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000215",
+    "success": true,
+    "name": "DL���",
+    "per": 3887.0,
+    "pbr": 0.34,
+    "bps": 173,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000240",
+    "success": true,
+    "name": "���援���ㅼ뺨��쇰��",
+    "per": 7.55,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001620",
+    "success": true,
+    "name": "耳���대�������대��援���ㅼ��",
+    "per": 2.28,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002220",
+    "success": true,
+    "name": "�����쇱��媛�",
+    "per": 21.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003650",
+    "success": true,
+    "name": "誘몄갹������",
+    "per": 3.97,
+    "pbr": 0.34,
+    "bps": 212,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005740",
+    "success": true,
+    "name": "��щ�쇱�댄�댄�������⑹��",
+    "per": 5.84,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005745",
+    "success": true,
+    "name": "��щ�쇱�댄�댄�������⑹�ㅼ��",
+    "per": 6.31,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006800",
+    "success": true,
+    "name": "誘몃��������利�沅�",
+    "per": 38.86,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006805",
+    "success": true,
+    "name": "誘몃��������利�沅����",
+    "per": 13.42,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "00680K",
+    "success": true,
+    "name": "誘몃��������利�沅�2���B",
+    "per": 12.15,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "015760",
+    "success": true,
+    "name": "���援�������",
+    "per": 3.49,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "031310",
+    "success": true,
+    "name": "�����댁��鍮����",
+    "per": 51.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "03481K",
+    "success": true,
+    "name": "��댁�깆�곗��1���",
+    "per": 82.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "034810",
+    "success": true,
+    "name": "��댁�깆�곗��",
+    "per": 82.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "035890",
+    "success": true,
+    "name": "�����ш굔���",
+    "per": 3.18,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036000",
+    "success": true,
+    "name": "���由쇰��",
+    "per": 0.58,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "041650",
+    "success": true,
+    "name": "������釉������댄��",
+    "per": 554.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "053620",
+    "success": true,
+    "name": "������",
+    "per": 5.12,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "097780",
+    "success": true,
+    "name": "���肄�蹂쇳��",
+    "per": 305.0,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "175330",
+    "success": true,
+    "name": "JB湲���듭��二�",
+    "per": 8.29,
+    "pbr": 0.34,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001390",
+    "success": true,
+    "name": "KG耳�誘몄뭡",
+    "per": 4.7,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004590",
+    "success": true,
+    "name": "���援�媛�援�",
+    "per": 5.24,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "004870",
+    "success": true,
+    "name": "��곗�⑥�댄����⑹��",
+    "per": 704.0,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005810",
+    "success": true,
+    "name": "�����고����⑹��",
+    "per": 7.08,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006370",
+    "success": true,
+    "name": "���援щ갚������",
+    "per": 2770.0,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009970",
+    "success": true,
+    "name": "������臾댁�������⑹��",
+    "per": 9.23,
+    "pbr": 0.35,
+    "bps": 176,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032080",
+    "success": true,
+    "name": "���利����WB",
+    "per": 4.0,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "032560",
+    "success": true,
+    "name": "��⑷�������ㅽ��",
+    "per": 5.93,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "053700",
+    "success": true,
+    "name": "��쇰낫紐⑦�곗��",
+    "per": 4.8,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "213500",
+    "success": true,
+    "name": "���������吏�",
+    "per": 53.25,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "460860",
+    "success": true,
+    "name": "���援����媛�",
+    "per": 56.69,
+    "pbr": 0.35,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000480",
+    "success": true,
+    "name": "CR�����⑹��",
+    "per": 434.0,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001290",
+    "success": true,
+    "name": "��������몄��沅�",
+    "per": 179.0,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005680",
+    "success": true,
+    "name": "��쇱��������",
+    "per": 27.67,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013310",
+    "success": true,
+    "name": "���吏���곗��",
+    "per": 7.46,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "023590",
+    "success": true,
+    "name": "��ㅼ�곌린���",
+    "per": 4.96,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "028080",
+    "success": true,
+    "name": "��대㎘��ㅽ����⑹��",
+    "per": 2057.0,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "088910",
+    "success": true,
+    "name": "�����고����ы����대��",
+    "per": 7.05,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "100220",
+    "success": true,
+    "name": "鍮����援����",
+    "per": 12.59,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "105560",
+    "success": true,
+    "name": "KB湲����",
+    "per": 10.01,
+    "pbr": 0.36,
+    "bps": 135,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "106240",
+    "success": true,
+    "name": "�����명����щ�����",
+    "per": 855.0,
+    "pbr": 0.36,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "004060",
+    "success": true,
+    "name": "SG��멸��臾쇱��",
+    "per": 133.75,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005820",
+    "success": true,
+    "name": "���由�",
+    "per": 9.64,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006090",
+    "success": true,
+    "name": "��ъ“��ㅼ��",
+    "per": 7.36,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "008060",
+    "success": true,
+    "name": "������",
+    "per": 147.13,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "00806K",
+    "success": true,
+    "name": "������1���",
+    "per": 120.0,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "010400",
+    "success": true,
+    "name": "��곗�������댁��������",
+    "per": 1012.0,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012800",
+    "success": true,
+    "name": "���李�",
+    "per": 57.78,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013520",
+    "success": true,
+    "name": "�����뱀����쇰����댁��",
+    "per": 4.04,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024070",
+    "success": true,
+    "name": "WISCOM",
+    "per": 1315.0,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "035080",
+    "success": true,
+    "name": "洹몃�������명��",
+    "per": 1978.0,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "039560",
+    "success": true,
+    "name": "��ㅼ�곕�ㅽ�몄�����",
+    "per": 15.52,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "055550",
+    "success": true,
+    "name": "������吏�二�",
+    "per": 9.42,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "078020",
+    "success": true,
+    "name": "LS利�沅�",
+    "per": 19.75,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "089470",
+    "success": true,
+    "name": "HDC������EP",
+    "per": 5.54,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "123700",
+    "success": true,
+    "name": "SJM",
+    "per": 2.62,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "136490",
+    "success": true,
+    "name": "���吏�",
+    "per": 2.11,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "183190",
+    "success": true,
+    "name": "�����몄�����硫����",
+    "per": 9.92,
+    "pbr": 0.37,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000140",
+    "success": true,
+    "name": "�����댄�몄��濡������⑹��",
+    "per": 5.07,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000145",
+    "success": true,
+    "name": "�����댄�몄��濡������⑹�ㅼ��",
+    "per": 6.39,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002200",
+    "success": true,
+    "name": "���援����異���ъ��",
+    "per": 97.0,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "008250",
+    "success": true,
+    "name": "��닿굔��곗��",
+    "per": 554.0,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009440",
+    "success": true,
+    "name": "KC洹몃┛�����⑹��",
+    "per": 1522.0,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "037330",
+    "success": true,
+    "name": "��몄�������ㅽ�����",
+    "per": 31.09,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "037460",
+    "success": true,
+    "name": "��쇱��������",
+    "per": 5.83,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "054800",
+    "success": true,
+    "name": "�����대����ㅽ����⑹��",
+    "per": 4.34,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "066900",
+    "success": true,
+    "name": "��������댄��",
+    "per": 2619.0,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "069730",
+    "success": true,
+    "name": "DSR���媛�",
+    "per": 3.09,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "080520",
+    "success": true,
+    "name": "��ㅻ�����",
+    "per": 615.0,
+    "pbr": 0.38,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "002070",
+    "success": true,
+    "name": "鍮�鍮����",
+    "per": 259.0,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004170",
+    "success": true,
+    "name": "�����멸��",
+    "per": 234.03,
+    "pbr": 0.39,
+    "bps": 445,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004800",
+    "success": true,
+    "name": "��⑥��",
+    "per": 7.87,
+    "pbr": 0.39,
+    "bps": 123,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007980",
+    "success": true,
+    "name": "TP",
+    "per": 2.96,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009140",
+    "success": true,
+    "name": "寃쎌�몄�����",
+    "per": 9.25,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "033530",
+    "success": true,
+    "name": "SJG��몄��",
+    "per": 3.23,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "033560",
+    "success": true,
+    "name": "釉�猷⑥숴",
+    "per": 3.67,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "079430",
+    "success": true,
+    "name": "������由щ�����",
+    "per": 19.94,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "084695",
+    "success": true,
+    "name": "�����������⑹�ㅼ��",
+    "per": 23.82,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "084690",
+    "success": true,
+    "name": "�����������⑹��",
+    "per": 15.25,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "091340",
+    "success": true,
+    "name": "S&K��대━���",
+    "per": 9.28,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "109960",
+    "success": true,
+    "name": "��깊����щ＼",
+    "per": 336.0,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "123890",
+    "success": true,
+    "name": "���援������곗�����",
+    "per": 5.95,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "140520",
+    "success": true,
+    "name": "���李쎌�ㅽ��",
+    "per": 34.43,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "143210",
+    "success": true,
+    "name": "��몄��肄���쇰����댁��",
+    "per": 4196.0,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "306200",
+    "success": true,
+    "name": "��몄�����媛�",
+    "per": 13.16,
+    "pbr": 0.39,
+    "bps": 356,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "900070",
+    "success": true,
+    "name": "湲�濡�踰������ㅼ��",
+    "per": 9.93,
+    "pbr": 0.39,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "002350",
+    "success": true,
+    "name": "��μ�쇳����댁��",
+    "per": 4.8,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002355",
+    "success": true,
+    "name": "��μ�쇳����댁��1���B",
+    "per": 2.92,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002450",
+    "success": true,
+    "name": "��쇱�듭��湲�",
+    "per": 5.43,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002870",
+    "success": true,
+    "name": "������",
+    "per": 418.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002990",
+    "success": true,
+    "name": "湲���멸굔���",
+    "per": 3.02,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002995",
+    "success": true,
+    "name": "湲���멸굔��ㅼ��",
+    "per": 8.28,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003610",
+    "success": true,
+    "name": "諛⑸┝",
+    "per": 46.81,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003960",
+    "success": true,
+    "name": "��ъ“���由�",
+    "per": 5.56,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005750",
+    "success": true,
+    "name": "���由쇰�����",
+    "per": 10.16,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009680",
+    "success": true,
+    "name": "紐⑦�����",
+    "per": 11.53,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014285",
+    "success": true,
+    "name": "湲�媛�怨듭�����",
+    "per": 1494.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014280",
+    "success": true,
+    "name": "湲�媛�怨듭��",
+    "per": 1494.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "015860",
+    "success": true,
+    "name": "��쇱�������⑹��",
+    "per": 10.32,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016090",
+    "success": true,
+    "name": "������",
+    "per": 12.15,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "017480",
+    "success": true,
+    "name": "��쇳��泥�媛�",
+    "per": 11.62,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "019540",
+    "success": true,
+    "name": "��쇱��������",
+    "per": 1.89,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "031510",
+    "success": true,
+    "name": "��ㅼ�ㅽ��",
+    "per": 843.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "049430",
+    "success": true,
+    "name": "肄�硫�濡�",
+    "per": 7.3,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "051390",
+    "success": true,
+    "name": "YW",
+    "per": 9.62,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "053210",
+    "success": true,
+    "name": "��ㅼ뭅��대�쇱�댄��",
+    "per": 35.34,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "071850",
+    "success": true,
+    "name": "罹���ㅽ��肄�由ъ��",
+    "per": 252.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "073110",
+    "success": true,
+    "name": "������������",
+    "per": 1357.0,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "088130",
+    "success": true,
+    "name": "������������",
+    "per": 2.87,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "151860",
+    "success": true,
+    "name": "KG���肄����猷⑥��",
+    "per": 4.08,
+    "pbr": 0.4,
+    "bps": 33700,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "163560",
+    "success": true,
+    "name": "�����쇨��臾대꺼���",
+    "per": null,
+    "pbr": 0.4,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001510",
+    "success": true,
+    "name": "SK利�沅�",
+    "per": 275.62,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001515",
+    "success": true,
+    "name": "SK利�沅����",
+    "per": 885.0,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007690",
+    "success": true,
+    "name": "援����������",
+    "per": 15.29,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011560",
+    "success": true,
+    "name": "��몃낫�����댁��",
+    "per": 8.53,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "013570",
+    "success": true,
+    "name": "���������",
+    "per": 9.49,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "021050",
+    "success": true,
+    "name": "������",
+    "per": 221.0,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024090",
+    "success": true,
+    "name": "�����⑥��",
+    "per": 11.73,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "044490",
+    "success": true,
+    "name": "������",
+    "per": 66.33,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "052790",
+    "success": true,
+    "name": "��≫��利����������",
+    "per": 3.74,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "071055",
+    "success": true,
+    "name": "���援�湲���듭��二쇱��",
+    "per": 5.79,
+    "pbr": 0.41,
+    "bps": 131,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "071050",
+    "success": true,
+    "name": "���援�湲���듭��二�",
+    "per": 7.64,
+    "pbr": 0.41,
+    "bps": 131,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "072870",
+    "success": true,
+    "name": "硫�媛���ㅽ�곕��",
+    "per": 7.85,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "092440",
+    "success": true,
+    "name": "湲곗�����湲�",
+    "per": 16.0,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "114630",
+    "success": true,
+    "name": "��대�쇰━��ㅼ�곕��",
+    "per": 17.17,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "145170",
+    "success": true,
+    "name": "��몃��������",
+    "per": 116.0,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "227840",
+    "success": true,
+    "name": "������肄���쇰����댁�������⑹��",
+    "per": 3.29,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "383800",
+    "success": true,
+    "name": "LX�����⑹��",
+    "per": 4.42,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "38380K",
+    "success": true,
+    "name": "LX�����⑹��1���",
+    "per": 4.36,
+    "pbr": 0.41,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000970",
+    "success": true,
+    "name": "���援�二쇱��愿�",
+    "per": 9.15,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005940",
+    "success": true,
+    "name": "NH��ъ��利�沅�",
+    "per": 13.99,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005945",
+    "success": true,
+    "name": "NH��ъ��利�沅����",
+    "per": 11.09,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006840",
+    "success": true,
+    "name": "AK�����⑹��",
+    "per": 9553.0,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009160",
+    "success": true,
+    "name": "SIMPAC",
+    "per": 26.61,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011170",
+    "success": true,
+    "name": "濡���곗��誘몄뭡",
+    "per": 47624.0,
+    "pbr": 0.42,
+    "bps": 368,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014100",
+    "success": true,
+    "name": "硫����������",
+    "per": 1073.0,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "016740",
+    "success": true,
+    "name": "������",
+    "per": 4.43,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024120",
+    "success": true,
+    "name": "KB��ㅽ��������",
+    "per": 10.08,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "029780",
+    "success": true,
+    "name": "��쇱�깆뭅���",
+    "per": 10.12,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "035510",
+    "success": true,
+    "name": "�����멸�� I&C",
+    "per": 10.7,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "049830",
+    "success": true,
+    "name": "��뱀��",
+    "per": 18.51,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "056360",
+    "success": true,
+    "name": "肄����踰�",
+    "per": 20.99,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "073560",
+    "success": true,
+    "name": "��곕━�����������ㅼ��",
+    "per": 4.89,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "075180",
+    "success": true,
+    "name": "���濡���ㅽ��紐⑦�곕��",
+    "per": 15.3,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "079960",
+    "success": true,
+    "name": "��������댁�����",
+    "per": 3.25,
+    "pbr": 0.42,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000430",
+    "success": true,
+    "name": "������媛����",
+    "per": 23.64,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001800",
+    "success": true,
+    "name": "��ㅻ━��⑦����⑹��",
+    "per": 12.87,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003800",
+    "success": true,
+    "name": "�����댁�ㅼ묠���",
+    "per": 6.81,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "005430",
+    "success": true,
+    "name": "���援�怨듯��",
+    "per": 4.48,
+    "pbr": 0.43,
+    "bps": 113,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024840",
+    "success": true,
+    "name": "KBI硫����",
+    "per": null,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036830",
+    "success": true,
+    "name": "���釉������명����⑹��",
+    "per": 13.25,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "038950",
+    "success": true,
+    "name": "�����몃��吏����",
+    "per": 112.0,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "065130",
+    "success": true,
+    "name": "������吏������대��",
+    "per": 1015.0,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "078860",
+    "success": true,
+    "name": "��ㅽ����댁�����������",
+    "per": 307.0,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "115310",
+    "success": true,
+    "name": "��명�щ�����",
+    "per": 30.7,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "192440",
+    "success": true,
+    "name": "�����쇨��肄�由ъ��",
+    "per": 5.19,
+    "pbr": 0.43,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "002310",
+    "success": true,
+    "name": "�����몄�����吏�",
+    "per": 19.14,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004540",
+    "success": true,
+    "name": "源⑤�����������",
+    "per": 1263.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004545",
+    "success": true,
+    "name": "源⑤����������쇱��",
+    "per": 1263.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005880",
+    "success": true,
+    "name": "��������댁��",
+    "per": 5.41,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007160",
+    "success": true,
+    "name": "��ъ“��곗��",
+    "per": 5820.0,
+    "pbr": 0.44,
+    "bps": 102,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012200",
+    "success": true,
+    "name": "怨�������湲�",
+    "per": 1299.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012205",
+    "success": true,
+    "name": "怨�������湲곗��",
+    "per": 1299.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012700",
+    "success": true,
+    "name": "由щ��肄����",
+    "per": 6.49,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "016450",
+    "success": true,
+    "name": "�����몄�����24�����⑹��",
+    "per": 1027.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "039020",
+    "success": true,
+    "name": "��닿굔�����⑹��",
+    "per": 173.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "044820",
+    "success": true,
+    "name": "肄���ㅻ㎘��ㅻ����곗�����",
+    "per": 5.23,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "066670",
+    "success": true,
+    "name": "�����곗��",
+    "per": 18.55,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "071090",
+    "success": true,
+    "name": "�����댁�ㅽ��",
+    "per": 227.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "137940",
+    "success": true,
+    "name": "��μ�ㅽ�몄�����",
+    "per": 174.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "155660",
+    "success": true,
+    "name": "DSR",
+    "per": 4.94,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "344820",
+    "success": true,
+    "name": "KCC湲���쇱��",
+    "per": 5237.0,
+    "pbr": 0.44,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004560",
+    "success": true,
+    "name": "������鍮���ㅼ����ㅽ��",
+    "per": 16.91,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004910",
+    "success": true,
+    "name": "議곌�������명��",
+    "per": 4970.0,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "010770",
+    "success": true,
+    "name": "�����������⑹��",
+    "per": 1.65,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011760",
+    "success": true,
+    "name": "������肄���쇰����댁��",
+    "per": 3.99,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014440",
+    "success": true,
+    "name": "���蹂댄�����",
+    "per": 5.58,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016360",
+    "success": true,
+    "name": "��쇱�깆��沅�",
+    "per": 9.29,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "017890",
+    "success": true,
+    "name": "���援����肄�",
+    "per": 7.53,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "058860",
+    "success": true,
+    "name": "KTis",
+    "per": 2.74,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "070960",
+    "success": true,
+    "name": "紐⑤����⑺��",
+    "per": 19.71,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "080010",
+    "success": true,
+    "name": "��댁����ㅽ�몄�����",
+    "per": 3.87,
+    "pbr": 0.45,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000500",
+    "success": true,
+    "name": "媛���⑥�����",
+    "per": 34.88,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001430",
+    "success": true,
+    "name": "��몄��踰���ㅽ�몄��二�",
+    "per": 46.27,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003570",
+    "success": true,
+    "name": "SNT��ㅼ�대�대�뱀��",
+    "per": 27.43,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004490",
+    "success": true,
+    "name": "��몃갑���吏�",
+    "per": 6.47,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004700",
+    "success": true,
+    "name": "議곌����쇳��",
+    "per": 36.17,
+    "pbr": 0.46,
+    "bps": 106,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004780",
+    "success": true,
+    "name": "���瑜����愿�",
+    "per": 6.73,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "024880",
+    "success": true,
+    "name": "耳���댄�쇱�����",
+    "per": 7.14,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036090",
+    "success": true,
+    "name": "���吏����",
+    "per": 58.0,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "041520",
+    "success": true,
+    "name": "��댁�����",
+    "per": 13.32,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "043650",
+    "success": true,
+    "name": "援�������",
+    "per": 19.45,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "050860",
+    "success": true,
+    "name": "�����몄�����",
+    "per": 9.81,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "065690",
+    "success": true,
+    "name": "���而ㅼ��",
+    "per": 3.33,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "079650",
+    "success": true,
+    "name": "������",
+    "per": 49.0,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "096690",
+    "success": true,
+    "name": "�����대（���",
+    "per": 1188.0,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "123410",
+    "success": true,
+    "name": "肄�由ъ�����������",
+    "per": 4.37,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "446070",
+    "success": true,
+    "name": "���������鍮���고����ъ��",
+    "per": null,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "475430",
+    "success": true,
+    "name": "��ㅼ�ㅽ�몃��",
+    "per": 6.83,
+    "pbr": 0.46,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000700",
+    "success": true,
+    "name": "�����������⑹��",
+    "per": 11.47,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001120",
+    "success": true,
+    "name": "LX��명�곕�댁�����",
+    "per": 12.74,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002810",
+    "success": true,
+    "name": "��쇱��臾댁��",
+    "per": 6.41,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003080",
+    "success": true,
+    "name": "SB��깅낫",
+    "per": 1.28,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005160",
+    "success": true,
+    "name": "���援���곗��",
+    "per": 426.0,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "007210",
+    "success": true,
+    "name": "踰쎌��",
+    "per": 7.12,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009290",
+    "success": true,
+    "name": "愿����������",
+    "per": 16.18,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016380",
+    "success": true,
+    "name": "KG��ㅽ��",
+    "per": 4.33,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "023350",
+    "success": true,
+    "name": "���援�醫���⑷린���",
+    "per": 6.06,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "036190",
+    "success": true,
+    "name": "湲������쇱����ㅼ��",
+    "per": 7.86,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036220",
+    "success": true,
+    "name": "��ㅼ����ъ�ㅼ�����",
+    "per": 26.19,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "038540",
+    "success": true,
+    "name": "���������",
+    "per": 2650.0,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "049520",
+    "success": true,
+    "name": "��������댁��",
+    "per": 6.15,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "063760",
+    "success": true,
+    "name": "��댁�����",
+    "per": 20.44,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "078890",
+    "success": true,
+    "name": "媛���④렇猷�",
+    "per": 17.35,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "126560",
+    "success": true,
+    "name": "��������⑥�����",
+    "per": 48.09,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "192400",
+    "success": true,
+    "name": "荑�荑������⑹��",
+    "per": 6.95,
+    "pbr": 0.47,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "402340",
+    "success": true,
+    "name": "SK��ㅽ�����",
+    "per": 9.1,
+    "pbr": 0.47,
+    "bps": 112,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000720",
+    "success": true,
+    "name": "������嫄댁��",
+    "per": 47.56,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "000725",
+    "success": true,
+    "name": "������嫄댁�ㅼ��",
+    "per": 21.08,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007330",
+    "success": true,
+    "name": "��몃Ⅸ���異�������",
+    "per": 9.82,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "007770",
+    "success": true,
+    "name": "�����쇳�����",
+    "per": 1670.0,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "012320",
+    "success": true,
+    "name": "寃쎈����몃����ㅽ��",
+    "per": 5.95,
+    "pbr": 0.48,
+    "bps": 205,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012860",
+    "success": true,
+    "name": "紐⑤����댁�ㅼ�����",
+    "per": 15.54,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "017900",
+    "success": true,
+    "name": "愿�������",
+    "per": 46.51,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "031820",
+    "success": true,
+    "name": "�����댄�곗�쇱�⑦�곗�����",
+    "per": 5.13,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "03473K",
+    "success": true,
+    "name": "SK���",
+    "per": 11.8,
+    "pbr": 0.48,
+    "bps": 373,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "034730",
+    "success": true,
+    "name": "SK",
+    "per": 15.83,
+    "pbr": 0.48,
+    "bps": 373,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "038500",
+    "success": true,
+    "name": "��쇳�����硫����",
+    "per": 45.63,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "054940",
+    "success": true,
+    "name": "�����ъ�댁�����",
+    "per": 35.63,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "068790",
+    "success": true,
+    "name": "DMS",
+    "per": 0.93,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "069510",
+    "success": true,
+    "name": "�����ㅽ��",
+    "per": 3.91,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "084670",
+    "success": true,
+    "name": "������怨����",
+    "per": 4111.0,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "100250",
+    "success": true,
+    "name": "吏���������⑹��",
+    "per": 9.6,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "120110",
+    "success": true,
+    "name": "肄���ㅻ”��몃��",
+    "per": 24.69,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "120115",
+    "success": true,
+    "name": "肄���ㅻ”��몃�����",
+    "per": 9.04,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "317400",
+    "success": true,
+    "name": "�����댁����ㅼ�ㅻ��",
+    "per": 5.98,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "405920",
+    "success": true,
+    "name": "�����쇱�����",
+    "per": 66.0,
+    "pbr": 0.48,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "001380",
+    "success": true,
+    "name": "SG湲�濡�踰�",
+    "per": 22.26,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002230",
+    "success": true,
+    "name": "��쇱����ㅽ��",
+    "per": 18.22,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "008470",
+    "success": true,
+    "name": "遺���ㅽ��",
+    "per": 20.32,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "018500",
+    "success": true,
+    "name": "������湲����",
+    "per": 2.04,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024720",
+    "success": true,
+    "name": "肄�留������⑹��",
+    "per": 6.95,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "027970",
+    "success": true,
+    "name": "���援����吏�",
+    "per": 176.0,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "031980",
+    "success": true,
+    "name": "��쇱����ㅼ����댄����⑹��",
+    "per": 19.54,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "045100",
+    "success": true,
+    "name": "��������댁��吏�",
+    "per": 14.78,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "045060",
+    "success": true,
+    "name": "��ㅺ났",
+    "per": 6.85,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "060380",
+    "success": true,
+    "name": "�����������ㅽ��",
+    "per": 9.83,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "067990",
+    "success": true,
+    "name": "�����댁��紐⑦�곗��",
+    "per": 34.43,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "078000",
+    "success": true,
+    "name": "���肄���⑥��",
+    "per": 26.15,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "079000",
+    "success": true,
+    "name": "��������ㅼ��由ъ��",
+    "per": 63.2,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "084110",
+    "success": true,
+    "name": "��댁�⑥�ㅺ��濡�踰�",
+    "per": 36.37,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "101680",
+    "success": true,
+    "name": "���援����諛�湲곌��",
+    "per": 560.0,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "237750",
+    "success": true,
+    "name": "��쇱�ㅼ�⑦�����",
+    "per": 29.51,
+    "pbr": 0.49,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "001250",
+    "success": true,
+    "name": "GS湲�濡�踰�",
+    "per": 10.81,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001630",
+    "success": true,
+    "name": "醫�洹쇰�뱁����⑹��",
+    "per": 6.21,
+    "pbr": 0.5,
+    "bps": 118,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001770",
+    "success": true,
+    "name": "SHD",
+    "per": 10.67,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005870",
+    "success": true,
+    "name": "��대�����",
+    "per": 707.0,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007070",
+    "success": true,
+    "name": "GS由ы�����",
+    "per": 39.69,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007540",
+    "success": true,
+    "name": "������",
+    "per": 16.35,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007590",
+    "success": true,
+    "name": "���諛⑹��洹몃��",
+    "per": 8.21,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "014830",
+    "success": true,
+    "name": "���������",
+    "per": 8.81,
+    "pbr": 0.5,
+    "bps": 136,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "018310",
+    "success": true,
+    "name": "��쇰ぉ�����ㅽ��",
+    "per": 9.01,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "023000",
+    "success": true,
+    "name": "��쇱��媛����",
+    "per": 8.79,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "025750",
+    "success": true,
+    "name": "�����������곗��",
+    "per": 277.0,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "034590",
+    "success": true,
+    "name": "��몄��������媛����",
+    "per": 6.19,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "036170",
+    "success": true,
+    "name": "�����댁�������μ��",
+    "per": 63.16,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "042420",
+    "success": true,
+    "name": "��ㅼ�ㅼ��利������⑹��",
+    "per": 7.95,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "079980",
+    "success": true,
+    "name": "��대�����",
+    "per": 40.0,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "093190",
+    "success": true,
+    "name": "鍮����濡�",
+    "per": 8.25,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "094970",
+    "success": true,
+    "name": "�����댁�����",
+    "per": 7.01,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "119850",
+    "success": true,
+    "name": "吏������⑥�����吏�",
+    "per": 14.62,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "228340",
+    "success": true,
+    "name": "������������",
+    "per": 410.0,
+    "pbr": 0.5,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "000390",
+    "success": true,
+    "name": "��쇳�������명��",
+    "per": 34.08,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001530",
+    "success": true,
+    "name": "DI������",
+    "per": 526.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003555",
+    "success": true,
+    "name": "LG���",
+    "per": 15.08,
+    "pbr": 0.51,
+    "bps": 167,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003550",
+    "success": true,
+    "name": "LG",
+    "per": 19.19,
+    "pbr": 0.51,
+    "bps": 167,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004270",
+    "success": true,
+    "name": "��⑥��",
+    "per": 6.19,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004720",
+    "success": true,
+    "name": "��������ъ�댁�몄��",
+    "per": 15.44,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011210",
+    "success": true,
+    "name": "������������",
+    "per": 22.69,
+    "pbr": 0.51,
+    "bps": 127,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "018670",
+    "success": true,
+    "name": "SK媛����",
+    "per": 9.7,
+    "pbr": 0.51,
+    "bps": 287,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "023760",
+    "success": true,
+    "name": "���援�罹���쇳��",
+    "per": 3.39,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "030200",
+    "success": true,
+    "name": "KT",
+    "per": 8.75,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032280",
+    "success": true,
+    "name": "��쇱��",
+    "per": 21.2,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "038060",
+    "success": true,
+    "name": "猷⑤�����",
+    "per": 15.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "039490",
+    "success": true,
+    "name": "��ㅼ��利�沅�",
+    "per": 11.84,
+    "pbr": 0.51,
+    "bps": 164,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "044450",
+    "success": true,
+    "name": "KSS��댁��",
+    "per": 4.49,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "072950",
+    "success": true,
+    "name": "鍮����������",
+    "per": 8.61,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "079950",
+    "success": true,
+    "name": "��몃��������",
+    "per": 1445.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "081000",
+    "success": true,
+    "name": "��쇱����ㅼ�댁��",
+    "per": 28.94,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "083550",
+    "success": true,
+    "name": "耳���댁��",
+    "per": 66.96,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "090350",
+    "success": true,
+    "name": "��몃（�����명��",
+    "per": 11.39,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "090355",
+    "success": true,
+    "name": "��몃（�����명�몄��",
+    "per": 16.65,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "108380",
+    "success": true,
+    "name": "���������湲곌났���",
+    "per": 9.57,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "115160",
+    "success": true,
+    "name": "��대㎘���",
+    "per": 1512.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "115570",
+    "success": true,
+    "name": "��ㅽ�����������",
+    "per": 6.73,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "126640",
+    "success": true,
+    "name": "���������怨�",
+    "per": 5.32,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "181710",
+    "success": true,
+    "name": "NHN",
+    "per": 1355.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "198080",
+    "success": true,
+    "name": "罹����",
+    "per": 3.2,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "214330",
+    "success": true,
+    "name": "湲���몄����댁�����",
+    "per": 63.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "393970",
+    "success": true,
+    "name": "���吏�泥⑤�⑥�����",
+    "per": 803.0,
+    "pbr": 0.51,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "006650",
+    "success": true,
+    "name": "������������",
+    "per": 27.82,
+    "pbr": 0.52,
+    "bps": 295,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "010040",
+    "success": true,
+    "name": "���援���댄��",
+    "per": 531.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "017000",
+    "success": true,
+    "name": "������醫���⑷��諛�",
+    "per": 10.21,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "023800",
+    "success": true,
+    "name": "��몄��而⑦�몃·���",
+    "per": 6.13,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "025560",
+    "success": true,
+    "name": "誘몃����곗��",
+    "per": 4.95,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032640",
+    "success": true,
+    "name": "LG��������ъ��",
+    "per": 12.91,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "036580",
+    "success": true,
+    "name": "�����ㅼ��",
+    "per": 896.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "044180",
+    "success": true,
+    "name": "KD",
+    "per": 396.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "050120",
+    "success": true,
+    "name": "ES���釉�",
+    "per": 6.16,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "054040",
+    "success": true,
+    "name": "���援�而댄�⑦��",
+    "per": 4.14,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "058730",
+    "success": true,
+    "name": "��ㅼ�ㅼ��",
+    "per": 256.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "092780",
+    "success": true,
+    "name": "DYP",
+    "per": 8.01,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "108670",
+    "success": true,
+    "name": "LX�����곗�����",
+    "per": 4387.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "108675",
+    "success": true,
+    "name": "LX�����곗����ㅼ��",
+    "per": 4387.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "210540",
+    "success": true,
+    "name": "��������댄�����",
+    "per": 6.01,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "215790",
+    "success": true,
+    "name": "��대�몄�몄�ㅽ�몃（癒쇳��",
+    "per": 656.0,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "221980",
+    "success": true,
+    "name": "耳���대��耳�",
+    "per": 8.66,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "900290",
+    "success": true,
+    "name": "GRT",
+    "per": 5.79,
+    "pbr": 0.52,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "007120",
+    "success": true,
+    "name": "誘몃�������댁�ㅼ��",
+    "per": 435.0,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012330",
+    "success": true,
+    "name": "������紐⑤�����",
+    "per": 10.13,
+    "pbr": 0.53,
+    "bps": 448,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "013890",
+    "success": true,
+    "name": "吏�������",
+    "per": 832.0,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016600",
+    "success": true,
+    "name": "���罹���쇳��",
+    "per": 14.0,
+    "pbr": 0.53,
+    "bps": 730,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "031440",
+    "success": true,
+    "name": "�����멸����몃��",
+    "per": 2.47,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "032750",
+    "success": true,
+    "name": "��쇱��",
+    "per": 4.82,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "039310",
+    "success": true,
+    "name": "��몄��",
+    "per": 67.29,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "093380",
+    "success": true,
+    "name": "���媛�",
+    "per": 12.07,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "187220",
+    "success": true,
+    "name": "�����곗�ㅼ��",
+    "per": 15.56,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "210980",
+    "success": true,
+    "name": "SK�����ㅻ��",
+    "per": 34.54,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "240600",
+    "success": true,
+    "name": "���吏������щ��濡�吏�",
+    "per": 855.0,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "248170",
+    "success": true,
+    "name": "������������",
+    "per": 6.53,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "280360",
+    "success": true,
+    "name": "濡���곗�고�몃��",
+    "per": 14.84,
+    "pbr": 0.53,
+    "bps": 232,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "499790",
+    "success": true,
+    "name": "GS��쇱�ㅼ��",
+    "per": 47.39,
+    "pbr": 0.53,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001040",
+    "success": true,
+    "name": "CJ",
+    "per": 52.25,
+    "pbr": 0.54,
+    "bps": 154,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001045",
+    "success": true,
+    "name": "CJ���",
+    "per": 22.74,
+    "pbr": 0.54,
+    "bps": 154,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "00104K",
+    "success": true,
+    "name": "CJ4���(������)",
+    "per": 45.61,
+    "pbr": 0.54,
+    "bps": 154,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001740",
+    "success": true,
+    "name": "SK��ㅽ�몄�����",
+    "per": 24.04,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003030",
+    "success": true,
+    "name": "��몄�����媛�吏�二�",
+    "per": 12.23,
+    "pbr": 0.54,
+    "bps": 445,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006060",
+    "success": true,
+    "name": "�����뱀�몃��",
+    "per": 9.27,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "006260",
+    "success": true,
+    "name": "LS",
+    "per": 33.52,
+    "pbr": 0.54,
+    "bps": 172,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009070",
+    "success": true,
+    "name": "KCTC",
+    "per": 8.41,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009270",
+    "success": true,
+    "name": "������",
+    "per": 22.0,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009310",
+    "success": true,
+    "name": "李몄��吏������대��",
+    "per": 1236.0,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "012030",
+    "success": true,
+    "name": "DB",
+    "per": 4.86,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "019680",
+    "success": true,
+    "name": "���援�",
+    "per": 116.0,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "019685",
+    "success": true,
+    "name": "���援����B",
+    "per": 116.0,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "021650",
+    "success": true,
+    "name": "���援����鍮�",
+    "per": 8.19,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "037560",
+    "success": true,
+    "name": "LG��щ��鍮����",
+    "per": 1329.0,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "060540",
+    "success": true,
+    "name": "�����ㅼ����댄��",
+    "per": 15.37,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "075130",
+    "success": true,
+    "name": "��������곕��",
+    "per": 13.73,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "093920",
+    "success": true,
+    "name": "��������명��",
+    "per": 6.53,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "103140",
+    "success": true,
+    "name": "������",
+    "per": 18.7,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "212560",
+    "success": true,
+    "name": "��ㅼ�ㅼ�ㅽ��",
+    "per": 5.28,
+    "pbr": 0.54,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "001790",
+    "success": true,
+    "name": "������������",
+    "per": 628.0,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001795",
+    "success": true,
+    "name": "�����������뱀��",
+    "per": 628.0,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005090",
+    "success": true,
+    "name": "SGC������吏�",
+    "per": 4259.0,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007340",
+    "success": true,
+    "name": "DN��ㅽ��紐⑦�곕��",
+    "per": 8.15,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "008040",
+    "success": true,
+    "name": "��ъ“���������",
+    "per": 5.91,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "035000",
+    "success": true,
+    "name": "HS������",
+    "per": 8.24,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "065680",
+    "success": true,
+    "name": "��곗＜��쇰����몃��",
+    "per": 12.73,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "067770",
+    "success": true,
+    "name": "��몄����곗�����",
+    "per": 26.12,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "130740",
+    "success": true,
+    "name": "��고�쇱�④��濡�踰�",
+    "per": 42.0,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "241770",
+    "success": true,
+    "name": "硫�移대��",
+    "per": 24.39,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "267980",
+    "success": true,
+    "name": "留ㅼ�쇱�����",
+    "per": 5.09,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "377740",
+    "success": true,
+    "name": "諛���댁�ㅻ�명��",
+    "per": 4.76,
+    "pbr": 0.55,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003680",
+    "success": true,
+    "name": "�����깃린���",
+    "per": 56.0,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003920",
+    "success": true,
+    "name": "��⑥��������",
+    "per": 60.28,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "003925",
+    "success": true,
+    "name": "��⑥�����������",
+    "per": 47.19,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004430",
+    "success": true,
+    "name": "��≪����곗��",
+    "per": 96.6,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004450",
+    "success": true,
+    "name": "��쇳�����愿�",
+    "per": 14.06,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009300",
+    "success": true,
+    "name": "��쇱��������",
+    "per": 7.72,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "010060",
+    "success": true,
+    "name": "OCI�����⑹��",
+    "per": 4772.0,
+    "pbr": 0.56,
+    "bps": 190,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016590",
+    "success": true,
+    "name": "������������吏�",
+    "per": 16.12,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "017370",
+    "success": true,
+    "name": "��곗�������ㅽ��",
+    "per": 4.12,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "025620",
+    "success": true,
+    "name": "李�AI��ъ�ㅼ�����",
+    "per": 1239.0,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "037760",
+    "success": true,
+    "name": "���������",
+    "per": 156.0,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "048470",
+    "success": true,
+    "name": "��������ㅽ��",
+    "per": 115.18,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "050760",
+    "success": true,
+    "name": "�����ㅽ�대━���",
+    "per": 25.0,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "053350",
+    "success": true,
+    "name": "��대�����",
+    "per": 3.19,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "054050",
+    "success": true,
+    "name": "�����곕����댁��",
+    "per": 9.85,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "080420",
+    "success": true,
+    "name": "紐⑤�ㅼ�대�몄묩",
+    "per": 58.0,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "111110",
+    "success": true,
+    "name": "��몄����ㅼ��",
+    "per": null,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "300720",
+    "success": true,
+    "name": "�����쇱��硫����",
+    "per": 16.03,
+    "pbr": 0.56,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001080",
+    "success": true,
+    "name": "留���몄��媛�",
+    "per": 45.0,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002620",
+    "success": true,
+    "name": "�����쇳��留������⑹��",
+    "per": 9.43,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005670",
+    "success": true,
+    "name": "��몃�����",
+    "per": 7.16,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "017510",
+    "success": true,
+    "name": "��몃�����湲�",
+    "per": 11.92,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036630",
+    "success": true,
+    "name": "��몄��������肄�",
+    "per": 257.0,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "038110",
+    "success": true,
+    "name": "���肄������쇱�ㅽ��",
+    "per": null,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "039010",
+    "success": true,
+    "name": "�����������댁�����",
+    "per": 5.66,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "042040",
+    "success": true,
+    "name": "耳���댄�쇱��������",
+    "per": 217.0,
+    "pbr": 0.57,
+    "bps": 613,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "046940",
+    "success": true,
+    "name": "��곗��媛�諛�",
+    "per": 2.82,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "052420",
+    "success": true,
+    "name": "��ㅼ�깆꺼��⑥�����",
+    "per": 4.26,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "081150",
+    "success": true,
+    "name": "��고��������",
+    "per": 24.21,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "084870",
+    "success": true,
+    "name": "TBH湲�濡�踰�",
+    "per": 26.0,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "100840",
+    "success": true,
+    "name": "SNT������吏�",
+    "per": 11.84,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "190650",
+    "success": true,
+    "name": "肄�由ъ����������ъ��利�沅�",
+    "per": 10.14,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "264900",
+    "success": true,
+    "name": "��щ�쇱�댁��怨�",
+    "per": null,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "26490K",
+    "success": true,
+    "name": "��щ�쇱�댁��怨쇱��",
+    "per": null,
+    "pbr": 0.57,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "002390",
+    "success": true,
+    "name": "������",
+    "per": 156.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005360",
+    "success": true,
+    "name": "紐⑤��誘�",
+    "per": 343.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005380",
+    "success": true,
+    "name": "������李�",
+    "per": 14.18,
+    "pbr": 0.58,
+    "bps": 351,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005385",
+    "success": true,
+    "name": "������李⑥��",
+    "per": 7.26,
+    "pbr": 0.58,
+    "bps": 351,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005387",
+    "success": true,
+    "name": "������李�2���B",
+    "per": 7.27,
+    "pbr": 0.58,
+    "bps": 351,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005389",
+    "success": true,
+    "name": "������李�3���B",
+    "per": 6.96,
+    "pbr": 0.58,
+    "bps": 351,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007700",
+    "success": true,
+    "name": "F&F�����⑹��",
+    "per": 7.61,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "009180",
+    "success": true,
+    "name": "������濡�吏���ㅽ�깆��",
+    "per": 5.26,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011280",
+    "success": true,
+    "name": "���由쇳�ъ��",
+    "per": 208.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "016800",
+    "success": true,
+    "name": "��쇱�����",
+    "per": 12.45,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "023810",
+    "success": true,
+    "name": "��명��",
+    "per": 15.94,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "033540",
+    "success": true,
+    "name": "�����쇳��",
+    "per": 223.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "052900",
+    "success": true,
+    "name": "KX�����댄��",
+    "per": 12.9,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "054920",
+    "success": true,
+    "name": "���而댁�����",
+    "per": 78.31,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "073540",
+    "success": true,
+    "name": "������������",
+    "per": 11.25,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "087600",
+    "success": true,
+    "name": "��쎌�������ъ��",
+    "per": 92.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "109670",
+    "success": true,
+    "name": "��⑥�몄�댄��",
+    "per": 187.0,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "118000",
+    "success": true,
+    "name": "硫����耳����",
+    "per": 80.33,
+    "pbr": 0.58,
+    "bps": 688,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "161390",
+    "success": true,
+    "name": "���援������댁�댁�ㅽ����щ��濡�吏�",
+    "per": 6.61,
+    "pbr": 0.58,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001460",
+    "success": true,
+    "name": "BYC",
+    "per": 20.78,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "001465",
+    "success": true,
+    "name": "BYC���",
+    "per": 12.48,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "005320",
+    "success": true,
+    "name": "��⑦����대��",
+    "per": 50.0,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "007280",
+    "success": true,
+    "name": "���援���밴��",
+    "per": 15.45,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "024910",
+    "success": true,
+    "name": "寃쎌갹��곗��",
+    "per": 48.48,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036800",
+    "success": true,
+    "name": "�����댁�ㅼ��蹂댄�듭��",
+    "per": 6.05,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "045300",
+    "success": true,
+    "name": "��깆�고����щ��",
+    "per": 6.7,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "046440",
+    "success": true,
+    "name": "KG紐⑤��由ъ�몄��",
+    "per": 8.18,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "111380",
+    "success": true,
+    "name": "�����멸린���",
+    "per": null,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "123420",
+    "success": true,
+    "name": "���硫���대�����������",
+    "per": 4.16,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "138070",
+    "success": true,
+    "name": "���吏������ㅼ��",
+    "per": 45.0,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "141000",
+    "success": true,
+    "name": "鍮������몃��",
+    "per": 11.7,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "308100",
+    "success": true,
+    "name": "���吏�湲�濡�踰�",
+    "per": 2857.0,
+    "pbr": 0.59,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "003010",
+    "success": true,
+    "name": "������",
+    "per": 6.74,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004980",
+    "success": true,
+    "name": "��깆��������",
+    "per": 13.23,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "004985",
+    "success": true,
+    "name": "��깆�����������",
+    "per": 14.83,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011780",
+    "success": true,
+    "name": "湲���몄�����������",
+    "per": 13.21,
+    "pbr": 0.6,
+    "bps": 221,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "011785",
+    "success": true,
+    "name": "湲���몄��������������",
+    "per": 6.09,
+    "pbr": 0.6,
+    "bps": 221,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "025880",
+    "success": true,
+    "name": "耳���댁�⑦�쇰��",
+    "per": 4.79,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "033160",
+    "success": true,
+    "name": "���耳���댁�����",
+    "per": 527.0,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "036560",
+    "success": true,
+    "name": "KZ���諛�",
+    "per": 22.47,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "042500",
+    "success": true,
+    "name": "留���ㅽ��",
+    "per": 8.16,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "044780",
+    "success": true,
+    "name": "�����댁��耳����",
+    "per": 12.0,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "085310",
+    "success": true,
+    "name": "���耳����",
+    "per": 29.0,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  },
+  {
+    "symbol": "131030",
+    "success": true,
+    "name": "��듯�ъ�ㅼ�����",
+    "per": 25.31,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "131180",
+    "success": true,
+    "name": "���由�",
+    "per": 14.29,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅻ��"
+  },
+  {
+    "symbol": "267270",
+    "success": true,
+    "name": "HD嫄댁�ㅺ린怨�",
+    "per": 24.35,
+    "pbr": 0.6,
+    "bps": 2025,
+    "sector": "肄���ㅽ��"
+  }
+]
