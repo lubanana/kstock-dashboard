@@ -31,3 +31,4 @@ logs/
 Thumbs.db
 *.db
 data/*.db
+.env
