@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 발굴 TOP 10 종목 종합 재검토 분석</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #1a2a6c, #2d5a87, #a8c0ff); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header .subtitle { opacity: 0.9; font-size: 1.1em; }
+        .header .date { margin-top: 15px; font-size: 0.95em; opacity: 0.8; }
+        
+        /* Market Summary */
+        .market-section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .section-title { font-size: 1.5em; color: #1a2a6c; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #2d5a87; }
+        
+        .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .market-card { background: linear-gradient(145deg, #f8f9fa, #e9ecef); padding: 20px; border-radius: 10px; border-left: 4px solid #2d5a87; }
+        .market-card h3 { color: #1a2a6c; margin-bottom: 10px; font-size: 1.1em; }
+        .market-value { font-size: 1.8em; font-weight: bold; color: #333; }
+        .market-change { font-size: 1em; margin-top: 5px; }
+        .up { color: #e74c3c; }
+        .down { color: #3498db; }
+        
+        /* Overseas Markets */
+        .overseas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+        .overseas-card { background: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; }
+        .overseas-card h4 { color: #555; margin-bottom: 8px; font-size: 0.95em; }
+        .overseas-value { font-size: 1.3em; font-weight: bold; }
+        
+        /* Stock Table */
+        .stock-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .stock-table th { background: linear-gradient(135deg, #1a2a6c, #2d5a87); color: white; padding: 15px; text-align: center; font-weight: 600; }
+        .stock-table td { padding: 15px; text-align: center; border-bottom: 1px solid #e9ecef; }
+        .stock-table tr:hover { background: #f8f9fa; }
+        .stock-name { font-weight: bold; color: #1a2a6c; }
+        .stock-code { font-size: 0.85em; color: #666; }
+        .score { font-size: 1.3em; font-weight: bold; }
+        .score-high { color: #e74c3c; }
+        .score-mid { color: #f39c12; }
+        
+        /* Sentiment */
+        .sentiment { display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 600; }
+        .sentiment-pos { background: #d4edda; color: #155724; }
+        .sentiment-neg { background: #f8d7da; color: #721c24; }
+        .sentiment-neu { background: #fff3cd; color: #856404; }
+        
+        /* Recommendation */
+        .rec { display: inline-block; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 700; }
+        .rec-buy { background: #e74c3c; color: white; }
+        .rec-hold { background: #f39c12; color: white; }
+        .rec-sell { background: #95a5a6; color: white; }
+        
+        /* News Section */
+        .news-box { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px; text-align: left; }
+        .news-item { padding: 8px 0; border-bottom: 1px dashed #ddd; font-size: 0.9em; }
+        .news-item:last-child { border-bottom: none; }
+        
+        /* Sector Analysis */
+        .sector-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .sector-card { background: linear-gradient(145deg, #ffffff, #f0f4f8); padding: 25px; border-radius: 12px; border: 1px solid #e1e8ed; }
+        .sector-card h3 { color: #1a2a6c; margin-bottom: 15px; }
+        .sector-card ul { list-style: none; padding-left: 0; }
+        .sector-card li { padding: 8px 0; padding-left: 20px; position: relative; }
+        .sector-card li:before { content: "▸"; position: absolute; left: 0; color: #2d5a87; }
+        
+        /* Top Picks */
+        .top-picks { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 15px; margin-top: 30px; }
+        .top-picks h2 { margin-bottom: 20px; text-align: center; }
+        .pick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .pick-card { background: rgba(255,255,255,0.95); color: #333; padding: 25px; border-radius: 12px; }
+        .pick-rank { font-size: 2em; font-weight: bold; color: #667eea; margin-bottom: 10px; }
+        .pick-name { font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+        .pick-reason { font-size: 0.95em; color: #555; line-height: 1.5; }
+        
+        /* Risk Warning */
+        .risk-warning { background: #fff3cd; border: 2px solid #ffc107; padding: 25px; border-radius: 12px; margin-top: 30px; }
+        .risk-warning h3 { color: #856404; margin-bottom: 15px; }
+        .risk-warning ul { margin-left: 20px; color: #856404; }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 0.9em; margin-top: 30px; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.5em; }
+            .stock-table { font-size: 0.85em; }
+            .stock-table th, .stock-table td { padding: 10px 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 오늘 발굴 TOP 10 종목 종합 재검토 분석</h1>
+            <div class="subtitle">2026년 3월 27일 기준 | 국내 증시 발굴 종목 심층 분석 리포트</div>
+            <div class="date">리포트 생성일: 2026-03-27</div>
+        </div>
+
+        <!-- Market Summary -->
+        <div class="market-section">
+            <h2 class="section-title">📈 시장 전체 요약</h2>
+            <div class="market-grid">
+                <div class="market-card">
+                    <h3>KOSPI</h3>
+                    <div class="market-value">5,781.20</div>
+                    <div class="market-change up">▲ 17.98 (+0.31%)</div>
+                    <div style="margin-top:10px;font-size:0.9em;color:#666;">
+                        외국인: -12,402억 | 기관: -10,260억 | 개인: +22,338억
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>KOSDAQ</h3>
+                    <div class="market-value">1,161.52</div>
+                    <div class="market-change up">▲ 18.04 (+1.58%)</div>
+                    <div style="margin-top:10px;font-size:0.9em;color:#666;">
+                        외국인: +2,347억 | 기관: -942억 | 개인: -1,171억
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>원/달러 환율</h3>
+                    <div class="market-value">1,498.14원</div>
+                    <div class="market-change up">▲ 0.59%</div>
+                    <div style="margin-top:10px;font-size:0.9em;color:#666;">
+                        중동 지정학적 리스크로 인한 상승
+                    </div>
+                </div>
+                <div class="market-card">
+                    <h3>거래대금</h3>
+                    <div class="market-value">약 12조원</div>
+                    <div class="market-change">코스피 + 코스닥 합산</div>
+                    <div style="margin-top:10px;font-size:0.9em;color:#666;">
+                        개인 매수세 유입 활발
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="margin-top:30px;margin-bottom:15px;color:#1a2a6c;">🌍 해외 시장 동향</h3>
+            <div class="overseas-grid">
+                <div class="overseas-card">
+                    <h4>S&P 500</h4>
+                    <div class="overseas-value down">6,477.16 (-1.74%)</div>
+                </div>
+                <div class="overseas-card">
+                    <h4>NASDAQ</h4>
+                    <div class="overseas-value down">21,408.08 (-2.38%)</div>
+                </div>
+                <div class="overseas-card">
+                    <h4>다우존스</h4>
+                    <div class="overseas-value down">45,960.11 (-1.01%)</div>
+                </div>
+                <div class="overseas-card">
+                    <h4>비트코인</h4>
+                    <div class="overseas-value down">$68,762 (-3.2%)</div>
+                </div>
+                <div class="overseas-card">
+                    <h4>이더리움</h4>
+                    <div class="overseas-value down">$3,450 (-4.7%)</div>
+                </div>
+                <div class="overseas-card">
+                    <h4>WTI 유가</h4>
+                    <div class="overseas-value up">$94.48 (+4.61%)</div>
+                </div>
+            </div>
+            <div style="margin-top:15px;padding:15px;background:#f8f9fa;border-radius:8px;font-size:0.95em;color:#555;">
+                <strong>해외 시장 코멘트:</strong> 트럼프 대통령의 이란 압박 발언으로 지정학적 리스크가 커지며 뉴욕증시가 일제히 하락. 구글의 AI 신기술(터보퀀트) 발표로 반도체주 투매. 나스닥은 고점 대비 11% 하락하며 조정 국면 진입. 국제유가는 5% 급등.
+            </div>
+        </div>
+
+        <!-- Stock Detail Analysis -->
+        <div class="market-section">
+            <h2 class="section-title">📋 종목별 상세 분석</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목명<br><span style="font-size:0.8em;font-weight:normal;">(코드)</span></th>
+                        <th>점수</th>
+                        <th>손익비</th>
+                        <th>섹터</th>
+                        <th>뉴스 감성</th>
+                        <th>핵심 키워드</th>
+                        <th>투자의견</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><span class="stock-name">제이엘케이</span><br><span class="stock-code">322510</span></td>
+                        <td><span class="score score-high">85</span></td>
+                        <td>2.0:1</td>
+                        <td>의료기기</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>인공지능 진단<br>의료 AI</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="stock-name">티케이케미칼</span><br><span class="stock-code">104480</span></td>
+                        <td><span class="score score-high">80</span></td>
+                        <td>1.92:1</td>
+                        <td>화학/소재</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>전자소재<br>디스플레이 소재</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="stock-name">에스엠씨지</span><br><span class="stock-code">460870</span></td>
+                        <td><span class="score score-high">80</span></td>
+                        <td>1.93:1</td>
+                        <td>반도체</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>반도체 장비<br>메모리</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><span class="stock-name">삼성전자우</span><br><span class="stock-code">005935</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.93:1</td>
+                        <td>전자/IT</td>
+                        <td><span class="sentiment sentiment-neu">중립</span></td>
+                        <td>HBM<br>반도체 우위</td>
+                        <td><span class="rec rec-hold">관망</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><span class="stock-name">큐렉소</span><br><span class="stock-code">060280</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.86:1</td>
+                        <td>의료기기</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>의료로봇<br>인공관절<br>FDA 승인 기대</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><span class="stock-name">메디포스트</span><br><span class="stock-code">078160</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.86:1</td>
+                        <td>바이오/제약</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>카티스템<br>줄기세포<br>일본 진출</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><span class="stock-name">제넥신</span><br><span class="stock-code">095700</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.92:1</td>
+                        <td>바이오/제약</td>
+                        <td><span class="sentiment sentiment-neu">중립</span></td>
+                        <td>바이오베터<br>TPD 플랫폼<br>GX-E4</td>
+                        <td><span class="rec rec-hold">관망</span></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><span class="stock-name">동성케미컬</span><br><span class="stock-code">102260</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.91:1</td>
+                        <td>화학/소재</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>정밀화학<br>유기과산화물<br>친환경 소재</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><span class="stock-name">덴티움</span><br><span class="stock-code">145720</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.92:1</td>
+                        <td>의료기기</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>임플란트<br>어닝서프라이즈<br>행동주의펀드</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><span class="stock-name">셀바스헬스케어</span><br><span class="stock-code">208370</span></td>
+                        <td><span class="score score-mid">75</span></td>
+                        <td>1.84:1</td>
+                        <td>의료기기</td>
+                        <td><span class="sentiment sentiment-pos">긍정</span></td>
+                        <td>AI 진단<br>심장초음파<br>FDA 승인</td>
+                        <td><span class="rec rec-buy">진입</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Individual Stock Details -->
+            <div style="margin-top:40px;">
+                <h3 style="color:#1a2a6c;margin-bottom:20px;">🔍 종목별 뉴스 요약</h3>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">1. 제이엘케이 (322510)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>인공지능 기반 의료 진단 솔루션 전문 기업</li>
+                        <li>의료 AI 시장 성장 수혜 예상</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">2. 티케이케미칼 (104480)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>전자소재 및 디스플레이 소材 전문 기업</li>
+                        <li>반도체/디스플레이 시장 성장 연계</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">3. 에스엠씨지 (460870)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>반도체 장비 전문 기업</li>
+                        <li>메모리 반도체 시장 회복 수혜</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">5. 큐렉소 (060280)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>인공관절 수술로봇 '큐비스-조인트' 베트남 품목허가 획득</li>
+                        <li>동남아 의료 시장 진출 본격화</li>
+                        <li>미국 FDA 승인 기대감으로 주가 급등</li>
+                        <li>2026년 실적 성장 변곡점 기대</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">6. 메디포스트 (078160)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>카티스템 일본 진출 임박 - 테이코쿠 제약과 독점 판권 계약</li>
+                        <li>일본 약가 한국 대비 6배 높을 전망</li>
+                        <li>미국 임상 3상 IND 신청 준비 중</li>
+                        <li>시총 대비 6,891억원 일본 가치 반영 필요</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">7. 제넥신 (095700)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>GX-E4 한국 품목허가 신청</li>
+                        <li>EPD바이오 합병으로 TPD 플랫폼 확보</li>
+                        <li>최재현 신임 대표 선임 - R&D 전문성 강화</li>
+                        <li>52주 최고가 10,230원 대비 -35.58%</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">8. 동성케미컬 (102260)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>여수공장 유기과산화물 증설 설비 가동 (연 4,000t)</li>
+                        <li>정밀화학 체질 전환 가속화</li>
+                        <li>자회사 동성화인텍 LNG 본냉재 수주 호조</li>
+                        <li>암모니아 추진선 연료탱크 개념승인(AIP) 인증 획득</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">9. 덴티움 (145720)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>2분기 어닝서프라이즈 - 영업이익 109% 증가</li>
+                        <li>얼라인파트너스(행동주의펀드) 2대주주 등장</li>
+                        <li>증권사 목표주가 상향 행진 (10만→16만원)</li>
+                        <li>수출 고성장 지속</li>
+                    </ul>
+                </div>
+                
+                <div style="background:#f8f9fa;padding:20px;border-radius:10px;margin-bottom:15px;">
+                    <h4 style="color:#1a2a6c;">10. 셀바스헬스케어 (208370)</h4>
+                    <ul style="margin-left:20px;margin-top:10px;">
+                        <li>美 FDA 승인 AI 심장초음파 솔루션 '울트라사이트' 공급</li>
+                        <li>도미나리 홀딩스(트럼프 가 자문)와 협력 검토</li>
+                        <li>인도네시아 원격의료 플랫폼 협업</li>
+                        <li>글로벌 AI 헬스케어 플랫폼 기업 재평가 기대</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sector Analysis -->
+        <div class="market-section">
+            <h2 class="section-title">🏭 섹터별 분석</h2>
+            <div class="sector-grid">
+                <div class="sector-card">
+                    <h3>💊 바이오/제약 섹터</h3>
+                    <ul>
+                        <li>메디포스트: 카티스템 일본 출시 임박, 미국 임상 3상 준비</li>
+                        <li>제넥신: GX-E4 품목허가 신청, TPD 플랫폼 기대</li>
+                        <li>전반적으로 글로벌 진출 모멘텀 강화</li>
+                        <li>코스닥 바이오주 외국인 순매수 전환</li>
+                    </ul>
+                </div>
+                <div class="sector-card">
+                    <h3>⚗️ 화학/소재 섹터</h3>
+                    <ul>
+                        <li>티케이케미칼: 전자소材 수요 확대</li>
+                        <li>동성케미컬: 정밀화학 전환, 친환경 소재 성장</li>
+                        <li>석유화학에서 고부가 정밀화학으로 전환 추세</li>
+                        <li>중동 리스크로 유가 상승 - 정유주 혜택</li>
+                    </ul>
+                </div>
+                <div class="sector-card">
+                    <h3>💻 전자/IT 섹터</h3>
+                    <ul>
+                        <li>삼성전자: HBM 수요 호조</li>
+                        <li>에스엠씨지: 반도체 장비 수요 회복</li>
+                        <li>단기적으로 외국인 매도세</li>
+                        <li>AI 반도체 경쟁 심화 - 구글 신기술 발표 영향</li>
+                    </ul>
+                </div>
+                <div class="sector-card">
+                    <h3>🏥 의료기기 섹터</h3>
+                    <ul>
+                        <li>큐렉소: 의료로봇 글로벌 확장 가속</li>
+                        <li>덴티움: 어닝서프라이즈, 주주환원 기대</li>
+                        <li>셀바스헬스케어: AI 진단 솔루션 글로벌 진출</li>
+                        <li>제이엘케이: 의료 AI 전문성</li>
+                        <li>의료 AI + 로봇 융합 트렌드 강화</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top 3 Recommendations -->
+        <div class="top-picks">
+            <h2>🎯 최종 투자 의견 - TOP 3 추천</h2>
+            <div class="pick-grid">
+                <div class="pick-card">
+                    <div class="pick-rank">#1</div>
+                    <div class="pick-name">덴티움 (145720)</div>
+                    <div class="pick-reason">
+                        <strong>추천사유:</strong><br>
+                        • 2분기 어닝서프라이즈 (영업이익 109%↑)<br>
+                        • 행동주의펀드 얼라인파트너스 지분 확대 - 주주가치 제고 기대<br>
+                        • 증권사 목표주가 12만~16만원 제시<br>
+                        • 임플란트 수출 고성장 지속<br>
+                        • PER 10배 수준 저평가
+                    </div>
+                </div>
+                <div class="pick-card">
+                    <div class="pick-rank">#2</div>
+                    <div class="pick-name">메디포스트 (078160)</div>
+                    <div class="pick-reason">
+                        <strong>추천사유:</strong><br>
+                        • 카티스템 일본 출시 임박 (1Q26 종료, 2Q26 결과)<br>
+                        • 테이코쿠 제약과 264억원 규모 독점 판권 계약<br>
+                        • 일본 약가 한국 대비 6배 프리미엄<br>
+                        • 미국 임상 3상 IND 신청 준비<br>
+                        • 52주 신고가 경신 중
+                    </div>
+                </div>
+                <div class="pick-card">
+                    <div class="pick-rank">#3</div>
+                    <div class="pick-name">큐렉소 (060280)</div>
+                    <div class="pick-reason">
+                        <strong>추천사유:</strong><br>
+                        • 인공관절 수술로봇 베트남 품목허가 획득<br>
+                        • 동남아시아 시장 본격 진출<br>
+                        • 미국 FDA 승인 기대감<br>
+                        • 2026년 실적 성장 변곡점 예상<br>
+                        • 고령화로 의료로봇 수요 증가
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Warning -->
+        <div class="risk-warning">
+            <h3>⚠️ 리스크 및 주의사항</h3>
+            <ul>
+                <li><strong>지정학적 리스크:</strong> 중동(이란) 사태로 인한 유가 상승 및 증시 변동성 확대</li>
+                <li><strong>환율 리스크:</strong> 원/달러 환율 1,500원 선 상회 - 수출주 수익성 영향</li>
+                <li><strong>미국 증시 영향:</strong> 나스닥 조정 국면 진입 - 국내 반도체주 연계 하락 가능성</li>
+                <li><strong>바이오 리스크:</strong> 임상 결과 및 허가 지연 가능성</li>
+                <li><strong>행동주의펀드 리스크:</strong> 단기 주가 부양 후 하락 가능성 존재</li>
+                <li><strong>개인 투자자 유의:</strong> 고점 대비 일부 종목 회복세 - 신규 진입 시 분할 매수 권장</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>본 리포트는 공개된 정보를 바탕으로 작성되었으며, 투자 참고 자료입니다.</p>
+            <p>투자 결정은 투자자 본인의 판단과 책임 하에 이루어져야 합니다.</p>
+            <p style="margin-top:10px;color:#999;">© 2026 주식 분석 리포트 | 생성일: 2026-03-27</p>
+        </div>
+    </div>
+</body>
+</html>
