@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국주식 TOP 10 선정 리포트 v2 - 2026-03-27</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            padding: 15px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            font-size: 2em;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header .subtitle { color: #4ecca3; font-size: 1em; }
+        .header .date { color: #888; font-size: 0.9em; margin-top: 5px; }
+        
+        .calc-info {
+            background: rgba(78, 204, 163, 0.1);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .calc-info h3 { color: #4ecca3; margin-bottom: 12px; font-size: 1.1em; }
+        .calc-info .formula {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            line-height: 2;
+        }
+        .calc-info .formula .highlight { color: #ffd700; }
+        
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .summary-card .number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #4ecca3;
+        }
+        .summary-card .label { color: #888; font-size: 0.85em; margin-top: 5px; }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.03);
+            min-width: 1400px;
+        }
+        th {
+            background: rgba(233,69,96,0.3);
+            color: #ffd700;
+            padding: 12px 8px;
+            font-weight: 600;
+            font-size: 0.8em;
+            white-space: nowrap;
+        }
+        td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85em;
+        }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        
+        .rank { font-size: 1.2em; font-weight: bold; color: #e94560; }
+        .stock-info { text-align: left; }
+        .stock-code { font-weight: bold; color: #fff; font-size: 0.95em; }
+        .stock-name { color: #888; font-size: 0.8em; }
+        
+        .price { font-weight: bold; }
+        .price-up { color: #ff6b6b; }
+        .price-down { color: #4ecca3; }
+        
+        .score { font-weight: bold; color: #ffd700; font-size: 1.1em; }
+        
+        .target { color: #4ecca3; font-weight: bold; }
+        .stop { color: #ff6b6b; font-weight: bold; }
+        .rr { color: #ffd700; font-weight: bold; font-size: 1.1em; }
+        .rr-high { color: #4ecca3; }
+        .rr-medium { color: #ffd700; }
+        .rr-low { color: #ff6b6b; }
+        
+        .multiplier { color: #888; font-size: 0.75em; }
+        
+        .naver-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #03c75a, #00b050);
+            color: white;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            font-weight: bold;
+            min-width: 44px;
+        }
+        .naver-btn:hover { opacity: 0.8; }
+        
+        .reasons { text-align: left; font-size: 0.75em; color: #aaa; line-height: 1.5; }
+        .reasons li { margin-bottom: 2px; list-style: none; }
+        .reasons li::before { content: "✓ "; color: #4ecca3; }
+        
+        .details {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .details h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            padding-bottom: 10px;
+        }
+        .stock-detail {
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #e94560;
+        }
+        .stock-detail h3 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+        .stock-detail .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .stock-detail .info-item { color: #bbb; }
+        .stock-detail .info-item span { color: #ffd700; font-weight: bold; }
+        .stock-detail .rationale {
+            background: rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .stock-detail .rationale h4 { color: #4ecca3; font-size: 0.9em; margin-bottom: 8px; }
+        .stock-detail .rationale ul { padding-left: 20px; }
+        .stock-detail .rationale li { color: #aaa; font-size: 0.85em; margin-bottom: 3px; }
+        
+        .rr-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 0.85em;
+        }
+        .rr-legend span { display: flex; align-items: center; gap: 5px; }
+        .rr-legend .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 0.8em;
+        }
+        .footer p { margin-bottom: 5px; }
+        
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .header h1 { font-size: 1.5em; }
+            th, td { padding: 8px 5px; font-size: 0.75em; }
+            .stock-code { font-size: 0.85em; }
+            .stock-name { font-size: 0.7em; }
+            .naver-btn { padding: 5px 10px; font-size: 0.75em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 한국주식 TOP 10 선정 리포트 v2</h1>
+            <div class="subtitle">🚫 ETF/ETN 제외 | 동적 손익비 (변동성 기반)</div>
+            <div class="date">분석일: 2026-03-27 | 데이터 기준: 최근 14일</div>
+        </div>
+        
+        <div class="calc-info">
+            <h3>📐 동적 목표가/손절가 계산 방식</h3>
+            <div class="formula">
+                <span class="highlight">ATR(14)</span> = 14일간 (고가-저가) 평균 진폭<br>
+                <span class="highlight">목표가</span> = 진입가 + (ATR × 목표배수)  
+                <span style="color:#666;">// 변동성·점수·RSI 기반 동적 조정</span><br>
+                <span class="highlight">손절가</span> = 진입가 - (ATR × 손절배수)  
+                <span style="color:#666;">// 변동성·거래량 기반 동적 조정</span><br>
+                <span class="highlight">손익비</span> = 목표배수 / 손절배수 = 
+                <span style="color:#4ecca3;">1.3~2.5:1</span> (종목별 상이)
+            </div>
+            <div class="rr-legend">
+                <span><span class="dot" style="background:#4ecca3;"></span>높음 (≥1.8)</span>
+                <span><span class="dot" style="background:#ffd700;"></span>보통 (1.4~1.7)</span>
+                <span><span class="dot" style="background:#ff6b6b;"></span>낮음 (<1.4)</span>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <div class="number">10</div>
+                <div class="label">선정 종목</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">77</div>
+                <div class="label">평균 점수</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">1.91:1</div>
+                <div class="label">평균 손익비</div>
+            </div>
+            <div class="summary-card">
+                <div class="number">2.00:1</div>
+                <div class="label">최고 손익비</div>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목정보</th>
+                        <th>네이버</th>
+                        <th>현재가</th>
+                        <th>등락률</th>
+                        <th>거래량</th>
+                        <th>RSI</th>
+                        <th>ATR</th>
+                        <th>점수</th>
+                        <th>진입가</th>
+                        <th>목표가<br><span class="multiplier">(배수)</span></th>
+                        <th>손절가<br><span class="multiplier">(배수)</span></th>
+                        <th>손익비</th>
+                        <th>선정사유</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="rank">1</td>
+                        <td class="stock-info">
+                            <div class="stock-code">322510</div>
+                            <div class="stock-name">제이엘케이</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=322510" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">7,500원</td>
+                        <td class="price-up">+2.46%</td>
+                        <td>2.9배</td>
+                        <td>17.3</td>
+                        <td>570.0</td>
+                        <td class="score">85</td>
+                        <td>7,500원</td>
+                        <td class="target">9,039원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">6,730원<br><span class="multiplier">×1.35</span></td>
+                        <td class="rr rr-high">2.0:1</td>
+                        <td class="reasons"><ul><li>거래량 2.9배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 17.3 과매도 반등 (+25)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +2.5% 상승 (+5)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">2</td>
+                        <td class="stock-info">
+                            <div class="stock-code">104480</div>
+                            <div class="stock-name">티케이케미칼</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=104480" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">2,440원</td>
+                        <td class="price-up">+12.18%</td>
+                        <td>2.6배</td>
+                        <td>56.5</td>
+                        <td>196.8</td>
+                        <td class="score">80</td>
+                        <td>2,440원</td>
+                        <td class="target">2,971원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">2,164원<br><span class="multiplier">×1.4000000000000001</span></td>
+                        <td class="rr rr-high">1.92:1</td>
+                        <td class="reasons"><ul><li>거래량 2.6배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 56.5 상승세 (+10)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +12.2% 급등 (+15)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">3</td>
+                        <td class="stock-info">
+                            <div class="stock-code">460870</div>
+                            <div class="stock-name">에스엠씨지</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=460870" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">4,065원</td>
+                        <td class="price-up">+10.46%</td>
+                        <td>3.0배</td>
+                        <td>58.5</td>
+                        <td>240.0</td>
+                        <td class="score">80</td>
+                        <td>4,065원</td>
+                        <td class="target">4,713원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">3,729원<br><span class="multiplier">×1.4000000000000001</span></td>
+                        <td class="rr rr-high">1.93:1</td>
+                        <td class="reasons"><ul><li>거래량 3.0배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 58.5 상승세 (+10)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +10.5% 급등 (+15)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">4</td>
+                        <td class="stock-info">
+                            <div class="stock-code">0004V0</div>
+                            <div class="stock-name">���鍮����紐⑥��</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=0004V0" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">22,050원</td>
+                        <td class="price-up">+29.78%</td>
+                        <td>2.6배</td>
+                        <td>54.8</td>
+                        <td>1744.4</td>
+                        <td class="score">75</td>
+                        <td>22,050원</td>
+                        <td class="target">26,760원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">19,607원<br><span class="multiplier">×1.4000000000000001</span></td>
+                        <td class="rr rr-high">1.93:1</td>
+                        <td class="reasons"><ul><li>거래량 2.6배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 54.8 상승세 (+10)</li><li>5일 중 3일 상승 (+10)</li><li>당일 +29.8% 급등 (+15)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">5</td>
+                        <td class="stock-info">
+                            <div class="stock-code">060280</div>
+                            <div class="stock-name">큐렉소</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=060280" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">17,260원</td>
+                        <td class="price-up">+15.37%</td>
+                        <td>4.5배</td>
+                        <td>60.4</td>
+                        <td>1253.3</td>
+                        <td class="score">75</td>
+                        <td>17,260원</td>
+                        <td class="target">20,644원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">15,442원<br><span class="multiplier">×1.45</span></td>
+                        <td class="rr rr-high">1.86:1</td>
+                        <td class="reasons"><ul><li>거래량 4.5배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 60.4 상승세 (+10)</li><li>5일 중 3일 상승 (+10)</li><li>당일 +15.4% 급등 (+15)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">6</td>
+                        <td class="stock-info">
+                            <div class="stock-code">078160</div>
+                            <div class="stock-name">메디포스트</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=078160" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">24,550원</td>
+                        <td class="price-up">+13.66%</td>
+                        <td>3.1배</td>
+                        <td>55.4</td>
+                        <td>1872.2</td>
+                        <td class="score">75</td>
+                        <td>24,550원</td>
+                        <td class="target">29,605원<br><span class="multiplier">×2.7</span></td>
+                        <td class="stop">21,835원<br><span class="multiplier">×1.45</span></td>
+                        <td class="rr rr-high">1.86:1</td>
+                        <td class="reasons"><ul><li>거래량 3.1배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 55.4 상승세 (+10)</li><li>5일 중 3일 상승 (+10)</li><li>당일 +13.7% 급등 (+15)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">7</td>
+                        <td class="stock-info">
+                            <div class="stock-code">095700</div>
+                            <div class="stock-name">제넥신</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=095700" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">5,020원</td>
+                        <td class="price-up">+5.8%</td>
+                        <td>2.6배</td>
+                        <td>60.5</td>
+                        <td>315.0</td>
+                        <td class="score">75</td>
+                        <td>5,020원</td>
+                        <td class="target">5,776원<br><span class="multiplier">×2.4000000000000004</span></td>
+                        <td class="stop">4,626원<br><span class="multiplier">×1.25</span></td>
+                        <td class="rr rr-high">1.92:1</td>
+                        <td class="reasons"><ul><li>거래량 2.6배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 60.5 상승세 (+10)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +5.8% 상승 (+10)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">8</td>
+                        <td class="stock-info">
+                            <div class="stock-code">102260</div>
+                            <div class="stock-name">동성케미컬</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=102260" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">4,365원</td>
+                        <td class="price-up">+6.59%</td>
+                        <td>4.3배</td>
+                        <td>64.6</td>
+                        <td>171.1</td>
+                        <td class="score">75</td>
+                        <td>4,365원</td>
+                        <td class="target">4,741원<br><span class="multiplier">×2.2</span></td>
+                        <td class="stop">4,168원<br><span class="multiplier">×1.15</span></td>
+                        <td class="rr rr-high">1.91:1</td>
+                        <td class="reasons"><ul><li>거래량 4.3배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 64.6 상승세 (+10)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +6.6% 상승 (+10)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">9</td>
+                        <td class="stock-info">
+                            <div class="stock-code">145720</div>
+                            <div class="stock-name">덴티움</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=145720" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">53,800원</td>
+                        <td class="price-up">+6.11%</td>
+                        <td>2.4배</td>
+                        <td>36.4</td>
+                        <td>2488.9</td>
+                        <td class="score">75</td>
+                        <td>53,800원</td>
+                        <td class="target">59,773원<br><span class="multiplier">×2.4000000000000004</span></td>
+                        <td class="stop">50,688원<br><span class="multiplier">×1.25</span></td>
+                        <td class="rr rr-high">1.92:1</td>
+                        <td class="reasons"><ul><li>거래량 2.4배 증가 (+15)</li><li>5일 고점 돌파 (+20)</li><li>RSI 36.4 저점 반등 (+15)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +6.1% 상승 (+10)</li></ul></td>
+                    </tr>
+
+                    <tr>
+                        <td class="rank">10</td>
+                        <td class="stock-info">
+                            <div class="stock-code">208370</div>
+                            <div class="stock-name">셀바스헬스케어</div>
+                        </td>
+                        <td><a href="https://finance.naver.com/item/main.nhn?code=208370" target="_blank" class="naver-btn">N</a></td>
+                        <td class="price">4,800원</td>
+                        <td class="price-up">+5.84%</td>
+                        <td>3.7배</td>
+                        <td>58.4</td>
+                        <td>354.4</td>
+                        <td class="score">75</td>
+                        <td>4,800원</td>
+                        <td class="target">5,650원<br><span class="multiplier">×2.4000000000000004</span></td>
+                        <td class="stop">4,339원<br><span class="multiplier">×1.2999999999999998</span></td>
+                        <td class="rr rr-high">1.84:1</td>
+                        <td class="reasons"><ul><li>거래량 3.7배 급증 (+20)</li><li>5일 고점 돌파 (+20)</li><li>RSI 58.4 상승세 (+10)</li><li>5일 중 4일 상승 (+15)</li><li>당일 +5.8% 상승 (+10)</li></ul></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="details">
+            <h2>🔍 상세 종목 분석 및 선정 근거</h2>
+
+            <div class="stock-detail">
+                <h3>1. 제이엘케이 (322510)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>7,500원</span></div>
+                    <div class="info-item">5일고점: <span>8,060원</span></div>
+                    <div class="info-item">RSI: <span>17.3</span></div>
+                    <div class="info-item">ATR(14): <span>570.0</span></div>
+                    <div class="info-item">거래대금: <span>134.2억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">2.0:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 85점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 2.9배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 8,060원 대비 현재가 7,500원</li>
+                        <li><strong>RSI 점수:</strong> 25점 - RSI 17.3 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 5점 - 당일 등락률 +2.5%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 7,500원 (기준가)</li>
+                        <li><strong>목표가:</strong> 9,039원 (ATR × 2.7, +20.5%)</li>
+                        <li><strong>손절가:</strong> 6,730원 (ATR × 1.35, -10.3%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">2.0:1</span> (목표2.7/손절1.35)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>2. 티케이케미칼 (104480)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>2,440원</span></div>
+                    <div class="info-item">5일고점: <span>2,725원</span></div>
+                    <div class="info-item">RSI: <span>56.5</span></div>
+                    <div class="info-item">ATR(14): <span>196.8</span></div>
+                    <div class="info-item">거래대금: <span>375.2억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.92:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 80점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 2.6배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 2,725원 대비 현재가 2,440원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 56.5 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 15점 - 당일 등락률 +12.2%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 2,440원 (기준가)</li>
+                        <li><strong>목표가:</strong> 2,971원 (ATR × 2.7, +21.8%)</li>
+                        <li><strong>손절가:</strong> 2,164원 (ATR × 1.4000000000000001, -11.3%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.92:1</span> (목표2.7/손절1.4000000000000001)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>3. 에스엠씨지 (460870)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>4,065원</span></div>
+                    <div class="info-item">5일고점: <span>4,140원</span></div>
+                    <div class="info-item">RSI: <span>58.5</span></div>
+                    <div class="info-item">ATR(14): <span>240.0</span></div>
+                    <div class="info-item">거래대금: <span>46.2억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.93:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 80점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 3.0배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 4,140원 대비 현재가 4,065원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 58.5 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 15점 - 당일 등락률 +10.5%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 4,065원 (기준가)</li>
+                        <li><strong>목표가:</strong> 4,713원 (ATR × 2.7, +15.9%)</li>
+                        <li><strong>손절가:</strong> 3,729원 (ATR × 1.4000000000000001, -8.3%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.93:1</span> (목표2.7/손절1.4000000000000001)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>4. ���鍮����紐⑥�� (0004V0)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>22,050원</span></div>
+                    <div class="info-item">5일고점: <span>22,050원</span></div>
+                    <div class="info-item">RSI: <span>54.8</span></div>
+                    <div class="info-item">ATR(14): <span>1744.4</span></div>
+                    <div class="info-item">거래대금: <span>277.8억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.93:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 2.6배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 22,050원 대비 현재가 22,050원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 54.8 수준</li>
+                        <li><strong>추세 점수:</strong> 10점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 15점 - 당일 등락률 +29.8%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 22,050원 (기준가)</li>
+                        <li><strong>목표가:</strong> 26,760원 (ATR × 2.7, +21.4%)</li>
+                        <li><strong>손절가:</strong> 19,607원 (ATR × 1.4000000000000001, -11.1%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.93:1</span> (목표2.7/손절1.4000000000000001)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>5. 큐렉소 (060280)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>17,260원</span></div>
+                    <div class="info-item">5일고점: <span>19,400원</span></div>
+                    <div class="info-item">RSI: <span>60.4</span></div>
+                    <div class="info-item">ATR(14): <span>1253.3</span></div>
+                    <div class="info-item">거래대금: <span>1738.2억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.86:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 4.5배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 19,400원 대비 현재가 17,260원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 60.4 수준</li>
+                        <li><strong>추세 점수:</strong> 10점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 15점 - 당일 등락률 +15.4%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 17,260원 (기준가)</li>
+                        <li><strong>목표가:</strong> 20,644원 (ATR × 2.7, +19.6%)</li>
+                        <li><strong>손절가:</strong> 15,442원 (ATR × 1.45, -10.5%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.86:1</span> (목표2.7/손절1.45)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>6. 메디포스트 (078160)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>24,550원</span></div>
+                    <div class="info-item">5일고점: <span>25,500원</span></div>
+                    <div class="info-item">RSI: <span>55.4</span></div>
+                    <div class="info-item">ATR(14): <span>1872.2</span></div>
+                    <div class="info-item">거래대금: <span>251.1억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.86:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 3.1배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 25,500원 대비 현재가 24,550원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 55.4 수준</li>
+                        <li><strong>추세 점수:</strong> 10점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 15점 - 당일 등락률 +13.7%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 24,550원 (기준가)</li>
+                        <li><strong>목표가:</strong> 29,605원 (ATR × 2.7, +20.6%)</li>
+                        <li><strong>손절가:</strong> 21,835원 (ATR × 1.45, -11.1%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.86:1</span> (목표2.7/손절1.45)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>7. 제넥신 (095700)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>5,020원</span></div>
+                    <div class="info-item">5일고점: <span>5,500원</span></div>
+                    <div class="info-item">RSI: <span>60.5</span></div>
+                    <div class="info-item">ATR(14): <span>315.0</span></div>
+                    <div class="info-item">거래대금: <span>55.1억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.92:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 2.6배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 5,500원 대비 현재가 5,020원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 60.5 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 10점 - 당일 등락률 +5.8%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 5,020원 (기준가)</li>
+                        <li><strong>목표가:</strong> 5,776원 (ATR × 2.4000000000000004, +15.1%)</li>
+                        <li><strong>손절가:</strong> 4,626원 (ATR × 1.25, -7.8%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.92:1</span> (목표2.4000000000000004/손절1.25)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>8. 동성케미컬 (102260)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>4,365원</span></div>
+                    <div class="info-item">5일고점: <span>4,750원</span></div>
+                    <div class="info-item">RSI: <span>64.6</span></div>
+                    <div class="info-item">ATR(14): <span>171.1</span></div>
+                    <div class="info-item">거래대금: <span>139.7억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.91:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 4.3배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 4,750원 대비 현재가 4,365원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 64.6 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 10점 - 당일 등락률 +6.6%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 4,365원 (기준가)</li>
+                        <li><strong>목표가:</strong> 4,741원 (ATR × 2.2, +8.6%)</li>
+                        <li><strong>손절가:</strong> 4,168원 (ATR × 1.15, -4.5%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.91:1</span> (목표2.2/손절1.15)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>9. 덴티움 (145720)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>53,800원</span></div>
+                    <div class="info-item">5일고점: <span>55,600원</span></div>
+                    <div class="info-item">RSI: <span>36.4</span></div>
+                    <div class="info-item">ATR(14): <span>2488.9</span></div>
+                    <div class="info-item">거래대금: <span>54.9억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.92:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 15점 - 거래량 2.4배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 55,600원 대비 현재가 53,800원</li>
+                        <li><strong>RSI 점수:</strong> 15점 - RSI 36.4 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 10점 - 당일 등락률 +6.1%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 53,800원 (기준가)</li>
+                        <li><strong>목표가:</strong> 59,773원 (ATR × 2.4000000000000004, +11.1%)</li>
+                        <li><strong>손절가:</strong> 50,688원 (ATR × 1.25, -5.8%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.92:1</span> (목표2.4000000000000004/손절1.25)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stock-detail">
+                <h3>10. 셀바스헬스케어 (208370)</h3>
+                <div class="info-row">
+                    <div class="info-item">현재가: <span>4,800원</span></div>
+                    <div class="info-item">5일고점: <span>5,410원</span></div>
+                    <div class="info-item">RSI: <span>58.4</span></div>
+                    <div class="info-item">ATR(14): <span>354.4</span></div>
+                    <div class="info-item">거래대금: <span>478.2억원</span></div>
+                    <div class="info-item">손익비: <span class="rr-high">1.84:1</span></div>
+                </div>
+                <div class="rationale">
+                    <h4>📊 점수 산출 상세 (총점: 75점)</h4>
+                    <ul>
+                        <li><strong>거래량 점수:</strong> 20점 - 거래량 3.7배 급증</li>
+                        <li><strong>돌파 점수:</strong> 20점 - 5일 고점 5,410원 대비 현재가 4,800원</li>
+                        <li><strong>RSI 점수:</strong> 10점 - RSI 58.4 수준</li>
+                        <li><strong>추세 점수:</strong> 15점 - 연속 상승일 기반</li>
+                        <li><strong>당일 점수:</strong> 10점 - 당일 등락률 +5.8%</li>
+                    </ul>
+                    <h4 style="margin-top:12px;">🎯 동적 진입 전략</h4>
+                    <ul>
+                        <li><strong>진입가:</strong> 4,800원 (기준가)</li>
+                        <li><strong>목표가:</strong> 5,650원 (ATR × 2.4000000000000004, +17.7%)</li>
+                        <li><strong>손절가:</strong> 4,339원 (ATR × 1.2999999999999998, -9.6%)</li>
+                        <li><strong>손익비:</strong> <span class="rr-high">1.84:1</span> (목표2.4000000000000004/손절1.2999999999999998)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footer">
+            <p>⚠️ 본 리포트는 투자 참고용이며, 투자 결정은 투자자 본인의 책임입니다.</p>
+            <p>※ ETF/ETN 종목은 제외되었습니다. | 손익비는 종목별 변동성·점수·RSI 기반 동적 계산</p>
+            <p>※ 미식별 종목은 네이버 금융에서 자동 스크래핑하여 업데이트되었습니다.</p>
+            <p>※ 네이버 버튼(N) 클릭 시 해당 종목의 네이버 금융 페이지로 이동합니다.</p>
+        </div>
+    </div>
+</body>
+</html>
