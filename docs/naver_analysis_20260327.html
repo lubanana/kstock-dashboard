@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 증권 TOP 10 종목 분석 리포트 - 2026.03.27</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; 
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { 
+            text-align: center; 
+            color: #00d4ff; 
+            margin-bottom: 10px;
+            font-size: 2.2em;
+            text-shadow: 0 0 20px rgba(0,212,255,0.3);
+        }
+        .date { text-align: center; color: #888; margin-bottom: 30px; font-size: 0.9em; }
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .card-label { font-size: 0.85em; color: #888; margin-bottom: 5px; }
+        .card-value { font-size: 1.8em; font-weight: bold; }
+        .card-value.buy { color: #00ff88; }
+        .card-value.hold { color: #ffaa00; }
+        .card-value.sell { color: #ff4444; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        th {
+            background: rgba(0,212,255,0.2);
+            color: #00d4ff;
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9em;
+        }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        .stock-name { font-weight: bold; color: #fff; }
+        .stock-code { font-size: 0.8em; color: #888; }
+        .price-up { color: #ff6b6b; }
+        .price-down { color: #4ecdc4; }
+        .price-neutral { color: #aaa; }
+        .opinion-buy { 
+            background: rgba(0,255,136,0.2); 
+            color: #00ff88; 
+            padding: 5px 12px; 
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .opinion-hold { 
+            background: rgba(255,170,0,0.2); 
+            color: #ffaa00; 
+            padding: 5px 12px; 
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .opinion-sell { 
+            background: rgba(255,68,68,0.2); 
+            color: #ff4444; 
+            padding: 5px 12px; 
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .opinion-watch { 
+            background: rgba(0,212,255,0.2); 
+            color: #00d4ff; 
+            padding: 5px 12px; 
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .detail-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .detail-section h2 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid rgba(0,212,255,0.3);
+            padding-bottom: 10px;
+        }
+        .stock-detail {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+        }
+        .stock-detail h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .stock-detail p {
+            color: #bbb;
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+        .highlight {
+            background: rgba(255,215,0,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ffd700;
+        }
+        .warning {
+            background: rgba(255,68,68,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ff6b6b;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 네이버 증권 TOP 10 종목 분석 리포트</h1>
+        <p class="date">분석일: 2026년 3월 27일 (금)</p>
+        
+        <div class="summary-cards">
+            <div class="card">
+                <div class="card-label">매수 권고</div>
+                <div class="card-value buy">4</div>
+            </div>
+            <div class="card">
+                <div class="card-label">관망 권고</div>
+                <div class="card-value hold">3</div>
+            </div>
+            <div class="card">
+                <div class="card-label">관심 종목</div>
+                <div class="card-value">3</div>
+            </div>
+            <div class="card">
+                <div class="card-label">바이오/의료</div>
+                <div class="card-value">4</div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>종목</th>
+                    <th>현재가</th>
+                    <th>등락률</th>
+                    <th>차트상태</th>
+                    <th>투자자동향</th>
+                    <th>종합판단</th>
+                    <th>진입의견</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="stock-name">덴티움</span><br>
+                        <span class="stock-code">145720</span>
+                    </td>
+                    <td class="price-neutral">17,200원</td>
+                    <td class="price-neutral">-0.5%</td>
+                    <td>박스권 정돈</td>
+                    <td>외국인 관망<br>개인 매수</td>
+                    <td>중립, 실적 개선 대기</td>
+                    <td><span class="opinion-hold">관망</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">넥스트바이오메디컬</span><br>
+                        <span class="stock-code">389650</span>
+                    </td>
+                    <td class="price-up">72,200원</td>
+                    <td class="price-up">+0.28%</td>
+                    <td>상승 추세</td>
+                    <td>기관/외국인 관심<br>FDA 프리서브 완료</td>
+                    <td>긍정적, 넥스피어 수출 호조</td>
+                    <td><span class="opinion-buy">매수</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">제이엘케이</span><br>
+                        <span class="stock-code">322510</span>
+                    </td>
+                    <td class="price-neutral">7,500원</td>
+                    <td class="price-up">+2.46%</td>
+                    <td>바닥 탈출 시도</td>
+                    <td>의료AI 테마<br>거래량 증가</td>
+                    <td>테마주 성격, 변동성 주의</td>
+                    <td><span class="opinion-watch">관심</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">제넥신</span><br>
+                        <span class="stock-code">095700</span>
+                    </td>
+                    <td class="price-down">4,760원</td>
+                    <td class="price-down">-5.18%</td>
+                    <td>하락 추세</td>
+                    <td>기관 매도<br>외국인 소극</td>
+                    <td>부정적, 적자 지속</td>
+                    <td><span class="opinion-sell">매도</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">M83</span><br>
+                        <span class="stock-code">476080</span>
+                    </td>
+                    <td class="price-up">-</td>
+                    <td class="price-up">-</td>
+                    <td>공매도 과열</td>
+                    <td>일본 더세븐 계약<br>104.88억원</td>
+                    <td>단기 급등 가능성</td>
+                    <td><span class="opinion-watch">단기관심</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">KG케미칼</span><br>
+                        <span class="stock-code">001390</span>
+                    </td>
+                    <td class="price-neutral">5,500원</td>
+                    <td class="price-neutral">-</td>
+                    <td>박스권</td>
+                    <td>3분기 실적 호조<br>거래량 급증</td>
+                    <td>중립, 방어적 종목</td>
+                    <td><span class="opinion-hold">관망</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">코오롱우</span><br>
+                        <span class="stock-code">002025</span>
+                    </td>
+                    <td class="price-up">26,650원</td>
+                    <td class="price-up">+4.92%</td>
+                    <td>상승 추세</td>
+                    <td>외국인 7일 연속 순매수</td>
+                    <td>우선주 할인 매력</td>
+                    <td><span class="opinion-buy">매수</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">한창제지</span><br>
+                        <span class="stock-code">009460</span>
+                    </td>
+                    <td class="price-up">542원</td>
+                    <td class="price-up">+4.43%</td>
+                    <td>저가 반등</td>
+                    <td>동전주 리스크<br>거래량 급증</td>
+                    <td>고위험, 단기 반등</td>
+                    <td><span class="opinion-sell">매도</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">태림포장</span><br>
+                        <span class="stock-code">011280</span>
+                    </td>
+                    <td class="price-up">2,200원</td>
+                    <td class="price-up">+13.81%</td>
+                    <td>급등 후 조정</td>
+                    <td>골판지 테마<br>거래 대금 915백만</td>
+                    <td>급등 후 조정 예상</td>
+                    <td><span class="opinion-hold">관망</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="stock-name">신대양제지</span><br>
+                        <span class="stock-code">016590</span>
+                    </td>
+                    <td class="price-up">13,350원</td>
+                    <td class="price-up">+8.45%</td>
+                    <td>강한 상승세</td>
+                    <td>자사주 26.7%<br>외국인/기관 매수</td>
+                    <td>긍정적, 주주환원</td>
+                    <td><span class="opinion-buy">매수</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="detail-section">
+            <h2>🔍 상세 종목 분석</h2>
+            
+            <div class="stock-detail">
+                <h3>1. 덴티움 (145720) - 치과임플란트 전문</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 17,200원 | <span class="highlight">시가총액:</span> 약 4,000억원<br><br>
+                    치과임플란트 제조 전문 기업으로 국내 시장 점유율 상위권을 유지하고 있습니다. 
+                    최근 실적 개선이 지연되며 주가는 박스권에서 정돈 중입니다. 
+                    외국인 투자자들은 관망세를 보이며 개인 투자자들이 소규모로 매수하고 있는 상황입니다.
+                    <br><br>
+                    <span class="warning">주의사항:</span> 실적 개선이 확인될 때까지 신규 진입은 신중한 접근이 필요합니다.
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>2. 넥스트바이오메디컬 (389650) - 혈관색전 의료기기</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 72,200원 | <span class="highlight">시가총액:</span> 5,923억원<br><br>
+                    혈관색전용 의료기기 '넥스피어'의 <span class="highlight">FDA 프리서브미션 완료</span> 소식에 투자자 관심이 집중되고 있습니다. 
+                    넥스파우더(내시경 지혈제)의 미국 및 일본 시장 수출 호조가 지속되며 매출 성장이 기대됩니다.
+                    <br><br>
+                    <span class="highlight">핵심 모멘텀:</span> FDA 승인 진행 상황, 수출 매출 확대
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>3. 제이엘케이 (322510) - 의료AI 솔루션</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 7,500원 | <span class="highlight">시가총액:</span> 약 1,000억원<br><br>
+                    네이버 AI 및 의료AI 관련주로 분류되어 있으며, 최근 거래량이 증가하며 주목받고 있습니다. 
+                    테마주 특성상 변동성이 크므로 단기 매매에 적합합니다.
+                    <br><br>
+                    <span class="warning">주의사항:</span> 테마주로서 높은 변동성 예상, 손절 기준 설정 필수
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>4. 제넥신 (095700) - 바이오테크</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 4,760원 | <span class="highlight">시가총액:</span> 2,168억원<br><br>
+                    항체융합단백질 및 유전자치료 백신 개발 기업입니다. 
+                    PER -5.88, ROE -14.68% 등 재무지표가 부정적이며 적자가 지속되고 있습니다.
+                    동종업종 대비 저평가되어 있으나 실적 개선이 없어 투자 매력도가 낮습니다.
+                    <br><br>
+                    <span class="warning">리스크:</span> 적자 지속, 기관 매도세, 연구개발 비용 부담
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>5. M83 (476080) - VFX/메타버스</h3>
+                <p>
+                    <span class="highlight">현재가:</span> - | <span class="highlight">사업:</span> 비주얼이펙트, AI 콘텐츠<br><br>
+                    <span class="highlight">최근 공시:</span> 일본 더세븐과 104.88억원 규모 VFX 제작 계약 체결 (2026.03.26)<br>
+                    공매도 과열종목으로 지정되어 단기 급등 가능성이 있습니다.
+                    AI 기반 '메타씬 크리에이터' 개발 등 딥테크 사업 확장 중입니다.
+                    <br><br>
+                    <span class="highlight">모멘텀:</span> 대형 계약 체결, 공매도 과열
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>6. KG케미칼 (001390) - 화학/비료</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 5,500원 | <span class="highlight">PBR:</span> 0.38배 (저평가)<br><br>
+                    3분기 실적 호조로 주가가 급등한 바 있으며, 거래량이 증가하고 있습니다. 
+                    PBR 0.38배로 저평가되어 있어 방어적 투자에 적합한 종목입니다.
+                    <br><br>
+                    <span class="highlight">특징:</span> 저평가주, 배당 가능성
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>7. 코오롱우 (002025) - 화학 우선주</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 26,650원 | <span class="highlight">등락률:</span> +4.92%<br><br>
+                    외국인 투자자들이 7일 연속 순매수하며 주가 상승을 이끌고 있습니다. 
+                    코오롱(보통주) 대비 할인율이 매력적이며 안정적인 배당 수익이 기대됩니다.
+                    <br><br>
+                    <span class="highlight">수급:</span> 외국인 7일 연속 순매수
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>8. 한창제지 (009460) - 제지업</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 542원 | <span class="highlight">시가총액:</span> 308억원<br><br>
+                    동전주(500원대)로 분류되며 최근 단기 반등이 나타났습니다. 
+                    원자재 가격 상승으로 인한 제지업 부문 수혜 기대감이 있으나, 
+                    재무구조가 취약하여 고위험 종목으로 분류됩니다.
+                    <br><br>
+                    <span class="warning">리스크:</span> 동전주 상폐 위험, 유동성 부족
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>9. 태림포장 (011280) - 골판지 포장재</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 2,200원 | <span class="highlight">등락률:</span> +13.81%<br><br>
+                    골판지 제조 테마 상승세에 13% 이상 급등했습니다. 
+                    그러나 최근 분기 영업이익 -57.8억원으로 적자가 지속되고 있어 
+                    급등 후 조정 가능성이 높습니다.
+                    <br><br>
+                    <span class="warning">주의:</span> 급등 후 조정 리스크, 실적 부진
+                </p>
+            </div>
+
+            <div class="stock-detail">
+                <h3>10. 신대양제지 (016590) - 골판지/제지</h3>
+                <p>
+                    <span class="highlight">현재가:</span> 13,350원 | <span class="highlight">등락률:</span> +8.45%<br><br>
+                    <span class="highlight">핵심 모멘텀:</span> 자사주 비중 26.7% (2020년부터 지속적 매입)<br><br>
+                    외국인 및 기관 동시 순매수로 강한 상승세를 보이고 있습니다. 
+                    주주환원 의지가 확고하며, 골판지 자사주 소각 소식이 긍정적입니다.
+                    <br><br>
+                    <span class="highlight">강점:</span> 높은 자사주 비중, 주주가치 제고
+                </p>
+            </div>
+        </div>
+
+        <div class="detail-section">
+            <h2>📈 기술적 분석 요약</h2>
+            <p style="color: #bbb; line-height: 1.8;">
+                <strong style="color: #00d4ff;">상승 추세 종목:</strong> 넥스트바이오메디컬, 코오롱우, 신대양제지<br>
+                <strong style="color: #ffaa00;">박스권 정돈:</strong> 덴티움, KG케미칼<br>
+                <strong style="color: #ff4444;">하락 추세:</strong> 제넥신<br>
+                <strong style="color: #00d4ff;">급등 후 조정:</strong> 태림포장, M83<br>
+                <strong style="color: #888;">바닥 탈출 시도:</strong> 제이엘케이, 한창제지
+            </p>
+        </div>
+
+        <div class="detail-section">
+            <h2>⚠️ 투자 유의사항</h2>
+            <p style="color: #bbb; line-height: 1.8;">
+                1. 본 리포트는 공개된 정보를 기반으로 작성되었으며, 투자 참고 자료입니다.<br>
+                2. <span class="warning">제넥신, 한창제지</span>는 재무구조 및 실적 부진으로 고위험 종목입니다.<br>
+                3. <span class="highlight">태림포장, M83</span> 등 급등주는 조정 리스크에 유의하세요.<br>
+                4. 외국인 수급이 강한 <span class="highlight">코오롱우, 신대양제지</span>는 중기적 관점에서 매력적입니다.<br>
+                5. 바이오/의료주는 임상 결과 및 허가 소식에 변동성이 크니 분산투자를 권장합니다.
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>본 리포트는 2026년 3월 27일 기준 공개 정보를 바탕으로 작성되었습니다.</p>
+            <p>투자 결정은 개인의 판단과 책임하에 이루어져야 합니다.</p>
+        </div>
+    </div>
+</body>
+</html>
