@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 백테스트 결과 - 2026-03-28</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+        .header .subtitle { color: #333; font-size: 1.1em; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .stat-card .number { font-size: 2.5em; font-weight: bold; margin-bottom: 5px; }
+        .stat-card .label { color: #888; font-size: 0.9em; }
+        .positive { color: #4ecca3; }
+        .negative { color: #ff6b6b; }
+        .neutral { color: #ffd700; }
+        
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .section h3 { color: #ffd700; margin-bottom: 20px; }
+        
+        .trade-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        .trade-table th, .trade-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .trade-table th { color: #ffd700; font-weight: bold; }
+        .trade-table tr:hover { background: rgba(255,255,255,0.05); }
+        .trade-table .profit { color: #4ecca3; }
+        .trade-table .loss { color: #ff6b6b; }
+        
+        .exit-badge {
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .exit-tp { background: #4ecca3; color: #000; }
+        .exit-sl { background: #ff6b6b; color: #000; }
+        .exit-time { background: #888; color: #fff; }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 A+ 타점 백테스트 결과</h1>
+            <div class="subtitle">3중 확인 시스템 | 2024-01 ~ 2026-03</div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number negative">-1.4%</div>
+                <div class="label">총 수익률</div>
+            </div>
+            <div class="stat-card">
+                <div class="number neutral">3</div>
+                <div class="label">총 거래</div>
+            </div>
+            <div class="stat-card">
+                <div class="number positive">33.3%</div>
+                <div class="label">승률</div>
+            </div>
+            <div class="stat-card">
+                <div class="number positive">0.69</div>
+                <div class="label">Profit Factor</div>
+            </div>
+            <div class="stat-card">
+                <div class="number negative">-0.45%</div>
+                <div class="label">평균 수익률</div>
+            </div>
+            <div class="stat-card">
+                <div class="number positive">3.07%</div>
+                <div class="label">평균 수익</div>
+            </div>
+            <div class="stat-card">
+                <div class="number negative">-2.21%</div>
+                <div class="label">평균 손실</div>
+            </div>
+            <div class="stat-card">
+                <div class="number negative">-2.24%</div>
+                <div class="label">최대 낙폭</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>📊 청산 유형</h3>
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-card">
+                    <div class="number positive">1</div>
+                    <div class="label">목표가 도달 (33.3%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number negative">2</div>
+                    <div class="label">손절가 도달 (66.7%)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number neutral">0</div>
+                    <div class="label">시간 만료 (0.0%)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h3>📈 거래 내역 (최근 20건)</h3>
+            <table class="trade-table">
+                <tr>
+                    <th>종목</th>
+                    <th>방향</th>
+                    <th>진입일</th>
+                    <th>청산일</th>
+                    <th>진입가</th>
+                    <th>청산가</th>
+                    <th>수익률</th>
+                    <th>청산</th>
+                    <th>보유일</th>
+                </tr>
+
+                <tr>
+                    <td>유성기업 (002920)</td>
+                    <td>SELL</td>
+                    <td>2025-05-28</td>
+                    <td>2025-06-05</td>
+                    <td>1,956</td>
+                    <td>1,999</td>
+                    <td class="loss">-2.19%</td>
+                    <td><span class="exit-badge exit-sl">SL</span></td>
+                    <td>20일</td>
+                </tr>
+
+                <tr>
+                    <td>CJ��� (001045)</td>
+                    <td>SELL</td>
+                    <td>2025-01-14</td>
+                    <td>2025-02-10</td>
+                    <td>57,000</td>
+                    <td>58,277</td>
+                    <td class="loss">-2.24%</td>
+                    <td><span class="exit-badge exit-sl">SL</span></td>
+                    <td>20일</td>
+                </tr>
+
+                <tr>
+                    <td>세방 (004360)</td>
+                    <td>SELL</td>
+                    <td>2024-07-18</td>
+                    <td>2024-07-22</td>
+                    <td>13,260</td>
+                    <td>12,853</td>
+                    <td class="profit">+3.07%</td>
+                    <td><span class="exit-badge exit-tp">TP</span></td>
+                    <td>20일</td>
+                </tr>
+
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>⚠️ 과거 성과가 미래 수익을 보장하지 않습니다.</p>
+            <p>※ 본 백테스트는 A+ 셋업(3중 확인) 조걧만 포함</p>
+        </div>
+    </div>
+</body>
+</html>
