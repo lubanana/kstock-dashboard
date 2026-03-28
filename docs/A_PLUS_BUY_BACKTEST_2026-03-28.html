@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>A+ 매수전용 백테스트 - 2026-03-28</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; padding: 40px; background: linear-gradient(135deg, #ffd700, #ff8c00); border-radius: 15px; margin-bottom: 30px; }
+        .header h1 { color: #1a1a2e; font-size: 2.2em; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 30px; }
+        .stat-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; text-align: center; }
+        .stat-card .number { font-size: 2em; font-weight: bold; }
+        .positive { color: #4ecca3; } .negative { color: #ff6b6b; } .neutral { color: #ffd700; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9em; margin-top: 20px; }
+        th, td { padding: 12px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        th { color: #ffd700; } .profit { color: #4ecca3; } .loss { color: #ff6b6b; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 A+ 매수전용 백테스트</h1>
+            <div style="color: #333; margin-top: 10px;">2024-01 ~ 2026-03 | 전체 종목 대상</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="number positive">0.3%</div>
+                <div style="color: #888;">총 수익률</div>
+            </div>
+            <div class="stat-card">
+                <div class="number neutral">2</div>
+                <div style="color: #888;">총 거래</div>
+            </div>
+            <div class="stat-card">
+                <div class="number positive">50.0%</div>
+                <div style="color: #888;">승률</div>
+            </div>
+            <div class="stat-card">
+                <div class="number positive">1.04</div>
+                <div style="color: #888;">Profit Factor</div>
+            </div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.03); padding: 25px; border-radius: 10px;">
+            <h3 style="color: #ffd700; margin-bottom: 15px;">📈 거래 내역 (전체)</h3>
+            <table>
+                <tr><th>종목</th><th>진입일</th><th>청산일</th><th>수익률</th><th>청산</th><th>보유일</th></tr>
+<tr><td>에이에스텍 (453860)</td><td>2025-04-29</td><td>2025-04-30</td><td class='profit'>+8.65%</td><td>TP</td><td>20일</td></tr><tr><td>지더블유바이텍 (036180)</td><td>2024-04-03</td><td>2024-04-15</td><td class='loss'>-8.33%</td><td>SL</td><td>20일</td></tr>
+            </table>
+        </div>
+        
+        <div style="text-align: center; padding: 30px; color: #666;">
+            <p>⚠️ 과거 성과가 미래 수익을 보장하지 않습니다.</p>
+            <p>※ 본 백테스트는 A+ 매수 셋업(3중 확인) 조걧만 포함</p>
+        </div>
+    </div>
+</body>
+</html>
