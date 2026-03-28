@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A+ 타점 리포트 - 2026-03-28</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.2em;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header .subtitle { color: #4ecca3; font-size: 1.1em; }
+        
+        .system-info {
+            background: rgba(78, 204, 163, 0.1);
+            border: 1px solid rgba(78, 204, 163, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .system-info h3 { color: #ffd700; margin-bottom: 15px; }
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .check-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .check-item .title { color: #4ecca3; font-weight: bold; margin-bottom: 5px; }
+        .check-item .desc { color: #aaa; font-size: 0.9em; }
+        
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .summary-card .number { font-size: 2em; font-weight: bold; }
+        .summary-card .label { color: #888; font-size: 0.9em; }
+        .a-plus { color: #ffd700; }
+        .a-grade { color: #4ecca3; }
+        
+        .signal-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+        }
+        .signal-card.a-plus { border-color: #ffd700; }
+        .signal-card.a-grade { border-color: #4ecca3; }
+        
+        .signal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .signal-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .quality-badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+        .quality-badge.a-plus { background: #ffd700; color: #000; }
+        .quality-badge.a-grade { background: #4ecca3; color: #000; }
+        .signal-type {
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .signal-type.buy { background: #ff6b6b; }
+        .signal-type.sell { background: #4ecca3; }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .price-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .price-item .label { color: #888; font-size: 0.85em; margin-bottom: 5px; }
+        .price-item .value { font-size: 1.3em; font-weight: bold; }
+        .entry { color: #fff; }
+        .target { color: #4ecca3; }
+        .stop { color: #ff6b6b; }
+        .rr { color: #ffd700; }
+        
+        .confirmation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .confirmation-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .confirmation-item .status {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .confirmation-item .status.ok { background: #4ecca3; }
+        .confirmation-item .status.ng { background: #ff6b6b; }
+        .confirmation-item .title { font-weight: bold; margin-bottom: 5px; }
+        .confirmation-item .detail { color: #888; font-size: 0.85em; }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .price-grid { grid-template-columns: repeat(2, 1fr); }
+            .confirmation-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 A+ 타점 리포트</h1>
+            <div class="subtitle">지표센세 3중 확인 시스템 | 2026-03-28</div>
+        </div>
+        
+        <div class="system-info">
+            <h3>📋 3중 확인 체크리스트</h3>
+            <div class="checklist">
+                <div class="check-item">
+                    <div class="title">1. Swing Breakouts</div>
+                    <div class="desc">스윙 포인트 리테스트 확인<br>지지/저항 영역 내 진입</div>
+                </div>
+                <div class="check-item">
+                    <div class="title">2. CCI Coded OBV</div>
+                    <div class="desc">거래량 모멘텀 확인<br>CCI ≥ 0 (Green) / CCI < 0 (Red)</div>
+                </div>
+                <div class="check-item">
+                    <div class="title">3. PMO 1.7 Level</div>
+                    <div class="desc">추세 반전 타이밍<br>1.7 레벨 돌파 + 시그널 확인</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <div class="number a-plus">0</div>
+                <div class="label">A+ 셋업</div>
+            </div>
+            <div class="summary-card">
+                <div class="number a-grade">12</div>
+                <div class="label">A 셋업</div>
+            </div>
+            <div class="summary-card">
+                <div class="number" style="color: #ff6b6b;">2</div>
+                <div class="label">BUY 신호</div>
+            </div>
+            <div class="summary-card">
+                <div class="number" style="color: #4ecca3;">10</div>
+                <div class="label">SELL 신호</div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">바이젠셀 (308080)</span>
+                </div>
+                <span class="signal-type buy">BUY</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">6,000원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">7,546원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">5,227원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">support_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">GREEN (CCI: 12.7)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">-5.49 / -5.78</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">고바이오랩 (348150)</span>
+                </div>
+                <span class="signal-type buy">BUY</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">6,490원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">7,154원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">6,158원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">support_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">GREEN (CCI: 224.1)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">1.85 / -2.38</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">대한방직 (001070)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">6,860원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">6,541원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">7,020원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">GREEN (CCI: 8.9)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">1.67 / 1.97</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">씨아이테크 (004920)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">1,083원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">1,027원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">1,111원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -26.7)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">-0.93 / -1.12</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">서연 (007860)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">9,640원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">9,225원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">9,848원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -65.6)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">-1.11 / -1.04</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">대림제지 (017650)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">8,870원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">8,289원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">9,161원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -59.4)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">0.43 / 1.23</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">이글벳 (044960)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">3,915원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">3,786원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">3,979원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -33.6)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">-1.87 / -1.92</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">하나마이크론 (067310)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">31,100원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">28,256원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">32,522원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -117.6)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">0.39 / 0.42</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">일진다이아 (081000)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">13,390원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">12,839원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">13,665원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -107.9)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">1.48 / 2.39</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">쎄크 (081180)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">11,760원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">11,060원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">12,110원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -94.5)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">-3.82 / -3.77</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">엘오티베큠 (083310)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">13,180원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">12,674원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">13,433원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -13.8)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">1.68 / 1.24</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="signal-card a-grade">
+            <div class="signal-header">
+                <div class="signal-title">
+                    <span class="quality-badge a-grade">A</span>
+                    <span style="font-size: 1.3em; font-weight: bold;">피엠티 (147760)</span>
+                </div>
+                <span class="signal-type sell">SELL</span>
+            </div>
+            
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="label">진입가</div>
+                    <div class="value entry">3,700원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">목표가</div>
+                    <div class="value target">3,172원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손절가</div>
+                    <div class="value stop">3,964원</div>
+                </div>
+                <div class="price-item">
+                    <div class="label">손익비</div>
+                    <div class="value rr">2.0:1</div>
+                </div>
+            </div>
+            
+            <div class="confirmation-grid">
+                <div class="confirmation-item">
+                    <div class="status ng">✗</div>
+                    <div class="title">Swing</div>
+                    <div class="detail">resistance_retest</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">CCI OBV</div>
+                    <div class="detail">RED (CCI: -143.4)</div>
+                </div>
+                <div class="confirmation-item">
+                    <div class="status ok">✓</div>
+                    <div class="title">PMO</div>
+                    <div class="detail">1.68 / 2.56</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>⚠️ 본 리포트는 투자 참고용이며, 투자 결정은 투자자 본인의 책임입니다.</p>
+            <p>※ A+ 셋업: 3가지 지표 모두 확인 | A 셋업: 2가지 지표 확인</p>
+            <p>※ 손절가는 진입 캔들 기준으로 설정 (롱: 저가×0.99, 숏: 고가×1.01)</p>
+        </div>
+    </div>
+</body>
+</html>
