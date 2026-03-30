@@ -1,0 +1,16 @@
+{
+  "cash": 10000000,
+  "positions": {},
+  "trades": [],
+  "daily_logs": [
+    {
+      "date": "2026-03-30",
+      "cash": 10000000,
+      "positions_value": 0,
+      "total_value": 10000000,
+      "return_rate": 0.0,
+      "position_count": 0
+    }
+  ],
+  "last_updated": "2026-03-30T13:11:09.497435"
+}

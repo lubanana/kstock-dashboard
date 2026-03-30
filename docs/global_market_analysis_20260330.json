@@ -1,0 +1,572 @@
+{
+  "scan_time": "2026-03-30T15:16:09.981737",
+  "summary": {
+    "total_analyzed": 28,
+    "strong_signals": 9,
+    "watch_list": 16,
+    "potential": 2,
+    "oversold": 25
+  },
+  "results": [
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "type": "US Stock",
+      "price": 248.8000030517578,
+      "rsi": 32.12900291541746,
+      "bb_lower": 244.48431027246244,
+      "bb_upper": 266.26768862890475,
+      "bb_position": 0.19811861634488082,
+      "volume_ratio": 1.179935873934978,
+      "bb_width": 8.529923878241725,
+      "ret_5d": 0.3266250819193106,
+      "ret_20d": -5.821784408518306,
+      "signal_score": 70,
+      "reasons": [
+        "RSI 과매도(32.1)",
+        "BB하단 근접"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "type": "US Stock",
+      "price": 356.7699890136719,
+      "rsi": 8.681354691461422,
+      "bb_lower": 361.05969632363076,
+      "bb_upper": 424.5743002584005,
+      "bb_position": -0.06753891300911623,
+      "volume_ratio": 1.152863138639336,
+      "bb_width": 16.16900597761694,
+      "ret_5d": -6.572919167376055,
+      "ret_20d": -9.158731505604344,
+      "signal_score": 70,
+      "reasons": [
+        "RSI 극과매도(8.7)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "type": "US Stock",
+      "price": 274.3399963378906,
+      "rsi": 21.951679828742414,
+      "bb_lower": 281.5927857131179,
+      "bb_upper": 319.4558043747727,
+      "bb_position": -0.19155338458453222,
+      "volume_ratio": 1.2101287361650266,
+      "bb_width": 12.598987598030345,
+      "ret_5d": -8.85714407379049,
+      "ret_20d": -11.940883763694137,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(22.0)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "type": "US Stock",
+      "price": 199.33999633789062,
+      "rsi": 35.66942861920195,
+      "bb_lower": 201.80168465107644,
+      "bb_upper": 219.26531516581807,
+      "bb_position": -0.14096085639854927,
+      "volume_ratio": 1.2353042519391786,
+      "bb_width": 8.29494143323313,
+      "ret_5d": -2.936163472106068,
+      "ret_20d": -5.076192220052083,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(35.7)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "META",
+      "name": "Meta",
+      "type": "US Stock",
+      "price": 525.719970703125,
+      "rsi": 18.011750922232025,
+      "bb_lower": 545.7156174369131,
+      "bb_upper": 695.85819237754,
+      "bb_position": -0.13317772618256554,
+      "volume_ratio": 2.020999852370067,
+      "bb_width": 24.185847632057403,
+      "ret_5d": -11.444261953781027,
+      "ret_20d": -18.823458894685135,
+      "signal_score": 90,
+      "reasons": [
+        "RSI 극과매도(18.0)",
+        "BB하단 터치",
+        "거래량 급증(2.0배)"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "type": "US Stock",
+      "price": 361.8299865722656,
+      "rsi": 32.82051486340791,
+      "bb_lower": 364.8877517821751,
+      "bb_upper": 416.66824492192643,
+      "bb_position": -0.05905245439931988,
+      "volume_ratio": 1.0150927889989887,
+      "bb_width": 13.250616298285669,
+      "ret_5d": -1.6659433158946775,
+      "ret_20d": -10.106586719929446,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(32.8)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "type": "US Stock",
+      "price": 167.52000427246094,
+      "rsi": 31.415751780665914,
+      "bb_lower": 169.7345407480793,
+      "bb_upper": 189.1245611195965,
+      "bb_position": -0.11421011598684973,
+      "volume_ratio": 1.0806385448791136,
+      "bb_width": 10.806481023110292,
+      "ret_5d": -2.9994167731998758,
+      "ret_20d": -5.452304297322287,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(31.4)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "AMD",
+      "name": "AMD",
+      "type": "US Stock",
+      "price": 201.99000549316406,
+      "rsi": 49.48638760760599,
+      "bb_lower": 188.45048973062237,
+      "bb_upper": 213.39151008627218,
+      "bb_position": 0.5428613412552158,
+      "volume_ratio": 0.8724078790706679,
+      "bb_width": 12.41334672185315,
+      "ret_5d": 0.3278218129969594,
+      "ret_20d": 0.8890658406703836,
+      "signal_score": 10,
+      "reasons": [
+        "양봉"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "type": "US Stock",
+      "price": 93.43000030517578,
+      "rsi": 34.59356996161745,
+      "bb_lower": 89.9596388200797,
+      "bb_upper": 100.29635864696132,
+      "bb_position": 0.33573140640525767,
+      "volume_ratio": 1.032752995047038,
+      "bb_width": 10.8661171942002,
+      "ret_5d": 1.7534312956900568,
+      "ret_20d": -2.9197814016697943,
+      "signal_score": 60,
+      "reasons": [
+        "RSI 과매도(34.6)",
+        "BB하단 방향"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan",
+      "type": "US Stock",
+      "price": 282.8399963378906,
+      "rsi": 39.87412379863299,
+      "bb_lower": 279.7602295611929,
+      "bb_upper": 300.2687773968149,
+      "bb_position": 0.15016990970703348,
+      "volume_ratio": 0.8994558790895076,
+      "bb_width": 7.071559383962598,
+      "ret_5d": -1.2981578909814464,
+      "ret_20d": -5.814183205067361,
+      "signal_score": 65,
+      "reasons": [
+        "RSI 과매도(39.9)",
+        "BB하단 근접"
+      ],
+      "sector": "Finance"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America",
+      "type": "US Stock",
+      "price": 46.970001220703125,
+      "rsi": 43.55061437333074,
+      "bb_lower": 45.94127431716886,
+      "bb_upper": 50.17836145553622,
+      "bb_position": 0.2427910661121438,
+      "volume_ratio": 0.834535905242366,
+      "bb_width": 8.816277973393143,
+      "ret_5d": -0.402880889151255,
+      "ret_20d": -5.206646195310167,
+      "signal_score": 45,
+      "reasons": [
+        "RSI 약과매도(43.6)",
+        "BB하단 근접"
+      ],
+      "sector": "Finance"
+    },
+    {
+      "symbol": "GS",
+      "name": "Goldman Sachs",
+      "type": "US Stock",
+      "price": 802.8900146484375,
+      "rsi": 40.60484172494815,
+      "bb_lower": 775.6863876865451,
+      "bb_upper": 871.5556289150173,
+      "bb_position": 0.28375761206935657,
+      "volume_ratio": 0.8650330578682248,
+      "bb_width": 11.639970358000069,
+      "ret_5d": -1.3078822250278268,
+      "ret_20d": -6.102423454082871,
+      "signal_score": 45,
+      "reasons": [
+        "RSI 약과매도(40.6)",
+        "BB하단 근접"
+      ],
+      "sector": "Finance"
+    },
+    {
+      "symbol": "SPY",
+      "name": "S&P 500 ETF",
+      "type": "US Stock",
+      "price": 634.0900268554688,
+      "rsi": 23.60354490463726,
+      "bb_lower": 637.5576648142434,
+      "bb_upper": 691.8589123341941,
+      "bb_position": -0.06385926874885478,
+      "volume_ratio": 1.0350784483843976,
+      "bb_width": 8.169184656388959,
+      "ret_5d": -2.232600999927443,
+      "ret_20d": -7.313263177390959,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(23.6)",
+        "BB하단 터치"
+      ],
+      "sector": "Index"
+    },
+    {
+      "symbol": "QQQ",
+      "name": "Nasdaq 100 ETF",
+      "type": "US Stock",
+      "price": 562.5800170898438,
+      "rsi": 23.087964225336748,
+      "bb_lower": 569.8791773996712,
+      "bb_upper": 621.4328282155631,
+      "bb_position": -0.14158377135877726,
+      "volume_ratio": 1.1274715074172557,
+      "bb_width": 8.654936838190894,
+      "ret_5d": -3.3467306721742243,
+      "ret_20d": -7.362209579471587,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(23.1)",
+        "BB하단 터치"
+      ],
+      "sector": "Index"
+    },
+    {
+      "symbol": "IWM",
+      "name": "Russell 2000 ETF",
+      "type": "US Stock",
+      "price": 243.10000610351562,
+      "rsi": 37.50212109642505,
+      "bb_lower": 239.40788277439052,
+      "bb_upper": 262.06777945705477,
+      "bb_position": 0.1629364591035287,
+      "volume_ratio": 0.8769608204041278,
+      "bb_width": 9.03728670772703,
+      "ret_5d": 0.3633080994045028,
+      "ret_20d": -6.838900283053744,
+      "signal_score": 65,
+      "reasons": [
+        "RSI 과매도(37.5)",
+        "BB하단 근접"
+      ],
+      "sector": "Index"
+    },
+    {
+      "symbol": "COIN",
+      "name": "Coinbase",
+      "type": "US Stock",
+      "price": 161.13999938964844,
+      "rsi": 27.122067376370794,
+      "bb_lower": 168.5357834246998,
+      "bb_upper": 219.13321681944086,
+      "bb_position": -0.14616915402313752,
+      "volume_ratio": 0.9535338442411968,
+      "bb_width": 26.103419857082482,
+      "ret_5d": -18.410126891317248,
+      "ret_20d": -8.365087405915707,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(27.1)",
+        "BB하단 터치"
+      ],
+      "sector": "Crypto"
+    },
+    {
+      "symbol": "MSTR",
+      "name": "MicroStrategy",
+      "type": "US Stock",
+      "price": 126.02999877929688,
+      "rsi": 36.986303054186216,
+      "bb_lower": 127.60963760944097,
+      "bb_upper": 149.15636123089106,
+      "bb_position": -0.07331225191803807,
+      "volume_ratio": 1.013177869802287,
+      "bb_width": 15.570354531793868,
+      "ret_5d": -7.098632332929987,
+      "ret_20d": -2.6795376221645753,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(37.0)",
+        "BB하단 터치"
+      ],
+      "sector": "Crypto"
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "type": "US Stock",
+      "price": 143.05999755859375,
+      "rsi": 37.35099945778614,
+      "bb_lower": 143.90432455348235,
+      "bb_upper": 160.81167428684967,
+      "bb_position": -0.04993845920288098,
+      "volume_ratio": 0.736726097138195,
+      "bb_width": 11.097119808419764,
+      "ret_5d": -5.057071600463557,
+      "ret_20d": 4.278733882007598,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(37.4)",
+        "BB하단 터치"
+      ],
+      "sector": "Tech"
+    },
+    {
+      "symbol": "ARKK",
+      "name": "ARK Innovation ETF",
+      "type": "US Stock",
+      "price": 64.62999725341797,
+      "rsi": 26.978060940619443,
+      "bb_lower": 66.29530989956187,
+      "bb_upper": 76.45669052768422,
+      "bb_position": -0.1638864547141391,
+      "volume_ratio": 1.1638773709014005,
+      "bb_width": 14.236410835168812,
+      "ret_5d": -6.536520857153354,
+      "ret_20d": -11.35647509642692,
+      "signal_score": 80,
+      "reasons": [
+        "RSI 과매도(27.0)",
+        "BB하단 터치"
+      ],
+      "sector": "ETF"
+    },
+    {
+      "symbol": "BTC/USDT",
+      "name": "Bitcoin",
+      "type": "Crypto",
+      "price": 67392.12,
+      "rsi": 30.356035146797154,
+      "bb_lower": 65218.23426858738,
+      "bb_upper": 74857.38573141262,
+      "bb_position": 0.22552667003900853,
+      "volume_ratio": 0.297017806467031,
+      "bb_width": 13.762782506799171,
+      "ret_5d": -5.529298944033307,
+      "ret_20d": -3.654839272763468,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(30.4)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "ETH/USDT",
+      "name": "Ethereum",
+      "type": "Crypto",
+      "price": 2047.0,
+      "rsi": 27.55995599559955,
+      "bb_lower": 1921.5309976719022,
+      "bb_upper": 2313.024002328097,
+      "bb_position": 0.320488491073508,
+      "volume_ratio": 0.30013584851077846,
+      "bb_width": 18.490396495319814,
+      "ret_5d": -5.625582060100874,
+      "ret_20d": 0.5150969059813116,
+      "signal_score": 65,
+      "reasons": [
+        "RSI 과매도(27.6)",
+        "BB하단 방향",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "SOL/USDT",
+      "name": "Solana",
+      "type": "Crypto",
+      "price": 83.59,
+      "rsi": 29.70711297071132,
+      "bb_lower": 80.35517240912519,
+      "bb_upper": 96.24582759087481,
+      "bb_position": 0.20356791799182744,
+      "volume_ratio": 0.3836153457601551,
+      "bb_width": 17.99611008063332,
+      "ret_5d": -8.844056706652125,
+      "ret_20d": -2.6665114112715327,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(29.7)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "XRP/USDT",
+      "name": "Ripple",
+      "type": "Crypto",
+      "price": 1.3556,
+      "rsi": 23.47112117780287,
+      "bb_lower": 1.2937529826998901,
+      "bb_upper": 1.5263770173001097,
+      "bb_position": 0.2658668413450835,
+      "volume_ratio": 0.28707396883137876,
+      "bb_width": 16.497397963939218,
+      "ret_5d": -4.164015553199022,
+      "ret_20d": -2.2145278799682733,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(23.5)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "BNB/USDT",
+      "name": "Binance Coin",
+      "type": "Crypto",
+      "price": 617.13,
+      "rsi": 26.770601336302903,
+      "bb_lower": 600.2383065344397,
+      "bb_upper": 682.9136934655603,
+      "bb_position": 0.20431344917240302,
+      "volume_ratio": 0.33437975319417607,
+      "bb_width": 12.88629670235803,
+      "ret_5d": -4.7138930920544695,
+      "ret_20d": -3.873831775700935,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(26.8)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "DOGE/USDT",
+      "name": "Dogecoin",
+      "type": "Crypto",
+      "price": 0.09275,
+      "rsi": 32.832832832832835,
+      "bb_lower": 0.08766607809092765,
+      "bb_upper": 0.10097892190907236,
+      "bb_position": 0.3818809848984505,
+      "volume_ratio": 0.37302932175733877,
+      "bb_width": 14.114176170208284,
+      "ret_5d": -3.566229985443962,
+      "ret_20d": -1.8726195514176973,
+      "signal_score": 65,
+      "reasons": [
+        "RSI 과매도(32.8)",
+        "BB하단 방향",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "ADA/USDT",
+      "name": "Cardano",
+      "type": "Crypto",
+      "price": 0.2474,
+      "rsi": 28.061224489795933,
+      "bb_lower": 0.23620555852632286,
+      "bb_upper": 0.28911444147367715,
+      "bb_position": 0.21157962236352468,
+      "volume_ratio": 0.2997459406710377,
+      "bb_width": 20.1434869973937,
+      "ret_5d": -8.539741219963034,
+      "ret_20d": -5.608546356352534,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(28.1)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "AVAX/USDT",
+      "name": "Avalanche",
+      "type": "Crypto",
+      "price": 8.84,
+      "rsi": 27.01949860724234,
+      "bb_lower": 8.473630948375293,
+      "bb_upper": 10.449369051624705,
+      "bb_position": 0.185434016291003,
+      "volume_ratio": 0.2346981813365256,
+      "bb_width": 20.881869716740606,
+      "ret_5d": -8.677685950413222,
+      "ret_20d": -7.24029380902413,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(27.0)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    },
+    {
+      "symbol": "LINK/USDT",
+      "name": "Chainlink",
+      "type": "Crypto",
+      "price": 8.69,
+      "rsi": 31.41993957703926,
+      "bb_lower": 8.256576427922795,
+      "bb_upper": 9.857423572077206,
+      "bb_position": 0.27074638178909005,
+      "volume_ratio": 0.27376500448103186,
+      "bb_width": 17.67524725797075,
+      "ret_5d": -7.25720384204909,
+      "ret_20d": -3.337041156840942,
+      "signal_score": 75,
+      "reasons": [
+        "RSI 과매도(31.4)",
+        "BB하단 근접",
+        "양봉"
+      ]
+    }
+  ]
+}
