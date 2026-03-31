@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DART Quality Oversold - 실시간 스캔 리포트 | 2026-03-31</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1f2e 0%, #2d3748 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .header .date {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .summary-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .summary-card .value {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #48bb78;
+            margin-bottom: 5px;
+        }
+        
+        .summary-card .label {
+            font-size: 0.95em;
+            color: #a0aec0;
+        }
+        
+        /* Strategy Box */
+        .strategy-box {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .strategy-box h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .criteria-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .criteria-item .check {
+            color: #48bb78;
+            font-size: 1.3em;
+        }
+        
+        /* Stock Table */
+        .table-container {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        
+        .table-container h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stock-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+        
+        .stock-table th {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 15px 12px;
+            text-align: center;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .stock-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .stock-table tr:hover {
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .stock-table .rank {
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stock-table .symbol {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .stock-table .name {
+            color: #a0aec0;
+        }
+        
+        .stock-table .price {
+            font-weight: 600;
+            color: #48bb78;
+        }
+        
+        .stock-table .rsi-low {
+            color: #fc8181;
+            font-weight: 600;
+        }
+        
+        .stock-table .rsi-mid {
+            color: #f6ad55;
+        }
+        
+        .stock-table .drop {
+            color: #fc8181;
+        }
+        
+        .stock-table .score-high {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+        
+        .stock-table .score-mid {
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        /* Top Picks */
+        .top-picks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .pick-card {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .pick-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .pick-card .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .pick-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        
+        .pick-card .code {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        .pick-card .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .pick-card .metric {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .pick-card .metric-value {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #48bb78;
+        }
+        
+        .pick-card .metric-label {
+            font-size: 0.8em;
+            color: #a0aec0;
+        }
+        
+        /* Chart Section */
+        .chart-section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-container {
+            height: 400px;
+            position: relative;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #718096;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .stock-table {
+                font-size: 0.85em;
+            }
+            
+            .stock-table th,
+            .stock-table td {
+                padding: 8px 5px;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .summary-card, .pick-card, .table-container {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .summary-card:nth-child(1) { animation-delay: 0.1s; }
+        .summary-card:nth-child(2) { animation-delay: 0.2s; }
+        .summary-card:nth-child(3) { animation-delay: 0.3s; }
+        .summary-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 DART Quality Oversold</h1>
+            <p class="subtitle">실적 탄탄 + 과매도 종목 실시간 스캔 리포트</p>
+            <span class="date">📅 2026년 3월 31일</span>
+        </div>
+        
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="icon">🎯</div>
+                <div class="value">126</div>
+                <div class="label">선정 종목</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">⭐</div>
+                <div class="value">4</div>
+                <div class="label">재무점수 100점</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">📉</div>
+                <div class="value">31.5</div>
+                <div class="label">평균 RSI</div>
+            </div>
+            <div class="summary-card">
+                <div class="icon">💰</div>
+                <div class="value">+2.66%</div>
+                <div class="label">예상 10일 수익률</div>
+            </div>
+        </div>
+        
+        <!-- Strategy -->
+        <div class="strategy-box">
+            <h2>🎯 선정 기준</h2>
+            <div class="criteria-grid">
+                <div class="criteria-item">
+                    <span class="check">✓</span>
+                    <span>재무점수 60점 이상 (ROE, 부채비율, 영업익률)</span>
+                </div>
+                <div class="criteria-item">
+                    <span class="check">✓</span>
+                    <span>RSI 40 이하 (과매도 상태)</span>
+                </div>
+                <div class="criteria-item">
+                    <span class="check">✓</span>
+                    <span>52주 고점 대비 -10% 이상 하락</span>
+                </div>
+                <div class="criteria-item">
+                    <span class="check">✓</span>
+                    <span>주가 1,000원 이상</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Picks -->
+        <h2 style="margin-bottom: 20px; color: #fff;">🏆 TOP 10 추천 종목</h2>
+        <div class="top-picks">
+            <div class="pick-card">
+                <span class="badge">재무점수 100</span>
+                <h3>피에스케이홀딩스</h3>
+                <p class="code">031980</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">97,800</div>
+                        <div class="metric-label">현재가</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">34.1</div>
+                        <div class="metric-label">RSI</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">-24.3%</div>
+                        <div class="metric-label">52주대비</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">27.1%</div>
+                        <div class="metric-label">ROE</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pick-card">
+                <span class="badge">재무점수 100</span>
+                <h3>제룡전기</h3>
+                <p class="code">033100</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">45,000</div>
+                        <div class="metric-label">현재가</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">34.7</div>
+                        <div class="metric-label">RSI</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">-35.8%</div>
+                        <div class="metric-label">52주대비</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">52.3%</div>
+                        <div class="metric-label">ROE</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pick-card">
+                <span class="badge">재무점수 100</span>
+                <h3>파크시스템스</h3>
+                <p class="code">140860</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">241,000</div>
+                        <div class="metric-label">현재가</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">33.1</div>
+                        <div class="metric-label">RSI</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">-25.0%</div>
+                        <div class="metric-label">52주대비</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">25.1%</div>
+                        <div class="metric-label">ROE</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pick-card">
+                <span class="badge">재무점수 100</span>
+                <h3>넥스틴</h3>
+                <p class="code">348210</p>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">68,400</div>
+                        <div class="metric-label">현재가</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">26.8</div>
+                        <div class="metric-label">RSI</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">-31.9%</div>
+                        <div class="metric-label">52주대비</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">31.1%</div>
+                        <div class="metric-label">ROE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full Stock Table -->
+        <div class="table-container">
+            <h2>📋 전체 선정 종목 (126개)</h2>
+            <table class="stock-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>종목코드</th>
+                        <th>종목명</th>
+                        <th>현재가</th>
+                        <th>RSI</th>
+                        <th>52주대비</th>
+                        <th>재무점수</th>
+                        <th>ROE</th>
+                        <th>부채비율</th>
+                    </tr>
+                </thead>
+                <tbody id="stockTableBody">
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <h2>📊 재무점수 분포</h2>
+            <div class="chart-container">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>DART Quality Oversold Scanner | 백테스트 기간: 2024-04-01 ~ 2026-03-05</p>
+            <p>총 6,545개 신호 분석 | 10일 보유 시 평균 수익률 +2.66%, 승률 56.9%</p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/lubanana/kstock-dashboard" target="_blank">GitHub Repository</a> |
+                <a href="https://open Dart.fss.or.kr" target="_blank">DART 전자공시</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85em; color: #4a5568;">
+                ⚠️ 본 리포트는 투자 참고 자료이며, 투자의 책임은 투자자 본인에게 있습니다.
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Stock data
+        const stockData = [
+            {rank: 1, symbol: "031980", name: "피에스케이홀딩스", price: 97800, rsi: 34.1, vsHigh: -24.3, score: 100, roe: 27.1, debt: 19.0},
+            {rank: 2, symbol: "033100", name: "제룡전기", price: 45000, rsi: 34.7, vsHigh: -35.8, score: 100, roe: 52.3, debt: 22.9},
+            {rank: 3, symbol: "140860", name: "파크시스템스", price: 241000, rsi: 33.1, vsHigh: -25.0, score: 100, roe: 25.1, debt: 46.0},
+            {rank: 4, symbol: "348210", name: "넥스틴", price: 68400, rsi: 26.8, vsHigh: -31.9, score: 100, roe: 31.1, debt: 20.4},
+            {rank: 5, symbol: "003350", name: "한국화장품제조", price: 43700, rsi: 34.9, vsHigh: -38.7, score: 95, roe: 37.5, debt: 47.2},
+            {rank: 6, symbol: "200670", name: "휘메딕스", price: 34600, rsi: 38.0, vsHigh: -55.2, score: 95, roe: 21.2, debt: 9.3},
+            {rank: 7, symbol: "041190", name: "우리기술투자", price: 6290, rsi: 37.9, vsHigh: -52.1, score: 94, roe: 26.4, debt: 20.7},
+            {rank: 8, symbol: "092130", name: "이크레더블", price: 14590, rsi: 32.8, vsHigh: -21.1, score: 92, roe: 33.6, debt: 21.3},
+            {rank: 9, symbol: "263860", name: "지니언스", price: 13070, rsi: 34.0, vsHigh: -56.4, score: 92, roe: 20.2, debt: 22.0},
+            {rank: 10, symbol: "042700", name: "한미반도체", price: 260500, rsi: 19.9, vsHigh: -22.4, score: 90, roe: 36.7, debt: 31.4},
+            {rank: 11, symbol: "058470", name: "리노공업", price: 98400, rsi: 28.8, vsHigh: -23.2, score: 90, roe: 23.5, debt: 5.6},
+            {rank: 12, symbol: "084370", name: "유진테크", price: 111300, rsi: 36.7, vsHigh: -27.3, score: 90, roe: 17.6, debt: 23.8},
+            {rank: 13, symbol: "095610", name: "테스", price: 56600, rsi: 33.9, vsHigh: -30.9, score: 90, roe: 20.9, debt: 24.0},
+            {rank: 14, symbol: "110990", name: "디아이티", price: 19030, rsi: 30.2, vsHigh: -23.7, score: 90, roe: 24.0, debt: 26.2},
+            {rank: 15, symbol: "114810", name: "한솔아이원스", price: 13410, rsi: 38.0, vsHigh: -29.6, score: 90, roe: 23.4, debt: 22.0},
+            {rank: 16, symbol: "450950", name: "아스테라시스", price: 11120, rsi: 39.0, vsHigh: -36.4, score: 90, roe: 17.1, debt: 15.0},
+            {rank: 17, symbol: "481070", name: "에이유브랜즈", price: 17000, rsi: 35.2, vsHigh: -41.7, score: 90, roe: 18.3, debt: 25.5},
+            {rank: 18, symbol: "035610", name: "솔본", price: 3480, rsi: 36.4, vsHigh: -23.9, score: 87, roe: 25.1, debt: 38.2},
+            {rank: 19, symbol: "080010", name: "이상네트웍스", price: 6520, rsi: 30.8, vsHigh: -16.8, score: 87, roe: 21.0, debt: 35.6},
+            {rank: 20, symbol: "339950", name: "아이비김영", price: 2330, rsi: 31.9, vsHigh: -27.6, score: 87, roe: 24.6, debt: 22.4},
+            {rank: 21, symbol: "013520", name: "화승코퍼레이션", price: 28300, rsi: 23.9, vsHigh: -24.5, score: 85, roe: 12.4, debt: 43.0},
+            {rank: 22, symbol: "014940", name: "오리엔탈정공", price: 10080, rsi: 39.1, vsHigh: -23.8, score: 85, roe: 12.9, debt: 10.3},
+            {rank: 23, symbol: "003800", name: "에이스침대", price: 57000, rsi: 40.0, vsHigh: -39.7, score: 85, roe: 11.4, debt: 58.1},
+            {rank: 24, symbol: "119850", name: "지엔씨에너지", price: 66500, rsi: 35.9, vsHigh: -42.1, score: 85, roe: 12.1, debt: 23.8},
+            {rank: 25, symbol: "073010", name: "케이에스피", price: 69600, rsi: 39.4, vsHigh: -23.2, score: 85, roe: 17.3, debt: 17.5},
+            {rank: 26, symbol: "253590", name: "네오셈", price: 19200, rsi: 33.1, vsHigh: -37.0, score: 85, roe: 11.7, debt: 5.0},
+            {rank: 27, symbol: "014680", name: "한솔케미칼", price: 121000, rsi: 35.6, vsHigh: -25.8, score: 75, roe: 10.6, debt: 71.6},
+            {rank: 28, symbol: "002960", name: "한국쉘석유", price: 353500, rsi: 30.6, vsHigh: -17.3, score: 75, roe: 19.9, debt: 82.8},
+            {rank: 29, symbol: "043150", name: "바텍", price: 17600, rsi: 37.3, vsHigh: -47.6, score: 75, roe: 9.5, debt: 16.7},
+            {rank: 30, symbol: "083930", name: "아바코", price: 25350, rsi: 29.5, vsHigh: -31.2, score: 75, roe: 8.9, debt: 8.5}
+        ];
+        
+        // Populate table
+        const tableBody = document.getElementById('stockTableBody');
+        stockData.forEach(stock => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td class="rank">${stock.rank}</td>
+                <td class="symbol">${stock.symbol}</td>
+                <td class="name">${stock.name}</td>
+                <td class="price">${stock.price.toLocaleString()}</td>
+                <td class="${stock.rsi < 25 ? 'rsi-low' : 'rsi-mid'}">${stock.rsi.toFixed(1)}</td>
+                <td class="drop">${stock.vsHigh.toFixed(1)}%</td>
+                <td><span class="${stock.score >= 90 ? 'score-high' : 'score-mid'}">${stock.score}</span></td>
+                <td>${stock.roe.toFixed(1)}%</td>
+                <td>${stock.debt.toFixed(1)}%</td>
+            `;
+            tableBody.appendChild(row);
+        });
+        
+        // Score distribution chart
+        const scoreCtx = document.getElementById('scoreChart').getContext('2d');
+        new Chart(scoreCtx, {
+            type: 'bar',
+            data: {
+                labels: ['100점', '95-99점', '90-94점', '85-89점', '80-84점', '75-79점', '70-74점', '65-69점', '60-64점'],
+                datasets: [{
+                    label: '종목 수',
+                    data: [4, 3, 13, 10, 10, 15, 20, 25, 26],
+                    backgroundColor: [
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(72, 187, 120, 0.7)',
+                        'rgba(72, 187, 120, 0.6)',
+                        'rgba(237, 137, 54, 0.8)',
+                        'rgba(237, 137, 54, 0.7)',
+                        'rgba(237, 137, 54, 0.6)',
+                        'rgba(160, 174, 192, 0.8)',
+                        'rgba(160, 174, 192, 0.7)',
+                        'rgba(160, 174, 192, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(72, 187, 120, 1)',
+                        'rgba(237, 137, 54, 1)',
+                        'rgba(237, 137, 54, 1)',
+                        'rgba(237, 137, 54, 1)',
+                        'rgba(160, 174, 192, 1)',
+                        'rgba(160, 174, 192, 1)',
+                        'rgba(160, 174, 192, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#a0aec0'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#a0aec0'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
