@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통합 스캔 리포트 - 20260331</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { 
+            text-align: center; padding: 40px 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px; margin-bottom: 30px;
+        }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; }
+        .summary-grid { 
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; 
+            margin-bottom: 30px;
+        }
+        .summary-card { 
+            background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;
+            text-align: center;
+        }
+        .summary-card .value { font-size: 28px; font-weight: bold; margin: 10px 0; }
+        .summary-card .label { color: #868e96; font-size: 14px; }
+        .section { margin-bottom: 40px; }
+        .section-title { 
+            font-size: 24px; margin-bottom: 20px; padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th { 
+            background: rgba(102,126,234,0.3); padding: 12px; text-align: center;
+            font-weight: bold;
+        }
+        td { padding: 10px; }
+        tr:hover { background: rgba(255,255,255,0.05); }
+        .footer { 
+            text-align: center; padding: 30px; color: #868e96; 
+            border-top: 1px solid #333; margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 통합 종목 스캔 리포트</h1>
+            <p>DART 재무 + 기술적 분석 + 네이버증권 웹 정보 + AI 최종 판단</p>
+            <p style="margin-top: 10px; font-size: 14px;">20260331</p>
+        </div>
+        
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="label">총 선정 종목</div>
+                <div class="value" style="color: #4dabf7;">15</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">S급 (강력매수)</div>
+                <div class="value" style="color: #00ff88;">0</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">A급 (매수)</div>
+                <div class="value" style="color: #4dabf7;">12</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">평균 RSI</div>
+                <div class="value" style="color: #fcc419;">nan</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🏆 TOP 20 추천 종목 (웹 정보 + 판단 근거 포함)</h2>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">1.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">화승코퍼레이션</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(013520)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">2,700원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">23.9</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-32.5%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">80/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #00ff88;">✓ 강한 과매도 (RSI 30-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 큰 하락 (-30%+), 반등 가능성</div><div style="margin: 4px 0; color: #00ff88;">✓ 저PER (8.3배) - 저평가</div><div style="margin: 4px 0; color: #fcc419;">○ 적정PBR (1.00배)</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +58%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 8.3배 | PBR: 1.00배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">2.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">넥스틴</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(348210)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">68,400원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">26.8</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-31.9%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">77/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #00ff88;">✓ 강한 과매도 (RSI 30-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 큰 하락 (-30%+), 반등 가능성</div><div style="margin: 4px 0; color: #fcc419;">○ 우수한 성장성 (순이익 +30%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 47.3배 | PBR: 9.79배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">3.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">한국화장품제조</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(003350)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">43,700원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">34.9</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-38.7%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">76/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 큰 하락 (-30%+), 반등 가능성</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +216%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 18.1배 | PBR: 3.98배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">4.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">휴메딕스</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(200670)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">34,600원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">38.0</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-55.2%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">75/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 급락 (-40%+), 바닥권 진입</div><div style="margin: 4px 0; color: #fcc419;">○ 적정PBR (2.12배)</div><div style="margin: 4px 0; color: #fcc419;">○ 우수한 성장성 (순이익 +49%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 40.5배 | PBR: 2.12배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">5.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">피에스케이홀딩스</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(031980)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">97,800원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">34.1</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-24.3%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">73/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +139%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 47.3배 | PBR: 9.79배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">6.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">제룡전기</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(033100)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">45,000원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">34.7</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-35.8%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">73/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 큰 하락 (-30%+), 반등 가능성</div><div style="margin: 4px 0; color: #fcc419;">○ 적정PBR (1.40배)</div><div style="margin: 4px 0; color: #fcc419;">○ 우수한 성장성 (순이익 +43%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 30.4배 | PBR: 1.40배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">7.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">파크시스템스</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(140860)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">241,000원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">33.1</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-25.0%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">73/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #ff6b6b;">△ 고PER (83.1배) - 고평가 우려</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +74%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 83.1배 | PBR: 4.41배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">8.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">오리엔탈정공</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(014940)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">6,260원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">39.1</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-51.8%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">73/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 급락 (-40%+), 바닥권 진입</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +184%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 39.4배 | PBR: 5.03배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">9.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">우리기술투자</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(041190)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">6,290원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">37.9</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-52.1%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">73/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 급락 (-40%+), 바닥권 진입</div><div style="margin: 4px 0; color: #ff6b6b;">△ 고PER (533.1배) - 고평가 우려</div><div style="margin: 4px 0; color: #fcc419;">○ 적정PBR (1.27배)</div><div style="margin: 4px 0; color: #fcc419;">○ 양호한 성장성 (순이익 +14%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 533.1배 | PBR: 1.27배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">10.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">리노공업</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(058470)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">98,400원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">28.8</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-23.2%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">72/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #00ff88;">✓ 강한 과매도 (RSI 30-)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #ff6b6b;">△ 고PER (63.1배) - 고평가 우려</div><div style="margin: 4px 0; color: #fcc419;">○ 양호한 성장성 (순이익 +3%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 63.1배 | PBR: 5.42배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">11.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">삼화전기</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(009470)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">35,750원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">32.3</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">-39.9%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">71/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #00ff88;">✓ 52주 고점 대비 큰 하락 (-30%+), 반등 가능성</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +219%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PBR: 8.23배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #4dabf7;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #4dabf7;">12.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">한미반도체</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(042700)</span>
+                    </div>
+                    <div style="background: #4dabf7; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        A급 (매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">260,500원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #ff6b6b; font-size: 18px; font-weight: bold;">19.9</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-22.4%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #4dabf7; font-size: 18px; font-weight: bold;">70/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 매우 우수 (90점+)</div><div style="margin: 4px 0; color: #00ff88;">✓ 극심한 과매도 (RSI 20-)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #ff6b6b;">△ 고PER (63.1배) - 고평가 우려</div><div style="margin: 4px 0; color: #ff6b6b;">△ 성장성 둔화 (순이익 -43%)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 63.1배 | PBR: 5.42배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(77,171,247, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #4dabf7;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #4dabf7; font-weight: bold;">매수 적기. 분할 매수 전략 권장</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #fcc419;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #fcc419;">13.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">한화에어로스페이스</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(012450)</span>
+                    </div>
+                    <div style="background: #fcc419; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        B급 (관망 후 매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">1,308,000원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">36.3</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-21.0%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">68/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #ff6b6b;">△ 고PER (52.9배) - 고평가 우려</div><div style="margin: 4px 0; color: #00ff88;">✓ 높은 성장성 (순이익 +118%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 52.9배 | PBR: 9.30배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(252,196,25, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #fcc419;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #fcc419; font-weight: bold;">추가 하락 기다리거나 소액 매수</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #fcc419;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #fcc419;">14.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">에이스침대</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(003800)</span>
+                    </div>
+                    <div style="background: #fcc419; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        B급 (관망 후 매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">33,050원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">40.0</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-17.1%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">67/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 과매도 상태 (RSI 40-)</div><div style="margin: 4px 0; color: #ff6b6b;">△ 52주 고점 대비 소폭 하락 (-10%+), 추가 하락 가능성</div><div style="margin: 4px 0; color: #00ff88;">✓ 저PBR (0.33배) - 자산 대비 저평가</div><div style="margin: 4px 0; color: #fcc419;">○ 우수한 성장성 (순이익 +38%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 18.8배 | PBR: 0.33배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(252,196,25, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #fcc419;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #fcc419; font-weight: bold;">추가 하락 기다리거나 소액 매수</div>
+                </div>
+            </div>
+            
+            <div class="stock-card" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+                 border-radius: 12px; padding: 20px; margin: 15px 0; border-left: 4px solid #fcc419;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <div>
+                        <span style="font-size: 24px; font-weight: bold; color: #fcc419;">15.</span>
+                        <span style="font-size: 20px; font-weight: bold; color: #fff; margin-left: 10px;">서희건설</span>
+                        <span style="color: #adb5bd; margin-left: 10px;">(035890)</span>
+                    </div>
+                    <div style="background: #fcc419; color: #000; padding: 5px 15px; 
+                         border-radius: 20px; font-weight: bold;">
+                        B급 (관망 후 매수)
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">현재가</div>
+                        <div style="color: #fff; font-size: 18px; font-weight: bold;">1,623원</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">RSI</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">nan</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">52주대비</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">-22.3%</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px;">종합점수</div>
+                        <div style="color: #fcc419; font-size: 18px; font-weight: bold;">57/100</div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📋 판단 근거</div>
+                        <div style="margin: 4px 0; color: #00ff88;">✓ 재무상태 우수 (80점+)</div><div style="margin: 4px 0; color: #fcc419;">○ 52주 고점 대비 하락 (-20%+), 가치 매수 구간</div><div style="margin: 4px 0; color: #00ff88;">✓ 저PER (7.8배) - 저평가</div><div style="margin: 4px 0; color: #00ff88;">✓ 저PBR (0.53배) - 자산 대비 저평가</div><div style="margin: 4px 0; color: #fcc419;">○ 우수한 성장성 (순이익 +33%+)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px;">
+                        <div style="color: #868e96; font-size: 12px; margin-bottom: 8px;">📱 네이버증권</div>
+                        <div style="color: #ced4da; font-size: 13px;">PER: 7.8배 | PBR: 0.53배</div>
+                        
+                    </div>
+                </div>
+                
+                <div style="background: rgba(252,196,25, 0.1); 
+                     padding: 12px; border-radius: 8px; border-left: 3px solid #fcc419;">
+                    <div style="color: #868e96; font-size: 12px;">💡 추천</div>
+                    <div style="color: #fcc419; font-weight: bold;">추가 하락 기다리거나 소액 매수</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📋 전체 선정 종목 목록</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>등급</th>
+                        <th>종목코드</th>
+                        <th>종목명</th>
+                        <th>현재가</th>
+                        <th>RSI</th>
+                        <th>52주대비</th>
+                        <th>재무점수</th>
+                        <th>PER</th>
+                        <th>PBR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">1</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">013520</td>
+                <td style="padding: 10px; font-weight: bold;">화승코퍼레이션</td>
+                <td style="padding: 10px; text-align: right;">2,700</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">23.9</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-32.5%</td>
+                <td style="padding: 10px; text-align: right;">85</td>
+                <td style="padding: 10px; text-align: center;">8.3</td>
+                <td style="padding: 10px; text-align: center;">1.00</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">2</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">348210</td>
+                <td style="padding: 10px; font-weight: bold;">넥스틴</td>
+                <td style="padding: 10px; text-align: right;">68,400</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">26.8</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-31.9%</td>
+                <td style="padding: 10px; text-align: right;">100</td>
+                <td style="padding: 10px; text-align: center;">47.3</td>
+                <td style="padding: 10px; text-align: center;">9.79</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">3</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">003350</td>
+                <td style="padding: 10px; font-weight: bold;">한국화장품제조</td>
+                <td style="padding: 10px; text-align: right;">43,700</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">34.9</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-38.7%</td>
+                <td style="padding: 10px; text-align: right;">95</td>
+                <td style="padding: 10px; text-align: center;">18.1</td>
+                <td style="padding: 10px; text-align: center;">3.98</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">4</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">200670</td>
+                <td style="padding: 10px; font-weight: bold;">휴메딕스</td>
+                <td style="padding: 10px; text-align: right;">34,600</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">38.0</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-55.2%</td>
+                <td style="padding: 10px; text-align: right;">95</td>
+                <td style="padding: 10px; text-align: center;">40.5</td>
+                <td style="padding: 10px; text-align: center;">2.12</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">5</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">031980</td>
+                <td style="padding: 10px; font-weight: bold;">피에스케이홀딩스</td>
+                <td style="padding: 10px; text-align: right;">97,800</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">34.1</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-24.3%</td>
+                <td style="padding: 10px; text-align: right;">100</td>
+                <td style="padding: 10px; text-align: center;">47.3</td>
+                <td style="padding: 10px; text-align: center;">9.79</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">6</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">033100</td>
+                <td style="padding: 10px; font-weight: bold;">제룡전기</td>
+                <td style="padding: 10px; text-align: right;">45,000</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">34.7</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-35.8%</td>
+                <td style="padding: 10px; text-align: right;">100</td>
+                <td style="padding: 10px; text-align: center;">30.4</td>
+                <td style="padding: 10px; text-align: center;">1.40</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">7</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">140860</td>
+                <td style="padding: 10px; font-weight: bold;">파크시스템스</td>
+                <td style="padding: 10px; text-align: right;">241,000</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">33.1</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-25.0%</td>
+                <td style="padding: 10px; text-align: right;">100</td>
+                <td style="padding: 10px; text-align: center;">83.1</td>
+                <td style="padding: 10px; text-align: center;">4.41</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">8</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">014940</td>
+                <td style="padding: 10px; font-weight: bold;">오리엔탈정공</td>
+                <td style="padding: 10px; text-align: right;">6,260</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">39.1</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-51.8%</td>
+                <td style="padding: 10px; text-align: right;">85</td>
+                <td style="padding: 10px; text-align: center;">39.4</td>
+                <td style="padding: 10px; text-align: center;">5.03</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">9</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">041190</td>
+                <td style="padding: 10px; font-weight: bold;">우리기술투자</td>
+                <td style="padding: 10px; text-align: right;">6,290</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">37.9</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-52.1%</td>
+                <td style="padding: 10px; text-align: right;">94</td>
+                <td style="padding: 10px; text-align: center;">533.1</td>
+                <td style="padding: 10px; text-align: center;">1.27</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">10</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">058470</td>
+                <td style="padding: 10px; font-weight: bold;">리노공업</td>
+                <td style="padding: 10px; text-align: right;">98,400</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">28.8</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-23.2%</td>
+                <td style="padding: 10px; text-align: right;">90</td>
+                <td style="padding: 10px; text-align: center;">63.1</td>
+                <td style="padding: 10px; text-align: center;">5.42</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">11</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">009470</td>
+                <td style="padding: 10px; font-weight: bold;">삼화전기</td>
+                <td style="padding: 10px; text-align: right;">35,750</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">32.3</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">-39.9%</td>
+                <td style="padding: 10px; text-align: right;">82</td>
+                <td style="padding: 10px; text-align: center;">-</td>
+                <td style="padding: 10px; text-align: center;">8.23</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">12</td>
+                <td style="padding: 10px;"><span style="color: #4dabf7; font-weight: bold;">A</span></td>
+                <td style="padding: 10px;">042700</td>
+                <td style="padding: 10px; font-weight: bold;">한미반도체</td>
+                <td style="padding: 10px; text-align: right;">260,500</td>
+                <td style="padding: 10px; text-align: right; color: #ff6b6b;">19.9</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-22.4%</td>
+                <td style="padding: 10px; text-align: right;">90</td>
+                <td style="padding: 10px; text-align: center;">63.1</td>
+                <td style="padding: 10px; text-align: center;">5.42</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">13</td>
+                <td style="padding: 10px;"><span style="color: #fcc419; font-weight: bold;">B</span></td>
+                <td style="padding: 10px;">012450</td>
+                <td style="padding: 10px; font-weight: bold;">한화에어로스페이스</td>
+                <td style="padding: 10px; text-align: right;">1,308,000</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">36.3</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-21.0%</td>
+                <td style="padding: 10px; text-align: right;">80</td>
+                <td style="padding: 10px; text-align: center;">52.9</td>
+                <td style="padding: 10px; text-align: center;">9.30</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">14</td>
+                <td style="padding: 10px;"><span style="color: #fcc419; font-weight: bold;">B</span></td>
+                <td style="padding: 10px;">003800</td>
+                <td style="padding: 10px; font-weight: bold;">에이스침대</td>
+                <td style="padding: 10px; text-align: right;">33,050</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">40.0</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-17.1%</td>
+                <td style="padding: 10px; text-align: right;">85</td>
+                <td style="padding: 10px; text-align: center;">18.8</td>
+                <td style="padding: 10px; text-align: center;">0.33</td>
+            </tr>
+            
+            <tr style="border-bottom: 1px solid #333;">
+                <td style="padding: 10px; text-align: center;">15</td>
+                <td style="padding: 10px;"><span style="color: #fcc419; font-weight: bold;">B</span></td>
+                <td style="padding: 10px;">035890</td>
+                <td style="padding: 10px; font-weight: bold;">서희건설</td>
+                <td style="padding: 10px; text-align: right;">1,623</td>
+                <td style="padding: 10px; text-align: right; color: #fff;">nan</td>
+                <td style="padding: 10px; text-align: right; color: #fcc419;">-22.3%</td>
+                <td style="padding: 10px; text-align: right;">85</td>
+                <td style="padding: 10px; text-align: center;">7.8</td>
+                <td style="padding: 10px; text-align: center;">0.53</td>
+            </tr>
+            
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>⚠️ 본 리포트는 투자 참고 자료이며, 투자 결정은 본인의 책임하에 신중히 결정하시기 바랍니다.</p>
+            <p style="margin-top: 10px;">Generated by DART Integrated Scanner | 2026-03-31 14:23</p>
+        </div>
+    </div>
+</body>
+</html>
