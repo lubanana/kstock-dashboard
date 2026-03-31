@@ -1,0 +1,755 @@
+[
+  {
+    "symbol": "013520",
+    "name": "화승코퍼레이션",
+    "price": 2700.0,
+    "rsi": 23.94366197183099,
+    "vs_52w_high": -32.5,
+    "quality_score": 85,
+    "roe": 21.892416209613252,
+    "debt_ratio": 255.948579011002,
+    "op_margin": 20.63702671861316,
+    "revenue_growth": 57.129276646206385,
+    "profit_growth": 57.928254701819924,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 8.26,
+      "pbr": 1.0,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 80,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "저PER (8.3배) - 저평가"
+      },
+      {
+        "type": "neutral",
+        "text": "적정PBR (1.00배)"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +58%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "348210",
+    "name": "넥스틴",
+    "price": 68400.0,
+    "rsi": 26.77966101694915,
+    "vs_52w_high": -31.872509960159363,
+    "quality_score": 100,
+    "roe": 31.052320351849204,
+    "debt_ratio": 20.411569699027147,
+    "op_margin": 41.30740327703171,
+    "revenue_growth": 29.329167944621094,
+    "profit_growth": 30.199930770805754,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 47.29,
+      "pbr": 9.79,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 77,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +30%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "003350",
+    "name": "한국화장품제조",
+    "price": 43700.0,
+    "rsi": 34.903047091412745,
+    "vs_52w_high": -38.70967741935484,
+    "quality_score": 95,
+    "roe": 37.52587560799409,
+    "debt_ratio": 47.24416713528028,
+    "op_margin": 15.850793467322838,
+    "revenue_growth": 53.16686251831791,
+    "profit_growth": 215.63991265695074,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 18.05,
+      "pbr": 3.98,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 76,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +216%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "200670",
+    "name": "휴메딕스",
+    "price": 34600.0,
+    "rsi": 38.02816901408451,
+    "vs_52w_high": -55.181347150259064,
+    "quality_score": 95,
+    "roe": 21.159050563127522,
+    "debt_ratio": 9.285096356896549,
+    "op_margin": 26.651347206121486,
+    "revenue_growth": 6.303874548968416,
+    "profit_growth": 49.19758955275512,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 40.47,
+      "pbr": 2.12,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 75,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "neutral",
+        "text": "적정PBR (2.12배)"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +49%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "031980",
+    "name": "피에스케이홀딩스",
+    "price": 97800.0,
+    "rsi": 34.06593406593406,
+    "vs_52w_high": -24.30340557275542,
+    "quality_score": 100,
+    "roe": 27.09240447505229,
+    "debt_ratio": 19.028495505005253,
+    "op_margin": 41.057845594592216,
+    "revenue_growth": 127.5291807432958,
+    "profit_growth": 138.91852917883648,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 47.29,
+      "pbr": 9.79,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 73,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +139%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "033100",
+    "name": "제룡전기",
+    "price": 45000.0,
+    "rsi": 34.705882352941174,
+    "vs_52w_high": -35.805991440798856,
+    "quality_score": 100,
+    "roe": 52.27849374477185,
+    "debt_ratio": 22.91540748280067,
+    "op_margin": 37.24080567907114,
+    "revenue_growth": 42.837020897074225,
+    "profit_growth": 43.079175524550536,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 30.39,
+      "pbr": 1.4,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 73,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "neutral",
+        "text": "적정PBR (1.40배)"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +43%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "140860",
+    "name": "파크시스템스",
+    "price": 241000.0,
+    "rsi": 33.085501858736066,
+    "vs_52w_high": -25.038880248833596,
+    "quality_score": 100,
+    "roe": 25.13463076632138,
+    "debt_ratio": 45.98253328856831,
+    "op_margin": 22.009542174927418,
+    "revenue_growth": 20.89236252893693,
+    "profit_growth": 74.00535184945683,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 83.12,
+      "pbr": 4.41,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 73,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (83.1배) - 고평가 우려"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +74%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "014940",
+    "name": "오리엔탈정공",
+    "price": 6260.0,
+    "rsi": 39.10034602076125,
+    "vs_52w_high": -51.80908391070054,
+    "quality_score": 85,
+    "roe": 23.227937729302003,
+    "debt_ratio": 95.84364319876202,
+    "op_margin": 11.995630927012519,
+    "revenue_growth": 31.595074358845466,
+    "profit_growth": 183.69135559083495,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 39.44,
+      "pbr": 5.03,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 73,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +184%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "041190",
+    "name": "우리기술투자",
+    "price": 6290.0,
+    "rsi": 37.916666666666664,
+    "vs_52w_high": -52.13089802130898,
+    "quality_score": 94,
+    "roe": 26.374438592309733,
+    "debt_ratio": 20.652786358618744,
+    "op_margin": 91.38228382124362,
+    "revenue_growth": 12.597826276592587,
+    "profit_growth": 14.208634237999215,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 533.12,
+      "pbr": 1.27,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 73,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (533.1배) - 고평가 우려"
+      },
+      {
+        "type": "neutral",
+        "text": "적정PBR (1.27배)"
+      },
+      {
+        "type": "neutral",
+        "text": "양호한 성장성 (순이익 +14%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "058470",
+    "name": "리노공업",
+    "price": 98400.0,
+    "rsi": 28.77263581488934,
+    "vs_52w_high": -23.244929797191887,
+    "quality_score": 90,
+    "roe": 23.53553328640969,
+    "debt_ratio": 5.5915581062463655,
+    "op_margin": 44.64684035099887,
+    "revenue_growth": 8.84802060649207,
+    "profit_growth": 3.0199023593344143,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 63.08,
+      "pbr": 5.42,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 72,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (63.1배) - 고평가 우려"
+      },
+      {
+        "type": "neutral",
+        "text": "양호한 성장성 (순이익 +3%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "009470",
+    "name": "삼화전기",
+    "price": 35750.0,
+    "rsi": 32.283464566929126,
+    "vs_52w_high": -39.91596638655462,
+    "quality_score": 82,
+    "roe": 23.029008347924677,
+    "debt_ratio": 54.503525643728125,
+    "op_margin": 10.633688170496946,
+    "revenue_growth": 15.146991207079113,
+    "profit_growth": 219.0840200590782,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": null,
+      "pbr": 8.23,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 71,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +219%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "042700",
+    "name": "한미반도체",
+    "price": 260500.0,
+    "rsi": 19.90521327014217,
+    "vs_52w_high": -22.35469448584203,
+    "quality_score": 90,
+    "roe": 36.67569787535269,
+    "debt_ratio": 31.426939814094002,
+    "op_margin": 45.69399702075971,
+    "revenue_growth": 251.5013925922922,
+    "profit_growth": -42.546730077416086,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 63.08,
+      "pbr": 5.42,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 70,
+    "final_grade": "A",
+    "final_grade_text": "A급 (매수)",
+    "final_recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "극심한 과매도 (RSI 20-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (63.1배) - 고평가 우려"
+      },
+      {
+        "type": "warning",
+        "text": "성장성 둔화 (순이익 -43%)"
+      }
+    ]
+  },
+  {
+    "symbol": "012450",
+    "name": "한화에어로스페이스",
+    "price": 1308000.0,
+    "rsi": 36.26168224299065,
+    "vs_52w_high": -20.966767371601208,
+    "quality_score": 80,
+    "roe": 23.295749411469508,
+    "debt_ratio": 281.3416560721179,
+    "op_margin": 15.408008069922552,
+    "revenue_growth": 20.099522391221907,
+    "profit_growth": 117.93468641424427,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 52.88,
+      "pbr": 9.3,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 68,
+    "final_grade": "B",
+    "final_grade_text": "B급 (관망 후 매수)",
+    "final_recommendation": "추가 하락 기다리거나 소액 매수",
+    "grade_color": "#fcc419",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (52.9배) - 고평가 우려"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +118%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "003800",
+    "name": "에이스침대",
+    "price": 33050.0,
+    "rsi": 39.99999999999999,
+    "vs_52w_high": -17.063989962358846,
+    "quality_score": 85,
+    "roe": 12.375729031024147,
+    "debt_ratio": 10.714686030141053,
+    "op_margin": 20.318064942141717,
+    "revenue_growth": 6.3891726792660615,
+    "profit_growth": 38.159475936741465,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 18.84,
+      "pbr": 0.33,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 67,
+    "final_grade": "B",
+    "final_grade_text": "B급 (관망 후 매수)",
+    "final_recommendation": "추가 하락 기다리거나 소액 매수",
+    "grade_color": "#fcc419",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "warning",
+        "text": "52주 고점 대비 소폭 하락 (-10%+), 추가 하락 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "저PBR (0.33배) - 자산 대비 저평가"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +38%+)"
+      }
+    ]
+  },
+  {
+    "symbol": "035890",
+    "name": "서희건설",
+    "price": 1623.0,
+    "rsi": NaN,
+    "vs_52w_high": -22.3444976076555,
+    "quality_score": 85,
+    "roe": 21.886417883054417,
+    "debt_ratio": 58.20592677094988,
+    "op_margin": 15.997693155299894,
+    "revenue_growth": 2.198370309987938,
+    "profit_growth": 33.05764603674447,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 7.78,
+      "pbr": 0.53,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "final_score": 57,
+    "final_grade": "B",
+    "final_grade_text": "B급 (관망 후 매수)",
+    "final_recommendation": "추가 하락 기다리거나 소액 매수",
+    "grade_color": "#fcc419",
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "positive",
+        "text": "저PER (7.8배) - 저평가"
+      },
+      {
+        "type": "positive",
+        "text": "저PBR (0.53배) - 자산 대비 저평가"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +33%+)"
+      }
+    ]
+  }
+]
