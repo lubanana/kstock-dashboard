@@ -437,11 +437,11 @@ class EnhancedIntegratedScanner:
         today = datetime.now().strftime('%Y-%m-%d')
         sector_strength = self.sector_analyzer.calculate_sector_strength(today)
         
-        # 섹터 본 추가 (0-20점)
+        # 섹터 본 추가 (0-10점) - 참고용으로 가중치 축소
         sector_bonus = 0
         if sector in sector_strength:
             strength = sector_strength[sector]['strength']
-            sector_bonus = min(max(strength * 2, 0), 20)
+            sector_bonus = min(max(strength * 1, 0), 10)  # ×2 → ×1, max 20 → 10
             stock['sector_strength'] = strength
             stock['sector_rank'] = list(sector_strength.keys()).index(sector) + 1
         else:
