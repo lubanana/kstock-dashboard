@@ -1,0 +1,1174 @@
+[
+  {
+    "symbol": "013520",
+    "name": "화승코퍼레이션",
+    "sector": "기타",
+    "price": 2700.0,
+    "rsi": 23.94366197183099,
+    "vs_52w_high": -32.5,
+    "quality_score": 85,
+    "roe": 21.892416209613252,
+    "debt_ratio": 255.948579011002,
+    "op_margin": 20.63702671861316,
+    "revenue_growth": 57.129276646206385,
+    "profit_growth": 57.928254701819924,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 8.28,
+      "pbr": 1.0,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 80,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "저PER (8.3배) - 저평가"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +58%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 90,
+    "score_breakdown": {
+      "base_score": 80,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "S",
+    "grade_text": "핵심 후보",
+    "recommendation": "즉시 매수 고려. 10일 보유 시 +2.66% 예상",
+    "grade_color": "#00ff88"
+  },
+  {
+    "symbol": "263860",
+    "name": "지니언스",
+    "sector": "기타",
+    "price": 13070.0,
+    "rsi": 33.98268398268398,
+    "vs_52w_high": -56.43333333333334,
+    "quality_score": 92,
+    "roe": 20.19968149429031,
+    "debt_ratio": 22.035003930413065,
+    "op_margin": 19.836387539551495,
+    "revenue_growth": 15.652939702055235,
+    "profit_growth": 75.81763978266348,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 40.0,
+      "pbr": 3.23,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 78,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +76%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 88,
+    "score_breakdown": {
+      "base_score": 78,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "110990",
+    "name": "디아이티",
+    "sector": "기타",
+    "price": 19030.0,
+    "rsi": 30.221130221130224,
+    "vs_52w_high": -23.727454909819638,
+    "quality_score": 90,
+    "roe": 15.795538433434956,
+    "debt_ratio": 13.143666199199517,
+    "op_margin": 20.650107890005195,
+    "revenue_growth": 8.961315415677838,
+    "profit_growth": 129.1183220536551,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 9.98,
+      "pbr": 1.37,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 78,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "positive",
+        "text": "저PER (10.0배) - 저평가"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +129%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 88,
+    "score_breakdown": {
+      "base_score": 78,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "348210",
+    "name": "넥스틴",
+    "sector": "반도체",
+    "price": 68400.0,
+    "rsi": 26.77966101694915,
+    "vs_52w_high": -31.872509960159363,
+    "quality_score": 100,
+    "roe": 31.052320351849204,
+    "debt_ratio": 20.411569699027147,
+    "op_margin": 41.30740327703171,
+    "revenue_growth": 29.329167944621094,
+    "profit_growth": 30.199930770805754,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 47.34,
+      "pbr": 9.8,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 77,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +30%+)"
+      }
+    ],
+    "sector_strength": 9.2,
+    "sector_rank": 2,
+    "watch_count": 0,
+    "final_score": 86.2,
+    "score_breakdown": {
+      "base_score": 77,
+      "sector_bonus": 9.2,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "003350",
+    "name": "한국화장품제조",
+    "sector": "기타",
+    "price": 43700.0,
+    "rsi": 34.903047091412745,
+    "vs_52w_high": -38.70967741935484,
+    "quality_score": 95,
+    "roe": 37.52587560799409,
+    "debt_ratio": 47.24416713528028,
+    "op_margin": 15.850793467322838,
+    "revenue_growth": 53.16686251831791,
+    "profit_growth": 215.63991265695074,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 18.12,
+      "pbr": 3.99,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 76,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +216%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 86,
+    "score_breakdown": {
+      "base_score": 76,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "095610",
+    "name": "테스",
+    "sector": "기타",
+    "price": 56600.0,
+    "rsi": 33.94736842105263,
+    "vs_52w_high": -30.89133089133089,
+    "quality_score": 90,
+    "roe": 15.077066296451521,
+    "debt_ratio": 15.323167866633547,
+    "op_margin": 16.025526121972128,
+    "revenue_growth": 63.387080504426365,
+    "profit_growth": 2096.8623239834487,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 47.34,
+      "pbr": 9.8,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 76,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +2097%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 86,
+    "score_breakdown": {
+      "base_score": 76,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "200670",
+    "name": "휴메딕스",
+    "sector": "기타",
+    "price": 34600.0,
+    "rsi": 38.02816901408451,
+    "vs_52w_high": -55.181347150259064,
+    "quality_score": 95,
+    "roe": 21.159050563127522,
+    "debt_ratio": 9.285096356896549,
+    "op_margin": 26.651347206121486,
+    "revenue_growth": 6.303874548968416,
+    "profit_growth": 49.19758955275512,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 40.47,
+      "pbr": 2.12,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 75,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +49%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 85,
+    "score_breakdown": {
+      "base_score": 75,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "200670",
+    "name": "휴메딕스",
+    "sector": "기타",
+    "price": 34600.0,
+    "rsi": 38.02816901408451,
+    "vs_52w_high": -55.181347150259064,
+    "quality_score": 95,
+    "roe": 21.159050563127522,
+    "debt_ratio": 9.285096356896549,
+    "op_margin": 26.651347206121486,
+    "revenue_growth": 6.303874548968416,
+    "profit_growth": 49.19758955275512,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 40.47,
+      "pbr": 2.12,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 75,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +49%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 85,
+    "score_breakdown": {
+      "base_score": 75,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "058470",
+    "name": "리노공업",
+    "sector": "반도체",
+    "price": 98400.0,
+    "rsi": 28.77263581488934,
+    "vs_52w_high": -23.244929797191887,
+    "quality_score": 90,
+    "roe": 23.53553328640969,
+    "debt_ratio": 5.5915581062463655,
+    "op_margin": 44.64684035099887,
+    "revenue_growth": 8.84802060649207,
+    "profit_growth": 3.0199023593344143,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 63.14,
+      "pbr": 5.42,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 72,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "강한 과매도 (RSI 30-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (63.1배) - 고평가 우려"
+      },
+      {
+        "type": "neutral",
+        "text": "양호한 성장성 (순이익 +3%+)"
+      }
+    ],
+    "sector_strength": 9.2,
+    "sector_rank": 2,
+    "watch_count": 1,
+    "final_score": 84.2,
+    "score_breakdown": {
+      "base_score": 72,
+      "sector_bonus": 9.2,
+      "watch_bonus": 3
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "031980",
+    "name": "피에스케이홀딩스",
+    "sector": "기타",
+    "price": 97800.0,
+    "rsi": 34.06593406593406,
+    "vs_52w_high": -24.30340557275542,
+    "quality_score": 100,
+    "roe": 27.09240447505229,
+    "debt_ratio": 19.028495505005253,
+    "op_margin": 41.057845594592216,
+    "revenue_growth": 127.5291807432958,
+    "profit_growth": 138.91852917883648,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 47.34,
+      "pbr": 9.8,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 73,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +139%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 83,
+    "score_breakdown": {
+      "base_score": 73,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "033100",
+    "name": "제룡전기",
+    "sector": "기타",
+    "price": 45000.0,
+    "rsi": 34.705882352941174,
+    "vs_52w_high": -35.805991440798856,
+    "quality_score": 100,
+    "roe": 52.27849374477185,
+    "debt_ratio": 22.91540748280067,
+    "op_margin": 37.24080567907114,
+    "revenue_growth": 42.837020897074225,
+    "profit_growth": 43.079175524550536,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 30.27,
+      "pbr": 1.4,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 73,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +43%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 83,
+    "score_breakdown": {
+      "base_score": 73,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "140860",
+    "name": "파크시스템스",
+    "sector": "기타",
+    "price": 241000.0,
+    "rsi": 33.085501858736066,
+    "vs_52w_high": -25.038880248833596,
+    "quality_score": 100,
+    "roe": 25.13463076632138,
+    "debt_ratio": 45.98253328856831,
+    "op_margin": 22.009542174927418,
+    "revenue_growth": 20.89236252893693,
+    "profit_growth": 74.00535184945683,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 83.01,
+      "pbr": 4.4,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 73,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (83.0배) - 고평가 우려"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +74%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 83,
+    "score_breakdown": {
+      "base_score": 73,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "041190",
+    "name": "우리기술투자",
+    "sector": "기타",
+    "price": 6290.0,
+    "rsi": 37.916666666666664,
+    "vs_52w_high": -52.13089802130898,
+    "quality_score": 94,
+    "roe": 26.374438592309733,
+    "debt_ratio": 20.652786358618744,
+    "op_margin": 91.38228382124362,
+    "revenue_growth": 12.597826276592587,
+    "profit_growth": 14.208634237999215,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 42.58,
+      "pbr": 2.93,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 73,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "neutral",
+        "text": "양호한 성장성 (순이익 +14%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 83,
+    "score_breakdown": {
+      "base_score": 73,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "014940",
+    "name": "오리엔탈정공",
+    "sector": "기타",
+    "price": 6260.0,
+    "rsi": 39.10034602076125,
+    "vs_52w_high": -51.80908391070054,
+    "quality_score": 85,
+    "roe": 23.227937729302003,
+    "debt_ratio": 95.84364319876202,
+    "op_margin": 11.995630927012519,
+    "revenue_growth": 31.595074358845466,
+    "profit_growth": 183.69135559083495,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 39.44,
+      "pbr": 5.03,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 73,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 급락 (-40%+), 바닥권 진입"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +184%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 83,
+    "score_breakdown": {
+      "base_score": 73,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "009470",
+    "name": "삼화전기",
+    "sector": "기타",
+    "price": 35750.0,
+    "rsi": 32.283464566929126,
+    "vs_52w_high": -39.91596638655462,
+    "quality_score": 82,
+    "roe": 23.029008347924677,
+    "debt_ratio": 54.503525643728125,
+    "op_margin": 10.633688170496946,
+    "revenue_growth": 15.146991207079113,
+    "profit_growth": 219.0840200590782,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": null,
+      "pbr": 8.23,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 71,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "positive",
+        "text": "52주 고점 대비 큰 하락 (-30%+), 반등 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +219%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 81,
+    "score_breakdown": {
+      "base_score": 71,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "042700",
+    "name": "한미반도체",
+    "sector": "반도체",
+    "price": 260500.0,
+    "rsi": 19.90521327014217,
+    "vs_52w_high": -22.35469448584203,
+    "quality_score": 90,
+    "roe": 36.67569787535269,
+    "debt_ratio": 31.426939814094002,
+    "op_margin": 45.69399702075971,
+    "revenue_growth": 251.5013925922922,
+    "profit_growth": -42.546730077416086,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 63.14,
+      "pbr": 5.42,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 70,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "positive",
+        "text": "극심한 과매도 (RSI 20-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (63.1배) - 고평가 우려"
+      },
+      {
+        "type": "warning",
+        "text": "성장성 둔화 (순이익 -43%)"
+      }
+    ],
+    "sector_strength": 9.2,
+    "sector_rank": 2,
+    "watch_count": 0,
+    "final_score": 79.2,
+    "score_breakdown": {
+      "base_score": 70,
+      "sector_bonus": 9.2,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "092130",
+    "name": "이크레더블",
+    "sector": "반도체",
+    "price": 14590.0,
+    "rsi": 32.786885245901644,
+    "vs_52w_high": -21.09248242293131,
+    "quality_score": 92,
+    "roe": 33.55357171902717,
+    "debt_ratio": 21.28410384207788,
+    "op_margin": 33.18338174980916,
+    "revenue_growth": 9.70107257240667,
+    "profit_growth": 16.43782436409462,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 17.91,
+      "pbr": 3.36,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 68,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 매우 우수 (90점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "neutral",
+        "text": "양호한 성장성 (순이익 +16%+)"
+      }
+    ],
+    "sector_strength": 9.2,
+    "sector_rank": 2,
+    "watch_count": 0,
+    "final_score": 77.2,
+    "score_breakdown": {
+      "base_score": 68,
+      "sector_bonus": 9.2,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "003800",
+    "name": "에이스침대",
+    "sector": "기타",
+    "price": 33050.0,
+    "rsi": 39.99999999999999,
+    "vs_52w_high": -17.063989962358846,
+    "quality_score": 85,
+    "roe": 12.375729031024147,
+    "debt_ratio": 10.714686030141053,
+    "op_margin": 20.318064942141717,
+    "revenue_growth": 6.3891726792660615,
+    "profit_growth": 38.159475936741465,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 18.86,
+      "pbr": 0.33,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 67,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "warning",
+        "text": "52주 고점 대비 소폭 하락 (-10%+), 추가 하락 가능성"
+      },
+      {
+        "type": "positive",
+        "text": "저PBR (0.33배) - 자산 대비 저평가"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +38%+)"
+      }
+    ],
+    "sector_strength": 16.8,
+    "sector_rank": 1,
+    "watch_count": 0,
+    "final_score": 77,
+    "score_breakdown": {
+      "base_score": 67,
+      "sector_bonus": 10,
+      "watch_bonus": 0
+    },
+    "grade": "A",
+    "grade_text": "관심",
+    "recommendation": "매수 적기. 분할 매수 전략 권장",
+    "grade_color": "#4dabf7"
+  },
+  {
+    "symbol": "012450",
+    "name": "한화에어로스페이스",
+    "sector": "중공업",
+    "price": 1308000.0,
+    "rsi": 36.26168224299065,
+    "vs_52w_high": -20.966767371601208,
+    "quality_score": 80,
+    "roe": 23.295749411469508,
+    "debt_ratio": 281.3416560721179,
+    "op_margin": 15.408008069922552,
+    "revenue_growth": 20.099522391221907,
+    "profit_growth": 117.93468641424427,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 53.06,
+      "pbr": 9.33,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 68,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "과매도 상태 (RSI 40-)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "warning",
+        "text": "고PER (53.1배) - 고평가 우려"
+      },
+      {
+        "type": "positive",
+        "text": "높은 성장성 (순이익 +118%+)"
+      }
+    ],
+    "sector_strength": 0,
+    "sector_rank": "-",
+    "watch_count": 0,
+    "final_score": 68,
+    "score_breakdown": {
+      "base_score": 68,
+      "sector_bonus": 0,
+      "watch_bonus": 0
+    },
+    "grade": "B",
+    "grade_text": "참고",
+    "recommendation": "추가 하락 기다리거나 소액 매수",
+    "grade_color": "#fcc419"
+  },
+  {
+    "symbol": "035890",
+    "name": "서희건설",
+    "sector": "건설",
+    "price": 1623.0,
+    "rsi": NaN,
+    "vs_52w_high": -22.3444976076555,
+    "quality_score": 85,
+    "roe": 21.886417883054417,
+    "debt_ratio": 58.20592677094988,
+    "op_margin": 15.997693155299894,
+    "revenue_growth": 2.198370309987938,
+    "profit_growth": 33.05764603674447,
+    "year": "2024",
+    "naver": {
+      "market_cap": null,
+      "per": 7.74,
+      "pbr": 0.53,
+      "dividend_yield": null,
+      "foreign_ownership": null,
+      "sector": null,
+      "recent_news": [],
+      "opinion": null
+    },
+    "base_score": 57,
+    "judgments": [
+      {
+        "type": "positive",
+        "text": "재무상태 우수 (80점+)"
+      },
+      {
+        "type": "neutral",
+        "text": "52주 고점 대비 하락 (-20%+), 가치 매수 구간"
+      },
+      {
+        "type": "positive",
+        "text": "저PER (7.7배) - 저평가"
+      },
+      {
+        "type": "positive",
+        "text": "저PBR (0.53배) - 자산 대비 저평가"
+      },
+      {
+        "type": "neutral",
+        "text": "우수한 성장성 (순이익 +33%+)"
+      }
+    ],
+    "sector_strength": 0,
+    "sector_rank": "-",
+    "watch_count": 0,
+    "final_score": 57,
+    "score_breakdown": {
+      "base_score": 57,
+      "sector_bonus": 0,
+      "watch_bonus": 0
+    },
+    "grade": "B",
+    "grade_text": "참고",
+    "recommendation": "추가 하락 기다리거나 소액 매수",
+    "grade_color": "#fcc419"
+  }
+]
