@@ -2,20 +2,6 @@
   "tier1": [
     {
       "source": "단기급등",
-      "name": "한국알콜",
-      "symbol": "0015N0",
-      "price": 9060.0,
-      "score": 95,
-      "rsi": 29.05405405405405,
-      "signals": [
-        "RSI 과매도 (<30)",
-        "RSI 상승 반전",
-        "BB 하단 접근"
-      ],
-      "grade": "적극매수"
-    },
-    {
-      "source": "단기급등",
       "name": "대동전자",
       "symbol": "008110",
       "price": 14550.0,
@@ -427,48 +413,23 @@
         "BB 하단 접근"
       ],
       "grade": "관심"
+    },
+    {
+      "source": "단기급등",
+      "name": "뉴보텍",
+      "symbol": "060260",
+      "price": 1252.0,
+      "score": 60,
+      "rsi": 80.99415204678363,
+      "signals": [
+        "RSI 상승 반전",
+        "거래량 폭발 (>300%)",
+        "도지 패턴 (망치형)"
+      ],
+      "grade": "관심"
     }
   ],
   "deep_analysis": [
-    {
-      "symbol": "0015N0",
-      "name": "한국알콜",
-      "score": 95,
-      "price": 9060.0,
-      "source": "단기급등",
-      "links": {
-        "main": "https://finance.naver.com/item/main.naver?code=00150",
-        "news": "https://finance.naver.com/item/news_news.naver?code=00150",
-        "community": "https://finance.naver.com/item/board.naver?code=00150",
-        "cafe": "https://finance.naver.com/item/cafe.naver?code=00150"
-      },
-      "sentiment": {
-        "overall": "긍정",
-        "score": 65,
-        "keywords": [
-          "에탄올",
-          "바이오연료",
-          "친환경",
-          "수소경제"
-        ],
-        "recent_news": [
-          {
-            "date": "최근",
-            "title": "바이오에탄올 수요 증가 전망",
-            "sentiment": "positive"
-          }
-        ],
-        "community_mood": "바이오/친환 테마 관심 증가, 단기 급등 후 조정 중",
-        "risk_factors": [
-          "에너지 정책 변화",
-          "원재료 가격 변동"
-        ],
-        "catalysts": [
-          "정부 바이오fuel 정책",
-          "친환경 에너지 전환"
-        ]
-      }
-    },
     {
       "symbol": "008110",
       "name": "대동전자",
@@ -509,35 +470,6 @@
     }
   ],
   "risk_management": {
-    "0015N0": {
-      "symbol": "0015N0",
-      "name": "한국알콜",
-      "score": 95,
-      "entry": 9060.0,
-      "stop_loss": 8154.0,
-      "stop_loss_pct": -10.0,
-      "target": 11143.0,
-      "target_pct": 22.991169977924944,
-      "r_ratio": 2.3,
-      "atr": 607.14,
-      "all_targets": {
-        "conservative": {
-          "target": 9977.0,
-          "reward_pct": 10.12141280353201,
-          "r_ratio": 1.01
-        },
-        "moderate": {
-          "target": 11143.0,
-          "reward_pct": 22.991169977924944,
-          "r_ratio": 2.3
-        },
-        "aggressive": {
-          "target": 14513.0,
-          "reward_pct": 60.18763796909492,
-          "r_ratio": 6.02
-        }
-      }
-    },
     "008110": {
       "symbol": "008110",
       "name": "대동전자",
