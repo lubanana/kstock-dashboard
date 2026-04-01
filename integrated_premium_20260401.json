@@ -1,20 +1,5 @@
 {
-  "tier1": [
-    {
-      "source": "단기급등",
-      "name": "대동전자",
-      "symbol": "008110",
-      "price": 14550.0,
-      "score": 75,
-      "rsi": 26.66666666666667,
-      "signals": [
-        "RSI 과매도 (<30)",
-        "RSI 상승 반전",
-        "거래량 폭발 (>300%)"
-      ],
-      "grade": "적극매수"
-    }
-  ],
+  "tier1": [],
   "tier2": [
     {
       "source": "KAGGRESSIVE",
@@ -61,7 +46,7 @@
     },
     {
       "source": "단기급등",
-      "name": "서부T",
+      "name": "서부T&D",
       "symbol": "006730",
       "price": 13040.0,
       "score": 65,
@@ -131,7 +116,7 @@
     },
     {
       "source": "KAGGRESSIVE",
-      "name": "평가정보",
+      "name": "NICE평가정보",
       "symbol": "030190",
       "price": 16040.0,
       "score": 61.8,
@@ -427,77 +412,22 @@
         "도지 패턴 (망치형)"
       ],
       "grade": "관심"
-    }
-  ],
-  "deep_analysis": [
+    },
     {
-      "symbol": "008110",
-      "name": "대동전자",
-      "score": 75,
-      "price": 14550.0,
       "source": "단기급등",
-      "links": {
-        "main": "https://finance.naver.com/item/main.naver?code=008110",
-        "news": "https://finance.naver.com/item/news_news.naver?code=008110",
-        "community": "https://finance.naver.com/item/board.naver?code=008110",
-        "cafe": "https://finance.naver.com/item/cafe.naver?code=008110"
-      },
-      "sentiment": {
-        "overall": "중립",
-        "score": 55,
-        "keywords": [
-          "전자부품",
-          "반도체",
-          "차량용 전자"
-        ],
-        "recent_news": [
-          {
-            "date": "최근",
-            "title": "반도체 수요 회복세 지속",
-            "sentiment": "neutral"
-          }
-        ],
-        "community_mood": "전자부품 업황 개선 기대, 저평가 구간 매수 관심",
-        "risk_factors": [
-          "IT 수요 둔화",
-          "원/달러 환율"
-        ],
-        "catalysts": [
-          "차량용 전자 수요 증가",
-          "신규 수주"
-        ]
-      }
+      "name": "신성델타테크",
+      "symbol": "065350",
+      "price": 54700.0,
+      "score": 60,
+      "rsi": 34.78260869565217,
+      "signals": [
+        "RSI 과열근접 (<40)",
+        "RSI 상승 반전",
+        "BB 하단 근접"
+      ],
+      "grade": "관심"
     }
   ],
-  "risk_management": {
-    "008110": {
-      "symbol": "008110",
-      "name": "대동전자",
-      "score": 75,
-      "entry": 14550.0,
-      "stop_loss": 13095.0,
-      "stop_loss_pct": -10.0,
-      "target": 18603.0,
-      "target_pct": 27.855670103092784,
-      "r_ratio": 2.79,
-      "atr": 7703.57,
-      "all_targets": {
-        "conservative": {
-          "target": 18603.0,
-          "reward_pct": 27.855670103092784,
-          "r_ratio": 2.79
-        },
-        "moderate": {
-          "target": 23758.0,
-          "reward_pct": 63.2852233676976,
-          "r_ratio": 6.33
-        },
-        "aggressive": {
-          "target": 38658.0,
-          "reward_pct": 165.69072164948452,
-          "r_ratio": 16.57
-        }
-      }
-    }
-  }
+  "deep_analysis": [],
+  "risk_management": {}
 }
