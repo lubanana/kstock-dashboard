@@ -1,0 +1,118 @@
+{
+  "type": "paper_trading",
+  "threshold": 65,
+  "entry_date": "2026-03-03",
+  "hold_days": 7,
+  "summary": {
+    "total_trades": 8,
+    "win_rate": 25.0,
+    "avg_return": 0.722903658621795,
+    "total_return": 5.78322926897436
+  },
+  "trades": [
+    {
+      "symbol": "033100",
+      "name": "제룡전기",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 51100.0,
+      "exit_price": 49050.0,
+      "stop_loss": 40050.0,
+      "return_pct": -4.011741682974559,
+      "exit_type": "보유만기",
+      "source": "KAGGRESSIVE"
+    },
+    {
+      "symbol": "140860",
+      "name": "파크시스템스",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 279500.0,
+      "exit_price": 271000.0,
+      "stop_loss": 211050.0,
+      "return_pct": -3.041144901610018,
+      "exit_type": "보유만기",
+      "source": "KAGGRESSIVE"
+    },
+    {
+      "symbol": "348210",
+      "name": "넥스틴",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 82000.0,
+      "exit_price": 81500.0,
+      "stop_loss": 56639.0,
+      "return_pct": -0.6097560975609756,
+      "exit_type": "보유만기",
+      "source": "KAGGRESSIVE"
+    },
+    {
+      "symbol": "006730",
+      "name": "서부T&D",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 15320.0,
+      "exit_price": 14830.0,
+      "stop_loss": 12030.0,
+      "return_pct": -3.1984334203655354,
+      "exit_type": "보유만기",
+      "source": "단기급등"
+    },
+    {
+      "symbol": "009620",
+      "name": "삼보산업",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 1642.0,
+      "exit_price": 1548.0,
+      "stop_loss": 1292.0,
+      "return_pct": -5.724725943970768,
+      "exit_type": "보유만기",
+      "source": "단기급등"
+    },
+    {
+      "symbol": "012210",
+      "name": "삼미금속",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 15480.0,
+      "exit_price": 17210.0,
+      "stop_loss": 11826.0,
+      "return_pct": 11.175710594315245,
+      "exit_type": "보유만기",
+      "source": "단기급등"
+    },
+    {
+      "symbol": "025980",
+      "name": "아난티",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 8210.0,
+      "exit_price": 8110.0,
+      "stop_loss": 6101.0,
+      "return_pct": -1.2180267965895248,
+      "exit_type": "보유만기",
+      "source": "단기급등"
+    },
+    {
+      "symbol": "042700",
+      "name": "한미반도체",
+      "score": 65.0,
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-12",
+      "entry_price": 282000.0,
+      "exit_price": 317000.0,
+      "stop_loss": 225900.0,
+      "return_pct": 12.411347517730496,
+      "exit_type": "보유만기",
+      "source": "단기급등"
+    }
+  ]
+}
