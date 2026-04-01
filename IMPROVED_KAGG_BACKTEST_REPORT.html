@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 KAGGRESSIVE 개선 전략 백테스트 결과</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%); color: #fff; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; padding: 40px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            border-radius: 15px; margin-bottom: 30px; }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .warning { background: rgba(255, 193, 7, 0.1); border: 2px solid #ffc107; border-radius: 10px; 
+            padding: 20px; margin: 20px 0; text-align: center; }
+        .warning-title { color: #ffc107; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .strategy-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 25px; }
+        .strategy-title { font-size: 20px; font-weight: bold; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid; }
+        .baseline .strategy-title { color: #6c757d; border-color: #6c757d; }
+        .improved .strategy-title { color: #00ff88; border-color: #00ff88; }
+        .stat { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .stat-value { font-weight: bold; }
+        .positive { color: #00ff88; }
+        .negative { color: #ff6b6b; }
+        .section { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 25px; margin: 20px 0; }
+        .section-title { font-size: 18px; margin-bottom: 20px; color: #ffc107; }
+        .trade-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .trade-table th { background: rgba(255,255,255,0.1); padding: 12px; text-align: left; }
+        .trade-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .filter-pass { color: #00ff88; }
+        .filter-fail { color: #ff6b6b; }
+        .insight { background: rgba(102, 126, 234, 0.1); border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; }
+        .insight h3 { color: #667eea; margin-bottom: 15px; }
+        .insight ul { margin-left: 20px; line-height: 1.8; }
+        .recommendation { background: rgba(0, 255, 136, 0.1); border: 2px solid #00ff88; border-radius: 12px; padding: 25px; margin: 20px 0; }
+        .recommendation h3 { color: #00ff88; margin-bottom: 15px; }
+        .footer { text-align: center; padding: 30px; color: #868e96; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 KAGGRESSIVE 개선 전략 백테스트</h1>
+            <p style="font-size: 16px; margin-top: 10px;">기존 65점 종목 vs 필터 적용 종목 비교 분석</p>
+            <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">테스트 기간: 2026-03-03 ~ 2026-03-12 (7거래일)</p>
+        </div>
+        
+        <div class="warning">
+            <div class="warning-title">⚠️ 중요 발견</div>
+            <p>필터 적용 결과, <strong>승률 향상보다 거래 기회 감소</strong>가 더 큰 문제로 나타남</p>
+            <p style="margin-top: 10px;">필터가 너무 엄격하여 수익 종목(삼미금속 +21%, 한미반도체 +8.33%)을 모두 필터링함</p>
+        </div>
+        
+        <div class="comparison">
+            <div class="strategy-box baseline">
+                <div class="strategy-title">📊 기존 전략 (필터 없음)</div>
+                <div class="stat">
+                    <span>거래수</span>
+                    <span class="stat-value">8회</span>
+                </div>
+                <div class="stat">
+                    <span>승률</span>
+                    <span class="stat-value">25.0%</span>
+                </div>
+                <div class="stat">
+                    <span>평균 수익률</span>
+                    <span class="stat-value negative">-1.58%</span>
+                </div>
+                <div class="stat">
+                    <span>총 수익률</span>
+                    <span class="stat-value negative">-12.67%</span>
+                </div>
+            </div>
+            
+            <div class="strategy-box improved">
+                <div class="strategy-title">🔧 개선 전략 (필터 적용)</div>
+                <div class="stat">
+                    <span>거래수</span>
+                    <span class="stat-value">2회</span>
+                </div>
+                <div class="stat">
+                    <span>승률</span>
+                    <span class="stat-value">0.0%</span>
+                </div>
+                <div class="stat">
+                    <span>평균 수익률</span>
+                    <span class="stat-value negative">-7.00%</span>
+                </div>
+                <div class="stat">
+                    <span>총 수익률</span>
+                    <span class="stat-value negative">-14.00%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📋 개별 종목 분석</div>
+            <table class="trade-table">
+                <tr>
+                    <th>종목</th>
+                    <th>RSI</th>
+                    <th>거래량</th>
+                    <th>5일선</th>
+                    <th>기존전략</th>
+                    <th>개선전략</th>
+                </tr>
+                <tr>
+                    <td><strong>제룡전기</strong></td>
+                    <td class="filter-fail">32.7 ❌</td>
+                    <td class="filter-fail">0.41x ❌</td>
+                    <td class="filter-fail">❌</td>
+                    <td class="negative">-7.00%</td>
+                    <td>- (필터탈락)</td>
+                </tr>
+                <tr>
+                    <td><strong>파크시스템스</strong></td>
+                    <td class="filter-pass">59.6 ✅</td>
+                    <td class="filter-pass">1.43x ✅</td>
+                    <td class="filter-pass">✅</td>
+                    <td class="negative">-7.00%</td>
+                    <td class="negative">-7.00% (통과)</td>
+                </tr>
+                <tr>
+                    <td><strong>넥스틴</strong></td>
+                    <td class="filter-pass">51.9 ✅</td>
+                    <td class="filter-pass">1.65x ✅</td>
+                    <td class="filter-pass">✅</td>
+                    <td class="negative">-7.00%</td>
+                    <td class="negative">-7.00% (통과)</td>
+                </tr>
+                <tr>
+                    <td><strong>서부T&D</strong></td>
+                    <td class="filter-fail">18.5 ❌</td>
+                    <td class="filter-fail">0.76x ❌</td>
+                    <td class="filter-fail">❌</td>
+                    <td class="negative">-7.00%</td>
+                    <td>- (필터탈락)</td>
+                </tr>
+                <tr>
+                    <td><strong>삼보산업</strong></td>
+                    <td class="filter-pass">46.5 ✅</td>
+                    <td class="filter-fail">0.35x ❌</td>
+                    <td class="filter-fail">❌</td>
+                    <td class="negative">-7.00%</td>
+                    <td>- (필터탈락)</td>
+                </tr>
+                <tr style="background: rgba(255,193,7,0.1);">
+                    <td><strong>삼미금속</strong></td>
+                    <td class="filter-pass">52.3 ✅</td>
+                    <td class="filter-fail">0.16x ❌</td>
+                    <td class="filter-fail">❌</td>
+                    <td class="positive"><strong>+21.00%</strong></td>
+                    <td>- (필터탈락)</td>
+                </tr>
+                <tr>
+                    <td>아난티</td>
+                    <td class="filter-pass">52.7 ✅</td>
+                    <td class="filter-pass">1.51x ✅</td>
+                    <td class="filter-fail">❌</td>
+                    <td class="negative">-7.00%</td>
+                    <td>- (필터탈락)</td>
+                </tr>
+                <tr style="background: rgba(255,193,7,0.1);">
+                    <td><strong>한미반도체</strong></td>
+                    <td class="filter-fail">71.7 ❌</td>
+                    <td class="filter-fail">0.91x ❌</td>
+                    <td class="filter-pass">✅</td>
+                    <td class="positive"><strong>+8.33%</strong></td>
+                    <td>- (필터탈락)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="insight">
+            <h3>💡 핵심 인사이트</h3>
+            <ul>
+                <li><strong>필터의 딜레마</strong>: 과매도(RSI < 35) 상태에서 급등하는 경우가 많은데, RSI 필터(35~65)가 이런 기회를 차단함</li>
+                <li><strong>거래량 필터 문제</strong>: 급등 직전 거래량이 적을 수 있음 - 1.2배 기준이 너무 높음</li>
+                <li><strong>수익 종목 필터링</strong>: 삼미금속(+21%), 한미반도체(+8.33%) 모두 필터에 의해 제외됨</li>
+                <li><strong>필터 통과 종목</strong>: 파크시스템스(-7%), 넥스틴(-7%)만 통과하여 오히려 성과 악화</li>
+                <li><strong>교훈</strong>: 승률 높이는 필터가 반드시 수익률을 높이지는 않음</li>
+            </ul>
+        </div>
+        
+        <div class="recommendation">
+            <h3>✅ 개선 방향 제안</h3>
+            
+            <p style="margin-bottom: 15px;"><strong>1. RSI 범위 조정</strong></p>
+            <p style="margin-left: 20px; margin-bottom: 15px;">현재: 35~65 → <strong>제안: 25~70</strong> (과매도 반등 포착)</p>
+            
+            <p style="margin-bottom: 15px;"><strong>2. 거래량 기준 하향</strong></p>
+            <p style="margin-left: 20px; margin-bottom: 15px;">현재: 1.2배 → <strong>제안: 0.8배</strong> (급등 직전 저거래량 허용)</p>
+            
+            <p style="margin-bottom: 15px;"><strong>3. 필터 OR 조건 적용</strong></p>
+            <p style="margin-left: 20px; margin-bottom: 15px;">모든 필터 AND → <strong>3개 중 2개 통과</strong>으로 완화</p>
+            
+            <p style="margin-bottom: 15px;"><strong>4. 종목별 필터 차등</strong></p>
+            <p style="margin-left: 20px;">대형주 vs 소형주, 섹터별로 다른 필터 적용</p>
+        </div>
+        
+        <div class="footer">
+            <p>KAGGRESSIVE v1.1 Improvement Backtest</p>
+            <p style="margin-top: 10px; font-size: 12px;">필터 적용은 신중하게 - 승률과 수익률의 트레이드오프 확인 필요</p>
+        </div>
+    </div>
+</body>
+</html>

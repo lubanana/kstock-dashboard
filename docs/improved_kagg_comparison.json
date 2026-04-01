@@ -1,0 +1,144 @@
+{
+  "baseline": [
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 51100,
+      "exit_price": 47523.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "033100",
+      "name": "제룡전기",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 279500,
+      "exit_price": 259935.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "140860",
+      "name": "파크시스템스",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 82000,
+      "exit_price": 76260.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "348210",
+      "name": "넥스틴",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 15320,
+      "exit_price": 14248.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "006730",
+      "name": "서부T&D",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 1642,
+      "exit_price": 1527.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "009620",
+      "name": "삼보산업",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-11",
+      "entry_price": 15480,
+      "exit_price": 18731.0,
+      "return_pct": 21.0,
+      "exit_reason": "목표도달",
+      "filters": null,
+      "symbol": "012210",
+      "name": "삼미금속",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 8210,
+      "exit_price": 7635.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": null,
+      "symbol": "025980",
+      "name": "아난티",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-13",
+      "entry_price": 282000,
+      "exit_price": 305500.0,
+      "return_pct": 8.33,
+      "exit_reason": "보유만기",
+      "filters": null,
+      "symbol": "042700",
+      "name": "한미반도체",
+      "score": 65
+    }
+  ],
+  "filtered": [
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 279500,
+      "exit_price": 259935.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": {
+        "has_data": true,
+        "price": 279500.0,
+        "rsi": 59.6,
+        "rsi_pass": true,
+        "volume_ratio": 1.43,
+        "volume_pass": true,
+        "sma5_pass": true,
+        "filters_pass": true
+      },
+      "symbol": "140860",
+      "name": "파크시스템스",
+      "score": 65
+    },
+    {
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-09",
+      "entry_price": 82000,
+      "exit_price": 76260.0,
+      "return_pct": -7.0,
+      "exit_reason": "손절",
+      "filters": {
+        "has_data": true,
+        "price": 82000.0,
+        "rsi": 51.9,
+        "rsi_pass": true,
+        "volume_ratio": 1.65,
+        "volume_pass": true,
+        "sma5_pass": true,
+        "filters_pass": true
+      },
+      "symbol": "348210",
+      "name": "넥스틴",
+      "score": 65
+    }
+  ]
+}
