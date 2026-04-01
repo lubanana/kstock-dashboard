@@ -1,0 +1,19 @@
+{
+  "description": "Paper Trading Daily Notifications",
+  "schedule": [
+    {
+      "name": "paper-trading-morning",
+      "time": "08:00",
+      "timezone": "Asia/Seoul",
+      "command": "cd /root/.openclaw/workspace/strg && python3 paper_trading_monitor.py --check all --summary 2>&1",
+      "notify": true
+    },
+    {
+      "name": "paper-trading-evening", 
+      "time": "17:00",
+      "timezone": "Asia/Seoul",
+      "command": "cd /root/.openclaw/workspace/strg && python3 paper_trading_monitor.py --check all --summary 2>&1",
+      "notify": true
+    }
+  ]
+}
