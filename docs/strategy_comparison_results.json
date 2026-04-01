@@ -1,0 +1,166 @@
+[
+  {
+    "name": "전략5: 극단적R:R",
+    "trades": 2,
+    "win_rate": 0.0,
+    "total_return": -9.74,
+    "avg_return": -4.87,
+    "rr_ratio": 0.0,
+    "details": [
+      {
+        "symbol": "033100",
+        "return": -2.74,
+        "entry": 51100,
+        "exit": 49700.0
+      },
+      {
+        "symbol": "140860",
+        "return": -7.0,
+        "entry": 279500,
+        "exit": 259935.0
+      }
+    ]
+  },
+  {
+    "name": "전략1: 보수적 높은R:R",
+    "trades": 3,
+    "win_rate": 0.0,
+    "total_return": -13.05,
+    "avg_return": -4.3500000000000005,
+    "rr_ratio": 0.0,
+    "details": [
+      {
+        "symbol": "033100",
+        "return": -5.0,
+        "entry": 51100,
+        "exit": 48545.0
+      },
+      {
+        "symbol": "140860",
+        "return": -5.0,
+        "entry": 279500,
+        "exit": 265525.0
+      },
+      {
+        "symbol": "348210",
+        "return": -3.05,
+        "entry": 82000,
+        "exit": 79500.0
+      }
+    ]
+  },
+  {
+    "name": "전략4: 고승률",
+    "trades": 5,
+    "win_rate": 0.0,
+    "total_return": -15.0,
+    "avg_return": -3.0,
+    "rr_ratio": 0.0,
+    "details": [
+      {
+        "symbol": "033100",
+        "return": -3.0,
+        "entry": 51100,
+        "exit": 49567.0
+      },
+      {
+        "symbol": "140860",
+        "return": -3.0,
+        "entry": 279500,
+        "exit": 271115.0
+      },
+      {
+        "symbol": "348210",
+        "return": -3.0,
+        "entry": 82000,
+        "exit": 79540.0
+      },
+      {
+        "symbol": "006730",
+        "return": -3.0,
+        "entry": 15320,
+        "exit": 14860.0
+      },
+      {
+        "symbol": "009620",
+        "return": -3.0,
+        "entry": 1642,
+        "exit": 1593.0
+      }
+    ]
+  },
+  {
+    "name": "전략3: 단기 짧게",
+    "trades": 4,
+    "win_rate": 0.0,
+    "total_return": -16.0,
+    "avg_return": -4.0,
+    "rr_ratio": 0.0,
+    "details": [
+      {
+        "symbol": "033100",
+        "return": -4.0,
+        "entry": 51100,
+        "exit": 49056.0
+      },
+      {
+        "symbol": "140860",
+        "return": -4.0,
+        "entry": 279500,
+        "exit": 268320.0
+      },
+      {
+        "symbol": "348210",
+        "return": -4.0,
+        "entry": 82000,
+        "exit": 78720.0
+      },
+      {
+        "symbol": "006730",
+        "return": -4.0,
+        "entry": 15320,
+        "exit": 14707.0
+      }
+    ]
+  },
+  {
+    "name": "전략2: 추세 추종",
+    "trades": 5,
+    "win_rate": 0.0,
+    "total_return": -25.1,
+    "avg_return": -5.0200000000000005,
+    "rr_ratio": 0.0,
+    "details": [
+      {
+        "symbol": "033100",
+        "return": -6.0,
+        "entry": 51100,
+        "exit": 48034.0
+      },
+      {
+        "symbol": "140860",
+        "return": -6.0,
+        "entry": 279500,
+        "exit": 262730.0
+      },
+      {
+        "symbol": "348210",
+        "return": -1.1,
+        "entry": 82000,
+        "exit": 81100.0
+      },
+      {
+        "symbol": "006730",
+        "return": -6.0,
+        "entry": 15320,
+        "exit": 14401.0
+      },
+      {
+        "symbol": "009620",
+        "return": -6.0,
+        "entry": 1642,
+        "exit": 1543.0
+      }
+    ]
+  }
+]
