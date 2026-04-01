@@ -428,5 +428,84 @@
       ],
       "grade": "관심"
     }
+  ],
+  "deep_analysis": [
+    {
+      "symbol": "0015N0",
+      "name": "한국알콜",
+      "score": 95,
+      "price": 9060.0,
+      "source": "단기급등",
+      "links": {
+        "main": "https://finance.naver.com/item/main.naver?code=00150",
+        "news": "https://finance.naver.com/item/news_news.naver?code=00150",
+        "community": "https://finance.naver.com/item/board.naver?code=00150",
+        "cafe": "https://finance.naver.com/item/cafe.naver?code=00150"
+      },
+      "sentiment": {
+        "overall": "긍정",
+        "score": 65,
+        "keywords": [
+          "에탄올",
+          "바이오연료",
+          "친환경",
+          "수소경제"
+        ],
+        "recent_news": [
+          {
+            "date": "최근",
+            "title": "바이오에탄올 수요 증가 전망",
+            "sentiment": "positive"
+          }
+        ],
+        "community_mood": "바이오/친환 테마 관심 증가, 단기 급등 후 조정 중",
+        "risk_factors": [
+          "에너지 정책 변화",
+          "원재료 가격 변동"
+        ],
+        "catalysts": [
+          "정부 바이오fuel 정책",
+          "친환경 에너지 전환"
+        ]
+      }
+    },
+    {
+      "symbol": "008110",
+      "name": "대동전자",
+      "score": 75,
+      "price": 14550.0,
+      "source": "단기급등",
+      "links": {
+        "main": "https://finance.naver.com/item/main.naver?code=008110",
+        "news": "https://finance.naver.com/item/news_news.naver?code=008110",
+        "community": "https://finance.naver.com/item/board.naver?code=008110",
+        "cafe": "https://finance.naver.com/item/cafe.naver?code=008110"
+      },
+      "sentiment": {
+        "overall": "중립",
+        "score": 55,
+        "keywords": [
+          "전자부품",
+          "반도체",
+          "차량용 전자"
+        ],
+        "recent_news": [
+          {
+            "date": "최근",
+            "title": "반도체 수요 회복세 지속",
+            "sentiment": "neutral"
+          }
+        ],
+        "community_mood": "전자부품 업황 개선 기대, 저평가 구간 매수 관심",
+        "risk_factors": [
+          "IT 수요 둔화",
+          "원/달러 환율"
+        ],
+        "catalysts": [
+          "차량용 전자 수요 증가",
+          "신규 수주"
+        ]
+      }
+    }
   ]
 }
