@@ -1,0 +1,353 @@
+[
+  {
+    "symbol": "033100",
+    "name": "제룡전기",
+    "sector": "기타",
+    "price": 43500.0,
+    "kagg_score": 65.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 33.42776203966005,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "140860",
+    "name": "파크시스템스",
+    "sector": "기타",
+    "price": 234500.0,
+    "kagg_score": 65.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 34.765625,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "348210",
+    "name": "넥스틴",
+    "sector": "반도체",
+    "price": 62500.0,
+    "kagg_score": 65.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 23.032069970845484,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "030190",
+    "name": "평가정보",
+    "sector": "기타",
+    "price": 16040.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 34.719710669077756,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "034950",
+    "name": "한국기업평가",
+    "sector": "기타",
+    "price": 99500.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 34.17721518987341,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "092130",
+    "name": "이크레더블",
+    "sector": "반도체",
+    "price": 14500.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 22.22222222222223,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "263860",
+    "name": "지니언스",
+    "sector": "기타",
+    "price": 12930.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 33.547008547008545,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "042700",
+    "name": "한미반도체",
+    "sector": "반도체",
+    "price": 251000.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 20.289855072463766,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "058470",
+    "name": "리노공업",
+    "sector": "반도체",
+    "price": 94400.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 29.85386221294364,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "095610",
+    "name": "테스",
+    "sector": "기타",
+    "price": 55400.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 34.95934959349594,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "110990",
+    "name": "디아이티",
+    "sector": "기타",
+    "price": 18390.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 24.582338902147967,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "114810",
+    "name": "한솔아이원스",
+    "sector": "기타",
+    "price": 12820.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 33.5135135135135,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "450950",
+    "name": "아스테라시스",
+    "sector": "기타",
+    "price": 10930.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 29.96389891696751,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "481070",
+    "name": "에이유브랜즈",
+    "sector": "기타",
+    "price": 17200.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 28.75816993464052,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "214150",
+    "name": "클래시스",
+    "sector": "기타",
+    "price": 50500.0,
+    "kagg_score": 60.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 5
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 39.175257731958766,
+    "per": null,
+    "recommendation": "관심"
+  }
+]
