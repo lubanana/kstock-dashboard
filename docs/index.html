@@ -3,362 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Stock Dashboard - 리포트 중앙 허브</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>K-Stock Scanner Dashboard</title>
     <style>
-        * { font-family: 'Noto Sans KR', sans-serif; }
-        body { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.7);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .report-card {
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-        }
-        .report-card:hover {
-            transform: translateX(8px);
-            border-left-color: #3b82f6;
-        }
-        .status-badge {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card p {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .report-list {
+            list-style: none;
+        }
+        .report-list li {
+            margin-bottom: 10px;
+        }
+        .report-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        .report-list a:hover {
+            background: rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+        .badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+        .badge-new {
+            background: #28a745;
+            color: white;
+        }
+        .badge-hot {
+            background: #dc3545;
+            color: white;
+        }
+        .badge-info {
+            background: #17a2b8;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .status-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .status-item {
+            text-align: center;
+        }
+        .status-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .status-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .icon {
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body class="text-gray-100">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 glass-card border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-chart-line text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold gradient-text">K-Stock Dashboard</h1>
-                        <p class="text-sm text-gray-400">한국 주식 퀀트 리포트 중앙 허브</p>
-                    </div>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 K-Stock Scanner Dashboard</h1>
+            <p class="subtitle">한국 주식 통합 스캐너 리포트 모음</p>
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-value">8</div>
+                    <div class="status-label">활성화된 전략</div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <span class="status-badge px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">
-                        <i class="fas fa-circle text-xs mr-2"></i>실시간 연동 중
-                    </span>
-                    <a href="https://github.com/lubanana/kstock-dashboard" target="_blank" 
-                       class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm transition">
-                        <i class="fab fa-github mr-2"></i>GitHub
-                    </a>
+                <div class="status-item">
+                    <div class="status-value">3,500+</div>
+                    <div class="status-label">스캔 대상 종목</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-value">24/7</div>
+                    <div class="status-label">자동화 시스템</div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Stats Overview -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="glass-card rounded-xl p-4 text-center">
-                <div class="text-3xl font-bold text-blue-400">15+</div>
-                <div class="text-sm text-gray-400">총 리포트</div>
-            </div>
-            <div class="glass-card rounded-xl p-4 text-center">
-                <div class="text-3xl font-bold text-green-400">6</div>
-                <div class="text-sm text-gray-400">전략 유형</div>
-            </div>
-            <div class="glass-card rounded-xl p-4 text-center">
-                <div class="text-3xl font-bold text-purple-400">3,286</div>
-                <div class="text-sm text-gray-400">분석 종목</div>
-            </div>
-            <div class="glass-card rounded-xl p-4 text-center">
-                <div class="text-3xl font-bold text-yellow-400">+109%</div>
-                <div class="text-sm text-gray-400">V-Series 수익률</div>
-            </div>
-        </div>
-
-        <!-- Featured Report -->
-        <div class="glass-card rounded-2xl p-6 mb-8 border border-blue-500/30">
-            <div class="flex items-center justify-between mb-4">
-                <div class="flex items-center gap-3">
-                    <span class="px-3 py-1 bg-blue-500 text-white text-sm rounded-full font-bold">NEW</span>
-                    <h2 class="text-xl font-bold">최신 V-Series 데일리 리포트</h2>
-                </div>
-                <span class="text-gray-400">2026-03-18</span>
-            </div>
-            <p class="text-gray-300 mb-4">Value + Fibonacci + ATR 전략 기반 선정 종목 10개. 클릭 시 상세 차트와 시장조사 정보 확인 가능.</p>
-            <div class="flex gap-3">
-                <a href="./V_Series_Daily_Report_20260318.html" 
-                   class="flex-1 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl text-center font-semibold transition">
-                    <i class="fas fa-chart-pie mr-2"></i>리포트 보기
-                </a>
-                <a href="./V_Series_Fib_ATR_Report.html" 
-                   class="flex-1 bg-purple-600 hover:bg-purple-500 text-white py-3 rounded-xl text-center font-semibold transition">
-                    <i class="fas fa-history mr-2"></i>백테스트 결과
-                </a>
-            </div>
-        </div>
-
-        <!-- Report Categories -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- V-Series Strategy -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-trophy text-green-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">V-Series Strategy</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">가치점수 + 피볼나치 + ATR 조합 전략</p>
-                <div class="space-y-2">
-                    <a href="./V_Series_Daily_Report_20260318.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-file-alt mr-2 text-blue-400"></i>데일리 리포트 (2026-03-18)</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                        <div class="text-xs text-green-400 mt-1">10개 종목 선정</div>
-                    </a>
-                    <a href="./V_Series_Fib_ATR_Report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-history mr-2 text-purple-400"></i>백테스트 리포트 (+109.50%)</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                        <div class="text-xs text-gray-400 mt-1">2025-01-01 ~ 2026-03-18</div>
-                    </a>
-                </div>
+        <div class="grid">
+            <!-- 통합 스캐너 -->
+            <div class="card">
+                <h2><span class="icon">🎯</span> 통합 복합 스캐너</h2>
+                <p>IVF v2.0 + 고급 캔들 + 피볼나치 + 거래량 통합 분석</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="INTEGRATED_SCAN_REPORT_20260113.html">
+                            <span>📊 통합 리포트 (2026-01-13)</span>
+                            <span class="badge badge-new">NEW</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Pivot Point -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-crosshairs text-blue-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Pivot Point Strategy</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">피벗 포인트 돌파 신호 기반 매매</p>
-                <div class="space-y-2">
-                    <a href="./daily.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-calendar-day mr-2 text-blue-400"></i>데일리 시그널</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./daily_202601.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-calendar mr-2 text-indigo-400"></i>1월 종합 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./daily_202602.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-calendar mr-2 text-indigo-400"></i>2월 종합 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                </div>
+            <!-- KAGGRESSIVE -->
+            <div class="card">
+                <h2><span class="icon">⚡</span> KAGGRESSIVE 스캐너</h2>
+                <p>고승률 단타 전략 (70점 이상 적극매수)</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="kagg_backtest_comparison_20260402_1105.html">
+                            <span>📈 백테스트 비교 리포트</span>
+                            <span class="badge badge-hot">추천</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Multi-Strategy -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-layer-group text-purple-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Multi-Strategy</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">다중 전략 통합 분석</p>
-                <div class="space-y-2">
-                    <a href="./combined_strategy_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-layer-group mr-2 text-purple-400"></i>통합 전략 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                        <div class="text-xs text-gray-400 mt-1">5가지 전략 통합 분석</div>
-                    </a>
-                    <a href="./livermore_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-chart-line mr-2 text-orange-400"></i>리버모어 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                </div>
+            <!-- NPS Value -->
+            <div class="card">
+                <h2><span class="icon">🏛️</span> NPS Value Scanner</h2>
+                <p>국민연금 장기 가치 투자 패턴 복제</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="B01_NPS_Integrated_Report_20260320_2104.html">
+                            <span>📋 NPS 통합 리포트</span>
+                            <span class="badge badge-info">B01</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Technical Analysis -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-microscope text-yellow-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Technical Analysis</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">심층 기술적 분석 리포트</p>
-                <div class="space-y-2">
-                    <a href="./custom_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-sliders-h mr-2 text-yellow-400"></i>커스텀 분석</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./level1_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-signal mr-2 text-green-400"></i>Level 1 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./level2_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-signal mr-2 text-blue-400"></i>Level 2 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./level3_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-signal mr-2 text-purple-400"></i>Level 3 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                </div>
+            <!-- 캔들 패턴 -->
+            <div class="card">
+                <h2><span class="icon">🕯️</span> 고급 캔들 패턴</h2>
+                <p>STRICT/MODERATE 모드 캔들 백테스트</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="strict_mode_backtest.html">
+                            <span>🔒 STRICT 모드 (100% 승률)</span>
+                            <span class="badge badge-hot">검증</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="moderate_mode_backtest.html">
+                            <span>🔓 MODERATE 모드 (83.3% 승률)</span>
+                            <span class="badge badge-new">NEW</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Investigation -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-search text-red-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Investigation</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">특이사항 조사 및 분석</p>
-                <div class="space-y-2">
-                    <a href="./investigation_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-search-plus mr-2 text-red-400"></i>조사 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./level2_3_report.html" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-clipboard-check mr-2 text-orange-400"></i>Level 2-3 통합</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                </div>
+            <!-- A-Plus 전략 -->
+            <div class="card">
+                <h2><span class="icon">🅰️</span> A-Plus 전략</h2>
+                <p>A등급 고품질 종목 선별 및 백테스트</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="A_PLUS_BACKTEST_FULL_2026-03-28.html">
+                            <span>📊 전체 백테스트 리포트</span>
+                            <span class="badge badge-info">상세</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="A_PLUS_SETUP_2026-03-28.html">
+                            <span>⚙️ 셋업 리포트</span>
+                            <span class="badge badge-info">셋업</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Documentation -->
-            <div class="glass-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-gray-500/20 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-book text-gray-400"></i>
-                    </div>
-                    <h3 class="text-lg font-bold">Documentation</h3>
-                </div>
-                <p class="text-sm text-gray-400 mb-4">기술 문서 및 개발 계획</p>
-                <div class="space-y-2">
-                    <a href="./FDR_APPLICATION_PLAN.md" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-file-code mr-2 text-gray-400"></i>FDR 적용 계획</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./FUNDAMENTAL_DATA_STATUS.md" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-database mr-2 text-gray-400"></i>펀더멘털 데이터 현황</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./PARALLEL_PROCESSING_REPORT.md" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-bolt mr-2 text-gray-400"></i>병렬 처리 리포트</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                    <a href="./WORK_LOG_LEVEL1.md" class="report-card block p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50">
-                        <div class="flex justify-between items-center">
-                            <span><i class="fas fa-tasks mr-2 text-gray-400"></i>작업 로그</span>
-                            <i class="fas fa-external-link-alt text-xs text-gray-500"></i>
-                        </div>
-                    </a>
-                </div>
+            <!-- 월별 리포트 -->
+            <div class="card">
+                <h2><span class="icon">📅</span> 월별 종합 리포트</h2>
+                <p>일별 스캔 결과 집계 및 분석</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="daily_202601.html">
+                            <span>📄 2026년 1월 리포트</span>
+                            <span class="badge badge-info">월간</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="daily_202602.html">
+                            <span>📄 2026년 2월 리포트</span>
+                            <span class="badge badge-info">월간</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 기타 리포트 -->
+            <div class="card">
+                <h2><span class="icon">📚</span> 기타 분석 리포트</h2>
+                <p>코드 분석, 전략 리뷰, 종목 분석</p>
+                <ul class="report-list">
+                    <li>
+                        <a href="comprehensive_review_20260327.html">
+                            <span>🔍 종합 리뷰 (2026-03-27)</span>
+                            <span class="badge badge-info">리뷰</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="combined_strategy_report.html">
+                            <span>🔄 복합 전략 리포트</span>
+                            <span class="badge badge-info">통합</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <!-- Strategy Comparison -->
-        <div class="glass-card rounded-2xl p-6 mt-8">
-            <h3 class="text-xl font-bold mb-4"><i class="fas fa-balance-scale mr-2 text-blue-400"></i>전략 성과 비교</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                    <thead>
-                        <tr class="border-b border-gray-700">
-                            <th class="text-left py-3 px-4">전략명</th>
-                            <th class="text-right py-3 px-4">수익률</th>
-                            <th class="text-right py-3 px-4">승률</th>
-                            <th class="text-right py-3 px-4">최대낙폭</th>
-                            <th class="text-center py-3 px-4">상태</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-700/50 hover:bg-gray-800/30">
-                            <td class="py-3 px-4 font-medium">V-Series + Fib + ATR</td>
-                            <td class="text-right py-3 px-4 text-green-400 font-bold">+109.50%</td>
-                            <td class="text-right py-3 px-4">56.3%</td>
-                            <td class="text-right py-3 px-4">-16.58%</td>
-                            <td class="text-center py-3 px-4"><span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">운영중</span></td>
-                        </tr>
-                        <tr class="border-b border-gray-700/50 hover:bg-gray-800/30">
-                            <td class="py-3 px-4 font-medium">Pivot Point</td>
-                            <td class="text-right py-3 px-4 text-blue-400">+23.45%</td>
-                            <td class="text-right py-3 px-4">48.2%</td>
-                            <td class="text-right py-3 px-4">-12.34%</td>
-                            <td class="text-center py-3 px-4"><span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">운영중</span></td>
-                        </tr>
-                        <tr class="border-b border-gray-700/50 hover:bg-gray-800/30">
-                            <td class="py-3 px-4 font-medium">Multi-Strategy</td>
-                            <td class="text-right py-3 px-4 text-purple-400">+15.67%</td>
-                            <td class="text-right py-3 px-4">52.1%</td>
-                            <td class="text-right py-3 px-4">-10.21%</td>
-                            <td class="text-center py-3 px-4"><span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">개발중</span></td>
-                        </tr>
-                        <tr class="border-b border-gray-700/50 hover:bg-gray-800/30">
-                            <td class="py-3 px-4 font-medium">Livermore</td>
-                            <td class="text-right py-3 px-4 text-yellow-400">+8.92%</td>
-                            <td class="text-right py-3 px-4">44.8%</td>
-                            <td class="text-right py-3 px-4">-15.67%</td>
-                            <td class="text-center py-3 px-4"><span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">운영중</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="mt-12 text-center text-gray-500 text-sm">
-            <p>© 2026 K-Stock Dashboard | lubanana</p>
-            <p class="mt-2">데이터 출처: FinanceDataReader, KRX</p>
+        <footer class="footer">
+            <p>🔥 K-Stock Scanner | 한국 주식 정량 분석 시스템</p>
+            <p style="margin-top: 10px; color: #555;">
+                Last Updated: 2026-04-02 | 
+                <a href="https://github.com/lubanana/kstock-dashboard" style="color: #667eea;">GitHub Repository</a>
+            </p>
         </footer>
-    </main>
-
-    <script>
-        // Add current date
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateEl = document.querySelector('.status-badge');
-            if (dateEl) {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
-                dateEl.innerHTML = `<i class="fas fa-circle text-xs mr-2"></i>${dateStr} 업데이트`;
-            }
-        });
-    </script>
+    </div>
 </body>
 </html>
