@@ -1,0 +1,1296 @@
+{
+  "trades": [
+    {
+      "return": 8.95,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "032640",
+      "date": "2026-01-13",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 39.1,
+      "rvol": 1.55,
+      "reasons": [
+        "Fib_39",
+        "RVol_1.5",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 3.25,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "032640",
+      "date": "2026-02-10",
+      "score": 55,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 41.9,
+      "rvol": 0.58,
+      "reasons": [
+        "Fib_42",
+        "MORNING_STAR",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "035900",
+      "date": "2026-02-03",
+      "score": 50,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 49.5,
+      "rvol": 0.77,
+      "reasons": [
+        "Fib_49",
+        "BULLISH_PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 7,
+      "symbol": "035900",
+      "date": "2026-03-24",
+      "score": 45,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 56.8,
+      "rvol": 0.65,
+      "reasons": [
+        "Fib_57",
+        "BULLISH_PINBAR"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 9,
+      "symbol": "293490",
+      "date": "2026-01-13",
+      "score": 45,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 65.3,
+      "rvol": 0.86,
+      "reasons": [
+        "Fib_65",
+        "MORNING_STAR"
+      ]
+    },
+    {
+      "return": 15.0,
+      "exit": "target",
+      "days": 5,
+      "symbol": "293490",
+      "date": "2026-01-20",
+      "score": 55,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 5,
+      "retracement": 69.6,
+      "rvol": 1.69,
+      "reasons": [
+        "Fib_70",
+        "RVol_1.7",
+        "BULLISH_ENGULFING"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "005385",
+      "date": "2026-03-03",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 50.0,
+      "rvol": 2.22,
+      "reasons": [
+        "Fib_50",
+        "RVol_2.2",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 9,
+      "symbol": "005385",
+      "date": "2026-03-10",
+      "score": 40,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 70.2,
+      "rvol": 0.55,
+      "reasons": [
+        "Fib_70",
+        "PINBAR"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "012330",
+      "date": "2026-02-03",
+      "score": 45,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 4,
+      "retracement": 41.5,
+      "rvol": 0.52,
+      "reasons": [
+        "Fib_42",
+        "BULLISH_ENGULFING",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "042700",
+      "date": "2026-02-03",
+      "score": 55,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 37.4,
+      "rvol": 0.77,
+      "reasons": [
+        "Fib_37",
+        "BULLISH_PINBAR",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "010130",
+      "date": "2026-01-13",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 74.6,
+      "rvol": 1.99,
+      "reasons": [
+        "Fib_75",
+        "RVol_2.0",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "010130",
+      "date": "2026-02-03",
+      "score": 45,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 35.2,
+      "rvol": 0.4,
+      "reasons": [
+        "Fib_35",
+        "PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 1,
+      "symbol": "032830",
+      "date": "2026-02-24",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 37.3,
+      "rvol": 1.23,
+      "reasons": [
+        "Fib_37",
+        "RVol_1.2",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": 15.0,
+      "exit": "target",
+      "days": 10,
+      "symbol": "009150",
+      "date": "2026-01-27",
+      "score": 50,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 41.6,
+      "rvol": 1.04,
+      "reasons": [
+        "Fib_42",
+        "BULLISH_PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "010955",
+      "date": "2026-03-03",
+      "score": 45,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 25.0,
+      "rvol": 10.41,
+      "reasons": [
+        "Fib_25",
+        "RVol_10.4",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "357780",
+      "date": "2026-02-03",
+      "score": 45,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 34.2,
+      "rvol": 1.08,
+      "reasons": [
+        "Fib_34",
+        "PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "357780",
+      "date": "2026-03-03",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 60.7,
+      "rvol": 1.55,
+      "reasons": [
+        "Fib_61",
+        "RVol_1.6",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 5,
+      "symbol": "010140",
+      "date": "2026-02-24",
+      "score": 55,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 44.4,
+      "rvol": 0.74,
+      "reasons": [
+        "Fib_44",
+        "BULLISH_PINBAR",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": 4.89,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "035720",
+      "date": "2026-01-13",
+      "score": 45,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 56.3,
+      "rvol": 0.83,
+      "reasons": [
+        "Fib_56",
+        "MORNING_STAR"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 4,
+      "symbol": "035720",
+      "date": "2026-01-27",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 26.0,
+      "rvol": 1.35,
+      "reasons": [
+        "Fib_26",
+        "RVol_1.3",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "035720",
+      "date": "2026-02-03",
+      "score": 40,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 62.0,
+      "rvol": 0.65,
+      "reasons": [
+        "Fib_62",
+        "PINBAR"
+      ]
+    },
+    {
+      "return": 6.86,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "035720",
+      "date": "2026-02-10",
+      "score": 45,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 64.6,
+      "rvol": 0.63,
+      "reasons": [
+        "Fib_65",
+        "MORNING_STAR"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "005935",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 48.1,
+      "rvol": 1.83,
+      "reasons": [
+        "Fib_48",
+        "RVol_1.8",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "000660",
+      "date": "2026-03-24",
+      "score": 45,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 38.8,
+      "rvol": 0.9,
+      "reasons": [
+        "Fib_39",
+        "PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 8.01,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "033780",
+      "date": "2026-01-20",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 25.3,
+      "rvol": 1.22,
+      "reasons": [
+        "Fib_25",
+        "RVol_1.2",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -1.78,
+      "exit": "hold",
+      "days": 7,
+      "symbol": "033780",
+      "date": "2026-03-24",
+      "score": 40,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 71.3,
+      "rvol": 0.45,
+      "reasons": [
+        "Fib_71",
+        "PINBAR"
+      ]
+    },
+    {
+      "return": 6.32,
+      "exit": "hold",
+      "days": 10,
+      "symbol": "161890",
+      "date": "2026-01-20",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 27.1,
+      "rvol": 1.3,
+      "reasons": [
+        "Fib_27",
+        "RVol_1.3",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 5,
+      "symbol": "009540",
+      "date": "2026-01-20",
+      "score": 55,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 25.6,
+      "rvol": 0.58,
+      "reasons": [
+        "Fib_26",
+        "BULLISH_PINBAR",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 4,
+      "symbol": "009540",
+      "date": "2026-01-27",
+      "score": 40,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 46.8,
+      "rvol": 0.71,
+      "reasons": [
+        "Fib_47",
+        "PINBAR"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 9,
+      "symbol": "025980",
+      "date": "2026-02-10",
+      "score": 50,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 4,
+      "retracement": 29.9,
+      "rvol": 1.08,
+      "reasons": [
+        "Fib_30",
+        "BULLISH_ENGULFING",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 6,
+      "symbol": "025980",
+      "date": "2026-02-17",
+      "score": 45,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 27.6,
+      "rvol": 2.24,
+      "reasons": [
+        "Fib_28",
+        "RVol_2.2",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 7,
+      "symbol": "009155",
+      "date": "2026-01-20",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 39.3,
+      "rvol": 1.53,
+      "reasons": [
+        "Fib_39",
+        "RVol_1.5",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 8,
+      "symbol": "009155",
+      "date": "2026-01-27",
+      "score": 40,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 58.9,
+      "rvol": 0.98,
+      "reasons": [
+        "Fib_59",
+        "PINBAR"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 4,
+      "symbol": "051910",
+      "date": "2026-01-13",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 49.6,
+      "rvol": 1.86,
+      "reasons": [
+        "Fib_50",
+        "RVol_1.9",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "051910",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 48.5,
+      "rvol": 1.87,
+      "reasons": [
+        "Fib_48",
+        "RVol_1.9",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 5,
+      "symbol": "036830",
+      "date": "2026-01-20",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 57.1,
+      "rvol": 1.73,
+      "reasons": [
+        "Fib_57",
+        "RVol_1.7",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "036830",
+      "date": "2026-03-24",
+      "score": 45,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 73.3,
+      "rvol": 0.74,
+      "reasons": [
+        "Fib_73",
+        "BULLISH_PINBAR"
+      ]
+    },
+    {
+      "return": 15.0,
+      "exit": "target",
+      "days": 9,
+      "symbol": "194480",
+      "date": "2026-01-13",
+      "score": 50,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 4,
+      "retracement": 37.3,
+      "rvol": 1.17,
+      "reasons": [
+        "Fib_37",
+        "BULLISH_ENGULFING",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "194480",
+      "date": "2026-02-03",
+      "score": 50,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 50.5,
+      "rvol": 0.67,
+      "reasons": [
+        "Fib_51",
+        "BULLISH_PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "033100",
+      "date": "2026-02-10",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 47.5,
+      "rvol": 1.52,
+      "reasons": [
+        "Fib_48",
+        "RVol_1.5",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 9.52,
+      "exit": "hold",
+      "days": 12,
+      "symbol": "316140",
+      "date": "2026-01-13",
+      "score": 50,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 50.0,
+      "rvol": 1.06,
+      "reasons": [
+        "Fib_50",
+        "MORNING_STAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 4,
+      "symbol": "018260",
+      "date": "2026-01-27",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 51.4,
+      "rvol": 1.5,
+      "reasons": [
+        "Fib_51",
+        "RVol_1.5",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -6.0,
+      "exit": "stop",
+      "days": 4,
+      "symbol": "271560",
+      "date": "2026-03-24",
+      "score": 50,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 39.0,
+      "rvol": 0.66,
+      "reasons": [
+        "Fib_39",
+        "PINBAR",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 8,
+      "symbol": "122870",
+      "date": "2026-01-27",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 42.0,
+      "rvol": 1.6,
+      "reasons": [
+        "Fib_42",
+        "RVol_1.6",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -3.7,
+      "exit": "hold",
+      "days": 7,
+      "symbol": "251270",
+      "date": "2026-03-24",
+      "score": 45,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 52.8,
+      "rvol": 0.38,
+      "reasons": [
+        "Fib_53",
+        "BULLISH_PINBAR"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 3,
+      "symbol": "051915",
+      "date": "2026-02-24",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 43.3,
+      "rvol": 1.44,
+      "reasons": [
+        "Fib_43",
+        "RVol_1.4",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "051915",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 49.1,
+      "rvol": 1.58,
+      "reasons": [
+        "Fib_49",
+        "RVol_1.6",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "005387",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 53.0,
+      "rvol": 1.85,
+      "reasons": [
+        "Fib_53",
+        "RVol_1.8",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 8,
+      "symbol": "263750",
+      "date": "2026-02-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 31.7,
+      "rvol": 1.98,
+      "reasons": [
+        "Fib_32",
+        "RVol_2.0",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "263750",
+      "date": "2026-03-03",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 26.5,
+      "rvol": 3.43,
+      "reasons": [
+        "Fib_26",
+        "RVol_3.4",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "263750",
+      "date": "2026-03-10",
+      "score": 45,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 28.1,
+      "rvol": 2.09,
+      "reasons": [
+        "Fib_28",
+        "RVol_2.1",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "140860",
+      "date": "2026-02-03",
+      "score": 45,
+      "pattern": "pinbar",
+      "pattern_reliability": 4,
+      "retracement": 34.1,
+      "rvol": 0.99,
+      "reasons": [
+        "Fib_34",
+        "PINBAR",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "140860",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 50.3,
+      "rvol": 1.43,
+      "reasons": [
+        "Fib_50",
+        "RVol_1.4",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 2,
+      "symbol": "140860",
+      "date": "2026-03-10",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 27.4,
+      "rvol": 1.76,
+      "reasons": [
+        "Fib_27",
+        "RVol_1.8",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "005380",
+      "date": "2026-03-03",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 39.1,
+      "rvol": 1.5,
+      "reasons": [
+        "Fib_39",
+        "RVol_1.5",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 8,
+      "symbol": "225570",
+      "date": "2026-01-27",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 36.1,
+      "rvol": 1.45,
+      "reasons": [
+        "Fib_36",
+        "RVol_1.5",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 3,
+      "symbol": "225570",
+      "date": "2026-02-03",
+      "score": 40,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 62.6,
+      "rvol": 2.83,
+      "reasons": [
+        "Fib_63",
+        "RVol_2.8",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 1,
+      "symbol": "005930",
+      "date": "2026-03-03",
+      "score": 35,
+      "pattern": "None",
+      "pattern_reliability": 0,
+      "retracement": 38.4,
+      "rvol": 1.64,
+      "reasons": [
+        "Fib_38",
+        "RVol_1.6",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 8.55,
+      "exit": "hold",
+      "days": 12,
+      "symbol": "055550",
+      "date": "2026-01-13",
+      "score": 55,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 39.7,
+      "rvol": 1.19,
+      "reasons": [
+        "Fib_40",
+        "BULLISH_PINBAR",
+        "Bullish_Trend"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 59,
+    "win_rate": 25.423728813559322,
+    "avg_return": -1.2394915254237289,
+    "total_return": -73.13000000000001,
+    "profit_factor": 0.6712962962962964
+  },
+  "pattern_analysis": [
+    {
+      "pattern": "morning_star",
+      "count": 5,
+      "win_rate": 100.0,
+      "avg_return": 7.303999999999999
+    },
+    {
+      "pattern": "bullish_engulfing",
+      "count": 4,
+      "win_rate": 50.0,
+      "avg_return": 4.75
+    },
+    {
+      "pattern": "None",
+      "count": 30,
+      "win_rate": 20.0,
+      "avg_return": -2.024
+    },
+    {
+      "pattern": "bullish_pinbar",
+      "count": 10,
+      "win_rate": 20.0,
+      "avg_return": -2.0149999999999997
+    },
+    {
+      "pattern": "pinbar",
+      "count": 10,
+      "win_rate": 0.0,
+      "avg_return": -4.7780000000000005
+    }
+  ],
+  "symbol_summary": [
+    {
+      "symbol": "009150",
+      "trades": 1,
+      "win_rate": 100.0,
+      "avg_return": 15.0,
+      "total_return": 15.0
+    },
+    {
+      "symbol": "293490",
+      "trades": 2,
+      "win_rate": 100.0,
+      "avg_return": 13.5,
+      "total_return": 27.0
+    },
+    {
+      "symbol": "032830",
+      "trades": 1,
+      "win_rate": 100.0,
+      "avg_return": 12.0,
+      "total_return": 12.0
+    },
+    {
+      "symbol": "316140",
+      "trades": 1,
+      "win_rate": 100.0,
+      "avg_return": 9.52,
+      "total_return": 9.52
+    },
+    {
+      "symbol": "055550",
+      "trades": 1,
+      "win_rate": 100.0,
+      "avg_return": 8.55,
+      "total_return": 8.55
+    },
+    {
+      "symbol": "161890",
+      "trades": 1,
+      "win_rate": 100.0,
+      "avg_return": 6.32,
+      "total_return": 6.32
+    },
+    {
+      "symbol": "032640",
+      "trades": 2,
+      "win_rate": 100.0,
+      "avg_return": 6.1,
+      "total_return": 12.2
+    },
+    {
+      "symbol": "194480",
+      "trades": 2,
+      "win_rate": 50.0,
+      "avg_return": 4.5,
+      "total_return": 9.0
+    },
+    {
+      "symbol": "036830",
+      "trades": 2,
+      "win_rate": 50.0,
+      "avg_return": 3.5,
+      "total_return": 7.0
+    },
+    {
+      "symbol": "051915",
+      "trades": 2,
+      "win_rate": 50.0,
+      "avg_return": 3.5,
+      "total_return": 7.0
+    },
+    {
+      "symbol": "033780",
+      "trades": 2,
+      "win_rate": 50.0,
+      "avg_return": 3.1149999999999998,
+      "total_return": 6.2299999999999995
+    },
+    {
+      "symbol": "035720",
+      "trades": 4,
+      "win_rate": 50.0,
+      "avg_return": 0.4375,
+      "total_return": 1.75
+    },
+    {
+      "symbol": "251270",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -3.7,
+      "total_return": -3.7
+    },
+    {
+      "symbol": "005385",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "012330",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "010130",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "010955",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "357780",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "005935",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "000660",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "009155",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "051910",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "033100",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "018260",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "122870",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "005387",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "263750",
+      "trades": 3,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -15.0
+    },
+    {
+      "symbol": "140860",
+      "trades": 3,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -15.0
+    },
+    {
+      "symbol": "005380",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "225570",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -10.0
+    },
+    {
+      "symbol": "005930",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -5.0,
+      "total_return": -5.0
+    },
+    {
+      "symbol": "035900",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.5,
+      "total_return": -11.0
+    },
+    {
+      "symbol": "009540",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.5,
+      "total_return": -11.0
+    },
+    {
+      "symbol": "025980",
+      "trades": 2,
+      "win_rate": 0.0,
+      "avg_return": -5.5,
+      "total_return": -11.0
+    },
+    {
+      "symbol": "042700",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -6.0,
+      "total_return": -6.0
+    },
+    {
+      "symbol": "010140",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -6.0,
+      "total_return": -6.0
+    },
+    {
+      "symbol": "271560",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -6.0,
+      "total_return": -6.0
+    }
+  ]
+}
