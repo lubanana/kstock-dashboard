@@ -1,139 +1,709 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>통합 복합 스캐너 리포트 - 2026-01-13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 통합 복합 스캐너 리포트 - 2026-01-13</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 20px; background: #f5f5f5; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 10px; margin-bottom: 20px; }
-        .header h1 { margin: 0; font-size: 2em; }
-        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .card h3 { margin-top: 0; color: #333; }
-        .metric { font-size: 2em; font-weight: bold; color: #667eea; }
-        .stock-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; }
-        .stock-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-left: 5px solid #ddd; }
-        .stock-card.strong_buy { border-left-color: #28a745; }
-        .stock-card.buy { border-left-color: #17a2b8; }
-        .stock-card.watch { border-left-color: #ffc107; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold; }
-        .badge-strong { background: #28a745; color: white; }
-        .badge-buy { background: #17a2b8; color: white; }
-        .badge-watch { background: #ffc107; color: #333; }
-        .score { font-size: 1.5em; font-weight: bold; color: #333; }
-        .confluence { margin-top: 10px; }
-        .confluence-tag { display: inline-block; padding: 2px 8px; margin: 2px; background: #e9ecef; border-radius: 4px; font-size: 0.8em; }
-        .risk { margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px; }
-        .risk-row { display: flex; justify-content: space-between; }
-        .footer { text-align: center; margin-top: 30px; padding: 20px; color: #666; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        /* 헤더 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header .meta {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        /* 요약 카드 */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .summary-card {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .summary-card:hover { transform: translateY(-5px); }
+        .summary-card h3 {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .summary-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .summary-card.total .value { color: #fff; }
+        .summary-card.strong .value { color: #28a745; }
+        .summary-card.buy .value { color: #17a2b8; }
+        .summary-card.watch .value { color: #ffc107; }
+        
+        /* 종목 그리드 */
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 25px;
+        }
+        
+        /* 종목 카드 */
+        .stock-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .stock-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        .stock-card.strong_buy::before { background: linear-gradient(90deg, #28a745, #34ce57); }
+        .stock-card.buy::before { background: linear-gradient(90deg, #17a2b8, #1fc8e3); }
+        .stock-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .stock-info h2 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .stock-info .name {
+            color: #888;
+            font-size: 0.95em;
+        }
+        .score-badge {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 10px 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .score-badge .score {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .score-badge .label {
+            font-size: 0.75em;
+            color: #888;
+        }
+        
+        .signal-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .signal-badge.strong_buy {
+            background: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+        .signal-badge.buy {
+            background: rgba(23, 162, 184, 0.2);
+            color: #17a2b8;
+            border: 1px solid rgba(23, 162, 184, 0.3);
+        }
+        
+        .price-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .price-item {
+            flex: 1;
+            min-width: 100px;
+        }
+        .price-item .label {
+            font-size: 0.75em;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .price-item .value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .price-item .value.current { color: #fff; }
+        .price-item .value.target { color: #28a745; }
+        .price-item .value.stop { color: #dc3545; }
+        
+        .confluence-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .confluence-tag {
+            padding: 4px 10px;
+            background: rgba(102, 126, 234, 0.15);
+            border-radius: 6px;
+            font-size: 0.75em;
+            color: #a8b2d1;
+        }
+        
+        .rr-bar {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+        }
+        .rr-bar .label {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .rr-visual {
+            display: flex;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        .rr-visual .loss { background: #dc3545; }
+        .rr-visual .entry { background: #ffc107; width: 2px; }
+        .rr-visual .profit { background: #28a745; }
+        .rr-text {
+            text-align: right;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        /* 모달 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 24px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+        .modal-header {
+            padding: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h2 {
+            font-size: 1.8em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .close-btn:hover { color: #fff; }
+        .modal-body {
+            padding: 30px;
+        }
+        
+        /* 상세 정보 그리드 */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .detail-card {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 16px;
+        }
+        .detail-card h4 {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .detail-card .value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        /* 차트 컨테이너 */
+        .chart-container {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 20px;
+            height: 300px;
+        }
+        
+        .click-hint {
+            text-align: center;
+            padding: 10px;
+            color: #667eea;
+            font-size: 0.85em;
+            margin-top: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .stock-grid { grid-template-columns: 1fr; }
+            .modal-content { margin: 10px; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🔥 통합 복합 스캐너 리포트</h1>
-        <p>생성일: 2026-04-02 11:51</p>
-    </div>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 통합 복합 스캐너 리포트</h1>
+            <p class="meta">IVF v2.0 + 고급 캔들 패턴 + 피볼나치 + 거래량</p>
+            <p class="meta">기준일: 2026-01-13 | 생성일: 2026-04-02</p>
+        </div>
 
-    <div class="summary">
-        <div class="card">
-            <h3>총 신호</h3>
-            <div class="metric">3</div>
-        </div>
-        <div class="card">
-            <h3>STRONG BUY</h3>
-            <div class="metric" style="color: #28a745;">1</div>
-        </div>
-        <div class="card">
-            <h3>BUY</h3>
-            <div class="metric" style="color: #17a2b8;">2</div>
-        </div>
-        <div class="card">
-            <h3>WATCH</h3>
-            <div class="metric" style="color: #ffc107;">0</div>
-        </div>
-    </div>
-    <div class="stock-grid">
-
-        <div class="stock-card strong-buy">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 style="margin: 0;">055550</h3>
-                    <div class="score">60점</div>
-                </div>
-                <span class="badge badge-strong">STRONG_BUY</span>
+        <div class="summary-grid">
+            <div class="summary-card total">
+                <h3>총 신호</h3>
+                <div class="value">3</div>
             </div>
-            <div style="margin-top: 10px;">
-                <strong>현재가:</strong> 78,400원 | 
-                <strong>패턴:</strong> morning_star
+            <div class="summary-card strong">
+                <h3>STRONG BUY</h3>
+                <div class="value">1</div>
             </div>
-            <div class="confluence">
-                <span class="confluence-tag">Fib_40</span><span class="confluence-tag">RVol_Up</span><span class="confluence-tag">MORNING_STAR</span><span class="confluence-tag">Bullish_Trend</span>
+            <div class="summary-card buy">
+                <h3>BUY</h3>
+                <div class="value">2</div>
             </div>
-            <div class="risk">
-                <div class="risk-row">
-                    <span>🛑 손절: 75,807</span>
-                    <span>🎯 목표: 84,450</span>
-                </div>
-                <div style="margin-top: 5px;">
-                    <strong>R:R = 1:2.33</strong>
-                </div>
+            <div class="summary-card watch">
+                <h3>WATCH</h3>
+                <div class="value">0</div>
             </div>
         </div>
 
-        <div class="stock-card buy">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 style="margin: 0;">194480</h3>
-                    <div class="score">55점</div>
+        <div class="stock-grid">
+            <div class="stock-card strong_buy" onclick="openModal(0)">
+                <div class="card-header">
+                    <div class="stock-info">
+                        <h2>055550</h2>
+                        <div class="name">신한지주</div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="score">60</div>
+                        <div class="label">점수</div>
+                    </div>
                 </div>
-                <span class="badge badge-buy">BUY</span>
-            </div>
-            <div style="margin-top: 10px;">
-                <strong>현재가:</strong> 31,900원 | 
-                <strong>패턴:</strong> bullish_engulfing
-            </div>
-            <div class="confluence">
-                <span class="confluence-tag">Fib_37</span><span class="confluence-tag">RVol_Up</span><span class="confluence-tag">BULLISH_ENGULFING</span><span class="confluence-tag">Bullish_Trend</span>
-            </div>
-            <div class="risk">
-                <div class="risk-row">
-                    <span>🛑 손절: 30,017</span>
-                    <span>🎯 목표: 35,666</span>
+                <span class="signal-badge strong_buy">STRONG BUY</span>
+                <div class="price-row">
+                    <div class="price-item">
+                        <div class="label">현재가</div>
+                        <div class="value current">78,400원</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="label">목표가</div>
+                        <div class="value target">+7.7%</div>
+                    </div>
                 </div>
-                <div style="margin-top: 5px;">
-                    <strong>R:R = 1:2.00</strong>
+                <div class="confluence-tags">
+                    <span class="confluence-tag">🕯️ Morning Star</span>
+                    <span class="confluence-tag">📊 Fib 40%</span>
+                    <span class="confluence-tag">📈 추세 상승</span>
                 </div>
+                <div class="rr-bar">
+                    <div class="label">손익비 (Risk:Reward)</div>
+                    <div class="rr-visual">
+                        <div class="loss" style="width: 30%"></div>
+                        <div class="entry"></div>
+                        <div class="profit" style="width: 70%"></div>
+                    </div>
+                    <div class="rr-text">1 : 2.33</div>
+                </div>
+                <div class="click-hint">👆 클릭하여 상세 정보 확인</div>
+            </div>
+
+            <div class="stock-card buy" onclick="openModal(1)">
+                <div class="card-header">
+                    <div class="stock-info">
+                        <h2>194480</h2>
+                        <div class="name">데브시스터즈</div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="score">55</div>
+                        <div class="label">점수</div>
+                    </div>
+                </div>
+                <span class="signal-badge buy">BUY</span>
+                <div class="price-row">
+                    <div class="price-item">
+                        <div class="label">현재가</div>
+                        <div class="value current">31,900원</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="label">목표가</div>
+                        <div class="value target">+11.8%</div>
+                    </div>
+                </div>
+                <div class="confluence-tags">
+                    <span class="confluence-tag">🕯️ Bullish Engulfing</span>
+                    <span class="confluence-tag">📊 Fib 37%</span>
+                    <span class="confluence-tag">📈 추세 상승</span>
+                </div>
+                <div class="rr-bar">
+                    <div class="label">손익비 (Risk:Reward)</div>
+                    <div class="rr-visual">
+                        <div class="loss" style="width: 33%"></div>
+                        <div class="entry"></div>
+                        <div class="profit" style="width: 67%"></div>
+                    </div>
+                    <div class="rr-text">1 : 2.00</div>
+                </div>
+                <div class="click-hint">👆 클릭하여 상세 정보 확인</div>
+            </div>
+
+            <div class="stock-card buy" onclick="openModal(2)">
+                <div class="card-header">
+                    <div class="stock-info">
+                        <h2>316140</h2>
+                        <div class="name">우리금융지주</div>
+                    </div>
+                    <div class="score-badge">
+                        <div class="score">55</div>
+                        <div class="label">점수</div>
+                    </div>
+                </div>
+                <span class="signal-badge buy">BUY</span>
+                <div class="price-row">
+                    <div class="price-item">
+                        <div class="label">현재가</div>
+                        <div class="value current">27,850원</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="label">목표가</div>
+                        <div class="value target">+6.2%</div>
+                    </div>
+                </div>
+                <div class="confluence-tags">
+                    <span class="confluence-tag">🕯️ Morning Star</span>
+                    <span class="confluence-tag">📊 Fib 50%</span>
+                    <span class="confluence-tag">📊 MA20 상회</span>
+                </div>
+                <div class="rr-bar">
+                    <div class="label">손익비 (Risk:Reward)</div>
+                    <div class="rr-visual">
+                        <div class="loss" style="width: 33%"></div>
+                        <div class="entry"></div>
+                        <div class="profit" style="width: 67%"></div>
+                    </div>
+                    <div class="rr-text">1 : 2.00</div>
+                </div>
+                <div class="click-hint">👆 클릭하여 상세 정보 확인</div>
             </div>
         </div>
 
-        <div class="stock-card buy">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 style="margin: 0;">316140</h3>
-                    <div class="score">55점</div>
+        <div class="footer">
+            <p>🔥 통합 복합 스캐너 | IVF v2.0 + 고급 캔들 패턴 + 피볼나치 + 거래량</p>
+            <p style="margin-top: 10px; color: #555;">
+                © 2026 K-Stock Scanner | 
+                <a href="https://github.com/lubanana/kstock-dashboard" style="color: #667eea;">GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- 모달 -->
+    <div id="stockModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modalTitle">종목 상세</h2>
+                <button class="close-btn" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="detail-grid">
+                    <div class="detail-card">
+                        <h4>현재가</h4>
+                        <div class="value" id="modalPrice">-</div>
+                    </div>
+                    <div class="detail-card">
+                        <h4>목표가</h4>
+                        <div class="value" id="modalTarget" style="color: #28a745;">-</div>
+                    </div>
+                    <div class="detail-card">
+                        <h4>손절가</h4>
+                        <div class="value" id="modalStop" style="color: #dc3545;">-</div>
+                    </div>
+                    <div class="detail-card">
+                        <h4>예상 수익률</h4>
+                        <div class="value" id="modalReturn" style="color: #28a745;">-</div>
+                    </div>
                 </div>
-                <span class="badge badge-buy">BUY</span>
-            </div>
-            <div style="margin-top: 10px;">
-                <strong>현재가:</strong> 27,850원 | 
-                <strong>패턴:</strong> morning_star
-            </div>
-            <div class="confluence">
-                <span class="confluence-tag">Fib_50</span><span class="confluence-tag">RVol_Up</span><span class="confluence-tag">MORNING_STAR</span><span class="confluence-tag">Above_MA20</span>
-            </div>
-            <div class="risk">
-                <div class="risk-row">
-                    <span>🛑 손절: 26,993</span>
-                    <span>🎯 목표: 29,564</span>
+                
+                <div class="detail-card">
+                    <h4>진입 판단 근거</h4>
+                    <div id="modalReasons" style="line-height: 1.8; color: #ccc;"></div>
                 </div>
-                <div style="margin-top: 5px;">
-                    <strong>R:R = 1:2.00</strong>
+
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <p>통합 복합 스캐너 | IVF v2.0 + 고급 캔들 패턴 + 피볼나치</p>
-    </div>
+
+    <script>
+        const stockData = [
+            {
+                symbol: '055550',
+                name: '신한지주',
+                price: 78400,
+                target: 84450,
+                stop: 75807,
+                score: 60,
+                signal: 'STRONG BUY',
+                pattern: 'Morning Star',
+                rr: 2.33,
+                retracement: 40,
+                rvol: 1.2,
+                confluence: ['Fib 40%', 'RVol 1.2x', 'Morning Star', 'Bullish Trend'],
+                reasons: [
+                    '✅ 피볼나치 40% 되돌림 구간 (30-70% 적합)',
+                    '✅ Morning Star 패턴 (신뢰도 5/5)',
+                    '✅ 거래량 1.2x (평균 대비 증가)',
+                    '✅ 정배열 (주가 > 5일 > 20일선)',
+                    '✅ 60점 이상 고품질 신호'
+                ]
+            },
+            {
+                symbol: '194480',
+                name: '데브시스터즈',
+                price: 31900,
+                target: 35666,
+                stop: 30017,
+                score: 55,
+                signal: 'BUY',
+                pattern: 'Bullish Engulfing',
+                rr: 2.00,
+                retracement: 37,
+                rvol: 1.0,
+                confluence: ['Fib 37%', 'RVol 1.0x', 'Bullish Engulfing', 'Bullish Trend'],
+                reasons: [
+                    '✅ 피볼나치 37% 되돌림 구간',
+                    '✅ Bullish Engulfing 패턴 (신뢰도 4/5)',
+                    '✅ 거래량 기준 충족 (1.0x 이상)',
+                    '✅ 정배열 유지 중',
+                    '✅ 55점 BUY 레벨 도달'
+                ]
+            },
+            {
+                symbol: '316140',
+                name: '우리금융지주',
+                price: 27850,
+                target: 29564,
+                stop: 26993,
+                score: 55,
+                signal: 'BUY',
+                pattern: 'Morning Star',
+                rr: 2.00,
+                retracement: 50,
+                rvol: 1.0,
+                confluence: ['Fib 50%', 'RVol 1.0x', 'Morning Star', 'Above MA20'],
+                reasons: [
+                    '✅ 피볼나치 50% 되돌림 (황금 비율)',
+                    '✅ Morning Star 패턴 감지',
+                    '✅ 20일선 상회 (단기 추세 상승)',
+                    '✅ 거래량 안정적',
+                    '✅ 55점 BUY 레벨 도달'
+                ]
+            }
+        ];
+
+        let chart = null;
+
+        function openModal(index) {
+            const data = stockData[index];
+            document.getElementById('modalTitle').textContent = `${data.symbol} ${data.name}`;
+            document.getElementById('modalPrice').textContent = data.price.toLocaleString() + '원';
+            document.getElementById('modalTarget').textContent = data.target.toLocaleString() + '원';
+            document.getElementById('modalStop').textContent = data.stop.toLocaleString() + '원';
+            
+            const returnPct = ((data.target - data.price) / data.price * 100).toFixed(1);
+            document.getElementById('modalReturn').textContent = '+' + returnPct + '%';
+            
+            document.getElementById('modalReasons').innerHTML = data.reasons.map(r => `<div>${r}</div>`).join('');
+            
+            document.getElementById('stockModal').classList.add('active');
+            
+            // 차트 그리기
+            drawChart(data);
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'stockModal') {
+                document.getElementById('stockModal').classList.remove('active');
+            }
+        }
+
+        function drawChart(data) {
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            
+            if (chart) {
+                chart.destroy();
+            }
+
+            // 시뮬레이션 데이터
+            const labels = ['-20일', '-15일', '-10일', '-5일', '진입일', '+5일(예상)', '+10일(예상)'];
+            const prices = [
+                data.price * 0.95,
+                data.price * 0.98,
+                data.price * 0.96,
+                data.price * 0.99,
+                data.price,
+                data.price * 1.04,
+                data.target
+            ];
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '주가',
+                        data: prices,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 5,
+                        pointBackgroundColor: prices.map((p, i) => {
+                            if (i === 4) return '#ffc107'; // 진입
+                            if (i === 6) return '#28a745'; // 목표
+                            return '#667eea';
+                        })
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        annotation: {
+                            annotations: {
+                                entry: {
+                                    type: 'line',
+                                    yMin: data.price,
+                                    yMax: data.price,
+                                    borderColor: '#ffc107',
+                                    borderWidth: 2,
+                                    label: { content: '진입', enabled: true }
+                                },
+                                target: {
+                                    type: 'line',
+                                    yMin: data.target,
+                                    yMax: data.target,
+                                    borderColor: '#28a745',
+                                    borderWidth: 2,
+                                    borderDash: [5, 5],
+                                    label: { content: '목표', enabled: true }
+                                },
+                                stop: {
+                                    type: 'line',
+                                    yMin: data.stop,
+                                    yMax: data.stop,
+                                    borderColor: '#dc3545',
+                                    borderWidth: 2,
+                                    borderDash: [5, 5],
+                                    label: { content: '손절', enabled: true }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.1)' },
+                            ticks: { color: '#888' }
+                        },
+                        x: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#888' }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
