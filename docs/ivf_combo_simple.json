@@ -1,0 +1,460 @@
+{
+  "results": {
+    "base": [
+      {
+        "symbol": "140860",
+        "date": "2026-03-03",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_50",
+          "RVol_1.4"
+        ]
+      }
+    ],
+    "rsi": [
+      {
+        "symbol": "006730",
+        "date": "2026-02-24",
+        "score": 50,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_53",
+          "RSI_47"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-02-17",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Fib_60",
+          "RVol_9.2",
+          "RSI_44"
+        ]
+      },
+      {
+        "symbol": "042700",
+        "date": "2026-01-27",
+        "score": 50,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_35",
+          "RSI_38"
+        ]
+      },
+      {
+        "symbol": "000660",
+        "date": "2026-03-17",
+        "score": 50,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_44",
+          "RSI_48"
+        ]
+      }
+    ],
+    "candle": [
+      {
+        "symbol": "033100",
+        "date": "2026-01-13",
+        "score": 50,
+        "return": 8.9,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "033100",
+        "date": "2026-02-24",
+        "score": 50,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_46",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-01-13",
+        "score": 50,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_33",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-02-10",
+        "score": 50,
+        "return": 3.85,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_64",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "348210",
+        "date": "2026-02-03",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Fib_39",
+          "RVol_1.3",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-02-24",
+        "score": 50,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_53",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "025980",
+        "date": "2026-01-13",
+        "score": 50,
+        "return": 0.87,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_33",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "042700",
+        "date": "2026-02-03",
+        "score": 50,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "055550",
+        "date": "2026-01-13",
+        "score": 50,
+        "return": 9.82,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_40",
+          "Pinbar"
+        ]
+      }
+    ],
+    "divergence": [],
+    "rsi_candle": [
+      {
+        "symbol": "140860",
+        "date": "2026-02-17",
+        "score": 45,
+        "return": 12.0,
+        "reasons": [
+          "Fib_68",
+          "RSI_47",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-02-24",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Fib_61",
+          "RSI_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-03-17",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Fib_61",
+          "RSI_49",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-01-20",
+        "score": 45,
+        "return": 12.0,
+        "reasons": [
+          "Fib_45",
+          "RSI_46",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "025980",
+        "date": "2026-03-10",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Fib_41",
+          "RSI_48",
+          "Pinbar"
+        ]
+      }
+    ],
+    "rsi_div": [],
+    "all": [
+      {
+        "symbol": "033100",
+        "date": "2026-01-13",
+        "score": 45,
+        "return": 8.9,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "033100",
+        "date": "2026-02-24",
+        "score": 45,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_46",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-01-13",
+        "score": 45,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_33",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-02-10",
+        "score": 45,
+        "return": 3.85,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_64",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-02-17",
+        "score": 40,
+        "return": 12.0,
+        "reasons": [
+          "Fib_68",
+          "RSI_47",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-02-24",
+        "score": 40,
+        "return": -6.0,
+        "reasons": [
+          "Fib_61",
+          "RSI_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "140860",
+        "date": "2026-03-17",
+        "score": 40,
+        "return": -6.0,
+        "reasons": [
+          "Fib_61",
+          "RSI_49",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "348210",
+        "date": "2026-02-03",
+        "score": 40,
+        "return": -6.0,
+        "reasons": [
+          "Fib_39",
+          "RVol_1.3",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "006730",
+        "date": "2026-02-24",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_53",
+          "RSI_47"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-01-20",
+        "score": 40,
+        "return": 12.0,
+        "reasons": [
+          "Fib_45",
+          "RSI_46",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-02-17",
+        "score": 40,
+        "return": -6.0,
+        "reasons": [
+          "Fib_60",
+          "RVol_9.2",
+          "RSI_44"
+        ]
+      },
+      {
+        "symbol": "009620",
+        "date": "2026-02-24",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_53",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "025980",
+        "date": "2026-01-13",
+        "score": 45,
+        "return": 0.87,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_33",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "025980",
+        "date": "2026-03-10",
+        "score": 40,
+        "return": -6.0,
+        "reasons": [
+          "Fib_41",
+          "RSI_48",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "042700",
+        "date": "2026-01-27",
+        "score": 45,
+        "return": 12.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_35",
+          "RSI_38"
+        ]
+      },
+      {
+        "symbol": "042700",
+        "date": "2026-02-03",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_37",
+          "Pinbar"
+        ]
+      },
+      {
+        "symbol": "000660",
+        "date": "2026-03-17",
+        "score": 45,
+        "return": -6.0,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_44",
+          "RSI_48"
+        ]
+      },
+      {
+        "symbol": "055550",
+        "date": "2026-01-13",
+        "score": 45,
+        "return": 9.82,
+        "reasons": [
+          "Bullish_Trend",
+          "Fib_40",
+          "Pinbar"
+        ]
+      }
+    ]
+  },
+  "summary": [
+    {
+      "combo": "candle",
+      "trades": 9,
+      "win_rate": 66.66666666666666,
+      "avg_return": 3.2711111111111113,
+      "total_return": 29.44
+    },
+    {
+      "combo": "all",
+      "trades": 18,
+      "win_rate": 50.0,
+      "avg_return": 1.6355555555555554,
+      "total_return": 29.44
+    },
+    {
+      "combo": "rsi_candle",
+      "trades": 5,
+      "win_rate": 40.0,
+      "avg_return": 1.2,
+      "total_return": 6.0
+    },
+    {
+      "combo": "rsi",
+      "trades": 4,
+      "win_rate": 25.0,
+      "avg_return": -1.5,
+      "total_return": -6.0
+    },
+    {
+      "combo": "base",
+      "trades": 1,
+      "win_rate": 0.0,
+      "avg_return": -6.0,
+      "total_return": -6.0
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "combinations": [
+    {
+      "name": "Base",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": false,
+      "use_divergence": false,
+      "use_volume": true,
+      "min_score": 50,
+      "description": "Fib + Volume만"
+    },
+    {
+      "name": "Fib+RSI",
+      "use_fib": true,
+      "use_rsi_stoch": true,
+      "use_candle": false,
+      "use_divergence": false,
+      "use_volume": true,
+      "min_score": 55,
+      "description": "Fib + RSI/Stochastic"
+    },
+    {
+      "name": "Fib+Candle",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": true,
+      "use_divergence": false,
+      "use_volume": true,
+      "min_score": 55,
+      "description": "Fib + 캔들 패턴"
+    },
+    {
+      "name": "Fib+Div",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": false,
+      "use_divergence": true,
+      "use_volume": true,
+      "min_score": 55,
+      "description": "Fib + RSI 다이버전스"
+    },
+    {
+      "name": "Fib+RSI+Candle",
+      "use_fib": true,
+      "use_rsi_stoch": true,
+      "use_candle": true,
+      "use_divergence": false,
+      "use_volume": true,
+      "min_score": 60,
+      "description": "Fib + RSI + 캔들"
+    },
+    {
+      "name": "Fib+RSI+Div",
+      "use_fib": true,
+      "use_rsi_stoch": true,
+      "use_candle": false,
+      "use_divergence": true,
+      "use_volume": true,
+      "min_score": 60,
+      "description": "Fib + RSI + 다이버전스"
+    },
+    {
+      "name": "Fib+Candle+Div",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": true,
+      "use_divergence": true,
+      "use_volume": true,
+      "min_score": 60,
+      "description": "Fib + 캔들 + 다이버전스"
+    },
+    {
+      "name": "Fib+RSI+Candle+Div",
+      "use_fib": true,
+      "use_rsi_stoch": true,
+      "use_candle": true,
+      "use_divergence": true,
+      "use_volume": true,
+      "min_score": 65,
+      "description": "모든 지표"
+    },
+    {
+      "name": "Fib+Div_High",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": false,
+      "use_divergence": true,
+      "use_volume": true,
+      "min_score": 70,
+      "description": "Fib + 다이버전스 (70점+)"
+    },
+    {
+      "name": "Fib+Candle_High",
+      "use_fib": true,
+      "use_rsi_stoch": false,
+      "use_candle": true,
+      "use_divergence": false,
+      "use_volume": true,
+      "min_score": 70,
+      "description": "Fib + 캔들 (70점+)"
+    }
+  ],
+  "results": {
+    "Base": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+RSI": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+Candle": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+Div": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+RSI+Candle": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+RSI+Div": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+Candle+Div": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+RSI+Candle+Div": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+Div_High": {
+      "trades": [],
+      "signals": 0
+    },
+    "Fib+Candle_High": {
+      "trades": [],
+      "signals": 0
+    }
+  },
+  "analysis": []
+}
