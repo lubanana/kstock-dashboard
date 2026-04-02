@@ -1,0 +1,370 @@
+{
+  "scraped_at": "2026-03-05T13:20:53.214767",
+  "main_news": {
+    "source": "naver_stock_main_news",
+    "url": "https://m.stock.naver.com/investment/news/mainnews",
+    "scraped_at": "2026-03-05T13:20:10.559795",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "롤러코스터 증시에 혼비백산 개미들…그래서 지금 살까, 말까",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000093972",
+        "scraped_at": "2026-03-05T13:20:10.551870",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"증시 활성화\" vs \"시장 망치는 독단\"…24시간 주식 거래에 갈등 격화",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478297",
+        "scraped_at": "2026-03-05T13:20:10.552316",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "비상장·코스닥에 모험자본 푼다…\"최소 모집액 300억원\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244006",
+        "scraped_at": "2026-03-05T13:20:10.552717",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "또 터진 한국투자증권 MTS 오류…반복되는 전산 사고에 투자자 분통",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478286",
+        "scraped_at": "2026-03-05T13:20:10.553133",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "마진 악화에 꺾였던 브로드컴 주가…\"AI 매출 성장 스토리 부각\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244003",
+        "scraped_at": "2026-03-05T13:20:10.553780",
+        "sentiment": "positive"
+      },
+      {
+        "title": "“한 달만 버티면 되는 거였다고?”…전쟁 쇼크에 손절 버튼 누른 개미들 ‘통곡’",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596045",
+        "scraped_at": "2026-03-05T13:20:10.554235",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "위헌 논란에도 與 '거래소 지분 제한' 강행…업계 \"거래소 지배권 재편 의도\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478243",
+        "scraped_at": "2026-03-05T13:20:10.554624",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“손절·존버 갈피 못잡겠어요” 개미들...관건은 ‘빚투’",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/021/0002775001",
+        "scraped_at": "2026-03-05T13:20:10.555026",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "최대 폭락장 다음날 급등장…커지는 증시 변동성 왜?",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013803366",
+        "scraped_at": "2026-03-05T13:20:10.555448",
+        "sentiment": "positive"
+      },
+      {
+        "title": "아는 사람만 한다는 '비상장 벤처투자'…이젠 주식처럼 사고판다",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000044982",
+        "scraped_at": "2026-03-05T13:20:10.555829",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "BDC 본격 도입…비상장 벤처 투자 대중화 물꼬",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005729821",
+        "scraped_at": "2026-03-05T13:20:10.556231",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한숨 돌린 ‘빚투 32조’ 반대매매 뇌관은 여전",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608899",
+        "scraped_at": "2026-03-05T13:20:10.556612",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘19만전자’ · ‘97만닉스’ 급등…“코스피 1차 반등목표 5800”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608898",
+        "scraped_at": "2026-03-05T13:20:10.557029",
+        "sentiment": "positive"
+      },
+      {
+        "title": "外人 ‘사자’에 코스피 5600선 안착…장중 5700선 ‘터치’",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/366/0001146032",
+        "scraped_at": "2026-03-05T13:20:10.557451",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"안 팔길 잘했네\" 곡소리 개미, 오늘은 환호성…코인보다 더 뛰는 국장",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/008/0005325766",
+        "scraped_at": "2026-03-05T13:20:10.557847",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스피 10% 급등…수익률 상위 투자자는 ‘S-Oil’ 선택 [주식 초고수는 지금]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596028",
+        "scraped_at": "2026-03-05T13:20:10.558268",
+        "sentiment": "positive"
+      },
+      {
+        "title": "“코스피 폭락 뒤 23거래일만에 낙폭 회복”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608853",
+        "scraped_at": "2026-03-05T13:20:10.558637",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "‘AI 거품론’ 불식시키는 호실적 브로드컴, ‘어닝서프’에 주가 급등",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608851",
+        "scraped_at": "2026-03-05T13:20:10.559028",
+        "sentiment": "positive"
+      },
+      {
+        "title": "‘김치 프리미엄’ 소멸에 희비 갈린 금 ETF",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608849",
+        "scraped_at": "2026-03-05T13:20:10.559427",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "집 나갔던 기관이 돌아왔다…비트코인 현물 ETF에 열흘새 17억달러 순유입",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005645583",
+        "scraped_at": "2026-03-05T13:20:10.559793",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "flash_news": {
+    "source": "naver_stock_flash_news",
+    "url": "https://m.stock.naver.com/investment/news/flashnews",
+    "scraped_at": "2026-03-05T13:20:16.937476",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "포스코퓨처엠, 베트남에 인조흑연 음극재공장 신설키로",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/417/0001132763",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.928416",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"청소년 불법도박 근절해야\"…토스증권, 릴레이 캠페인 동참",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013803704",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.928901",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "혹시 내 주식도?...국세청, 코스피 4곳·코스닥 20곳 '주가조작' 세무조사·검찰 고발",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000093973",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.929366",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "금감원 부원장 \"증시 변동성 틈탄 불공정행위 엄정 대응\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/422/0000840711",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.929843",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "'현기증 장세'에 거래량 급증…일부 증권사 MTS서 잇달아 오류",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/001/0015939991",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.930315",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스피, 저가매수세에 10%대 상승...코스닥은 16%대 초강세[fn오후시황]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/014/0005486727",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.930789",
+        "sentiment": "positive"
+      },
+      {
+        "title": "스맥, 삼성전자 DS 반도체 공정장비 수주 개시…\"반도체 장비 사업 본격화\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229073",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.931257",
+        "sentiment": "positive"
+      },
+      {
+        "title": "시공테크, 지난해 영업익 151억…전년비 134.4% ↑",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608978",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.931651",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코빗, 법인 대상 스테이킹 서비스…\"입출금 자유\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000044983",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.932149",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한국투자증권, 피델리티와 파트너십 강화…리테일 상품 확대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/016/0002608977",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.932604",
+        "sentiment": "positive"
+      },
+      {
+        "title": "박민우 현대차 AVP 본부장 “원팀으로 차세대 모빌리티 선도”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596067",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.933073",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "정기선 HD현대 회장 \"한국과 필리핀 잇는 가교 역할 이어갈 것\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/417/0001132757",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.933591",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "군인공제회-신세계센트럴, 부동산 개발 협력 '맞손'",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/014/0005486726",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.934054",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "롤러코스터 증시에 혼비백산 개미들…그래서 지금 살까, 말까",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000093972",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.934519",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한국투자증권, 글로벌 자산운용사 피델리티와 파트너십 강화…리테일 상품 확대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229069",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.935035",
+        "sentiment": "positive"
+      },
+      {
+        "title": "‘코스피 상장’ 케이뱅크 상승세 꺾여...공모가 밑으로 ‘뚝’[코주부]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596065",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.935512",
+        "sentiment": "positive"
+      },
+      {
+        "title": "[미국-이란 전쟁]휴전 기대감에 亞증시 급등…코스피 10%·닛케이 2%",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005729878",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.936033",
+        "sentiment": "positive"
+      },
+      {
+        "title": "한국투자증권, GWM 패밀리오피스 신규 고객 환영 만찬 개최",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229067",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.936512",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"ETF는 예금 아닙니다\"…금감원, 과장 광고 주의보",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/422/0000840704",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.936998",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "삼성 '갤럭시 S26 울트라' MWC26서 '최고 전시 제품상' 수상",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005729877",
+        "type": "flash",
+        "scraped_at": "2026-03-05T13:20:16.937474",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "stock_news": {
+    "stock_code": "005930",
+    "source": "naver_stock_news",
+    "url": "https://m.stock.naver.com/domestic/stock/005930/news",
+    "scraped_at": "2026-03-05T13:20:53.214747",
+    "status": "success",
+    "count": 0,
+    "news": []
+  }
+}

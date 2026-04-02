@@ -1,0 +1,370 @@
+{
+  "scraped_at": "2026-03-06T23:43:39.411890",
+  "main_news": {
+    "source": "naver_stock_main_news",
+    "url": "https://m.stock.naver.com/investment/news/mainnews",
+    "scraped_at": "2026-03-06T23:42:54.593262",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "어피니티, SK렌터카 매각 추진…롯데렌탈 인수 승부수[주간사모펀드]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478919",
+        "scraped_at": "2026-03-06T23:42:54.579471",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"이란 미사일 격추시키는 거 봤지?\"…하락장에 고점 뚫었다 [종목+]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259301",
+        "scraped_at": "2026-03-06T23:42:54.580299",
+        "sentiment": "negative"
+      },
+      {
+        "title": "\"금리 인하 요원하다고 제약·바이오주 포기 보다 선별 접근\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244237",
+        "scraped_at": "2026-03-06T23:42:54.581368",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "가격 인상 어디부터 시작됐나?…정유사-대리점 서로 '네 탓'[뉴스추적]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/057/0001938594",
+        "scraped_at": "2026-03-06T23:42:54.582399",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "연면적 6만평 ‘로지스포인트 평택’ 매물로…KB운용, 상반기 매각 완료 목표",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229950",
+        "scraped_at": "2026-03-06T23:42:54.583080",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"이사회 장악 실패하자 채용?\"…대진첨단소재, 우태경 법무팀장 합류 논란[only 이데일리]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229939",
+        "scraped_at": "2026-03-06T23:42:54.583725",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "'K증시 버블론' 반박한 김용범 \"비싸진 게 아니라 제값 찾는 중\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259274",
+        "scraped_at": "2026-03-06T23:42:54.584348",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "외국인, 코스피 팔고 3조 넘게 사들여…'역대급 환승투자'",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259269",
+        "scraped_at": "2026-03-06T23:42:54.584985",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "상폐 피하려 동전주 병합 늘지만…주가는 되레 뒷걸음",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596593",
+        "scraped_at": "2026-03-06T23:42:54.585644",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"투자·연금·크립토까지\"...미래형 MTS 승부수 [미다스의 손]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244227",
+        "scraped_at": "2026-03-06T23:42:54.586672",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "올해 수익률 26% 돌파…배당락 회복률도 고려[ETF 줌인]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596582",
+        "scraped_at": "2026-03-06T23:42:54.587326",
+        "sentiment": "positive"
+      },
+      {
+        "title": "재무제표·해외 리포트까지 섭렵…전쟁 뉴스 뜨자 투자실탄 장전 [이슈포커스]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596581",
+        "scraped_at": "2026-03-06T23:42:54.587902",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[단독] ‘자사주 꼼수’ 논란 슈프리마에이치큐, 금감원 제동에 원상복구 검토",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596580",
+        "scraped_at": "2026-03-06T23:42:54.588587",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "유조선 피격에 국제유가 뛰자…원유 ETF 수익률 상위권 싹쓸이",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596575",
+        "scraped_at": "2026-03-06T23:42:54.589281",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "전쟁에도 金 ETF '마이너스'…'금=안전자산' 공식 깨졌다",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259233",
+        "scraped_at": "2026-03-06T23:42:54.589927",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"기관 주주활동 편하게\"…자사주 소각·배당 요구 '5%룰' 적용 안한다",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/008/0005326521",
+        "scraped_at": "2026-03-06T23:42:54.590657",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스닥시장 회복세에도 1천원 미만 동전株 증가",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646396",
+        "scraped_at": "2026-03-06T23:42:54.591347",
+        "sentiment": "positive"
+      },
+      {
+        "title": "실적불안에 유가까지…전기·가스株 '울상'",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005646392",
+        "scraped_at": "2026-03-06T23:42:54.591955",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "경영권 프리미엄 없애고 소액주주도 보호[시그널]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596552",
+        "scraped_at": "2026-03-06T23:42:54.592620",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"공포에 산 개미 환호\" 이틀 연속 쭉쭉...\"변동장 '이 업종' 주목\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/008/0005326508",
+        "scraped_at": "2026-03-06T23:42:54.593254",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "flash_news": {
+    "source": "naver_stock_flash_news",
+    "url": "https://m.stock.naver.com/investment/news/flashnews",
+    "scraped_at": "2026-03-06T23:43:01.778350",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "유가 90불 돌파·美고용 충격 겹쳤다…나스닥 1%↓",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230011",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.762380",
+        "sentiment": "positive"
+      },
+      {
+        "title": "뉴욕증시, '중동 정세 불안·유가 급등' 하락 출발…다우 1.78%↓",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013806919",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.763205",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[주간사모펀드] 어피니티, SK렌터카 매각 추진…롯데렌탈 인수 승부수",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/629/0000478919",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.764195",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[속보] 뉴욕증시, '중동 정세 불안·유가 급등' 하락 출발",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013806906",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.765004",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“코스피 급등락은 기관 투기거래…종말 징후” 빅쇼트 버리의 경고",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/021/0002775376",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.765787",
+        "sentiment": "positive"
+      },
+      {
+        "title": "한국거래소, 최우수 IB에 미래에셋증권 선정",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/366/0001146495",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.766587",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "국민연금 상근전문위원에 박영석·이연임·정희준 [시그널]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596621",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.767402",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "2025년 우수 투자은행 시상식…최우수IB에 미래에셋증권",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596619",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.768225",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"금리 인하 요원하다고 제약·바이오주 포기 보다 선별 접근\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244237",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.769459",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "카나프테라퓨틱스 공모 청약에 9.5조 몰려",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/031/0001011167",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.770217",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "국민연금기금운용 상근전문위원에 박영석·이연임·정희준",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013806819",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.770985",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "한화시스템, 한화오션 지분 매각해 1.7조 조달[시그널]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596616",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.771818",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "인벤티지랩, 985억원 규모 자금 조달…VC·기관투자자 '재베팅'",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229972",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.772610",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "송영숙 한미그룹 회장의 경고장…“한 사람이 전권 쥘 수 없어”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596615",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.773393",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스닥 액티브 ETF 첫 출격… 10일 삼성액티브·타임폴리오 맞대결",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/366/0001146491",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.774261",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "중동發 ‘금리 변동성’ 무색…신한지주, 영구채 수요예측서 목표액 2배 확보",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596613",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.775016",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[올댓차이나] 홍콩 증시, 기술주에 저가 매수로 상승 마감…H주 2.09%↑",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013806791",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.775832",
+        "sentiment": "positive"
+      },
+      {
+        "title": "연면적 6만평 ‘로지스포인트 평택’ 매물로…KB운용, 상반기 매각 완료 목표",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006229950",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.776748",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“자사주 소각 요구도 경영권 개입 아냐”…상반기 스튜어드십코드 개정 추진",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596609",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.777554",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "카나프테라퓨틱스, 청약 경쟁률 1899:1 기록…증거금 9조 몰렸다 [시그널]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004596608",
+        "type": "flash",
+        "scraped_at": "2026-03-06T23:43:01.778339",
+        "sentiment": "neutral"
+      }
+    ]
+  },
+  "stock_news": {
+    "stock_code": "005930",
+    "source": "naver_stock_news",
+    "url": "https://m.stock.naver.com/domestic/stock/005930/news",
+    "scraped_at": "2026-03-06T23:43:39.411862",
+    "status": "success",
+    "count": 0,
+    "news": []
+  }
+}

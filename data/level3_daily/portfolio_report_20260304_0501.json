@@ -1,0 +1,1634 @@
+{
+  "agent_id": "PM_001",
+  "agent_name": "Portfolio Manager",
+  "analysis_date": "2026-03-04T05:01:23.405796",
+  "methodology": {
+    "score_weights": {
+      "level1": 0.5,
+      "level2_sector": 0.3,
+      "level2_macro": 0.2
+    },
+    "thresholds": {
+      "STRONG_BUY": 75,
+      "BUY": 70,
+      "HOLD": 50,
+      "SELL": 40,
+      "STRONG_SELL": 35
+    },
+    "position_sizing": {
+      "STRONG_BUY": 0.1,
+      "BUY": 0.07,
+      "HOLD": 0.03,
+      "SELL": 0.0,
+      "STRONG_SELL": 0.0
+    }
+  },
+  "market_outlook": {
+    "macro_condition": "NEUTRAL",
+    "macro_adjustment": 0,
+    "recommendation": {
+      "equity_exposure": "Neutral",
+      "defensive_sectors": false,
+      "risk_on_off": "Neutral"
+    }
+  },
+  "portfolio_summary": {
+    "total_stocks": 59,
+    "long_count": 3,
+    "short_count": 23,
+    "neutral_count": 33,
+    "long_weight": 0.24,
+    "short_weight": 0.0,
+    "cash_weight": 0.76
+  },
+  "portfolio": {
+    "long": [
+      {
+        "symbol": "012450.KS",
+        "name": "한화에어로스페이스",
+        "sector": "방산",
+        "market": "KOSPI",
+        "final_score": 76.8,
+        "rating": "STRONG_BUY",
+        "position_size": 0.1,
+        "level1_score": 73.5,
+        "breakdown": {
+          "level1_score": 73.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "011200.KS",
+        "name": "HMM",
+        "sector": "해운",
+        "market": "KOSPI",
+        "final_score": 72.1,
+        "rating": "BUY",
+        "position_size": 0.07,
+        "level1_score": 69.0,
+        "breakdown": {
+          "level1_score": 69.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "032830.KS",
+        "name": "삼성생명",
+        "sector": "보험",
+        "market": "KOSPI",
+        "final_score": 71.1,
+        "rating": "BUY",
+        "position_size": 0.07,
+        "level1_score": 68.0,
+        "breakdown": {
+          "level1_score": 68.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      }
+    ],
+    "short": [
+      {
+        "symbol": "196170.KS",
+        "name": "알테오젠",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 23.9,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 25.0,
+        "breakdown": {
+          "level1_score": 25.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "293490.KS",
+        "name": "카카오게임즈",
+        "sector": "게임",
+        "market": "KOSDAQ",
+        "final_score": 24.4,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 25.5,
+        "breakdown": {
+          "level1_score": 25.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "145020.KS",
+        "name": "휴젤",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 24.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 26.0,
+        "breakdown": {
+          "level1_score": 26.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "247540.KS",
+        "name": "에코프로비엠",
+        "sector": "2차전지",
+        "market": "KOSDAQ",
+        "final_score": 25.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 26.8,
+        "breakdown": {
+          "level1_score": 26.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "086520.KS",
+        "name": "에코프로",
+        "sector": "2차전지",
+        "market": "KOSDAQ",
+        "final_score": 26.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 27.8,
+        "breakdown": {
+          "level1_score": 27.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "068760.KS",
+        "name": "셀트리온제약",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 26.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 27.8,
+        "breakdown": {
+          "level1_score": 27.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "278280.KS",
+        "name": "천보",
+        "sector": "2차전지",
+        "market": "KOSDAQ",
+        "final_score": 26.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 27.8,
+        "breakdown": {
+          "level1_score": 27.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "095660.KS",
+        "name": "네오위즈",
+        "sector": "게임",
+        "market": "KOSDAQ",
+        "final_score": 27.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 29.0,
+        "breakdown": {
+          "level1_score": 29.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "222800.KS",
+        "name": "심텍",
+        "sector": "반도체",
+        "market": "KOSDAQ",
+        "final_score": 28.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 29.2,
+        "breakdown": {
+          "level1_score": 29.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "036830.KS",
+        "name": "셀트리온제약",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 28.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 30.2,
+        "breakdown": {
+          "level1_score": 30.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "041140.KS",
+        "name": "넥슨게임즈",
+        "sector": "게임",
+        "market": "KOSDAQ",
+        "final_score": 29.4,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 30.8,
+        "breakdown": {
+          "level1_score": 30.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "028300.KS",
+        "name": "HLB",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 29.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 31.0,
+        "breakdown": {
+          "level1_score": 31.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "214150.KS",
+        "name": "클리오",
+        "sector": "화장품",
+        "market": "KOSDAQ",
+        "final_score": 29.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 31.0,
+        "breakdown": {
+          "level1_score": 31.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "357780.KS",
+        "name": "솔브레인",
+        "sector": "반도체",
+        "market": "KOSDAQ",
+        "final_score": 30.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 31.2,
+        "breakdown": {
+          "level1_score": 31.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "263750.KS",
+        "name": "펄어비스",
+        "sector": "게임",
+        "market": "KOSDAQ",
+        "final_score": 30.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 32.2,
+        "breakdown": {
+          "level1_score": 32.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "240810.KS",
+        "name": "원익IPS",
+        "sector": "반도체",
+        "market": "KOSDAQ",
+        "final_score": 31.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 32.8,
+        "breakdown": {
+          "level1_score": 32.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "352820.KS",
+        "name": "하이브",
+        "sector": "엔터",
+        "market": "KOSDAQ",
+        "final_score": 44.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.2,
+        "breakdown": {
+          "level1_score": 46.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "122900.KS",
+        "name": "아이마켓코리아",
+        "sector": "플랫폼",
+        "market": "KOSDAQ",
+        "final_score": 44.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.2,
+        "breakdown": {
+          "level1_score": 44.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "042660.KS",
+        "name": "한화오션",
+        "sector": "조선",
+        "market": "KOSPI",
+        "final_score": 46.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.0,
+        "breakdown": {
+          "level1_score": 46.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005490.KS",
+        "name": "POSCO홀딩스",
+        "sector": "철강",
+        "market": "KOSPI",
+        "final_score": 47.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.8,
+        "breakdown": {
+          "level1_score": 46.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "015760.KS",
+        "name": "한국전력",
+        "sector": "전력",
+        "market": "KOSPI",
+        "final_score": 47.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.0,
+        "breakdown": {
+          "level1_score": 49.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "051900.KS",
+        "name": "LG생활건강",
+        "sector": "생활용품",
+        "market": "KOSPI",
+        "final_score": 48.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.8,
+        "breakdown": {
+          "level1_score": 49.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "035420.KS",
+        "name": "NAVER",
+        "sector": "플랫폼",
+        "market": "KOSPI",
+        "final_score": 48.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.2,
+        "breakdown": {
+          "level1_score": 48.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      }
+    ],
+    "neutral": [
+      {
+        "symbol": "005930.KS",
+        "name": "삼성전자",
+        "sector": "반도체",
+        "market": "KOSPI",
+        "final_score": 67.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 69.2,
+        "breakdown": {
+          "level1_score": 69.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000660.KS",
+        "name": "SK하이닉스",
+        "sector": "반도체",
+        "market": "KOSPI",
+        "final_score": 65.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 67.2,
+        "breakdown": {
+          "level1_score": 67.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005380.KS",
+        "name": "현대차",
+        "sector": "자동차",
+        "market": "KOSPI",
+        "final_score": 59.8,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.2,
+        "breakdown": {
+          "level1_score": 57.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "051910.KS",
+        "name": "LG화학",
+        "sector": "화학",
+        "market": "KOSPI",
+        "final_score": 59.9,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 59.0,
+        "breakdown": {
+          "level1_score": 59.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "035720.KS",
+        "name": "카카오",
+        "sector": "플랫폼",
+        "market": "KOSPI",
+        "final_score": 61.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.5,
+        "breakdown": {
+          "level1_score": 60.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006400.KS",
+        "name": "삼성SDI",
+        "sector": "배터리",
+        "market": "KOSPI",
+        "final_score": 53.6,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 52.8,
+        "breakdown": {
+          "level1_score": 52.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "068270.KS",
+        "name": "셀트리온",
+        "sector": "바이오",
+        "market": "KOSPI",
+        "final_score": 57.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.0,
+        "breakdown": {
+          "level1_score": 60.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "028260.KS",
+        "name": "삼성물산",
+        "sector": "무역",
+        "market": "KOSPI",
+        "final_score": 57.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.5,
+        "breakdown": {
+          "level1_score": 56.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "055550.KS",
+        "name": "신한지주",
+        "sector": "금융",
+        "market": "KOSPI",
+        "final_score": 59.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 58.5,
+        "breakdown": {
+          "level1_score": 58.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "105560.KS",
+        "name": "KB금융",
+        "sector": "금융",
+        "market": "KOSPI",
+        "final_score": 55.6,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 54.8,
+        "breakdown": {
+          "level1_score": 54.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "138040.KS",
+        "name": "메리츠금융",
+        "sector": "금융",
+        "market": "KOSPI",
+        "final_score": 52.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 51.5,
+        "breakdown": {
+          "level1_score": 51.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003670.KS",
+        "name": "포스코퓨처엠",
+        "sector": "배터리",
+        "market": "KOSPI",
+        "final_score": 52.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 51.2,
+        "breakdown": {
+          "level1_score": 51.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009150.KS",
+        "name": "삼성전기",
+        "sector": "전자부품",
+        "market": "KOSPI",
+        "final_score": 63.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 61.0,
+        "breakdown": {
+          "level1_score": 61.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "018260.KS",
+        "name": "삼성에스디에스",
+        "sector": "IT서비스",
+        "market": "KOSPI",
+        "final_score": 60.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 59.8,
+        "breakdown": {
+          "level1_score": 59.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "033780.KS",
+        "name": "KT&G",
+        "sector": "담/유통",
+        "market": "KOSPI",
+        "final_score": 63.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.5,
+        "breakdown": {
+          "level1_score": 60.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "086790.KS",
+        "name": "하나금융지주",
+        "sector": "금융",
+        "market": "KOSPI",
+        "final_score": 57.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.8,
+        "breakdown": {
+          "level1_score": 56.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010130.KS",
+        "name": "고려아연",
+        "sector": "비철금속",
+        "market": "KOSPI",
+        "final_score": 58.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.2,
+        "breakdown": {
+          "level1_score": 57.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009540.KS",
+        "name": "한국조선해양",
+        "sector": "조선",
+        "market": "KOSPI",
+        "final_score": 63.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 62.2,
+        "breakdown": {
+          "level1_score": 62.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "017670.KS",
+        "name": "SK텔레콤",
+        "sector": "통신",
+        "market": "KOSPI",
+        "final_score": 50.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 49.5,
+        "breakdown": {
+          "level1_score": 49.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "030200.KS",
+        "name": "KT",
+        "sector": "통신",
+        "market": "KOSPI",
+        "final_score": 51.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 50.2,
+        "breakdown": {
+          "level1_score": 50.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "096770.KS",
+        "name": "SK이노베이션",
+        "sector": "에너지",
+        "market": "KOSPI",
+        "final_score": 52.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 51.5,
+        "breakdown": {
+          "level1_score": 51.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "034730.KS",
+        "name": "SK",
+        "sector": "지주사",
+        "market": "KOSPI",
+        "final_score": 58.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.8,
+        "breakdown": {
+          "level1_score": 55.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000270.KS",
+        "name": "기아",
+        "sector": "자동차",
+        "market": "KOSPI",
+        "final_score": 68.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 65.2,
+        "breakdown": {
+          "level1_score": 65.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "066570.KS",
+        "name": "LG전자",
+        "sector": "전자",
+        "market": "KOSPI",
+        "final_score": 58.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.5,
+        "breakdown": {
+          "level1_score": 57.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003550.KS",
+        "name": "LG",
+        "sector": "지주사",
+        "market": "KOSPI",
+        "final_score": 67.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 64.8,
+        "breakdown": {
+          "level1_score": 64.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "004020.KS",
+        "name": "현대제철",
+        "sector": "철강",
+        "market": "KOSPI",
+        "final_score": 61.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.5,
+        "breakdown": {
+          "level1_score": 60.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000810.KS",
+        "name": "삼성화재",
+        "sector": "보험",
+        "market": "KOSPI",
+        "final_score": 54.5,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 52.2,
+        "breakdown": {
+          "level1_score": 52.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "024110.KS",
+        "name": "기업은행",
+        "sector": "금융",
+        "market": "KOSPI",
+        "final_score": 52.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 51.2,
+        "breakdown": {
+          "level1_score": 51.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "032640.KS",
+        "name": "LG유플러스",
+        "sector": "통신",
+        "market": "KOSPI",
+        "final_score": 57.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.2,
+        "breakdown": {
+          "level1_score": 56.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010950.KS",
+        "name": "S-Oil",
+        "sector": "정유",
+        "market": "KOSPI",
+        "final_score": 59.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 58.2,
+        "breakdown": {
+          "level1_score": 58.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "011070.KS",
+        "name": "LG이노텍",
+        "sector": "전자부품",
+        "market": "KOSPI",
+        "final_score": 64.8,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 62.0,
+        "breakdown": {
+          "level1_score": 62.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "259960.KS",
+        "name": "크래프톤",
+        "sector": "게임",
+        "market": "KOSDAQ",
+        "final_score": 57.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.0,
+        "breakdown": {
+          "level1_score": 60.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "207940.KS",
+        "name": "삼성바이오로직스",
+        "sector": "바이오",
+        "market": "KOSDAQ",
+        "final_score": 51.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 53.8,
+        "breakdown": {
+          "level1_score": 53.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -15,
+          "sector_weight": 0.3,
+          "macro_adjustment": 0,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터 + 상대약도",
+          "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+        }
+      }
+    ]
+  },
+  "all_rankings": [
+    {
+      "symbol": "012450.KS",
+      "name": "한화에어로스페이스",
+      "sector": "방산",
+      "market": "KOSPI",
+      "final_score": 76.8,
+      "rating": "STRONG_BUY",
+      "position_size": 0.1,
+      "level1_score": 73.5,
+      "breakdown": {
+        "level1_score": 73.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "011200.KS",
+      "name": "HMM",
+      "sector": "해운",
+      "market": "KOSPI",
+      "final_score": 72.1,
+      "rating": "BUY",
+      "position_size": 0.07,
+      "level1_score": 69.0,
+      "breakdown": {
+        "level1_score": 69.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "032830.KS",
+      "name": "삼성생명",
+      "sector": "보험",
+      "market": "KOSPI",
+      "final_score": 71.1,
+      "rating": "BUY",
+      "position_size": 0.07,
+      "level1_score": 68.0,
+      "breakdown": {
+        "level1_score": 68.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000270.KS",
+      "name": "기아",
+      "sector": "자동차",
+      "market": "KOSPI",
+      "final_score": 68.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 65.2,
+      "breakdown": {
+        "level1_score": 65.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "003550.KS",
+      "name": "LG",
+      "sector": "지주사",
+      "market": "KOSPI",
+      "final_score": 67.7,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 64.8,
+      "breakdown": {
+        "level1_score": 64.8,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "005930.KS",
+      "name": "삼성전자",
+      "sector": "반도체",
+      "market": "KOSPI",
+      "final_score": 67.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 69.2,
+      "breakdown": {
+        "level1_score": 69.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000660.KS",
+      "name": "SK하이닉스",
+      "sector": "반도체",
+      "market": "KOSPI",
+      "final_score": 65.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 67.2,
+      "breakdown": {
+        "level1_score": 67.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "011070.KS",
+      "name": "LG이노텍",
+      "sector": "전자부품",
+      "market": "KOSPI",
+      "final_score": 64.8,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 62.0,
+      "breakdown": {
+        "level1_score": 62.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "009150.KS",
+      "name": "삼성전기",
+      "sector": "전자부품",
+      "market": "KOSPI",
+      "final_score": 63.7,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 61.0,
+      "breakdown": {
+        "level1_score": 61.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "033780.KS",
+      "name": "KT&G",
+      "sector": "담/유통",
+      "market": "KOSPI",
+      "final_score": 63.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 60.5,
+      "breakdown": {
+        "level1_score": 60.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "009540.KS",
+      "name": "한국조선해양",
+      "sector": "조선",
+      "market": "KOSPI",
+      "final_score": 63.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 62.2,
+      "breakdown": {
+        "level1_score": 62.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "035720.KS",
+      "name": "카카오",
+      "sector": "플랫폼",
+      "market": "KOSPI",
+      "final_score": 61.4,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 60.5,
+      "breakdown": {
+        "level1_score": 60.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "004020.KS",
+      "name": "현대제철",
+      "sector": "철강",
+      "market": "KOSPI",
+      "final_score": 61.4,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 60.5,
+      "breakdown": {
+        "level1_score": 60.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "018260.KS",
+      "name": "삼성에스디에스",
+      "sector": "IT서비스",
+      "market": "KOSPI",
+      "final_score": 60.7,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 59.8,
+      "breakdown": {
+        "level1_score": 59.8,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "051910.KS",
+      "name": "LG화학",
+      "sector": "화학",
+      "market": "KOSPI",
+      "final_score": 59.9,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 59.0,
+      "breakdown": {
+        "level1_score": 59.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "005380.KS",
+      "name": "현대차",
+      "sector": "자동차",
+      "market": "KOSPI",
+      "final_score": 59.8,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 57.2,
+      "breakdown": {
+        "level1_score": 57.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "055550.KS",
+      "name": "신한지주",
+      "sector": "금융",
+      "market": "KOSPI",
+      "final_score": 59.4,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 58.5,
+      "breakdown": {
+        "level1_score": 58.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "010950.KS",
+      "name": "S-Oil",
+      "sector": "정유",
+      "market": "KOSPI",
+      "final_score": 59.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 58.2,
+      "breakdown": {
+        "level1_score": 58.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "066570.KS",
+      "name": "LG전자",
+      "sector": "전자",
+      "market": "KOSPI",
+      "final_score": 58.4,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 57.5,
+      "breakdown": {
+        "level1_score": 57.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "034730.KS",
+      "name": "SK",
+      "sector": "지주사",
+      "market": "KOSPI",
+      "final_score": 58.3,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.8,
+      "breakdown": {
+        "level1_score": 55.8,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": 0,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); KOSPI 강한 상승추세; KOSPI 고변동성"
+      }
+    }
+  ]
+}

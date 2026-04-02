@@ -1,0 +1,20 @@
+{
+  "date": "2026-02-20",
+  "signals_found": 1,
+  "signals": [
+    {
+      "date": "2026-02-20",
+      "code": "005930",
+      "name": "삼성전자",
+      "market": "KOSPI",
+      "current_price": 402547,
+      "score": 88.2,
+      "volume_ratio": 2.92,
+      "break_strength": 5.14,
+      "entry_1": 402547,
+      "entry_2": 422674.0,
+      "entry_3": 443808.0,
+      "stop_loss": 362292.0
+    }
+  ]
+}

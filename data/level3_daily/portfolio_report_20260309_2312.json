@@ -1,0 +1,3453 @@
+{
+  "agent_id": "PM_001",
+  "agent_name": "Portfolio Manager",
+  "analysis_date": "2026-03-09T23:12:58.517084",
+  "methodology": {
+    "score_weights": {
+      "level1": 0.5,
+      "level2_sector": 0.3,
+      "level2_macro": 0.2
+    },
+    "thresholds": {
+      "STRONG_BUY": 75,
+      "BUY": 70,
+      "HOLD": 50,
+      "SELL": 40,
+      "STRONG_SELL": 35
+    },
+    "position_sizing": {
+      "STRONG_BUY": 0.1,
+      "BUY": 0.07,
+      "HOLD": 0.03,
+      "SELL": 0.0,
+      "STRONG_SELL": 0.0
+    }
+  },
+  "market_outlook": {
+    "macro_condition": "BEARISH",
+    "macro_adjustment": -20,
+    "recommendation": {
+      "equity_exposure": "Underweight",
+      "defensive_sectors": true,
+      "risk_on_off": "Risk-Off"
+    }
+  },
+  "portfolio_summary": {
+    "total_stocks": 150,
+    "long_count": 0,
+    "short_count": 126,
+    "neutral_count": 24,
+    "long_weight": 0,
+    "short_weight": 0.0,
+    "cash_weight": 1.0
+  },
+  "portfolio": {
+    "long": [],
+    "short": [
+      {
+        "symbol": "000300.KS",
+        "name": "오토넥스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 28.1,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 30.2,
+        "breakdown": {
+          "level1_score": 30.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009620.KQ",
+        "name": "삼보산업",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 28.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 31.0,
+        "breakdown": {
+          "level1_score": 31.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000650.KS",
+        "name": "천일고속",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 29.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 31.8,
+        "breakdown": {
+          "level1_score": 31.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001520.KS",
+        "name": "동양",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 30.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 32.8,
+        "breakdown": {
+          "level1_score": 32.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000040.KS",
+        "name": "모터스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 31.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 34.2,
+        "breakdown": {
+          "level1_score": 34.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000520.KS",
+        "name": "삼일제약",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 32.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 35.2,
+        "breakdown": {
+          "level1_score": 35.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001525.KS",
+        "name": "동양우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 32.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 35.2,
+        "breakdown": {
+          "level1_score": 35.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000680.KS",
+        "name": "네트웍스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 33.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 36.2,
+        "breakdown": {
+          "level1_score": 36.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009300.KQ",
+        "name": "삼아제약",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 33.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 36.2,
+        "breakdown": {
+          "level1_score": 36.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006620.KQ",
+        "name": "동구바이오제약",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 34.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 36.8,
+        "breakdown": {
+          "level1_score": 36.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009780.KQ",
+        "name": "엠에스씨",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 34.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 36.8,
+        "breakdown": {
+          "level1_score": 36.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001210.KS",
+        "name": "금호전기",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 34.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 37.2,
+        "breakdown": {
+          "level1_score": 37.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007820.KQ",
+        "name": "에스엠코어",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 34.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 37.2,
+        "breakdown": {
+          "level1_score": 37.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009520.KQ",
+        "name": "포스코엠텍",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 34.6,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 37.2,
+        "breakdown": {
+          "level1_score": 37.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "008290.KQ",
+        "name": "원풍물산",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 35.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 37.8,
+        "breakdown": {
+          "level1_score": 37.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000180.KS",
+        "name": "성창기업지주",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 35.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 38.2,
+        "breakdown": {
+          "level1_score": 38.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001780.KS",
+        "name": "알루코",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 35.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 38.2,
+        "breakdown": {
+          "level1_score": 38.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001000.KQ",
+        "name": "신라섬유",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 35.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 38.5,
+        "breakdown": {
+          "level1_score": 38.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006050.KQ",
+        "name": "국영지앤엠",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 35.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 38.5,
+        "breakdown": {
+          "level1_score": 38.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000760.KS",
+        "name": "이화산업",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 36.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.0,
+        "breakdown": {
+          "level1_score": 39.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007390.KQ",
+        "name": "네이처셀",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 36.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.0,
+        "breakdown": {
+          "level1_score": 39.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "008830.KQ",
+        "name": "대동기어",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 36.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.0,
+        "breakdown": {
+          "level1_score": 39.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010240.KQ",
+        "name": "흥국",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 36.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.2,
+        "breakdown": {
+          "level1_score": 39.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001530.KS",
+        "name": "동일",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 36.7,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.5,
+        "breakdown": {
+          "level1_score": 39.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001260.KS",
+        "name": "남광토건",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 37.0,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.8,
+        "breakdown": {
+          "level1_score": 39.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001380.KS",
+        "name": "글로벌",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 37.0,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.8,
+        "breakdown": {
+          "level1_score": 39.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007330.KQ",
+        "name": "푸른저축은행",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 37.0,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 39.8,
+        "breakdown": {
+          "level1_score": 39.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001570.KS",
+        "name": "금양",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 37.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 40.0,
+        "breakdown": {
+          "level1_score": 40.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001740.KS",
+        "name": "네트웍스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 37.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 40.0,
+        "breakdown": {
+          "level1_score": 40.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007530.KQ",
+        "name": "와이엠",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 37.9,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 40.8,
+        "breakdown": {
+          "level1_score": 40.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000490.KS",
+        "name": "대동",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 38.1,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 41.0,
+        "breakdown": {
+          "level1_score": 41.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000140.KS",
+        "name": "하이트진로홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 38.3,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 41.2,
+        "breakdown": {
+          "level1_score": 41.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000910.KS",
+        "name": "유니온",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 38.9,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 41.8,
+        "breakdown": {
+          "level1_score": 41.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006910.KQ",
+        "name": "보성파워텍",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 38.9,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 41.8,
+        "breakdown": {
+          "level1_score": 41.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000145.KS",
+        "name": "하이트진로홀딩스우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 39.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 42.2,
+        "breakdown": {
+          "level1_score": 42.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001527.KS",
+        "name": "동양2우B",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 39.2,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 42.2,
+        "breakdown": {
+          "level1_score": 42.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000860.KS",
+        "name": "강남제비스코",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 39.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 42.5,
+        "breakdown": {
+          "level1_score": 42.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005160.KQ",
+        "name": "동국산업",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 39.5,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 42.5,
+        "breakdown": {
+          "level1_score": 42.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000230.KS",
+        "name": "일동홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 39.8,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 42.8,
+        "breakdown": {
+          "level1_score": 42.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001810.KQ",
+        "name": "무림SP",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 40.0,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 43.0,
+        "breakdown": {
+          "level1_score": 43.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007770.KQ",
+        "name": "한일화학",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 40.0,
+        "rating": "STRONG_SELL",
+        "position_size": 0.0,
+        "level1_score": 43.0,
+        "breakdown": {
+          "level1_score": 43.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001070.KS",
+        "name": "대한방직",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 40.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 43.2,
+        "breakdown": {
+          "level1_score": 43.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001440.KS",
+        "name": "대한전선",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 40.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 43.2,
+        "breakdown": {
+          "level1_score": 43.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000670.KS",
+        "name": "영풍",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 40.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 43.8,
+        "breakdown": {
+          "level1_score": 43.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010170.KQ",
+        "name": "대한광통신",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 40.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 43.8,
+        "breakdown": {
+          "level1_score": 43.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001420.KS",
+        "name": "태원물산",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 40.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.0,
+        "breakdown": {
+          "level1_score": 44.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001470.KS",
+        "name": "삼부토건",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 40.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.0,
+        "breakdown": {
+          "level1_score": 44.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000157.KS",
+        "name": "두산2우B",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.2,
+        "breakdown": {
+          "level1_score": 44.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000325.KS",
+        "name": "노루홀딩스우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.2,
+        "breakdown": {
+          "level1_score": 44.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001360.KS",
+        "name": "삼성제약",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.2,
+        "breakdown": {
+          "level1_score": 44.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001840.KQ",
+        "name": "이화공영",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 41.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.2,
+        "breakdown": {
+          "level1_score": 44.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000950.KS",
+        "name": "전방",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.5,
+        "breakdown": {
+          "level1_score": 44.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001680.KS",
+        "name": "대상",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.5,
+        "breakdown": {
+          "level1_score": 44.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007720.KQ",
+        "name": "소노스퀘어",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 41.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.5,
+        "breakdown": {
+          "level1_score": 44.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000320.KS",
+        "name": "노루홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.8,
+        "breakdown": {
+          "level1_score": 44.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000725.KS",
+        "name": "현대건설우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.8,
+        "breakdown": {
+          "level1_score": 44.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003100.KQ",
+        "name": "선광",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 41.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.8,
+        "breakdown": {
+          "level1_score": 44.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007370.KQ",
+        "name": "진양제약",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 41.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 44.8,
+        "breakdown": {
+          "level1_score": 44.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000080.KS",
+        "name": "하이트진로",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 41.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.0,
+        "breakdown": {
+          "level1_score": 45.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000087.KS",
+        "name": "하이트진로2우B",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 42.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.5,
+        "breakdown": {
+          "level1_score": 45.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000150.KS",
+        "name": "두산",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 42.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.5,
+        "breakdown": {
+          "level1_score": 45.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000850.KS",
+        "name": "화천기공",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 42.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.5,
+        "breakdown": {
+          "level1_score": 45.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006730.KQ",
+        "name": "서부T",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 42.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.5,
+        "breakdown": {
+          "level1_score": 45.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000430.KS",
+        "name": "대원강업",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 42.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.8,
+        "breakdown": {
+          "level1_score": 45.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005670.KQ",
+        "name": "푸드웰",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 42.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.8,
+        "breakdown": {
+          "level1_score": 45.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "009730.KQ",
+        "name": "이렘",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 42.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 45.8,
+        "breakdown": {
+          "level1_score": 45.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000120.KS",
+        "name": "대한통운",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 42.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.0,
+        "breakdown": {
+          "level1_score": 46.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000370.KS",
+        "name": "한화손해보험",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 43.0,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.2,
+        "breakdown": {
+          "level1_score": 46.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "002290.KQ",
+        "name": "삼일기업공사",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 43.0,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.2,
+        "breakdown": {
+          "level1_score": 46.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000227.KS",
+        "name": "유유제약2우B",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 43.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.5,
+        "breakdown": {
+          "level1_score": 46.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000810.KS",
+        "name": "삼성화재",
+        "sector": "보험",
+        "market": "KOSPI",
+        "final_score": 43.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.5,
+        "breakdown": {
+          "level1_score": 46.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001550.KS",
+        "name": "조비",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 43.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.8,
+        "breakdown": {
+          "level1_score": 46.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001685.KS",
+        "name": "대상우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 43.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 46.8,
+        "breakdown": {
+          "level1_score": 46.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001290.KS",
+        "name": "상상인증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 43.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.2,
+        "breakdown": {
+          "level1_score": 47.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001080.KS",
+        "name": "만호제강",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 44.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.5,
+        "breakdown": {
+          "level1_score": 47.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001200.KS",
+        "name": "유진투자증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 44.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.5,
+        "breakdown": {
+          "level1_score": 47.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001430.KS",
+        "name": "세아베스틸지주",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 44.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.5,
+        "breakdown": {
+          "level1_score": 47.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "004590.KQ",
+        "name": "한국가구",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 44.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.5,
+        "breakdown": {
+          "level1_score": 47.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "004780.KQ",
+        "name": "대륙제관",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 44.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.5,
+        "breakdown": {
+          "level1_score": 47.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000225.KS",
+        "name": "유유제약1우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 44.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 47.8,
+        "breakdown": {
+          "level1_score": 47.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000250.KQ",
+        "name": "삼천당제약",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 44.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.0,
+        "breakdown": {
+          "level1_score": 48.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000050.KS",
+        "name": "경방",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 44.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.2,
+        "breakdown": {
+          "level1_score": 48.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "004650.KQ",
+        "name": "창해에탄올",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 44.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.2,
+        "breakdown": {
+          "level1_score": 48.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "007680.KQ",
+        "name": "대원",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 44.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.2,
+        "breakdown": {
+          "level1_score": 48.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000105.KS",
+        "name": "유한양행우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000400.KS",
+        "name": "롯데손해보험",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001020.KS",
+        "name": "페이퍼코리아",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001500.KS",
+        "name": "현대차증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "002800.KQ",
+        "name": "신신제약",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003380.KQ",
+        "name": "하림지주",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 45.1,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.5,
+        "breakdown": {
+          "level1_score": 48.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000100.KS",
+        "name": "유한양행",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.8,
+        "breakdown": {
+          "level1_score": 48.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000155.KS",
+        "name": "두산우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.8,
+        "breakdown": {
+          "level1_score": 48.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000545.KS",
+        "name": "흥국화재우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.8,
+        "breakdown": {
+          "level1_score": 48.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001795.KS",
+        "name": "대한제당우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 48.8,
+        "breakdown": {
+          "level1_score": 48.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001620.KS",
+        "name": "케이비아이동국실업",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.0,
+        "breakdown": {
+          "level1_score": 49.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010470.KQ",
+        "name": "오리콤",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 45.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.0,
+        "breakdown": {
+          "level1_score": 49.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000480.KS",
+        "name": "홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.2,
+        "breakdown": {
+          "level1_score": 49.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000890.KS",
+        "name": "보해양조",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 45.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.2,
+        "breakdown": {
+          "level1_score": 49.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000020.KS",
+        "name": "동화약품",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.0,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.5,
+        "breakdown": {
+          "level1_score": 49.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000815.KS",
+        "name": "삼성화재우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.0,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.5,
+        "breakdown": {
+          "level1_score": 49.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001720.KS",
+        "name": "신영증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.8,
+        "breakdown": {
+          "level1_score": 49.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "002230.KQ",
+        "name": "피에스텍",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 46.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.8,
+        "breakdown": {
+          "level1_score": 49.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003800.KQ",
+        "name": "에이스침대",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 46.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 49.8,
+        "breakdown": {
+          "level1_score": 49.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000720.KS",
+        "name": "현대건설",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.0,
+        "breakdown": {
+          "level1_score": 50.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001790.KS",
+        "name": "대한제당",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.0,
+        "breakdown": {
+          "level1_score": 50.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001630.KS",
+        "name": "종근당홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 46.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.2,
+        "breakdown": {
+          "level1_score": 50.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "010280.KQ",
+        "name": "아이티센엔텍",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 46.7,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.2,
+        "breakdown": {
+          "level1_score": 50.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001450.KS",
+        "name": "현대해상",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 47.0,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.5,
+        "breakdown": {
+          "level1_score": 50.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001750.KS",
+        "name": "한양증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 47.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 50.8,
+        "breakdown": {
+          "level1_score": 50.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001515.KS",
+        "name": "증권우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 47.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.0,
+        "breakdown": {
+          "level1_score": 51.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "003310.KQ",
+        "name": "대주산업",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 47.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.0,
+        "breakdown": {
+          "level1_score": 51.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006920.KQ",
+        "name": "모헨즈",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 47.6,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.2,
+        "breakdown": {
+          "level1_score": 51.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000640.KS",
+        "name": "동아쏘시오홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 47.9,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.5,
+        "breakdown": {
+          "level1_score": 51.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000500.KS",
+        "name": "가온전선",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 48.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.8,
+        "breakdown": {
+          "level1_score": 51.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001755.KS",
+        "name": "한양증권우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 48.2,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 51.8,
+        "breakdown": {
+          "level1_score": 51.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001270.KS",
+        "name": "부국증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 48.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 52.0,
+        "breakdown": {
+          "level1_score": 52.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005990.KQ",
+        "name": "매일홀딩스",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 48.4,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 52.0,
+        "breakdown": {
+          "level1_score": 52.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001540.KQ",
+        "name": "안국약품",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 48.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 52.2,
+        "breakdown": {
+          "level1_score": 52.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000220.KS",
+        "name": "유유제약",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 48.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 52.5,
+        "breakdown": {
+          "level1_score": 52.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000880.KS",
+        "name": "한화",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 49.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.0,
+        "breakdown": {
+          "level1_score": 53.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001065.KS",
+        "name": "중외제약우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 49.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.0,
+        "breakdown": {
+          "level1_score": 53.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "006140.KQ",
+        "name": "피제이전자",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 49.3,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.0,
+        "breakdown": {
+          "level1_score": 53.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001230.KS",
+        "name": "동국홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 49.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.2,
+        "breakdown": {
+          "level1_score": 53.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "002680.KQ",
+        "name": "한탑",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 49.5,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.2,
+        "breakdown": {
+          "level1_score": 53.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000590.KS",
+        "name": "홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 49.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.5,
+        "breakdown": {
+          "level1_score": 53.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005290.KQ",
+        "name": "동진쎄미켐",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 49.8,
+        "rating": "SELL",
+        "position_size": 0.0,
+        "level1_score": 53.5,
+        "breakdown": {
+          "level1_score": 53.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      }
+    ],
+    "neutral": [
+      {
+        "symbol": "000070.KS",
+        "name": "삼양홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 52.8,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.8,
+        "breakdown": {
+          "level1_score": 56.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000240.KS",
+        "name": "한국앤컴퍼니",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.0,
+        "breakdown": {
+          "level1_score": 55.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000270.KS",
+        "name": "기아",
+        "sector": "자동차",
+        "market": "KOSPI",
+        "final_score": 54.8,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.2,
+        "breakdown": {
+          "level1_score": 56.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 5,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "중립-상 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000390.KS",
+        "name": "삼화페인트",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 53.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.0,
+        "breakdown": {
+          "level1_score": 57.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000540.KS",
+        "name": "흥국화재",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 50.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 54.5,
+        "breakdown": {
+          "level1_score": 54.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000660.KS",
+        "name": "하이닉스",
+        "sector": "반도체",
+        "market": "KOSPI",
+        "final_score": 63.5,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 63.2,
+        "breakdown": {
+          "level1_score": 63.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000700.KS",
+        "name": "유수홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 50.7,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 54.5,
+        "breakdown": {
+          "level1_score": 54.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000970.KS",
+        "name": "한국주철관",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 50.4,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 54.2,
+        "breakdown": {
+          "level1_score": 54.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000990.KS",
+        "name": "하이텍",
+        "sector": "반도체",
+        "market": "KOSPI",
+        "final_score": 61.8,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 61.5,
+        "breakdown": {
+          "level1_score": 61.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": 15,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "강세 섹터 + 상대강도 우수",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001060.KS",
+        "name": "중외제약",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.0,
+        "breakdown": {
+          "level1_score": 55.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001067.KS",
+        "name": "중외제약2우B",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.0,
+        "breakdown": {
+          "level1_score": 55.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001120.KS",
+        "name": "인터내셔널",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.3,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.2,
+        "breakdown": {
+          "level1_score": 55.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001130.KS",
+        "name": "대한제분",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 52.5,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.5,
+        "breakdown": {
+          "level1_score": 56.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001250.KS",
+        "name": "글로벌",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.6,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.5,
+        "breakdown": {
+          "level1_score": 55.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001275.KS",
+        "name": "부국증권우",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 53.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.0,
+        "breakdown": {
+          "level1_score": 57.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001390.KS",
+        "name": "케미칼",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 51.6,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 55.5,
+        "breakdown": {
+          "level1_score": 55.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001510.KS",
+        "name": "증권",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 52.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.0,
+        "breakdown": {
+          "level1_score": 56.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001560.KS",
+        "name": "제일연마",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 60.6,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 65.2,
+        "breakdown": {
+          "level1_score": 65.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "001800.KS",
+        "name": "오리온홀딩스",
+        "sector": "기타",
+        "market": "KOSPI",
+        "final_score": 53.9,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 58.0,
+        "breakdown": {
+          "level1_score": 58.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "000440.KQ",
+        "name": "중앙에너비스",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 50.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 54.0,
+        "breakdown": {
+          "level1_score": 54.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005710.KQ",
+        "name": "대원산업",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 56.0,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 60.2,
+        "breakdown": {
+          "level1_score": 60.2,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "005860.KQ",
+        "name": "한일사료",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 61.2,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 65.8,
+        "breakdown": {
+          "level1_score": 65.8,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "008370.KQ",
+        "name": "원풍",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 53.5,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 57.5,
+        "breakdown": {
+          "level1_score": 57.5,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      },
+      {
+        "symbol": "008470.KQ",
+        "name": "부스타",
+        "sector": "기타",
+        "market": "KOSDAQ",
+        "final_score": 52.1,
+        "rating": "HOLD",
+        "position_size": 0.03,
+        "level1_score": 56.0,
+        "breakdown": {
+          "level1_score": 56.0,
+          "level1_weight": 0.5,
+          "sector_adjustment": -10,
+          "sector_weight": 0.3,
+          "macro_adjustment": -20,
+          "macro_weight": 0.2,
+          "sector_reason": "약세 섹터",
+          "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+        }
+      }
+    ]
+  },
+  "all_rankings": [
+    {
+      "symbol": "000660.KS",
+      "name": "하이닉스",
+      "sector": "반도체",
+      "market": "KOSPI",
+      "final_score": 63.5,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 63.2,
+      "breakdown": {
+        "level1_score": 63.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000990.KS",
+      "name": "하이텍",
+      "sector": "반도체",
+      "market": "KOSPI",
+      "final_score": 61.8,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 61.5,
+      "breakdown": {
+        "level1_score": 61.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": 15,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "강세 섹터 + 상대강도 우수",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "005860.KQ",
+      "name": "한일사료",
+      "sector": "기타",
+      "market": "KOSDAQ",
+      "final_score": 61.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 65.8,
+      "breakdown": {
+        "level1_score": 65.8,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001560.KS",
+      "name": "제일연마",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 60.6,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 65.2,
+      "breakdown": {
+        "level1_score": 65.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "005710.KQ",
+      "name": "대원산업",
+      "sector": "기타",
+      "market": "KOSDAQ",
+      "final_score": 56.0,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 60.2,
+      "breakdown": {
+        "level1_score": 60.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000270.KS",
+      "name": "기아",
+      "sector": "자동차",
+      "market": "KOSPI",
+      "final_score": 54.8,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 56.2,
+      "breakdown": {
+        "level1_score": 56.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": 5,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "중립-상 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001800.KS",
+      "name": "오리온홀딩스",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 53.9,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 58.0,
+      "breakdown": {
+        "level1_score": 58.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "008370.KQ",
+      "name": "원풍",
+      "sector": "기타",
+      "market": "KOSDAQ",
+      "final_score": 53.5,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 57.5,
+      "breakdown": {
+        "level1_score": 57.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000390.KS",
+      "name": "삼화페인트",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 53.0,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 57.0,
+      "breakdown": {
+        "level1_score": 57.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001275.KS",
+      "name": "부국증권우",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 53.0,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 57.0,
+      "breakdown": {
+        "level1_score": 57.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000070.KS",
+      "name": "삼양홀딩스",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 52.8,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 56.8,
+      "breakdown": {
+        "level1_score": 56.8,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001130.KS",
+      "name": "대한제분",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 52.5,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 56.5,
+      "breakdown": {
+        "level1_score": 56.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001510.KS",
+      "name": "증권",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 52.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 56.0,
+      "breakdown": {
+        "level1_score": 56.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "008470.KQ",
+      "name": "부스타",
+      "sector": "기타",
+      "market": "KOSDAQ",
+      "final_score": 52.1,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 56.0,
+      "breakdown": {
+        "level1_score": 56.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001250.KS",
+      "name": "글로벌",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.6,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.5,
+      "breakdown": {
+        "level1_score": 55.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001390.KS",
+      "name": "케미칼",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.6,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.5,
+      "breakdown": {
+        "level1_score": 55.5,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001120.KS",
+      "name": "인터내셔널",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.3,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.2,
+      "breakdown": {
+        "level1_score": 55.2,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "000240.KS",
+      "name": "한국앤컴퍼니",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.0,
+      "breakdown": {
+        "level1_score": 55.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001060.KS",
+      "name": "중외제약",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.0,
+      "breakdown": {
+        "level1_score": 55.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    },
+    {
+      "symbol": "001067.KS",
+      "name": "중외제약2우B",
+      "sector": "기타",
+      "market": "KOSPI",
+      "final_score": 51.2,
+      "rating": "HOLD",
+      "position_size": 0.03,
+      "level1_score": 55.0,
+      "breakdown": {
+        "level1_score": 55.0,
+        "level1_weight": 0.5,
+        "sector_adjustment": -10,
+        "sector_weight": 0.3,
+        "macro_adjustment": -20,
+        "macro_weight": 0.2,
+        "sector_reason": "약세 섹터",
+        "macro_reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성"
+      }
+    }
+  ]
+}

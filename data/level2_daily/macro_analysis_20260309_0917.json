@@ -1,0 +1,54 @@
+{
+  "agent_id": "MACRO_001",
+  "agent_name": "Macro Analyst",
+  "analysis_date": "2026-03-09T09:17:52.692594",
+  "macro_indicators": {
+    "us_treasury": {
+      "name": "US 10Y Treasury",
+      "symbol": "^TNX",
+      "current": 4.13,
+      "change": -0.01,
+      "trend": "Falling"
+    },
+    "korea_rate": {
+      "name": "Korea Base Rate",
+      "current": 3.0,
+      "change": 0,
+      "trend": "Stable",
+      "note": "Fixed reference value"
+    },
+    "usd_krw": {
+      "name": "USD/KRW",
+      "symbol": "KRW=X",
+      "current": 1497.08,
+      "change_pct": 1.19,
+      "trend": "Weakening"
+    },
+    "vix": {
+      "name": "VIX",
+      "symbol": "^VIX",
+      "current": 29.49,
+      "change": 5.74,
+      "sentiment": "Elevated",
+      "trend": "Rising"
+    },
+    "kospi": {
+      "name": "KOSPI",
+      "symbol": "^KS11",
+      "current": 5187.29,
+      "ma20": 5589.28,
+      "trend": "Downtrend",
+      "volatility_annual": 77.03
+    }
+  },
+  "adjustment": {
+    "pct": -20,
+    "reason": "고환율 (원화 약세); 상승 변동성 (VIX 25-30); KOSPI 하락추세; KOSPI 고변동성",
+    "market_condition": "BEARISH"
+  },
+  "recommendations": {
+    "equity_exposure": "Underweight",
+    "defensive_sectors": true,
+    "risk_on_off": "Risk-Off"
+  }
+}

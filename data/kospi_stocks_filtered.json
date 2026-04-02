@@ -1,0 +1,19 @@
+{
+  "count": 2,
+  "updated_at": "2026-03-09T08:48:26.427933",
+  "source": "Korea Investment & Securities DWS Master",
+  "stocks": [
+    {
+      "code": "720001",
+      "name": "한국밸류라이프V파워1(A)",
+      "symbol": "720001.KS",
+      "market": "KOSPI"
+    },
+    {
+      "code": "720002",
+      "name": "한국밸류라이프V파워2(A)",
+      "symbol": "720002.KS",
+      "market": "KOSPI"
+    }
+  ]
+}

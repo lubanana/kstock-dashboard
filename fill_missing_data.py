@@ -1,151 +1,118 @@
 #!/usr/bin/env python3
 """
-누락된 주식 데이터 구축 스크립트
+Fill Missing Data - 누락된 날짜 데이터 병렬 채우기
 """
 
-import sqlite3
-import pandas as pd
-from datetime import datetime, timedelta
-import FinanceDataReader as fdr
 import sys
+sys.path.insert(0, '.')
+import sqlite3
+from datetime import datetime, timedelta, timezone
+from fdr_wrapper import get_price
+from multiprocessing import Pool, cpu_count
+import time
 
-sys.path.insert(0, '/root/.openclaw/workspace/strg')
+DB_PATH = 'data/pivot_strategy.db'
+MAX_WORKERS = min(cpu_count(), 8)
+BATCH_SIZE = 50
 
-def get_missing_dates():
-    """누락된 실제 거래일 확인"""
-    db_path = '/root/.openclaw/workspace/strg/data/pivot_strategy.db'
-    conn = sqlite3.connect(db_path)
+
+def get_missing_symbols(target_date):
+    """해당 날짜에 없는 종목 리스트"""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
     
-    # 모든 날짜 확인
-    all_dates = conn.execute('SELECT DISTINCT date FROM stock_prices ORDER BY date').fetchall()
-    all_dates = set(d[0] for d in all_dates)
+    # 기준일 (전날)에 있었던 종목들 중 target_date에 없는 것
+    prev_date = (datetime.strptime(target_date, '%Y-%m-%d') - timedelta(days=1)).strftime('%Y-%m-%d')
     
-    date_range = conn.execute('SELECT MIN(date), MAX(date) FROM stock_prices').fetchone()
-    start_date = datetime.strptime(date_range[0], '%Y-%m-%d')
-    end_date = datetime.strptime(date_range[1], '%Y-%m-%d')
+    cursor.execute('''
+        SELECT DISTINCT symbol FROM stock_prices WHERE date = ?
+        EXCEPT
+        SELECT DISTINCT symbol FROM stock_prices WHERE date = ?
+    ''', (prev_date, target_date))
     
-    # 한국 공휴일 (2025-2026)
-    holidays = {
-        '2025-01-01', '2025-01-28', '2025-01-29', '2025-01-30',
-        '2025-03-01', '2025-05-01', '2025-05-05', '2025-05-06',
-        '2025-06-03', '2025-06-06', '2025-08-15',
-        '2025-10-01', '2025-10-03', '2025-10-06', '2025-10-07', '2025-10-08', '2025-10-09',
-        '2025-12-25', '2025-12-31',
-        '2026-01-01', '2026-02-16', '2026-02-17'
-    }
-    
-    # 실제 거래일 중 누락된 날짜
-    expected = []
-    current = start_date
-    while current <= end_date:
-        if current.weekday() < 5:
-            date_str = current.strftime('%Y-%m-%d')
-            if date_str not in holidays and date_str not in all_dates:
-                expected.append(date_str)
-        current += timedelta(days=1)
-    
+    symbols = [row[0] for row in cursor.fetchall()]
     conn.close()
-    return expected
+    return symbols
 
 
-def fetch_and_save_missing_data(missing_dates):
-    """누락된 날짜 데이터 구축"""
-    db_path = '/root/.openclaw/workspace/strg/data/pivot_strategy.db'
-    conn = sqlite3.connect(db_path)
+def update_single(args):
+    """단일 종목 업데이트"""
+    symbol, target_date = args
     
-    # 종목 목록 가져오기
-    symbols = conn.execute('SELECT symbol FROM stock_info').fetchall()
-    symbols = [s[0] for s in symbols]
-    
-    print(f"총 {len(symbols)}개 종목, {len(missing_dates)}일 데이터 구축")
-    
-    for target_date in missing_dates:
-        print(f"\n📅 {target_date} 데이터 구축 중...")
-        
-        # 해당 날짜 포함한 범위로 데이터 조회
-        start = (datetime.strptime(target_date, '%Y-%m-%d') - timedelta(days=5)).strftime('%Y-%m-%d')
-        end = (datetime.strptime(target_date, '%Y-%m-%d') + timedelta(days=5)).strftime('%Y-%m-%d')
-        
-        records_added = 0
-        
-        for i, symbol in enumerate(symbols):
-            if i % 500 == 0:
-                print(f"  [{i}/{len(symbols)}] {symbol}...", end='\r')
-            
-            try:
-                df = fdr.DataReader(symbol, start, end)
-                if df is None or len(df) == 0:
-                    continue
-                
-                # 해당 날짜 데이터만 필터
-                df = df[df.index.strftime('%Y-%m-%d') == target_date]
-                if len(df) == 0:
-                    continue
-                
-                row = df.iloc[0]
-                conn.execute('''
-                    INSERT OR REPLACE INTO stock_prices 
-                    (symbol, date, open, high, low, close, volume, change_rate)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (
-                    symbol, target_date,
-                    float(row['Open']), float(row['High']), float(row['Low']),
-                    float(row['Close']), int(row['Volume']),
-                    float(row.get('Change', 0)) if 'Change' in row else None
-                ))
-                records_added += 1
-                
-            except Exception as e:
-                continue
-        
-        conn.commit()
-        print(f"  ✓ {target_date}: {records_added}건 추가")
-    
-    conn.close()
-    print("\n✅ 데이터 구축 완료!")
+    try:
+        df = get_price(symbol, target_date, target_date)
+        if df is not None and not df.empty:
+            return {'symbol': symbol, 'status': 'updated'}
+        else:
+            return {'symbol': symbol, 'status': 'empty'}
+    except Exception as e:
+        return {'symbol': symbol, 'status': 'failed', 'error': str(e)[:30]}
 
 
-def verify_data_completeness():
-    """데이터 완전성 검증"""
-    db_path = '/root/.openclaw/workspace/strg/data/pivot_strategy.db'
-    conn = sqlite3.connect(db_path)
+def fill_missing_data(target_date):
+    """누락 데이터 채우기"""
+    start_time = datetime.now()
     
-    print("\n=== 데이터 완전성 검증 ===")
+    print("="*70)
+    print(f"🚀 누락 데이터 채우기 - {target_date}")
+    print(f"🔄 워커 수: {MAX_WORKERS}개")
+    print("="*70)
     
-    # 총 건수
-    total = conn.execute('SELECT COUNT(*) FROM stock_prices').fetchone()[0]
-    print(f"총 데이터: {total:,}건")
+    # 누락 종목 확인
+    missing = get_missing_symbols(target_date)
+    print(f"\n📋 누락 종목: {len(missing):,}개")
     
-    # 날짜별 건수 (최근 10일)
-    recent = conn.execute('''
-        SELECT date, COUNT(*) as cnt 
-        FROM stock_prices 
-        GROUP BY date 
-        ORDER BY date DESC 
-        LIMIT 10
-    ''').fetchall()
+    if not missing:
+        print("✅ 누락된 종목이 없습니다!")
+        return
     
-    print("\n최근 10일 데이터 현황:")
-    for d, c in recent:
-        print(f"  {d}: {c:,}건")
+    # 배치 처리
+    stats = {'updated': 0, 'empty': 0, 'failed': 0}
+    batch_count = (len(missing) + BATCH_SIZE - 1) // BATCH_SIZE
     
-    conn.close()
+    print(f"\n🔄 총 {batch_count}개 배치 처리 시작...\n")
+    
+    for i in range(0, len(missing), BATCH_SIZE):
+        batch = missing[i:i+BATCH_SIZE]
+        batch_num = i // BATCH_SIZE + 1
+        
+        print(f"   [{batch_num}/{batch_count}] 처리 중... ({len(batch)}개)", end='', flush=True)
+        
+        # 병렬 처리
+        args = [(s, target_date) for s in batch]
+        with Pool(processes=MAX_WORKERS) as pool:
+            results = pool.map(update_single, args)
+        
+        # 결과 집계
+        for r in results:
+            stats[r['status']] = stats.get(r['status'], 0) + 1
+        
+        print(f" ✓")
+        
+        # 20배치마다 진행 보고
+        if batch_num % 20 == 0 or batch_num == batch_count:
+            elapsed = datetime.now() - start_time
+            processed = sum(stats.values())
+            progress = processed / len(missing) * 100
+            speed = processed / elapsed.total_seconds() * 60 if elapsed.total_seconds() > 0 else 0
+            print(f"\n   📊 진행: {processed:,}/{len(missing):,} ({progress:.1f}%) | "
+                  f"속도: {speed:.0f}종목/분 | 시간: {str(elapsed).split('.')[0]}\n")
+        
+        time.sleep(0.3)  # Rate limit 방지
+    
+    # 최종 보고
+    elapsed = datetime.now() - start_time
+    print("\n" + "="*70)
+    print("✅ 누락 데이터 채우기 완료")
+    print("="*70)
+    print(f"   총 소요 시간: {str(elapsed).split('.')[0]}")
+    print(f"   업데이트: {stats.get('updated', 0):,}")
+    print(f"   데이터없음: {stats.get('empty', 0):,}")
+    print(f"   실패: {stats.get('failed', 0):,}")
+    print("="*70)
 
 
 if __name__ == '__main__':
-    print("="*60)
-    print("📊 누락된 주식 데이터 구축")
-    print("="*60)
-    
-    missing = get_missing_dates()
-    
-    if missing:
-        print(f"\n누락된 거래일: {len(missing)}일")
-        for d in missing:
-            print(f"  - {d}")
-        
-        fetch_and_save_missing_data(missing)
-        verify_data_completeness()
-    else:
-        print("\n✅ 누락된 데이터 없음!")
-        verify_data_completeness()
+    import sys
+    target_date = sys.argv[1] if len(sys.argv) > 1 else '2026-04-01'
+    fill_missing_data(target_date)

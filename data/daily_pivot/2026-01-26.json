@@ -1,0 +1,34 @@
+{
+  "date": "2026-01-26",
+  "signals_found": 2,
+  "signals": [
+    {
+      "date": "2026-01-26",
+      "code": "377300",
+      "name": "카카오페이",
+      "market": "KOSPI",
+      "current_price": 494570,
+      "score": 94.7,
+      "volume_ratio": 1.94,
+      "break_strength": 3.2,
+      "entry_1": 494570,
+      "entry_2": 519298.0,
+      "entry_3": 545263.0,
+      "stop_loss": 445113.0
+    },
+    {
+      "date": "2026-01-26",
+      "code": "086520",
+      "name": "에코프로",
+      "market": "KOSDAQ",
+      "current_price": 165741,
+      "score": 93.6,
+      "volume_ratio": 3.35,
+      "break_strength": 9.42,
+      "entry_1": 165741,
+      "entry_2": 174028.0,
+      "entry_3": 182729.0,
+      "stop_loss": 149167.0
+    }
+  ]
+}

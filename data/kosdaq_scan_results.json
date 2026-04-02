@@ -1,0 +1,24 @@
+{
+  "scan_date": "2026-03-03 06:01:41",
+  "market": "KOSDAQ",
+  "total_scanned": 20,
+  "results": {
+    "livermore": [],
+    "oneil": [
+      {
+        "symbol": "122870.KS",
+        "name": "와이지엔터",
+        "strategy": "O'Neil",
+        "price": 74000.0,
+        "price_change": 3.79,
+        "volume_ratio": 3.11,
+        "score": 55,
+        "signals": [
+          "VOLUME_SPIKE_3X",
+          "PRICE_GAIN_3PCT"
+        ]
+      }
+    ],
+    "minervini": []
+  }
+}

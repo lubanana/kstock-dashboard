@@ -1,0 +1,325 @@
+{
+  "scraped_at": "2026-03-09T08:23:18.721232",
+  "main_news": {
+    "source": "naver_stock_main_news",
+    "url": "https://m.stock.naver.com/investment/news/mainnews",
+    "scraped_at": "2026-03-09T08:22:35.054467",
+    "status": "success",
+    "count": 20,
+    "news": [
+      {
+        "title": "‘이란 쇼크’ 번진 국내 증시…지정학 리스크 장기화 시험대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/243/0000094141",
+        "scraped_at": "2026-03-09T08:22:35.046417",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "미래에셋 TIGER 코리아원자력 ETF, 반도체보다 더 날았다",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/293/0000080503",
+        "scraped_at": "2026-03-09T08:22:35.046830",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "라온텍 28%·오아 30% 합병상장 물량 시장 출회",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/031/0001011356",
+        "scraped_at": "2026-03-09T08:22:35.047235",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "골프웨어 크리스에프앤씨, 프리미엄 받고도 눈물의 손절[딜 워치]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/648/0000045058",
+        "scraped_at": "2026-03-09T08:22:35.047644",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "“포스코퓨처엠, 베트남 인조흑연 투자로 음극재 사업 반등 기대”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005647040",
+        "scraped_at": "2026-03-09T08:22:35.048030",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "유가 100달러 ‘오일쇼크’ 덮치자…글로벌 증시 패닉·투자자금 달러 쏠림",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/009/0005647039",
+        "scraped_at": "2026-03-09T08:22:35.048661",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "급등락 반복하는 K-증시…“공격적 베팅보다 분할 매수 대응해야” [이런국장 저런주식]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004597052",
+        "scraped_at": "2026-03-09T08:22:35.049082",
+        "sentiment": "positive"
+      },
+      {
+        "title": "국제유가 100달러 돌파… 정유·가스주 '급등'-한전 '급락'",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259672",
+        "scraped_at": "2026-03-09T08:22:35.049505",
+        "sentiment": "positive"
+      },
+      {
+        "title": "유가 급등 지속…전쟁 장기화 우려↑[굿모닝 글로벌 이슈]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/215/0001244351",
+        "scraped_at": "2026-03-09T08:22:35.049884",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "Today's Pick : \"'유가 100달러' 소식에 이차전지주 오를 이유\"[마켓PRO]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/015/0005259667",
+        "scraped_at": "2026-03-09T08:22:35.050285",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "iM증권 \"전쟁으로 주춤해도 반도체 이익상향 사이클 안 끝나\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/001/0015945963",
+        "scraped_at": "2026-03-09T08:22:35.050671",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "RISE 삼성전자SK하이닉스채권혼합50 ETF, 순자산 3000억 돌파",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230618",
+        "scraped_at": "2026-03-09T08:22:35.051057",
+        "sentiment": "positive"
+      },
+      {
+        "title": "“유가 급등 수혜, 이차전지에도 퍼진다”…에코프로비엠 목표가↑ [줍줍 리포트]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004597044",
+        "scraped_at": "2026-03-09T08:22:35.051484",
+        "sentiment": "positive"
+      },
+      {
+        "title": "DKME \"경영권 분쟁 종식 거래재개 청신호\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731114",
+        "scraped_at": "2026-03-09T08:22:35.051868",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "\"전쟁·지표·실적…이번주 증시 흔들 3가지 변수\"[굿모닝 증시]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731096",
+        "scraped_at": "2026-03-09T08:22:35.052261",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "이란사태, 제2의 러·우전쟁인가…경기 침체 가능성↑",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731093",
+        "scraped_at": "2026-03-09T08:22:35.052661",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스피, 급락 뒤 반등 나왔지만…”V자보다 W자 재시험 열어둬야”",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230593",
+        "scraped_at": "2026-03-09T08:22:35.053125",
+        "sentiment": "negative"
+      },
+      {
+        "title": "\"덕산네오룩스, 프라이버시 디스플레이 수혜…비중 확대 추천\"[클릭 e종목]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731087",
+        "scraped_at": "2026-03-09T08:22:35.053570",
+        "sentiment": "positive"
+      },
+      {
+        "title": "유가 100달러 돌파에 얼어붙은 프리마켓…삼전·하닉 7%대 약세 [코주부]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004597033",
+        "scraped_at": "2026-03-09T08:22:35.054017",
+        "sentiment": "positive"
+      },
+      {
+        "title": "중동 사태 확전 양상에 유가 100달러 돌파…시장 경계감 고조[채권브리핑]",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230578",
+        "scraped_at": "2026-03-09T08:22:35.054464",
+        "sentiment": "positive"
+      }
+    ]
+  },
+  "flash_news": {
+    "source": "naver_stock_flash_news",
+    "url": "https://m.stock.naver.com/investment/news/flashnews",
+    "scraped_at": "2026-03-09T08:22:41.872359",
+    "status": "success",
+    "count": 15,
+    "news": [
+      {
+        "title": "아증시 급락 출발, 코스피 6% 폭락…최고 낙폭-닛케이는 2%↓",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/421/0008813749",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.863324",
+        "sentiment": "negative"
+      },
+      {
+        "title": "HK이노엔, “제로 칼로리” 티로그 스파클링 레몬라임 아이스티 출시",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/011/0004597070",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.863810",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "유가급등에 자동차주 직격탄…현대차·기아 8%대 급락 출발",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/008/0005327018",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.864300",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "코스피 급락에 매도 사이드카 발동",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809111",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.864754",
+        "sentiment": "negative"
+      },
+      {
+        "title": "코스피 5%대 하락, 매도 사이드카 발동",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809108",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.865712",
+        "sentiment": "negative"
+      },
+      {
+        "title": "대신자산신탁, 신림5구역 추진위와 업무협약 체결…재개발 사업 참여",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/018/0006230685",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.866201",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "증시 급락 개장",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809105",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.866660",
+        "sentiment": "negative"
+      },
+      {
+        "title": "급락 개장한 증시",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809100",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.868068",
+        "sentiment": "negative"
+      },
+      {
+        "title": "코스피 매도 사이드카 발동",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809098",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.869021",
+        "sentiment": "negative"
+      },
+      {
+        "title": "삼성KPMG \"ESG, 규제 대응으로 접근하면 힘들어\"",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731180",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.869949",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[속보]코스피 매도사이드카 발동…5.72% 내린 5265.37 급락 출발 ‘국제유가 급등 여파’",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/021/0002775644",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.870449",
+        "sentiment": "negative"
+      },
+      {
+        "title": "[속보]日닛케이지수, 6%대 폭락…5만3000선 붕괴",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/003/0013809094",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.870899",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "[특징주]액스비스, 상장 첫날 300%↑",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/277/0005731181",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.871379",
+        "sentiment": "neutral"
+      },
+      {
+        "title": "중동상황에 달러·원 환율 급등",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/421/0008813747",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.871830",
+        "sentiment": "positive"
+      },
+      {
+        "title": "이란 사태에·밸류에이션 부담까지…반도체주 낙폭 확대",
+        "source": "네이버증권",
+        "time": null,
+        "url": "https://n.news.naver.com/article/008/0005327017",
+        "type": "flash",
+        "scraped_at": "2026-03-09T08:22:41.872356",
+        "sentiment": "positive"
+      }
+    ]
+  },
+  "stock_news": {
+    "stock_code": "005930",
+    "source": "naver_stock_news",
+    "url": "https://m.stock.naver.com/domestic/stock/005930/news",
+    "scraped_at": "2026-03-09T08:23:18.721207",
+    "status": "success",
+    "count": 0,
+    "news": []
+  }
+}

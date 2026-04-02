@@ -360,8 +360,8 @@ def main():
         '316140', '024110', '161890', '271560', '267250'
     ]
     
-    # 실행일 (테스트용 과거 날짜)
-    today = '2026-01-13'  # datetime.now().strftime('%Y-%m-%d')
+    # 실행일 (현재 날짜)
+    today = datetime.now().strftime('%Y-%m-%d')
     
     # 스캔 실행
     results = scanner.run_integrated_scan(symbols, today)

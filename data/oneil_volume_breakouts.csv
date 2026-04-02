@@ -1,0 +1,3 @@
+﻿symbol,name,price,price_change,volume,volume_ratio_50d,volume_ratio_20d,breakout_20d,breakout_50d,accumulation,accumulation_ratio,strong_rs,rs_ratio,above_ma20,above_ma50,golden_cross,score,signals,pattern,timestamp
+051910.KS,LG화학,417500.0,7.05,1146026,3.16,2.35,True,True,True,1.33,False,0,True,True,False,90,"['VOLUME_SPIKE_3X', 'PRICE_SURGE_5PCT', 'BREAKOUT_50DAY', 'INSTITUTIONAL_ACCUM']",STRONG_BREAKOUT,2026-03-03 06:00:46
+005380.KS,현대차,674000.0,10.67,4354409,1.62,1.78,True,True,True,1.21,False,0,True,True,True,80,"['VOLUME_SPIKE_1.5X', 'PRICE_SURGE_10PCT', 'BREAKOUT_50DAY', 'INSTITUTIONAL_ACCUM']",VOLUME_INCREASE,2026-03-03 06:00:46

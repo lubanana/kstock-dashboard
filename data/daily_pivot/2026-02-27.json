@@ -1,0 +1,34 @@
+{
+  "date": "2026-02-27",
+  "signals_found": 2,
+  "signals": [
+    {
+      "date": "2026-02-27",
+      "code": "012330",
+      "name": "현대모비스",
+      "market": "KOSPI",
+      "current_price": 243530,
+      "score": 89.6,
+      "volume_ratio": 3.12,
+      "break_strength": 2.05,
+      "entry_1": 243530,
+      "entry_2": 255706.0,
+      "entry_3": 268492.0,
+      "stop_loss": 219177.0
+    },
+    {
+      "date": "2026-02-27",
+      "code": "086520",
+      "name": "에코프로",
+      "market": "KOSDAQ",
+      "current_price": 193508,
+      "score": 78.4,
+      "volume_ratio": 3.46,
+      "break_strength": 3.44,
+      "entry_1": 193508,
+      "entry_2": 203183.0,
+      "entry_3": 213343.0,
+      "stop_loss": 174157.0
+    }
+  ]
+}
