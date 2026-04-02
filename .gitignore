@@ -34,3 +34,5 @@ data/*.db
 .env
 *.db.backup*
 *.db.corrupted
+data/*.db
+*.db

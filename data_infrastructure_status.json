@@ -1,0 +1,228 @@
+{
+  "check_date": "2026-04-02 11:41",
+  "db_status": [
+    {
+      "name": "level1_prices.db",
+      "exists": true,
+      "size_mb": 0.51,
+      "tables": [
+        "price_data"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "price_data": 3286
+      },
+      "price_data_info": {
+        "symbols": 3286,
+        "date_range": "2026-03-10 ~ 2026-03-10"
+      }
+    },
+    {
+      "name": "level1_daily.db",
+      "exists": true,
+      "size_mb": 0.63,
+      "tables": [
+        "price_analysis",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "price_analysis": 3284,
+        "sqlite_sequence": 1
+      }
+    },
+    {
+      "name": "level1_final.db",
+      "exists": true,
+      "size_mb": 0.63,
+      "tables": [
+        "consolidated_level1",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "consolidated_level1": 3284,
+        "sqlite_sequence": 1
+      }
+    },
+    {
+      "name": "level1_consolidated.db",
+      "exists": true,
+      "size_mb": 0.02,
+      "tables": [
+        "consolidated_level1",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "consolidated_level1": 0,
+        "sqlite_sequence": 0
+      }
+    },
+    {
+      "name": "minervini_signals.db",
+      "exists": true,
+      "size_mb": 0.09,
+      "tables": [
+        "minervini_signals",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "minervini_signals": 371,
+        "sqlite_sequence": 1
+      }
+    },
+    {
+      "name": "dart_cache.db",
+      "exists": true,
+      "size_mb": 259.86,
+      "tables": [
+        "disclosures",
+        "sqlite_sequence",
+        "company_info",
+        "financial_statements",
+        "major_shareholders"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "disclosures": 458271,
+        "sqlite_sequence": 1,
+        "company_info": 494,
+        "financial_statements": 0,
+        "major_shareholders": 0
+      }
+    },
+    {
+      "name": "dart_financial.db",
+      "exists": true,
+      "size_mb": 1.76,
+      "tables": [
+        "financial_data",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "financial_data": 13144,
+        "sqlite_sequence": 1
+      }
+    },
+    {
+      "name": "dart_focused.db",
+      "exists": true,
+      "size_mb": 21.86,
+      "tables": [
+        "financial_statements",
+        "sqlite_sequence",
+        "shareholding_disclosures",
+        "build_progress"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "financial_statements": 77253,
+        "sqlite_sequence": 2,
+        "shareholding_disclosures": 57816,
+        "build_progress": 2427
+      }
+    },
+    {
+      "name": "pivot_strategy.db",
+      "exists": true,
+      "size_mb": 166.46,
+      "tables": [
+        "stock_prices",
+        "sqlite_sequence",
+        "backtest_results",
+        "trade_records",
+        "scan_results",
+        "portfolio",
+        "dart_disclosures",
+        "stock_info_backup",
+        "stock_info",
+        "stock_code_mapping"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "stock_prices": 1833007,
+        "sqlite_sequence": 2,
+        "backtest_results": 0,
+        "trade_records": 0,
+        "scan_results": 0,
+        "portfolio": 0,
+        "dart_disclosures": 7822,
+        "stock_info_backup": 3547,
+        "stock_info": 2773,
+        "stock_code_mapping": 2773
+      },
+      "stock_prices_info": {
+        "symbols": 3556,
+        "date_range": "2023-03-20 ~ 2026-04-02"
+      }
+    },
+    {
+      "name": "job_queue.db",
+      "exists": true,
+      "size_mb": 0.43,
+      "tables": [
+        "jobs",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "jobs": 3286,
+        "sqlite_sequence": 1
+      }
+    },
+    {
+      "name": "livermore_signals.db",
+      "exists": true,
+      "size_mb": 0.02,
+      "tables": [
+        "livermore_signals",
+        "sqlite_sequence"
+      ],
+      "status": "OK",
+      "table_stats": {
+        "livermore_signals": 36,
+        "sqlite_sequence": 1
+      }
+    }
+  ],
+  "build_plan": [
+    {
+      "priority": "P0-긴급",
+      "item": "pivot_strategy.db",
+      "description": "fdr_wrapper 기본 DB, OHLCV 데이터 저장",
+      "action": "신규 생성 및 1년치 역사 데이터 수집",
+      "est_time": "4시간"
+    },
+    {
+      "priority": "P1-높음",
+      "item": "level1_prices.db",
+      "description": "현재 단일 날짜(3/10) 데이터만 존재",
+      "action": "일별 업데이터 구축 및 역사 데이터 백필",
+      "est_time": "2시간"
+    },
+    {
+      "priority": "P1-높음",
+      "item": "daily_pivot_db",
+      "description": "피벗 포인트 분석용 일별 데이터",
+      "action": "build_daily_pivot_db.py 실행 및 스케줄링",
+      "est_time": "1시간"
+    },
+    {
+      "priority": "P2-중간",
+      "item": "기술적 지표 DB",
+      "description": "RSI, MACD, 이동평균 등 사전 계산",
+      "action": "기존 DB에 컬럼 추가 또는 별도 테이블 생성",
+      "est_time": "2시간"
+    },
+    {
+      "priority": "P3-낮음",
+      "item": "분봉 데이터",
+      "description": "1분/5분/15분/60분봉",
+      "action": "필요시 pykrx 또는 CCXT로 구축",
+      "est_time": "4시간"
+    }
+  ]
+}
