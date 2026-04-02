@@ -1,0 +1,30 @@
+{
+  "trades": [
+    {
+      "return": 18.0,
+      "exit": "target",
+      "days": 5,
+      "symbol": "293490",
+      "date": "2026-01-20",
+      "score": 60,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 5,
+      "retracement": 69.6,
+      "rvol": 1.69,
+      "reasons": [
+        "Fib_70",
+        "RVol_1.7",
+        "BULLISH_ENGULFING"
+      ]
+    }
+  ],
+  "summary": {
+    "total_signals": 1,
+    "total_trades": 1,
+    "signal_to_trade_rate": 100.0,
+    "win_rate": 100.0,
+    "avg_return": 18.0,
+    "total_return": 18.0,
+    "profit_factor": 0
+  }
+}

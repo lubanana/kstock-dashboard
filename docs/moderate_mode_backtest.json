@@ -1,0 +1,124 @@
+{
+  "trades": [
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 10,
+      "symbol": "009150",
+      "date": "2026-01-27",
+      "score": 50,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 41.6,
+      "rvol": 1.04,
+      "reasons": [
+        "Fib_42",
+        "RVol_1.0",
+        "BULLISH_PINBAR",
+        "High_Reliability",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 8.55,
+      "exit": "hold",
+      "days": 12,
+      "symbol": "055550",
+      "date": "2026-01-13",
+      "score": 55,
+      "pattern": "bullish_pinbar",
+      "pattern_reliability": 5,
+      "retracement": 39.7,
+      "rvol": 1.19,
+      "reasons": [
+        "Fib_40",
+        "RVol_1.2",
+        "BULLISH_PINBAR",
+        "High_Reliability",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": 12.39,
+      "exit": "hold",
+      "days": 15,
+      "symbol": "316140",
+      "date": "2026-01-13",
+      "score": 60,
+      "pattern": "morning_star",
+      "pattern_reliability": 5,
+      "retracement": 50.0,
+      "rvol": 1.06,
+      "reasons": [
+        "Fib_50",
+        "RVol_1.1",
+        "MORNING_STAR",
+        "High_Reliability",
+        "Above_MA20"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 9,
+      "symbol": "194480",
+      "date": "2026-01-13",
+      "score": 50,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 4,
+      "retracement": 37.3,
+      "rvol": 1.17,
+      "reasons": [
+        "Fib_37",
+        "RVol_1.2",
+        "BULLISH_ENGULFING",
+        "Bullish_Trend"
+      ]
+    },
+    {
+      "return": 12.0,
+      "exit": "target",
+      "days": 4,
+      "symbol": "293490",
+      "date": "2026-01-20",
+      "score": 50,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 5,
+      "retracement": 69.6,
+      "rvol": 1.69,
+      "reasons": [
+        "Fib_70",
+        "RVol_1.7",
+        "BULLISH_ENGULFING",
+        "High_Reliability"
+      ]
+    },
+    {
+      "return": -5.0,
+      "exit": "stop",
+      "days": 9,
+      "symbol": "025980",
+      "date": "2026-02-10",
+      "score": 50,
+      "pattern": "bullish_engulfing",
+      "pattern_reliability": 4,
+      "retracement": 29.9,
+      "rvol": 1.08,
+      "reasons": [
+        "Fib_30",
+        "RVol_1.1",
+        "BULLISH_ENGULFING",
+        "Bullish_Trend"
+      ]
+    }
+  ],
+  "summary": {
+    "total_signals": 6,
+    "total_trades": 6,
+    "signal_to_trade_rate": 100.0,
+    "win_rate": 83.33333333333334,
+    "avg_return": 8.656666666666666,
+    "total_return": 51.94,
+    "profit_factor": 11.388
+  }
+}
