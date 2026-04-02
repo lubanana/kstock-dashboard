@@ -1,0 +1,335 @@
+{
+  "paper_trading_results": [
+    {
+      "name": "제룡전기",
+      "return": -4.01,
+      "exit": "보유만기"
+    },
+    {
+      "name": "파크시스템스",
+      "return": -3.04,
+      "exit": "보유만기"
+    },
+    {
+      "name": "넥스틴",
+      "return": -0.61,
+      "exit": "보유만기"
+    },
+    {
+      "name": "서부T&D",
+      "return": -3.2,
+      "exit": "보유만기"
+    },
+    {
+      "name": "삼보산업",
+      "return": -5.72,
+      "exit": "보유만기"
+    },
+    {
+      "name": "삼미금속",
+      "return": 11.18,
+      "exit": "보유만기"
+    },
+    {
+      "name": "아난티",
+      "return": -1.22,
+      "exit": "보유만기"
+    },
+    {
+      "name": "한미반도체",
+      "return": 12.41,
+      "exit": "보유만기"
+    }
+  ],
+  "strategy_simulations": [
+    {
+      "name": "전략A: 고정 손절 -5%",
+      "win_rate": 25.0,
+      "total_return": 6.51,
+      "avg_return": 0.81375,
+      "details": [
+        {
+          "name": "제룡전기",
+          "original": -4.01,
+          "simulated": -4.01,
+          "reason": "보유만기"
+        },
+        {
+          "name": "파크시스템스",
+          "original": -3.04,
+          "simulated": -3.04,
+          "reason": "보유만기"
+        },
+        {
+          "name": "넥스틴",
+          "original": -0.61,
+          "simulated": -0.61,
+          "reason": "보유만기"
+        },
+        {
+          "name": "서부T&D",
+          "original": -3.2,
+          "simulated": -3.2,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼보산업",
+          "original": -5.72,
+          "simulated": -5.0,
+          "reason": "손절"
+        },
+        {
+          "name": "삼미금속",
+          "original": 11.18,
+          "simulated": 11.18,
+          "reason": "보유만기"
+        },
+        {
+          "name": "아난티",
+          "original": -1.22,
+          "simulated": -1.22,
+          "reason": "보유만기"
+        },
+        {
+          "name": "한미반도체",
+          "original": 12.41,
+          "simulated": 12.41,
+          "reason": "보유만기"
+        }
+      ]
+    },
+    {
+      "name": "전략E: 3일 단기 보유",
+      "win_rate": 25.0,
+      "total_return": 3.48,
+      "avg_return": 0.435,
+      "details": [
+        {
+          "name": "제룡전기",
+          "original": -4.01,
+          "simulated": -2.41,
+          "reason": "3일청산"
+        },
+        {
+          "name": "파크시스템스",
+          "original": -3.04,
+          "simulated": -1.82,
+          "reason": "3일청산"
+        },
+        {
+          "name": "넥스틴",
+          "original": -0.61,
+          "simulated": -0.37,
+          "reason": "3일청산"
+        },
+        {
+          "name": "서부T&D",
+          "original": -3.2,
+          "simulated": -1.92,
+          "reason": "3일청산"
+        },
+        {
+          "name": "삼보산업",
+          "original": -5.72,
+          "simulated": -3.43,
+          "reason": "3일청산"
+        },
+        {
+          "name": "삼미금속",
+          "original": 11.18,
+          "simulated": 6.71,
+          "reason": "3일청산"
+        },
+        {
+          "name": "아난티",
+          "original": -1.22,
+          "simulated": -0.73,
+          "reason": "3일청산"
+        },
+        {
+          "name": "한미반도체",
+          "original": 12.41,
+          "simulated": 7.45,
+          "reason": "3일청산"
+        }
+      ]
+    },
+    {
+      "name": "전략D: 목표가 10% 도달 시 트레일링",
+      "win_rate": 25.0,
+      "total_return": 3.2700000000000005,
+      "avg_return": 0.40875000000000006,
+      "details": [
+        {
+          "name": "제룡전기",
+          "original": -4.01,
+          "simulated": -4.01,
+          "reason": "보유만기"
+        },
+        {
+          "name": "파크시스템스",
+          "original": -3.04,
+          "simulated": -3.04,
+          "reason": "보유만기"
+        },
+        {
+          "name": "넥스틴",
+          "original": -0.61,
+          "simulated": -0.61,
+          "reason": "보유만기"
+        },
+        {
+          "name": "서부T&D",
+          "original": -3.2,
+          "simulated": -3.2,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼보산업",
+          "original": -5.72,
+          "simulated": -5.72,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼미금속",
+          "original": 11.18,
+          "simulated": 10.35,
+          "reason": "목표+트레일"
+        },
+        {
+          "name": "아난티",
+          "original": -1.22,
+          "simulated": -1.22,
+          "reason": "보유만기"
+        },
+        {
+          "name": "한미반도체",
+          "original": 12.41,
+          "simulated": 10.72,
+          "reason": "목표+트레일"
+        }
+      ]
+    },
+    {
+      "name": "전략C: 분할 익절 (5% 익절 50%, 나머지 보유)",
+      "win_rate": 25.0,
+      "total_return": -0.27999999999999925,
+      "avg_return": -0.034999999999999906,
+      "details": [
+        {
+          "name": "제룡전기",
+          "original": -4.01,
+          "simulated": -4.01,
+          "reason": "보유만기"
+        },
+        {
+          "name": "파크시스템스",
+          "original": -3.04,
+          "simulated": -3.04,
+          "reason": "보유만기"
+        },
+        {
+          "name": "넥스틴",
+          "original": -0.61,
+          "simulated": -0.61,
+          "reason": "보유만기"
+        },
+        {
+          "name": "서부T&D",
+          "original": -3.2,
+          "simulated": -3.2,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼보산업",
+          "original": -5.72,
+          "simulated": -5,
+          "reason": "손절"
+        },
+        {
+          "name": "삼미금속",
+          "original": 11.18,
+          "simulated": 8.09,
+          "reason": "분할익절"
+        },
+        {
+          "name": "아난티",
+          "original": -1.22,
+          "simulated": -1.22,
+          "reason": "보유만기"
+        },
+        {
+          "name": "한미반도체",
+          "original": 12.41,
+          "simulated": 8.71,
+          "reason": "분할익절"
+        }
+      ]
+    },
+    {
+      "name": "전략B: 트레일링 스톱 (수익 50% 보장)",
+      "win_rate": 25.0,
+      "total_return": -6.0,
+      "avg_return": -0.75,
+      "details": [
+        {
+          "name": "제룡전기",
+          "original": -4.01,
+          "simulated": -4.01,
+          "reason": "보유만기"
+        },
+        {
+          "name": "파크시스템스",
+          "original": -3.04,
+          "simulated": -3.04,
+          "reason": "보유만기"
+        },
+        {
+          "name": "넥스틴",
+          "original": -0.61,
+          "simulated": -0.61,
+          "reason": "보유만기"
+        },
+        {
+          "name": "서부T&D",
+          "original": -3.2,
+          "simulated": -3.2,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼보산업",
+          "original": -5.72,
+          "simulated": -5.72,
+          "reason": "보유만기"
+        },
+        {
+          "name": "삼미금속",
+          "original": 11.18,
+          "simulated": 5.59,
+          "reason": "트레일링"
+        },
+        {
+          "name": "아난티",
+          "original": -1.22,
+          "simulated": -1.22,
+          "reason": "보유만기"
+        },
+        {
+          "name": "한미반도체",
+          "original": 12.41,
+          "simulated": 6.21,
+          "reason": "트레일링"
+        }
+      ]
+    }
+  ],
+  "recommendation": {
+    "best_strategy": "전략A: 고정 손절 -5%",
+    "portfolio_allocation": {
+      "trend_following": 0.4,
+      "mean_reversion": 0.3,
+      "short_term_momentum": 0.2,
+      "long_term_trend": 0.1
+    }
+  }
+}
