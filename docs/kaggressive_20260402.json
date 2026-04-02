@@ -1,0 +1,210 @@
+[
+  {
+    "symbol": "348210",
+    "name": "넥스틴",
+    "sector": "반도체",
+    "price": 64700.0,
+    "kagg_score": 65.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 32.29665071770336,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "092130",
+    "name": "이크레더블",
+    "sector": "반도체",
+    "price": 14660.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 33.33333333333333,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "263860",
+    "name": "지니언스",
+    "sector": "기타",
+    "price": 12800.0,
+    "kagg_score": 61.8,
+    "breakdown": {
+      "dart": 36.8,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 92,
+    "rsi": 31.106471816283914,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "042700",
+    "name": "한미반도체",
+    "sector": "반도체",
+    "price": 256000.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 30.588235294117638,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "110990",
+    "name": "디아이티",
+    "sector": "기타",
+    "price": 18050.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 28.989612842304055,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "450950",
+    "name": "아스테라시스",
+    "sector": "기타",
+    "price": 10500.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 32.25806451612904,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "478560",
+    "name": "블랙야크아이앤씨",
+    "sector": "기타",
+    "price": 3030.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 33.507853403141354,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "481070",
+    "name": "에이유브랜즈",
+    "sector": "기타",
+    "price": 16340.0,
+    "kagg_score": 61.0,
+    "breakdown": {
+      "dart": 36.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 10
+    },
+    "signals": [
+      "고품질스코어",
+      "RSI 과매도",
+      "저부채",
+      "바닥권매수"
+    ],
+    "dart_grade": null,
+    "dart_score": 90,
+    "rsi": 26.33228840125392,
+    "per": null,
+    "recommendation": "관심"
+  },
+  {
+    "symbol": "033100",
+    "name": "제룡전기",
+    "sector": "기타",
+    "price": 43700.0,
+    "kagg_score": 60.0,
+    "breakdown": {
+      "dart": 40.0,
+      "momentum": 0,
+      "risk": 15,
+      "market": 5
+    },
+    "signals": [
+      "고품질스코어",
+      "저부채"
+    ],
+    "dart_grade": null,
+    "dart_score": 100,
+    "rsi": 37.234042553191486,
+    "per": null,
+    "recommendation": "관심"
+  }
+]
