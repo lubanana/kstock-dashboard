@@ -1,0 +1,175 @@
+{
+  "trades": [
+    {
+      "symbol": "140860",
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-04",
+      "entry_price": 279500.0,
+      "exit_price": 255066.0,
+      "stop_loss": 255066.0,
+      "target_price": 328368.0,
+      "return_pct": -8.74,
+      "hold_days": 1,
+      "exit_reason": "손절",
+      "signal_score": 80,
+      "confluence": [
+        "Bullish_Trend",
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62",
+        "Accumulation"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "009620",
+      "entry_date": "2026-02-17",
+      "exit_date": "2026-02-26",
+      "entry_price": 1750.0,
+      "exit_price": 1536.0,
+      "stop_loss": 1536.0,
+      "target_price": 2179.0,
+      "return_pct": -12.23,
+      "hold_days": 9,
+      "exit_reason": "손절",
+      "signal_score": 70,
+      "confluence": [
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62",
+        "Volume_Up",
+        "High_RVol"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "009620",
+      "entry_date": "2026-02-24",
+      "exit_date": "2026-02-28",
+      "entry_price": 1809.0,
+      "exit_price": 1638.0,
+      "stop_loss": 1638.0,
+      "target_price": 2151.0,
+      "return_pct": -9.45,
+      "hold_days": 4,
+      "exit_reason": "손절",
+      "signal_score": 80,
+      "confluence": [
+        "Bullish_Trend",
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62",
+        "Accumulation"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "006730",
+      "entry_date": "2026-02-24",
+      "exit_date": "2026-02-28",
+      "entry_price": 17300.0,
+      "exit_price": 15529.0,
+      "stop_loss": 15529.0,
+      "target_price": 20842.0,
+      "return_pct": -10.24,
+      "hold_days": 4,
+      "exit_reason": "손절",
+      "signal_score": 65,
+      "confluence": [
+        "Bullish_Trend",
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "009620",
+      "entry_date": "2026-02-03",
+      "exit_date": "2026-02-08",
+      "entry_price": 1705.0,
+      "exit_price": 1543.0,
+      "stop_loss": 1543.0,
+      "target_price": 2028.0,
+      "return_pct": -9.5,
+      "hold_days": 5,
+      "exit_reason": "손절",
+      "signal_score": 65,
+      "confluence": [
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62",
+        "Accumulation"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "012210",
+      "entry_date": "2026-01-27",
+      "exit_date": "2026-01-31",
+      "entry_price": 10560.0,
+      "exit_price": 14883.0,
+      "stop_loss": 8398.0,
+      "target_price": 14883.0,
+      "return_pct": 40.94,
+      "hold_days": 4,
+      "exit_reason": "목표도달",
+      "signal_score": 65,
+      "confluence": [
+        "Bullish_Trend",
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "000660",
+      "entry_date": "2026-03-10",
+      "exit_date": "2026-03-17",
+      "entry_price": 938000.0,
+      "exit_price": 1013000.0,
+      "stop_loss": 838132.0,
+      "target_price": 1137737.0,
+      "return_pct": 8.0,
+      "hold_days": 7,
+      "exit_reason": "보유만기",
+      "signal_score": 65,
+      "confluence": [
+        "HH_HL",
+        "Fib_38-62",
+        "Fib_50-62",
+        "Accumulation"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "055550",
+      "entry_date": "2026-01-13",
+      "exit_date": "2026-01-20",
+      "entry_price": 78400.0,
+      "exit_price": 82900.0,
+      "stop_loss": 75625.0,
+      "target_price": 83950.0,
+      "return_pct": 5.74,
+      "hold_days": 7,
+      "exit_reason": "보유만기",
+      "signal_score": 65,
+      "confluence": [
+        "Bullish_Trend",
+        "HH_HL",
+        "Fib_38-62",
+        "Accumulation"
+      ],
+      "rr_ratio": 2.0
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "win_rate": 37.5,
+    "avg_return": 0.5650000000000004,
+    "total_return": 4.520000000000001,
+    "profit_factor": 1.0901116427432218,
+    "avg_rr": 2.0
+  }
+}
