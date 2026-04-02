@@ -1,0 +1,206 @@
+{
+  "trades": [
+    {
+      "symbol": "025980",
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-04",
+      "entry_price": 8210.0,
+      "exit_price": 7717.0,
+      "return_pct": -6.0,
+      "hold_days": 1,
+      "exit_reason": "손절",
+      "signal_score": 50,
+      "confluence": [
+        "OB_Near",
+        "Volume_Up",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "033100",
+      "entry_date": "2026-02-10",
+      "exit_date": "2026-02-13",
+      "entry_price": 54600.0,
+      "exit_price": 51324.0,
+      "return_pct": -6.0,
+      "hold_days": 3,
+      "exit_reason": "손절",
+      "signal_score": 45,
+      "confluence": [
+        "Bullish_Structure",
+        "Volume_Up",
+        "Fib_382"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "140860",
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-04",
+      "entry_price": 279500.0,
+      "exit_price": 262730.0,
+      "return_pct": -6.0,
+      "hold_days": 1,
+      "exit_reason": "손절",
+      "signal_score": 45,
+      "confluence": [
+        "Bullish_Structure",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "033100",
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-04",
+      "entry_price": 51100.0,
+      "exit_price": 48034.0,
+      "return_pct": -6.0,
+      "hold_days": 1,
+      "exit_reason": "손절",
+      "signal_score": 40,
+      "confluence": [
+        "OB_Near",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "348210",
+      "entry_date": "2026-02-10",
+      "exit_date": "2026-02-15",
+      "entry_price": 78500.0,
+      "exit_price": "80900",
+      "return_pct": 3.06,
+      "hold_days": 5,
+      "exit_reason": "보유만기",
+      "signal_score": 40,
+      "confluence": [
+        "OB_Near",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "009620",
+      "entry_date": "2026-02-17",
+      "exit_date": "2026-02-24",
+      "entry_price": 1750.0,
+      "exit_price": 1737.0,
+      "return_pct": -0.74,
+      "hold_days": 7,
+      "exit_reason": "보유만기",
+      "signal_score": 40,
+      "confluence": [
+        "High_RVol",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "012210",
+      "entry_date": "2026-03-24",
+      "exit_date": "2026-03-26",
+      "entry_price": 14200.0,
+      "exit_price": 13348.0,
+      "return_pct": -6.0,
+      "hold_days": 2,
+      "exit_reason": "손절",
+      "signal_score": 40,
+      "confluence": [
+        "OB_Near",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "033100",
+      "entry_date": "2026-02-24",
+      "exit_date": "2026-02-25",
+      "entry_price": 55500.0,
+      "exit_price": 62160.0,
+      "return_pct": 12.0,
+      "hold_days": 1,
+      "exit_reason": "목표도달",
+      "signal_score": 35,
+      "confluence": [
+        "Bullish_Structure",
+        "Fib_382"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "348210",
+      "entry_date": "2026-03-03",
+      "exit_date": "2026-03-04",
+      "entry_price": 82000.0,
+      "exit_price": 77080.0,
+      "return_pct": -6.0,
+      "hold_days": 1,
+      "exit_reason": "손절",
+      "signal_score": 35,
+      "confluence": [
+        "Volume_Up",
+        "OTE_Zone"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "012210",
+      "entry_date": "2026-02-03",
+      "exit_date": "2026-02-04",
+      "entry_price": 17900.0,
+      "exit_price": 20048.0,
+      "return_pct": 12.0,
+      "hold_days": 1,
+      "exit_reason": "목표도달",
+      "signal_score": 35,
+      "confluence": [
+        "Bullish_Structure",
+        "High_RVol"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "012210",
+      "entry_date": "2026-03-10",
+      "exit_date": "2026-03-11",
+      "entry_price": 16490.0,
+      "exit_price": 18469.0,
+      "return_pct": 12.0,
+      "hold_days": 1,
+      "exit_reason": "목표도달",
+      "signal_score": 35,
+      "confluence": [
+        "Bullish_Structure",
+        "Fib_382"
+      ],
+      "rr_ratio": 2.0
+    },
+    {
+      "symbol": "025980",
+      "entry_date": "2026-02-17",
+      "exit_date": "2026-02-23",
+      "entry_price": 8590.0,
+      "exit_price": 8075.0,
+      "return_pct": -6.0,
+      "hold_days": 6,
+      "exit_reason": "손절",
+      "signal_score": 35,
+      "confluence": [
+        "Bullish_Structure",
+        "High_RVol"
+      ],
+      "rr_ratio": 2.0
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "win_rate": 33.33333333333333,
+    "avg_return": -0.30666666666666664,
+    "total_return": -3.6799999999999997,
+    "profit_factor": 0.9138979878334115,
+    "avg_rr": 2.0
+  }
+}
