@@ -1,0 +1,50 @@
+[
+  {
+    "symbol": "055550",
+    "price": 78400.0,
+    "score": 60,
+    "signal": "STRONG_BUY",
+    "pattern": "morning_star",
+    "stop_loss": 75807.14285714286,
+    "target_price": 84450.0,
+    "rr_ratio": 2.3333333333333313,
+    "confluence": [
+      "Fib_40",
+      "RVol_Up",
+      "MORNING_STAR",
+      "Bullish_Trend"
+    ]
+  },
+  {
+    "symbol": "194480",
+    "price": 31900.0,
+    "score": 55,
+    "signal": "BUY",
+    "pattern": "bullish_engulfing",
+    "stop_loss": 30016.964285714286,
+    "target_price": 35666.07142857143,
+    "rr_ratio": 2.0,
+    "confluence": [
+      "Fib_37",
+      "RVol_Up",
+      "BULLISH_ENGULFING",
+      "Bullish_Trend"
+    ]
+  },
+  {
+    "symbol": "316140",
+    "price": 27850.0,
+    "score": 55,
+    "signal": "BUY",
+    "pattern": "morning_star",
+    "stop_loss": 26992.85714285714,
+    "target_price": 29564.285714285714,
+    "rr_ratio": 1.9999999999999958,
+    "confluence": [
+      "Fib_50",
+      "RVol_Up",
+      "MORNING_STAR",
+      "Above_MA20"
+    ]
+  }
+]
