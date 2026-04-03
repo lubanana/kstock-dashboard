@@ -1,0 +1,26 @@
+[
+  {
+    "id": "BUY_20260403192551_TEST",
+    "type": "BUY",
+    "coin": "XRP",
+    "price": 1996,
+    "volume": 2505.01,
+    "amount": 5000000,
+    "fee": 2500,
+    "timestamp": "2026-04-03T19:25:51.332741",
+    "reason": "\ud3c9\uade0\ud68c\uadc0 \ub9e4\uc218 (RSI: 32.5)"
+  },
+  {
+    "id": "SELL_20260403192609_TEST",
+    "type": "SELL",
+    "coin": "XRP",
+    "price": 2200,
+    "volume": 2505.01,
+    "amount": 5511022,
+    "fee": 2755,
+    "timestamp": "2026-04-03T19:26:09.620808",
+    "reason": "TAKE_PROFIT (+10.2%)",
+    "pnl": 508267,
+    "pnl_pct": 10.22
+  }
+]
