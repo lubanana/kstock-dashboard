@@ -1,0 +1,98 @@
+{
+  "BTC": {
+    "period": "2025-04-03 ~ 2026-04-02",
+    "start_price": 122277000.0,
+    "end_price": 101452000.0,
+    "hold_return": -17.031003377577136,
+    "rsi_bollinger": {
+      "return_pct": -12.051404608154632,
+      "trades": 9,
+      "win_rate": 22.22222222222222,
+      "final_balance": 8794859.539184537
+    },
+    "momentum": {
+      "return_pct": -8.706050097810701,
+      "trades": 4,
+      "win_rate": 0.0,
+      "final_balance": 9129394.99021893
+    },
+    "mean_reversion": {
+      "return_pct": -13.26607091115823,
+      "trades": 13,
+      "win_rate": 23.076923076923077,
+      "final_balance": 8673392.908884177
+    }
+  },
+  "ETH": {
+    "period": "2025-04-03 ~ 2026-04-02",
+    "start_price": 2651000.0,
+    "end_price": 3124000.0,
+    "hold_return": 17.842323651452286,
+    "rsi_bollinger": {
+      "return_pct": -4.544149469238408,
+      "trades": 7,
+      "win_rate": 28.57142857142857,
+      "final_balance": 9545585.05307616
+    },
+    "momentum": {
+      "return_pct": -8.606930381371193,
+      "trades": 3,
+      "win_rate": 0.0,
+      "final_balance": 9139306.96186288
+    },
+    "mean_reversion": {
+      "return_pct": 2.285551618560143,
+      "trades": 19,
+      "win_rate": 36.84210526315789,
+      "final_balance": 10228555.161856014
+    }
+  },
+  "XRP": {
+    "period": "2025-04-03 ~ 2026-04-02",
+    "start_price": 3116.0,
+    "end_price": 1997.0,
+    "hold_return": -35.91142490372272,
+    "rsi_bollinger": {
+      "return_pct": 2.6876149387504533,
+      "trades": 7,
+      "win_rate": 42.857142857142854,
+      "final_balance": 10268761.493875045
+    },
+    "momentum": {
+      "return_pct": -5.9784165759141,
+      "trades": 6,
+      "win_rate": 16.666666666666664,
+      "final_balance": 9402158.34240859
+    },
+    "mean_reversion": {
+      "return_pct": 22.410993172085302,
+      "trades": 25,
+      "win_rate": 40.0,
+      "final_balance": 12241099.31720853
+    }
+  },
+  "SOL": {
+    "period": "2025-04-03 ~ 2026-04-02",
+    "start_price": 173800.0,
+    "end_price": 121500.0,
+    "hold_return": -30.09205983889528,
+    "rsi_bollinger": {
+      "return_pct": -11.675488278447986,
+      "trades": 7,
+      "win_rate": 14.285714285714285,
+      "final_balance": 8832451.172155201
+    },
+    "momentum": {
+      "return_pct": -13.948305281541087,
+      "trades": 8,
+      "win_rate": 12.5,
+      "final_balance": 8605169.471845891
+    },
+    "mean_reversion": {
+      "return_pct": 2.1928811680580673,
+      "trades": 25,
+      "win_rate": 36.0,
+      "final_balance": 10219288.116805807
+    }
+  }
+}

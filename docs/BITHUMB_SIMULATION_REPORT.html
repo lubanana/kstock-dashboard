@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bithumb Trading Simulator Report | 빗썸 매매 시뮬레이션 리포트</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .coin-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f7931a, #ffd700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 16px;
+        }
+        
+        .coin-icon.eth { background: linear-gradient(135deg, #627eea, #8bacff); }
+        .coin-icon.xrp { background: linear-gradient(135deg, #23292f, #4a5568); }
+        .coin-icon.sol { background: linear-gradient(135deg, #9945ff, #14f195); }
+        
+        .card-title {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .card-subtitle {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .metric {
+            background: rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-label {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        
+        .metric-value {
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        .metric-value.positive { color: #00d084; }
+        .metric-value.negative { color: #ff4757; }
+        
+        .strategy-comparison {
+            margin-top: 16px;
+        }
+        
+        .strategy-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .strategy-row:last-child {
+            border-bottom: none;
+        }
+        
+        .strategy-name {
+            color: #aaa;
+        }
+        
+        .strategy-value {
+            font-weight: 600;
+        }
+        
+        .strategy-value.positive { color: #00d084; }
+        .strategy-value.negative { color: #ff4757; }
+        
+        .summary-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .summary-title {
+            font-size: 1.8em;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 32px 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(123,44,191,0.1));
+            border-left: 4px solid #00d4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .info-box h3 {
+            margin-bottom: 12px;
+            color: #00d4ff;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .info-box li {
+            color: #ccc;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .badge.best { background: #00d084; color: #000; }
+        .badge.good { background: #ffd700; color: #000; }
+        .badge.warning { background: #ff4757; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 Bithumb Trading Simulator</h1>
+            <p class="subtitle">빗썸 Public API 기반 매매 시뮬레이션 리포트</p>
+            <p class="subtitle">기준일: 2026-04-03 | 분석 기간: 2025-04-03 ~ 2026-04-02 (365일)</p>
+        </header>
+
+        <div class="summary-section">
+            <h2 class="summary-title">📊 전략 성과 비교</h2>
+            <div class="chart-container">
+                <canvas id="returnsChart"></canvas>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- BTC Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="coin-icon">BTC</div>
+                    <div>
+                        <div class="card-title">Bitcoin</div>
+                        <div class="card-subtitle">₩101,455,000</div>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">보유 수익률</div>
+                        <div class="metric-value negative">-17.0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">최고 전략</div>
+                        <div class="metric-value">모멘텀</div>
+                    </div>
+                </div>
+                <div class="strategy-comparison">
+                    <div class="strategy-row">
+                        <span class="strategy-name">RSI + 볼린저밴드</span>
+                        <span class="strategy-value negative">-12.1%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">모멘텀 돌파</span>
+                        <span class="strategy-value negative">-8.7%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">평균회귀</span>
+                        <span class="strategy-value negative">-13.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETH Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="coin-icon eth">ETH</div>
+                    <div>
+                        <div class="card-title">Ethereum</div>
+                        <div class="card-subtitle">₩3,124,000</div>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">보유 수익률</div>
+                        <div class="metric-value positive">+17.8%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">최고 전략</div>
+                        <div class="metric-value">평균회귀</div>
+                    </div>
+                </div>
+                <div class="strategy-comparison">
+                    <div class="strategy-row">
+                        <span class="strategy-name">RSI + 볼린저밴드</span>
+                        <span class="strategy-value negative">-4.5%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">모멘텀 돌파</span>
+                        <span class="strategy-value negative">-8.6%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">평균회귀</span>
+                        <span class="strategy-value positive">+2.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- XRP Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="coin-icon xrp">XRP</div>
+                    <div>
+                        <div class="card-title">Ripple</div>
+                        <div class="card-subtitle">₩1,997</div>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">보유 수익률</div>
+                        <div class="metric-value negative">-35.9%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">최고 전략</div>
+                        <div class="metric-value positive">평균회귀 ⭐</div>
+                    </div>
+                </div>
+                <div class="strategy-comparison">
+                    <div class="strategy-row">
+                        <span class="strategy-name">RSI + 볼린저밴드</span>
+                        <span class="strategy-value positive">+2.7%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">모멘텀 돌파</span>
+                        <span class="strategy-value negative">-6.0%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">평균회귀 <span class="badge best">BEST</span></span>
+                        <span class="strategy-value positive">+22.4%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOL Card -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="coin-icon sol">SOL</div>
+                    <div>
+                        <div class="card-title">Solana</div>
+                        <div class="card-subtitle">₩121,600</div>
+                    </div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">보유 수익률</div>
+                        <div class="metric-value negative">-30.1%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">최고 전략</div>
+                        <div class="metric-value">평균회귀</div>
+                    </div>
+                </div>
+                <div class="strategy-comparison">
+                    <div class="strategy-row">
+                        <span class="strategy-name">RSI + 볼린저밴드</span>
+                        <span class="strategy-value negative">-11.7%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">모멘텀 돌파</span>
+                        <span class="strategy-value negative">-13.9%</span>
+                    </div>
+                    <div class="strategy-row">
+                        <span class="strategy-name">평균회귀</span>
+                        <span class="strategy-value positive">+2.2%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>📈 분석 인사이트</h3>
+            <ul>
+                <li><strong>평균회귀 전략</strong>이 하띨(장에서 가장 우수한 성과를 보임 (XRP +22.4% vs 보유 -35.9%)</li>
+                <li><strong>RSI 과매도 + 볼린저 하단</strong> 접근 시 매수, 과매수 또는 상단 접근 시 매도하는 전략</li>
+                <li><strong>모멘텀 돌파</strong>는 상승장(ETH)에서도 수익을 내지 못함 - 추세 전환 타이밍 문제</li>
+                <li>전반적인 암호화폐 시장 하띨(장에서 알고리즘 트레이딩이 buy-and-hold보다 위험 관리에 유효함</li>
+                <li>XRP는 변동성이 커서 평균회귀 전략의 수익률이 가장 높았음 (+22.4%)</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>⚙️ 시뮬레이션 설정</h3>
+            <ul>
+                <li><strong>초기 자본:</strong> 10,000,000 KRW (천만원)</li>
+                <li><strong>거래 수수료:</strong> 0.05% (지정가 기준)</li>
+                <li><strong>손절 기준:</strong> -3%</li>
+                <li><strong>익절 기준:</strong> +9%</li>
+                <li><strong>포지션 크기:</strong> 2% 리스크 기준 (Kelly Criterion 변형)</li>
+                <li><strong>데이터 소스:</strong> Bithumb Public API (https://api.bithumb.com)</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2026 Bithumb Trading Simulator | Data provided by Bithumb Public API</p>
+            <p style="margin-top: 8px; font-size: 0.9em;">⚠️ 본 리포트는 시뮬레이션 결과이며 실제 투자 결과를 보장하지 않습니다.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js 차트
+        const ctx = document.getElementById('returnsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['BTC', 'ETH', 'XRP', 'SOL'],
+                datasets: [
+                    {
+                        label: '보유 (Buy & Hold)',
+                        data: [-17.0, 17.8, -35.9, -30.1],
+                        backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                        borderColor: 'rgba(255, 255, 255, 0.5)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'RSI + 볼린저밴드',
+                        data: [-12.1, -4.5, 2.7, -11.7],
+                        backgroundColor: 'rgba(0, 212, 255, 0.7)',
+                        borderColor: '#00d4ff',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '모멘텀 돌파',
+                        data: [-8.7, -8.6, -6.0, -13.9],
+                        backgroundColor: 'rgba(255, 215, 0, 0.7)',
+                        borderColor: '#ffd700',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '평균회귀',
+                        data: [-13.3, 2.3, 22.4, 2.2],
+                        backgroundColor: 'rgba(0, 208, 132, 0.7)',
+                        borderColor: '#00d084',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#fff',
+                            padding: 20,
+                            font: { size: 12 }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '수익률 비교 (%)',
+                        color: '#fff',
+                        font: { size: 16 }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: '#888',
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#fff',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
