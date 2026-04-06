@@ -1,0 +1,78 @@
+{
+  "scan_date": "2026-04-03",
+  "total_stocks": 3540,
+  "limit_up_count": 6,
+  "dominant_themes": [],
+  "strong_stocks": [
+    {
+      "code": "093370",
+      "name": "Stock",
+      "change_pct": 28.530259365994226,
+      "sector": "그룹_09",
+      "trading_value": 79768946440.0
+    },
+    {
+      "code": "083470",
+      "name": "Stock",
+      "change_pct": 27.407407407407412,
+      "sector": "그룹_08",
+      "trading_value": 6343770048.0
+    },
+    {
+      "code": "010170",
+      "name": "Stock",
+      "change_pct": 25.889328063241113,
+      "sector": "그룹_01",
+      "trading_value": 972212051720.0
+    },
+    {
+      "code": "011930",
+      "name": "Stock",
+      "change_pct": 25.27272727272727,
+      "sector": "그룹_01",
+      "trading_value": 666861234585.0
+    },
+    {
+      "code": "010820",
+      "name": "Stock",
+      "change_pct": 24.897400820793436,
+      "sector": "그룹_01",
+      "trading_value": 128323063000.0
+    },
+    {
+      "code": "475150",
+      "name": "Stock",
+      "change_pct": 24.0,
+      "sector": "그룹_47",
+      "trading_value": 774692802400.0
+    },
+    {
+      "code": "179530",
+      "name": "Stock",
+      "change_pct": 23.260437375745525,
+      "sector": "그룹_17",
+      "trading_value": 5726041000.0
+    },
+    {
+      "code": "001250",
+      "name": "Stock",
+      "change_pct": 22.157996146435455,
+      "sector": "그룹_00",
+      "trading_value": 90251678370.0
+    },
+    {
+      "code": "109080",
+      "name": "Stock",
+      "change_pct": 21.624173748819643,
+      "sector": "그룹_10",
+      "trading_value": 9783235840.0
+    },
+    {
+      "code": "412350",
+      "name": "Stock",
+      "change_pct": 21.399730820995956,
+      "sector": "그룹_41",
+      "trading_value": 37418901740.0
+    }
+  ]
+}
