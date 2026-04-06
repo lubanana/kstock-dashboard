@@ -22,6 +22,7 @@ from data_manager import DataManager
 from backtest_engine import BacktestEngine
 from explosive import ExplosiveV7Strategy
 from dplus import DPlusStrategy
+from ivf import IVFScanner
 
 
 def main():
@@ -67,7 +68,8 @@ def main():
     # Create strategy
     strategy_map = {
         'explosive': ExplosiveV7Strategy,
-        'dplus': DPlusStrategy
+        'dplus': DPlusStrategy,
+        'ivf': IVFScanner,
     }
     
     if args.strategy not in strategy_map:

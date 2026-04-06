@@ -28,8 +28,23 @@ class Signal:
             'signal_type': self.signal_type,
             'score': self.score,
             'reason': self.reason,
-            'metadata': self.metadata
+            'metadata': self._clean_metadata(self.metadata)
         }
+    
+    def _clean_metadata(self, obj: Any) -> Any:
+        """JSON 직렬화를 위한 메타데이터 정제"""
+        if isinstance(obj, dict):
+            return {k: self._clean_metadata(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._clean_metadata(item) for item in obj]
+        elif isinstance(obj, pd.Timestamp):
+            return obj.strftime('%Y-%m-%d')
+        elif isinstance(obj, datetime):
+            return obj.strftime('%Y-%m-%d %H:%M:%S')
+        elif hasattr(obj, 'item'):  # numpy types
+            return obj.item()
+        else:
+            return obj
 
 
 @dataclass 

@@ -27,6 +27,7 @@ from data_manager import DataManager
 from report_engine import ReportEngine
 from explosive import ExplosiveV7Strategy
 from dplus import DPlusStrategy
+from ivf import IVFScanner
 
 
 def main():
@@ -70,6 +71,7 @@ def main():
     strategy_map = {
         'explosive': ExplosiveV7Strategy,
         'dplus': DPlusStrategy,
+        'ivf': IVFScanner,
     }
     
     if args.strategy == 'all':

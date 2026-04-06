@@ -1,0 +1,1771 @@
+{
+  "date": "2026-04-03",
+  "summary": {
+    "date": "2026-04-03",
+    "total_stocks": 3540,
+    "total_signals": 34,
+    "buy_signals": 7,
+    "avg_score": 80.97058823529412
+  },
+  "strategies": [
+    {
+      "name": "IVF (Institutional Volume Fibonacci)",
+      "stats": {
+        "total": 34,
+        "avg_score": 80.97058823529412,
+        "max_score": 90.0,
+        "min_score": 75.0,
+        "buy_signals": 7,
+        "hold_signals": 27
+      },
+      "signals": [
+        {
+          "code": "048470",
+          "name": "대동스틸",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 90.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (25점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7026986730024531,
+            "supply_signal": "strong_buying",
+            "poc_price": 3355.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              3165.0,
+              3355.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 5.2239112620410015,
+            "fib_levels": {
+              "0.0": 4080.0,
+              "0.382": 3547.11,
+              "0.5": 3382.5,
+              "0.618": 3217.89,
+              "1.0": 2685.0
+            },
+            "current_price": 3355.0,
+            "min_distance": 0.00819672131147541,
+            "retracement_zone": true,
+            "extension_1618": 4942.11,
+            "fvg_date": "2026-01-21",
+            "fvg_range": [
+              2900.0,
+              3070.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 3215.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 25.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 90.0
+          }
+        },
+        {
+          "code": "289670",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 90.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7304082031240424,
+            "supply_signal": "strong_buying",
+            "poc_price": 52725.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              52725.0,
+              53650.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.7728021566571813,
+            "fib_levels": {
+              "0.0": 54605.0,
+              "0.382": 53797.07,
+              "0.5": 53547.5,
+              "0.618": 53297.93,
+              "1.0": 52490.0
+            },
+            "current_price": 53545.0,
+            "min_distance": 4.668970025212438e-05,
+            "retracement_zone": true,
+            "extension_1618": 55912.07,
+            "near_high": true,
+            "fvg_date": "2026-01-26",
+            "fvg_range": [
+              53655.0,
+              53690.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 53110.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 90.0
+          }
+        },
+        {
+          "code": "458260",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 90.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7094444401670563,
+            "supply_signal": "strong_buying",
+            "poc_price": 48086.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              47450.0,
+              48086.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.4731643786328555,
+            "fib_levels": {
+              "0.0": 48817.0,
+              "0.382": 48176.386,
+              "0.5": 47978.5,
+              "0.618": 47780.614,
+              "1.0": 47140.0
+            },
+            "current_price": 47895.0,
+            "min_distance": 0.0017433970143021192,
+            "retracement_zone": true,
+            "extension_1618": 49853.386,
+            "near_high": true,
+            "fvg_date": "2025-12-11",
+            "fvg_range": [
+              48132.0,
+              48245.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 47655.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 90.0
+          }
+        },
+        {
+          "code": "491630",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 90.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (25점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7246349542944807,
+            "supply_signal": "strong_buying",
+            "poc_price": 10115.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              9940.0,
+              10440.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 2.055067058851066,
+            "fib_levels": {
+              "0.0": 10920.0,
+              "0.382": 10295.43,
+              "0.5": 10102.5,
+              "0.618": 9909.57,
+              "1.0": 9285.0
+            },
+            "current_price": 9955.0,
+            "min_distance": 0.0045635359116022395,
+            "retracement_zone": true,
+            "extension_1618": 11930.43,
+            "fvg_date": "2025-12-15",
+            "fvg_range": [
+              11397.0,
+              11795.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 9795.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 25.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 90.0
+          }
+        },
+        {
+          "code": "473000",
+          "name": "에스케이증권제12호스팩",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 90.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.8399084125619728,
+            "supply_signal": "strong_buying",
+            "poc_price": 2055.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              2055.0,
+              2060.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.23282193800867765,
+            "fib_levels": {
+              "0.0": 2080.0,
+              "0.382": 2064.72,
+              "0.5": 2060.0,
+              "0.618": 2055.28,
+              "1.0": 2040.0
+            },
+            "current_price": 2060.0,
+            "min_distance": 0.0,
+            "retracement_zone": true,
+            "extension_1618": 2104.72,
+            "near_high": true,
+            "fvg_date": "2026-02-10",
+            "fvg_range": [
+              2050.0,
+              2055.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 2040.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 90.0
+          }
+        },
+        {
+          "code": "449770",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 85.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (25점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6642653554374837,
+            "supply_signal": "moderate_buying",
+            "poc_price": 19530.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              19505.0,
+              19820.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 2.455680622555734,
+            "fib_levels": {
+              "0.0": 20285.0,
+              "0.382": 19803.68,
+              "0.5": 19655.0,
+              "0.618": 19506.32,
+              "1.0": 19025.0
+            },
+            "current_price": 19720.0,
+            "min_distance": 0.0032961460446247464,
+            "retracement_zone": true,
+            "extension_1618": 21063.68,
+            "near_high": true,
+            "fvg_date": "2025-12-12",
+            "fvg_range": [
+              20059.0,
+              20168.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 19155.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 25.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 85.0
+          }
+        },
+        {
+          "code": "449780",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "buy",
+          "score": 85.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.71341139313305,
+            "supply_signal": "strong_buying",
+            "poc_price": 16405.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              16020.0,
+              16580.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.6812811329298918,
+            "fib_levels": {
+              "0.0": 17270.0,
+              "0.382": 16620.6,
+              "0.5": 16420.0,
+              "0.618": 16219.4,
+              "1.0": 15570.0
+            },
+            "current_price": 16220.0,
+            "min_distance": 3.699136868066361e-05,
+            "retracement_zone": true,
+            "extension_1618": 18320.6,
+            "fvg_date": "2025-12-12",
+            "fvg_range": [
+              16990.0,
+              17005.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 15575.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 85.0
+          }
+        },
+        {
+          "code": "0044K0",
+          "name": "삼성스팩10호",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.9099514360619508,
+            "supply_signal": "strong_buying",
+            "poc_price": 2065.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              2050.0,
+              2075.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.8346273362427967,
+            "fib_levels": {
+              "0.0": 2115.0,
+              "0.382": 2072.98,
+              "0.5": 2060.0,
+              "0.618": 2047.02,
+              "1.0": 2005.0
+            },
+            "current_price": 2050.0,
+            "min_distance": 0.0014536585365853747,
+            "retracement_zone": true,
+            "extension_1618": 2182.98,
+            "near_high": true,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 2025.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 7.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "005990",
+          "name": "매일홀딩스",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (25점)",
+            "피볼나치 적중 (20점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.752165912835364,
+            "supply_signal": "strong_buying",
+            "poc_price": 11120.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              11000.0,
+              11260.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 3.3566287408723365,
+            "fib_levels": {
+              "0.0": 12500.0,
+              "0.382": 11629.04,
+              "0.5": 11360.0,
+              "0.618": 11090.96,
+              "1.0": 10220.0
+            },
+            "current_price": 11120.0,
+            "min_distance": 0.002611510791366985,
+            "retracement_zone": true,
+            "extension_1618": 13909.04,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 10940.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 25.0,
+              "fibonacci": 20.0,
+              "ict": 7.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "0099W0",
+          "name": "미래에셋비전스팩11호",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7373942800904325,
+            "supply_signal": "strong_buying",
+            "poc_price": 2015.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              2000.0,
+              2020.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.9283510566351274,
+            "fib_levels": {
+              "0.0": 2045.0,
+              "0.382": 2022.08,
+              "0.5": 2015.0,
+              "0.618": 2007.92,
+              "1.0": 1985.0
+            },
+            "current_price": 2010.0,
+            "min_distance": 0.00103482587064673,
+            "retracement_zone": true,
+            "extension_1618": 2082.08,
+            "near_high": true,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 2005.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 7.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "051900",
+          "name": "LG생활건강",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (17점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7157866971183177,
+            "supply_signal": "strong_buying",
+            "poc_price": 255500.0,
+            "poc_proximity": "close",
+            "value_area": [
+              243000.0,
+              251500.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.4998147235716409,
+            "fib_levels": {
+              "0.0": 279500.0,
+              "0.382": 258681.0,
+              "0.5": 252250.0,
+              "0.618": 245819.0,
+              "1.0": 225000.0
+            },
+            "current_price": 247000.0,
+            "min_distance": 0.004781376518218624,
+            "retracement_zone": true,
+            "extension_1618": 313181.0,
+            "fvg_date": "2026-01-02",
+            "fvg_range": [
+              259500.0,
+              262000.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 240500.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 17.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "334890",
+          "name": "이지스밸류플러스리츠",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7755827855905484,
+            "supply_signal": "strong_buying",
+            "poc_price": 4100.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              4045.0,
+              4200.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.5607923190052198,
+            "fib_levels": {
+              "0.0": 4320.0,
+              "0.382": 4169.11,
+              "0.5": 4122.5,
+              "0.618": 4075.89,
+              "1.0": 3925.0
+            },
+            "current_price": 4160.0,
+            "min_distance": 0.0021899038461537673,
+            "retracement_zone": true,
+            "extension_1618": 4564.11,
+            "near_high": true,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 4025.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 7.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "451670",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 82.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (17점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7242264935108849,
+            "supply_signal": "strong_buying",
+            "poc_price": 16885.0,
+            "poc_proximity": "close",
+            "value_area": [
+              16335.0,
+              17770.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.23837351526188472,
+            "fib_levels": {
+              "0.0": 19000.0,
+              "0.382": 17832.99,
+              "0.5": 17472.5,
+              "0.618": 17112.01,
+              "1.0": 15945.0
+            },
+            "current_price": 17410.0,
+            "min_distance": 0.0035898908673176336,
+            "retracement_zone": true,
+            "extension_1618": 20887.99,
+            "fvg_date": "2025-12-15",
+            "fvg_range": [
+              20351.0,
+              20381.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 16780.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 17.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 82.0
+          }
+        },
+        {
+          "code": "004080",
+          "name": "신흥",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7347280931143867,
+            "supply_signal": "strong_buying",
+            "poc_price": 13810.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              13720.0,
+              13910.0
+            ],
+            "in_value_area": false,
+            "volume_ratio": 1.3998466184153764,
+            "fib_levels": {
+              "0.0": 14400.0,
+              "0.382": 14025.64,
+              "0.5": 13910.0,
+              "0.618": 13794.36,
+              "1.0": 13420.0
+            },
+            "current_price": 14000.0,
+            "min_distance": 0.0018314285714285299,
+            "retracement_zone": true,
+            "extension_1618": 15005.64,
+            "near_high": true,
+            "fvg_date": "2025-12-10",
+            "fvg_range": [
+              13820.0,
+              13830.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 13420.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 10.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "114460",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6277112115686919,
+            "supply_signal": "moderate_buying",
+            "poc_price": 100845.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              100800.0,
+              101565.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.3806288621078147,
+            "fib_levels": {
+              "0.0": 102033.0,
+              "0.382": 101422.564,
+              "0.5": 101234.0,
+              "0.618": 101045.436,
+              "1.0": 100435.0
+            },
+            "current_price": 101265.0,
+            "min_distance": 0.0003061274872858342,
+            "retracement_zone": true,
+            "extension_1618": 103020.564,
+            "near_high": true,
+            "fvg_date": "2025-12-18",
+            "fvg_range": [
+              101470.0,
+              101475.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 101045.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "276970",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6018121385940038,
+            "supply_signal": "moderate_buying",
+            "poc_price": 7791.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              7695.0,
+              7895.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.5141597028783658,
+            "fib_levels": {
+              "0.0": 8200.0,
+              "0.382": 7907.77,
+              "0.5": 7817.5,
+              "0.618": 7727.23,
+              "1.0": 7435.0
+            },
+            "current_price": 7880.0,
+            "min_distance": 0.003524111675126959,
+            "retracement_zone": true,
+            "extension_1618": 8672.77,
+            "near_high": true,
+            "fvg_date": "2025-12-12",
+            "fvg_range": [
+              7360.0,
+              7375.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 7806.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "295020",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.604471877452917,
+            "supply_signal": "moderate_buying",
+            "poc_price": 58400.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              57945.0,
+              58400.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.000684414049441018,
+            "fib_levels": {
+              "0.0": 59010.0,
+              "0.382": 58152.41,
+              "0.5": 57887.5,
+              "0.618": 57622.59,
+              "1.0": 56765.0
+            },
+            "current_price": 58035.0,
+            "min_distance": 0.0020230895149479363,
+            "retracement_zone": true,
+            "extension_1618": 60397.41,
+            "near_high": true,
+            "fvg_date": "2025-12-09",
+            "fvg_range": [
+              56589.0,
+              56673.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 57790.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "461600",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.640815149434103,
+            "supply_signal": "moderate_buying",
+            "poc_price": 8700.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              8600.0,
+              8800.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.21052097457567392,
+            "fib_levels": {
+              "0.0": 9025.0,
+              "0.382": 8830.18,
+              "0.5": 8770.0,
+              "0.618": 8709.82,
+              "1.0": 8515.0
+            },
+            "current_price": 8730.0,
+            "min_distance": 0.0023115693012600563,
+            "retracement_zone": true,
+            "extension_1618": 9340.18,
+            "near_high": true,
+            "fvg_date": "2025-12-11",
+            "fvg_range": [
+              8795.0,
+              8815.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 8670.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "434060",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6029578261032981,
+            "supply_signal": "moderate_buying",
+            "poc_price": 16225.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              16185.0,
+              16445.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.833281490613644,
+            "fib_levels": {
+              "0.0": 16850.0,
+              "0.382": 16481.37,
+              "0.5": 16367.5,
+              "0.618": 16253.63,
+              "1.0": 15885.0
+            },
+            "current_price": 16440.0,
+            "min_distance": 0.0025164233576641716,
+            "retracement_zone": true,
+            "extension_1618": 17446.37,
+            "near_high": true,
+            "fvg_date": "2025-12-12",
+            "fvg_range": [
+              16310.0,
+              16370.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 15890.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "399580",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6267913418110013,
+            "supply_signal": "moderate_buying",
+            "poc_price": 10485.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              10235.0,
+              10520.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.3920163766632547,
+            "fib_levels": {
+              "0.0": 10815.0,
+              "0.382": 10390.98,
+              "0.5": 10260.0,
+              "0.618": 10129.02,
+              "1.0": 9705.0
+            },
+            "current_price": 10370.0,
+            "min_distance": 0.0020231436837029474,
+            "retracement_zone": true,
+            "extension_1618": 11500.98,
+            "near_high": true,
+            "fvg_date": "2025-12-22",
+            "fvg_range": [
+              8966.0,
+              9005.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 10000.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "457700",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6835883814165367,
+            "supply_signal": "moderate_buying",
+            "poc_price": 10420.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              10205.0,
+              10655.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.6603034610809713,
+            "fib_levels": {
+              "0.0": 10870.0,
+              "0.382": 10568.22,
+              "0.5": 10475.0,
+              "0.618": 10381.78,
+              "1.0": 10080.0
+            },
+            "current_price": 10500.0,
+            "min_distance": 0.002380952380952381,
+            "retracement_zone": true,
+            "extension_1618": 11358.22,
+            "near_high": true,
+            "fvg_date": "2025-12-16",
+            "fvg_range": [
+              11220.0,
+              11225.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 10320.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "471460",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6855135174146032,
+            "supply_signal": "moderate_buying",
+            "poc_price": 52805.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              52224.0,
+              54269.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.44165018366770276,
+            "fib_levels": {
+              "0.0": 56039.0,
+              "0.382": 54287.912,
+              "0.5": 53747.0,
+              "0.618": 53206.088,
+              "1.0": 51455.0
+            },
+            "current_price": 53695.0,
+            "min_distance": 0.0009684328149734612,
+            "retracement_zone": true,
+            "extension_1618": 58871.912,
+            "near_high": true,
+            "fvg_date": "2025-12-16",
+            "fvg_range": [
+              57831.0,
+              58040.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 52730.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "475250",
+          "name": "하나33호스팩",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.659964157839165,
+            "supply_signal": "moderate_buying",
+            "poc_price": 2100.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              2095.0,
+              2110.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.0934300341296928,
+            "fib_levels": {
+              "0.0": 2130.0,
+              "0.382": 2105.17,
+              "0.5": 2097.5,
+              "0.618": 2089.83,
+              "1.0": 2065.0
+            },
+            "current_price": 2095.0,
+            "min_distance": 0.0011933174224343676,
+            "retracement_zone": true,
+            "extension_1618": 2170.17,
+            "near_high": true,
+            "fvg_date": "2025-12-29",
+            "fvg_range": [
+              2100.0,
+              2105.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 2080.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "481430",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 80.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6156088812484309,
+            "supply_signal": "moderate_buying",
+            "poc_price": 99890.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              99650.0,
+              101515.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.16581284427243093,
+            "fib_levels": {
+              "0.0": 102935.0,
+              "0.382": 101508.23,
+              "0.5": 101067.5,
+              "0.618": 100626.77,
+              "1.0": 99200.0
+            },
+            "current_price": 101025.0,
+            "min_distance": 0.0004206879485275922,
+            "retracement_zone": true,
+            "extension_1618": 105243.23,
+            "near_high": true,
+            "fvg_date": "2026-01-22",
+            "fvg_range": [
+              101095.0,
+              101200.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 100355.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 80.0
+          }
+        },
+        {
+          "code": "340930",
+          "name": "유일에너테크",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 78.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)"
+          ],
+          "metadata": {
+            "buying_pressure": 483600.03683155077,
+            "supply_signal": "strong_buying",
+            "poc_price": 806.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              806.0,
+              1018.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.0,
+            "fib_levels": {
+              "0.0": 1619.0,
+              "0.382": 1000.542,
+              "0.5": 809.5,
+              "0.618": 618.458,
+              "1.0": 0.0
+            },
+            "current_price": 806.0,
+            "min_distance": 0.004342431761786601,
+            "retracement_zone": true,
+            "extension_1618": 2619.542,
+            "fvg_date": "2026-01-05",
+            "fvg_range": [
+              1415.0,
+              1471.0
+            ],
+            "fvg": true,
+            "order_block": false,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 8.0
+            },
+            "total_score": 78.0
+          }
+        },
+        {
+          "code": "225590",
+          "name": "패션플랫폼",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 77.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.8837622375834417,
+            "supply_signal": "strong_buying",
+            "poc_price": 871.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              863.0,
+              880.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.7371759636302991,
+            "fib_levels": {
+              "0.0": 937.0,
+              "0.382": 888.486,
+              "0.5": 873.5,
+              "0.618": 858.514,
+              "1.0": 810.0
+            },
+            "current_price": 880.0,
+            "min_distance": 0.007386363636363636,
+            "retracement_zone": true,
+            "extension_1618": 1015.486,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 837.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 7.0
+            },
+            "total_score": 77.0
+          }
+        },
+        {
+          "code": "463690",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 77.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (17점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6684812562103855,
+            "supply_signal": "moderate_buying",
+            "poc_price": 19785.0,
+            "poc_proximity": "close",
+            "value_area": [
+              18840.0,
+              19785.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.09044837851964638,
+            "fib_levels": {
+              "0.0": 20070.0,
+              "0.382": 19447.34,
+              "0.5": 19255.0,
+              "0.618": 19062.66,
+              "1.0": 18440.0
+            },
+            "current_price": 19355.0,
+            "min_distance": 0.004770860242831318,
+            "retracement_zone": true,
+            "extension_1618": 21077.34,
+            "near_high": true,
+            "fvg_date": "2025-12-08",
+            "fvg_range": [
+              19544.0,
+              19624.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 18670.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 17.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 77.0
+          }
+        },
+        {
+          "code": "451700",
+          "name": "엔에이치스팩29호",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 77.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "볼륨 프로파일 우위 (25점)",
+            "피볼나치 적중 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7641047487623898,
+            "supply_signal": "strong_buying",
+            "poc_price": 2360.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              2205.0,
+              2360.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 4.103161704892447,
+            "fib_levels": {
+              "0.0": 2690.0,
+              "0.382": 2462.71,
+              "0.5": 2392.5,
+              "0.618": 2322.29,
+              "1.0": 2095.0
+            },
+            "current_price": 2360.0,
+            "min_distance": 0.013771186440677966,
+            "retracement_zone": true,
+            "extension_1618": 3057.71,
+            "fvg": false,
+            "order_block": true,
+            "ob_level": 2280.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 25.0,
+              "fibonacci": 15.0,
+              "ict": 7.0
+            },
+            "total_score": 77.0
+          }
+        },
+        {
+          "code": "439870",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 77.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (17점)",
+            "피볼나치 적중 (25점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6483376456231021,
+            "supply_signal": "moderate_buying",
+            "poc_price": 100285.0,
+            "poc_proximity": "close",
+            "value_area": [
+              99310.0,
+              103370.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.7676826552438977,
+            "fib_levels": {
+              "0.0": 106580.0,
+              "0.382": 103268.06,
+              "0.5": 102245.0,
+              "0.618": 101221.94,
+              "1.0": 97910.0
+            },
+            "current_price": 102735.0,
+            "min_distance": 0.00476955273275904,
+            "retracement_zone": true,
+            "extension_1618": 111938.06,
+            "near_high": true,
+            "fvg_date": "2025-12-16",
+            "fvg_range": [
+              110425.0,
+              110460.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 99490.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 17.0,
+              "fibonacci": 25.0,
+              "ict": 15.0
+            },
+            "total_score": 77.0
+          }
+        },
+        {
+          "code": "049520",
+          "name": "유아이엘",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 75.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7415434631565534,
+            "supply_signal": "strong_buying",
+            "poc_price": 4165.0,
+            "value_area": [
+              3740.0,
+              4125.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.795434647066538,
+            "fib_levels": {
+              "0.0": 4290.0,
+              "0.382": 4009.23,
+              "0.5": 3922.5,
+              "0.618": 3835.77,
+              "1.0": 3555.0
+            },
+            "current_price": 3940.0,
+            "min_distance": 0.004441624365482234,
+            "retracement_zone": true,
+            "extension_1618": 4744.23,
+            "fvg_date": "2025-12-24",
+            "fvg_range": [
+              3410.0,
+              3415.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 3805.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 10.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 75.0
+          }
+        },
+        {
+          "code": "210540",
+          "name": "디와이파워",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 75.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6120258466616905,
+            "supply_signal": "moderate_buying",
+            "poc_price": 14030.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              13270.0,
+              14040.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.982463988775326,
+            "fib_levels": {
+              "0.0": 16160.0,
+              "0.382": 14761.88,
+              "0.5": 14330.0,
+              "0.618": 13898.119999999999,
+              "1.0": 12500.0
+            },
+            "current_price": 13900.0,
+            "min_distance": 0.00013525179856122436,
+            "retracement_zone": true,
+            "extension_1618": 18421.88,
+            "fvg_date": "2026-03-10",
+            "fvg_range": [
+              13370.0,
+              13430.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 13400.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 75.0
+          }
+        },
+        {
+          "code": "352090",
+          "name": "스톰테크",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 75.0,
+          "reason": [
+            "강한 수급 (30점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.7685612597550875,
+            "supply_signal": "strong_buying",
+            "poc_price": 3605.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              3565.0,
+              3615.0
+            ],
+            "in_value_area": false,
+            "volume_ratio": 0.9063617624196054,
+            "fib_levels": {
+              "0.0": 3840.0,
+              "0.382": 3660.46,
+              "0.5": 3605.0,
+              "0.618": 3549.54,
+              "1.0": 3370.0
+            },
+            "current_price": 3620.0,
+            "min_distance": 0.004143646408839779,
+            "retracement_zone": true,
+            "extension_1618": 4130.46,
+            "fvg_date": "2026-02-12",
+            "fvg_range": [
+              3550.0,
+              3555.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 3510.0,
+            "msb": "none",
+            "scores": {
+              "supply": 30.0,
+              "volume": 10.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 75.0
+          }
+        },
+        {
+          "code": "453080",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 75.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6967066749963922,
+            "supply_signal": "moderate_buying",
+            "poc_price": 18705.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              18295.0,
+              19310.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 0.1795703531427872,
+            "fib_levels": {
+              "0.0": 20395.0,
+              "0.382": 19470.56,
+              "0.5": 19185.0,
+              "0.618": 18899.44,
+              "1.0": 17975.0
+            },
+            "current_price": 18920.0,
+            "min_distance": 0.001086680761099435,
+            "retracement_zone": true,
+            "extension_1618": 21890.56,
+            "fvg_date": "2025-12-19",
+            "fvg_range": [
+              19616.0,
+              19776.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 17975.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 75.0
+          }
+        },
+        {
+          "code": "494410",
+          "name": "Stock",
+          "date": "2026-04-03",
+          "signal_type": "hold",
+          "score": 75.0,
+          "reason": [
+            "강한 수급 (20점)",
+            "볼륨 프로파일 우위 (20점)",
+            "피볼나치 적중 (20점)",
+            "ICT 시그널 (15점)"
+          ],
+          "metadata": {
+            "buying_pressure": 0.6742165683502261,
+            "supply_signal": "moderate_buying",
+            "poc_price": 12635.0,
+            "poc_proximity": "very_close",
+            "value_area": [
+              12555.0,
+              12920.0
+            ],
+            "in_value_area": true,
+            "volume_ratio": 1.5727767216143171,
+            "fib_levels": {
+              "0.0": 13490.0,
+              "0.382": 12947.56,
+              "0.5": 12780.0,
+              "0.618": 12612.44,
+              "1.0": 12070.0
+            },
+            "current_price": 12675.0,
+            "min_distance": 0.004935700197238619,
+            "retracement_zone": true,
+            "extension_1618": 14367.56,
+            "fvg_date": "2026-03-11",
+            "fvg_range": [
+              12980.0,
+              12990.0
+            ],
+            "fvg": true,
+            "order_block": true,
+            "ob_level": 12385.0,
+            "msb": "none",
+            "scores": {
+              "supply": 20.0,
+              "volume": 20.0,
+              "fibonacci": 20.0,
+              "ict": 15.0
+            },
+            "total_score": 75.0
+          }
+        }
+      ]
+    }
+  ]
+}
