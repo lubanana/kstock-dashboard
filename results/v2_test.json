@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-03",
+  "summary": {
+    "date": "2026-04-03",
+    "total_stocks": 3540,
+    "total_signals": 0,
+    "buy_signals": 0,
+    "avg_score": 0.0
+  },
+  "strategies": [
+    {
+      "name": "KAGGRESSIVE V7 폭발적 상승",
+      "stats": {
+        "total": 0,
+        "avg_score": 0,
+        "max_score": 0,
+        "min_score": 0,
+        "buy_signals": 0,
+        "hold_signals": 0
+      },
+      "signals": []
+    }
+  ]
+}

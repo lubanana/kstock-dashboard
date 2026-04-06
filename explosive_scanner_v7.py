@@ -114,15 +114,28 @@ class ExplosiveScannerV7:
         if self.conn:
             self.conn.close()
     
-    def fetch_data(self, days: int = 60) -> pd.DataFrame:
-        """최근 N일 데이터 로드"""
-        logger.info(f"Loading last {days} days of data...")
+    def fetch_data(self, days: int = 60, scan_date: str = None) -> pd.DataFrame:
+        """최근 N일 데이터 로드
         
-        query = f"""
-        SELECT * FROM price_data 
-        WHERE date >= date('now', '-{days} days')
-        ORDER BY code, date
+        Args:
+            days: 데이터 조회 일수
+            scan_date: 특정 스캔 날짜 (YYYY-MM-DD 형식). None이면 최신 날짜 사용
         """
+        if scan_date:
+            logger.info(f"Loading data up to {scan_date}...")
+            query = f"""
+            SELECT * FROM price_data 
+            WHERE date <= '{scan_date}'
+            AND date >= date('{scan_date}', '-{days} days')
+            ORDER BY code, date
+            """
+        else:
+            logger.info(f"Loading last {days} days of data...")
+            query = f"""
+            SELECT * FROM price_data 
+            WHERE date >= date('now', '-{days} days')
+            ORDER BY code, date
+            """
         
         df = pd.read_sql_query(query, self.conn)
         df['date'] = pd.to_datetime(df['date'])
@@ -320,12 +333,12 @@ class ExplosiveScannerV7:
         
         return True, conditions
     
-    def scan_all_stocks(self) -> List[Dict]:
+    def scan_all_stocks(self, scan_date: str = None) -> List[Dict]:
         """전체 종목 스캔"""
         logger.info("Starting full market scan...")
         
         if self.data is None:
-            self.fetch_data()
+            self.fetch_data(scan_date=scan_date)
         
         results = []
         unique_codes = self.data['code'].unique()
@@ -882,11 +895,15 @@ def main():
     """메인 실행 함수"""
     scanner = ExplosiveScannerV7()
     
+    # 스캔 날짜 설정: 2026-04-03
+    scan_date = '2026-04-03'
+    output_date = '20260403'
+    
     try:
         scanner.connect()
         
-        # 전체 종목 스캔
-        all_results = scanner.scan_all_stocks()
+        # 전체 종목 스캔 (2026-04-03 기준)
+        all_results = scanner.scan_all_stocks(scan_date=scan_date)
         
         # 진입 가능 종목 필터링
         candidates = scanner.filter_candidates(all_results)
@@ -894,15 +911,19 @@ def main():
         # 리포트 생성
         report = scanner.generate_report(candidates, all_results)
         
-        # 결과 저장
-        json_file = scanner.save_json(report)
-        html_file = scanner.generate_html_report(report)
+        # 결과 저장 (지정된 경로)
+        json_filename = f'scan_results_{output_date}.json'
+        html_filename = f'docs/explosive_scan_report_{output_date}.html'
+        
+        json_file = scanner.save_json(report, filename=json_filename)
+        html_file = scanner.generate_html_report(report, filename=html_filename)
         
         # 요약 출력
         print("\n" + "="*60)
         print("🚀 폭발적 상승 스캐너 v7 - 스캔 완료")
         print("="*60)
-        print(f"\n📊 총 분석 종목: {report['total_stocks_analyzed']:,}")
+        print(f"\n📅 스캔 기준일: {scan_date}")
+        print(f"📊 총 분석 종목: {report['total_stocks_analyzed']:,}")
         print(f"🏆 선정 종목: {report['qualifying_stocks']}")
         print(f"\n📈 점수 분포:")
         for score_range, count in report['score_distribution'].items():

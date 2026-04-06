@@ -1,0 +1,53 @@
+# V2 전략 설정
+# strategies.yaml - 전략 파라미터 중앙 관리
+
+strategies:
+  explosive_v7:
+    name: "KAGGRESSIVE V7 폭발적 상승"
+    description: "거래량 + 기술적 + 수급 복합 스코어링"
+    scoring:
+      volume: { weight: 30, threshold: 3.0, max_bonus: 30 }
+      technical: { weight: 20, ma_periods: [20, 60] }
+      market_cap: { weight: 15, max_cap: 500000000000 }  # 5000억
+      foreign_flow: { weight: 10, consecutive_days: 3 }
+      news: { weight: 15 }
+      theme: { weight: 10 }
+    entry:
+      min_score: 85
+      adx_min: 20
+      rsi_range: [40, 70]
+    risk:
+      position_size: 0.20
+      stop_loss: -0.07
+      take_profit: 0.25
+      trailing_stop: 0.10
+      max_holding_days: 180
+
+  dplus:
+    name: "홍인기 D+ 주도주"
+    description: "주도 테마 대장주 D+0~D+2 스윙"
+    theme_detection:
+      min_limit_up: 5
+      sector_threshold: 0.30  # 30% 상한가
+    leader_selection:
+      min_amount: 1000000000  # 10억
+      min_price: 1000
+      max_positions: 3
+    entry:
+      entry_time: "09:30"
+    management:
+      profit_take_1: 0.10  # D+0 일부
+      profit_take_2: 0.20  # D+1 추가
+      hold_until: "D+2"
+    risk:
+      position_size: 0.20
+      stop_loss: -0.07
+      take_profit: 0.30
+
+hot_sectors:
+  로봇: ["로봇", "자동화", "자율주행", "드론", "협동로봇"]
+  AI: ["AI", "인공지능", "딥러닝", "머신러닝", "GPT", "LLM"]
+  바이오: ["바이오", "제약", "신약", "바이오텍", "헬스케어"]
+  반도체: ["반도체", "칩", "파운드리", "메모리", "HBM"]
+  전기차: ["전기차", "배터리", "2차전지", "EV"]
+  원자재: ["철강", "비철금속", "화학", "유화"]

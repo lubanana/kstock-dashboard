@@ -516,17 +516,26 @@ def assign_sectors(df: pd.DataFrame) -> pd.DataFrame:
     try:
         import json
         with open('data/stock_list.json', 'r', encoding='utf-8') as f:
-            stock_list = json.load(f)
+            stock_list_data = json.load(f)
+            stock_list = stock_list_data.get('stocks', [])
             
-        # Create code to sector mapping
+        # Create code to name and sector mapping
+        code_to_name = {}
         code_to_sector = {}
         for stock in stock_list:
-            code = stock.get('code', '')
-            sector = stock.get('sector', stock.get('industry', '기타'))
+            code = stock.get('symbol', '')
+            name = stock.get('name', '')
+            sector = stock.get('sector') or stock.get('industry', '기타')
             if code:
+                code_to_name[code] = name
                 code_to_sector[code] = sector
         
-        # Apply mapping
+        # Apply mapping - preserve existing name if available
+        if 'name' in df.columns:
+            df['name'] = df['code'].map(code_to_name).fillna(df['name'])
+        else:
+            df['name'] = df['code'].map(code_to_name)
+        df['name'] = df['name'].fillna(df['code'])  # Final fallback to code
         df['sector'] = df['code'].map(code_to_sector).fillna('기타')
     except Exception as e:
         print(f"Warning: Could not load stock_list.json: {e}")
@@ -584,7 +593,8 @@ def scan_dominant_themes(scan_date: str = "2026-04-03",
     # Show limit up stocks
     print("\n📋 상한가 종목 목록:")
     for _, stock in limit_up_stocks.iterrows():
-        print(f"   • {stock['code']} | {stock['change_pct']:.1f}% | {stock['sector']}")
+        name = stock.get('name', '') if 'name' in stock else ''
+        print(f"   • {stock['code']} | {name} | {stock['change_pct']:.1f}% | {stock['sector']}")
     
     # Group by sector
     sector_analysis = limit_up_stocks.groupby('sector').agg({
@@ -647,7 +657,7 @@ def scan_dominant_themes(scan_date: str = "2026-04-03",
                 
                 leader = theme_stocks.loc[theme_stocks['score'].idxmax()]
                 
-                print(f"\n   🏆 대장주: {leader['code']}")
+                print(f"\n   🏆 대장주: {leader.get('name', leader['code'])} ({leader['code']})")
                 print(f"      상승률: {leader['change_pct']:.2f}%")
                 print(f"      거래대금: {leader['trading_value']/1e8:.1f}억원")
                 print(f"      종가: {leader['close']:,.0f}원")
@@ -681,7 +691,8 @@ def scan_dominant_themes(scan_date: str = "2026-04-03",
     
     results['strong_stocks'] = []
     for _, stock in strong_stocks.iterrows():
-        print(f"   • {stock['code']} | {stock['change_pct']:.1f}% | {stock['sector']} | 거래대금 {stock['trading_value']/1e8:.0f}억")
+        stock_name = stock.get('name', '') if 'name' in stock else ''
+        print(f"   • {stock['code']} | {stock_name} | {stock['change_pct']:.1f}% | {stock['sector']} | 거래대금 {stock['trading_value']/1e8:.0f}억")
         results['strong_stocks'].append({
             'code': stock['code'],
             'name': stock['name'],

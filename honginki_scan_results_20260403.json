@@ -2,76 +2,129 @@
   "scan_date": "2026-04-03",
   "total_stocks": 3540,
   "limit_up_count": 6,
-  "dominant_themes": [],
+  "dominant_themes": [
+    {
+      "sector": "기타",
+      "limit_up_count": 6,
+      "avg_change_pct": 29.949022855208423,
+      "total_trading_value": 850272969674.0,
+      "leader": {
+        "code": "322000",
+        "name": "현대에너지솔루션",
+        "change_pct": 30.000000000000004,
+        "trading_value": 637840776300.0,
+        "close": 191100.0,
+        "volume": 3337733
+      },
+      "all_stocks": [
+        {
+          "code": "012205",
+          "name": "계양전기우",
+          "change_pct": 29.900332225913616,
+          "trading_value": 38883307800.0
+        },
+        {
+          "code": "017900",
+          "name": "광전자",
+          "change_pct": 29.88338192419826,
+          "trading_value": 115664265090.0
+        },
+        {
+          "code": "062970",
+          "name": "한국첨단소재",
+          "change_pct": 30.000000000000004,
+          "trading_value": 17434574300.0
+        },
+        {
+          "code": "065770",
+          "name": "CS",
+          "change_pct": 29.963898916967512,
+          "trading_value": 3757802400.0
+        },
+        {
+          "code": "095910",
+          "name": "에스에너지",
+          "change_pct": 29.946524064171133,
+          "trading_value": 36692243784.0
+        },
+        {
+          "code": "322000",
+          "name": "현대에너지솔루션",
+          "change_pct": 30.000000000000004,
+          "trading_value": 637840776300.0
+        }
+      ]
+    }
+  ],
   "strong_stocks": [
     {
       "code": "093370",
-      "name": "Stock",
+      "name": "후성",
       "change_pct": 28.530259365994226,
-      "sector": "그룹_09",
+      "sector": "기타",
       "trading_value": 79768946440.0
     },
     {
       "code": "083470",
-      "name": "Stock",
+      "name": "이엠앤아이",
       "change_pct": 27.407407407407412,
-      "sector": "그룹_08",
+      "sector": "기타",
       "trading_value": 6343770048.0
     },
     {
       "code": "010170",
-      "name": "Stock",
+      "name": "대한광통신",
       "change_pct": 25.889328063241113,
-      "sector": "그룹_01",
+      "sector": "기타",
       "trading_value": 972212051720.0
     },
     {
       "code": "011930",
-      "name": "Stock",
+      "name": "신성이엔지",
       "change_pct": 25.27272727272727,
-      "sector": "그룹_01",
+      "sector": "기타",
       "trading_value": 666861234585.0
     },
     {
       "code": "010820",
-      "name": "Stock",
+      "name": "퍼스텍",
       "change_pct": 24.897400820793436,
-      "sector": "그룹_01",
+      "sector": "기타",
       "trading_value": 128323063000.0
     },
     {
       "code": "475150",
-      "name": "Stock",
+      "name": "이터닉스",
       "change_pct": 24.0,
-      "sector": "그룹_47",
+      "sector": "기타",
       "trading_value": 774692802400.0
     },
     {
       "code": "179530",
-      "name": "Stock",
+      "name": "애드바이오텍",
       "change_pct": 23.260437375745525,
-      "sector": "그룹_17",
+      "sector": "기타",
       "trading_value": 5726041000.0
     },
     {
       "code": "001250",
-      "name": "Stock",
+      "name": "글로벌",
       "change_pct": 22.157996146435455,
-      "sector": "그룹_00",
+      "sector": "기타",
       "trading_value": 90251678370.0
     },
     {
       "code": "109080",
-      "name": "Stock",
+      "name": "옵티시스",
       "change_pct": 21.624173748819643,
-      "sector": "그룹_10",
+      "sector": "기타",
       "trading_value": 9783235840.0
     },
     {
       "code": "412350",
-      "name": "Stock",
+      "name": "레이저쎌",
       "change_pct": 21.399730820995956,
-      "sector": "그룹_41",
+      "sector": "기타",
       "trading_value": 37418901740.0
     }
   ]
