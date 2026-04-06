@@ -1,0 +1,23 @@
+{
+  "report_date": "2026-04-06",
+  "data_date": "2026-04-03",
+  "summary": {
+    "total_analyzed": 3541,
+    "qualifying_stocks": 0,
+    "score_distribution": {
+      "95-100": 0,
+      "90-94": 0,
+      "85-89": 0
+    },
+    "sector_distribution": {}
+  },
+  "risk_management": {
+    "position_sizing_90plus": "20%",
+    "position_sizing_85_89": "8%",
+    "stop_loss": "-7%",
+    "take_profit": "+25% (트레일링 스탑 10%)",
+    "max_hold": "6개월",
+    "sector_duplication": "금지"
+  },
+  "top_picks": []
+}
