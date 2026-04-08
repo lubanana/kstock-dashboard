@@ -136,13 +136,13 @@ class KRXAPI:
         # KOSPI 먼저 검색
         stocks = self.get_kospi_stocks(date)
         for stock in stocks:
-            if stock.get('ISU_SRT_CD') == stock_code or stock.get('ISU_CD') == stock_code:
+            if stock.get('ISU_CD', '').endswith(stock_code) or stock.get('ISU_SRT_CD') == stock_code:
                 return stock
         
         # KOSDAQ 검색
         stocks = self.get_kosdaq_stocks(date)
         for stock in stocks:
-            if stock.get('ISU_SRT_CD') == stock_code or stock.get('ISU_CD') == stock_code:
+            if stock.get('ISU_CD', '').endswith(stock_code) or stock.get('ISU_SRT_CD') == stock_code:
                 return stock
         
         return None
@@ -202,7 +202,11 @@ def test_krx_api():
         stocks = api.get_kospi_stocks(test_date)
         if stocks:
             for stock in stocks[:5]:
-                print(f"   {stock.get('ISU_ABBRV', 'N/A')} ({stock.get('ISU_SRT_CD', 'N/A')}): {stock.get('TDD_CLSPRC', 'N/A')}")
+                name = stock.get('ISU_NM') or stock.get('ISU_ABBRV', 'N/A')
+                code = stock.get('ISU_CD', 'N/A')[-6:] if stock.get('ISU_CD') else stock.get('ISU_SRT_CD', 'N/A')
+                price = stock.get('TDD_CLSPRC', 'N/A')
+                change = stock.get('FLUC_RT', 'N/A')
+                print(f"   {name} ({code}): {price} ({change}%)")
         else:
             print("   ⚠️ 종목 데이터 없음 (API 권한 필요)")
         
@@ -210,7 +214,10 @@ def test_krx_api():
         print("\n🔍 삼성전자 상세 조회...")
         samsung = api.get_stock_detail('005930', test_date)
         if samsung:
-            print(f"   종목명: {samsung.get('ISU_ABBRV', 'N/A')}")
+            name = samsung.get('ISU_NM') or samsung.get('ISU_ABBRV', 'N/A')
+            code = samsung.get('ISU_CD', 'N/A')[-6:] if samsung.get('ISU_CD') else samsung.get('ISU_SRT_CD', 'N/A')
+            print(f"   종목명: {name}")
+            print(f"   종목코드: {code}")
             print(f"   종가: {samsung.get('TDD_CLSPRC', 'N/A')}")
             print(f"   등락률: {samsung.get('FLUC_RT', 'N/A')}%")
             print(f"   시가총액: {samsung.get('MKTCAP', 'N/A')}")
