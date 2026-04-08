@@ -123,6 +123,67 @@ class KRXDataSource:
             return int(str(value).replace(',', ''))
         except (ValueError, TypeError):
             return 0
+    
+    def get_kosdaq_index_change(self, date: str = None) -> float:
+        """
+        코스닥 지수 등락률 조회
+        
+        Args:
+            date: YYYYMMDD 형식
+            
+        Returns:
+            등락률 (%)
+        """
+        if date is None:
+            date = datetime.now().strftime('%Y%m%d')
+        
+        try:
+            kosdaq_idx = self.api.get_kosdaq_index(date)
+            if kosdaq_idx:
+                for idx in kosdaq_idx:
+                    if idx.get('IDX_NM') == '코스닥':
+                        return float(idx.get('FLUC_RT', 0) or 0)
+        except Exception as e:
+            print(f"⚠️ 코스닥 지수 조회 실패: {e}")
+        
+        return 0.0
+    
+    def get_market_status(self, date: str = None) -> dict:
+        """
+        시장 전체 상태 조회 (코스피 + 코스닥)
+        
+        Args:
+            date: YYYYMMDD 형식
+            
+        Returns:
+            {'kospi': 등락률, 'kosdaq': 등락률}
+        """
+        if date is None:
+            date = datetime.now().strftime('%Y%m%d')
+        
+        result = {'kospi': 0.0, 'kosdaq': 0.0}
+        
+        try:
+            # 코스피
+            kospi_idx = self.api.get_kospi_index(date)
+            if kospi_idx:
+                for idx in kospi_idx:
+                    if idx.get('IDX_NM') == '코스피':
+                        result['kospi'] = float(idx.get('FLUC_RT', 0) or 0)
+                        break
+            
+            # 코스닥
+            kosdaq_idx = self.api.get_kosdaq_index(date)
+            if kosdaq_idx:
+                for idx in kosdaq_idx:
+                    if idx.get('IDX_NM') == '코스닥':
+                        result['kosdaq'] = float(idx.get('FLUC_RT', 0) or 0)
+                        break
+                        
+        except Exception as e:
+            print(f"⚠️ 시장 상태 조회 실패: {e}")
+        
+        return result
 
 
 def test_krx_integration():

@@ -1,0 +1,65 @@
+[
+  {
+    "code": "131890",
+    "name": "ACE 삼성그룹동일가중",
+    "date": "2026-04-07",
+    "score": 81,
+    "price": 33055.0,
+    "reasons": [
+      "거래량 폭발 (10.3x)",
+      "MACD 반전",
+      "정배열",
+      "피볼나치 되돌림",
+      "안정적 상승 (-0.7%)"
+    ],
+    "scores": {
+      "volume": 25,
+      "technical": 18,
+      "fibonacci": 15,
+      "market": 11,
+      "momentum": 12
+    }
+  },
+  {
+    "code": "272910",
+    "name": "ACE 중장기국공채액티브",
+    "date": "2026-04-07",
+    "score": 77,
+    "price": 106260.0,
+    "reasons": [
+      "거래량 폭발 (8.5x)",
+      "RSI 적정 (56.7)",
+      "피볼나치 되돌림",
+      "안정적 상승 (-0.0%)",
+      "적정 가격대"
+    ],
+    "scores": {
+      "volume": 25,
+      "technical": 19,
+      "fibonacci": 15,
+      "market": 11,
+      "momentum": 7
+    }
+  },
+  {
+    "code": "038880",
+    "name": "아이에이",
+    "date": "2026-04-07",
+    "score": 75,
+    "price": 135.0,
+    "reasons": [
+      "거래량 급증 (3.4x)",
+      "RSI 적정 (44.3)",
+      "볼린저 하단",
+      "피볼나치 되돌림",
+      "안정적 상승 (+1.5%)"
+    ],
+    "scores": {
+      "volume": 20,
+      "technical": 22,
+      "fibonacci": 15,
+      "market": 11,
+      "momentum": 7
+    }
+  }
+]
