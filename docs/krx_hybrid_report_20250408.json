@@ -1,0 +1,1603 @@
+[
+  {
+    "code": "007160",
+    "name": "사조산업",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 89.23117550391751,
+    "reason": [
+      "RSI 45.1",
+      "거래량 2.6x",
+      "볼린저 하단",
+      "시장대비 +2.8%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 33300.0,
+        "open": 32650.0,
+        "high": 34750.0,
+        "low": 32350.0,
+        "volume": 20049,
+        "change_pct": 3.1,
+        "market_cap": 166500000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 45.08,
+        "volume_ratio": 2.55,
+        "bb_position": 0.23,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.84
+      },
+      "scores": {
+        "price_momentum": 16.2,
+        "rsi": 18.031175503917506,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "244920",
+    "name": "에이플러스에셋",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 85.94869632251336,
+    "reason": [
+      "RSI 52.9",
+      "거래량 1.8x",
+      "MACD 반전",
+      "시장대비 +4.2%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 4060.0,
+        "open": 3945.0,
+        "high": 4060.0,
+        "low": 3895.0,
+        "volume": 80367,
+        "change_pct": 4.5,
+        "market_cap": 91787233580,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 52.93,
+        "volume_ratio": 1.81,
+        "bb_position": 0.68,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.24
+      },
+      "scores": {
+        "price_momentum": 19.0,
+        "rsi": 18.827246281813547,
+        "volume": 18.121450040699813,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "005360",
+    "name": "모나미",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 84.91711525789488,
+    "reason": [
+      "RSI 53.5",
+      "거래량 2.2x",
+      "MACD 반전",
+      "시장대비 +2.9%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2000.0,
+        "open": 1940.0,
+        "high": 2030.0,
+        "low": 1940.0,
+        "volume": 69322,
+        "change_pct": 3.15,
+        "market_cap": 37794614000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 53.46,
+        "volume_ratio": 2.24,
+        "bb_position": 0.56,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.89
+      },
+      "scores": {
+        "price_momentum": 16.3,
+        "rsi": 18.617115257894877,
+        "volume": 20,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "025560",
+    "name": "미래산업",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 84.35929005145843,
+    "reason": [
+      "RSI 36.8",
+      "거래량 15.1x",
+      "볼린저 하단",
+      "시장대비 +2.0%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 754.0,
+        "open": 742.0,
+        "high": 760.0,
+        "low": 742.0,
+        "volume": 246489,
+        "change_pct": 2.31,
+        "market_cap": 44912788128,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 36.85,
+        "volume_ratio": 15.15,
+        "bb_position": 0.05,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.05
+      },
+      "scores": {
+        "price_momentum": 14.620000000000001,
+        "rsi": 14.739290051458433,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "008040",
+    "name": "사조동아원",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 83.71141609104987,
+    "reason": [
+      "RSI 51.1",
+      "거래량 10.4x",
+      "시장대비 +4.3%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 1030.0,
+        "open": 996.0,
+        "high": 1150.0,
+        "low": 984.0,
+        "volume": 10607685,
+        "change_pct": 4.57,
+        "market_cap": 145378938000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 51.07,
+        "volume_ratio": 10.43,
+        "bb_position": 0.4,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.31
+      },
+      "scores": {
+        "price_momentum": 19.14,
+        "rsi": 19.571416091049862,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "036580",
+    "name": "팜스코",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 82.03347846735326,
+    "reason": [
+      "RSI 47.2",
+      "거래량 3.2x",
+      "시장대비 +3.8%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2040.0,
+        "open": 1975.0,
+        "high": 2075.0,
+        "low": 1959.0,
+        "volume": 104826,
+        "change_pct": 4.08,
+        "market_cap": 74925003720,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 47.18,
+        "volume_ratio": 3.23,
+        "bb_position": 0.32,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.82
+      },
+      "scores": {
+        "price_momentum": 18.16,
+        "rsi": 18.873478467353262,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "002420",
+    "name": "세기상사",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 81.35762390073104,
+    "reason": [
+      "RSI 51.7",
+      "거래량 2.2x",
+      "시장대비 +3.3%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 5000.0,
+        "open": 4820.0,
+        "high": 5000.0,
+        "low": 4735.0,
+        "volume": 5802,
+        "change_pct": 3.52,
+        "market_cap": 27794240000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 51.71,
+        "volume_ratio": 2.2,
+        "bb_position": 0.46,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.26
+      },
+      "scores": {
+        "price_momentum": 17.04,
+        "rsi": 19.31762390073104,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "145270",
+    "name": "케이탑리츠",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 80.87124414004045,
+    "reason": [
+      "RSI 42.0",
+      "거래량 2.3x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 949.0,
+        "open": 930.0,
+        "high": 955.0,
+        "low": 927.0,
+        "volume": 160804,
+        "change_pct": 2.04,
+        "market_cap": 45609674526,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 41.98,
+        "volume_ratio": 2.26,
+        "bb_position": 0.17,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.78
+      },
+      "scores": {
+        "price_momentum": 14.08,
+        "rsi": 16.791244140040448,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "002240",
+    "name": "고려제강",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 80.65252990207696,
+    "reason": [
+      "RSI 39.6",
+      "거래량 1.3x",
+      "볼린저 하단",
+      "시장대비 +3.2%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 16590.0,
+        "open": 16040.0,
+        "high": 17260.0,
+        "low": 16020.0,
+        "volume": 18858,
+        "change_pct": 3.43,
+        "market_cap": 447930000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 39.55,
+        "volume_ratio": 1.3,
+        "bb_position": 0.19,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.17
+      },
+      "scores": {
+        "price_momentum": 16.86,
+        "rsi": 15.821096220921936,
+        "volume": 12.971433681155034,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "000430",
+    "name": "대원강업",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 80.4161796957578,
+    "reason": [
+      "RSI 35.2",
+      "거래량 1.4x",
+      "볼린저 하단",
+      "시장대비 +3.6%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 3375.0,
+        "open": 3280.0,
+        "high": 3390.0,
+        "low": 3250.0,
+        "volume": 82265,
+        "change_pct": 3.85,
+        "market_cap": 209250000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 35.19,
+        "volume_ratio": 1.36,
+        "bb_position": 0.09,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.59
+      },
+      "scores": {
+        "price_momentum": 17.7,
+        "rsi": 14.074351277838446,
+        "volume": 13.641828417919356,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "027740",
+    "name": "마니커",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 79.93521094152493,
+    "reason": [
+      "RSI 42.1",
+      "거래량 2.4x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 855.0,
+        "open": 842.0,
+        "high": 881.0,
+        "low": 796.0,
+        "volume": 240352,
+        "change_pct": 1.54,
+        "market_cap": 54302099940,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 42.14,
+        "volume_ratio": 2.44,
+        "bb_position": 0.18,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.28
+      },
+      "scores": {
+        "price_momentum": 13.08,
+        "rsi": 16.85521094152493,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "088790",
+    "name": "진도",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 78.82689665562441,
+    "reason": [
+      "RSI 42.8",
+      "거래량 2.3x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 1766.0,
+        "open": 1753.0,
+        "high": 1790.0,
+        "low": 1750.0,
+        "volume": 48515,
+        "change_pct": 0.86,
+        "market_cap": 21982715904,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 42.77,
+        "volume_ratio": 2.33,
+        "bb_position": 0.25,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.6
+      },
+      "scores": {
+        "price_momentum": 11.72,
+        "rsi": 17.1068966556244,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "004255",
+    "name": "NPC우",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 78.63054814617885,
+    "reason": [
+      "RSI 38.9",
+      "거래량 2.2x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2320.0,
+        "open": 2310.0,
+        "high": 2360.0,
+        "low": 2285.0,
+        "volume": 10882,
+        "change_pct": 1.53,
+        "market_cap": 12249600000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 38.93,
+        "volume_ratio": 2.23,
+        "bb_position": 0.04,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.27
+      },
+      "scores": {
+        "price_momentum": 13.06,
+        "rsi": 15.570548146178858,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "004140",
+    "name": "동방",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 78.59550306212134,
+    "reason": [
+      "RSI 36.6",
+      "거래량 1.3x",
+      "볼린저 하단",
+      "시장대비 +2.5%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2065.0,
+        "open": 2030.0,
+        "high": 2130.0,
+        "low": 2030.0,
+        "volume": 317407,
+        "change_pct": 2.74,
+        "market_cap": 99061696790,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 36.57,
+        "volume_ratio": 1.35,
+        "bb_position": 0.17,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.48
+      },
+      "scores": {
+        "price_momentum": 15.48,
+        "rsi": 14.62929255696045,
+        "volume": 13.486210505160889,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "000720",
+    "name": "현대건설",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 77.99728879118508,
+    "reason": [
+      "RSI 60.9",
+      "거래량 1.3x",
+      "MACD 반전",
+      "시장대비 +4.5%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 36200.0,
+        "open": 35000.0,
+        "high": 36200.0,
+        "low": 34800.0,
+        "volume": 894823,
+        "change_pct": 4.78,
+        "market_cap": 4031078693000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 60.93,
+        "volume_ratio": 1.28,
+        "bb_position": 0.85,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.52
+      },
+      "scores": {
+        "price_momentum": 19.560000000000002,
+        "rsi": 15.62858814521259,
+        "volume": 12.808700645972493,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "001460",
+    "name": "BYC",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 75.35351375287216,
+    "reason": [
+      "RSI 37.5",
+      "거래량 1.8x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 26300.0,
+        "open": 26300.0,
+        "high": 26700.0,
+        "low": 25650.0,
+        "volume": 1536,
+        "change_pct": 1.15,
+        "market_cap": 164273745000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 37.52,
+        "volume_ratio": 1.8,
+        "bb_position": 0.12,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.89
+      },
+      "scores": {
+        "price_momentum": 12.3,
+        "rsi": 15.009460889436033,
+        "volume": 18.044052863436125,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "009810",
+    "name": "플레이그램",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 75.19817811120444,
+    "reason": [
+      "RSI 38.0",
+      "거래량 6.1x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 301.0,
+        "open": 302.0,
+        "high": 308.0,
+        "low": 295.0,
+        "volume": 243955,
+        "change_pct": 0.0,
+        "market_cap": 45718137500,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 38.0,
+        "volume_ratio": 6.1,
+        "bb_position": 0.18,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": -0.26
+      },
+      "scores": {
+        "price_momentum": 10.0,
+        "rsi": 15.198178111204433,
+        "volume": 20,
+        "macd": 5,
+        "bollinger": 20,
+        "market_context": 5
+      }
+    }
+  },
+  {
+    "code": "33626L",
+    "name": "두산퓨얼셀2우B",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 75.12494025247176,
+    "reason": [
+      "RSI 47.2",
+      "거래량 1.4x",
+      "시장대비 +3.3%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 7250.0,
+        "open": 7140.0,
+        "high": 7300.0,
+        "low": 7070.0,
+        "volume": 1926,
+        "change_pct": 3.57,
+        "market_cap": 21650675000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 47.19,
+        "volume_ratio": 1.41,
+        "bb_position": 0.32,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.31
+      },
+      "scores": {
+        "price_momentum": 17.14,
+        "rsi": 18.875050142581646,
+        "volume": 14.109890109890111,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "417310",
+    "name": "코람코더원리츠",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 74.96381597349335,
+    "reason": [
+      "RSI 35.8",
+      "거래량 1.9x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 4810.0,
+        "open": 4765.0,
+        "high": 4845.0,
+        "low": 4690.0,
+        "volume": 57844,
+        "change_pct": 0.94,
+        "market_cap": 194324000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 35.77,
+        "volume_ratio": 1.88,
+        "bb_position": 0.03,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.68
+      },
+      "scores": {
+        "price_momentum": 11.879999999999999,
+        "rsi": 14.307380977210073,
+        "volume": 18.776434996283275,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "017900",
+    "name": "광전자",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 74.25653982373456,
+    "reason": [
+      "RSI 42.4",
+      "거래량 1.5x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 1706.0,
+        "open": 1697.0,
+        "high": 1730.0,
+        "low": 1693.0,
+        "volume": 54686,
+        "change_pct": 1.13,
+        "market_cap": 98852059678,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 42.39,
+        "volume_ratio": 1.5,
+        "bb_position": 0.23,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.87
+      },
+      "scores": {
+        "price_momentum": 12.26,
+        "rsi": 16.954503485303857,
+        "volume": 15.042036338430691,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "005745",
+    "name": "크라운해태홀딩스우",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.90284638715843,
+    "reason": [
+      "RSI 63.3",
+      "거래량 4.1x",
+      "MACD 반전"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 7700.0,
+        "open": 7400.0,
+        "high": 7760.0,
+        "low": 7400.0,
+        "volume": 1947,
+        "change_pct": 2.12,
+        "market_cap": 4625590200,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 63.34,
+        "volume_ratio": 4.09,
+        "bb_position": 0.72,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.86
+      },
+      "scores": {
+        "price_momentum": 14.24,
+        "rsi": 14.662846387158428,
+        "volume": 20,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "004890",
+    "name": "동일산업",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.86626723718877,
+    "reason": [
+      "RSI 56.6",
+      "거래량 2.6x",
+      "MACD 반전"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 40250.0,
+        "open": 40300.0,
+        "high": 40600.0,
+        "low": 40000.0,
+        "volume": 5840,
+        "change_pct": 0.75,
+        "market_cap": 97614903750,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 56.58,
+        "volume_ratio": 2.56,
+        "bb_position": 0.72,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.49
+      },
+      "scores": {
+        "price_momentum": 11.5,
+        "rsi": 17.366267237188772,
+        "volume": 20,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "020760",
+    "name": "일진디스플",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.68,
+    "reason": [
+      "거래량 5.3x",
+      "볼린저 하단",
+      "시장대비 +4.1%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 745.0,
+        "open": 699.0,
+        "high": 839.0,
+        "low": 699.0,
+        "volume": 247369,
+        "change_pct": 4.34,
+        "market_cap": 38377737045,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 31.51,
+        "volume_ratio": 5.28,
+        "bb_position": 0.09,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.08
+      },
+      "scores": {
+        "price_momentum": 18.68,
+        "rsi": 0,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "008350",
+    "name": "남선알미늄",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.6799151876173,
+    "reason": [
+      "RSI 49.9",
+      "거래량 2.1x"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 1311.0,
+        "open": 1292.0,
+        "high": 1364.0,
+        "low": 1250.0,
+        "volume": 1539389,
+        "change_pct": 1.86,
+        "market_cap": 169222686990,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 49.9,
+        "volume_ratio": 2.1,
+        "bb_position": 0.4,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.6
+      },
+      "scores": {
+        "price_momentum": 13.72,
+        "rsi": 19.959915187617305,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "002310",
+    "name": "아세아제지",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.20357167223074,
+    "reason": [
+      "RSI 51.0",
+      "거래량 1.3x",
+      "시장대비 +2.4%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 6880.0,
+        "open": 6780.0,
+        "high": 6910.0,
+        "low": 6610.0,
+        "volume": 303208,
+        "change_pct": 2.69,
+        "market_cap": 286431668800,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 51.0,
+        "volume_ratio": 1.32,
+        "bb_position": 0.39,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.43
+      },
+      "scores": {
+        "price_momentum": 15.379999999999999,
+        "rsi": 19.600846366883022,
+        "volume": 13.222725305347714,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "008870",
+    "name": "금비",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 73.20346025701306,
+    "reason": [
+      "RSI 40.3",
+      "거래량 2.3x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 53900.0,
+        "open": 55900.0,
+        "high": 55900.0,
+        "low": 53900.0,
+        "volume": 3384,
+        "change_pct": -1.46,
+        "market_cap": 53900000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 40.31,
+        "volume_ratio": 2.27,
+        "bb_position": 0.21,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": -1.72
+      },
+      "scores": {
+        "price_momentum": 7.08,
+        "rsi": 16.123460257013072,
+        "volume": 20,
+        "macd": 5,
+        "bollinger": 20,
+        "market_context": 5
+      }
+    }
+  },
+  {
+    "code": "009270",
+    "name": "신원",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 72.49284977878735,
+    "reason": [
+      "RSI 62.1",
+      "거래량 2.0x",
+      "시장대비 +3.6%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 1417.0,
+        "open": 1379.0,
+        "high": 1439.0,
+        "low": 1363.0,
+        "volume": 2679893,
+        "change_pct": 3.89,
+        "market_cap": 145364866452,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 62.06,
+        "volume_ratio": 1.95,
+        "bb_position": 0.94,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.63
+      },
+      "scores": {
+        "price_momentum": 17.78,
+        "rsi": 15.174010319181768,
+        "volume": 19.538839459605573,
+        "macd": 5,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "001260",
+    "name": "남광토건",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 72.3071981759615,
+    "reason": [
+      "RSI 56.0",
+      "거래량 1.3x",
+      "시장대비 +3.3%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 7840.0,
+        "open": 7590.0,
+        "high": 7900.0,
+        "low": 7590.0,
+        "volume": 26774,
+        "change_pct": 3.57,
+        "market_cap": 77087364480,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 56.0,
+        "volume_ratio": 1.26,
+        "bb_position": 0.49,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.31
+      },
+      "scores": {
+        "price_momentum": 17.14,
+        "rsi": 17.601905491088758,
+        "volume": 12.565292684872746,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "079550",
+    "name": "LIG넥스원",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 72.11008936350113,
+    "reason": [
+      "RSI 43.7",
+      "볼린저 하단",
+      "시장대비 +4.5%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 250500.0,
+        "open": 247000.0,
+        "high": 253000.0,
+        "low": 243000.0,
+        "volume": 145906,
+        "change_pct": 4.81,
+        "market_cap": 5511000000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 43.73,
+        "volume_ratio": 0.52,
+        "bb_position": 0.28,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.55
+      },
+      "scores": {
+        "price_momentum": 19.619999999999997,
+        "rsi": 17.490089363501134,
+        "volume": 0,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "014130",
+    "name": "한익스프레스",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 71.93463325503882,
+    "reason": [
+      "RSI 37.3",
+      "거래량 2.1x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 3300.0,
+        "open": 3375.0,
+        "high": 3375.0,
+        "low": 3280.0,
+        "volume": 28164,
+        "change_pct": -1.49,
+        "market_cap": 39600000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 37.29,
+        "volume_ratio": 2.07,
+        "bb_position": 0.13,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": -1.75
+      },
+      "scores": {
+        "price_momentum": 7.02,
+        "rsi": 14.914633255038819,
+        "volume": 20,
+        "macd": 5,
+        "bollinger": 20,
+        "market_context": 5
+      }
+    }
+  },
+  {
+    "code": "100840",
+    "name": "SNT에너지",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 71.81488897495471,
+    "reason": [
+      "RSI 43.6",
+      "볼린저 하단",
+      "시장대비 +4.4%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 30150.0,
+        "open": 29550.0,
+        "high": 30250.0,
+        "low": 29150.0,
+        "volume": 118465,
+        "change_pct": 4.69,
+        "market_cap": 623525607450,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 43.59,
+        "volume_ratio": 0.51,
+        "bb_position": 0.26,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 4.43
+      },
+      "scores": {
+        "price_momentum": 19.380000000000003,
+        "rsi": 17.434888974954706,
+        "volume": 0,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "014790",
+    "name": "HL D&I",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 71.8122770220204,
+    "reason": [
+      "RSI 52.8",
+      "거래량 2.7x",
+      "시장대비 +3.7%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2225.0,
+        "open": 2190.0,
+        "high": 2405.0,
+        "low": 2155.0,
+        "volume": 206395,
+        "change_pct": 3.97,
+        "market_cap": 84235387225,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 52.82,
+        "volume_ratio": 2.73,
+        "bb_position": 0.52,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.71
+      },
+      "scores": {
+        "price_momentum": 17.94,
+        "rsi": 18.872277022020388,
+        "volume": 20,
+        "macd": 0,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "055490",
+    "name": "테이팩스",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 71.38451297289858,
+    "reason": [
+      "RSI 40.3",
+      "거래량 1.3x",
+      "볼린저 하단"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 13000.0,
+        "open": 13100.0,
+        "high": 13200.0,
+        "low": 12600.0,
+        "volume": 10417,
+        "change_pct": 1.01,
+        "market_cap": 62005450000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 40.28,
+        "volume_ratio": 1.33,
+        "bb_position": 0.22,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.75
+      },
+      "scores": {
+        "price_momentum": 12.02,
+        "rsi": 16.110151897484737,
+        "volume": 13.25436107541384,
+        "macd": 0,
+        "bollinger": 20,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "100250",
+    "name": "진양홀딩스",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 70.91223004789825,
+    "reason": [
+      "RSI 64.4",
+      "거래량 10.2x",
+      "시장대비 +3.1%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 3090.0,
+        "open": 2995.0,
+        "high": 3230.0,
+        "low": 2995.0,
+        "volume": 1175414,
+        "change_pct": 3.34,
+        "market_cap": 172716452280,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 64.42,
+        "volume_ratio": 10.18,
+        "bb_position": 1.2,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 3.08
+      },
+      "scores": {
+        "price_momentum": 16.68,
+        "rsi": 14.232230047898252,
+        "volume": 20,
+        "macd": 5,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "002780",
+    "name": "진흥기업",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 70.70786462774889,
+    "reason": [
+      "RSI 60.0",
+      "거래량 3.6x",
+      "시장대비 +2.1%"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 785.0,
+        "open": 768.0,
+        "high": 822.0,
+        "low": 768.0,
+        "volume": 1425860,
+        "change_pct": 2.35,
+        "market_cap": 114195319825,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 59.98,
+        "volume_ratio": 3.63,
+        "bb_position": 0.78,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 2.09
+      },
+      "scores": {
+        "price_momentum": 14.7,
+        "rsi": 16.00786462774889,
+        "volume": 20,
+        "macd": 5,
+        "bollinger": 0,
+        "market_context": 15
+      }
+    }
+  },
+  {
+    "code": "030720",
+    "name": "동원수산",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 70.61518213248024,
+    "reason": [
+      "RSI 49.6",
+      "거래량 1.8x"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 4945.0,
+        "open": 4905.0,
+        "high": 4985.0,
+        "low": 4905.0,
+        "volume": 12937,
+        "change_pct": 1.33,
+        "market_cap": 23013065725,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 49.57,
+        "volume_ratio": 1.81,
+        "bb_position": 0.45,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.07
+      },
+      "scores": {
+        "price_momentum": 12.66,
+        "rsi": 19.826994250635046,
+        "volume": 18.12818788184519,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "009200",
+    "name": "무림페이퍼",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 70.07417624389012,
+    "reason": [
+      "RSI 53.5",
+      "거래량 1.2x",
+      "MACD 반전"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 2065.0,
+        "open": 2025.0,
+        "high": 2075.0,
+        "low": 2025.0,
+        "volume": 116428,
+        "change_pct": 2.23,
+        "market_cap": 85923225150,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 53.47,
+        "volume_ratio": 1.2,
+        "bb_position": 0.65,
+        "macd_bullish": true
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 1.97
+      },
+      "scores": {
+        "price_momentum": 14.46,
+        "rsi": 18.611555683417993,
+        "volume": 12.002620560472115,
+        "macd": 15,
+        "bollinger": 0,
+        "market_context": 10
+      }
+    }
+  },
+  {
+    "code": "002460",
+    "name": "HS화성",
+    "date": "2025-04-08",
+    "signal_type": "buy",
+    "score": 70.06733039876377,
+    "reason": [
+      "RSI 48.0",
+      "거래량 1.9x"
+    ],
+    "metadata": {
+      "krx": {
+        "price": 9460.0,
+        "open": 9360.0,
+        "high": 9530.0,
+        "low": 9140.0,
+        "volume": 40154,
+        "change_pct": 1.07,
+        "market_cap": 96019000000,
+        "market": "KOSPI"
+      },
+      "technical": {
+        "rsi": 48.02,
+        "volume_ratio": 1.87,
+        "bb_position": 0.3,
+        "macd_bullish": false
+      },
+      "market_context": {
+        "kospi_change": 0.26,
+        "stock_vs_market": 0.81
+      },
+      "scores": {
+        "price_momentum": 12.14,
+        "rsi": 19.207167785008735,
+        "volume": 18.720162613755036,
+        "macd": 0,
+        "bollinger": 10,
+        "market_context": 10
+      }
+    }
+  }
+]
