@@ -58,24 +58,26 @@ class KRXDataSource:
             })
         
         # KOSDAQ 데이터 처리
-        for stock in kosdaq_stocks:
-            all_stocks.append({
-                'code': stock.get('ISU_CD', '')[-6:] if stock.get('ISU_CD') else '',
-                'name': stock.get('ISU_NM', ''),
-                'market': 'KOSDAQ',
-                'close': self._to_float(stock.get('TDD_CLSPRC')),
-                'open': self._to_float(stock.get('TDD_OPNPRC')),
-                'high': self._to_float(stock.get('TDD_HGPRC')),
-                'low': self._to_float(stock.get('TDD_LWPRC')),
-                'volume': self._to_int(stock.get('ACC_TRDVOL')),
-                'value': self._to_int(stock.get('ACC_TRDVAL')),
-                'market_cap': self._to_int(stock.get('MKTCAP')),
-                'change_pct': self._to_float(stock.get('FLUC_RT')),
-                'date': date
-            })
+        if kosdaq_stocks:  # 권한 있을 때만
+            for stock in kosdaq_stocks:
+                all_stocks.append({
+                    'code': stock.get('ISU_CD', '')[-6:] if stock.get('ISU_CD') else '',
+                    'name': stock.get('ISU_NM', ''),
+                    'market': 'KOSDAQ',
+                    'close': self._to_float(stock.get('TDD_CLSPRC')),
+                    'open': self._to_float(stock.get('TDD_OPNPRC')),
+                    'high': self._to_float(stock.get('TDD_HGPRC')),
+                    'low': self._to_float(stock.get('TDD_LWPRC')),
+                    'volume': self._to_int(stock.get('ACC_TRDVOL')),
+                    'value': self._to_int(stock.get('ACC_TRDVAL')),
+                    'market_cap': self._to_int(stock.get('MKTCAP')),
+                    'change_pct': self._to_float(stock.get('FLUC_RT')),
+                    'date': date
+                })
         
         df = pd.DataFrame(all_stocks)
-        print(f"   ✅ {len(df)}개 종목 수집 완료 (KOSPI: {len(kospi_stocks)}, KOSDAQ: {len(kosdaq_stocks)})")
+        kosdaq_count = len(kosdaq_stocks) if kosdaq_stocks else 0
+        print(f"   ✅ {len(df)}개 종목 수집 완료 (KOSPI: {len(kospi_stocks)}, KOSDAQ: {kosdaq_count})")
         
         return df
     
