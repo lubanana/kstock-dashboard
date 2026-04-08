@@ -79,6 +79,14 @@ class Scanner2604V2(StrategyBase):
         if price_ratio < 0.7 or price_ratio > 1.3:  # ±30% 이상 변동 제외
             return False
         
+        # 거래정지 필터
+        if latest['volume'] == 0:
+            return False
+        if latest['high'] == latest['low'] == latest['open']:
+            return False
+        if latest['high'] == 0 or latest['low'] == 0:
+            return False
+        
         return True
     
     def _calculate_indicators(self, df: pd.DataFrame) -> pd.DataFrame:

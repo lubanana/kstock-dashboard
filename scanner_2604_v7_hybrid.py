@@ -145,6 +145,14 @@ class Scanner2604V7Hybrid:
         if vol_ratio < 1.5:
             return None
         
+        # 거래정지 필터
+        if latest['volume'] == 0:
+            return None
+        if latest['high'] == latest['low'] == latest['open']:
+            return None
+        if latest['high'] == 0 or latest['low'] == 0:
+            return None
+        
         scores = {}
         reasons = []
         metadata = {}
