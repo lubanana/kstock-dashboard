@@ -564,7 +564,13 @@ def generate_html_report(signals: List[Dict], date: str, output_file: str):
 
 def main():
     """메인 실행"""
-    scan_date = '2026-04-07'
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='2604+V7 통합 스캐너')
+    parser.add_argument('--date', type=str, default=None, help='스캔 날짜 (YYYY-MM-DD)')
+    args = parser.parse_args()
+    
+    scan_date = args.date if args.date else datetime.now().strftime('%Y-%m-%d')
     
     scanner = Scanner2604V7Hybrid(use_krx=True)
     scanner.connect()
