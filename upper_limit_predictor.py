@@ -13,7 +13,7 @@
 
 Usage:
     python3 upper_limit_predictor.py --mode scan --date 2026-04-08
-    python3 upper_limit_predictor.py --mode backtest --days 60
+    python3 upper_limit_predictor.py --mode backtest --date 2026-04-07
 """
 
 import sys
@@ -256,6 +256,132 @@ class UpperLimitPredictor:
         print(f"\n{'='*70}")
         print(f"총 {len(results)}개 종목 선별됨")
         print(f"{'='*70}")
+    
+    def backtest(self, scan_date: str, min_score: int = 40, hold_days: int = 1) -> Dict:
+        """
+        백테스트: 스캔 당일 매수 → 다음날 청산 수익률 검증
+        """
+        print(f"\n{'='*70}")
+        print(f"📊 상한가 예측 백테스트")
+        print(f"{'='*70}")
+        print(f"스캔일: {scan_date}")
+        print(f"보유기간: {hold_days}일")
+        print(f"{'='*70}\n")
+        
+        # 스캔 실행
+        signals = self.scan_stocks(scan_date, min_score)
+        
+        if not signals:
+            print("❌ 스캔 결과 없음")
+            return {}
+        
+        # 상위 20개만 테스트 (속도 고려)
+        test_signals = signals[:20]
+        
+        print(f"\n📈 {len(test_signals)}개 종목 백테스트 진행...\n")
+        
+        trades = []
+        
+        for signal in test_signals:
+            code = signal['code']
+            entry_price = signal['close']
+            entry_date = scan_date
+            
+            # 다음날 데이터 조회
+            query = """
+            SELECT date, open, high, low, close
+            FROM price_data 
+            WHERE code = ? AND date > ?
+            ORDER BY date
+            LIMIT ?
+            """
+            df = pd.read_sql_query(query, self.conn, params=(code, scan_date, hold_days))
+            
+            if df.empty:
+                continue
+            
+            # 청산 가격 설정 (다음날 종가)
+            exit_row = df.iloc[-1]
+            exit_price = exit_row['close']
+            exit_date = exit_row['date']
+            
+            # 수익률 계산
+            return_pct = ((exit_price - entry_price) / entry_price) * 100
+            
+            # 고점/저점 기록
+            max_price = df['high'].max()
+            min_price = df['low'].min()
+            max_return = ((max_price - entry_price) / entry_price) * 100
+            min_return = ((min_price - entry_price) / entry_price) * 100
+            
+            trade = {
+                'code': code,
+                'name': signal['name'],
+                'score': signal['score'],
+                'entry_date': entry_date,
+                'entry_price': entry_price,
+                'exit_date': exit_date,
+                'exit_price': exit_price,
+                'return_pct': round(return_pct, 2),
+                'max_return': round(max_return, 2),
+                'min_return': round(min_return, 2),
+                'volume_ratio': signal['volume_ratio']
+            }
+            trades.append(trade)
+        
+        # 결과 계산
+        if not trades:
+            print("❌ 유효한 거래 없음")
+            return {}
+        
+        wins = len([t for t in trades if t['return_pct'] > 0])
+        losses = len(trades) - wins
+        win_rate = wins / len(trades) * 100
+        
+        avg_return = np.mean([t['return_pct'] for t in trades])
+        max_profit = max([t['return_pct'] for t in trades])
+        max_loss = min([t['return_pct'] for t in trades])
+        
+        # 점수별 분석
+        high_score_trades = [t for t in trades if t['score'] >= 50]
+        low_score_trades = [t for t in trades if t['score'] < 50]
+        
+        print(f"\n{'='*70}")
+        print(f"📊 백테스트 결과")
+        print(f"{'='*70}")
+        print(f"총 거래: {len(trades)}회")
+        print(f"승률: {wins}/{len(trades)} ({win_rate:.1f}%)")
+        print(f"평균 수익률: {avg_return:+.2f}%")
+        print(f"최대 수익: {max_profit:+.2f}%")
+        print(f"최대 손실: {max_loss:+.2f}%")
+        
+        if high_score_trades:
+            high_avg = np.mean([t['return_pct'] for t in high_score_trades])
+            print(f"\n🎯 고점수(50+) 종목 평균: {high_avg:+.2f}% ({len(high_score_trades)}개)")
+        
+        if low_score_trades:
+            low_avg = np.mean([t['return_pct'] for t in low_score_trades])
+            print(f"📉 저점수(<50) 종목 평균: {low_avg:+.2f}% ({len(low_score_trades)}개)")
+        
+        print(f"\n{'='*70}")
+        print(f"📋 개별 거래 내역")
+        print(f"{'='*70}")
+        
+        for t in trades[:15]:
+            emoji = '🟢' if t['return_pct'] > 0 else '🔴'
+            print(f"{emoji} {t['name']} ({t['code']}) - {t['score']}점")
+            print(f"   진입: {t['entry_price']:,.0f}원 → 청산: {t['exit_price']:,.0f}원")
+            print(f"   수익률: {t['return_pct']:+.2f}% (고점: {t['max_return']:+.1f}% / 저점: {t['min_return']:+.1f}%)")
+        
+        return {
+            'scan_date': scan_date,
+            'total_trades': len(trades),
+            'wins': wins,
+            'losses': losses,
+            'win_rate': win_rate,
+            'avg_return': avg_return,
+            'trades': trades
+        }
 
 
 def main():
@@ -279,7 +405,6 @@ def main():
         if args.date:
             scan_date = args.date
         else:
-            # 최근 데이터 날짜 조회
             query = "SELECT MAX(date) FROM price_data"
             result = predictor.conn.execute(query).fetchone()
             scan_date = result[0] if result[0] else datetime.now().strftime('%Y-%m-%d')
@@ -296,8 +421,24 @@ def main():
             print(f"\n💾 결과 저장: {filename}")
     
     elif args.mode == 'backtest':
-        print("\n📊 백테스트 모드는 개발 중...")
-        print("단일 날짜 스캔 후 다음날 수익률 확인 기능 예정")
+        # 날짜 설정
+        if args.date:
+            scan_date = args.date
+        else:
+            query = "SELECT MAX(date) FROM price_data"
+            result = predictor.conn.execute(query).fetchone()
+            scan_date = result[0] if result[0] else datetime.now().strftime('%Y-%m-%d')
+        
+        # 백테스트 실행
+        result = predictor.backtest(scan_date, args.min_score, hold_days=1)
+        
+        # JSON 저장
+        if result:
+            filename = f"upper_limit_backtest_{scan_date}.json"
+            with open(filename, 'w', encoding='utf-8') as f:
+                save_result = {k: v for k, v in result.items() if k != 'trades'}
+                json.dump(save_result, f, ensure_ascii=False, indent=2, default=str)
+            print(f"\n💾 백테스트 결과 저장: {filename}")
 
 
 if __name__ == '__main__':
