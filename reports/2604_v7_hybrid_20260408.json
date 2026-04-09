@@ -28,6 +28,18 @@
       "vs_kosdaq": 3.5908013937282233,
       "change_pct": 8.710801393728223,
       "change_20d": 6.666666666666667
+    },
+    "targets": {
+      "entry": 3120.0,
+      "stop_loss": 3042.0,
+      "tp1": 3838.0,
+      "tp2": 4148.0,
+      "tp3": 5043.0,
+      "atr": 172.0,
+      "risk_reward_tp2": 13.16,
+      "stop_pct": -2.5,
+      "tp2_pct": 32.95,
+      "method": "hybrid"
     }
   }
 ]

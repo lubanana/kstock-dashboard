@@ -27,6 +27,7 @@ import json
 
 from v2.core.krx_datasource import KRXDataSource
 from v2.core.indicators import Indicators
+from fibonacci_target_integrated import calculate_scanner_targets
 
 
 class Scanner2604V7Hybrid:
@@ -286,8 +287,14 @@ class Scanner2604V7Hybrid:
         if total_score < 80:
             return None
         
+        # 목표가/손절가 계산 (통합 모듈 사용)
+        try:
+            targets = calculate_scanner_targets(df, latest['close'])
+        except Exception as e:
+            targets = None
+        
         # numpy 타입을 Python 타입으로 변환
-        return {
+        result = {
             'code': code,
             'name': name,
             'date': date,
@@ -295,8 +302,11 @@ class Scanner2604V7Hybrid:
             'price': float(latest['close']),
             'scores': {k: int(v) for k, v in scores.items()},
             'reasons': reasons[:5],
-            'metadata': {k: float(v) if isinstance(v, (int, float, np.number)) else bool(v) if isinstance(v, (np.bool_, bool)) else v for k, v in metadata.items()}
+            'metadata': {k: float(v) if isinstance(v, (int, float, np.number)) else bool(v) if isinstance(v, (np.bool_, bool)) else v for k, v in metadata.items()},
+            'targets': targets  # 목표가/손절가 추가
         }
+        
+        return result
     
     def run_scan(self, scan_date: str = None, top_n: int = 20) -> List[Dict]:
         """전체 스캔 실행"""
@@ -536,6 +546,30 @@ def generate_html_report(signals: List[Dict], date: str, output_file: str):
                         <div class="value">{scores.get('momentum', 0):.0f}점</div>
                     </div>
                 </div>
+                <div class="targets" style="background: rgba(255,255,255,0.03); border-radius: 10px; padding: 15px; margin: 15px 0; border: 1px solid rgba(254,202,87,0.2);">
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center;">
+                        <div>
+                            <div style="color: #888; font-size: 0.75rem; margin-bottom: 3px;">손절가</div>
+                            <div style="color: #ff6b6b; font-weight: bold; font-size: 0.95rem;">{signal.get('targets', {}).get('stop_loss', 0):,.0f}원</div>
+                            <div style="color: #ff6b6b; font-size: 0.7rem;">{signal.get('targets', {}).get('stop_pct', 0):+.1f}%</div>
+                        </div>
+                        <div>
+                            <div style="color: #888; font-size: 0.75rem; margin-bottom: 3px;">TP1</div>
+                            <div style="color: #4cd137; font-weight: bold; font-size: 0.95rem;">{signal.get('targets', {}).get('tp1', 0):,.0f}원</div>
+                            <div style="color: #4cd137; font-size: 0.7rem;">{signal.get('targets', {}).get('tp1_pct', 0):+.1f}%</div>
+                        </div>
+                        <div>
+                            <div style="color: #888; font-size: 0.75rem; margin-bottom: 3px;">TP2 ⭐</div>
+                            <div style="color: #feca57; font-weight: bold; font-size: 0.95rem;">{signal.get('targets', {}).get('tp2', 0):,.0f}원</div>
+                            <div style="color: #feca57; font-size: 0.7rem;">{signal.get('targets', {}).get('tp2_pct', 0):+.1f}% | 1:{signal.get('targets', {}).get('risk_reward_tp2', 0):.1f}</div>
+                        </div>
+                        <div>
+                            <div style="color: #888; font-size: 0.75rem; margin-bottom: 3px;">TP3</div>
+                            <div style="color: #4cd137; font-weight: bold; font-size: 0.95rem;">{signal.get('targets', {}).get('tp3', 0):,.0f}원</div>
+                            <div style="color: #4cd137; font-size: 0.7rem;">{signal.get('targets', {}).get('tp3_pct', 0):+.1f}%</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="reasons">
 """
         for reason in signal['reasons'][:5]:
@@ -595,6 +629,11 @@ def main():
         for i, s in enumerate(signals[:5], 1):
             print(f"\n{i}. {s['name']} ({s['code']}) - {s['score']:.0f}점")
             print(f"   현재가: {s['price']:,.0f}원")
+            # 목표가/손절가 출력
+            if s.get('targets'):
+                t = s['targets']
+                print(f"   🛑 손절가: {t['stop_loss']:,.0f}원 ({t['stop_pct']:+.1f}%)")
+                print(f"   🎯 TP2: {t['tp2']:,.0f}원 ({t['tp2_pct']:+.1f}%) | 손익비 1:{t['risk_reward_tp2']:.1f}")
             print(f"   사유: {', '.join(s['reasons'][:3])}")
     
     scanner.close()
