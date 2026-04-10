@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Chart Report</title>
+    <script src="https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #131722;
+            color: #d1d4dc;
+            padding: 20px;
+            margin: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #2a2e39;
+            margin-bottom: 30px;
+        }
+        .stock-card {
+            background: #131722;
+            border: 1px solid #2a2e39;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2e39;
+        }
+        .stock-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .stock-code {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sample Chart Report</h1>
+        <p>Generated: 2026-04-10 09:39</p>
+    </div>
+    
+            <div class="stock-card">
+                <div class="stock-header">
+                    <span class="stock-name">삼성전자</span>
+                    <span class="stock-code">005930</span>
+                </div>
+                
+<div id="chart-0" style="width: 700px; height: 350px;"></div>
+
+<script>
+(function() {
+    const chartData = [{"time": "20260401", "open": 65000, "high": 66500, "low": 64500, "close": 66000}, {"time": "20260402", "open": 66000, "high": 67800, "low": 65500, "close": 67500}, {"time": "20260403", "open": 67500, "high": 68200, "low": 66800, "close": 67000}, {"time": "20260404", "open": 67000, "high": 69500, "low": 66500, "close": 69000}, {"time": "20260407", "open": 69000, "high": 71200, "low": 68500, "close": 70800}, {"time": "20260408", "open": 70800, "high": 72500, "low": 70200, "close": 72000}, {"time": "20260409", "open": 72000, "high": 73500, "low": 71500, "close": 73000}];
+    const priceLines = [{"price": 70200, "color": "#ffd700", "title": "Entry 70,200"}, {"price": 85000, "color": "#26a69a", "title": "Target 85,000 (+21.1%)"}, {"price": 62000, "color": "#ef5350", "title": "Stop 62,000 (-11.7%)"}];
+    
+    const chart = LightweightCharts.createChart(
+        document.getElementById('chart-0'),
+        {
+            layout: {
+                background: { type: 'solid', color: '#131722' },
+                textColor: '#d1d4dc',
+            },
+            grid: {
+                vertLines: { color: '#2a2e39' },
+                horzLines: { color: '#2a2e39' },
+            },
+            rightPriceScale: {
+                borderColor: '#2a2e39',
+            },
+            timeScale: {
+                borderColor: '#2a2e39',
+                timeVisible: false,
+            },
+            width: 700,
+            height: 350,
+        }
+    );
+    
+    const candleSeries = chart.addCandlestickSeries({
+        upColor: '#26a69a',
+        downColor: '#ef5350',
+        borderVisible: false,
+        wickUpColor: '#26a69a',
+        wickDownColor: '#ef5350',
+    });
+    
+    candleSeries.setData(chartData);
+    
+    // 가격 라인 추가
+    priceLines.forEach(function(line) {
+        candleSeries.createPriceLine({
+            price: line.price,
+            color: line.color,
+            lineWidth: 2,
+            lineStyle: LightweightCharts.LineStyle.Dashed,
+            axisLabelVisible: true,
+            title: line.title,
+        });
+    });
+    
+    chart.timeScale().fitContent();
+})();
+</script>
+
+            </div>
+            
+</body>
+</html>
