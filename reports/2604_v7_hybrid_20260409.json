@@ -1,0 +1,301 @@
+[
+  {
+    "code": "487720",
+    "name": "키움제10호스팩",
+    "date": "2026-04-09",
+    "score": 89,
+    "price": 2080.0,
+    "scores": {
+      "volume": 30,
+      "technical": 23,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 5
+    },
+    "reasons": [
+      "거래량 폭발 (5.9x)",
+      "RSI 적정 (56.5)",
+      "MACD 반전",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.5%)"
+    ],
+    "metadata": {
+      "volume_ratio": 5.926146039292775,
+      "rsi": 56.45251190169692,
+      "adx": 45.35667888021787,
+      "macd_bullish": true,
+      "bb_position": 0.5290826016855026,
+      "vs_kosdaq": 1.7530917874396135,
+      "change_pct": 0.4830917874396135,
+      "change_20d": -0.7159904534606205
+    },
+    "targets": {
+      "entry": 2080.0,
+      "stop_loss": 2059.0,
+      "tp1": 2139.0,
+      "tp2": 2171.0,
+      "tp3": 2261.0,
+      "atr": 23.0,
+      "risk_reward_tp2": 4.39,
+      "stop_pct": -0.99,
+      "tp2_pct": 4.36,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "005965",
+    "name": "동부건설우",
+    "date": "2026-04-09",
+    "score": 85,
+    "price": 21250.0,
+    "scores": {
+      "volume": 30,
+      "technical": 14,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 10
+    },
+    "reasons": [
+      "거래량 폭발 (8.1x)",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.0%)",
+      "20일 상승률 +13.3%",
+      "연속상승 3일"
+    ],
+    "metadata": {
+      "volume_ratio": 8.103742746943253,
+      "rsi": 60.64894253397454,
+      "adx": 33.30563345830561,
+      "macd_bullish": false,
+      "bb_position": 0.8979347855124038,
+      "vs_kosdaq": 1.27,
+      "change_pct": 0.0,
+      "change_20d": 13.333333333333334
+    },
+    "targets": {
+      "entry": 21250.0,
+      "stop_loss": 20329.0,
+      "tp1": 26408.0,
+      "tp2": 28771.0,
+      "tp3": 35601.0,
+      "atr": 1056.0,
+      "risk_reward_tp2": 8.17,
+      "stop_pct": -4.33,
+      "tp2_pct": 35.39,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "0041B0",
+    "name": "교보18호스팩",
+    "date": "2026-04-09",
+    "score": 84,
+    "price": 2075.0,
+    "scores": {
+      "volume": 25,
+      "technical": 23,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 5
+    },
+    "reasons": [
+      "거래량 급증 (3.5x)",
+      "RSI 적정 (53.9)",
+      "MACD 반전",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.2%)"
+    ],
+    "metadata": {
+      "volume_ratio": 3.4826961468779207,
+      "rsi": 53.88141178841885,
+      "adx": 29.877076536797023,
+      "macd_bullish": true,
+      "bb_position": 0.4417825574839591,
+      "vs_kosdaq": 1.5115458937198067,
+      "change_pct": 0.24154589371980675,
+      "change_20d": -0.9546539379474941
+    },
+    "targets": {
+      "entry": 2075.0,
+      "stop_loss": 2073.0,
+      "tp1": 2126.0,
+      "tp2": 2147.0,
+      "tp3": 2207.0,
+      "atr": 12.0,
+      "risk_reward_tp2": 34.65,
+      "stop_pct": -0.1,
+      "tp2_pct": 3.47,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "004650",
+    "name": "창해에탄올",
+    "date": "2026-04-09",
+    "score": 83,
+    "price": 10870.0,
+    "scores": {
+      "volume": 20,
+      "technical": 24,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 8
+    },
+    "reasons": [
+      "거래량 증가 (2.6x)",
+      "RSI 적정 (58.9)",
+      "정배열",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.8%)"
+    ],
+    "metadata": {
+      "volume_ratio": 2.5825180552992744,
+      "rsi": 58.855865572456544,
+      "adx": 58.664844250611225,
+      "macd_bullish": false,
+      "bb_position": 0.8719089425024423,
+      "vs_kosdaq": 2.104879406307978,
+      "change_pct": 0.8348794063079777,
+      "change_20d": 13.584117032392895
+    },
+    "targets": {
+      "entry": 10870.0,
+      "stop_loss": 10766.0,
+      "tp1": 14646.0,
+      "tp2": 16154.0,
+      "tp3": 20514.0,
+      "atr": 944.0,
+      "risk_reward_tp2": 50.58,
+      "stop_pct": -0.96,
+      "tp2_pct": 48.62,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "488060",
+    "name": "유진스팩11호",
+    "date": "2026-04-09",
+    "score": 83,
+    "price": 2045.0,
+    "scores": {
+      "volume": 30,
+      "technical": 19,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 3
+    },
+    "reasons": [
+      "거래량 폭발 (7.8x)",
+      "RSI 적정 (47.6)",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.2%)"
+    ],
+    "metadata": {
+      "volume_ratio": 7.753134698239112,
+      "rsi": 47.61451031377295,
+      "adx": 34.71945724720375,
+      "macd_bullish": false,
+      "bb_position": 0.39141236271737506,
+      "vs_kosdaq": 1.5150980392156863,
+      "change_pct": 0.24509803921568626,
+      "change_20d": -0.7281553398058253
+    },
+    "targets": {
+      "entry": 2045.0,
+      "stop_loss": 2038.0,
+      "tp1": 2091.0,
+      "tp2": 2112.0,
+      "tp3": 2172.0,
+      "atr": 17.0,
+      "risk_reward_tp2": 9.47,
+      "stop_pct": -0.35,
+      "tp2_pct": 3.28,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "019770",
+    "name": "서연탑메탈",
+    "date": "2026-04-09",
+    "score": 82,
+    "price": 3995.0,
+    "scores": {
+      "volume": 30,
+      "technical": 18,
+      "fibonacci": 20,
+      "market": 11,
+      "momentum": 3
+    },
+    "reasons": [
+      "거래량 폭발 (16.3x)",
+      "MACD 반전",
+      "피볼나치 되돌림",
+      "안정적 상승 (+0.6%)"
+    ],
+    "metadata": {
+      "volume_ratio": 16.32338232246321,
+      "rsi": 60.60092861004536,
+      "adx": 27.14740271636485,
+      "macd_bullish": true,
+      "bb_position": 0.7943501910761612,
+      "vs_kosdaq": 1.8997229219143579,
+      "change_pct": 0.6297229219143577,
+      "change_20d": 1.913265306122449
+    },
+    "targets": {
+      "entry": 3995.0,
+      "stop_loss": 3961.0,
+      "tp1": 4708.0,
+      "tp2": 4999.0,
+      "tp3": 5839.0,
+      "atr": 150.0,
+      "risk_reward_tp2": 29.43,
+      "stop_pct": -0.85,
+      "tp2_pct": 25.13,
+      "method": "hybrid"
+    }
+  },
+  {
+    "code": "239890",
+    "name": "피엔에이치테크",
+    "date": "2026-04-09",
+    "score": 80,
+    "price": 4950.0,
+    "scores": {
+      "volume": 30,
+      "technical": 18,
+      "fibonacci": 20,
+      "market": 7,
+      "momentum": 5
+    },
+    "reasons": [
+      "거래량 폭발 (9.0x)",
+      "MACD 반전",
+      "피볼나치 되돌림",
+      "코스닥대비 강세 (+5.0%)",
+      "연속상승 3일"
+    ],
+    "metadata": {
+      "volume_ratio": 8.951733708224381,
+      "rsi": 60.31827224911379,
+      "adx": 25.975788166131547,
+      "macd_bullish": true,
+      "bb_position": 0.6641661584558342,
+      "vs_kosdaq": 5.043584905660378,
+      "change_pct": 3.7735849056603774,
+      "change_20d": 2.484472049689441
+    },
+    "targets": {
+      "entry": 4950.0,
+      "stop_loss": 4719.0,
+      "tp1": 5800.0,
+      "tp2": 6221.0,
+      "tp3": 7436.0,
+      "atr": 270.0,
+      "risk_reward_tp2": 5.5,
+      "stop_pct": -4.66,
+      "tp2_pct": 25.67,
+      "method": "hybrid"
+    }
+  }
+]
