@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 """
-TradingView 차트 통합 리포트 생성기 v2
+TradingView 차트 통합 리포트 생성기 v3
 ======================================
-- TP1, TP2, TP3 모두 표시
-- 네이버증권 링크 추가
-- 피볼나치 레이블 통일
-- 차트 표시 개선
+- TP1, TP2, TP3 라벨 사용
+- TradingView 날짜 형식 수정
+- 네이버증권 링크
 """
 
 import json
 import sqlite3
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 
 
@@ -35,9 +34,9 @@ class TVChartReportGenerator:
                 'up': '#26a69a',
                 'down': '#ef5350',
                 'entry': '#ffd700',
-                'tp1': '#4ade80',      # 밝은 초록
-                'tp2': '#22c55e',      # 초록
-                'tp3': '#16a34a',      # 진한 초록
+                'tp1': '#4ade80',
+                'tp2': '#22c55e', 
+                'tp3': '#16a34a',
                 'stop': '#ef5350',
                 'accent': '#feca57',
             },
@@ -45,14 +44,14 @@ class TVChartReportGenerator:
         return themes.get(self.theme, themes['dark'])
     
     def get_stock_data(self, code: str, days: int = 90) -> List[Dict]:
-        """DB에서 종목 데이터 조회"""
+        """DB에서 종목 데이터 조회 - TradingView 형식으로 반환"""
         try:
             conn = sqlite3.connect(self.db_path)
             cursor = conn.execute(
                 """
                 SELECT date, open, high, low, close, volume 
                 FROM price_data 
-                WHERE code = ? 
+                WHERE code = ? AND date <= date('now')
                 ORDER BY date DESC 
                 LIMIT ?
                 """,
@@ -61,10 +60,17 @@ class TVChartReportGenerator:
             rows = cursor.fetchall()
             conn.close()
             
+            # TradingView format: 'YYYY-MM-DD'
             data = []
             for row in reversed(rows):
+                # 날짜가 YYYY-MM-DD 형식인지 확인
+                date_str = row[0]
+                if len(date_str) == 8 and date_str.isdigit():
+                    # YYYYMMDD -> YYYY-MM-DD
+                    date_str = f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+                
                 data.append({
-                    'time': row[0].replace('-', ''),
+                    'time': date_str,  # '2026-04-09' 형식
                     'open': float(row[1]),
                     'high': float(row[2]),
                     'low': float(row[3]),
@@ -80,14 +86,14 @@ class TVChartReportGenerator:
         c = self.colors
         code = stock['code']
         
-        # 데이터 조회
         chart_data = self.get_stock_data(code)
         if not chart_data:
-            return f"<div class='no-data'>데이터 없음 ({code})</div>"
+            return f"<div class='no-data'>📊 차트 데이터 준비 중 ({code})</div>"
         
-        data_json = json.dumps(chart_data)
+        # 데이터를 JSON으로 직렬화
+        data_json = json.dumps(chart_data, ensure_ascii=False)
         
-        # 목표가 설정
+        # 목표가
         targets = stock.get('targets', {})
         entry = targets.get('entry', stock.get('price'))
         stop = targets.get('stop_loss')
@@ -95,116 +101,108 @@ class TVChartReportGenerator:
         tp2 = targets.get('tp2')
         tp3 = targets.get('tp3')
         
-        # 가격 라인 (모두 표시)
+        # 가격 라인
         price_lines = []
         if entry:
-            price_lines.append({
-                'price': entry,
-                'color': c['entry'],
-                'title': f'진입 {entry:,.0f}',
-            })
+            price_lines.append({'price': entry, 'color': c['entry'], 'title': f'Entry {entry:,.0f}'})
         if tp1:
-            price_lines.append({
-                'price': tp1,
-                'color': c['tp1'],
-                'title': f'피볼나치1 {tp1:,.0f}',
-            })
+            price_lines.append({'price': tp1, 'color': c['tp1'], 'title': f'TP1 {tp1:,.0f}'})
         if tp2:
-            price_lines.append({
-                'price': tp2,
-                'color': c['tp2'],
-                'title': f'피볼나치2 {tp2:,.0f}',
-            })
+            price_lines.append({'price': tp2, 'color': c['tp2'], 'title': f'TP2 {tp2:,.0f}'})
         if tp3:
-            price_lines.append({
-                'price': tp3,
-                'color': c['tp3'],
-                'title': f'피볼나치3 {tp3:,.0f}',
-            })
+            price_lines.append({'price': tp3, 'color': c['tp3'], 'title': f'TP3 {tp3:,.0f}'})
         if stop:
-            price_lines.append({
-                'price': stop,
-                'color': c['stop'],
-                'title': f'손절 {stop:,.0f}',
-            })
+            price_lines.append({'price': stop, 'color': c['stop'], 'title': f'Stop {stop:,.0f}'})
         
-        price_lines_js = json.dumps(price_lines)
+        price_lines_js = json.dumps(price_lines, ensure_ascii=False)
         
         return f'''
         <div id="{container_id}" class="chart-wrapper"></div>
         <script>
         (function() {{
-            const chartData = {data_json};
-            const priceLines = {price_lines_js};
-            
-            const container = document.getElementById('{container_id}');
-            if (!container) return;
-            
-            const chart = LightweightCharts.createChart(container, {{
-                layout: {{
-                    background: {{ type: 'solid', color: '{c['bg']}' }},
-                    textColor: '{c['text']}',
-                }},
-                grid: {{
-                    vertLines: {{ color: '{c['grid']}' }},
-                    horzLines: {{ color: '{c['grid']}' }},
-                }},
-                rightPriceScale: {{
-                    borderColor: '{c['grid']}',
-                    scaleMargins: {{ top: 0.1, bottom: 0.1 }},
-                }},
-                timeScale: {{
-                    borderColor: '{c['grid']}',
-                    timeVisible: false,
-                    fixLeftEdge: true,
-                    fixRightEdge: true,
-                }},
-                crosshair: {{
-                    mode: LightweightCharts.CrosshairMode.Normal,
-                }},
-                handleScroll: {{ vertTouchDrag: false }},
-                handleScale: {{ axisPressedMouseMove: false }},
-            }});
-            
-            const candleSeries = chart.addCandlestickSeries({{
-                upColor: '{c['up']}',
-                downColor: '{c['down']}',
-                borderVisible: false,
-                wickUpColor: '{c['up']}',
-                wickDownColor: '{c['down']}',
-            }});
-            
-            candleSeries.setData(chartData);
-            
-            // 가격 라인 추가
-            priceLines.forEach(function(line) {{
-                candleSeries.createPriceLine({{
-                    price: line.price,
-                    color: line.color,
-                    lineWidth: 2,
-                    lineStyle: LightweightCharts.LineStyle.Dashed,
-                    axisLabelVisible: true,
-                    title: line.title,
-                }});
-            }});
-            
-            // 차트 크기 조정
-            chart.applyOptions({{
-                width: container.clientWidth,
-                height: 350,
-            }});
-            
-            chart.timeScale().fitContent();
-            
-            // 리사이즈
-            const resizeObserver = new ResizeObserver(function(entries) {{
-                for (let entry of entries) {{
-                    chart.applyOptions({{
-                        width: entry.contentRect.width,
-                    }});
+            try {{
+                const chartData = {data_json};
+                const priceLines = {price_lines_js};
+                
+                const container = document.getElementById('{container_id}');
+                if (!container) {{
+                    console.error('Chart container not found: {container_id}');
+                    return;
                 }}
-            }});
-            resizeObserver.observe(container);
+                
+                const chart = LightweightCharts.createChart(container, {{
+                    layout: {{
+                        background: {{ type: 'solid', color: '{c['bg']}' }},
+                        textColor: '{c['text']}',
+                    }},
+                    grid: {{
+                        vertLines: {{ color: '{c['grid']}' }},
+                        horzLines: {{ color: '{c['grid']}' }},
+                    }},
+                    rightPriceScale: {{
+                        borderColor: '{c['grid']}',
+                        scaleMargins: {{ top: 0.15, bottom: 0.15 }},
+                    }},
+                    timeScale: {{
+                        borderColor: '{c['grid']}',
+                        timeVisible: false,
+                        fixLeftEdge: true,
+                        fixRightEdge: true,
+                    }},
+                    crosshair: {{
+                        mode: LightweightCharts.CrosshairMode.Normal,
+                    }},
+                }});
+                
+                const candleSeries = chart.addCandlestickSeries({{
+                    upColor: '{c['up']}',
+                    downColor: '{c['down']}',
+                    borderVisible: false,
+                    wickUpColor: '{c['up']}',
+                    wickDownColor: '{c['down']}',
+                }});
+                
+                candleSeries.setData(chartData);
+                
+                // 가격 라인
+                priceLines.forEach(function(line) {{
+                    candleSeries.createPriceLine({{
+                        price: line.price,
+                        color: line.color,
+                        lineWidth: 2,
+                        lineStyle: LightweightCharts.LineStyle.Dashed,
+                        axisLabelVisible: true,
+                        title: line.title,
+                    }});
+                }});
+                
+                // 초기 크기
+                chart.applyOptions({{
+                    width: container.clientWidth || 800,
+                    height: 350,
+                }});
+                
+                chart.timeScale().fitContent();
+                
+                // 리사이즈
+                if (typeof ResizeObserver !== 'undefined') {{
+                    const resizeObserver = new ResizeObserver(function(entries) {{
+                        for (let entry of entries) {{
+                            const width = entry.contentRect.width;
+                            if (width > 0) {{
+                                chart.applyOptions({{ width: width }});
+                            }}
+                        }}
+                    }});
+                    resizeObserver.observe(container);
+                }}
+                
+                console.log('✅ Chart loaded: {code}');
+            }} catch (e) {{
+                console.error('Chart error ({code}):', e);
+                document.getElementById('{container_id}').innerHTML = 
+                    '<div class="no-data">⚠️ 차트 로딩 오류</div>';
+            }}
         }})();
         </script>
         '''
@@ -220,7 +218,6 @@ class TVChartReportGenerator:
         avg_score = sum(s.get('score', 0) for s in scan_data) / total_signals if total_signals > 0 else 0
         avg_rr = sum(s.get('targets', {}).get('risk_reward_tp2', 0) for s in scan_data) / total_signals if total_signals > 0 else 0
         
-        # 개별 종목 카드
         cards_html = ""
         for i, stock in enumerate(scan_data):
             targets = stock.get('targets', {})
@@ -233,9 +230,7 @@ class TVChartReportGenerator:
             stop_pct = targets.get('stop_pct', 0)
             tp2_pct = targets.get('tp2_pct', 0)
             
-            # 네이버증권 링크
             naver_link = f"https://finance.naver.com/item/main.naver?code={stock['code']}"
-            
             chart_js = self.generate_chart_js(stock, f"chart-{i}")
             
             cards_html += f'''
@@ -262,16 +257,16 @@ class TVChartReportGenerator:
                         <span class="level-pct">{stop_pct:.1f}%</span>
                     </div>
                     <div class="level-box tp1">
-                        <span class="level-label">피볼나치1</span>
+                        <span class="level-label">TP1</span>
                         <span class="level-value">{tp1:,.0f}</span>
                     </div>
                     <div class="level-box tp2">
-                        <span class="level-label">피볼나치2</span>
+                        <span class="level-label">TP2</span>
                         <span class="level-value">{tp2:,.0f}</span>
                         <span class="level-pct">+{tp2_pct:.1f}%</span>
                     </div>
                     <div class="level-box tp3">
-                        <span class="level-label">피볼나치3</span>
+                        <span class="level-label">TP3</span>
                         <span class="level-value">{tp3:,.0f}</span>
                     </div>
                     <div class="level-box rr">
@@ -365,11 +360,7 @@ class TVChartReportGenerator:
             align-items: center;
             gap: 5px;
         }}
-        .stock-name {{
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: {c['accent']};
-        }}
+        .stock-name {{ font-size: 1.4rem; font-weight: bold; color: {c['accent']}; }}
         .stock-name-link:hover .stock-name {{ text-decoration: underline; }}
         .external-link {{ font-size: 0.9rem; color: #888; }}
         .stock-code {{ color: #888; font-size: 0.9rem; }}
@@ -405,9 +396,7 @@ class TVChartReportGenerator:
         .level-value {{ display: block; font-size: 0.95rem; font-weight: bold; }}
         .level-pct {{ display: block; font-size: 0.75rem; margin-top: 2px; }}
         .level-box.stop .level-pct {{ color: {c['stop']}; }}
-        .level-box.tp1 .level-pct {{ color: {c['tp1']}; }}
-        .level-box.tp2 .level-pct {{ color: {c['tp2']}; }}
-        .level-box.tp3 .level-pct {{ color: {c['tp3']}; }}
+        .level-box.tp1 .level-pct, .level-box.tp2 .level-pct, .level-box.tp3 .level-pct {{ color: {c['tp2']}; }}
         
         .chart-wrapper {{
             width: 100%;
@@ -416,6 +405,7 @@ class TVChartReportGenerator:
             overflow: hidden;
             margin-bottom: 20px;
             background: {c['bg']};
+            min-height: 350px;
         }}
         .no-data {{
             padding: 40px;
@@ -426,16 +416,8 @@ class TVChartReportGenerator:
             margin-bottom: 20px;
         }}
         
-        .signal-reasons h4 {{
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            color: {c['accent']};
-        }}
-        .reason-tags {{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }}
+        .signal-reasons h4 {{ font-size: 0.9rem; margin-bottom: 12px; color: {c['accent']}; }}
+        .reason-tags {{ display: flex; flex-wrap: wrap; gap: 8px; }}
         .reason-tag {{
             background: rgba(255,255,255,0.08);
             padding: 6px 12px;
@@ -458,14 +440,12 @@ class TVChartReportGenerator:
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: background 0.2s;
         }}
         .naver-btn:hover {{ background: #02b350; }}
         
         @media (max-width: 768px) {{
             .signal-levels {{ grid-template-columns: repeat(3, 1fr); }}
             .stats {{ grid-template-columns: repeat(2, 1fr); }}
-            .header h1 {{ font-size: 1.5rem; }}
         }}
         @media (max-width: 480px) {{
             .signal-levels {{ grid-template-columns: repeat(2, 1fr); }}
