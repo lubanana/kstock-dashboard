@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 """
-TradingView 차트 통합 리포트 생성기
-====================================
-2604+V7 스캐너 결과를 TradingView Lightweight Charts로 시각화
-
-Features:
-- 파일명: YYYYMMDD_HHMM 형식
-- TradingView 캔들스틱 차트
-- 목표가/손절가 수평선
-- 다크/라이트 테마
+TradingView 차트 통합 리포트 생성기 v2
+======================================
+- TP1, TP2, TP3 모두 표시
+- 네이버증권 링크 추가
+- 피볼나치 레이블 통일
+- 차트 표시 개선
 """
 
 import json
@@ -19,7 +16,7 @@ from typing import List, Dict, Optional
 
 
 class TVChartReportGenerator:
-    """TradingView 차트를 사용하는 리포트 생성기"""
+    """TradingView 차트 리포트 생성기"""
     
     CDN_URL = "https://unpkg.com/lightweight-charts@4.1.0/dist/lightweight-charts.standalone.production.js"
     
@@ -29,7 +26,6 @@ class TVChartReportGenerator:
         self.colors = self._get_theme_colors()
     
     def _get_theme_colors(self) -> Dict:
-        """테마 색상"""
         themes = {
             'dark': {
                 'bg': '#131722',
@@ -39,26 +35,16 @@ class TVChartReportGenerator:
                 'up': '#26a69a',
                 'down': '#ef5350',
                 'entry': '#ffd700',
-                'target': '#26a69a',
+                'tp1': '#4ade80',      # 밝은 초록
+                'tp2': '#22c55e',      # 초록
+                'tp3': '#16a34a',      # 진한 초록
                 'stop': '#ef5350',
                 'accent': '#feca57',
             },
-            'light': {
-                'bg': '#ffffff',
-                'card_bg': '#f8f9fa',
-                'text': '#333333',
-                'grid': '#e0e0e0',
-                'up': '#26a69a',
-                'down': '#ef5350',
-                'entry': '#f59e0b',
-                'target': '#22c55e',
-                'stop': '#dc2626',
-                'accent': '#3b82f6',
-            }
         }
         return themes.get(self.theme, themes['dark'])
     
-    def get_stock_data(self, code: str, days: int = 60) -> List[Dict]:
+    def get_stock_data(self, code: str, days: int = 90) -> List[Dict]:
         """DB에서 종목 데이터 조회"""
         try:
             conn = sqlite3.connect(self.db_path)
@@ -75,7 +61,6 @@ class TVChartReportGenerator:
             rows = cursor.fetchall()
             conn.close()
             
-            # 시간 역순으로 정렬 (과거 → 현재)
             data = []
             for row in reversed(rows):
                 data.append({
@@ -84,7 +69,6 @@ class TVChartReportGenerator:
                     'high': float(row[2]),
                     'low': float(row[3]),
                     'close': float(row[4]),
-                    'volume': int(row[5]),
                 })
             return data
         except Exception as e:
@@ -92,14 +76,14 @@ class TVChartReportGenerator:
             return []
     
     def generate_chart_js(self, stock: Dict, container_id: str) -> str:
-        """개별 차트 JavaScript 생성"""
+        """차트 JavaScript 생성"""
         c = self.colors
         code = stock['code']
         
-        # DB에서 데이터 조회
+        # 데이터 조회
         chart_data = self.get_stock_data(code)
         if not chart_data:
-            return f"<div id='{container_id}' style='color:#888;padding:20px;'>데이터 없음</div>"
+            return f"<div class='no-data'>데이터 없음 ({code})</div>"
         
         data_json = json.dumps(chart_data)
         
@@ -111,58 +95,76 @@ class TVChartReportGenerator:
         tp2 = targets.get('tp2')
         tp3 = targets.get('tp3')
         
-        # 가격 라인 설정
+        # 가격 라인 (모두 표시)
         price_lines = []
         if entry:
             price_lines.append({
                 'price': entry,
                 'color': c['entry'],
-                'title': f'Entry {entry:,.0f}',
+                'title': f'진입 {entry:,.0f}',
+            })
+        if tp1:
+            price_lines.append({
+                'price': tp1,
+                'color': c['tp1'],
+                'title': f'피볼나치1 {tp1:,.0f}',
             })
         if tp2:
             price_lines.append({
                 'price': tp2,
-                'color': c['target'],
-                'title': f'TP2 {tp2:,.0f}',
+                'color': c['tp2'],
+                'title': f'피볼나치2 {tp2:,.0f}',
+            })
+        if tp3:
+            price_lines.append({
+                'price': tp3,
+                'color': c['tp3'],
+                'title': f'피볼나치3 {tp3:,.0f}',
             })
         if stop:
             price_lines.append({
                 'price': stop,
                 'color': c['stop'],
-                'title': f'Stop {stop:,.0f}',
+                'title': f'손절 {stop:,.0f}',
             })
         
         price_lines_js = json.dumps(price_lines)
         
         return f'''
-        <div id="{container_id}" class="chart-container"></div>
+        <div id="{container_id}" class="chart-wrapper"></div>
         <script>
         (function() {{
             const chartData = {data_json};
             const priceLines = {price_lines_js};
             
-            const chart = LightweightCharts.createChart(
-                document.getElementById('{container_id}'),
-                {{
-                    layout: {{
-                        background: {{ type: 'solid', color: '{c['bg']}' }},
-                        textColor: '{c['text']}',
-                    }},
-                    grid: {{
-                        vertLines: {{ color: '{c['grid']}' }},
-                        horzLines: {{ color: '{c['grid']}' }},
-                    }},
-                    rightPriceScale: {{
-                        borderColor: '{c['grid']}',
-                    }},
-                    timeScale: {{
-                        borderColor: '{c['grid']}',
-                        timeVisible: false,
-                    }},
-                    width: 700,
-                    height: 350,
-                }}
-            );
+            const container = document.getElementById('{container_id}');
+            if (!container) return;
+            
+            const chart = LightweightCharts.createChart(container, {{
+                layout: {{
+                    background: {{ type: 'solid', color: '{c['bg']}' }},
+                    textColor: '{c['text']}',
+                }},
+                grid: {{
+                    vertLines: {{ color: '{c['grid']}' }},
+                    horzLines: {{ color: '{c['grid']}' }},
+                }},
+                rightPriceScale: {{
+                    borderColor: '{c['grid']}',
+                    scaleMargins: {{ top: 0.1, bottom: 0.1 }},
+                }},
+                timeScale: {{
+                    borderColor: '{c['grid']}',
+                    timeVisible: false,
+                    fixLeftEdge: true,
+                    fixRightEdge: true,
+                }},
+                crosshair: {{
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                }},
+                handleScroll: {{ vertTouchDrag: false }},
+                handleScale: {{ axisPressedMouseMove: false }},
+            }});
             
             const candleSeries = chart.addCandlestickSeries({{
                 upColor: '{c['up']}',
@@ -186,14 +188,23 @@ class TVChartReportGenerator:
                 }});
             }});
             
+            // 차트 크기 조정
+            chart.applyOptions({{
+                width: container.clientWidth,
+                height: 350,
+            }});
+            
             chart.timeScale().fitContent();
             
-            // 리사이즈 핸들러
-            window.addEventListener('resize', function() {{
-                chart.applyOptions({{
-                    width: document.getElementById('{container_id}').clientWidth,
-                }});
+            // 리사이즈
+            const resizeObserver = new ResizeObserver(function(entries) {{
+                for (let entry of entries) {{
+                    chart.applyOptions({{
+                        width: entry.contentRect.width,
+                    }});
+                }}
             }});
+            resizeObserver.observe(container);
         }})();
         </script>
         '''
@@ -205,18 +216,25 @@ class TVChartReportGenerator:
         now = datetime.now()
         timestamp = now.strftime('%Y%m%d_%H%M')
         
-        # 스캔 통계
         total_signals = len(scan_data)
         avg_score = sum(s.get('score', 0) for s in scan_data) / total_signals if total_signals > 0 else 0
+        avg_rr = sum(s.get('targets', {}).get('risk_reward_tp2', 0) for s in scan_data) / total_signals if total_signals > 0 else 0
         
-        # 개별 종목 카드 생성
+        # 개별 종목 카드
         cards_html = ""
         for i, stock in enumerate(scan_data):
             targets = stock.get('targets', {})
-            entry = targets.get('entry', stock.get('price'))
+            entry = targets.get('entry', stock.get('price', 0))
             stop = targets.get('stop_loss', 0)
+            tp1 = targets.get('tp1', 0)
             tp2 = targets.get('tp2', 0)
+            tp3 = targets.get('tp3', 0)
             rr = targets.get('risk_reward_tp2', 0)
+            stop_pct = targets.get('stop_pct', 0)
+            tp2_pct = targets.get('tp2_pct', 0)
+            
+            # 네이버증권 링크
+            naver_link = f"https://finance.naver.com/item/main.naver?code={stock['code']}"
             
             chart_js = self.generate_chart_js(stock, f"chart-{i}")
             
@@ -224,28 +242,41 @@ class TVChartReportGenerator:
             <div class="signal-card">
                 <div class="signal-header">
                     <div class="stock-info">
-                        <span class="stock-name">{stock.get('name', 'Unknown')}</span>
+                        <a href="{naver_link}" target="_blank" class="stock-name-link">
+                            <span class="stock-name">{stock.get('name', 'Unknown')}</span>
+                            <span class="external-link">↗</span>
+                        </a>
                         <span class="stock-code">{stock['code']}</span>
                     </div>
                     <div class="stock-score">{stock.get('score', 0)}점</div>
                 </div>
                 
-                <div class="signal-meta">
-                    <div class="meta-item">
-                        <span class="meta-label">현재가</span>
-                        <span class="meta-value">{stock.get('price', 0):,.0f}원</span>
+                <div class="signal-levels">
+                    <div class="level-box entry">
+                        <span class="level-label">진입가</span>
+                        <span class="level-value">{entry:,.0f}</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">손절가</span>
-                        <span class="meta-value stop">{stop:,.0f}원</span>
+                    <div class="level-box stop">
+                        <span class="level-label">손절가</span>
+                        <span class="level-value">{stop:,.0f}</span>
+                        <span class="level-pct">{stop_pct:.1f}%</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">목표가(TP2)</span>
-                        <span class="meta-value target">{tp2:,.0f}원</span>
+                    <div class="level-box tp1">
+                        <span class="level-label">피볼나치1</span>
+                        <span class="level-value">{tp1:,.0f}</span>
                     </div>
-                    <div class="meta-item">
-                        <span class="meta-label">손익비</span>
-                        <span class="meta-value rr">1:{rr:.1f}</span>
+                    <div class="level-box tp2">
+                        <span class="level-label">피볼나치2</span>
+                        <span class="level-value">{tp2:,.0f}</span>
+                        <span class="level-pct">+{tp2_pct:.1f}%</span>
+                    </div>
+                    <div class="level-box tp3">
+                        <span class="level-label">피볼나치3</span>
+                        <span class="level-value">{tp3:,.0f}</span>
+                    </div>
+                    <div class="level-box rr">
+                        <span class="level-label">손익비</span>
+                        <span class="level-value">1:{rr:.1f}</span>
                     </div>
                 </div>
                 
@@ -253,14 +284,19 @@ class TVChartReportGenerator:
                 
                 <div class="signal-reasons">
                     <h4>📋 선정 사유</h4>
-                    <ul>
-                        {''.join(f'<li>{reason}</li>' for reason in stock.get('reasons', []))}
-                    </ul>
+                    <div class="reason-tags">
+                        {''.join(f'<span class="reason-tag">{reason}</span>' for reason in stock.get('reasons', []))}
+                    </div>
+                </div>
+                
+                <div class="signal-actions">
+                    <a href="{naver_link}" target="_blank" class="naver-btn">
+                        네이버증권에서 보기 ↗
+                    </a>
                 </div>
             </div>
             '''
         
-        # 전체 HTML
         html = f'''<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -276,6 +312,7 @@ class TVChartReportGenerator:
             color: {c['text']};
             min-height: 100vh;
             padding: 20px;
+            line-height: 1.6;
         }}
         .container {{ max-width: 900px; margin: 0 auto; }}
         
@@ -291,7 +328,7 @@ class TVChartReportGenerator:
         
         .stats {{
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin-bottom: 30px;
         }}
@@ -302,15 +339,15 @@ class TVChartReportGenerator:
             padding: 20px;
             text-align: center;
         }}
-        .stat-card h3 {{ color: #888; font-size: 0.8rem; margin-bottom: 8px; text-transform: uppercase; }}
-        .stat-card .value {{ font-size: 1.8rem; font-weight: bold; color: {c['accent']}; }}
+        .stat-card h3 {{ color: #888; font-size: 0.8rem; margin-bottom: 8px; }}
+        .stat-card .value {{ font-size: 1.6rem; font-weight: bold; color: {c['accent']}; }}
         
         .signal-card {{
             background: {c['card_bg']};
             border: 1px solid {c['grid']};
             border-radius: 12px;
             padding: 25px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }}
         .signal-header {{
             display: flex;
@@ -320,8 +357,22 @@ class TVChartReportGenerator:
             padding-bottom: 15px;
             border-bottom: 1px solid {c['grid']};
         }}
-        .stock-name {{ font-size: 1.4rem; font-weight: bold; }}
-        .stock-code {{ color: #888; margin-left: 10px; font-size: 0.9rem; }}
+        .stock-info {{ display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }}
+        .stock-name-link {{
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }}
+        .stock-name {{
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: {c['accent']};
+        }}
+        .stock-name-link:hover .stock-name {{ text-decoration: underline; }}
+        .external-link {{ font-size: 0.9rem; color: #888; }}
+        .stock-code {{ color: #888; font-size: 0.9rem; }}
         .stock-score {{
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -331,52 +382,93 @@ class TVChartReportGenerator:
             font-size: 1.1rem;
         }}
         
-        .signal-meta {{
+        .signal-levels {{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
             margin-bottom: 20px;
         }}
-        .meta-item {{
+        .level-box {{
             background: rgba(255,255,255,0.05);
-            padding: 12px;
+            padding: 12px 8px;
             border-radius: 8px;
             text-align: center;
+            border-left: 3px solid transparent;
         }}
-        .meta-label {{ display: block; color: #888; font-size: 0.75rem; margin-bottom: 4px; }}
-        .meta-value {{ font-size: 1rem; font-weight: bold; }}
-        .meta-value.stop {{ color: {c['stop']}; }}
-        .meta-value.target {{ color: {c['target']}; }}
-        .meta-value.rr {{ color: {c['accent']}; }}
+        .level-box.entry {{ border-left-color: {c['entry']}; }}
+        .level-box.stop {{ border-left-color: {c['stop']}; }}
+        .level-box.tp1 {{ border-left-color: {c['tp1']}; }}
+        .level-box.tp2 {{ border-left-color: {c['tp2']}; }}
+        .level-box.tp3 {{ border-left-color: {c['tp3']}; }}
+        .level-box.rr {{ border-left-color: {c['accent']}; }}
+        .level-label {{ display: block; color: #888; font-size: 0.7rem; margin-bottom: 4px; }}
+        .level-value {{ display: block; font-size: 0.95rem; font-weight: bold; }}
+        .level-pct {{ display: block; font-size: 0.75rem; margin-top: 2px; }}
+        .level-box.stop .level-pct {{ color: {c['stop']}; }}
+        .level-box.tp1 .level-pct {{ color: {c['tp1']}; }}
+        .level-box.tp2 .level-pct {{ color: {c['tp2']}; }}
+        .level-box.tp3 .level-pct {{ color: {c['tp3']}; }}
         
-        .chart-container {{
+        .chart-wrapper {{
             width: 100%;
             height: 350px;
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 20px;
+            background: {c['bg']};
+        }}
+        .no-data {{
+            padding: 40px;
+            text-align: center;
+            color: #888;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            margin-bottom: 20px;
         }}
         
         .signal-reasons h4 {{
             font-size: 0.9rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: {c['accent']};
         }}
-        .signal-reasons ul {{
-            list-style: none;
+        .reason-tags {{
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }}
-        .signal-reasons li {{
-            background: rgba(255,255,255,0.05);
+        .reason-tag {{
+            background: rgba(255,255,255,0.08);
             padding: 6px 12px;
             border-radius: 15px;
             font-size: 0.85rem;
         }}
         
+        .signal-actions {{
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid {c['grid']};
+            text-align: right;
+        }}
+        .naver-btn {{
+            display: inline-block;
+            background: #03c75a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }}
+        .naver-btn:hover {{ background: #02b350; }}
+        
         @media (max-width: 768px) {{
-            .signal-meta {{ grid-template-columns: repeat(2, 1fr); }}
+            .signal-levels {{ grid-template-columns: repeat(3, 1fr); }}
+            .stats {{ grid-template-columns: repeat(2, 1fr); }}
+            .header h1 {{ font-size: 1.5rem; }}
+        }}
+        @media (max-width: 480px) {{
+            .signal-levels {{ grid-template-columns: repeat(2, 1fr); }}
             .stats {{ grid-template-columns: 1fr; }}
         }}
     </style>
@@ -396,7 +488,11 @@ class TVChartReportGenerator:
             </div>
             <div class="stat-card">
                 <h3>평균 점수</h3>
-                <div class="value">{avg_score:.1f}점</div>
+                <div class="value">{avg_score:.0f}점</div>
+            </div>
+            <div class="stat-card">
+                <h3>평균 손익비</h3>
+                <div class="value">1:{avg_rr:.1f}</div>
             </div>
             <div class="stat-card">
                 <h3>데이터 기준</h3>
@@ -409,7 +505,6 @@ class TVChartReportGenerator:
 </body>
 </html>'''
         
-        # 파일 저장 (시간 포함)
         filename = f"2604_v7_hybrid_{timestamp}.html"
         filepath = os.path.join(output_dir, filename)
         
@@ -417,15 +512,13 @@ class TVChartReportGenerator:
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
         
-        print(f"✅ 리포트 생성 완료: {filepath}")
+        print(f"✅ 리포트 생성: {filepath}")
         return filepath
 
 
 def main():
-    """메인 실행"""
     import sys
     
-    # JSON 파일 로드
     json_file = 'reports/2604_v7_hybrid_20260409.json'
     if not os.path.exists(json_file):
         print(f"❌ 파일 없음: {json_file}")
@@ -434,9 +527,8 @@ def main():
     with open(json_file, 'r', encoding='utf-8') as f:
         scan_data = json.load(f)
     
-    print(f"📊 {len(scan_data)}개 종목 로드 완료")
+    print(f"📊 {len(scan_data)}개 종목 로드")
     
-    # 리포트 생성
     generator = TVChartReportGenerator(theme='dark')
     filepath = generator.generate_report(
         scan_data=scan_data,
@@ -444,8 +536,8 @@ def main():
         output_dir='docs'
     )
     
-    print(f"\n📁 생성 파일: {filepath}")
-    print(f"🔗 GitHub Pages: https://lubanana.github.io/kstock-dashboard/{os.path.basename(filepath)}")
+    print(f"\n📁 파일: {filepath}")
+    print(f"🔗 https://lubanana.github.io/kstock-dashboard/{os.path.basename(filepath)}")
 
 
 if __name__ == '__main__':
