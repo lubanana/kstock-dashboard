@@ -1,0 +1,92 @@
+{
+  "Basic_Fixed": {
+    "total": 130,
+    "win_rate": 13.846153846153847,
+    "avg_return": -0.22785780355484994,
+    "median_return": 0.0,
+    "max_return": 10.000000000000018,
+    "min_return": -5.0,
+    "avg_r_r": 2.0000000000000018
+  },
+  "Basic_Fixed_RR2": {
+    "total": 130,
+    "win_rate": 10.76923076923077,
+    "avg_return": -0.17866695732971402,
+    "median_return": 0.0,
+    "max_return": 15.0,
+    "min_return": -5.0,
+    "avg_r_r": 2.9999999999999982
+  },
+  "Basic_Fixed_RR3": {
+    "total": 130,
+    "win_rate": 7.6923076923076925,
+    "avg_return": -0.5320030664168377,
+    "median_return": 0.0,
+    "max_return": 20.0,
+    "min_return": -5.0,
+    "avg_r_r": 4.0
+  },
+  "LowEntry_Fixed": {
+    "total": 130,
+    "win_rate": 31.538461538461537,
+    "avg_return": 2.1845213562254595,
+    "median_return": 0.0,
+    "max_return": 10.000000000000018,
+    "min_return": -5.0,
+    "avg_r_r": 2.0000000000000018
+  },
+  "BelowKijun_Fixed": {
+    "total": 130,
+    "win_rate": 13.076923076923078,
+    "avg_return": -0.37991959564505673,
+    "median_return": 0.0,
+    "max_return": 10.000000000000018,
+    "min_return": -5.000000000000012,
+    "avg_r_r": 2.000000000000001
+  },
+  "ATR_1.5_3.0": {
+    "total": 130,
+    "win_rate": 12.307692307692308,
+    "avg_return": -0.20170539137752522,
+    "median_return": 0.0,
+    "max_return": 35.4384236453202,
+    "min_return": -22.880267214799595,
+    "avg_r_r": 2.0
+  },
+  "ATR_2.0_4.0": {
+    "total": 130,
+    "win_rate": 11.538461538461538,
+    "avg_return": -0.6512450390732587,
+    "median_return": 0.0,
+    "max_return": 39.734582357533185,
+    "min_return": -30.50702295306611,
+    "avg_r_r": 2.0
+  },
+  "ATR_Trail_1.5": {
+    "total": 130,
+    "win_rate": 16.923076923076923,
+    "avg_return": -0.5968700869631108,
+    "median_return": 0.0,
+    "max_return": 24.669950738916263,
+    "min_return": -22.880267214799595,
+    "avg_r_r": 2.6666666666666665
+  },
+  "Fib_1.618": {
+    "total": 130,
+    "win_rate": 22.30769230769231,
+    "avg_return": 0.06015356344580585,
+    "median_return": 0.0,
+    "max_return": 20.531862068965527,
+    "min_return": -19.46875,
+    "avg_r_r": 2.9600214536616285
+  },
+  "Fib_2.0": {
+    "total": 130,
+    "win_rate": 19.230769230769234,
+    "avg_return": -0.09122914436140385,
+    "median_return": 0.0,
+    "max_return": 25.379310344827587,
+    "min_return": -19.46875,
+    "avg_r_r": 3.658864590434645
+  }
+}
