@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 불개미 단타 전략 리포트</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #eee;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .stat-value.positive { color: #00d9a5; }
+        .stat-value.negative { color: #ff4757; }
+        .stat-label {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,107,53,0.5);
+        }
+        .param-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .param-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .param-label {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-bottom: 5px;
+        }
+        .param-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        th {
+            opacity: 0.7;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        .badge-tp { background: #00d9a5; color: #000; }
+        .badge-sl { background: #ff4757; color: #fff; }
+        .badge-time { background: #ffa502; color: #000; }
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+        .strategy-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .info-card h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+        .info-card ul {
+            list-style: none;
+        }
+        .info-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .info-card li:last-child {
+            border-bottom: none;
+        }
+        .success-rate {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(0,217,165,0.2) 0%, rgba(0,217,165,0.05) 100%);
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00d9a5 0%, #00b894 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            font-weight: bold;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 불개미 단타 전략</h1>
+            <p>Fire Ant Day Trading Strategy | 장 시작 후 30분이 승부처</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">승률</div>
+                <div class="stat-value positive">52.2%</div>
+                <div class="stat-label">Target: 50%+</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">평균 수익률</div>
+                <div class="stat-value positive">+0.85%</div>
+                <div class="stat-label">per trade</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">총 수익률</div>
+                <div class="stat-value positive">+97.5%</div>
+                <div class="stat-label">41 days period</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">총 거래 수</div>
+                <div class="stat-value">115</div>
+                <div class="stat-label">avg 5/day</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">샤프 비율</div>
+                <div class="stat-value">0.38</div>
+                <div class="stat-label">risk-adjusted</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">손익비</div>
+                <div class="stat-value">1:2</div>
+                <div class="stat-label">-1.5% / +3.0%</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚙️ 전략 파라미터</h2>
+            <div class="param-grid">
+                <div class="param-item">
+                    <div class="param-label">갭 상승 범위</div>
+                    <div class="param-value">1.5% ~ 8.0%</div>
+                </div>
+                <div class="param-item">
+                    <div class="param-label">익절 / 손절</div>
+                    <div class="param-value">+3.0% / -1.5%</div>
+                </div>
+                <div class="param-item">
+                    <div class="param-label">최소 점수</div>
+                    <div class="param-value">60점</div>
+                </div>
+                <div class="param-item">
+                    <div class="param-label">최대 포지션</div>
+                    <div class="param-value">5개</div>
+                </div>
+                <div class="param-item">
+                    <div class="param-label">최소 거래대금</div>
+                    <div class="param-value">5억원</div>
+                </div>
+                <div class="param-item">
+                    <div class="param-label">보유 기간</div>
+                    <div class="param-value">당일 청산</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 진입 조건</h2>
+            <div class="strategy-info">
+                <div class="info-card">
+                    <h3>📈 기본 필터</h3>
+                    <ul>
+                        <li>✓ 전일 대비 +1.5%~8% 갭상승</li>
+                        <li>✓ 거래대금 5억원 이상</li>
+                        <li>✓ 5일 평균 대비 거래량 1.5배+</li>
+                        <li>✓ 당일 상승률 0% 이상</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>⭐ 점수 산정 (100점 만점)</h3>
+                    <ul>
+                        <li>• 갭 상승 (20점): 적정 갭 2-5% 선호</li>
+                        <li>• 거래량 급증 (25점): 3배+ 가산점</li>
+                        <li>• 당일 상승률 (20점): 3-8% 적정</li>
+                        <li>• 거래대금 (20점): 50억+ 가산점</li>
+                        <li>• 변동성 (15점): 3-10% 선호</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="success-rate">
+                <div>최소 진입 점수</div>
+                <div style="color: #00d9a5; margin-top: 10px;">60점 이상</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%">60/100</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 청산 분석</h2>
+            <div class="chart-container">
+                <canvas id="exitChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📈 월별 실적</h2>
+            <div class="chart-container">
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💼 최근 거래 내역</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>종목</th>
+                        <th>갭%</th>
+                        <th>수익률</th>
+                        <th>청산</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2026-04-10</td>
+                        <td>브이티</td>
+                        <td>+4.2%</td>
+                        <td style="color: #00d9a5;">+3.00%</td>
+                        <td><span class="badge badge-tp">TAKE PROFIT</span></td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-10</td>
+                        <td>피제이메탈</td>
+                        <td>+3.8%</td>
+                        <td style="color: #00d9a5;">+3.00%</td>
+                        <td><span class="badge badge-tp">TAKE PROFIT</span></td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-10</td>
+                        <td>넷마블</td>
+                        <td>+2.5%</td>
+                        <td style="color: #00d9a5;">+3.00%</td>
+                        <td><span class="badge badge-tp">TAKE PROFIT</span></td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-09</td>
+                        <td>쏠리드</td>
+                        <td>+5.1%</td>
+                        <td style="color: #00d9a5;">+3.00%</td>
+                        <td><span class="badge badge-tp">TAKE PROFIT</span></td>
+                    </tr>
+                    <tr>
+                        <td>2026-04-09</td>
+                        <td>그린리소스</td>
+                        <td>+6.2%</td>
+                        <td style="color: #ff4757;">-1.50%</td>
+                        <td><span class="badge badge-sl">STOP LOSS</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🎓 전략 설명</h2>
+            <div class="strategy-info">
+                <div class="info-card">
+                    <h3>핵심 원리</h3>
+                    <ul>
+                        <li>📍 <strong>장 시작 30분이 핵심</strong><br>9:00-9:30 주도주 포착</li>
+                        <li>📍 <strong>갭상승 + 거래량</strong><br>시초가 돌파 후 추세 진입</li>
+                        <li>📍 <strong>당일 청산</strong><br>수면 장기 보유 리스크 회피</li>
+                        <li>📍 <strong>엄격한 손절</strong><br>-1.5% 손절로 리스크 관리</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>장점 & 한계</h3>
+                    <ul>
+                        <li>✅ <strong>장점</strong><br>52% 승률 × 2:1 손익비</li>
+                        <li>✅ <strong>집중력</strong><br>하루 5종목 선별 매매</li>
+                        <li>⚠️ <strong>한계</strong><br>일봉 기준 근사치 사용</li>
+                        <li>⚠️ <strong>주의</strong><br>분봉 데이터 적용 시 성능 변동</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer style="text-align: center; padding: 40px; opacity: 0.5;">
+            <p>Fire Ant Day Trading Strategy | Generated: 2026-04-11</p>
+            <p style="font-size: 0.8rem; margin-top: 10px;">* 백테스트 결과이며, 실제 수익을 보장하지 않습니다</p>
+        </footer>
+    </div>
+
+    <script>
+        // Exit Distribution Chart
+        const exitCtx = document.getElementById('exitChart').getContext('2d');
+        new Chart(exitCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['익절 (+3.0%)', '손절 (-1.5%)'],
+                datasets: [{
+                    data: [52.2, 47.8],
+                    backgroundColor: ['#00d9a5', '#ff4757'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: { color: '#fff', font: { size: 14 } }
+                    }
+                }
+            }
+        });
+
+        // Monthly Performance Chart
+        const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+        new Chart(monthlyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['3월', '4월 (10일까지)'],
+                datasets: [{
+                    label: '누적 수익률 (%)',
+                    data: [55.2, 42.3],
+                    backgroundColor: ['#ff6b35', '#f7931e'],
+                    borderRadius: 10
+                }, {
+                    label: '거래 수',
+                    data: [65, 50],
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    borderRadius: 10,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#fff' }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: '#fff' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    },
+                    y: {
+                        ticks: { color: '#fff' },
+                        grid: { color: 'rgba(255,255,255,0.1)' },
+                        title: { display: true, text: '수익률 (%)', color: '#fff' }
+                    },
+                    y1: {
+                        position: 'right',
+                        ticks: { color: 'rgba(255,255,255,0.5)' },
+                        grid: { display: false },
+                        title: { display: true, text: '거래 수', color: 'rgba(255,255,255,0.5)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

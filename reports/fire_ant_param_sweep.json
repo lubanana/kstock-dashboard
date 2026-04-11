@@ -1,0 +1,4133 @@
+[
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 69.56521739130434,
+    "avg_return": 2.085902145057528,
+    "total_return": 239.87874668161572,
+    "sharpe": 0.760738115798222,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 69.56521739130434,
+    "avg_return": 1.4692024010004443,
+    "total_return": 168.9582761150511,
+    "sharpe": 0.6397039169726854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 69.56521739130434,
+    "avg_return": 1.125724140130879,
+    "total_return": 129.4582761150511,
+    "sharpe": 0.544332573375876,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 67.82608695652173,
+    "avg_return": 1.9815543189705715,
+    "total_return": 227.87874668161572,
+    "sharpe": 0.7125313355904312,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 67.82608695652173,
+    "avg_return": 1.382245879261314,
+    "total_return": 158.9582761150511,
+    "sharpe": 0.5928626855841823,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 67.82608695652173,
+    "avg_return": 1.0474632705656617,
+    "total_return": 120.45827611505109,
+    "sharpe": 0.49891047902694596,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 66.95652173913044,
+    "avg_return": 1.9630851339421744,
+    "total_return": 225.75479040335006,
+    "sharpe": 0.7010347392817469,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 66.95652173913044,
+    "avg_return": 1.3387676183917485,
+    "total_return": 153.9582761150511,
+    "sharpe": 0.5703024594899587,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 66.95652173913044,
+    "avg_return": 1.008332835783053,
+    "total_return": 115.95827611505109,
+    "sharpe": 0.4769898808424685,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 66.08695652173913,
+    "avg_return": 1.2949178263638481,
+    "total_return": 148.91555003184257,
+    "sharpe": 0.548124376382166,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 66.08695652173913,
+    "avg_return": 0.9688308698421092,
+    "total_return": 111.41555003184256,
+    "sharpe": 0.45540345642649194,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 65.21739130434783,
+    "avg_return": 1.8492178803409407,
+    "total_return": 212.66005623920822,
+    "sharpe": 0.6578413045950742,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 65.21739130434783,
+    "avg_return": 1.251439565494283,
+    "total_return": 143.91555003184257,
+    "sharpe": 0.5265584479265256,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 65.21739130434783,
+    "avg_return": 1.251439565494283,
+    "total_return": 143.91555003184257,
+    "sharpe": 0.5265584479265256,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 65.21739130434783,
+    "avg_return": 0.9297004350595005,
+    "total_return": 106.91555003184256,
+    "sharpe": 0.43439166088573716,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 65.21739130434783,
+    "avg_return": 0.9297004350595005,
+    "total_return": 106.91555003184256,
+    "sharpe": 0.43439166088573716,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7970439672974625,
+    "total_return": 206.66005623920822,
+    "sharpe": 0.6358346088258876,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7970439672974625,
+    "total_return": 206.66005623920822,
+    "sharpe": 0.6358346088258877,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7874445909887193,
+    "total_return": 205.55612796370272,
+    "sharpe": 0.6289653151139708,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7645016368864894,
+    "total_return": 202.9176882419463,
+    "sharpe": 0.6197255152455623,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7645016368864894,
+    "total_return": 202.9176882419463,
+    "sharpe": 0.6197255152455623,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7645016368864894,
+    "total_return": 202.9176882419463,
+    "sharpe": 0.6197255152455623,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.7586056789084608,
+    "total_return": 202.23965307447298,
+    "sharpe": 0.6194370978652233,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.2173913043478262,
+    "total_return": 140.0,
+    "sharpe": 0.508335269492118,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.2173913043478262,
+    "total_return": 140.0,
+    "sharpe": 0.508335269492118,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.2173913043478262,
+    "total_return": 140.0,
+    "sharpe": 0.508335269492118,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.208332835783053,
+    "total_return": 138.9582761150511,
+    "sharpe": 0.5055649325471285,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 1.2079613046247177,
+    "total_return": 138.91555003184257,
+    "sharpe": 0.5054334417056666,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 0.8956521739130435,
+    "total_return": 103.0,
+    "sharpe": 0.41554391077530284,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 0.8956521739130435,
+    "total_return": 103.0,
+    "sharpe": 0.41554391077530284,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 0.8956521739130435,
+    "total_return": 103.0,
+    "sharpe": 0.41554391077530284,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 0.8909415314352269,
+    "total_return": 102.45827611505109,
+    "sharpe": 0.41391942455448827,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 64.34782608695652,
+    "avg_return": 0.8905700002768918,
+    "total_return": 102.41555003184256,
+    "sharpe": 0.4137815309945559,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 1.7530247986839271,
+    "total_return": 201.59785184865163,
+    "sharpe": 0.6121982658789674,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 1.7460324518580925,
+    "total_return": 200.79373196368064,
+    "sharpe": 0.6095102467553561,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 1.173913043478261,
+    "total_return": 135.0,
+    "sharpe": 0.4876157095857697,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 1.173913043478261,
+    "total_return": 135.0,
+    "sharpe": 0.4876157095857697,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 0.8565217391304348,
+    "total_return": 98.5,
+    "sharpe": 0.39530985509628236,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 63.47826086956522,
+    "avg_return": 0.8565217391304348,
+    "total_return": 98.5,
+    "sharpe": 0.39530985509628236,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.7081541553923858,
+    "total_return": 196.43772787012438,
+    "sharpe": 0.5936249489254699,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.702215568724783,
+    "total_return": 195.75479040335006,
+    "sharpe": 0.5917063524300703,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.6938585388146143,
+    "total_return": 194.79373196368064,
+    "sharpe": 0.588609111788636,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.6938585388146143,
+    "total_return": 194.79373196368064,
+    "sharpe": 0.588609111788636,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.6879625808365855,
+    "total_return": 194.11569679620732,
+    "sharpe": 0.5882468269879672,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.1304347826086956,
+    "total_return": 130.0,
+    "sharpe": 0.46727535054823316,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.1304347826086956,
+    "total_return": 130.0,
+    "sharpe": 0.46727535054823316,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.1213763140439226,
+    "total_return": 128.9582761150511,
+    "sharpe": 0.4645048813568205,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.1210047828855874,
+    "total_return": 128.91555003184257,
+    "sharpe": 0.4643751317533551,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 1.1210047828855874,
+    "total_return": 128.91555003184257,
+    "sharpe": 0.4643751317533551,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 0.8173913043478261,
+    "total_return": 94.0,
+    "sharpe": 0.37541780300456346,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 0.8173913043478261,
+    "total_return": 94.0,
+    "sharpe": 0.37541780300456346,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 0.8126806618700095,
+    "total_return": 93.45827611505109,
+    "sharpe": 0.3737798585573137,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 0.8123091307116744,
+    "total_return": 93.41555003184256,
+    "sharpe": 0.3736419995436688,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 62.60869565217392,
+    "avg_return": 0.8123091307116744,
+    "total_return": 93.41555003184256,
+    "sharpe": 0.3736419995436688,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 61.73913043478261,
+    "avg_return": 1.6195650632488088,
+    "total_return": 186.24998227361303,
+    "sharpe": 0.5591882636013646,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 61.73913043478261,
+    "avg_return": 1.0609346142011422,
+    "total_return": 122.00748063313137,
+    "sharpe": 0.4374062570702749,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 61.73913043478261,
+    "avg_return": 0.7565867881141858,
+    "total_return": 87.00748063313137,
+    "sharpe": 0.3466950682103604,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.86956521739131,
+    "avg_return": 1.5673911502053304,
+    "total_return": 180.24998227361303,
+    "sharpe": 0.5391875092112605,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.86956521739131,
+    "avg_return": 1.017456353331577,
+    "total_return": 117.00748063313137,
+    "sharpe": 0.41781923056201614,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.86956521739131,
+    "avg_return": 0.7174563533315771,
+    "total_return": 82.50748063313137,
+    "sharpe": 0.3274563473629845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 1.5152172371618522,
+    "total_return": 174.24998227361303,
+    "sharpe": 0.519506167461454,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 1.5046252235950972,
+    "total_return": 173.0319007134362,
+    "sharpe": 0.5179672140825442,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 1.5046252235950972,
+    "total_return": 173.0319007134362,
+    "sharpe": 0.5179672140825442,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 1.4880333157802175,
+    "total_return": 171.123831314725,
+    "sharpe": 0.5117176149735158,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 1.4880333157802175,
+    "total_return": 171.123831314725,
+    "sharpe": 0.5117176149735158,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.9905700002768918,
+    "total_return": 113.91555003184256,
+    "sharpe": 0.40533125524849867,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.9905700002768918,
+    "total_return": 113.91555003184256,
+    "sharpe": 0.40533125524849867,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.9739780924620118,
+    "total_return": 112.00748063313137,
+    "sharpe": 0.3985190321293983,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.9739780924620118,
+    "total_return": 112.00748063313137,
+    "sharpe": 0.3985190321293983,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.9739780924620118,
+    "total_return": 112.00748063313137,
+    "sharpe": 0.3985190321293983,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.6949178263638484,
+    "total_return": 79.91555003184256,
+    "sharpe": 0.3157201574759733,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.6949178263638484,
+    "total_return": 79.91555003184256,
+    "sharpe": 0.3157201574759733,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.6783259185489684,
+    "total_return": 78.00748063313137,
+    "sharpe": 0.3084725494852253,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.6783259185489684,
+    "total_return": 78.00748063313137,
+    "sharpe": 0.3084725494852253,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 60.0,
+    "avg_return": 0.6783259185489684,
+    "total_return": 78.00748063313137,
+    "sharpe": 0.3084725494852253,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 1.667795776419991,
+    "total_return": 191.796514288299,
+    "sharpe": 0.6195947443774805,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 1.4002773975081408,
+    "total_return": 161.0319007134362,
+    "sharpe": 0.4793708392482161,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 1.1217391304347826,
+    "total_return": 129.0,
+    "sharpe": 0.5054976913653288,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 0.9036134785377614,
+    "total_return": 103.91555003184256,
+    "sharpe": 0.36736588267827436,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 0.8304347826086956,
+    "total_return": 95.5,
+    "sharpe": 0.42100316446560077,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 58.26086956521739,
+    "avg_return": 0.616656956798631,
+    "total_return": 70.91555003184256,
+    "sharpe": 0.27834545814991357,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 1.6199696894634692,
+    "total_return": 186.296514288299,
+    "sharpe": 0.6002684741449487,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 1.6199696894634692,
+    "total_return": 186.296514288299,
+    "sharpe": 0.6002684741449487,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 1.3315115766497827,
+    "total_return": 153.123831314725,
+    "sharpe": 0.4544575176062364,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 1.0826086956521739,
+    "total_return": 124.5,
+    "sharpe": 0.4865044643468865,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 1.0826086956521739,
+    "total_return": 124.5,
+    "sharpe": 0.4865044643468865,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 0.8435433098533163,
+    "total_return": 97.00748063313137,
+    "sharpe": 0.34210931472727507,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 0.7956521739130434,
+    "total_return": 91.5,
+    "sharpe": 0.40224540802174796,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 0.7956521739130434,
+    "total_return": 91.5,
+    "sharpe": 0.40224540802174796,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 2.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 57.391304347826086,
+    "avg_return": 0.5609346142011423,
+    "total_return": 64.50748063313137,
+    "sharpe": 0.2528295242843192,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 1.4573726247708838,
+    "total_return": 167.59785184865163,
+    "sharpe": 0.5388826300031787,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.9652173913043478,
+    "total_return": 111.0,
+    "sharpe": 0.43096154398567754,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.9557873915812396,
+    "total_return": 109.91555003184256,
+    "sharpe": 0.42795741932370845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.9557873915812396,
+    "total_return": 109.91555003184256,
+    "sharpe": 0.42795741932370845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.9557873915812396,
+    "total_return": 109.91555003184256,
+    "sharpe": 0.42795741932370845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.691304347826087,
+    "total_return": 79.5,
+    "sharpe": 0.3472443521641354,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.6862221741899353,
+    "total_return": 78.91555003184256,
+    "sharpe": 0.34536491555481397,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.6862221741899353,
+    "total_return": 78.91555003184256,
+    "sharpe": 0.34536491555481397,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 54.78260869565217,
+    "avg_return": 0.6862221741899353,
+    "total_return": 78.91555003184256,
+    "sharpe": 0.34536491555481397,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.91304347826087,
+    "avg_return": 1.3970439672974628,
+    "total_return": 160.66005623920822,
+    "sharpe": 0.5198542257750292,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.91304347826087,
+    "avg_return": 1.3970439672974628,
+    "total_return": 160.66005623920822,
+    "sharpe": 0.5198542257750292,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.91304347826087,
+    "avg_return": 1.3970439672974628,
+    "total_return": 160.66005623920822,
+    "sharpe": 0.5198542257750292,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 1.3617204508578402,
+    "total_return": 156.59785184865163,
+    "sharpe": 0.5024666532756559,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 1.3547281040320056,
+    "total_return": 155.79373196368064,
+    "sharpe": 0.49984734856804036,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 1.3547281040320056,
+    "total_return": 155.79373196368064,
+    "sharpe": 0.49984734856804036,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 1.3547281040320056,
+    "total_return": 155.79373196368064,
+    "sharpe": 0.49984734856804036,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 1.3547281040320056,
+    "total_return": 155.79373196368064,
+    "sharpe": 0.49984734856804036,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.8869565217391304,
+    "total_return": 102.0,
+    "sharpe": 0.3949352155252615,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.8869565217391304,
+    "total_return": 102.0,
+    "sharpe": 0.3949352155252615,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.8869565217391304,
+    "total_return": 102.0,
+    "sharpe": 0.3949352155252615,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.8869565217391304,
+    "total_return": 102.0,
+    "sharpe": 0.3949352155252615,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.8869565217391304,
+    "total_return": 102.0,
+    "sharpe": 0.3949352155252615,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.6217391304347826,
+    "total_return": 71.5,
+    "sharpe": 0.3114470725373845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.6217391304347826,
+    "total_return": 71.5,
+    "sharpe": 0.3114470725373846,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.6217391304347826,
+    "total_return": 71.5,
+    "sharpe": 0.3114470725373846,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.6217391304347826,
+    "total_return": 71.5,
+    "sharpe": 0.3114470725373846,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 53.04347826086957,
+    "avg_return": 0.6217391304347826,
+    "total_return": 71.5,
+    "sharpe": 0.3114470725373846,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.3330131677243389,
+    "total_return": 153.296514288299,
+    "sharpe": 0.4895891088545216,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.3211976336532554,
+    "total_return": 151.93772787012438,
+    "sharpe": 0.48689779697889946,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.3184871825682383,
+    "total_return": 151.6260259953474,
+    "sharpe": 0.4837963189549949,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.306902017075484,
+    "total_return": 150.29373196368064,
+    "sharpe": 0.48194767244198955,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.306902017075484,
+    "total_return": 150.29373196368064,
+    "sharpe": 0.48194767244198955,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.301006059097455,
+    "total_return": 149.61569679620732,
+    "sharpe": 0.4814782180025504,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 1.301006059097455,
+    "total_return": 149.61569679620732,
+    "sharpe": 0.4814782180025504,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8478260869565217,
+    "total_return": 97.5,
+    "sharpe": 0.37716825457067854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8478260869565217,
+    "total_return": 97.5,
+    "sharpe": 0.37716825457067854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8478260869565217,
+    "total_return": 97.5,
+    "sharpe": 0.37716825457067854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8383960872334135,
+    "total_return": 96.41555003184256,
+    "sharpe": 0.37410218352940244,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8383960872334135,
+    "total_return": 96.41555003184256,
+    "sharpe": 0.37410218352940244,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8383960872334135,
+    "total_return": 96.41555003184256,
+    "sharpe": 0.37410218352940244,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.8218041794185336,
+    "total_return": 94.50748063313137,
+    "sharpe": 0.3668579794961122,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5869565217391305,
+    "total_return": 67.5,
+    "sharpe": 0.2937560444252401,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5869565217391305,
+    "total_return": 67.5,
+    "sharpe": 0.2937560444252401,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5869565217391305,
+    "total_return": 67.5,
+    "sharpe": 0.2937560444252401,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5818743481029788,
+    "total_return": 66.91555003184256,
+    "sharpe": 0.29181620186195845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5818743481029788,
+    "total_return": 66.91555003184256,
+    "sharpe": 0.29181620186195845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5818743481029788,
+    "total_return": 66.91555003184256,
+    "sharpe": 0.29181620186195845,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 52.17391304347826,
+    "avg_return": 0.5652824402880988,
+    "total_return": 65.00748063313137,
+    "sharpe": 0.283955248376358,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 51.30434782608696,
+    "avg_return": 1.2706610956117164,
+    "total_return": 146.1260259953474,
+    "sharpe": 0.46611358692677207,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 51.30434782608696,
+    "avg_return": 0.7826737446359249,
+    "total_return": 90.00748063313137,
+    "sharpe": 0.34924769734625133,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 51.30434782608696,
+    "avg_return": 0.5304998315924466,
+    "total_return": 61.007480633131365,
+    "sharpe": 0.26637115089802677,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 50.43478260869565,
+    "avg_return": 1.2228350086551947,
+    "total_return": 140.6260259953474,
+    "sharpe": 0.44857904528532355,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 50.43478260869565,
+    "avg_return": 0.7435433098533162,
+    "total_return": 85.50748063313137,
+    "sharpe": 0.33175288198377456,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 50.43478260869565,
+    "avg_return": 0.4957172228967945,
+    "total_return": 57.007480633131365,
+    "sharpe": 0.24887772438073583,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 1.1644169081319178,
+    "total_return": 133.90794443517055,
+    "sharpe": 0.42948734231894875,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 1.1644169081319178,
+    "total_return": 133.90794443517055,
+    "sharpe": 0.42948734231894875,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 1.1478250003170378,
+    "total_return": 131.99987503645937,
+    "sharpe": 0.42318167688071473,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 1.1478250003170378,
+    "total_return": 131.99987503645937,
+    "sharpe": 0.42318167688071473,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.7210047828855874,
+    "total_return": 82.91555003184256,
+    "sharpe": 0.3214977001234918,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.7210047828855874,
+    "total_return": 82.91555003184256,
+    "sharpe": 0.3214977001234918,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.7044128750707075,
+    "total_return": 81.00748063313137,
+    "sharpe": 0.3143574607343579,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.7044128750707075,
+    "total_return": 81.00748063313137,
+    "sharpe": 0.3143574607343579,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.47752652201602225,
+    "total_return": 54.91555003184256,
+    "sharpe": 0.23929819609781305,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.47752652201602225,
+    "total_return": 54.91555003184256,
+    "sharpe": 0.23929819609781305,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.4609346142011423,
+    "total_return": 53.007480633131365,
+    "sharpe": 0.23145889948749532,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 49.56521739130435,
+    "avg_return": 0.4609346142011423,
+    "total_return": 53.007480633131365,
+    "sharpe": 0.23145889948749532,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 1.0209386472623525,
+    "total_return": 117.40794443517056,
+    "sharpe": 0.3777280874193697,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 1.0043467394474728,
+    "total_return": 115.49987503645936,
+    "sharpe": 0.3715462521157129,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 0.6036134785377614,
+    "total_return": 69.41555003184256,
+    "sharpe": 0.26970523761609283,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 0.5870215707228814,
+    "total_return": 67.50748063313137,
+    "sharpe": 0.2626104269308022,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 0.3731786959290657,
+    "total_return": 42.91555003184256,
+    "sharpe": 0.18737426469528057,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.5,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 46.95652173913044,
+    "avg_return": 0.35658678811418576,
+    "total_return": 41.007480633131365,
+    "sharpe": 0.179491927992175,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.6358134379323133,
+    "total_return": 73.11854536221603,
+    "sharpe": 0.2727754204226774,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.6166946341092929,
+    "total_return": 70.91988292256868,
+    "sharpe": 0.26671639261423513,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.3217391304347826,
+    "total_return": 37.0,
+    "sharpe": 0.17100333166201134,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.3217391304347826,
+    "total_return": 37.0,
+    "sharpe": 0.17100333166201134,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.1565217391304348,
+    "total_return": 18.0,
+    "sharpe": 0.09507521142598317,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 33.04347826086956,
+    "avg_return": 0.1565217391304348,
+    "total_return": 18.0,
+    "sharpe": 0.09507521142598317,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.5923351770627481,
+    "total_return": 68.11854536221603,
+    "sharpe": 0.2559434730927839,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.5923351770627481,
+    "total_return": 68.11854536221603,
+    "sharpe": 0.2559434730927839,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.5732163732397277,
+    "total_return": 65.91988292256868,
+    "sharpe": 0.24975745876782987,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.28695652173913044,
+    "total_return": 33.0,
+    "sharpe": 0.15356978815405012,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.28695652173913044,
+    "total_return": 33.0,
+    "sharpe": 0.15356978815405012,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.28695652173913044,
+    "total_return": 33.0,
+    "sharpe": 0.15356978815405012,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.12608695652173912,
+    "total_return": 14.5,
+    "sharpe": 0.07711729621588664,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.12608695652173912,
+    "total_return": 14.5,
+    "sharpe": 0.07711729621588664,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 32.17391304347826,
+    "avg_return": 0.12608695652173912,
+    "total_return": 14.5,
+    "sharpe": 0.07711729621588664,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.5488569161931828,
+    "total_return": 63.118545362216025,
+    "sharpe": 0.23896658418296626,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.5349754594633201,
+    "total_return": 61.52217783828181,
+    "sharpe": 0.23457036420208977,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.25217391304347825,
+    "total_return": 29.0,
+    "sharpe": 0.13594812136189452,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.25217391304347825,
+    "total_return": 29.0,
+    "sharpe": 0.13594812136189452,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.09565217391304348,
+    "total_return": 11.0,
+    "sharpe": 0.058933175762791744,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 31.30434782608696,
+    "avg_return": 0.09565217391304348,
+    "total_return": 11.0,
+    "sharpe": 0.058933175762791744,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.49149719859375496,
+    "total_return": 56.52217783828181,
+    "sharpe": 0.21730633687170242,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.49149719859375496,
+    "total_return": 56.52217783828181,
+    "sharpe": 0.21730633687170242,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.48625985150059725,
+    "total_return": 55.919882922568675,
+    "sharpe": 0.2153467899272448,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.48625985150059725,
+    "total_return": 55.919882922568675,
+    "sharpe": 0.2153467899272448,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.48625985150059725,
+    "total_return": 55.919882922568675,
+    "sharpe": 0.2153467899272448,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.48625985150059725,
+    "total_return": 55.919882922568675,
+    "sharpe": 0.2153467899272448,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.4862598515005972,
+    "total_return": 55.919882922568675,
+    "sharpe": 0.2153467899272448,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.21739130434782608,
+    "total_return": 25.0,
+    "sharpe": 0.11811389781538349,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 30.434782608695656,
+    "avg_return": 0.06521739130434782,
+    "total_return": 7.5,
+    "sharpe": 0.04049619353670291,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 29.565217391304348,
+    "avg_return": 0.44278159063103195,
+    "total_return": 50.919882922568675,
+    "sharpe": 0.1978465888310813,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 29.565217391304348,
+    "avg_return": 0.1826086956521739,
+    "total_return": 21.0,
+    "sharpe": 0.10004084133313015,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 29.565217391304348,
+    "avg_return": 0.034782608695652174,
+    "total_return": 4.0,
+    "sharpe": 0.021777598113334455,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.3558250688919015,
+    "total_return": 40.919882922568675,
+    "sharpe": 0.16212031038665564,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.3558250688919015,
+    "total_return": 40.919882922568675,
+    "sharpe": 0.16212031038665564,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.3558250688919015,
+    "total_return": 40.919882922568675,
+    "sharpe": 0.1621203103866556,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.11304347826086956,
+    "total_return": 13.0,
+    "sharpe": 0.06306223021363955,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.11304347826086956,
+    "total_return": 13.0,
+    "sharpe": 0.06306223021363955,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": 0.11304347826086956,
+    "total_return": 13.0,
+    "sharpe": 0.06306223021363955,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": -0.02608695652173913,
+    "total_return": -3.0,
+    "sharpe": -0.016631796979421416,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": -0.02608695652173913,
+    "total_return": -3.0,
+    "sharpe": -0.016631796979421416,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 1.5,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 27.82608695652174,
+    "avg_return": -0.02608695652173913,
+    "total_return": -3.0,
+    "sharpe": -0.016631796979421423,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.3314656118453567,
+    "total_return": 38.118545362216025,
+    "sharpe": 0.15106526923824753,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.3314656118453567,
+    "total_return": 38.118545362216025,
+    "sharpe": 0.15106526923824756,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.33146561184535667,
+    "total_return": 38.118545362216025,
+    "sharpe": 0.1510652692382475,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.33146561184535667,
+    "total_return": 38.118545362216025,
+    "sharpe": 0.1510652692382475,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.0782608695652174,
+    "total_return": 9.0,
+    "sharpe": 0.044092226343916165,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.0782608695652174,
+    "total_return": 9.0,
+    "sharpe": 0.044092226343916165,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.0782608695652174,
+    "total_return": 9.0,
+    "sharpe": 0.044092226343916165,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": 0.0782608695652174,
+    "total_return": 9.0,
+    "sharpe": 0.044092226343916165,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": -0.05652173913043478,
+    "total_return": -6.5,
+    "sharpe": -0.03639358364894667,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": -0.05652173913043478,
+    "total_return": -6.5,
+    "sharpe": -0.03639358364894667,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": -0.05652173913043478,
+    "total_return": -6.5,
+    "sharpe": -0.03639358364894667,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.956521739130434,
+    "avg_return": -0.05652173913043478,
+    "total_return": -6.5,
+    "sharpe": -0.03639358364894667,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.2879873509757915,
+    "total_return": 33.118545362216025,
+    "sharpe": 0.13268405609275946,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.2879873509757915,
+    "total_return": 33.118545362216025,
+    "sharpe": 0.13268405609275946,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.2879873509757915,
+    "total_return": 33.118545362216025,
+    "sharpe": 0.13268405609275946,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.2879873509757915,
+    "total_return": 33.118545362216025,
+    "sharpe": 0.1326840560927595,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.043478260869565216,
+    "total_return": 5.0,
+    "sharpe": 0.024753688574416854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.043478260869565216,
+    "total_return": 5.0,
+    "sharpe": 0.024753688574416854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.043478260869565216,
+    "total_return": 5.0,
+    "sharpe": 0.024753688574416854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": 0.043478260869565216,
+    "total_return": 5.0,
+    "sharpe": 0.024753688574416854,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 6.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": -0.08695652173913043,
+    "total_return": -10.0,
+    "sharpe": -0.056579859598667105,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 55,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": -0.08695652173913043,
+    "total_return": -10.0,
+    "sharpe": -0.056579859598667105,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 60,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": -0.08695652173913043,
+    "total_return": -10.0,
+    "sharpe": -0.056579859598667105,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 10.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 26.08695652173913,
+    "avg_return": -0.08695652173913043,
+    "total_return": -10.0,
+    "sharpe": -0.056579859598667105,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 4.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 25.217391304347824,
+    "avg_return": 0.24450909010622626,
+    "total_return": 28.11854536221602,
+    "sharpe": 0.11395742073946893,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 3.0,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 25.217391304347824,
+    "avg_return": 0.008695652173913044,
+    "total_return": 1.0,
+    "sharpe": 0.005006010821645458,
+    "trades": 115
+  },
+  {
+    "params": {
+      "take_profit": 2.5,
+      "stop_loss": 1.0,
+      "min_gap": 2.0,
+      "max_gap": 8.0,
+      "min_trade_amount": 500000000,
+      "min_score": 65,
+      "max_positions": 5,
+      "top_n": 30
+    },
+    "win_rate": 25.217391304347824,
+    "avg_return": -0.11739130434782609,
+    "total_return": -13.5,
+    "sharpe": -0.07723559553395849,
+    "trades": 115
+  }
+]
