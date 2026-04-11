@@ -1,0 +1,45 @@
+[
+  {
+    "code": "032850",
+    "name": "비트컴퓨터",
+    "date": "2026-04-10",
+    "score": 82,
+    "price": 5450.0,
+    "scores": {
+      "volume": 25,
+      "technical": 24,
+      "fibonacci": 20,
+      "market": 8,
+      "momentum": 5
+    },
+    "reasons": [
+      "거래량 급증 (4.9x)",
+      "RSI 적정 (56.3)",
+      "정배열",
+      "피볼나치 되돌림",
+      "안정적 상승 (-0.5%)"
+    ],
+    "metadata": {
+      "volume_ratio": 4.906922057855021,
+      "rsi": 56.25162002303403,
+      "adx": 27.11549843085293,
+      "macd_bullish": false,
+      "bb_position": 0.6278174819585978,
+      "vs_kosdaq": -2.1874452554744526,
+      "change_pct": -0.5474452554744526,
+      "change_20d": -2.8520499108734403
+    },
+    "targets": {
+      "entry": 5450.0,
+      "stop_loss": 5271.0,
+      "tp1": 6018.0,
+      "tp2": 6309.0,
+      "tp3": 7149.0,
+      "atr": 189.0,
+      "risk_reward_tp2": 4.8,
+      "stop_pct": -3.29,
+      "tp2_pct": 15.76,
+      "method": "hybrid"
+    }
+  }
+]
