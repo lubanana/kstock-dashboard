@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-04-13T05:00:02.929816+09:00",
+  "korean_stocks": [],
+  "crypto_opportunities": [
+    {
+      "method": "Funding Rate Arbitrage",
+      "description": "선물/현물 펀딩비 차이를 이용한 무위험 수익",
+      "risk_level": "Low",
+      "expected_return": "5-15% annual",
+      "implementation": "Monitor Binance, Bybit funding rates every 8 hours"
+    },
+    {
+      "method": "Volume Profile Break",
+      "description": "고거래량 POC(Point of Control) 돌파 전략",
+      "risk_level": "Medium",
+      "expected_return": "20-40% per trade",
+      "implementation": "Identify high volume nodes, wait for breakout with volume"
+    },
+    {
+      "method": "Liquidation Cascade",
+      "description": "대규모 청산 시 반등 매매",
+      "risk_level": "High",
+      "expected_return": "10-30% per trade",
+      "implementation": "Monitor liquidation heatmap, counter-trade extreme levels"
+    },
+    {
+      "method": "On-Chain Analysis",
+      "description": "체인상 대형 지갑(고래) 동향 추적",
+      "risk_level": "Medium",
+      "expected_return": "15-50% per cycle",
+      "implementation": "Track exchange inflows/outflows, whale wallet movements"
+    },
+    {
+      "method": "Volatility Expansion",
+      "description": "변동성 수축 후 확장 구간 진입",
+      "risk_level": "Medium",
+      "expected_return": "20-60% per trade",
+      "implementation": "Bollinger Bands squeeze + volume spike confirmation"
+    }
+  ],
+  "research_methods": [
+    {
+      "category": "Technical Analysis",
+      "methods": [
+        "Volume Spike Detection: 2.5x average volume",
+        "Breakout Patterns: 5-day high breakout",
+        "Moving Average Cross: Golden/Death cross",
+        "RSI Divergence: Price/RSI divergence",
+        "Bollinger Bands: Squeeze and expansion"
+      ]
+    },
+    {
+      "category": "Quantitative Screening",
+      "methods": [
+        "Value Score: PER, PBR, ROE based scoring",
+        "Momentum Score: Price change over 20/60 days",
+        "Quality Score: Debt ratio, FCF stability",
+        "Risk Score: Volatility, drawdown analysis"
+      ]
+    },
+    {
+      "category": "Market Microstructure",
+      "methods": [
+        "Order Flow: Bid/ask imbalance",
+        "Tick Analysis: Up/down volume ratio",
+        "VWAP Deviation: Mean reversion signals",
+        "Time of Day: Opening/closing patterns"
+      ]
+    },
+    {
+      "category": "Alternative Data",
+      "methods": [
+        "News Sentiment: NLP-based sentiment analysis",
+        "Social Media: Twitter/Reddit mention volume",
+        "Insider Trading: Executive buying/selling",
+        "Sector Rotation: Industry momentum shifts"
+      ]
+    }
+  ],
+  "market_context": {
+    "latest_date": "2026-04-08",
+    "volume_trend": [
+      {
+        "date": "2026-04-08",
+        "total_volume": 46215970,
+        "active_stocks": 2
+      },
+      {
+        "date": "2026-04-07",
+        "total_volume": 5174833117,
+        "active_stocks": 3545
+      },
+      {
+        "date": "2026-04-06",
+        "total_volume": 7533757677,
+        "active_stocks": 3545
+      },
+      {
+        "date": "2026-04-03",
+        "total_volume": 7773654488,
+        "active_stocks": 3546
+      },
+      {
+        "date": "2026-04-02",
+        "total_volume": 13045747803,
+        "active_stocks": 3547
+      }
+    ],
+    "market_breadth": {
+      "advancing": 0,
+      "declining": 2,
+      "total": 2
+    }
+  }
+}
