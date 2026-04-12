@@ -1,0 +1,1750 @@
+{
+  "timestamp": "2026-04-13T03:00:02.179040+09:00",
+  "vulnerabilities": [
+    {
+      "file": "global_market_analyzer.py",
+      "line": 163,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "global_market_analyzer.py",
+      "line": 179,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "watchdog_hybrid.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "dashboard.py",
+      "line": 57,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dashboard.py",
+      "line": 63,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dashboard.py",
+      "line": 69,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dashboard.py",
+      "line": 75,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dashboard.py",
+      "line": 81,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 39,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 48,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 57,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 66,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 81,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "investigation_report.py",
+      "line": 104,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dart_batch_collector.py",
+      "line": 28,
+      "type": "Hardcoded Credential",
+      "severity": "MEDIUM",
+      "description": "하드코딩된 키/비밀번호 가능성. 환경변수 사용 권장."
+    },
+    {
+      "file": "fire_ant_enhanced.py",
+      "line": 85,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kagg_backtest_v3.py",
+      "line": 67,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kagg_backtest_v3.py",
+      "line": 114,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "fix_level1_schema.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "kagg_backtest.py",
+      "line": 58,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kagg_backtest.py",
+      "line": 82,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kagg_backtest.py",
+      "line": 152,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_enhanced_report.py",
+      "line": 23,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_enhanced_report.py",
+      "line": 31,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_notifier.py",
+      "line": 83,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "rsi_bb_paper_trading.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "paper_trading_monitor.py",
+      "line": 29,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_trading_monitor.py",
+      "line": 74,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_trading_monitor.py",
+      "line": 134,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_trading_monitor.py",
+      "line": 163,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "create_integrated_report.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "daily_summary_report.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "daily_summary_report.py",
+      "line": 23,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "daily_summary_report.py",
+      "line": 63,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "daily_summary_report.py",
+      "line": 125,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "ultimate_screener_1000.py",
+      "line": 36,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_integrated_report_final.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "kagg.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "v_series_integrated_report.py",
+      "line": 22,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "rsi_bb_backtest_v2_simple.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "rsi_bb_regime_analysis.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "level1_master_v2.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "strategy_livermore.py",
+      "line": 187,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "strategy_livermore.py",
+      "line": 191,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "fast_data_build.py",
+      "line": 34,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dart_2024_collector.py",
+      "line": 21,
+      "type": "Hardcoded Credential",
+      "severity": "MEDIUM",
+      "description": "하드코딩된 키/비밀번호 가능성. 환경변수 사용 권장."
+    },
+    {
+      "file": "paper_trading_composite.py",
+      "line": 218,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_trading_composite.py",
+      "line": 241,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "build_daily_simple.py",
+      "line": 17,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "build_daily_simple.py",
+      "line": 64,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kstock_data.py",
+      "line": 27,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "kstock_data.py",
+      "line": 104,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "dart_recent_builder.py",
+      "line": 192,
+      "type": "Hardcoded Credential",
+      "severity": "MEDIUM",
+      "description": "하드코딩된 키/비밀번호 가능성. 환경변수 사용 권장."
+    },
+    {
+      "file": "check_data_infrastructure.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "create_integrated_report_v2.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "create_integrated_report_v3.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "japanese_pattern_quick_test.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "simple_backfill.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    },
+    {
+      "file": "paper_trading_rsi4.py",
+      "line": 198,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "paper_trading_rsi4.py",
+      "line": 222,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "circuit_breaker.py",
+      "line": 60,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 38,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 45,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 52,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 59,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 66,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 75,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "generate_dashboard.py",
+      "line": 195,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "value_report_generator.py",
+      "line": 33,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "integrated_report_generator.py",
+      "line": 21,
+      "type": "Bare Except Clause",
+      "severity": "LOW",
+      "description": "bare except: 사용. 구체적인 예외 지정 권장."
+    },
+    {
+      "file": "v8_backtester_simple.py",
+      "type": "SQL Injection Risk",
+      "severity": "HIGH",
+      "description": "문자열 포맷팅을 사용한 SQL 쿼리 발견. 파라미터화된 쿼리 사용 권장."
+    }
+  ],
+  "improvements": [
+    {
+      "file": "global_market_analyzer.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 46개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "daily_level1_fdr.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_trading_65.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 32개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "backfill_level1_prices.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "strategy_comparison_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 36개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "strategy_comparison_backtest.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 512줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "dart_batch_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 28개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v8_backtester_optimized.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v8_backtester_optimized.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 522줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "bithumb_trading_simulator.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 44개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "bithumb_trading_simulator.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 551줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "strict_mode_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 39개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "fire_ant_enhanced.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "full_db_builder_2024_2026.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 36개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kagg_backtest_v3.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "wavetrend_crypto_extended.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 34개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "fundamental_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "update_stock_info.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 31개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kagg_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "global_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 58개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_improved.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 51개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_improved.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 721줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "crypto_midtier_trader.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "daily_level1_fullmarket.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 38개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "fibonacci_target_calculator.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 50개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_dashboard.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 38개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "smc_fvg_yahoo_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_trading.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 42개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "test_dart_reader.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 37개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "naver_news_scraper.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "unified_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 661줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "korean_stock_explosive_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 69개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korean_stock_explosive_backtest.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 862줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "report_livermore.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_2604_v7_hybrid.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_2604_v7_hybrid.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 648줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "level1_batch_auto.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "build_daily_pivot_db_seq.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "rsi_bb_paper_trading.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 45개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "ivf_v2_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 36개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kstock_pipeline.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 34개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "smc_fvg_trader.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 43개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "agent_orchestrator.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "rsi_bb_backtest_v2.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 544줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 697줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "kagg_backtest_v2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "ultimate_screener_1000.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "ultimate_screener_1000.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 710줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "generate_level3_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 520줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "kagg.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 37개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v_strategy_final_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 643줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "honginki_dplus_strategy.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 47개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "honginki_dplus_strategy.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 1050줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "ivf_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "fix_korea_alcohol.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "upper_limit_predictor.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 49개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "news_collector_v2_1.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "combined_report_generator.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "ivf_backtest_extended.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 34개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "daily_intelligence_scraper.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "btc_a_plus_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 31개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "btc_a_plus_backtest.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 533줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "japanese_pattern_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "improved_kagg_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "rsi_bb_regime_analysis.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 35개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "daily_check_with_research.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 21개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "level1_master_v2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 56개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kstock_enhanced_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scenario_7_plus_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "multi_strategy_portfolio.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kstock_data_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "strategy_livermore.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 21개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "strategy_livermore.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 531줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "stock_db_cli.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 37개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "unified_daily_updater.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "report_livermore_v2.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 507줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "ivf_backtest_quality.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 38개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "build_daily_pivot_db.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 28개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "explosive_scanner_v7.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 950줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "update_data.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_composite.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 98개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_composite.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 1050줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "agent_spawner.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "high_win_rate_trader.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "large_scale_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 36개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v8_backtester.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v8_backtester.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 602줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "moderate_mode_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 39개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "dart_2024_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 23개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_trading_composite.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 23개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "gapup_pullback_scanner.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "db_holiday_builder.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 32개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_livermore.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "dart_recent_builder.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_2604_v8_unified.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_2604_v8_unified.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 541줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "generate_enhanced_level3_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 1355줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "crypto_signal_aggregator.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 537줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "improved_kagg_backtest_v2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 31개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "check_data_infrastructure.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 35개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "btc_timeframe_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "create_integrated_report_v3.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "news_collector_v2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "gapup_momentum_scanner.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_trading_rsi4.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v_series_daily_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 609줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "dart_backtester.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "scanner_2604_japanese_integration.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 23개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "level1_full_parallel.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "parallel_daily_update.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "naver_stock_scraper_pw.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 27개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "custom_stock_analysis_simple.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "tv_report_generator.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 525줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "news_collector_v2_2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 29개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "naver_finance_scraper.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 21개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "value_report_generator.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 589줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "naver_stock_scraper.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 26개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "level1_master.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 37개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "mv_integrated_report.py",
+      "type": "Large File",
+      "priority": "LOW",
+      "description": "파일이 514줄로 큼. 모듈 분리 검토."
+    },
+    {
+      "file": "theme_pullback_scanner.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 31개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kagg_backtest_final.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 23개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "custom_stock_analysis.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 30개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "japanese_full_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 34개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "naver_finance_scraper_v2.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 22개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "ivf_combo_optimizer.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "kstock.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "momentum_backtest.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 41개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "korea_winrate_research.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 25개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "paper_connector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 33개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "v8_backtester_simple.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 24개 발견. 로깅 라이브러리 사용 권장."
+    },
+    {
+      "file": "level1_price_collector.py",
+      "type": "Excessive Print Statements",
+      "priority": "MEDIUM",
+      "description": "print() 문이 21개 발견. 로깅 라이브러리 사용 권장."
+    }
+  ],
+  "performance_issues": [
+    {
+      "file": "daily_level1_fdr.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "watchdog_hybrid.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 3회. 비동기 처리 검토."
+    },
+    {
+      "file": "backfill_level1_prices.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "level1_pykrx.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_batch_collector.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "bithumb_trading_simulator.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "fire_ant_enhanced.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "full_db_builder_2024_2026.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "full_db_builder_2024_2026.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_price_fetcher.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "fdr_batch_processor.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "daily_update_batch.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_hybrid.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "monitor_update.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_cron_batch.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "paper_notifier.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_improved.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "daily_level1_fullmarket.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "scanner_parallel.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "paper_dashboard.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_sequential.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "paper_trading.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_news_scraper.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "korean_stock_explosive_backtest.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "report_livermore.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "fast_backfill.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "scanner_2604_v7_hybrid.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "level1_batch_auto.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "scanner_web_enricher.py",
+      "line": 88,
+      "type": "List Building Loop",
+      "severity": "LOW",
+      "description": "for + append 패턴. 리스트 컴프리헨션 권장."
+    },
+    {
+      "file": "fast_dart_update.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_pbr_scraper.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "unified_data_builder.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "unified_data_builder.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "smc_fvg_trader.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "fill_missing_data.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "line": 334,
+      "type": "List Building Loop",
+      "severity": "LOW",
+      "description": "for + append 패턴. 리스트 컴프리헨션 권장."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "line": 337,
+      "type": "List Building Loop",
+      "severity": "LOW",
+      "description": "for + append 패턴. 리스트 컴프리헨션 권장."
+    },
+    {
+      "file": "dart_integrated_report.py",
+      "line": 410,
+      "type": "List Building Loop",
+      "severity": "LOW",
+      "description": "for + append 패턴. 리스트 컴프리헨션 권장."
+    },
+    {
+      "file": "auto_restart.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_job_manager.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "kagg.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "upper_limit_predictor.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "news_collector_v2_1.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 8회. 비동기 처리 검토."
+    },
+    {
+      "file": "fundamental_db.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "level1_dbqueue.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "japanese_pattern_backtest.py",
+      "line": 162,
+      "type": "List Building Loop",
+      "severity": "LOW",
+      "description": "for + append 패턴. 리스트 컴프리헨션 권장."
+    },
+    {
+      "file": "improved_kagg_backtest.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "v_series_news_collector.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "daily_level1_batch.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_backtester_fast.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "explosive_scanner_v7.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "korean_stock_explosive_backtest_composite.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "agent_spawner.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_2024_collector.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "db_holiday_builder.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "db_holiday_builder.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_recent_builder.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "crypto_signal_aggregator.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "improved_kagg_backtest_v2.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "fundamental_fetcher.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "news_collector_v2.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 9회. 비동기 처리 검토."
+    },
+    {
+      "file": "dart_backtester.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "update_today_prices.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "parallel_daily_update.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_robust.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_stock_scraper_pw.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "level1_pykrx_simple.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_finance_scraper.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "value_report_generator.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "level2_news_collector.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "naver_finance_scraper_v2.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    },
+    {
+      "file": "watchdog.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 2회. 비동기 처리 검토."
+    },
+    {
+      "file": "stock_deep_analyzer.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "build_0408.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "momentum_backtest.py",
+      "type": "Potential Connection Leak",
+      "severity": "HIGH",
+      "description": "DB connect()와 close() 개수 불일치. 연결 누수 가능성."
+    },
+    {
+      "file": "level1_price_collector.py",
+      "type": "Blocking Sleep",
+      "severity": "LOW",
+      "description": "time.sleep() 사용 1회. 비동기 처리 검토."
+    }
+  ],
+  "code_quality": []
+}
