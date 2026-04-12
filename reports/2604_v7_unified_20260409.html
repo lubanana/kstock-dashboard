@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2604 V7 Hybrid Report - 2026-04-09</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #2d1b1b 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            color: #ffe4d6;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1rem; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,107,53,0.1);
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255,107,53,0.3);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            margin: 10px 0;
+        }
+        .stat-label { opacity: 0.7; font-size: 0.9rem; }
+        
+        .section {
+            background: rgba(255,107,53,0.05);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,107,53,0.2);
+        }
+        .section h2 {
+            color: #ff6b35;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255,107,53,0.5);
+        }
+        
+        .stock-card {
+            background: rgba(0,0,0,0.2);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b35;
+        }
+        .stock-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .stock-name { font-size: 1.4rem; font-weight: bold; }
+        .stock-code { opacity: 0.6; font-size: 0.9rem; }
+        .score {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        .metric-value { font-size: 1.3rem; font-weight: bold; color: #f7931e; }
+        .metric-label { font-size: 0.8rem; opacity: 0.6; margin-top: 5px; }
+        
+        .targets {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+        }
+        .target {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .target.stop { background: rgba(255,71,87,0.2); }
+        .target.tp { background: rgba(76,209,55,0.2); }
+        .target.tp2 { background: rgba(254,202,87,0.2); border: 1px solid rgba(254,202,87,0.5); }
+        .target-price { font-size: 1.2rem; font-weight: bold; }
+        .target-pct { font-size: 0.85rem; margin-top: 5px; }
+        .stop .target-price { color: #ff4757; }
+        .stop .target-pct { color: #ff4757; }
+        .tp .target-price { color: #4cd137; }
+        .tp .target-pct { color: #4cd137; }
+        .tp2 .target-price { color: #feca57; }
+        .tp2 .target-pct { color: #feca57; }
+        
+        .reasons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .reason-tag {
+            background: rgba(255,107,53,0.2);
+            color: #ffaa7f;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .chart-container { height: 300px; margin: 20px 0; }
+        
+        footer {
+            text-align: center;
+            padding: 40px;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 2604 V7 Hybrid</h1>
+            <p>통합 폭발적 상승 패턴 스캐너</p>
+            <div style="margin-top: 15px; opacity: 0.8;">2026-04-09</div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">선정 종목</div>
+                <div class="stat-value">7</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">평균 점수</div>
+                <div class="stat-value">84</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">평균 손익비</div>
+                <div class="stat-value">1:20.3</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">최고 점수</div>
+                <div class="stat-value">89</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 점수 분포</h2>
+            <div class="chart-container">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 선정 종목 상세</h2>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">1. 키움제10호스팩</div>
+                        <div class="stock-code">487720 | 현재가: 2,080원</div>
+                    </div>
+                    <div class="score">89점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">23</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">2,059원</div>
+                        <div class="target-pct">-1.0%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">2,139원</div>
+                        <div class="target-pct">+2.8%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">2,171원</div>
+                        <div class="target-pct">+4.4% | 1:4.4</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">2,261원</div>
+                        <div class="target-pct">+8.7%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 폭발 (5.9x)</span>
+                    <span class="reason-tag">RSI 적정 (56.5)</span>
+                    <span class="reason-tag">MACD 반전</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.5%)</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">2. 동부건설우</div>
+                        <div class="stock-code">005965 | 현재가: 21,250원</div>
+                    </div>
+                    <div class="score">85점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">14</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">20,329원</div>
+                        <div class="target-pct">-4.3%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">26,408원</div>
+                        <div class="target-pct">+24.3%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">28,771원</div>
+                        <div class="target-pct">+35.4% | 1:8.2</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">35,601원</div>
+                        <div class="target-pct">+67.5%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 폭발 (8.1x)</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.0%)</span>
+                    <span class="reason-tag">20일 상승률 +13.3%</span>
+                    <span class="reason-tag">연속상승 3일</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">3. 교보18호스팩</div>
+                        <div class="stock-code">0041B0 | 현재가: 2,075원</div>
+                    </div>
+                    <div class="score">84점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">25</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">23</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">2,073원</div>
+                        <div class="target-pct">-0.1%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">2,126원</div>
+                        <div class="target-pct">+2.5%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">2,147원</div>
+                        <div class="target-pct">+3.5% | 1:34.6</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">2,207원</div>
+                        <div class="target-pct">+6.4%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 급증 (3.5x)</span>
+                    <span class="reason-tag">RSI 적정 (53.9)</span>
+                    <span class="reason-tag">MACD 반전</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.2%)</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">4. 창해에탄올</div>
+                        <div class="stock-code">004650 | 현재가: 10,870원</div>
+                    </div>
+                    <div class="score">83점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">24</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">8</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">10,766원</div>
+                        <div class="target-pct">-1.0%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">14,646원</div>
+                        <div class="target-pct">+34.7%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">16,154원</div>
+                        <div class="target-pct">+48.6% | 1:50.6</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">20,514원</div>
+                        <div class="target-pct">+88.7%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 증가 (2.6x)</span>
+                    <span class="reason-tag">RSI 적정 (58.9)</span>
+                    <span class="reason-tag">정배열</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.8%)</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">5. 유진스팩11호</div>
+                        <div class="stock-code">488060 | 현재가: 2,045원</div>
+                    </div>
+                    <div class="score">83점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">19</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">2,038원</div>
+                        <div class="target-pct">-0.3%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">2,091원</div>
+                        <div class="target-pct">+2.2%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">2,112원</div>
+                        <div class="target-pct">+3.3% | 1:9.5</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">2,172원</div>
+                        <div class="target-pct">+6.2%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 폭발 (7.8x)</span>
+                    <span class="reason-tag">RSI 적정 (47.6)</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.2%)</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">6. 서연탑메탈</div>
+                        <div class="stock-code">019770 | 현재가: 3,995원</div>
+                    </div>
+                    <div class="score">82점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">18</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">11</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">3,961원</div>
+                        <div class="target-pct">-0.8%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">4,708원</div>
+                        <div class="target-pct">+17.8%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">4,999원</div>
+                        <div class="target-pct">+25.1% | 1:29.4</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">5,839원</div>
+                        <div class="target-pct">+46.2%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 폭발 (16.3x)</span>
+                    <span class="reason-tag">MACD 반전</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">안정적 상승 (+0.6%)</span>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="stock-header">
+                    <div>
+                        <div class="stock-name">7. 피엔에이치테크</div>
+                        <div class="stock-code">239890 | 현재가: 4,950원</div>
+                    </div>
+                    <div class="score">80점</div>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">30</div>
+                        <div class="metric-label">거래량</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">18</div>
+                        <div class="metric-label">기술적</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">20</div>
+                        <div class="metric-label">피볼나치</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">7</div>
+                        <div class="metric-label">시장맥락</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">5</div>
+                        <div class="metric-label">모멘텀</div>
+                    </div>
+                </div>
+                
+                <div class="targets">
+                    <div class="target stop">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🛑 손절가</div>
+                        <div class="target-price">4,719원</div>
+                        <div class="target-pct">-4.7%</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🎯 TP1</div>
+                        <div class="target-price">5,800원</div>
+                        <div class="target-pct">+17.2%</div>
+                    </div>
+                    <div class="target tp2">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">⭐ TP2 (추천)</div>
+                        <div class="target-price">6,221원</div>
+                        <div class="target-pct">+25.7% | 1:5.5</div>
+                    </div>
+                    <div class="target tp">
+                        <div style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">🚀 TP3</div>
+                        <div class="target-price">7,436원</div>
+                        <div class="target-pct">+50.2%</div>
+                    </div>
+                </div>
+                
+                <div class="reasons">
+                    <span class="reason-tag">거래량 폭발 (9.0x)</span>
+                    <span class="reason-tag">MACD 반전</span>
+                    <span class="reason-tag">피볼나치 되돌림</span>
+                    <span class="reason-tag">코스닥대비 강세 (+5.0%)</span>
+                    <span class="reason-tag">연속상승 3일</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <footer>
+            <p>2604 V7 Hybrid Scanner | Generated: 2026-04-12 11:51</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">* 과거 성과가 미래 수익을 보장하지 않습니다</p>
+        </footer>
+    </div>
+    
+    <script>
+        const ctx = document.getElementById('scoreChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['키움제10호스팩', '동부건설우', '교보18호스팩', '창해에탄올', '유진스팩11호', '서연탑메탈', '피엔에이치테크'],
+                datasets: [{
+                    label: '종합 점수',
+                    data: [89, 85, 84, 83, 83, 82, 80],
+                    backgroundColor: [
+                        'rgba(255, 107, 53, 0.8)',
+                        'rgba(247, 147, 30, 0.8)',
+                        'rgba(254, 202, 87, 0.8)',
+                        'rgba(255, 159, 67, 0.8)',
+                        'rgba(255, 99, 72, 0.8)',
+                        'rgba(255, 71, 87, 0.8)',
+                        'rgba(76, 209, 55, 0.8)'
+                    ],
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { color: '#ffe4d6' },
+                        grid: { color: 'rgba(255,255,255,0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#ffe4d6' },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
