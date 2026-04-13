@@ -35,6 +35,7 @@ from enum import Enum
 import json
 
 from fibonacci_target_integrated import calculate_scanner_targets
+from trading_calendar_utils import ensure_trading_day_in_db  # 거래일 유틸리티 추가
 
 
 class HoldingPeriod(Enum):
@@ -321,6 +322,9 @@ def main():
     
     scanner = Scanner2604V8Unified()
     scanner.connect()
+    
+    # 거래일 조정 (주말/공휴일 → 최근 거래일)
+    scan_date = ensure_trading_day_in_db(scan_date, db_path=scanner.db_path)
     
     # 단일 종목 테스트 모드
     if args.code:

@@ -1,7 +1,40 @@
 {
-  "total_trades": 0,
-  "win_rate": 0,
-  "total_return": 0,
-  "avg_return": 0,
-  "message": "No trades"
+  "total_trades": 189,
+  "winning_trades": 52,
+  "losing_trades": 137,
+  "win_rate": 27.513227513227513,
+  "avg_return": -0.139427113633701,
+  "total_return": -3.1963900000000005,
+  "avg_holding_days": 2.17989417989418,
+  "by_holding": {
+    "당일 청산": {
+      "trades": 12,
+      "win_rate": 8.333333333333332,
+      "avg_return": -5.594039101064902
+    },
+    "중기 (5-10일)": {
+      "trades": 177,
+      "win_rate": 28.8135593220339,
+      "avg_return": 0.2303770889040075
+    }
+  },
+  "by_exit": {
+    "stop_loss": {
+      "trades": 134,
+      "win_rate": 14.17910447761194,
+      "avg_return": -3.100840788076505
+    },
+    "time_exit": {
+      "trades": 39,
+      "win_rate": 43.58974358974359,
+      "avg_return": 0.8710301454819611
+    },
+    "trailing_stop": {
+      "trades": 16,
+      "win_rate": 100.0,
+      "avg_return": 22.199422840730357
+    }
+  },
+  "tk_cross_win_rate": 13.793103448275861,
+  "non_tk_cross_win_rate": 30.0
 }

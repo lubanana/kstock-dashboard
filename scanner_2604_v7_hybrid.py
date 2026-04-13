@@ -28,6 +28,7 @@ import json
 from v2.core.krx_datasource import KRXDataSource
 from v2.core.indicators import Indicators
 from fibonacci_target_integrated import calculate_scanner_targets
+from trading_calendar_utils import ensure_trading_day_in_db  # 거래일 유틸리티
 
 
 class Scanner2604V7Hybrid:
@@ -608,6 +609,9 @@ def main():
     
     scanner = Scanner2604V7Hybrid(use_krx=True)
     scanner.connect()
+    
+    # 거래일 조정 (주말/공휴일 → 최근 거래일)
+    scan_date = ensure_trading_day_in_db(scan_date, db_path=scanner.db_path)
     
     signals = scanner.run_scan(scan_date, top_n=20)
     

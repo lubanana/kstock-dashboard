@@ -65,6 +65,9 @@ class V8BacktesterSimple:
         # 데이터 로딩
         self._load_data(start_date, end_date)
         
+        # 거래 초기화
+        self.trades = []
+        
         # 스캐너 초기화
         self._scanner = Scanner2604V8Unified(self.db_path)
         
@@ -95,6 +98,14 @@ class V8BacktesterSimple:
                     if trade:
                         self.trades.append(trade)
                         capital += trade.pnl
+                        print(f"      ✓ 거래: {trade.code} ({trade.pnl_pct:+.2f}%)")
+            
+            if self.trades:
+                print(f"   누적 거래: {len(self.trades)}개")
+        
+        print(f"\n{'='*70}")
+        print(f"📊 총 거래: {len(self.trades)}개")
+        print(f"{'='*70}")
         
         return self._calculate_results(initial_capital, capital, daily_signals)
     
@@ -110,7 +121,7 @@ class V8BacktesterSimple:
         conn.execute('PRAGMA temp_store=MEMORY')
         conn.execute('PRAGMA mmap_size=30000000000')
         
-        preload_start = (datetime.strptime(start_date, '%Y-%m-%d') - timedelta(days=80)).strftime('%Y-%m-%d')
+        preload_start = (datetime.strptime(start_date, '%Y-%m-%d') - timedelta(days=100)).strftime('%Y-%m-%d')
         
         # covering index 활용한 쿼리
         query = f"""
@@ -126,7 +137,7 @@ class V8BacktesterSimple:
         # 종목별 캐시
         self._cache = {}
         for code, group in df.groupby('code'):
-            if len(group) >= 60:
+            if len(group) >= 60:  # 60거래일 기준
                 self._cache[code] = group.sort_values('date').reset_index(drop=True)
         
         # 날짜별 종목 맵
@@ -134,7 +145,7 @@ class V8BacktesterSimple:
         for date, group in df.groupby('date'):
             self._cache_dates[date] = group[['code', 'name']].drop_duplicates().to_dict('records')
         
-        print(f"   ✓ {len(self._cache)}개 종목 로드 완료")
+        print(f"   ✓ {len(self._cache)}개 종목 (60거래일+) 로드 완료")
     
     def _scan_day(self, date: str) -> List[Dict]:
         """신호 스캔"""
@@ -151,7 +162,7 @@ class V8BacktesterSimple:
             df_full = self._cache[code]
             df = df_full[df_full['date'] <= date].copy()
             
-            if len(df) < 60:
+            if len(df) < 60:  # 60거래일 기준
                 continue
             
             signal = self._analyze(df, code, name, date)
@@ -305,12 +316,25 @@ class V8BacktesterSimple:
         
         entry_price = entry_row.iloc[0]['open']
         
-        # 목표가/손절가
-        entry_df = pd.DataFrame([entry_row.iloc[0].to_dict()])
-        targets = calculate_scanner_targets(entry_df, entry_price)
+        # 목표가/손절가 - 진입일 포함 과거 40일 데이터 필요
+        entry_idx = df[df['date'] == entry_date].index[0]
+        df_for_calc = df.iloc[:entry_idx+1].tail(40)
+        
+        targets = calculate_scanner_targets(df_for_calc, entry_price)
         
         if targets is None:
-            return None
+            # ATR 기반 fallback
+            atr = df_for_calc['atr'].iloc[-1] if 'atr' in df_for_calc.columns else entry_price * 0.03
+            targets = {
+                'entry': entry_price,
+                'stop_loss': entry_price - (atr * 2),
+                'tp1': entry_price + (atr * 2),
+                'tp2': entry_price + (atr * 3),
+                'tp3': entry_price + (atr * 4),
+                'atr': atr,
+                'stop_pct': -2.0,
+                'tp2_pct': 3.0
+            }
         
         # 청산
         holding = signal['holding']
