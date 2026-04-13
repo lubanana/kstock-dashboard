@@ -610,8 +610,53 @@ def main():
     scanner = Scanner2604V7Hybrid(use_krx=True)
     scanner.connect()
     
-    # 거래일 조정 (주말/공휴일 → 최근 거래일)
-    scan_date = ensure_trading_day_in_db(scan_date, db_path=scanner.db_path)
+    # 거래일 캘린더를 활용한 스캔일 결정
+    from trading_calendar import TradingCalendarManager
+    
+    cal_manager = TradingCalendarManager(db_path=scanner.db_path)
+    cal_manager.connect()
+    
+    # 1. 먼저 입력된 날짜가 거래일인지 확인하고 거래일로 조정
+    trading_day = cal_manager.adjust_to_trading_day(scan_date, direction='previous')
+    
+    if trading_day != scan_date:
+        print(f"📅 거래일 조정: {scan_date} → {trading_day} (거래일 기준)")
+    
+    # 2. 해당 거래일에 DB 데이터가 있는지 확인
+    query = f"SELECT COUNT(*) as count FROM price_data WHERE date = '{trading_day}'"
+    date_check = pd.read_sql_query(query, scanner.conn)
+    
+    if date_check['count'].iloc[0] == 0:
+        print(f"⚠️  {trading_day}에 해당하는 데이터가 없습니다.")
+        print(f"   거래일 캘린더에서 DB 데이터가 있는 이전 거래일을 검색합니다...")
+        
+        # 거래일 캘린더에서 과거 거래일 목록 가져오기
+        past_trading_days = cal_manager.get_trading_days(
+            (datetime.strptime(trading_day, '%Y-%m-%d') - timedelta(days=30)).strftime('%Y-%m-%d'),
+            trading_day
+        )
+        
+        # 최근 거래일부터 DB 데이터 확인
+        found_date = None
+        for day in reversed(past_trading_days[:-1]):
+            query = f"SELECT COUNT(*) as count FROM price_data WHERE date = '{day}'"
+            check = pd.read_sql_query(query, scanner.conn)
+            if check['count'].iloc[0] > 0:
+                found_date = day
+                break
+        
+        if found_date:
+            scan_date = found_date
+            print(f"   ✅ DB 데이터가 있는 가장 가까운 거래일: {scan_date}")
+        else:
+            print(f"   ❌ 사용 가능한 데이터가 없습니다.")
+            cal_manager.close()
+            scanner.close()
+            return
+    else:
+        scan_date = trading_day
+    
+    cal_manager.close()
     
     signals = scanner.run_scan(scan_date, top_n=20)
     

@@ -1,0 +1,20 @@
+[
+  {
+    "code": "032850",
+    "name": "비트컴퓨터",
+    "selection_type": "V7",
+    "v7_score": 82,
+    "v8_score": null,
+    "price": 5450.0,
+    "holding_days": 5,
+    "target_price": 6309.0,
+    "stop_loss": 5271.0,
+    "reasons": [
+      "거래량 급증 (4.9x)",
+      "RSI 적정 (56.3)",
+      "정배열",
+      "피볼나치 되돌림",
+      "안정적 상승 (-0.5%)"
+    ]
+  }
+]

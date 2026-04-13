@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2604 V7+V8 통합 리포트 - 2026-04-10</title>
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #00d084;
+            --warning: #ffa502;
+            --danger: #ff4757;
+            --dark-bg: #1a1a2e;
+            --card-bg: #252542;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8d1;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .summary-card.v7 { border-color: var(--warning); }
+        .summary-card.v8 { border-color: var(--danger); }
+        .summary-card.both { border-color: var(--success); }
+        .summary-card h3 { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px; }
+        .summary-card .value { font-size: 2.5rem; font-weight: bold; color: var(--text-primary); }
+        .section-title {
+            font-size: 1.5rem;
+            margin: 30px 0 20px;
+            padding-left: 16px;
+            border-left: 4px solid var(--primary);
+        }
+        .signal-table {
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+        .signal-table th, .signal-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .signal-table th {
+            background: rgba(255,255,255,0.05);
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .signal-table tr:hover { background: rgba(255,255,255,0.03); }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .badge-v7 { background: rgba(255,165,2,0.2); color: var(--warning); }
+        .badge-v8 { background: rgba(255,71,87,0.2); color: var(--danger); }
+        .badge-both { background: rgba(0,208,132,0.2); color: var(--success); }
+        .score { font-weight: bold; font-size: 1.1rem; }
+        .score-v7 { color: var(--warning); }
+        .score-v8 { color: var(--danger); }
+        .holding-days { color: var(--success); font-weight: bold; }
+        .reasons { font-size: 0.85rem; color: var(--text-secondary); }
+        .empty-state {
+            text-align: center;
+            padding: 60px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            color: var(--text-secondary);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .signal-table { font-size: 0.85rem; }
+            .signal-table th, .signal-table td { padding: 12px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 2604 V7 + V8 통합 리포트</h1>
+            <p class="subtitle">Scan Date: 2026-04-10 | Generated: 2026-04-13 08:56</p>
+        </header>
+
+        <div class="summary">
+            <div class="summary-card v7">
+                <h3>🔥 V7 Only (80점+)</h3>
+                <div class="value">1</div>
+            </div>
+            <div class="summary-card v8">
+                <h3>📈 V8 Only (90점+)</h3>
+                <div class="value">0</div>
+            </div>
+            <div class="summary-card both">
+                <h3>⭐ V7 + V8 (Both)</h3>
+                <div class="value">0</div>
+            </div>
+            <div class="summary-card">
+                <h3>📊 Total Signals</h3>
+                <div class="value">1</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">📋 선정 종목 상세</h2>
+        <table class="signal-table">
+            <thead>
+                <tr>
+                    <th>종목</th>
+                    <th>유형</th>
+                    <th>V7 점수</th>
+                    <th>V8 점수</th>
+                    <th>현재가</th>
+                    <th>목표가</th>
+                    <th>손절가</th>
+                    <th>보유일수</th>
+                    <th>선정 사유</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>비트컴퓨터</strong><br/><small>032850</small></td>
+                    <td><span class="badge badge-v7">V7</span></td>
+                    <td><span class='score score-v7'>82</span></td>
+                    <td>-</td>
+                    <td>5,450원</td>
+                    <td><span class="positive">6,309원</span></td>
+                    <td><span class="negative">5,271원</span></td>
+                    <td><span class="holding-days">5일</span></td>
+                    <td class="reasons">거래량 급증 (4.9x), RSI 적정 (56.3), 정배열</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
